@@ -1,0 +1,253 @@
+{
+  "name": "L ULTRAMAN",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.127,
+        "3": 0.127,
+        "4": 0.129,
+        "5": 0.131,
+        "6": 0.133
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFCA28",
+      "description": "設定差あり"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.0105,
+        "2": 0.0107,
+        "3": 0.0107,
+        "4": 0.0109,
+        "5": 0.0111,
+        "6": 0.0113
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定差あり"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0093,
+        "3": 0.0093,
+        "4": 0.0095,
+        "5": 0.0097,
+        "6": 0.0099
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定差あり"
+    },
+    {
+      "name": "中押しウルトラ目",
+      "probabilities": {
+        "1": 0.002,
+        "2": 0.0022,
+        "3": 0.0024,
+        "4": 0.0027,
+        "5": 0.003,
+        "6": 0.0035
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "特大の設定差。自身でカウント必須"
+    },
+    {
+      "name": "チャンス役合算",
+      "probabilities": {
+        "1": 0.0305,
+        "2": 0.0305,
+        "3": 0.0305,
+        "4": 0.0305,
+        "5": 0.0305,
+        "6": 0.0305
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/32.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "timer_456",
+      "name": "タイマー04:56",
+      "description": "レッドゾーン中タイマー演出",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "timer_555",
+      "name": "タイマー05:55",
+      "description": "レッドゾーン中タイマー演出",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "timer_666",
+      "name": "タイマー06:66",
+      "description": "レッドゾーン中タイマー演出",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "mai_222",
+      "name": "獲得222枚",
+      "description": "獲得枚数表示",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "mai_456",
+      "name": "獲得456枚",
+      "description": "獲得枚数表示",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "mai_666",
+      "name": "獲得666枚",
+      "description": "獲得枚数表示",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "at_rate",
+      "name": "AT初当り確率",
+      "description": "設定1: 1/320、設定6: 1/223",
+      "probabilities": {
+        "1": 0.00312,
+        "2": 0.00324,
+        "3": 0.00324,
+        "4": 0.00368,
+        "5": 0.00404,
+        "6": 0.00449
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "chou_high_700",
+      "name": "700G超高確移行率",
+      "description": "規定ゲーム数での超高確移行率。700Gで特大の設定差",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.08,
+        "3": 0.08,
+        "4": 0.15,
+        "5": 0.22,
+        "6": 0.35
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "shinji",
+      "name": "進次郎",
+      "type": "at_end",
+      "hint": "基本画面"
+    },
+    {
+      "id": "moroboshi",
+      "name": "諸星",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "hokuto",
+      "name": "北斗",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "rena",
+      "name": "レナ",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）",
+      "color": "#FFC107"
+    },
+    {
+      "id": "bemular",
+      "name": "ベムラー",
+      "type": "at_end",
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
+    },
+    {
+      "id": "ultraman",
+      "name": "ウルトラマン",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "seven",
+      "name": "セブン",
+      "type": "at_end",
+      "hint": "設定2否定",
+      "excludedSettings": ["2"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "ace",
+      "name": "エース",
+      "type": "at_end",
+      "hint": "設定4否定",
+      "excludedSettings": ["4"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "vs_bemular",
+      "name": "ウルトラマンVSベムラー",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "original",
+      "name": "初代ウルトラマン",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "mini_chara",
+      "name": "ミニキャラ集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

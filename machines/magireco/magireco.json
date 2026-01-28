@@ -1,0 +1,147 @@
+{
+  "name": "スマスロ マギアレコード 魔法少女まどか☆マギカ外伝",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.0103,
+        "2": 0.0105,
+        "3": 0.0107,
+        "4": 0.0109,
+        "5": 0.0112,
+        "6": 0.0115
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "設定1と6で約1.2倍の差"
+    },
+    {
+      "name": "共通ベル合算",
+      "probabilities": {
+        "1": 0.147,
+        "2": 0.147,
+        "3": 0.147,
+        "4": 0.147,
+        "5": 0.147,
+        "6": 0.147
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FFCA28",
+      "description": "全設定共通: 約1/6.8"
+    },
+    {
+      "name": "強チャンス役合算",
+      "probabilities": {
+        "1": 0.00696,
+        "2": 0.00696,
+        "3": 0.00696,
+        "4": 0.00696,
+        "5": 0.00696,
+        "6": 0.00696
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 約1/143.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "gold_card",
+      "name": "金枠（舞台装置の魔女）",
+      "description": "エンディング中レア役成立時のカード",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "nakadan_cherry",
+      "name": "中段チェリー（BB/みたまボーナス中）",
+      "description": "BB中orみたまボーナス中に引くとドッペルモード突入確定",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "mitama_uwasa",
+      "name": "みたまボーナス最終ジャッジウワサ発展時AT当選率",
+      "description": "ウワサ発展時のAT当選率に大きな設定差",
+      "probabilities": {
+        "1": 0.10,
+        "2": 0.15,
+        "3": 0.20,
+        "4": 0.28,
+        "5": 0.38,
+        "6": 0.50
+      },
+      "color": "#9C27B0",
+      "displayOrder": 1
+    },
+    {
+      "id": "bb_high_koukaku",
+      "name": "BB終了後高確スタート率",
+      "description": "AT非当選のBB終了後の高確スタート率",
+      "probabilities": {
+        "1": 0.20,
+        "2": 0.25,
+        "3": 0.30,
+        "4": 0.35,
+        "5": 0.42,
+        "6": 0.50
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "story_1_3",
+      "name": "1話or3話スタート",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "story_2_4",
+      "name": "2話or4話スタート",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "story_5",
+      "name": "5話スタート",
+      "type": "at_end",
+      "hint": "特定設定否定or示唆",
+      "color": "#FFC107"
+    },
+    {
+      "id": "sana",
+      "name": "さなエピソード",
+      "type": "other",
+      "hint": "高設定示唆",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "felicia",
+      "name": "フェリシアエピソード",
+      "type": "other",
+      "hint": "高設定示唆",
+      "color": "#FF9800"
+    },
+    {
+      "id": "kuroe",
+      "name": "黒江エピソード",
+      "type": "other",
+      "hint": "高設定示唆",
+      "color": "#9C27B0"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
+}

@@ -1,0 +1,135 @@
+{
+  "name": "スマスロ スーパーブラックジャック",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "斜めスイカ",
+      "probabilities": {
+        "1": 0.0103,
+        "2": 0.0106,
+        "3": 0.0109,
+        "4": 0.0112,
+        "5": 0.0115,
+        "6": 0.0119
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "設定1: 約1/97、設定6: 約1/84。設定判別の要"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#9C27B0",
+      "description": "全設定共通"
+    },
+    {
+      "name": "ボーナス初当り",
+      "probabilities": {
+        "1": 0.00435,
+        "2": 0.00455,
+        "3": 0.00476,
+        "4": 0.00505,
+        "5": 0.00521,
+        "6": 0.00552
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 約1/230、設定6: 約1/181"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "panel_light",
+      "name": "下パネル点灯のみ",
+      "description": "当選告知Gのレバーオン時に下パネルのみ点灯",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "panel_only_setting6",
+      "name": "下パネル点灯のみ（他演出なし）",
+      "description": "最後まで下パネル点滅以外の演出が発生しない",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_direct_chance",
+      "name": "チャンス目からのボーナス直撃",
+      "description": "通常滞在時のチャンス目成立時ボーナス当選率",
+      "probabilities": {
+        "1": 0.02,
+        "2": 0.03,
+        "3": 0.04,
+        "4": 0.055,
+        "5": 0.065,
+        "6": 0.078
+      },
+      "color": "#FF9800",
+      "displayOrder": 1
+    },
+    {
+      "id": "suika_st_direct",
+      "name": "スイカからのST直撃",
+      "description": "斜めスイカからのストックタイム直撃率",
+      "probabilities": {
+        "1": 0.005,
+        "2": 0.007,
+        "3": 0.009,
+        "4": 0.011,
+        "5": 0.013,
+        "6": 0.016
+      },
+      "color": "#4CAF50",
+      "displayOrder": 2
+    },
+    {
+      "id": "high_koukaku_move",
+      "name": "ボーナス高確移行率",
+      "description": "百の位偶数・奇数ゲーム到達時の高確移行率",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.18,
+        "3": 0.21,
+        "4": 0.25,
+        "5": 0.30,
+        "6": 0.36
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default_screen",
+      "name": "基本画面",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "high_setting_hint",
+      "name": "高設定示唆画面",
+      "type": "bonus_end",
+      "hint": "高設定示唆",
+      "color": "#FFC107"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
+}

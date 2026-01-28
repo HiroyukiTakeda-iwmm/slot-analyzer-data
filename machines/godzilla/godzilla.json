@@ -1,0 +1,128 @@
+{
+  "name": "Lゴジラ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "3枚ベル",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0125,
+        "3": 0.0125,
+        "4": 0.0125,
+        "5": 0.0125,
+        "6": 0.0125
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFCA28",
+      "description": "全設定共通"
+    },
+    {
+      "name": "12枚ベル",
+      "probabilities": {
+        "1": 0.0167,
+        "2": 0.0167,
+        "3": 0.0167,
+        "4": 0.0167,
+        "5": 0.0167,
+        "6": 0.0167
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "全設定共通"
+    },
+    {
+      "name": "チャンス役合算",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "king_ghidorah_cz",
+      "name": "キングギドラCZ成功",
+      "description": "CZ成功時は破壊神フリーズにも当選",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    },
+    {
+      "id": "rainbow_level",
+      "name": "警戒レベル虹",
+      "description": "襲来ゾーン前半で虹まで変化でAT当選",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "cz_rate",
+      "name": "CZ確率",
+      "description": "CZ「襲来ゾーン」の当選確率",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.0043,
+        "3": 0.0046,
+        "4": 0.005,
+        "5": 0.0055,
+        "6": 0.006
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_rate",
+      "name": "AT初当り確率",
+      "description": "CZ確率よりもAT初当り確率の方が設定差大きい",
+      "probabilities": {
+        "1": 0.003,
+        "2": 0.0033,
+        "3": 0.0036,
+        "4": 0.004,
+        "5": 0.0045,
+        "6": 0.005
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "minus1_freeze",
+      "name": "-1.0フリーズ発生率",
+      "description": "残り0Gで33.6%で発生。100or200or300G上乗せ",
+      "probabilities": {
+        "1": 0.336,
+        "2": 0.336,
+        "3": 0.336,
+        "4": 0.336,
+        "5": 0.336,
+        "6": 0.336
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

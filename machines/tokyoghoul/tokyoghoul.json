@@ -1,0 +1,174 @@
+{
+  "name": "L 東京喰種",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "下段リプレイ",
+      "probabilities": {
+        "1": 0.0035,
+        "2": 0.0038,
+        "3": 0.0041,
+        "4": 0.0045,
+        "5": 0.0049,
+        "6": 0.0054
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "出現時は赫眼状態へ移行。設定差あり"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0125,
+        "3": 0.0125,
+        "4": 0.0125,
+        "5": 0.0125,
+        "6": 0.0125
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/80"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#C2185B",
+      "description": "全設定共通"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.0028,
+        "2": 0.00295,
+        "3": 0.0031,
+        "4": 0.00335,
+        "5": 0.00365,
+        "6": 0.004
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 約1/357、設定6: 約1/250"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "silver_kaneki",
+      "name": "銀カード 金木研",
+      "description": "エンディング中カード演出",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "gold_rize",
+      "name": "金カード 神代利世",
+      "description": "エンディング中カード演出",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "sekigan_fukuro",
+      "name": "隻眼の梟カード",
+      "description": "エンディング中カード演出",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "rainbow_arima",
+      "name": "虹カード 有馬貴将",
+      "description": "エンディング中カード演出",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "anteku_rainbow",
+      "name": "あんていく全員集合（虹枠）",
+      "description": "AT終了画面",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "cz_rate",
+      "name": "CZ当選率",
+      "description": "レミニセンス/大喰いの利世 合算確率",
+      "probabilities": {
+        "1": 0.0038,
+        "2": 0.004,
+        "3": 0.0043,
+        "4": 0.0046,
+        "5": 0.0047,
+        "6": 0.0049
+      },
+      "color": "#9C27B0",
+      "displayOrder": 1
+    },
+    {
+      "id": "episode_bonus",
+      "name": "エピソードボーナス出現率",
+      "description": "設定1と6で約2.5倍の差",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.005,
+        "3": 0.006,
+        "4": 0.007,
+        "5": 0.008,
+        "6": 0.01
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "ura_at_rate",
+      "name": "裏AT突入率",
+      "description": "AT開始時の裏AT突入率。設定6は設定1の約4.5倍",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.015,
+        "3": 0.02,
+        "4": 0.025,
+        "5": 0.035,
+        "6": 0.045
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "high_setting_hint",
+      "name": "高設定示唆画面",
+      "type": "at_end",
+      "hint": "高設定示唆",
+      "color": "#FFC107"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
+}

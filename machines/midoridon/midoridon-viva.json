@@ -1,0 +1,142 @@
+{
+  "name": "スマスロ 緑ドン VIVA!情熱南米編 REVIVAL",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱波（平行揃い）",
+      "probabilities": {
+        "1": 0.00916,
+        "2": 0.00931,
+        "3": 0.00946,
+        "4": 0.00962,
+        "5": 0.00977,
+        "6": 0.01007
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/109.2、設定6: 1/99.3"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01374,
+        "2": 0.01389,
+        "3": 0.01404,
+        "4": 0.01418,
+        "5": 0.01464,
+        "6": 0.01495
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定1: 1/72.8、設定6: 1/66.9"
+    },
+    {
+      "name": "リーチ目リプレイ",
+      "probabilities": {
+        "1": 0.000336,
+        "2": 0.000336,
+        "3": 0.000397,
+        "4": 0.000397,
+        "5": 0.000488,
+        "6": 0.000488
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "確定役。設定1-2: 1/2979、設定5-6: 1/2048"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.005,
+        "2": 0.005,
+        "3": 0.005,
+        "4": 0.005,
+        "5": 0.005,
+        "6": 0.005
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "全設定共通"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "reachme",
+      "name": "リーチ目停止",
+      "description": "通常時・AT中に停止でボーナス確定",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "high_koukaku_move",
+      "name": "高確移行率",
+      "description": "ハズレ、ベル等成立時の高確移行率。設定5・6で優遇",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.05,
+        "3": 0.05,
+        "4": 0.05,
+        "5": 0.10,
+        "6": 0.10
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "hikimondoshi_hazure",
+      "name": "引き戻しゾーンハズレからの引き戻し率",
+      "description": "設定6は約42%でハズレから引き戻し成功",
+      "probabilities": {
+        "1": 0.10,
+        "2": 0.12,
+        "3": 0.18,
+        "4": 0.22,
+        "5": 0.30,
+        "6": 0.42
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常写真",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "setting_hint",
+      "name": "設定示唆写真",
+      "type": "bonus_end",
+      "hint": "設定示唆",
+      "color": "#FFC107"
+    },
+    {
+      "id": "confirmed",
+      "name": "確定写真",
+      "type": "bonus_end",
+      "hint": "高設定確定",
+      "color": "#E91E63"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "hazuki",
+      "name": "葉月ボイス",
+      "hint": "高設定示唆",
+      "color": "#9C27B0"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

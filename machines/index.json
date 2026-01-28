@@ -241,6 +241,186 @@
       "file": "neoplanet/neoplanet.json",
       "tags": ["Aタイプ", "ネオプラ", "スマスロ", "ケロットトロフィー", "2025年新台"],
       "description": "モードF高確移行率に非常に大きな設定差"
+    },
+    {
+      "id": "shamanking",
+      "name": "スマスロ シャーマンキング",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "shamanking/shamanking.json",
+      "tags": ["AT", "シャーマンキング", "スマスロ", "Phase3", "2025年新台"],
+      "description": "共通ベルA確率に設定差大、OS揃いAT直撃で設定4以上期待度UP"
+    },
+    {
+      "id": "arifureta",
+      "name": "Lパチスロ ありふれた職業で世界最強",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "arifureta/arifureta.json",
+      "tags": ["AT", "ありふれ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "ミュウボーナスAT当選率と天国モード移行率に設定差"
+    },
+    {
+      "id": "super-blackjack",
+      "name": "スマスロ スーパーブラックジャック",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "blackjack/blackjack.json",
+      "tags": ["AT", "ブラックジャック", "スマスロ", "Phase3", "2025年新台"],
+      "description": "斜めスイカ確率とボーナス直撃当選率に設定差"
+    },
+    {
+      "id": "tokyoghoul",
+      "name": "L 東京喰種",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tokyoghoul/tokyoghoul.json",
+      "tags": ["AT", "東京グール", "スマスロ", "Phase3", "2025年新台"],
+      "description": "下段リプレイとエピソードボーナス出現率に設定差、虹枠終了画面で設定6濃厚"
+    },
+    {
+      "id": "idolmaster-million",
+      "name": "スマスロ アイドルマスター ミリオンライブ! ネクストプロローグ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "idolmaster/idolmaster-million.json",
+      "tags": ["AT", "アイマス", "ミリオンライブ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "CZ突入率に設定差、ボーナス終了画面で奇偶示唆"
+    },
+    {
+      "id": "mahjongmonogatari",
+      "name": "L麻雀物語",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "mahjongmonogatari/mahjongmonogatari.json",
+      "tags": ["AT", "麻雀物語", "スマスロ", "Phase3", "2025年新台"],
+      "description": "マシロック中7揃いと煌帝出現率に設定差、ハルルナPUSHで設定4以上濃厚"
+    },
+    {
+      "id": "godzilla",
+      "name": "Lゴジラ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "godzilla/godzilla.json",
+      "tags": ["AT", "ゴジラ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "小役確率は全設定共通、AT初当り確率に大きな設定差"
+    },
+    {
+      "id": "magireco",
+      "name": "スマスロ マギアレコード 魔法少女まどか☆マギカ外伝",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "magireco/magireco.json",
+      "tags": ["AT", "マギレコ", "まどマギ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "弱チェリー確率に微差、みたまボーナス最終ジャッジAT当選率に大きな設定差"
+    },
+    {
+      "id": "youjitsu",
+      "name": "スマスロ ようこそ実力至上主義の教室へ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "youjitsu/youjitsu.json",
+      "tags": ["AT", "よう実", "スマスロ", "Phase3", "2025年新台"],
+      "description": "ダクセルフラッシュ発生率に設定1と6で5倍の差"
+    },
+    {
+      "id": "midoridon-viva",
+      "name": "スマスロ 緑ドン VIVA!情熱南米編 REVIVAL",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "midoridon/midoridon-viva.json",
+      "tags": ["AT", "緑ドン", "スマスロ", "Phase3", "2025年新台"],
+      "description": "弱波・弱チェリーに設定差、引き戻しゾーンハズレ当選率に大きな設定差"
+    },
+    {
+      "id": "ultraman",
+      "name": "L ULTRAMAN",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "ultraman/ultraman.json",
+      "tags": ["AT", "ウルトラマン", "スマスロ", "Phase3", "2025年新台"],
+      "description": "中押しウルトラ目に特大の設定差、タイマー演出と終了画面で設定示唆"
+    },
+    {
+      "id": "tenken",
+      "name": "パチスロ 転生したら剣でした",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tenken/tenken.json",
+      "tags": ["AT", "転剣", "スマスロ", "Phase3", "2025年新台"],
+      "description": "弱スイカからのボーナス当選率に大きな設定差"
+    },
+    {
+      "id": "matador3",
+      "name": "マタドールIII",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "matador/matador3.json",
+      "tags": ["Aタイプ", "マタドール", "BT", "Phase3", "2025年新台"],
+      "description": "REG確率に設定差大、BT中バラケ目1枚役で高設定期待度大幅UP"
+    },
+    {
+      "id": "musyokutensei",
+      "name": "L 無職転生 ~異世界行ったら本気だす~",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "musyokutensei/musyokutensei.json",
+      "tags": ["AT", "無職転生", "スマスロ", "Phase3", "2025年新台"],
+      "description": "AT初当り確率に大きな設定差、ダブル・オールヒロイン役でAT濃厚"
+    },
+    {
+      "id": "starhanahana",
+      "name": "スターハナハナ-30",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "starhanahana/starhanahana.json",
+      "tags": ["Aタイプ", "ハナハナ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "REG確率とBIG中スイカ確率に設定差、設定5・6は約1BIGに1回スイカ成立"
+    },
+    {
+      "id": "okidoki-duo-encore",
+      "name": "スマスロ 沖ドキ!DUO アンコール",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "okidoki/okidoki-duo-encore.json",
+      "tags": ["AT", "沖ドキ", "スマスロ", "Phase3", "2025年新台"],
+      "description": "角チェリー確率に設定差、ボーナステンパイ音で天国以上濃厚"
+    },
+    {
+      "id": "karakuri-circus",
+      "name": "スマスロ からくりサーカス",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "karakuri/karakuri-circus.json",
+      "tags": ["AT", "からくり", "スマスロ", "Phase3", "2024年新台"],
+      "description": "通常時幕間チャンス当選率に設定1と6で約3倍の差、フランシーヌ終了画面で設定6濃厚"
+    },
+    {
+      "id": "kabaneri-unato",
+      "name": "スマスロ 甲鉄城のカバネリ 海門決戦",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kabaneri/kabaneri-unato.json",
+      "tags": ["AT", "カバネリ", "スマスロ", "Phase3", "2026年新台"],
+      "description": "AT初当り確率とボーナス初当り確率に設定差、エピボ比率約50%でST突入濃厚"
     }
   ]
 }

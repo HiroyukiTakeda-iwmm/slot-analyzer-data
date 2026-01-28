@@ -1,0 +1,179 @@
+{
+  "name": "Lパチスロ ありふれた職業で世界最強",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.00398,
+        "2": 0.00415,
+        "3": 0.00435,
+        "4": 0.00455,
+        "5": 0.00476,
+        "6": 0.0051
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 1/251、設定6: 1/196"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "chara_noint_kaori",
+      "name": "キャラ紹介3人目ノイント香織",
+      "description": "ミュウボーナス中のキャラ紹介で3人目がノイント香織",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "silver_hajime",
+      "name": "銀枠のハジメ",
+      "description": "エンディング中のキャライラスト",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "gold_yue",
+      "name": "金枠のユエ",
+      "description": "エンディング中のキャライラスト",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "rainbow_myu",
+      "name": "虹枠のミュウ",
+      "description": "エンディング中のキャライラスト",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "myu_bonus_at",
+      "name": "ミュウボーナス開始時AT当選",
+      "description": "ミュウボーナス開始時のAT当選率に設定差",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.17,
+        "3": 0.19,
+        "4": 0.22,
+        "5": 0.25,
+        "6": 0.30
+      },
+      "color": "#FF9800",
+      "displayOrder": 1
+    },
+    {
+      "id": "upper_at_rate",
+      "name": "上位AT当選率",
+      "description": "上位AT「神大迷宮RUSH」の当選率",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.06,
+        "3": 0.07,
+        "4": 0.08,
+        "5": 0.09,
+        "6": 0.11
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    },
+    {
+      "id": "tengoku_mode",
+      "name": "天国モード移行率",
+      "description": "AT終了後の天国モード移行率。上位AT終了後は特に大きい",
+      "probabilities": {
+        "1": 0.10,
+        "2": 0.12,
+        "3": 0.14,
+        "4": 0.18,
+        "5": 0.22,
+        "6": 0.28
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "hajime_kaori_aiko",
+      "name": "ハジメ→香織→愛子",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "yue_shia_tio",
+      "name": "ユエ→シア→ティオ",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "kouki_shizuku_sakagami",
+      "name": "光輝→雫→坂上",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）",
+      "color": "#FFC107"
+    },
+    {
+      "id": "freed_mihail_cattleya",
+      "name": "フリード→ミハイル→カトレア",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
+}

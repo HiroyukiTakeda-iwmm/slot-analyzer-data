@@ -1,0 +1,137 @@
+{
+  "name": "スマスロ からくりサーカス",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チャンス役合算",
+      "probabilities": {
+        "1": 0.0357,
+        "2": 0.0357,
+        "3": 0.0357,
+        "4": 0.0357,
+        "5": 0.0357,
+        "6": 0.0357
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "全設定共通: 約1/28"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "francine",
+      "name": "フランシーヌ終了画面",
+      "description": "AT終了画面",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "masaru_narumi_shirogane",
+      "name": "勝+鳴海+しろがね終了画面",
+      "description": "AT終了画面",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "makuma_chance",
+      "name": "通常時幕間チャンス当選率",
+      "description": "設定1と6で約3倍の差",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.012,
+        "3": 0.015,
+        "4": 0.018,
+        "5": 0.023,
+        "6": 0.03
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_rate",
+      "name": "AT初当り確率",
+      "description": "大きな設定差あり",
+      "probabilities": {
+        "1": 0.0028,
+        "2": 0.003,
+        "3": 0.0033,
+        "4": 0.0036,
+        "5": 0.004,
+        "6": 0.0045
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_goukei",
+      "name": "CZ合算確率",
+      "description": "機械仕掛けの神＋幕間チャンス合算",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.0043,
+        "3": 0.0047,
+        "4": 0.0051,
+        "5": 0.0056,
+        "6": 0.0062
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "narumi_stage",
+      "name": "鳴海ステージ開始",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "masaru_stage",
+      "name": "勝ステージ開始",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "same_stage",
+      "name": "同一ステージ継続",
+      "type": "other",
+      "hint": "高設定示唆",
+      "color": "#FFC107"
+    }
+  ],
+  "effectCounts": [
+    {
+      "id": "lamp_blue",
+      "name": "エンディング中ランプ青",
+      "hint": "基本パターン",
+      "color": "#2196F3"
+    },
+    {
+      "id": "lamp_green",
+      "name": "エンディング中ランプ緑",
+      "hint": "設定示唆",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "lamp_red",
+      "name": "エンディング中ランプ赤",
+      "hint": "高設定示唆",
+      "color": "#FF5722"
+    },
+    {
+      "id": "lamp_rainbow",
+      "name": "エンディング中ランプ虹",
+      "hint": "高設定濃厚",
+      "color": "#E91E63"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

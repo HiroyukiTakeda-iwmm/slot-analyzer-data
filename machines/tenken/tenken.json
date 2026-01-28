@@ -1,0 +1,97 @@
+{
+  "name": "パチスロ 転生したら剣でした",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱スイカ",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0095,
+        "3": 0.0099,
+        "4": 0.0103,
+        "5": 0.0107,
+        "6": 0.0112
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "弱スイカからのボーナス当選率に大きな設定差"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.0083,
+        "2": 0.0087,
+        "3": 0.0091,
+        "4": 0.0095,
+        "5": 0.0099,
+        "6": 0.0104
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#9C27B0",
+      "description": "弱チャンス目成立時のボーナス当選率に設定差"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "red_title_fail",
+      "name": "赤タイトル討伐ミッション失敗",
+      "description": "失敗時は次回CZシナリオ10（オール金アイコン）濃厚",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FF5722"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "fran_oyasumi_at",
+      "name": "フランおやすみ中AT当選率",
+      "description": "突入時のAT抽選。高設定ほど優遇",
+      "probabilities": {
+        "1": 0.10,
+        "2": 0.13,
+        "3": 0.16,
+        "4": 0.20,
+        "5": 0.25,
+        "6": 0.32
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "demon_battle_at",
+      "name": "デーモンバトル（青・黄アイコン）AT当選率",
+      "description": "10個未満撃破時のAT抽選に設定差",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.07,
+        "3": 0.09,
+        "4": 0.12,
+        "5": 0.16,
+        "6": 0.22
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "setting_hint",
+      "name": "設定示唆画面",
+      "type": "at_end",
+      "hint": "設定示唆",
+      "color": "#FFC107"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

@@ -1,0 +1,154 @@
+{
+  "name": "スターハナハナ-30",
+  "type": "A-type",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0127,
+        "3": 0.0129,
+        "4": 0.0131,
+        "5": 0.0133,
+        "6": 0.0136
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "スイカ出現率に設定差あり"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0095
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定6でチェリー+ボーナス同時当選が優遇"
+    },
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.00345,
+        "2": 0.00357,
+        "3": 0.00370,
+        "4": 0.00385,
+        "5": 0.00400,
+        "6": 0.00417
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "BIG確率"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.00286,
+        "2": 0.00303,
+        "3": 0.00323,
+        "4": 0.00345,
+        "5": 0.00364,
+        "6": 0.00377
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "REG確率に大きめの設定差"
+    },
+    {
+      "name": "BIG中スイカ",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.18,
+        "3": 0.22,
+        "4": 0.27,
+        "5": 0.85,
+        "6": 0.90
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#388E3C",
+      "description": "設定5・6は約1BIGに1回成立"
+    }
+  ],
+  "confirmationEvents": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_goukei",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/159、設定6: 1/114",
+      "probabilities": {
+        "1": 0.00629,
+        "2": 0.0066,
+        "3": 0.00693,
+        "4": 0.0073,
+        "5": 0.00764,
+        "6": 0.00794
+      },
+      "color": "#9C27B0",
+      "displayOrder": 1
+    },
+    {
+      "id": "retro_sound",
+      "name": "レトロサウンド発生確率",
+      "description": "BIG中BGMがレトロサウンドに変化。高設定ほど発生しやすい",
+      "probabilities": {
+        "1": 0.02,
+        "2": 0.03,
+        "3": 0.05,
+        "4": 0.08,
+        "5": 0.12,
+        "6": 0.18
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "feather_blue",
+      "name": "フェザーランプ青",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "feather_green",
+      "name": "フェザーランプ緑",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "feather_red",
+      "name": "フェザーランプ赤",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆",
+      "color": "#FF5722"
+    },
+    {
+      "id": "feather_rainbow",
+      "name": "フェザーランプ虹",
+      "type": "bonus_end",
+      "hint": "高設定濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "side_lamp_rainbow",
+      "name": "REG中サイドランプ虹",
+      "type": "bonus_end",
+      "hint": "設定示唆",
+      "color": "#E91E63"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、パチガブ"
+}

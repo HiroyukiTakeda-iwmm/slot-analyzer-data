@@ -1,0 +1,136 @@
+{
+  "name": "スマスロ シャーマンキング",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベルA",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0095,
+        "3": 0.0099,
+        "4": 0.0105,
+        "5": 0.0111,
+        "6": 0.0118
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFCA28",
+      "description": "設定1: 約1/110、設定6: 約1/85。設定判別の要"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01045,
+        "2": 0.01045,
+        "3": 0.01045,
+        "4": 0.01045,
+        "5": 0.01045,
+        "6": 0.01045
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/95.7"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00305,
+        "2": 0.00305,
+        "3": 0.00305,
+        "4": 0.00305,
+        "5": 0.00305,
+        "6": 0.00305
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#C2185B",
+      "description": "全設定共通: 約1/327.7"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0083,
+        "2": 0.0083,
+        "3": 0.0083,
+        "4": 0.0083,
+        "5": 0.0083,
+        "6": 0.0083
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "全設定共通"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "os_at_direct",
+      "name": "OS揃いからAT直撃",
+      "description": "OS揃い時のAT直撃当選。設定4以上で期待度大幅アップ",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "episode_bonus",
+      "name": "エピソードボーナス当選率",
+      "description": "初当たり時のエピソードボーナス当選率",
+      "probabilities": {
+        "1": 0.08,
+        "2": 0.10,
+        "3": 0.12,
+        "4": 0.15,
+        "5": 0.18,
+        "6": 0.22
+      },
+      "color": "#9C27B0",
+      "displayOrder": 1
+    },
+    {
+      "id": "high_koukaku",
+      "name": "弱レア役からのボーナス高確移行",
+      "description": "弱チェリー・スイカ成立時のボーナス高確移行率",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.17,
+        "3": 0.19,
+        "4": 0.22,
+        "5": 0.25,
+        "6": 0.30
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "基本パターン",
+      "type": "at_end",
+      "hint": "基本画面"
+    },
+    {
+      "id": "multi_chara",
+      "name": "複数キャラ画面",
+      "type": "at_end",
+      "hint": "設定示唆",
+      "color": "#FFC107"
+    },
+    {
+      "id": "hao_only",
+      "name": "ハオのみ画面",
+      "type": "at_end",
+      "hint": "高設定示唆",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
+}

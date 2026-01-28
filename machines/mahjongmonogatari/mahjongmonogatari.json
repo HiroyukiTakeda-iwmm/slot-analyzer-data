@@ -1,0 +1,141 @@
+{
+  "name": "L麻雀物語",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "小Vベル",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0125,
+        "3": 0.0125,
+        "4": 0.0125,
+        "5": 0.0125,
+        "6": 0.0125
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFCA28",
+      "description": "ピンズカウンタに影響"
+    },
+    {
+      "name": "小山ベル",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0125,
+        "3": 0.0125,
+        "4": 0.0125,
+        "5": 0.0125,
+        "6": 0.0125
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "ピンズカウンタに影響"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.005,
+        "2": 0.0052,
+        "3": 0.0055,
+        "4": 0.0058,
+        "5": 0.0061,
+        "6": 0.0065
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#C2185B",
+      "description": "高設定ほど出現率UP"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.0033,
+        "2": 0.0035,
+        "3": 0.0038,
+        "4": 0.0041,
+        "5": 0.0045,
+        "6": 0.005
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "AT初当たり確率に大きな設定差"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "haruruna_push",
+      "name": "ハルルナPUSH",
+      "description": "ラストジャッジ中等に出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "mashirock_7soroe",
+      "name": "マシロック中7揃い確率",
+      "description": "通常時のマシロック中7揃い確率に設定差",
+      "probabilities": {
+        "1": 0.03,
+        "2": 0.035,
+        "3": 0.04,
+        "4": 0.05,
+        "5": 0.06,
+        "6": 0.08
+      },
+      "color": "#E91E63",
+      "displayOrder": 1
+    },
+    {
+      "id": "koutei_rate",
+      "name": "煌帝出現率",
+      "description": "AT中の対戦相手「煌帝」出現率",
+      "probabilities": {
+        "1": 0.02,
+        "2": 0.025,
+        "3": 0.03,
+        "4": 0.04,
+        "5": 0.05,
+        "6": 0.07
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "g44",
+      "name": "上乗せ44G",
+      "type": "other",
+      "hint": "設定示唆（偶数濃厚）",
+      "color": "#FFC107"
+    },
+    {
+      "id": "g55",
+      "name": "上乗せ55G",
+      "type": "other",
+      "hint": "設定示唆（設定5濃厚）",
+      "color": "#FF9800"
+    },
+    {
+      "id": "g66",
+      "name": "上乗せ66G",
+      "type": "other",
+      "hint": "設定示唆（設定6濃厚）",
+      "color": "#FF5722"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

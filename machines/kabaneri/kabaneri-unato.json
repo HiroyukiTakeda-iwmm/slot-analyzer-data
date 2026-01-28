@@ -1,0 +1,118 @@
+{
+  "name": "スマスロ 甲鉄城のカバネリ 海門決戦",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "カバネチャンス目",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#424242",
+      "description": "全設定共通"
+    },
+    {
+      "name": "無名チャンス目",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通"
+    },
+    {
+      "name": "生駒チャンス目",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "全設定共通"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.00237,
+        "2": 0.00246,
+        "3": 0.00251,
+        "4": 0.0028,
+        "5": 0.00301,
+        "6": 0.00314
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/422、設定6: 1/318"
+    },
+    {
+      "name": "ボーナス初当り",
+      "probabilities": {
+        "1": 0.00393,
+        "2": 0.00413,
+        "3": 0.00418,
+        "4": 0.00467,
+        "5": 0.00492,
+        "6": 0.00512
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/254、設定6: 1/195"
+    }
+  ],
+  "confirmationEvents": [],
+  "trialSuccessRates": [
+    {
+      "id": "episode_bonus_rate",
+      "name": "エピソードボーナス比率",
+      "description": "エピボ比率約50%。ST突入濃厚",
+      "probabilities": {
+        "1": 0.50,
+        "2": 0.50,
+        "3": 0.50,
+        "4": 0.50,
+        "5": 0.50,
+        "6": 0.50
+      },
+      "color": "#E91E63",
+      "displayOrder": 1
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "setting_hint",
+      "name": "設定示唆画面",
+      "type": "at_end",
+      "hint": "設定示唆",
+      "color": "#FFC107"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}

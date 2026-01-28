@@ -1,0 +1,150 @@
+{
+  "name": "L 無職転生 ~異世界行ったら本気だす~",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ロキシー（青ヒロイン役）",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "全設定共通。目押し不要"
+    },
+    {
+      "name": "シルフィエット（緑ヒロイン役）",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通。目押し不要"
+    },
+    {
+      "name": "エリス（赤ヒロイン役）",
+      "probabilities": {
+        "1": 0.0091,
+        "2": 0.0091,
+        "3": 0.0091,
+        "4": 0.0091,
+        "5": 0.0091,
+        "6": 0.0091
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通。目押し不要"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.0028,
+        "2": 0.003,
+        "3": 0.0032,
+        "4": 0.0035,
+        "5": 0.0038,
+        "6": 0.0042
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "設定5以上は概ね1/300が基準"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "double_heroine",
+      "name": "ダブルヒロイン役",
+      "description": "ヒロイン役（2人）出現でAT濃厚",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    },
+    {
+      "id": "all_heroine",
+      "name": "オールヒロイン役",
+      "description": "全ヒロイン役出現でAT濃厚",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#E91E63"
+    },
+    {
+      "id": "episode_bonus",
+      "name": "エピソードボーナス突入",
+      "description": "突入時点でAT濃厚",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#9C27B0"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス確率",
+      "description": "設定5以上は概ね1/150が基準",
+      "probabilities": {
+        "1": 0.005,
+        "2": 0.0055,
+        "3": 0.006,
+        "4": 0.0065,
+        "5": 0.007,
+        "6": 0.0078
+      },
+      "color": "#FF9800",
+      "displayOrder": 1
+    },
+    {
+      "id": "tp2_rate",
+      "name": "ターニングポイント2当選率",
+      "description": "設定1と6で約1.7倍の差",
+      "probabilities": {
+        "1": 0.06,
+        "2": 0.07,
+        "3": 0.075,
+        "4": 0.082,
+        "5": 0.09,
+        "6": 0.10
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "default",
+      "name": "通常画面",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "id": "frame_setting",
+      "name": "枠付き画面",
+      "type": "at_end",
+      "hint": "設定示唆",
+      "color": "#FFC107"
+    },
+    {
+      "id": "red_round",
+      "name": "赤背景ラウンド開始画面",
+      "type": "other",
+      "hint": "Vストック濃厚＋特定設定示唆",
+      "color": "#FF5722"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
+}
