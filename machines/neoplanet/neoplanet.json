@@ -1,0 +1,245 @@
+{
+  "name": "スマスロネオプラネット",
+  "type": "A-type",
+  "roles": [
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.00357,
+        "2": 0.00366,
+        "3": 0.0038,
+        "4": 0.00404,
+        "5": 0.00431,
+        "6": 0.00475
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/280.4、設定6: 1/210.5"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.00168,
+        "2": 0.00171,
+        "3": 0.00178,
+        "4": 0.00181,
+        "5": 0.0019,
+        "6": 0.00198
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/596.7、設定6: 1/504.2"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.00524,
+        "2": 0.00537,
+        "3": 0.00558,
+        "4": 0.00585,
+        "5": 0.00621,
+        "6": 0.00673
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/190.8、設定6: 1/148.5"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.13699,
+        "2": 0.13699,
+        "3": 0.13699,
+        "4": 0.13699,
+        "5": 0.13699,
+        "6": 0.13699
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.06579,
+        "2": 0.06579,
+        "3": 0.06579,
+        "4": 0.06579,
+        "5": 0.06579,
+        "6": 0.06579
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/15.2"
+    },
+    {
+      "name": "角チェリー",
+      "probabilities": {
+        "1": 0.01026,
+        "2": 0.01026,
+        "3": 0.01026,
+        "4": 0.01026,
+        "5": 0.01026,
+        "6": 0.01026
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#F44336",
+      "description": "全設定共通: 1/97.5"
+    },
+    {
+      "name": "オレンジ",
+      "probabilities": {
+        "1": 0.00781,
+        "2": 0.00781,
+        "3": 0.00781,
+        "4": 0.00781,
+        "5": 0.00781,
+        "6": 0.00781
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "中段チェリー",
+      "probabilities": {
+        "1": 0.00256,
+        "2": 0.00256,
+        "3": 0.00256,
+        "4": 0.00256,
+        "5": 0.00256,
+        "6": 0.00256
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/390.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "ケロットトロフィー銅",
+      "name": "ケロットトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "ケロットトロフィー金",
+      "name": "ケロットトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "ケロットトロフィーケロット柄",
+      "name": "ケロットトロフィーケロット柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "ケロットトロフィー虹",
+      "name": "ケロットトロフィー虹",
+      "description": "設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "456枚",
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
+        },
+        {
+          "name": "666枚",
+          "minSetting": 6,
+          "description": "設定6確定"
+        },
+        {
+          "name": "803枚",
+          "setting": "hint",
+          "description": "設定示唆"
+        }
+      ]
+    },
+    {
+      "name": "星座（101G/301G到達時タッチ）",
+      "patterns": [
+        {
+          "name": "リノ座",
+          "setting": "hint",
+          "description": "設定示唆"
+        },
+        {
+          "name": "ケロット＆ケロルン座",
+          "setting": "hint",
+          "description": "設定示唆"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "モードF高確移行率",
+      "description": "設定1: 1/1260.3、設定6: 1/219.2。非常に大きな設定差",
+      "id": "モードf高確移行率",
+      "probabilities": {
+        "1": 0.00079,
+        "2": 0.0012,
+        "3": 0.0018,
+        "4": 0.0028,
+        "5": 0.0038,
+        "6": 0.00456
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

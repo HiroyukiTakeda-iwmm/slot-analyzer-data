@@ -1,0 +1,138 @@
+{
+  "name": "スマスロいざ！番長",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "初当たり",
+      "probabilities": {
+        "1": 0.00258,
+        "2": 0.00271,
+        "3": 0.00266,
+        "4": 0.00301,
+        "5": 0.00284,
+        "6": 0.0032
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/386.9、設定6: 1/312.1。偶数設定は初当り軽め"
+    },
+    {
+      "name": "共通ベルA",
+      "probabilities": {
+        "1": 0.01335,
+        "2": 0.014,
+        "3": 0.0145,
+        "4": 0.0155,
+        "5": 0.0165,
+        "6": 0.017
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/74.9。上段揃いが共通ベルA"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01251,
+        "2": 0.0128,
+        "3": 0.013,
+        "4": 0.0132,
+        "5": 0.0135,
+        "6": 0.0137
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "設定1: 1/79.9"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "at終了画面-小太郎日記",
+      "name": "AT終了画面 小太郎日記",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "at終了画面-秘湯",
+      "name": "AT終了画面 秘湯",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "AT終了画面",
+      "patterns": [
+        {
+          "name": "朱雀",
+          "setting": "526",
+          "description": "設定5・2・6（こじろう）濃厚"
+        },
+        {
+          "name": "青龍",
+          "setting": "634",
+          "description": "設定6・3・4（むさし）濃厚"
+        },
+        {
+          "name": "刺客襲来",
+          "setting": "234+",
+          "description": "設定2 < 設定3 < 設定4以上の順で出現率上昇"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "青7番長ボーナス直撃率",
+      "description": "設定1: 1/220772、設定6: 1/22561。1回でも当選で高設定期待大",
+      "id": "青7番長ボーナス直撃率",
+      "probabilities": {
+        "1": 0.0000045,
+        "2": 0.00001,
+        "3": 0.000015,
+        "4": 0.000025,
+        "5": 0.000035,
+        "6": 0.0000443
+      }
+    },
+    {
+      "name": "初回AT時将軍マス3マス以内出現率",
+      "description": "設定1: 15%、設定5-6: 50%",
+      "id": "初回at時将軍マス3マス以内出現率",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.2,
+        "3": 0.3,
+        "4": 0.4,
+        "5": 0.5,
+        "6": 0.5
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

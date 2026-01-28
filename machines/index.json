@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-01-28T00:00:00Z",
+  "updatedAt": "2026-01-29T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -41,6 +41,206 @@
       "file": "hanabi/shin-hanabi.json",
       "tags": ["ハナビ", "A+RT", "花火チャレンジ", "ゾーン", "4段階設定"],
       "description": "花火チャレンジでの設定差あり、設定1,2,5,6の4段階"
+    },
+    {
+      "id": "hokuto-tensei2",
+      "name": "スマスロ北斗の拳 転生の章2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hokuto/hokuto-tenseino-shou2.json",
+      "tags": ["AT", "北斗", "スマスロ", "トロフィー", "2025年新台"],
+      "description": "天破の刻突入率と弱レア役からの高確移行率に大きな設定差"
+    },
+    {
+      "id": "tekken6",
+      "name": "スマスロ鉄拳6",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tekken/tekken6.json",
+      "tags": ["AT", "鉄拳", "スマスロ", "2025年新台"],
+      "description": "小役確率に設定差なし、AT直撃確率に大きな設定差"
+    },
+    {
+      "id": "new-king-hanahana-v",
+      "name": "ニューキングハナハナV",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hanahana/new-king-hanahana-v.json",
+      "tags": ["Aタイプ", "ハナハナ", "5段階設定", "2025年新台"],
+      "description": "V含む5段階設定、BIG中スイカ確率に設定差"
+    },
+    {
+      "id": "rezero-season2",
+      "name": "スマスロ Re:ゼロから始める異世界生活 season2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "rezero/rezero-season2.json",
+      "tags": ["AT", "リゼロ", "スマスロ", "2024年新台"],
+      "description": "死に戻り（引き戻し）発生率に設定差、小役確率は全設定共通"
+    },
+    {
+      "id": "bakemonogatari",
+      "name": "スマスロ化物語",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "monogatari/bakemonogatari.json",
+      "tags": ["AT", "物語シリーズ", "スマスロ", "トロフィー", "2025年新台"],
+      "description": "スイカ確率と弱チェリーAT直撃率に設定差"
+    },
+    {
+      "id": "tokyo-revengers",
+      "name": "スマスロ東京リベンジャーズ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tokyorevengers/tokyo-revengers.json",
+      "tags": ["AT", "東リベ", "スマスロ", "トロフィー", "2024年新台"],
+      "description": "共通ベルと稀咲陰謀当選率に大きな設定差"
+    },
+    {
+      "id": "shin-onimusha3",
+      "name": "スマスロ新鬼武者3",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "onimusha/shin-onimusha3.json",
+      "tags": ["AT", "鬼武者", "スマスロ", "ボイス示唆", "2024年新台"],
+      "description": "エンディング中ボイスで設定示唆、弱チャンス目で真・鬼斬チャージ当選時は設定4以上濃厚"
+    },
+    {
+      "id": "kaiji-kyouen",
+      "name": "回胴黙示録カイジ 狂宴",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kaiji/kaiji-kyouen.json",
+      "tags": ["AT", "カイジ", "スマスロ", "トロフィー", "2025年新台"],
+      "description": "スイカ・弱チャンス目・弱チェリー・強チェリーに設定差"
+    },
+    {
+      "id": "biohazard5",
+      "name": "スマスロバイオハザード5",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "biohazard/biohazard5.json",
+      "tags": ["AT", "バイオ", "スマスロ", "エンタトロフィー", "2025年新台"],
+      "description": "小役確率に設定差なし、CZ確率とインフェクション突入率に設定差"
+    },
+    {
+      "id": "gundam-seed",
+      "name": "Lパチスロ 機動戦士ガンダムSEED",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "gundam/gundam-seed.json",
+      "tags": ["AT", "ガンダム", "スマスロ", "2025年新台"],
+      "description": "小役確率は全設定共通、終了画面による豊富な設定示唆"
+    },
+    {
+      "id": "yoshimune",
+      "name": "スマスロ吉宗",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "yoshimune/yoshimune.json",
+      "tags": ["AT", "吉宗", "スマスロ", "花札示唆", "2025年新台"],
+      "description": "共通俵確率に設定差、花札による豊富な設定示唆"
+    },
+    {
+      "id": "guiltycrown2",
+      "name": "スマスロギルティクラウン2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "guiltycrown/guiltycrown2.json",
+      "tags": ["AT", "ギルクラ", "スマスロ", "2025年新台"],
+      "description": "弱スイカボーナス同時当選率に大きな設定差"
+    },
+    {
+      "id": "iza-bancho",
+      "name": "スマスロいざ！番長",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "bancho/iza-bancho.json",
+      "tags": ["AT", "番長", "スマスロ", "2025年新台"],
+      "description": "共通ベルAと青7BB直撃率に大きな設定差"
+    },
+    {
+      "id": "dmc5",
+      "name": "スマスロ デビル メイ クライ5 スタイリッシュトライブ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "dmc/dmc5.json",
+      "tags": ["AT", "DMC", "スマスロ", "エンタトロフィー", "2025年新台"],
+      "description": "謎ダンテCZ出現率に特大の設定差"
+    },
+    {
+      "id": "shin-eva",
+      "name": "Lパチスロ シン・エヴァンゲリオン",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "eva/shin-eva.json",
+      "tags": ["AT", "エヴァ", "スマスロ", "2025年新台"],
+      "description": "150G以内AT当選率に設定差、カヲル画面は設定6のみ"
+    },
+    {
+      "id": "goblinslayer2",
+      "name": "スマスロ ゴブリンスレイヤーII",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "goblinslayer/goblinslayer2.json",
+      "tags": ["AT", "ゴブスレ", "スマスロ", "2025年新台"],
+      "description": "共通ベル確率とリプ3連CZ当選率に特大の設定差"
+    },
+    {
+      "id": "striketheblood",
+      "name": "スマスロ ストライク・ザ・ブラッド",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "striketheblood/striketheblood.json",
+      "tags": ["AT", "ストブラ", "スマスロ", "エンタトロフィー", "2024年新台"],
+      "description": "小役確率に設定差なし、終了時ランプ色で設定示唆"
+    },
+    {
+      "id": "watakon",
+      "name": "Lわたしの幸せな結婚",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "watakon/watakon.json",
+      "tags": ["AT", "わた婚", "スマスロ", "アリストロフィー", "2025年新台"],
+      "description": "4スルー天井選択率に設定差、アリストロフィーで設定示唆"
+    },
+    {
+      "id": "babel",
+      "name": "スマスロバベル",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "babel/babel.json",
+      "tags": ["Aタイプ", "バベル", "スマスロ", "2025年新台"],
+      "description": "RB確率とボーナス合算に明瞭な設定差"
+    },
+    {
+      "id": "neoplanet",
+      "name": "スマスロネオプラネット",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "neoplanet/neoplanet.json",
+      "tags": ["Aタイプ", "ネオプラ", "スマスロ", "ケロットトロフィー", "2025年新台"],
+      "description": "モードF高確移行率に非常に大きな設定差"
     }
   ]
 }

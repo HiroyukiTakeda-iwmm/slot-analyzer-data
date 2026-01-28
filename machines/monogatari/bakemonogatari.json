@@ -1,0 +1,185 @@
+{
+  "name": "スマスロ化物語",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00377,
+        "2": 0.00384,
+        "3": 0.00397,
+        "4": 0.00419,
+        "5": 0.00433,
+        "6": 0.00455
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/265.1、設定6: 1/219.6"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01144,
+        "2": 0.01166,
+        "3": 0.01178,
+        "4": 0.01255,
+        "5": 0.01337,
+        "6": 0.01431
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/87.4、設定6: 1/69.9"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "サミートロフィー銅",
+      "name": "サミートロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "サミートロフィー銀",
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "サミートロフィー金",
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "ボーナス確定画面忍赤7成立",
+      "name": "ボーナス確定画面忍＋赤7成立",
+      "description": "忍出現時に赤7成立で設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "AT終了画面",
+      "patterns": [
+        {
+          "name": "ヒロイン集合（初代パネル）",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        },
+        {
+          "name": "I LOVE YOU",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    },
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "174枚（いちなし）",
+          "minSetting": 2,
+          "description": "設定2以上濃厚"
+        },
+        {
+          "name": "543枚",
+          "minSetting": 3,
+          "description": "設定3以上濃厚"
+        },
+        {
+          "name": "331枚（サミー）",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "弱チェリーAT直撃率",
+      "description": "設定1: 0.4%、設定6: 3.8%。1度でも確認できれば高設定期待",
+      "id": "弱チェリーat直撃率",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.007,
+        "3": 0.012,
+        "4": 0.02,
+        "5": 0.028,
+        "6": 0.038
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

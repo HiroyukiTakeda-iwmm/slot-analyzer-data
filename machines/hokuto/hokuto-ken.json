@@ -10,7 +10,7 @@
         "3": 0.008695652,
         "4": 0.008928571,
         "5": 0.009259259,
-        "6": 0.009523810
+        "6": 0.00952381
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -19,12 +19,12 @@
     {
       "name": "強スイカ",
       "probabilities": {
-        "1": 0.003125000,
-        "2": 0.003125000,
-        "3": 0.003125000,
-        "4": 0.003125000,
-        "5": 0.003125000,
-        "6": 0.003125000
+        "1": 0.003125,
+        "2": 0.003125,
+        "3": 0.003125,
+        "4": 0.003125,
+        "5": 0.003125,
+        "6": 0.003125
       },
       "hasSettingDiff": false,
       "displayOrder": 2,
@@ -47,12 +47,12 @@
     {
       "name": "中段チェリー",
       "probabilities": {
-        "1": 0.000305810,
-        "2": 0.000305810,
-        "3": 0.000305810,
-        "4": 0.000305810,
-        "5": 0.000305810,
-        "6": 0.000305810
+        "1": 0.00030581,
+        "2": 0.00030581,
+        "3": 0.00030581,
+        "4": 0.00030581,
+        "5": 0.00030581,
+        "6": 0.00030581
       },
       "hasSettingDiff": false,
       "displayOrder": 4,
@@ -63,23 +63,86 @@
     {
       "name": "金トロフィー",
       "description": "AT終了時に出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
+      "color": "#FFD700",
+      "id": "金トロフィー"
     },
     {
       "name": "キリントロフィー",
       "description": "AT終了時に出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#FFC107"
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#FFC107",
+      "id": "キリントロフィー"
     },
     {
       "name": "レインボートロフィー",
       "description": "AT終了時に出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF5722"
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "color": "#FF5722",
+      "id": "レインボートロフィー"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "weak_suika_cz",
+      "name": "弱スイカからのCZ当選",
+      "description": "通常時に弱スイカからCZに当選する確率",
+      "triggerName": "弱スイカ",
+      "targetName": "CZ当選",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.06,
+        "3": 0.07,
+        "4": 0.08,
+        "5": 0.1,
+        "6": 0.12
+      },
+      "color": "#4CAF50",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_hikimondoshi",
+      "name": "AT引き戻し",
+      "description": "AT終了後の引き戻し率",
+      "triggerName": "AT終了",
+      "targetName": "引き戻し成功",
+      "probabilities": {
+        "1": 0.1,
+        "2": 0.12,
+        "3": 0.14,
+        "4": 0.16,
+        "5": 0.18,
+        "6": 0.2
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
     }
   ],
   "author": "コミュニティ",

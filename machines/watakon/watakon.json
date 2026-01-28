@@ -1,0 +1,179 @@
+{
+  "name": "Lわたしの幸せな結婚",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00168,
+        "2": 0.00171,
+        "3": 0.00179,
+        "4": 0.00202,
+        "5": 0.00206,
+        "6": 0.00209
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/594.3、設定6: 1/479.4"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.13699,
+        "2": 0.13699,
+        "3": 0.13699,
+        "4": 0.13699,
+        "5": 0.13699,
+        "6": 0.13699
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01431,
+        "2": 0.01431,
+        "3": 0.01431,
+        "4": 0.01431,
+        "5": 0.01431,
+        "6": 0.01431
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通: 1/69.9"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.01,
+        "3": 0.01,
+        "4": 0.01,
+        "5": 0.01,
+        "6": 0.01
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00201,
+        "2": 0.00201,
+        "3": 0.00201,
+        "4": 0.00201,
+        "5": 0.00201,
+        "6": 0.00201
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/496.5"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "アリストロフィー銅",
+      "name": "アリストロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "アリストロフィー銀",
+      "name": "アリストロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "アリストロフィー金",
+      "name": "アリストロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "アリストロフィークローバー柄",
+      "name": "アリストロフィークローバー柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "アリストロフィー虹",
+      "name": "アリストロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "4スルー（5回目ボーナス）選択率",
+      "description": "高設定ほど4スルー天井が選択されやすい。1度でも確認で高設定期待大",
+      "id": "4スルー5回目ボーナス選択率",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.08,
+        "3": 0.12,
+        "4": 0.18,
+        "5": 0.25,
+        "6": 0.3
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

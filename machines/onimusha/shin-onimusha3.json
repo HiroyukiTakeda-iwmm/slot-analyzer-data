@@ -1,0 +1,201 @@
+{
+  "name": "スマスロ新鬼武者3",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00263,
+        "2": 0.00268,
+        "3": 0.00283,
+        "4": 0.00326,
+        "5": 0.00336,
+        "6": 0.00341
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/379.7、設定6: 1/293.1"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00978,
+        "2": 0.00978,
+        "3": 0.00978,
+        "4": 0.00978,
+        "5": 0.00978,
+        "6": 0.00978
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 1/102.2"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "at終了トロフィー銀",
+      "name": "AT終了トロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "at終了トロフィー金",
+      "name": "AT終了トロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "at終了トロフィー虹",
+      "name": "AT終了トロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "通常時弱チャンス目で真-鬼斬チャージ当選",
+      "name": "通常時弱チャンス目で真・鬼斬チャージ当選",
+      "description": "通常滞在時の弱チャンス目/押し順弱チャンス目で当選時は設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "256枚",
+          "minSetting": 2,
+          "description": "設定示唆"
+        },
+        {
+          "name": "456枚",
+          "minSetting": 4,
+          "description": "設定4以上示唆"
+        },
+        {
+          "name": "555枚",
+          "minSetting": 5,
+          "description": "設定5以上示唆"
+        },
+        {
+          "name": "666枚",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [
+    {
+      "name": "エンディング中ボイス（レア役時PUSHボタン）",
+      "patterns": [
+        {
+          "voice": "わりぃがさっさとかたづけさせてもらうぜ！（蒼鬼）",
+          "setting": "default"
+        },
+        {
+          "voice": "お前こそ真の鬼武者だ！（蒼鬼）",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        },
+        {
+          "voice": "お主の力見せてもらおう！（天海）",
+          "setting": "odd",
+          "description": "奇数設定示唆強"
+        },
+        {
+          "voice": "主よ この者に御加護を！（ロベルト）",
+          "setting": "odd",
+          "description": "奇数設定示唆弱"
+        },
+        {
+          "voice": "ここが腕の見せ所だな！（茜）",
+          "setting": "even",
+          "description": "偶数設定示唆強"
+        },
+        {
+          "voice": "私…あなたと一緒に生きていく！（お初）",
+          "setting": "even",
+          "description": "偶数設定示唆弱"
+        },
+        {
+          "voice": "楽しんでるでござるか？（みの吉）",
+          "setting": "not2",
+          "description": "設定2否定"
+        },
+        {
+          "voice": "サポートは任せるでござる！（みの吉）",
+          "setting": "not3",
+          "description": "設定3否定"
+        },
+        {
+          "voice": "拙者も蒼鬼殿のような侍になるでござる！（みの吉）",
+          "setting": "not4",
+          "description": "設定4否定"
+        },
+        {
+          "voice": "あたいはここで見守ってるよ（阿倫）",
+          "minSetting": 2,
+          "description": "設定2以上濃厚"
+        },
+        {
+          "voice": "あんたの力信じるよ！（阿倫）",
+          "minSetting": 3,
+          "description": "設定3以上濃厚"
+        },
+        {
+          "voice": "鬼武者を超えた鬼武者だね！（阿倫）",
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
+        },
+        {
+          "voice": "にゃにゃにゃーん（エンタライオン）",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

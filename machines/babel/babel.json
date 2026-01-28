@@ -1,0 +1,174 @@
+{
+  "name": "スマスロバベル",
+  "type": "A-type",
+  "roles": [
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.00305,
+        "2": 0.00316,
+        "3": 0.00332,
+        "4": 0.00353,
+        "5": 0.00374,
+        "6": 0.00394
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/328.2、設定6: 1/254.0"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.00153,
+        "2": 0.00163,
+        "3": 0.00177,
+        "4": 0.002,
+        "5": 0.00219,
+        "6": 0.00237
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/655.6、設定6: 1/421.3"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.00457,
+        "2": 0.00479,
+        "3": 0.00509,
+        "4": 0.00554,
+        "5": 0.00593,
+        "6": 0.00631
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/218.7、設定6: 1/158.5"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.13699,
+        "2": 0.13699,
+        "3": 0.13699,
+        "4": 0.13699,
+        "5": 0.13699,
+        "6": 0.13699
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.1,
+        "2": 0.1,
+        "3": 0.1,
+        "4": 0.1,
+        "5": 0.1,
+        "6": 0.1
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/10.0"
+    },
+    {
+      "name": "サソリ",
+      "probabilities": {
+        "1": 0.00781,
+        "2": 0.00781,
+        "3": 0.00781,
+        "4": 0.00781,
+        "5": 0.00781,
+        "6": 0.00781
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01563,
+        "2": 0.01563,
+        "3": 0.01563,
+        "4": 0.01563,
+        "5": 0.01563,
+        "6": 0.01563
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#F44336",
+      "description": "全設定共通: 1/64.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00171,
+        "2": 0.00171,
+        "3": 0.00171,
+        "4": 0.00171,
+        "5": 0.00171,
+        "6": 0.00171
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/585.1"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "弱チェリーボーナス期待度",
+      "description": "設定1: 0.4%、設定6: 2.0%",
+      "id": "弱チェリーボーナス期待度",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.006,
+        "3": 0.009,
+        "4": 0.012,
+        "5": 0.016,
+        "6": 0.02
+      }
+    },
+    {
+      "name": "強チェリーボーナス期待度",
+      "description": "設定1: 20.3%、設定6: 28.9%",
+      "id": "強チェリーボーナス期待度",
+      "probabilities": {
+        "1": 0.203,
+        "2": 0.22,
+        "3": 0.24,
+        "4": 0.26,
+        "5": 0.275,
+        "6": 0.289
+      }
+    },
+    {
+      "name": "サソリ3・6回目当選率",
+      "description": "設定1: 12.5%、設定6: 18.8%",
+      "id": "サソリ3-6回目当選率",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.14,
+        "3": 0.155,
+        "4": 0.17,
+        "5": 0.18,
+        "6": 0.188
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

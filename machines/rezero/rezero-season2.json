@@ -1,0 +1,134 @@
+{
+  "name": "スマスロ Re:ゼロから始める異世界生活 season2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.0024,
+        "2": 0.00245,
+        "3": 0.00258,
+        "4": 0.00282,
+        "5": 0.003,
+        "6": 0.00327
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/417.2、設定6: 1/305.4"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0125,
+        "2": 0.0125,
+        "3": 0.0125,
+        "4": 0.0125,
+        "5": 0.0125,
+        "6": 0.0125
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/80.0"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00999,
+        "2": 0.00999,
+        "3": 0.00999,
+        "4": 0.00999,
+        "5": 0.00999,
+        "6": 0.00999
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通: 1/100.1"
+    },
+    {
+      "name": "チャンス目合算",
+      "probabilities": {
+        "1": 0.00391,
+        "2": 0.00391,
+        "3": 0.00391,
+        "4": 0.00391,
+        "5": 0.00391,
+        "6": 0.00391
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/256.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00122,
+        "2": 0.00122,
+        "3": 0.00122,
+        "4": 0.00122,
+        "5": 0.00122,
+        "6": 0.00122
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/819.2"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [
+    {
+      "name": "殲滅ラッシュ終了画面",
+      "patterns": [
+        {
+          "name": "通常パターン1",
+          "setting": "default"
+        },
+        {
+          "name": "通常パターン2",
+          "setting": "default"
+        },
+        {
+          "name": "通常パターン3",
+          "setting": "default"
+        },
+        {
+          "name": "設定示唆パターン1",
+          "setting": "high"
+        },
+        {
+          "name": "設定示唆パターン2",
+          "setting": "high"
+        },
+        {
+          "name": "設定示唆パターン3",
+          "setting": "6"
+        }
+      ],
+      "description": "6パターンの設定示唆画面あり"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "死に戻り（引き戻し）発生率",
+      "description": "設定1: 10.2%、設定6: 20.0%。AT終了後32G間で抽選",
+      "id": "死に戻り引き戻し発生率",
+      "probabilities": {
+        "1": 0.102,
+        "2": 0.12,
+        "3": 0.14,
+        "4": 0.16,
+        "5": 0.18,
+        "6": 0.2
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

@@ -1,0 +1,145 @@
+{
+  "name": "スマスロ東京リベンジャーズ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "初当たり",
+      "probabilities": {
+        "1": 0.00354,
+        "2": 0.00358,
+        "3": 0.00367,
+        "4": 0.00391,
+        "5": 0.00401,
+        "6": 0.00416
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/282.4、設定6: 1/240.1"
+    },
+    {
+      "name": "AT確率",
+      "probabilities": {
+        "1": 0.00207,
+        "2": 0.00211,
+        "3": 0.00219,
+        "4": 0.00242,
+        "5": 0.00254,
+        "6": 0.00268
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/482.2、設定6: 1/373.1"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.01007,
+        "2": 0.0103,
+        "3": 0.0106,
+        "4": 0.011,
+        "5": 0.012,
+        "6": 0.01297
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/99.3、設定6: 1/77.1。通常時のみカウント推奨"
+    },
+    {
+      "name": "中段チェリー",
+      "probabilities": {
+        "1": 0.000061,
+        "2": 0.000068,
+        "3": 0.000075,
+        "4": 0.000082,
+        "5": 0.000087,
+        "6": 0.0000916
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/10922.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "サミートロフィー金",
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "東卍チャンス/ラッシュ終了画面",
+      "patterns": [
+        {
+          "name": "金枠",
+          "minSetting": 4,
+          "description": "高設定濃厚（エンディング後は固定出現のため除外）"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "稀咲陰謀当選率",
+      "description": "設定1: 1/14520.4、設定6: 1/5841.0。通常滞在時の突入で設定4以上期待大",
+      "id": "稀咲陰謀当選率",
+      "probabilities": {
+        "1": 0.0000689,
+        "2": 0.0000825,
+        "3": 0.000101,
+        "4": 0.000152,
+        "5": 0.000155,
+        "6": 0.000171
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

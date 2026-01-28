@@ -1,0 +1,131 @@
+{
+  "name": "スマスロギルティクラウン2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00168,
+        "2": 0.00175,
+        "3": 0.00189,
+        "4": 0.00224,
+        "5": 0.00244,
+        "6": 0.00266
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/596.4、設定6: 1/375.5"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "水着ボーナス確定画面",
+      "name": "水着ボーナス確定画面",
+      "description": "設定2・3否定かつ高設定期待度高",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "bb終了画面-集涯",
+      "name": "BB終了画面 集＆涯",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "bb終了画面-いのり真名",
+      "name": "BB終了画面 いのり＆真名",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "BB終了画面",
+      "patterns": [
+        {
+          "name": "GC黒",
+          "setting": "25",
+          "description": "設定2・5で出やすい"
+        },
+        {
+          "name": "GC白",
+          "setting": "36",
+          "description": "設定3・6で出やすい"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "弱スイカボーナス同時当選率",
+      "description": "設定1: 2.0%、設定6: 4.2%。1度でも確認で高設定期待",
+      "id": "弱スイカボーナス同時当選率",
+      "probabilities": {
+        "1": 0.02,
+        "2": 0.023,
+        "3": 0.025,
+        "4": 0.027,
+        "5": 0.034,
+        "6": 0.042
+      }
+    },
+    {
+      "name": "強スイカボーナス同時当選率",
+      "description": "設定1: 30.0%、設定6: 36.1%",
+      "id": "強スイカボーナス同時当選率",
+      "probabilities": {
+        "1": 0.3,
+        "2": 0.306,
+        "3": 0.311,
+        "4": 0.325,
+        "5": 0.344,
+        "6": 0.361
+      }
+    },
+    {
+      "name": "四度目の黙示録ストック率",
+      "description": "設定1: 0.8%、設定6: 1.6%",
+      "id": "四度目の黙示録ストック率",
+      "probabilities": {
+        "1": 0.008,
+        "2": 0.01,
+        "3": 0.011,
+        "4": 0.013,
+        "5": 0.014,
+        "6": 0.016
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

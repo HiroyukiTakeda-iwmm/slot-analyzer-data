@@ -1,0 +1,215 @@
+{
+  "name": "Lパチスロ 機動戦士ガンダムSEED",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00217,
+        "2": 0.00224,
+        "3": 0.00243,
+        "4": 0.00274,
+        "5": 0.00281,
+        "6": 0.00314
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/460.1、設定6: 1/318.4"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.11111,
+        "2": 0.11111,
+        "3": 0.11111,
+        "4": 0.11111,
+        "5": 0.11111,
+        "6": 0.11111
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/9.0"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.02488,
+        "2": 0.02488,
+        "3": 0.02488,
+        "4": 0.02488,
+        "5": 0.02488,
+        "6": 0.02488
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/40.2"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.01529,
+        "2": 0.01529,
+        "3": 0.01529,
+        "4": 0.01529,
+        "5": 0.01529,
+        "6": 0.01529
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/65.4"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.00781,
+        "2": 0.00781,
+        "3": 0.00781,
+        "4": 0.00781,
+        "5": 0.00781,
+        "6": 0.00781
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00781,
+        "2": 0.00781,
+        "3": 0.00781,
+        "4": 0.00781,
+        "5": 0.00781,
+        "6": 0.00781
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#F44336",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": {
+        "1": 0.00195,
+        "2": 0.00195,
+        "3": 0.00195,
+        "4": 0.00195,
+        "5": 0.00195,
+        "6": 0.00195
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#8BC34A",
+      "description": "全設定共通: 1/512.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.000488,
+        "2": 0.000488,
+        "3": 0.000488,
+        "4": 0.000488,
+        "5": 0.000488,
+        "6": 0.000488
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/2048.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "終了画面金枠エンディング終了時",
+      "name": "終了画面金枠（エンディング終了時）",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "CZ/ST終了画面",
+      "patterns": [
+        {
+          "name": "紫枠",
+          "setting": "reset",
+          "description": "設定変更濃厚かつ高設定期待度アップ"
+        },
+        {
+          "name": "奇数設定示唆パターン",
+          "setting": "odd"
+        },
+        {
+          "name": "偶数設定示唆パターン",
+          "setting": "even"
+        },
+        {
+          "name": "高設定示唆（弱）",
+          "setting": "highWeak"
+        },
+        {
+          "name": "高設定示唆（強）",
+          "setting": "highStrong"
+        },
+        {
+          "name": "偶数設定濃厚",
+          "setting": "evenConfirm"
+        },
+        {
+          "name": "設定1否定",
+          "setting": "not1"
+        },
+        {
+          "name": "設定2否定",
+          "setting": "not2"
+        },
+        {
+          "name": "設定3否定かつ高設定示唆",
+          "setting": "not3High"
+        },
+        {
+          "name": "設定4以上濃厚",
+          "minSetting": 4
+        },
+        {
+          "name": "設定6濃厚",
+          "minSetting": 6
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "CZ確率",
+      "description": "設定1: 1/362.2、設定6: 1/266.9",
+      "id": "cz確率",
+      "probabilities": {
+        "1": 0.00276,
+        "2": 0.00295,
+        "3": 0.0032,
+        "4": 0.00345,
+        "5": 0.0036,
+        "6": 0.00375
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

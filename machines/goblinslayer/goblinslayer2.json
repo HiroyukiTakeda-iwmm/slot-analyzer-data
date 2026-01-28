@@ -1,0 +1,71 @@
+{
+  "name": "スマスロ ゴブリンスレイヤーII",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00185,
+        "2": 0.0019,
+        "3": 0.00197,
+        "4": 0.00221,
+        "5": 0.00239,
+        "6": 0.00249
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/541.6、設定6: 1/402.4"
+    },
+    {
+      "name": "CZ確率",
+      "probabilities": {
+        "1": 0.00418,
+        "2": 0.0044,
+        "3": 0.00465,
+        "4": 0.00495,
+        "5": 0.0052,
+        "6": 0.0055
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/239.3、設定6: 1/181.9"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "リプレイ3連CZ当選率",
+      "description": "高設定ほどリプ3連でCZ当選しやすい。4連はCZ濃厚、5連はAT濃厚",
+      "id": "リプレイ3連cz当選率",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.08,
+        "3": 0.12,
+        "4": 0.18,
+        "5": 0.25,
+        "6": 0.32
+      }
+    },
+    {
+      "name": "共通ベル確率",
+      "description": "特大の設定差。要カウント",
+      "id": "共通ベル確率",
+      "probabilities": {
+        "1": 0.012,
+        "2": 0.013,
+        "3": 0.014,
+        "4": 0.016,
+        "5": 0.018,
+        "6": 0.02
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

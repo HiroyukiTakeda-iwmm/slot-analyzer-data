@@ -1,0 +1,184 @@
+{
+  "name": "スマスロ ストライク・ザ・ブラッド",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00321,
+        "2": 0.00338,
+        "3": 0.00366,
+        "4": 0.00447,
+        "5": 0.00496,
+        "6": 0.0056
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/311.9、設定6: 1/178.6"
+    },
+    {
+      "name": "押し順ベル",
+      "probabilities": {
+        "1": 0.4,
+        "2": 0.4,
+        "3": 0.4,
+        "4": 0.4,
+        "5": 0.4,
+        "6": 0.4
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/2.5"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.13699,
+        "2": 0.13699,
+        "3": 0.13699,
+        "4": 0.13699,
+        "5": 0.13699,
+        "6": 0.13699
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.02439,
+        "2": 0.02439,
+        "3": 0.02439,
+        "4": 0.02439,
+        "5": 0.02439,
+        "6": 0.02439
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/41.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "エンタトロフィー銅",
+      "name": "エンタトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "エンタトロフィー金",
+      "name": "エンタトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "エンタトロフィー虹",
+      "name": "エンタトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "終了時ランプ赤",
+      "name": "終了時ランプ赤",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "終了時ランプ虹",
+      "name": "終了時ランプ虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "AT・ボーナス終了時ランプ色",
+      "patterns": [
+        {
+          "name": "白",
+          "setting": "default"
+        },
+        {
+          "name": "青",
+          "setting": "highWeak",
+          "description": "高設定弱"
+        },
+        {
+          "name": "緑",
+          "setting": "highStrong",
+          "description": "高設定強"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "エピソードポイント50pt獲得率",
+      "description": "高設定ほど50pt振り分けが優遇",
+      "id": "エピソードポイント50pt獲得率",
+      "probabilities": {
+        "1": 0.1,
+        "2": 0.13,
+        "3": 0.17,
+        "4": 0.22,
+        "5": 0.28,
+        "6": 0.35
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

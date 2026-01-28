@@ -1,0 +1,150 @@
+{
+  "name": "スマスロ吉宗",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ボーナス初当たり",
+      "probabilities": {
+        "1": 0.00264,
+        "2": 0.00271,
+        "3": 0.00279,
+        "4": 0.00298,
+        "5": 0.00314,
+        "6": 0.00342
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/378.9、設定6: 1/292.4"
+    },
+    {
+      "name": "共通俵",
+      "probabilities": {
+        "1": 0.00122,
+        "2": 0.00134,
+        "3": 0.00146,
+        "4": 0.00171,
+        "5": 0.00195,
+        "6": 0.0022
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/819.2、設定6: 1/455.1。斜めに揃う俵"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "花札チビ姫銅枠",
+      "name": "花札チビ姫（銅枠）",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "花札爺銀枠",
+      "name": "花札爺（銀枠）",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "花札吉宗金枠",
+      "name": "花札吉宗（金枠）",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "花札姫チビ姫ピンク枠",
+      "name": "花札姫&チビ姫（ピンク枠）",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "花札鷹虹枠",
+      "name": "花札鷹（虹枠）",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "ボーナス終了画面（花札）",
+      "patterns": [
+        {
+          "name": "青短（黒枠）",
+          "setting": "highWeak",
+          "description": "高設定示唆弱"
+        },
+        {
+          "name": "赤短（黒枠）",
+          "setting": "highStrong",
+          "description": "高設定示唆強"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "裏鷹狩りループ率",
+      "description": "設定1: 約30%、設定6: 約65%。レア役なしでもループすれば高設定期待",
+      "id": "裏鷹狩りループ率",
+      "probabilities": {
+        "1": 0.3,
+        "2": 0.35,
+        "3": 0.4,
+        "4": 0.5,
+        "5": 0.55,
+        "6": 0.65
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

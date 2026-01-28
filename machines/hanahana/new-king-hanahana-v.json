@@ -1,0 +1,99 @@
+{
+  "name": "ニューキングハナハナV",
+  "type": "A-type",
+  "roles": [
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.00334,
+        "2": 0.00344,
+        "3": 0.00356,
+        "4": 0.00373,
+        "5": 0.00395,
+        "V": 0.00395
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/299、設定V: 1/253"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.00202,
+        "2": 0.00212,
+        "3": 0.00226,
+        "4": 0.00244,
+        "5": 0.00269,
+        "V": 0.00269
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/496、設定V: 1/372"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.00538,
+        "2": 0.00556,
+        "3": 0.00581,
+        "4": 0.00617,
+        "5": 0.00667,
+        "V": 0.00667
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/186、設定V: 1/150"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "ハイビスカスランプ特殊色",
+      "name": "ハイビスカスランプ特殊色",
+      "description": "ボーナス終了後のハイビスカスランプ色で設定示唆",
+      "confirmedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "BIG中スイカ確率",
+      "description": "高設定ほど高確率。1.5回に1回以上確認で高設定期待",
+      "id": "big中スイカ確率",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.055,
+        "3": 0.06,
+        "4": 0.065,
+        "5": 0.07,
+        "V": 0.075
+      }
+    }
+  ],
+  "specialSettings": {
+    "settingType": "V",
+    "settingLabels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "V"
+    ],
+    "description": "5段階設定（V含む）"
+  },
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

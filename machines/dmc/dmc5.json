@@ -1,0 +1,165 @@
+{
+  "name": "スマスロ デビル メイ クライ5 スタイリッシュトライブ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00225,
+        "2": 0.00229,
+        "3": 0.00243,
+        "4": 0.00278,
+        "5": 0.00303,
+        "6": 0.00329
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/445.4、設定6: 1/303.9"
+    },
+    {
+      "name": "ボーナス初当たり",
+      "probabilities": {
+        "1": 0.00389,
+        "2": 0.00394,
+        "3": 0.00398,
+        "4": 0.00449,
+        "5": 0.0046,
+        "6": 0.0049
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/257.0、設定6: 1/204.1"
+    },
+    {
+      "name": "チャンス目合算",
+      "probabilities": {
+        "1": 0.07813,
+        "2": 0.07813,
+        "3": 0.07813,
+        "4": 0.07813,
+        "5": 0.07813,
+        "6": 0.07813
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/12.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "エンタトロフィー銅",
+      "name": "エンタトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "エンタトロフィー銀",
+      "name": "エンタトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "エンタトロフィー金",
+      "name": "エンタトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "エンタトロフィー紅葉柄",
+      "name": "エンタトロフィー紅葉柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "エンタトロフィー虹",
+      "name": "エンタトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "終了画面枠色",
+      "patterns": [
+        {
+          "name": "銅枠",
+          "setting": "not",
+          "description": "特定設定否定系"
+        },
+        {
+          "name": "金枠",
+          "minSetting": 4,
+          "description": "高設定濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "上位ST中エンブレム3個点灯率",
+      "description": "高設定ほど3個点灯が優遇",
+      "id": "上位st中エンブレム3個点灯率",
+      "probabilities": {
+        "1": 0.531,
+        "2": 0.56,
+        "3": 0.59,
+        "4": 0.61,
+        "5": 0.63,
+        "6": 0.641
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた"
+}

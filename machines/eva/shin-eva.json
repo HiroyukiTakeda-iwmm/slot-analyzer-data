@@ -1,0 +1,100 @@
+{
+  "name": "Lパチスロ シン・エヴァンゲリオン",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "初当たり",
+      "probabilities": {
+        "1": 0.00344,
+        "2": 0.00353,
+        "3": 0.00378,
+        "4": 0.00423,
+        "5": 0.00445,
+        "6": 0.00471
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/291.1、設定6: 1/212.5"
+    },
+    {
+      "name": "作戦目",
+      "probabilities": {
+        "1": 0.17857,
+        "2": 0.17857,
+        "3": 0.17857,
+        "4": 0.17857,
+        "5": 0.17857,
+        "6": 0.17857
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/5.6"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "終了画面-カヲル",
+      "name": "終了画面 カヲル",
+      "description": "設定6のみ出現",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "ボーナス終了画面",
+      "patterns": [
+        {
+          "name": "紫枠",
+          "setting": "high",
+          "description": "高設定示唆"
+        },
+        {
+          "name": "金枠",
+          "setting": "high",
+          "description": "高設定示唆"
+        }
+      ]
+    },
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "特定枚数",
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "150G以内AT当選率",
+      "description": "高設定ほど150G以内での初当りが多い",
+      "id": "150g以内at当選率",
+      "probabilities": {
+        "1": 0.23,
+        "2": 0.27,
+        "3": 0.32,
+        "4": 0.38,
+        "5": 0.42,
+        "6": 0.48
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

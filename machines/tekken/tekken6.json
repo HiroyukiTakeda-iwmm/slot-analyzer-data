@@ -1,0 +1,192 @@
+{
+  "name": "スマスロ鉄拳6",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00201,
+        "2": 0.00207,
+        "3": 0.00219,
+        "4": 0.00252,
+        "5": 0.00273,
+        "6": 0.00279
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/497.0、設定6: 1/358.5"
+    },
+    {
+      "name": "ボーナス初当たり",
+      "probabilities": {
+        "1": 0.00378,
+        "2": 0.00388,
+        "3": 0.00406,
+        "4": 0.00434,
+        "5": 0.0045,
+        "6": 0.00458
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/264.7、設定6: 1/218.5"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01678,
+        "2": 0.01678,
+        "3": 0.01678,
+        "4": 0.01678,
+        "5": 0.01678,
+        "6": 0.01678
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通: 1/59.6"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01007,
+        "2": 0.01007,
+        "3": 0.01007,
+        "4": 0.01007,
+        "5": 0.01007,
+        "6": 0.01007
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.3"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.00317,
+        "2": 0.00317,
+        "3": 0.00317,
+        "4": 0.00317,
+        "5": 0.00317,
+        "6": 0.00317
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/315.1"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.0022,
+        "2": 0.0022,
+        "3": 0.0022,
+        "4": 0.0022,
+        "5": 0.0022,
+        "6": 0.0022
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/455.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "トロフィー銅",
+      "name": "トロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "トロフィー銀",
+      "name": "トロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "トロフィー金",
+      "name": "トロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "トロフィー虹",
+      "name": "トロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "AT直撃確率",
+      "description": "設定1: 1/12580、設定6: 1/3565。複数回確認で高設定期待度アップ",
+      "id": "at直撃確率",
+      "probabilities": {
+        "1": 0.0000795,
+        "2": 0.0001,
+        "3": 0.00012,
+        "4": 0.00018,
+        "5": 0.00025,
+        "6": 0.00028
+      }
+    },
+    {
+      "name": "AT引き戻しモード移行率",
+      "description": "設定1: 10.2%、設定6: 17.2%",
+      "id": "at引き戻しモード移行率",
+      "probabilities": {
+        "1": 0.102,
+        "2": 0.115,
+        "3": 0.128,
+        "4": 0.145,
+        "5": 0.16,
+        "6": 0.172
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

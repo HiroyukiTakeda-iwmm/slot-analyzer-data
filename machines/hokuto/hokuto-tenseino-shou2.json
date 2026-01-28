@@ -1,0 +1,149 @@
+{
+  "name": "スマスロ北斗の拳 転生の章2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "天破の刻突入率",
+      "probabilities": {
+        "1": 0.00999,
+        "2": 0.0102,
+        "3": 0.0105,
+        "4": 0.011,
+        "5": 0.0115,
+        "6": 0.0123
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/100.2、設定6: 1/81.3"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00273,
+        "2": 0.0028,
+        "3": 0.00297,
+        "4": 0.00335,
+        "5": 0.00353,
+        "6": 0.00366
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/366.0、設定6: 1/273.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "サミートロフィー銅",
+      "name": "サミートロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "サミートロフィー銀",
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "サミートロフィー金",
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "id": "筐体中央ランプ金色点灯",
+      "name": "筐体中央ランプ金色点灯",
+      "description": "設定6示唆",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
+  "modeTransitions": [
+    {
+      "name": "弱チェリー高確移行率",
+      "rates": {
+        "1": 0.008,
+        "2": 0.008,
+        "3": 0.1,
+        "4": 0.1,
+        "5": 0.375,
+        "6": 0.375
+      },
+      "description": "設定1-2は1%未満、設定5-6は37.5%以上"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、ナナプレス"
+}

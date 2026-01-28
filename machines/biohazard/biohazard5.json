@@ -1,0 +1,209 @@
+{
+  "name": "スマスロバイオハザード5",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.00307,
+        "2": 0.00318,
+        "3": 0.00335,
+        "4": 0.00368,
+        "5": 0.00401,
+        "6": 0.00423
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/325.8、設定6: 1/236.2"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00813,
+        "2": 0.00813,
+        "3": 0.00813,
+        "4": 0.00813,
+        "5": 0.00813,
+        "6": 0.00813
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 1/123.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.0016,
+        "2": 0.0016,
+        "3": 0.0016,
+        "4": 0.0016,
+        "5": 0.0016,
+        "6": 0.0016
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/624.2"
+    },
+    {
+      "name": "中段チェリー",
+      "probabilities": {
+        "1": 0.000061,
+        "2": 0.000061,
+        "3": 0.000061,
+        "4": 0.000061,
+        "5": 0.000061,
+        "6": 0.000061
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/16384"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "エンタトロフィー銅",
+      "name": "エンタトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "エンタトロフィー銀",
+      "name": "エンタトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "エンタトロフィー金",
+      "name": "エンタトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "エンタトロフィー紅葉",
+      "name": "エンタトロフィー紅葉",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "エンタトロフィー虹",
+      "name": "エンタトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "256枚",
+          "setting": "hint",
+          "description": "設定示唆"
+        },
+        {
+          "name": "810枚",
+          "setting": "hint",
+          "description": "設定示唆"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [
+    {
+      "name": "エンディング中ボイス（レア役時）",
+      "patterns": [
+        {
+          "voice": "エンタライオンセリフ",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        },
+        {
+          "voice": "マジニセリフ",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "CZ合算確率",
+      "description": "設定1: 1/147.3、設定6: 1/122.1",
+      "id": "cz合算確率",
+      "probabilities": {
+        "1": 0.00679,
+        "2": 0.0071,
+        "3": 0.0074,
+        "4": 0.0077,
+        "5": 0.008,
+        "6": 0.00819
+      }
+    },
+    {
+      "name": "インフェクション突入率（中段揃い時）",
+      "description": "設定1: 16.7%、設定6: 21.8%",
+      "id": "インフェクション突入率中段揃い時",
+      "probabilities": {
+        "1": 0.167,
+        "2": 0.175,
+        "3": 0.185,
+        "4": 0.195,
+        "5": 0.205,
+        "6": 0.218
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}

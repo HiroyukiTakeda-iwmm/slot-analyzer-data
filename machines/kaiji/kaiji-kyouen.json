@@ -1,0 +1,195 @@
+{
+  "name": "回胴黙示録カイジ 狂宴",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "初当たり",
+      "probabilities": {
+        "1": 0.0026,
+        "2": 0.00266,
+        "3": 0.00278,
+        "4": 0.00308,
+        "5": 0.00329,
+        "6": 0.00344
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/384.9、設定6: 1/290.6"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01251,
+        "2": 0.0128,
+        "3": 0.0131,
+        "4": 0.0134,
+        "5": 0.0136,
+        "6": 0.01374
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/79.9、設定6: 1/72.8"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.0119,
+        "2": 0.0122,
+        "3": 0.0125,
+        "4": 0.0127,
+        "5": 0.0129,
+        "6": 0.01297
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "設定1: 1/84.0、設定6: 1/77.1"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00458,
+        "2": 0.0048,
+        "3": 0.005,
+        "4": 0.0052,
+        "5": 0.00535,
+        "6": 0.00549
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "設定1: 1/218.5、設定6: 1/182.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00189,
+        "2": 0.00198,
+        "3": 0.00207,
+        "4": 0.0021,
+        "5": 0.00215,
+        "6": 0.0022
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "設定1: 1/528.5、設定6: 1/455.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "サミートロフィー銅",
+      "name": "サミートロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "サミートロフィー銀",
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "サミートロフィー金",
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "456枚突破",
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
+        },
+        {
+          "name": "666枚突破",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "CZ確率",
+      "description": "設定1: 1/243.3、設定6: 1/176.8",
+      "id": "cz確率",
+      "probabilities": {
+        "1": 0.00411,
+        "2": 0.0044,
+        "3": 0.0047,
+        "4": 0.0051,
+        "5": 0.0054,
+        "6": 0.00566
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-29",
+  "source": "ちょんぼりすた、一撃"
+}
