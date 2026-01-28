@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-01-28T00:00:00Z",
+  "machines": [
+    {
+      "id": "juggler-my-v",
+      "name": "SマイジャグラーV",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "juggler/my-juggler-v.json",
+      "tags": ["ジャグラー", "Aタイプ", "6号機", "6段階設定"],
+      "description": "6段階設定のジャグラー系Aタイプ"
+    },
+    {
+      "id": "juggler-aim-ex",
+      "name": "ネオアイムジャグラーEX",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "juggler/aim-juggler-ex.json",
+      "tags": ["ジャグラー", "Aタイプ", "6号機", "アイム"],
+      "description": "アイムジャグラー系"
+    },
+    {
+      "id": "hokuto-smash",
+      "name": "スマスロ北斗の拳",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hokuto/hokuto-ken.json",
+      "tags": ["AT", "北斗", "確定演出", "スマスロ", "トロフィー"],
+      "description": "金トロフィーで設定4以上確定、キリンで設定5以上確定"
+    },
+    {
+      "id": "hanabi-shin",
+      "name": "新ハナビ",
+      "type": "A+RT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hanabi/shin-hanabi.json",
+      "tags": ["ハナビ", "A+RT", "花火チャレンジ", "ゾーン", "4段階設定"],
+      "description": "花火チャレンジでの設定差あり、設定1,2,5,6の4段階"
+    }
+  ]
+}

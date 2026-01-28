@@ -1,0 +1,88 @@
+{
+  "name": "スマスロ北斗の拳",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱スイカ",
+      "probabilities": {
+        "1": 0.008333333,
+        "2": 0.008474576,
+        "3": 0.008695652,
+        "4": 0.008928571,
+        "5": 0.009259259,
+        "6": 0.009523810
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": {
+        "1": 0.003125000,
+        "2": 0.003125000,
+        "3": 0.003125000,
+        "4": 0.003125000,
+        "5": 0.003125000,
+        "6": 0.003125000
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#388E3C"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.009803922,
+        "2": 0.009803922,
+        "3": 0.009803922,
+        "4": 0.009803922,
+        "5": 0.009803922,
+        "6": 0.009803922
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63"
+    },
+    {
+      "name": "中段チェリー",
+      "probabilities": {
+        "1": 0.000305810,
+        "2": 0.000305810,
+        "3": 0.000305810,
+        "4": 0.000305810,
+        "5": 0.000305810,
+        "6": 0.000305810
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "金トロフィー",
+      "description": "AT終了時に出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "キリントロフィー",
+      "description": "AT終了時に出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFC107"
+    },
+    {
+      "name": "レインボートロフィー",
+      "description": "AT終了時に出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "スマスロ北斗の拳。弱スイカに設定差あり。トロフィー演出で設定示唆。"
+}

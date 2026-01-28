@@ -1,0 +1,117 @@
+{
+  "name": "新ハナビ",
+  "type": "A+RT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "風鈴（ベル）",
+      "probabilities": {
+        "1": 0.1298701,
+        "2": 0.1315789,
+        "3": 0.1333333,
+        "6": 0.1369863
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFCA28"
+    },
+    {
+      "name": "ドンちゃんスイカ",
+      "probabilities": {
+        "1": 0.0135135,
+        "2": 0.0138889,
+        "5": 0.0142857,
+        "6": 0.0147059
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50"
+    },
+    {
+      "name": "氷",
+      "probabilities": {
+        "1": 0.0285714,
+        "2": 0.0285714,
+        "5": 0.0285714,
+        "6": 0.0285714
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#03A9F4"
+    }
+  ],
+  "zones": [
+    {
+      "name": "通常時",
+      "isDefault": true,
+      "description": "通常プレイ中",
+      "roles": []
+    },
+    {
+      "name": "花火チャレンジ",
+      "isDefault": false,
+      "description": "BIG後、最大20G継続",
+      "gameCountLabel": "花火チャレンジG数",
+      "color": "#FF7043",
+      "roles": [
+        {
+          "name": "ハズレ",
+          "probabilities": {
+            "1": 0.1666667,
+            "2": 0.1724138,
+            "5": 0.1851852,
+            "6": 0.1960784
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#9E9E9E"
+        }
+      ]
+    },
+    {
+      "name": "花火GAME",
+      "isDefault": false,
+      "description": "花火チャレンジ成功後のRT",
+      "gameCountLabel": "花火GAME数",
+      "color": "#E91E63",
+      "defaultIncrementValue": 40,
+      "roles": []
+    }
+  ],
+  "endScreenGroups": [
+    {
+      "name": "ボーナス終了画面",
+      "description": "BIG/REG終了時の画面",
+      "displayOrder": 1,
+      "endScreens": [
+        {
+          "name": "ピース花火",
+          "type": "bonus_end",
+          "hint": "設定2以上確定",
+          "confirmedSettings": ["2", "5", "6"],
+          "excludedSettings": ["1"],
+          "color": "#FFD54F"
+        },
+        {
+          "name": "ドンちゃん＆ねずみ",
+          "type": "bonus_end",
+          "hint": "設定5以上確定",
+          "confirmedSettings": ["5", "6"],
+          "excludedSettings": ["1", "2"],
+          "color": "#FF7043"
+        },
+        {
+          "name": "金カットイン",
+          "type": "bonus_end",
+          "hint": "設定6確定",
+          "confirmedSettings": ["6"],
+          "excludedSettings": ["1", "2", "5"],
+          "color": "#FFD700"
+        }
+      ]
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "新ハナビ。設定1,2,5,6の4段階設定。花火チャレンジでのハズレ確率に設定差あり。"
+}
