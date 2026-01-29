@@ -1,0 +1,264 @@
+{
+  "name": "ディスクアップ ULTRAREMIX",
+  "type": "A+AT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.003482,
+        "2": 0.003518,
+        "5": 0.003652,
+        "6": 0.003834
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/287.2、設定6: 1/260.9"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.002019,
+        "2": 0.002096,
+        "5": 0.002509,
+        "6": 0.002994
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/495.3、設定6: 1/334.1。設定差大"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005501,
+        "2": 0.005614,
+        "5": 0.006161,
+        "6": 0.006827
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/181.8、設定6: 1/146.5"
+    },
+    {
+      "name": "3枚役（7・星・星）",
+      "probabilities": {
+        "1": 0.07299,
+        "2": 0.07463,
+        "5": 0.07752,
+        "6": 0.07937
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/13.7、設定6: 1/12.6。要カウント"
+    },
+    {
+      "name": "スイカA",
+      "probabilities": {
+        "1": 0.01678,
+        "2": 0.01692,
+        "5": 0.01754,
+        "6": 0.01838
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "設定1: 1/59.6、設定6: 1/54.4"
+    },
+    {
+      "name": "スイカB",
+      "probabilities": {
+        "1": 0.00351,
+        "2": 0.00351,
+        "5": 0.00351,
+        "6": 0.00351
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#388E3C",
+      "description": "全設定共通: 1/284.9"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.03968,
+        "2": 0.03968,
+        "5": 0.03984,
+        "6": 0.03984
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#F44336",
+      "description": "ほぼ全設定共通: 約1/25.2"
+    },
+    {
+      "name": "確定チェリー",
+      "probabilities": {
+        "1": 0.000305,
+        "2": 0.000336,
+        "5": 0.000427,
+        "6": 0.000519
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#D32F2F",
+      "description": "設定1: 1/3276.8、設定6: 1/1927.5。設定差大"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.13333,
+        "2": 0.13333,
+        "5": 0.13333,
+        "6": 0.13158
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#607D8B",
+      "description": "ほぼ全設定共通: 約1/7.5"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "sammy-trophy-bronze",
+      "name": "サミートロフィー（銅）",
+      "description": "ボーナス終了後に出現",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "sammy-trophy-kirin",
+      "name": "サミートロフィー（キリン柄）",
+      "description": "ボーナス終了後に出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#F4A460"
+    },
+    {
+      "id": "sammy-trophy-rainbow",
+      "name": "サミートロフィー（虹）",
+      "description": "ボーナス終了後に出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#FF69B4"
+    },
+    {
+      "id": "reg-remix-cheesy",
+      "name": "REG中REMIXモード「Cheesy」",
+      "description": "REG中ハンバーガー演出でCheesy出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFA726"
+    },
+    {
+      "id": "reg-remix-meaty",
+      "name": "REG中REMIXモード「Meaty」",
+      "description": "REG中ハンバーガー演出でMeaty出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#8D6E63"
+    },
+    {
+      "id": "reg-remix-eggman",
+      "name": "REG中REMIXモード「I'm Eggman」",
+      "description": "REG中ハンバーガー演出でI'm Eggman出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "reg-discup-cindy",
+      "name": "REG中DISC UPモード5人目シンディ",
+      "description": "REG中DISC UPモードで5人目がシンディ",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#EC407A"
+    },
+    {
+      "id": "reg-discup-all-cindy",
+      "name": "REG中DISC UPモードALLシンディ",
+      "description": "REG中DISC UPモードで全員シンディ",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "reg-discup-1st-special",
+      "name": "REG中DISC UPモード1キャラ目特殊",
+      "description": "1キャラ目でシンディ/アフロマン/キャンベル登場",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#AB47BC"
+    },
+    {
+      "id": "reg-classic-5afro",
+      "name": "REG中CLASSICモードアフロ小人5人",
+      "description": "REG中CLASSICモードでアフロ小人が5人",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#7E57C2"
+    },
+    {
+      "id": "reg-classic-6afro",
+      "name": "REG中CLASSICモードアフロ小人6人",
+      "description": "REG中CLASSICモードでアフロ小人が6人",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "reg-classic-0afro",
+      "name": "REG中CLASSICモードアフロ小人0人",
+      "description": "REG中CLASSICモードでアフロ小人が0人",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#78909C"
+    }
+  ],
+  "endScreenGroups": [],
+  "trialSuccessRates": [
+    {
+      "id": "ultra-nosegen",
+      "name": "BB中ウルトラ上乗せ発生率",
+      "description": "BB中スイカ成立時のウルトラ上乗せ発生率。設定差特大",
+      "probabilities": {
+        "1": 0.0000610,
+        "2": 0.0001831,
+        "5": 0.0008239,
+        "6": 0.0016636
+      }
+    },
+    {
+      "id": "reach-t3-a2",
+      "name": "リーチ目役T3・A2出現率",
+      "description": "設定差の大きいリーチ目役。設定1と6で約3倍差",
+      "probabilities": {
+        "1": 0.0000610,
+        "2": 0.0000915,
+        "5": 0.0001220,
+        "6": 0.0001831
+      }
+    },
+    {
+      "id": "cherry-reg",
+      "name": "チェリー+REG同時当選率",
+      "description": "チェリー成立時のREG同時当選。設定差大",
+      "probabilities": {
+        "1": 0.008,
+        "2": 0.010,
+        "5": 0.015,
+        "6": 0.020
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-01-30",
+  "source": "ちょんぼりすた、1GEKI、nana-press",
+  "description": "ディスクアップ ULTRAREMIX。A+AT機、設定1,2,5,6の4段階設定。REG確率に大きな設定差。BB中ウルトラ上乗せ発生率に特大の設定差（設定1: 1/16384、設定6: 1/601）。確定チェリーやリーチ目役T3・A2にも注目。REG中3モード（REMIX/DISC UP/CLASSIC）で豊富な設定示唆。",
+  "notes": "2025年1月20日導入。サミー製A+AT機。完全攻略時の機械割は設定1で103.0%、設定6で111.5%。"
+}

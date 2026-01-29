@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-01-29T00:00:00Z",
+  "updatedAt": "2026-01-30T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -421,6 +421,16 @@
       "file": "kabaneri/kabaneri-unato.json",
       "tags": ["AT", "カバネリ", "スマスロ", "Phase3", "2026年新台"],
       "description": "AT初当り確率とボーナス初当り確率に設定差、エピボ比率約50%でST突入濃厚"
+    },
+    {
+      "id": "discup-ultraremix",
+      "name": "ディスクアップ ULTRAREMIX",
+      "type": "A+AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "discup/discup-ultraremix.json",
+      "tags": ["A+AT", "ディスクアップ", "スマスロ", "サミートロフィー", "2025年新台"],
+      "description": "REG確率に大きな設定差、BB中ウルトラ上乗せ発生率に特大設定差、REG中3モードで豊富な設定示唆"
     }
   ]
 }
