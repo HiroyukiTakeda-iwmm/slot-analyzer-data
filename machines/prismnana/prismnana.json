@@ -1,0 +1,208 @@
+{
+  "name": "Lプリズムナナ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.014493,
+        "2": 0.014493,
+        "3": 0.014493,
+        "4": 0.014493,
+        "5": 0.014493,
+        "6": 0.014493
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 1/69.0"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009921,
+        "2": 0.009921,
+        "3": 0.009921,
+        "4": 0.009921,
+        "5": 0.009921,
+        "6": 0.009921
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/100.8"
+    },
+    {
+      "name": "弱マジカル目",
+      "probabilities": {
+        "1": 0.005495,
+        "2": 0.005495,
+        "3": 0.005495,
+        "4": 0.005495,
+        "5": 0.005495,
+        "6": 0.005495
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/182.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/546.1"
+    },
+    {
+      "name": "強マジカル目",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#7B1FA2",
+      "description": "全設定共通: 1/546.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_screen_aru_miku_shirube",
+      "name": "ボーナス終了画面 アル/ミク/しるべ",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "end_screen_mako",
+      "name": "ボーナス終了画面 マコ",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_all_uniform",
+      "name": "ボーナス終了画面 全員集合（制服）",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_all_swimsuit",
+      "name": "ボーナス終了画面 全員集合（水着）",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_screen_itaru",
+      "name": "ボーナス終了画面 イタル",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "end_screen_asuka_kotone",
+      "name": "ボーナス終了画面 アスカ/コトネ",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "end_screen_three",
+      "name": "ボーナス終了画面 イタル/アスカ/コトネ",
+      "type": "bonus_end",
+      "hint": "高設定示唆"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "voice_kibun",
+      "name": "プリプリゾーン終了ボイス 「気分」",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "voice_guuzen",
+      "name": "プリプリゾーン終了ボイス 「偶然」",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "voice_456",
+      "name": "プリプリゾーン終了ボイス 「456%」",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "voice_666",
+      "name": "プリプリゾーン終了ボイス 「666%」",
+      "hint": "設定6濃厚"
+    },
+    {
+      "id": "maisu_222",
+      "name": "獲得枚数表示 222枚",
+      "hint": "設定2以上濃厚"
+    },
+    {
+      "id": "maisu_456",
+      "name": "獲得枚数表示 456枚",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "maisu_666",
+      "name": "獲得枚数表示 666枚",
+      "hint": "設定6濃厚"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "st_rate",
+      "name": "ST初当たり確率",
+      "description": "設定1: 1/351.8、設定6: 1/278.6",
+      "probabilities": {
+        "1": 0.002844,
+        "2": 0.002883,
+        "3": 0.002966,
+        "4": 0.003262,
+        "5": 0.003447,
+        "6": 0.003589
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "reel_lock_rate",
+      "name": "ボーナス中リールロック発生率",
+      "description": "設定1-2: 1/1335.9、設定5-6: 1/1099.2",
+      "probabilities": {
+        "1": 0.000749,
+        "2": 0.000749,
+        "3": 0.000837,
+        "4": 0.000837,
+        "5": 0.000910,
+        "6": 0.000910
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

@@ -1,0 +1,230 @@
+{
+  "name": "スマスロ とある科学の超電磁砲2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.02299,
+        "2": 0.02299,
+        "3": 0.02299,
+        "4": 0.02299,
+        "5": 0.02299,
+        "6": 0.02299
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 1/43.5"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01001,
+        "2": 0.01001,
+        "3": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "超電磁砲コイン出現率",
+      "probabilities": {
+        "1": 0.006744,
+        "2": 0.006744,
+        "3": 0.006912,
+        "4": 0.007278,
+        "5": 0.007353,
+        "6": 0.007522
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FFD700",
+      "description": "設定1: 1/148.3、設定6: 1/133.0。コイン準備経由の出現率に設定差"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_screen_misaka_sister",
+      "name": "AT終了画面 御坂美琴&御坂妹",
+      "description": "AT終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_kongou",
+      "name": "AT終了画面 婚后一派（赤枠）",
+      "description": "AT終了時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_screen_misaka_morning",
+      "name": "AT終了画面 御坂美琴・寝起き（紫枠）",
+      "description": "AT終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_screen_misaka_shokuhou_gold",
+      "name": "AT終了画面 御坂美琴&食蜂操祈B（金枠）",
+      "description": "AT終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_misaka_wedding",
+      "name": "AT終了画面 御坂美琴ウエディング（虹枠）",
+      "description": "AT終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "fujimaru_coin_bronze",
+      "name": "藤丸コイン 銅",
+      "description": "AT終了時",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "fujimaru_coin_silver",
+      "name": "藤丸コイン 銀",
+      "description": "AT終了時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "fujimaru_coin_gold",
+      "name": "藤丸コイン 金",
+      "description": "AT終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "fujimaru_coin_danger",
+      "name": "藤丸コイン DANGER",
+      "description": "AT終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "fujimaru_coin_rainbow",
+      "name": "藤丸コイン 虹",
+      "description": "AT終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_screen_friends_b",
+      "name": "AT終了画面 大切な友達B",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "end_screen_misaka_shokuhou_a",
+      "name": "AT終了画面 御坂美琴&食蜂操祈A（枠なし）",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "maisu_087",
+      "name": "獲得枚数表示 087枚over（おはな）",
+      "hint": "設定2以上濃厚"
+    },
+    {
+      "id": "maisu_310",
+      "name": "獲得枚数表示 310枚over（さてん）",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "maisu_965",
+      "name": "獲得枚数表示 965枚over（くろこ）",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "maisu_456",
+      "name": "獲得枚数表示 456枚over",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "maisu_555",
+      "name": "獲得枚数表示 555枚over",
+      "hint": "設定5以上濃厚"
+    },
+    {
+      "id": "maisu_666",
+      "name": "獲得枚数表示 666枚over",
+      "hint": "設定6濃厚"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "at_rate",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/317.8、設定6: 1/235.3",
+      "probabilities": {
+        "1": 0.003147,
+        "2": 0.003208,
+        "3": 0.003285,
+        "4": 0.003671,
+        "5": 0.004031,
+        "6": 0.004250
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ確率（GJ+婚后CZ合算）",
+      "description": "設定1: 1/175.7、設定6: 1/137.5。上位CZに大きな設定差",
+      "probabilities": {
+        "1": 0.005690,
+        "2": 0.005793,
+        "3": 0.005934,
+        "4": 0.006387,
+        "5": 0.006862,
+        "6": 0.007273
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "coin_junbi_rate",
+      "name": "コイン準備経由CZ当選期待度",
+      "description": "設定1: 37.7%、設定6: 50.2%",
+      "probabilities": {
+        "1": 0.377,
+        "2": 0.386,
+        "3": 0.395,
+        "4": 0.429,
+        "5": 0.471,
+        "6": 0.502
+      },
+      "color": "#FFD700",
+      "displayOrder": 3
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -791,6 +791,46 @@
       "file": "fujiko/fujiko-bt.json",
       "tags": ["BT", "不二子", "ルパン", "アムテックス", "5段階設定", "2025年新台"],
       "description": "設定3非搭載5段階設定。プラム・チェリー確率に設定差。チェリー同時当選率に特大の設定差。ボイスで設定示唆"
+    },
+    {
+      "id": "railgun2",
+      "name": "スマスロ とある科学の超電磁砲2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "railgun/railgun2.json",
+      "tags": ["AT", "レールガン", "とある", "藤商事", "スマスロ", "6段階設定", "2025年新台"],
+      "description": "小役確率は全設定共通。超電磁砲コイン出現率・CZ確率・AT初当たり確率に設定差。AT終了画面と藤丸コインで設定示唆"
+    },
+    {
+      "id": "okidoki-black",
+      "name": "S沖ドキ！ブラック",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "okidokiblack/okidoki-black.json",
+      "tags": ["AT", "沖ドキ", "ユニバーサル", "5段階設定", "2024年新台"],
+      "description": "設定4非搭載5段階設定。チェリーB確率・確定役Bに設定差。ボーナス初当たり確率に設定差。ハイビスカス点灯パターンでモード示唆"
+    },
+    {
+      "id": "prismnana",
+      "name": "Lプリズムナナ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "prismnana/prismnana.json",
+      "tags": ["AT", "ST", "プリズムナナ", "カルミナ", "スマスロ", "6段階設定", "2025年新台"],
+      "description": "小役確率は全設定共通。ST初当たり確率に設定差。ボーナス終了画面・会話演出・プリプリゾーンボイスで設定示唆"
+    },
+    {
+      "id": "shake-bt",
+      "name": "SHAKE BONUS TRIGGER",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "shake/shake-bt.json",
+      "tags": ["BT", "SHAKE", "大都技研", "スマスロ", "4段階設定", "2025年新台"],
+      "description": "4段階設定（1,2,5,6）。ベル・チェリー・スイカに設定差。偶数設定はボーナスが軽く、奇数設定はBT継続率が高い。コパンダトロフィーで設定示唆"
     }
   ]
 }

@@ -1,0 +1,177 @@
+{
+  "name": "SHAKE BONUS TRIGGER",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.09709,
+        "2": 0.09804,
+        "5": 0.10101,
+        "6": 0.10417
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/10.3、設定6: 1/9.6。4段階設定（1,2,5,6）"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.02710,
+        "2": 0.02747,
+        "5": 0.02786,
+        "6": 0.02976
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定1: 1/36.9、設定6: 1/33.6"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01527,
+        "2": 0.01572,
+        "5": 0.01667,
+        "6": 0.01712
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/65.5、設定6: 1/58.4"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_bronze",
+      "name": "コパンダトロフィー 銅",
+      "description": "BB終了時",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_lightning",
+      "name": "コパンダトロフィー イナズマ柄",
+      "description": "BB終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "コパンダトロフィー 虹",
+      "description": "BB終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "bg_yellow",
+      "name": "BIG終了画面 黄背景",
+      "type": "big_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "bg_green",
+      "name": "BIG終了画面 緑背景",
+      "type": "big_end",
+      "hint": "高設定示唆（中）"
+    },
+    {
+      "id": "bg_purple",
+      "name": "BIG終了画面 紫背景",
+      "type": "big_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "bg_rainbow",
+      "name": "BIG終了画面 虹背景",
+      "type": "big_end",
+      "hint": "設定6濃厚"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "voice_feel_so_good",
+      "name": "REG中チャレンジベル Feel so good",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "voice_excellent",
+      "name": "REG中チャレンジベル Excellent",
+      "hint": "高設定示唆（中）"
+    },
+    {
+      "id": "voice_unbelievable",
+      "name": "REG中チャレンジベル Unbelievable",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "voice_amazing",
+      "name": "REG中チャレンジベル Amazing",
+      "hint": "設定5以上濃厚"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/192.2、設定6: 1/148.9。偶数設定ほど軽い",
+      "probabilities": {
+        "1": 0.005203,
+        "2": 0.006057,
+        "5": 0.005371,
+        "6": 0.006716
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bb_rate",
+      "name": "BB確率",
+      "description": "設定1: 1/350.5、設定6: 1/297.9",
+      "probabilities": {
+        "1": 0.002853,
+        "2": 0.003052,
+        "5": 0.002930,
+        "6": 0.003357
+      },
+      "color": "#E91E63",
+      "displayOrder": 2
+    },
+    {
+      "id": "rb_rate",
+      "name": "RB確率",
+      "description": "設定1: 1/425.6、設定6: 1/297.9。偶数設定ほど軽い",
+      "probabilities": {
+        "1": 0.002350,
+        "2": 0.003006,
+        "5": 0.002441,
+        "6": 0.003357
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    },
+    {
+      "id": "bt_continue_rate",
+      "name": "BT実質継続率",
+      "description": "設定1: 50.0%、設定5: 55.0%。奇数設定が優遇",
+      "probabilities": {
+        "1": 0.500,
+        "2": 0.430,
+        "5": 0.550,
+        "6": 0.400
+      },
+      "color": "#FF9800",
+      "displayOrder": 4
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}
