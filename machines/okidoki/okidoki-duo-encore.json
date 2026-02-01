@@ -5,95 +5,91 @@
     {
       "name": "角チェリー",
       "probabilities": {
-        "1": 0.033,
-        "2": 0.034,
-        "3": 0.035,
-        "4": 0.036,
-        "5": 0.037,
-        "6": 0.039
+        "1": 0.02137,
+        "2": 0.02222,
+        "3": 0.02309,
+        "5": 0.02398,
+        "6": 0.02481
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
       "color": "#F44336",
-      "description": "通常時チェリー確率に設定差"
+      "description": "設定1: 1/46.8、設定6: 1/40.3。5段階設定（設定4なし）"
     },
     {
-      "name": "確定チェリー",
+      "name": "確定役",
       "probabilities": {
-        "1": 0.00024,
-        "2": 0.00024,
-        "3": 0.00024,
-        "4": 0.00024,
-        "5": 0.00024,
-        "6": 0.00024
+        "1": 0.000229,
+        "2": 0.000229,
+        "3": 0.000229,
+        "5": 0.000229,
+        "6": 0.000229
       },
       "hasSettingDiff": false,
       "displayOrder": 2,
       "color": "#C2185B",
-      "description": "全設定共通"
+      "description": "全設定共通: 1/4369.1"
     },
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.0083,
-        "2": 0.0083,
-        "3": 0.0083,
-        "4": 0.0083,
-        "5": 0.0083,
-        "6": 0.0083
+        "1": 0.00696,
+        "2": 0.00696,
+        "3": 0.00696,
+        "5": 0.00696,
+        "6": 0.00696
       },
       "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#4CAF50",
-      "description": "全設定共通"
+      "description": "全設定共通: 1/143.7"
     }
   ],
   "confirmationEvents": [
     {
-      "id": "lock_1st_2nd",
-      "name": "第1or第2停止ロック（ドキハナチャンス）",
-      "description": "ストップボタンが効かなくなるロック演出で成功確定",
-      "confirmedSettings": [],
-      "excludedSettings": [],
+      "id": "tempai_kirarin",
+      "name": "テンパイ音「きらりーん」",
+      "description": "リール停止時テンパイ音",
+      "confirmedSettings": ["2", "3", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "tempai_pikon_voice",
+      "name": "テンパイ音「ぴこーん（ボイス版）」",
+      "description": "リール停止時テンパイ音",
+      "confirmedSettings": ["3", "5", "6"],
+      "excludedSettings": ["1", "2"],
       "color": "#FFD700"
     },
     {
-      "id": "lock_duo",
-      "name": "第1or第2停止ロック＋チャンス役",
-      "description": "DUOモード（ダブル点灯）も確定",
-      "confirmedSettings": [],
-      "excludedSettings": [],
+      "id": "tempai_zutto",
+      "name": "テンパイ音「私、あなたのことが...ずっと」",
+      "description": "リール停止時テンパイ音",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "tempai_3nin",
+      "name": "テンパイ音「今日は3人で楽しもー！」",
+      "description": "リール停止時テンパイ音",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "5"],
       "color": "#E91E63"
-    },
-    {
-      "id": "super_dokihana_lock",
-      "name": "超ドキハナチャンス中ロック",
-      "description": "第1or第2停止ロックでDUOモード確定",
-      "confirmedSettings": [],
-      "excludedSettings": [],
-      "color": "#9C27B0"
-    },
-    {
-      "id": "hana_kana_double",
-      "name": "ハナちゃん＆カナちゃん両方点灯",
-      "description": "ボーナス中1G連当選時。DUOモード濃厚",
-      "confirmedSettings": [],
-      "excludedSettings": [],
-      "color": "#FF5722"
     }
   ],
   "trialSuccessRates": [
     {
-      "id": "bonus_rate_ab",
-      "name": "通常A・B滞在時ボーナス確率",
-      "description": "設定1: 1/240、設定6: 1/181",
+      "id": "bonus_rate",
+      "name": "ボーナス初当たり確率",
+      "description": "設定1: 1/240.0、設定6: 1/181.0",
       "probabilities": {
-        "1": 0.00417,
-        "2": 0.00435,
-        "3": 0.00455,
-        "4": 0.00476,
-        "5": 0.00505,
-        "6": 0.00552
+        "1": 0.004167,
+        "2": 0.004344,
+        "3": 0.004634,
+        "5": 0.005205,
+        "6": 0.005525
       },
       "color": "#2196F3",
       "displayOrder": 1
@@ -111,26 +107,16 @@
     {
       "id": "tempai_normal",
       "name": "通常テンパイ音",
-      "hint": "基本パターン",
-      "color": "#9E9E9E"
+      "hint": "基本パターン"
     },
     {
       "id": "tempai_special",
       "name": "特殊テンパイ音",
-      "hint": "天国以上濃厚",
-      "confirmedSettings": [],
-      "excludedSettings": [],
-      "color": "#FFD700"
-    },
-    {
-      "id": "tempai_setting",
-      "name": "設定示唆テンパイ音",
-      "hint": "モード＋設定示唆",
-      "color": "#FFC107"
+      "hint": "天国以上濃厚"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
+  "version": "1.1",
+  "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

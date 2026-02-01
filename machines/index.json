@@ -622,7 +622,7 @@
       "name": "スマスロ 沖ドキ!DUO アンコール",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "okidoki/okidoki-duo-encore.json",
       "tags": [
         "AT",
@@ -686,7 +686,7 @@
       "name": "Lパチスロ 革命機ヴァルヴレイヴ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "valvrave/valvrave2.json",
       "tags": [
         "AT",
@@ -702,7 +702,7 @@
       "name": "スマスロ モンキーターンV",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "monkeyturn/monkeyturn-v.json",
       "tags": [
         "AT",
@@ -831,7 +831,7 @@
       "name": "パチスロコードギアス 反逆のルルーシュ3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "codegeass/codegeass3.json",
       "tags": [
         "AT",
@@ -926,7 +926,7 @@
       "name": "Sゴーゴージャグラー3",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "gogojuggler/gogo-juggler3.json",
       "tags": [
         "ジャグラー",
@@ -941,7 +941,7 @@
       "name": "ファンキージャグラー2",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "funkyjuggler/funky-juggler2.json",
       "tags": [
         "ジャグラー",
@@ -956,7 +956,7 @@
       "name": "SハッピージャグラーVIII",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "happyjuggler/happy-juggler-viii.json",
       "tags": [
         "ジャグラー",
@@ -971,7 +971,7 @@
       "name": "SアイムジャグラーEX",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "aimjuggler/aim-juggler-ex-6gou.json",
       "tags": [
         "ジャグラー",
@@ -1397,7 +1397,7 @@
       "name": "パチスロコードギアス3 C.C.&Kallen ver.",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "codegeass/codegeass3-cckallen.json",
       "tags": [
         "A+AT",
