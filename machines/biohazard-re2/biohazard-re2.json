@@ -1,0 +1,187 @@
+{
+  "name": "パチスロ バイオハザード RE:2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.00781,
+        "2": 0.00781,
+        "3": 0.00781,
+        "4": 0.00781,
+        "5": 0.00781,
+        "6": 0.00781
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.00827,
+        "2": 0.00827,
+        "3": 0.00827,
+        "4": 0.00827,
+        "5": 0.00827,
+        "6": 0.00827
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/120.9"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.01001,
+        "2": 0.01001,
+        "3": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00317,
+        "2": 0.00317,
+        "3": 0.00317,
+        "4": 0.00317,
+        "5": 0.00317,
+        "6": 0.00317
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/315.1"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.00293,
+        "2": 0.00293,
+        "3": 0.00293,
+        "4": 0.00293,
+        "5": 0.00293,
+        "6": 0.00293
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#7B1FA2",
+      "description": "全設定共通: 1/341.3"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "figure_tofu",
+      "name": "フィギュア 豆腐（銀枠）",
+      "description": "ボーナス終了時/エンディング中レア役時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "figure_boss",
+      "name": "フィギュア ボスクリーチャー（金枠）",
+      "description": "ボーナス終了時/エンディング中レア役時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "figure_all",
+      "name": "フィギュア 全員集合（紅葉枠）",
+      "description": "ボーナス終了時/エンディング中レア役時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "figure_entalion",
+      "name": "フィギュア エンタライオン（虹枠）",
+      "description": "ボーナス終了時/エンディング中レア役時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "figure_zombie_male",
+      "name": "フィギュア ゾンビ系（黒枠）",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "figure_leon",
+      "name": "フィギュア レオン系（青枠）",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "figure_tyrant",
+      "name": "フィギュア タイラント系（赤枠）",
+      "type": "bonus_end",
+      "hint": "高設定示唆"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "at_rate",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/343.4、設定6: 1/242.1",
+      "probabilities": {
+        "1": 0.002913,
+        "2": 0.003016,
+        "3": 0.003184,
+        "4": 0.003613,
+        "5": 0.003903,
+        "6": 0.004130
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "tyrant_koukaku",
+      "name": "タイラント高確移行率",
+      "description": "設定1: 12.5%、設定6: 20.3%。百の位偶数G到達時に抽選",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.133,
+        "3": 0.148,
+        "4": 0.172,
+        "5": 0.191,
+        "6": 0.203
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_replay_high",
+      "name": "リプレイ時CZ当選率（心音:高）",
+      "description": "設定1: 3.1%、設定6: 10.2%。大きな設定差",
+      "probabilities": {
+        "1": 0.031,
+        "2": 0.047,
+        "3": 0.070,
+        "4": 0.086,
+        "5": 0.094,
+        "6": 0.102
+      },
+      "color": "#4CAF50",
+      "displayOrder": 3
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

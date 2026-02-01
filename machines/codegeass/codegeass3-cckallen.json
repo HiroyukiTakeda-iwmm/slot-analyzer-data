@@ -1,0 +1,197 @@
+{
+  "name": "パチスロコードギアス 反逆のルルーシュ3 C.C.&Kallen ver.",
+  "type": "A+AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.00791,
+        "2": 0.00801,
+        "3": 0.00821,
+        "4": 0.00876,
+        "5": 0.00934,
+        "6": 0.01012
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "設定1: 1/126.5、設定6: 1/98.8。通常時～AT中共通"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01669,
+        "2": 0.01701,
+        "3": 0.01742,
+        "4": 0.01805,
+        "5": 0.01898,
+        "6": 0.02004
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/59.9、設定6: 1/49.9。通常時～AT中共通"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.00244,
+        "2": 0.00250,
+        "3": 0.00259,
+        "4": 0.00269,
+        "5": 0.00275,
+        "6": 0.00284
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "設定1: 1/409.6、設定6: 1/352.3。通常時のみカウント推奨"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_screen_nunnally",
+      "name": "AT終了画面 ナナリー/スザク/ルルーシュ",
+      "description": "AT終了時",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "end_screen_heroine3",
+      "name": "AT終了画面 ルルーシュ+ヒロイン3人",
+      "description": "AT終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_black_knights",
+      "name": "AT終了画面 黒の騎士団",
+      "description": "AT終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_akito",
+      "name": "AT終了画面 亡国のアキト",
+      "description": "AT終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_bronze",
+      "name": "サミートロフィー 銅",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー 銀",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー 金",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィー キリン柄",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー 虹",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_screen_kallen",
+      "name": "AT終了画面 カレン",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "end_screen_childhood",
+      "name": "AT終了画面 幼少期",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "end_screen_cc",
+      "name": "AT終了画面 C.C.",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/198.0、設定6: 1/148.9",
+      "probabilities": {
+        "1": 0.005051,
+        "2": 0.005158,
+        "3": 0.005417,
+        "4": 0.005889,
+        "5": 0.006334,
+        "6": 0.006716
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "rb_rate",
+      "name": "REG確率",
+      "description": "設定1: 1/496.5、設定6: 1/336.1。大きな設定差",
+      "probabilities": {
+        "1": 0.002014,
+        "2": 0.002045,
+        "3": 0.002151,
+        "4": 0.002503,
+        "5": 0.002778,
+        "6": 0.002976
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    },
+    {
+      "id": "cc_mugen",
+      "name": "REG後AT中 無限AT移行C.C.揃い出現率",
+      "description": "設定1: 1/993.0、設定6: 1/331.0。約3倍の設定差",
+      "probabilities": {
+        "1": 0.001007,
+        "2": 0.001007,
+        "3": 0.001038,
+        "4": 0.001679,
+        "5": 0.002350,
+        "6": 0.003021
+      },
+      "color": "#FF9800",
+      "displayOrder": 3
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "DMMぱちタウン、一撃、ちょんぼりすた"
+}

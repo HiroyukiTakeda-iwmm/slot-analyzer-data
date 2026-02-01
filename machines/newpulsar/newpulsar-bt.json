@@ -1,0 +1,106 @@
+{
+  "name": "スマスロニューパルサーBT",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "チェリー合算",
+      "probabilities": {
+        "1": 0.04950,
+        "2": 0.05000,
+        "5": 0.05025,
+        "6": 0.05076
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "設定1: 1/20.2、設定6: 1/19.7。4段階設定（1,2,5,6）"
+    },
+    {
+      "name": "チャンスチェリー",
+      "probabilities": {
+        "1": 0.00153,
+        "2": 0.00165,
+        "5": 0.00165,
+        "6": 0.00177
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/655.4、設定6: 1/565.0。逆押しで判別可能"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.01611,
+        "2": 0.01621,
+        "5": 0.01611,
+        "6": 0.01621
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/62.1、設定6: 1/61.7。偶奇で若干の差"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/183.1、設定6: 1/156.0。BB:RB=1:1",
+      "probabilities": {
+        "1": 0.00546,
+        "2": 0.00577,
+        "5": 0.00601,
+        "6": 0.00641
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bb_rate",
+      "name": "BB確率",
+      "description": "設定1: 1/366.1、設定6: 1/312.1",
+      "probabilities": {
+        "1": 0.00273,
+        "2": 0.00288,
+        "5": 0.00301,
+        "6": 0.00320
+      },
+      "color": "#E91E63",
+      "displayOrder": 2
+    },
+    {
+      "id": "rb_rate",
+      "name": "RB確率",
+      "description": "設定1: 1/366.1、設定6: 1/312.1",
+      "probabilities": {
+        "1": 0.00273,
+        "2": 0.00288,
+        "5": 0.00301,
+        "6": 0.00320
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    },
+    {
+      "id": "rb_flash",
+      "name": "RB中リールバックライトフラッシュ出現率",
+      "description": "設定1: 1/65536、設定6: 1/512。特大設定差",
+      "probabilities": {
+        "1": 0.000015,
+        "2": 0.000305,
+        "5": 0.001373,
+        "6": 0.001953
+      },
+      "color": "#FFD700",
+      "displayOrder": 4
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

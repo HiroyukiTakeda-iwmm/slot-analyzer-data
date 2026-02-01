@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -831,6 +831,46 @@
       "file": "shake/shake-bt.json",
       "tags": ["BT", "SHAKE", "大都技研", "スマスロ", "4段階設定", "2025年新台"],
       "description": "4段階設定（1,2,5,6）。ベル・チェリー・スイカに設定差。偶数設定はボーナスが軽く、奇数設定はBT継続率が高い。コパンダトロフィーで設定示唆"
+    },
+    {
+      "id": "biohazard-re2",
+      "name": "パチスロ バイオハザード RE:2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "biohazard-re2/biohazard-re2.json",
+      "tags": ["AT", "バイオハザード", "アデリオン", "ユニバーサル", "6.5号機", "6段階設定", "2022年台"],
+      "description": "小役確率は全設定共通。AT初当たり確率・リプレイ時CZ当選率に設定差。フィギュアコレクションで設定確定"
+    },
+    {
+      "id": "newpulsar-bt",
+      "name": "スマスロニューパルサーBT",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "newpulsar/newpulsar-bt.json",
+      "tags": ["BT", "ニューパルサー", "山佐ネクスト", "スマスロ", "4段階設定", "2025年新台"],
+      "description": "4段階設定（1,2,5,6）。チェリー合算・チャンスチェリーに設定差。RB中リールフラッシュに特大設定差"
+    },
+    {
+      "id": "thunderv-lightning",
+      "name": "サンダーVライトニング",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "thunderv/thunderv-lightning.json",
+      "tags": ["Aタイプ", "サンダーV", "アクロス", "6号機", "4段階設定", "2020年台"],
+      "description": "4段階設定（1,2,5,6）。ベルA確率に設定差。BIG中ハズレに特大設定差。RIZIN ZONEゾロ目で設定6確定"
+    },
+    {
+      "id": "codegeass3-cckallen",
+      "name": "パチスロコードギアス3 C.C.&Kallen ver.",
+      "type": "A+AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "codegeass/codegeass3-cckallen.json",
+      "tags": ["A+AT", "コードギアス", "サミー", "6.5号機", "6段階設定", "2023年台"],
+      "description": "チェリー・スイカ・チャンス目に設定差。REG確率に大きな設定差。AT終了画面とサミートロフィーで設定確定"
     }
   ]
 }

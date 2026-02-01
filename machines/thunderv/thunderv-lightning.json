@@ -1,0 +1,136 @@
+{
+  "name": "サンダーVライトニング",
+  "type": "A-type",
+  "roles": [
+    {
+      "name": "ベルA",
+      "probabilities": {
+        "1": 0.10417,
+        "2": 0.10753,
+        "5": 0.11111,
+        "6": 0.11494
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/9.6、設定6: 1/8.7。4段階設定（1,2,5,6）。最重要カウント対象"
+    },
+    {
+      "name": "チェリーA",
+      "probabilities": {
+        "1": 0.05464,
+        "2": 0.05376,
+        "5": 0.05814,
+        "6": 0.05650
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定1: 1/18.3、設定6: 1/17.7。奇数設定が若干優遇"
+    },
+    {
+      "name": "スイカ合算",
+      "probabilities": {
+        "1": 0.01221,
+        "2": 0.01202,
+        "5": 0.01258,
+        "6": 0.01245
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/81.9、設定6: 1/80.3。奇数設定が若干優遇"
+    },
+    {
+      "name": "チェリーB",
+      "probabilities": {
+        "1": 0.01269,
+        "2": 0.01269,
+        "5": 0.01269,
+        "6": 0.01269
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/78.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "rizin_zoromi",
+      "name": "RIZIN ZONEゾロ目ゲーム数（55G/77G/99G）",
+      "description": "BIG後RIZIN ZONE終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "reg_rizin_low",
+      "name": "REG後RIZIN ZONE突入（1枚役2回以下）",
+      "description": "REG中1枚役2回以下でRIZIN ZONE突入",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/162.6、設定6: 1/128.0",
+      "probabilities": {
+        "1": 0.00615,
+        "2": 0.00670,
+        "5": 0.00725,
+        "6": 0.00781
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bb_rate",
+      "name": "BIG確率",
+      "description": "設定1-2: 1/277.7、設定6: 1/256.0",
+      "probabilities": {
+        "1": 0.00360,
+        "2": 0.00360,
+        "5": 0.00378,
+        "6": 0.00391
+      },
+      "color": "#E91E63",
+      "displayOrder": 2
+    },
+    {
+      "id": "rb_rate",
+      "name": "REG確率",
+      "description": "設定1: 1/392.4、設定6: 1/256.0。大きな設定差",
+      "probabilities": {
+        "1": 0.00255,
+        "2": 0.00310,
+        "5": 0.00346,
+        "6": 0.00391
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    },
+    {
+      "id": "big_hazure",
+      "name": "BIG中ハズレ出現率",
+      "description": "設定1-2: 1/16384、設定5-6: 1/420.1。特大設定差",
+      "probabilities": {
+        "1": 0.00006,
+        "2": 0.00006,
+        "5": 0.00238,
+        "6": 0.00238
+      },
+      "color": "#FFD700",
+      "displayOrder": 4
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}
