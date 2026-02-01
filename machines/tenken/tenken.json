@@ -3,37 +3,53 @@
   "type": "AT",
   "roles": [
     {
-      "name": "弱スイカ",
+      "name": "スイカ",
       "probabilities": {
-        "1": 0.0091,
-        "2": 0.0095,
-        "3": 0.0099,
-        "4": 0.0103,
-        "5": 0.0107,
-        "6": 0.0112
+        "1": 0.00702,
+        "2": 0.00702,
+        "3": 0.00702,
+        "4": 0.00702,
+        "5": 0.00702,
+        "6": 0.00702
       },
-      "hasSettingDiff": true,
+      "hasSettingDiff": false,
       "displayOrder": 1,
       "color": "#4CAF50",
-      "description": "弱スイカからのボーナス当選率に大きな設定差"
+      "description": "全設定共通: 約1/142.5"
     },
     {
       "name": "弱チャンス目",
       "probabilities": {
-        "1": 0.0083,
-        "2": 0.0087,
-        "3": 0.0091,
-        "4": 0.0095,
-        "5": 0.0099,
-        "6": 0.0104
+        "1": 0.01001,
+        "2": 0.01001,
+        "3": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
       },
-      "hasSettingDiff": true,
+      "hasSettingDiff": false,
       "displayOrder": 2,
       "color": "#9C27B0",
-      "description": "弱チャンス目成立時のボーナス当選率に設定差"
+      "description": "全設定共通: 約1/99.9"
     }
   ],
   "confirmationEvents": [
+    {
+      "id": "at_end_wafuku",
+      "name": "AT終了画面「和服」",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_all",
+      "name": "AT終了画面「全員集合」",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
     {
       "id": "red_title_fail",
       "name": "赤タイトル討伐ミッション失敗",
@@ -45,33 +61,33 @@
   ],
   "trialSuccessRates": [
     {
-      "id": "fran_oyasumi_at",
-      "name": "フランおやすみ中AT当選率",
-      "description": "突入時のAT抽選。高設定ほど優遇",
+      "id": "weak_chance_bonus",
+      "name": "弱チャンス目ボーナス当選率（通常時）",
+      "description": "設定1: 3%、設定6: 11%。メインの設定差要素",
       "probabilities": {
-        "1": 0.10,
-        "2": 0.13,
-        "3": 0.16,
-        "4": 0.20,
-        "5": 0.25,
-        "6": 0.32
+        "1": 0.03,
+        "2": 0.04,
+        "3": 0.05,
+        "4": 0.07,
+        "5": 0.09,
+        "6": 0.11
       },
-      "color": "#2196F3",
+      "color": "#FF9800",
       "displayOrder": 1
     },
     {
-      "id": "demon_battle_at",
-      "name": "デーモンバトル（青・黄アイコン）AT当選率",
-      "description": "10個未満撃破時のAT抽選に設定差",
+      "id": "fran_oyasumi_at",
+      "name": "フランおやすみ中AT当選率",
+      "description": "設定1: 9%、設定6: 14%",
       "probabilities": {
-        "1": 0.05,
-        "2": 0.07,
-        "3": 0.09,
+        "1": 0.09,
+        "2": 0.10,
+        "3": 0.11,
         "4": 0.12,
-        "5": 0.16,
-        "6": 0.22
+        "5": 0.13,
+        "6": 0.14
       },
-      "color": "#FF9800",
+      "color": "#2196F3",
       "displayOrder": 2
     }
   ],
@@ -91,7 +107,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
+  "version": "1.1",
+  "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

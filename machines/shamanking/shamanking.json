@@ -5,17 +5,17 @@
     {
       "name": "共通ベルA",
       "probabilities": {
-        "1": 0.0091,
-        "2": 0.0095,
-        "3": 0.0099,
-        "4": 0.0105,
-        "5": 0.0111,
-        "6": 0.0118
+        "1": 0.02083,
+        "2": 0.02119,
+        "3": 0.02232,
+        "4": 0.02457,
+        "5": 0.02625,
+        "6": 0.03145
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
       "color": "#FFCA28",
-      "description": "設定1: 約1/110、設定6: 約1/85。設定判別の要"
+      "description": "設定1: 1/48.0、設定6: 1/31.8。設定判別の要"
     },
     {
       "name": "弱チェリー",
@@ -50,59 +50,65 @@
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.0083,
-        "2": 0.0083,
-        "3": 0.0083,
-        "4": 0.0083,
-        "5": 0.0083,
-        "6": 0.0083
+        "1": 0.01326,
+        "2": 0.01326,
+        "3": 0.01326,
+        "4": 0.01326,
+        "5": 0.01326,
+        "6": 0.01326
       },
       "hasSettingDiff": false,
       "displayOrder": 4,
       "color": "#4CAF50",
-      "description": "全設定共通"
+      "description": "全設定共通: 約1/75.4"
     }
   ],
-  "confirmationEvents": [
-    {
-      "id": "os_at_direct",
-      "name": "OS揃いからAT直撃",
-      "description": "OS揃い時のAT直撃当選。設定4以上で期待度大幅アップ",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
-    }
-  ],
+  "confirmationEvents": [],
   "trialSuccessRates": [
     {
-      "id": "episode_bonus",
-      "name": "エピソードボーナス当選率",
-      "description": "初当たり時のエピソードボーナス当選率",
+      "id": "os_at_direct",
+      "name": "OS揃いからAT直撃率",
+      "description": "設定1: 3.1%、設定6: 15.6%。設定4以上で期待度大幅アップ",
       "probabilities": {
-        "1": 0.08,
-        "2": 0.10,
-        "3": 0.12,
-        "4": 0.15,
-        "5": 0.18,
-        "6": 0.22
+        "1": 0.031,
+        "2": 0.035,
+        "3": 0.043,
+        "4": 0.078,
+        "5": 0.117,
+        "6": 0.156
       },
-      "color": "#9C27B0",
+      "color": "#FFD700",
       "displayOrder": 1
     },
     {
-      "id": "high_koukaku",
-      "name": "弱レア役からのボーナス高確移行",
-      "description": "弱チェリー・スイカ成立時のボーナス高確移行率",
+      "id": "episode_bonus",
+      "name": "エピソードボーナス当選率",
+      "description": "設定1: 0.4%、設定6: 2.7%",
       "probabilities": {
-        "1": 0.15,
-        "2": 0.17,
-        "3": 0.19,
-        "4": 0.22,
-        "5": 0.25,
-        "6": 0.30
+        "1": 0.004,
+        "2": 0.004,
+        "3": 0.008,
+        "4": 0.016,
+        "5": 0.020,
+        "6": 0.027
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    },
+    {
+      "id": "high_koukaku",
+      "name": "弱レア役からの高確移行率",
+      "description": "設定1: 3.9%、設定6: 10.2%",
+      "probabilities": {
+        "1": 0.039,
+        "2": 0.043,
+        "3": 0.051,
+        "4": 0.066,
+        "5": 0.082,
+        "6": 0.102
       },
       "color": "#2196F3",
-      "displayOrder": 2
+      "displayOrder": 3
     }
   ],
   "endScreens": [
@@ -123,14 +129,14 @@
       "id": "hao_only",
       "name": "ハオのみ画面",
       "type": "at_end",
-      "hint": "高設定示唆",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
       "color": "#FF5722"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
+  "version": "1.1",
+  "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
 }
