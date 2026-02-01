@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -57,7 +57,7 @@
       "name": "スマスロ鉄拳6",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tekken/tekken6.json",
       "tags": ["AT", "鉄拳", "スマスロ", "2025年新台"],
       "description": "小役確率に設定差なし、AT直撃確率に大きな設定差"
@@ -167,7 +167,7 @@
       "name": "スマスロいざ！番長",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "bancho/iza-bancho.json",
       "tags": ["AT", "番長", "スマスロ", "2025年新台"],
       "description": "共通ベルAと青7BB直撃率に大きな設定差"
@@ -247,7 +247,7 @@
       "name": "スマスロ シャーマンキング",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "shamanking/shamanking.json",
       "tags": ["AT", "シャーマンキング", "スマスロ", "Phase3", "2025年新台"],
       "description": "共通ベルA確率に設定差大、OS揃いAT直撃で設定4以上期待度UP"
@@ -297,7 +297,7 @@
       "name": "L麻雀物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "mahjongmonogatari/mahjongmonogatari.json",
       "tags": ["AT", "麻雀物語", "スマスロ", "Phase3", "2025年新台"],
       "description": "マシロック中7揃いと煌帝出現率に設定差、ハルルナPUSHで設定4以上濃厚"
@@ -307,7 +307,7 @@
       "name": "Lゴジラ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "godzilla/godzilla.json",
       "tags": ["AT", "ゴジラ", "スマスロ", "Phase3", "2025年新台"],
       "description": "小役確率は全設定共通、AT初当り確率に大きな設定差"
@@ -317,7 +317,7 @@
       "name": "スマスロ マギアレコード 魔法少女まどか☆マギカ外伝",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "magireco/magireco.json",
       "tags": ["AT", "マギレコ", "まどマギ", "スマスロ", "Phase3", "2025年新台"],
       "description": "弱チェリー確率に微差、みたまボーナス最終ジャッジAT当選率に大きな設定差"
@@ -327,7 +327,7 @@
       "name": "スマスロ ようこそ実力至上主義の教室へ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "youjitsu/youjitsu.json",
       "tags": ["AT", "よう実", "スマスロ", "Phase3", "2025年新台"],
       "description": "ダクセルフラッシュ発生率に設定1と6で5倍の差"
@@ -347,7 +347,7 @@
       "name": "L ULTRAMAN",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "ultraman/ultraman.json",
       "tags": ["AT", "ウルトラマン", "スマスロ", "Phase3", "2025年新台"],
       "description": "中押しウルトラ目に特大の設定差、タイマー演出と終了画面で設定示唆"
@@ -357,7 +357,7 @@
       "name": "パチスロ 転生したら剣でした",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tenken/tenken.json",
       "tags": ["AT", "転剣", "スマスロ", "Phase3", "2025年新台"],
       "description": "弱スイカからのボーナス当選率に大きな設定差"
@@ -377,7 +377,7 @@
       "name": "L 無職転生 ~異世界行ったら本気だす~",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "musyokutensei/musyokutensei.json",
       "tags": ["AT", "無職転生", "スマスロ", "Phase3", "2025年新台"],
       "description": "AT初当り確率に大きな設定差、ダブル・オールヒロイン役でAT濃厚"
@@ -627,7 +627,7 @@
       "name": "L押忍!番長4",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "bancho4/bancho4.json",
       "tags": ["AT", "番長", "スマスロ", "大都技研", "2024年新台"],
       "description": "共通ベル・AT直撃に設定差。終了画面で設定確定演出あり"
