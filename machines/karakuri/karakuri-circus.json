@@ -29,9 +29,9 @@
     {
       "id": "masaru_narumi_shirogane",
       "name": "勝+鳴海+しろがね終了画面",
-      "description": "AT終了画面",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "description": "AT終了画面。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
       "color": "#FFD700"
     }
   ],

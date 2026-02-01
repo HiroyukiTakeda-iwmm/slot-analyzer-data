@@ -48,8 +48,87 @@
       "description": "設定1: 1/6411、設定6: 1/2150。設定差約3倍"
     }
   ],
+  "confirmationEvents": [
+    {
+      "id": "at_end_chatsumi",
+      "name": "終了画面「茶摘み」",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "at_end_rq",
+      "name": "終了画面「レースクイーン」",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "at_end_onsen",
+      "name": "終了画面「温泉」",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "fuji_1",
+      "name": "終了画面「富士山」1回",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "id": "fuji_2",
+      "name": "終了画面「富士山」2回",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"]
+    },
+    {
+      "id": "fuji_3",
+      "name": "終了画面「富士山」3回",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "fuji_4",
+      "name": "終了画面「富士山」4回",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "fuji_5",
+      "name": "終了画面「富士山」5回",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "ed_machiko",
+      "name": "ED中キャラ「マチ子」",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "ed_misao",
+      "name": "ED中キャラ「操」",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "ed_koutetsu",
+      "name": "ED中キャラ「鋼鉄」",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "description": "大都技研のスマスロAT機。CZ非搭載で対決勝敗システム。共通ベル・AT直撃・確定対決当選率に設定差。終了画面の茶摘み/レースクイーン/温泉で高設定濃厚。",
   "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
