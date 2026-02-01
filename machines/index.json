@@ -1,13 +1,13 @@
 {
-  "version": "1.0",
-  "updatedAt": "2026-01-30T00:00:00Z",
+  "version": "1.1",
+  "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
       "name": "SマイジャグラーV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "juggler/my-juggler-v.json",
       "tags": ["ジャグラー", "Aタイプ", "6号機", "6段階設定"],
       "description": "6段階設定のジャグラー系Aタイプ"
@@ -27,7 +27,7 @@
       "name": "スマスロ北斗の拳",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "hokuto/hokuto-ken.json",
       "tags": ["AT", "北斗", "確定演出", "スマスロ", "トロフィー"],
       "description": "金トロフィーで設定4以上確定、キリンで設定5以上確定"
@@ -431,6 +431,56 @@
       "file": "discup/discup-ultraremix.json",
       "tags": ["A+AT", "ディスクアップ", "スマスロ", "サミートロフィー", "2025年新台"],
       "description": "REG確率に大きな設定差、BB中ウルトラ上乗せ発生率に特大設定差、REG中3モードで豊富な設定示唆"
+    },
+    {
+      "id": "valvrave2",
+      "name": "Lパチスロ 革命機ヴァルヴレイヴ2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "valvrave/valvrave2.json",
+      "tags": ["AT", "ヴァルヴレイヴ", "スマスロ", "SANKYO", "2025年新台"],
+      "description": "小役確率に設定差なし、BAR揃いAT直撃率と特殊テーブル選択率に設定差、終了画面枠色で設定示唆"
+    },
+    {
+      "id": "monkeyturn-v",
+      "name": "スマスロ モンキーターンV",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "monkeyturn/monkeyturn-v.json",
+      "tags": ["AT", "モンキーターン", "スマスロ", "ケロットトロフィー", "2023年新台"],
+      "description": "5枚役確率に設定差（非公式）、ライバルモード突入率に設定差、ケロットトロフィーで設定示唆"
+    },
+    {
+      "id": "kaguya-sama",
+      "name": "Lパチスロ かぐや様は告らせたい",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kaguya/kaguya-sama.json",
+      "tags": ["AT", "かぐや様", "スマスロ", "SANKYO", "2024年新台"],
+      "description": "ボーナス終了画面枠色とREG中キャラ紹介で設定示唆、ミニ藤原衣装チェンジで確定演出"
+    },
+    {
+      "id": "hihouden",
+      "name": "スマスロ秘宝伝",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hihouden/hihouden.json",
+      "tags": ["AT", "秘宝伝", "スマスロ", "コパンダトロフィー", "2025年新台"],
+      "description": "チェリー確率に設定差、コパンダトロフィーと秘宝ニュースで設定示唆"
+    },
+    {
+      "id": "godeater-resurrection",
+      "name": "スマスロ ゴッドイーター リザレクション",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "godeater/godeater-resurrection.json",
+      "tags": ["AT", "ゴッドイーター", "スマスロ", "2024年新台"],
+      "description": "小役確率は全設定共通、AT終了画面とストーリー終了ボイスで設定示唆"
     }
   ]
 }

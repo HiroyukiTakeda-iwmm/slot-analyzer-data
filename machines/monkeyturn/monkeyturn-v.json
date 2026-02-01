@@ -1,0 +1,149 @@
+{
+  "name": "スマスロ モンキーターンV",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "5枚役",
+      "probabilities": {
+        "1": 0.026213,
+        "2": 0.027130,
+        "4": 0.033036,
+        "5": 0.040799,
+        "6": 0.044385
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/38.15、設定6: 1/22.53。セグに「5」と表示。非公式だがSNSで広く共有"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "rival_mode",
+      "name": "ライバルモード突入率",
+      "description": "ライバルモード（榎木・蒲生・浜岡）のトータル突入率。高設定ほど高い",
+      "triggerName": "ライバルモード抽選",
+      "targetName": "ライバルモード突入",
+      "probabilities": {
+        "1": 0.300,
+        "2": 0.316,
+        "4": 0.363,
+        "5": 0.417,
+        "6": 0.440
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_soku_yuushu",
+      "name": "AT終了後即優出当選率",
+      "description": "AT終了後の即優出当選率。高設定ほど引き戻しやすい",
+      "triggerName": "AT終了",
+      "targetName": "即優出当選",
+      "probabilities": {
+        "1": 0.016,
+        "2": 0.017,
+        "4": 0.022,
+        "5": 0.030,
+        "6": 0.037
+      },
+      "color": "#4CAF50",
+      "displayOrder": 2
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ケロットトロフィー銅",
+      "description": "AT終了画面で銅トロフィーが出現で設定2以上確定",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "ケロットトロフィー金",
+      "description": "AT終了画面で金トロフィーが出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "ケロットトロフィーケロット",
+      "description": "AT終了画面でケロットトロフィーが出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#4CAF50",
+      "id": "トロフィーケロット"
+    },
+    {
+      "name": "ケロットトロフィー虹",
+      "description": "AT終了画面で虹トロフィーが出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "456枚表示",
+      "description": "AT中に456枚表示で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800",
+      "id": "456枚表示"
+    },
+    {
+      "name": "666枚表示",
+      "description": "AT中に666枚表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚表示"
+    },
+    {
+      "name": "803枚表示",
+      "description": "AT中に803枚表示で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#E91E63",
+      "id": "803枚表示"
+    },
+    {
+      "name": "舟券虹（ケロット柄）",
+      "description": "サブ液晶の舟券で虹（ケロット柄）が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#9C27B0",
+      "id": "舟券虹"
+    },
+    {
+      "name": "榎木「これが艇王…」紫ランプ",
+      "description": "激走チャージ終了時に榎木セリフ+紫ランプで設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#673AB7",
+      "id": "榎木紫ランプ"
+    },
+    {
+      "name": "澄ボイス紫ランプ（ED中）",
+      "description": "エンディング中レア役成立時に澄ボイス+紫ランプで設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#9C27B0",
+      "id": "澄紫ED"
+    },
+    {
+      "name": "波多野&青島画面（ラウンド開始）",
+      "description": "ラウンド開始画面で波多野&青島画面が出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#2196F3",
+      "id": "波多野青島画面"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "山佐製AT機。設定L,1,2,4,5,6の構成（設定3なし）。5枚役確率に設定差あり（非公式）。ライバルモード突入率に設定差。ケロットトロフィー・獲得枚数表示・舟券で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、パチーモ"
+}

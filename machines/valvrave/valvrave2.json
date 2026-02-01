@@ -1,0 +1,240 @@
+{
+  "name": "Lパチスロ 革命機ヴァルヴレイヴ2",
+  "type": "AT",
+  "roles": [],
+  "trialSuccessRates": [
+    {
+      "id": "bar_at_chokugeki",
+      "name": "BAR揃いAT直撃当選率",
+      "description": "BAR揃い時のAT直撃当選率。高設定ほど直撃しやすい",
+      "triggerName": "BAR揃い",
+      "targetName": "AT直撃当選",
+      "probabilities": {
+        "1": 0.03,
+        "2": 0.04,
+        "4": 0.05,
+        "5": 0.06,
+        "6": 0.07
+      },
+      "color": "#F44336",
+      "displayOrder": 1
+    },
+    {
+      "id": "special_table",
+      "name": "特殊テーブル選択率",
+      "description": "通常A~C滞在時の特殊テーブル選択率。設定6は約12%と高い",
+      "triggerName": "通常テーブル抽選",
+      "targetName": "特殊テーブル選択",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.02,
+        "4": 0.04,
+        "5": 0.08,
+        "6": 0.12
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "銀枠（ピノ&プルー）",
+      "description": "CZ・ボーナス終了画面で銀枠が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#90CAF9",
+      "id": "銀枠終了画面"
+    },
+    {
+      "name": "金枠（全員集合）",
+      "description": "CZ・ボーナス終了画面で金枠が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#FFD700",
+      "id": "金枠終了画面"
+    },
+    {
+      "name": "456枚OVER表示",
+      "description": "AT中の獲得枚数で456枚OVER表示は設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800",
+      "id": "456枚OVER"
+    },
+    {
+      "name": "555枚OVER表示",
+      "description": "AT中の獲得枚数で555枚OVER表示は設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#E91E63",
+      "id": "555枚OVER"
+    },
+    {
+      "name": "666枚OVER表示",
+      "description": "AT中の獲得枚数で666枚OVER表示は設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚OVER"
+    },
+    {
+      "name": "+44Gゾロ目",
+      "description": "ゾロ目ゲーム数+44Gで設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50",
+      "id": "ゾロ目44G"
+    },
+    {
+      "name": "+66Gゾロ目",
+      "description": "ゾロ目ゲーム数+66Gで設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#9C27B0",
+      "id": "ゾロ目66G"
+    },
+    {
+      "name": "200年後のサキ（ラウンド開始画面）",
+      "description": "ラウンド開始画面で200年後のサキが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#2196F3",
+      "id": "200年後のサキ"
+    },
+    {
+      "name": "リーゼロッテ（ラウンド開始画面）",
+      "description": "ラウンド開始画面でリーゼロッテが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63",
+      "id": "リーゼロッテ"
+    },
+    {
+      "name": "夢夢ちゃんプレミアム",
+      "description": "ハラキリチャレンジ中に夢夢ちゃんプレミアム出現で設定4以上濃厚+ハラキリドライブ100G確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF5722",
+      "id": "夢夢ちゃんプレミアム"
+    },
+    {
+      "name": "マギウスマーク4個",
+      "description": "マギウスマーク4個で天国モード+設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#673AB7",
+      "id": "マギウス4個"
+    },
+    {
+      "name": "マギウスマーク5個",
+      "description": "マギウスマーク5個で天国モード+設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#673AB7",
+      "id": "マギウス5個"
+    },
+    {
+      "name": "マギウスマーク6個",
+      "description": "マギウスマーク6個で天国モード+設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#673AB7",
+      "id": "マギウス6個"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "白枠（コクピット）",
+      "description": "デフォルト",
+      "distribution": {
+        "1": 0.74,
+        "2": 0.65,
+        "4": 0.60,
+        "5": 0.60,
+        "6": 0.60
+      }
+    },
+    {
+      "name": "青枠（ライゾウ）",
+      "description": "奇数&高設定示唆（弱）",
+      "distribution": {
+        "1": 0.08,
+        "2": 0.05,
+        "4": 0.05,
+        "5": 0.10,
+        "6": 0.05
+      }
+    },
+    {
+      "name": "青枠（サキ）",
+      "description": "偶数設定示唆",
+      "distribution": {
+        "1": 0.08,
+        "2": 0.10,
+        "4": 0.10,
+        "5": 0.05,
+        "6": 0.10
+      }
+    },
+    {
+      "name": "赤枠（コクピット）",
+      "description": "高設定示唆（弱）",
+      "distribution": {
+        "1": 0.07,
+        "2": 0.07,
+        "4": 0.09,
+        "5": 0.09,
+        "6": 0.09
+      }
+    },
+    {
+      "name": "赤枠（男性4人）",
+      "description": "高設定示唆（強）",
+      "distribution": {
+        "1": 0.03,
+        "2": 0.03,
+        "4": 0.06,
+        "5": 0.06,
+        "6": 0.06
+      }
+    },
+    {
+      "name": "紫枠（サキ&ショーコ）",
+      "description": "設定2以上濃厚",
+      "distribution": {
+        "1": 0,
+        "2": 0.10,
+        "4": 0.08,
+        "5": 0.08,
+        "6": 0.07
+      }
+    },
+    {
+      "name": "銀枠（ピノ&プルー）",
+      "description": "設定4以上濃厚",
+      "distribution": {
+        "1": 0,
+        "2": 0,
+        "4": 0.02,
+        "5": 0.02,
+        "6": 0.02
+      }
+    },
+    {
+      "name": "金枠（全員集合）",
+      "description": "設定6濃厚",
+      "distribution": {
+        "1": 0,
+        "2": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0.01
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "SANKYO製AT機。5段階設定（1,2,4,5,6）。小役確率に設定差なし。BAR揃いAT直撃率と特殊テーブル選択率に設定差。CZ・ボーナス終了画面の枠色で設定示唆。銀枠で設定4以上、金枠で設定6濃厚。",
+  "lastUpdated": "2026-02-01",
+  "source": "DMMぱちタウン、ちょんぼりすた、一撃"
+}

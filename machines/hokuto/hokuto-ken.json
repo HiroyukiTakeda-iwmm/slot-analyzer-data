@@ -5,147 +5,175 @@
     {
       "name": "弱スイカ",
       "probabilities": {
-        "1": 0.008333333,
-        "2": 0.008474576,
-        "3": 0.008695652,
-        "4": 0.008928571,
-        "5": 0.009259259,
-        "6": 0.00952381
+        "1": 0.009174,
+        "2": 0.009200,
+        "4": 0.009443,
+        "5": 0.009930,
+        "6": 0.010173
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
-      "color": "#4CAF50"
+      "color": "#4CAF50",
+      "description": "設定1: 1/109.0、設定6: 1/98.3。設定差の主要カウント対象"
     },
     {
-      "name": "強スイカ",
+      "name": "強スイカ合算",
       "probabilities": {
-        "1": 0.003125,
-        "2": 0.003125,
-        "3": 0.003125,
-        "4": 0.003125,
-        "5": 0.003125,
-        "6": 0.003125
+        "1": 0.002441,
+        "2": 0.002472,
+        "4": 0.002655,
+        "5": 0.002838,
+        "6": 0.002960
       },
-      "hasSettingDiff": false,
+      "hasSettingDiff": true,
       "displayOrder": 2,
-      "color": "#388E3C"
+      "color": "#388E3C",
+      "description": "設定1: 1/409.6、設定6: 1/337.8。強スイカA+Bの合算"
     },
     {
-      "name": "弱チェリー",
+      "name": "角チェリー",
       "probabilities": {
-        "1": 0.009803922,
-        "2": 0.009803922,
-        "3": 0.009803922,
-        "4": 0.009803922,
-        "5": 0.009803922,
-        "6": 0.009803922
+        "1": 0.009158,
+        "2": 0.009158,
+        "4": 0.009158,
+        "5": 0.009158,
+        "6": 0.009158
       },
       "hasSettingDiff": false,
       "displayOrder": 3,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "description": "全設定共通 約1/109.2"
     },
     {
-      "name": "中段チェリー",
+      "name": "中段チェリー合算",
       "probabilities": {
-        "1": 0.00030581,
-        "2": 0.00030581,
-        "3": 0.00030581,
-        "4": 0.00030581,
-        "5": 0.00030581,
-        "6": 0.00030581
+        "1": 0.004760,
+        "2": 0.004883,
+        "4": 0.005005,
+        "5": 0.005128,
+        "6": 0.005249
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "設定1: 1/210.1、設定6: 1/190.5。中段チェリーA+Bの合算"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.005567,
+        "2": 0.005567,
+        "4": 0.005567,
+        "5": 0.005567,
+        "6": 0.005567
       },
       "hasSettingDiff": false,
-      "displayOrder": 4,
-      "color": "#C2185B"
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/179.6"
+    },
+    {
+      "name": "リーチ目役",
+      "probabilities": {
+        "1": 0.000061,
+        "2": 0.000076,
+        "4": 0.000092,
+        "5": 0.000107,
+        "6": 0.000122
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "設定1: 1/16384、設定6: 1/8192。複数回確認で高設定期待大"
     }
   ],
   "confirmationEvents": [
     {
       "name": "金トロフィー",
       "description": "AT終了時に出現で設定4以上確定",
-      "confirmedSettings": [
-        "4",
-        "5",
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3"
-      ],
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
       "color": "#FFD700",
       "id": "金トロフィー"
     },
     {
       "name": "キリントロフィー",
       "description": "AT終了時に出現で設定5以上確定",
-      "confirmedSettings": [
-        "5",
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
       "color": "#FFC107",
       "id": "キリントロフィー"
     },
     {
       "name": "レインボートロフィー",
       "description": "AT終了時に出現で設定6確定",
-      "confirmedSettings": [
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
       "color": "#FF5722",
       "id": "レインボートロフィー"
+    },
+    {
+      "name": "ケンシロウ「戦うのが…宿命だ!!」",
+      "description": "AT終了後タッチで設定4以上の期待大",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#2196F3",
+      "id": "ボイス設定4以上"
+    },
+    {
+      "name": "ユリア「まちつづけるのが…」",
+      "description": "AT終了後タッチで設定5以上の期待大",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#E91E63",
+      "id": "ボイス設定5以上"
+    },
+    {
+      "name": "456枚突破表示",
+      "description": "AT中に表示で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800",
+      "id": "456枚突破"
+    },
+    {
+      "name": "666枚突破表示",
+      "description": "AT中に表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚突破"
+    },
+    {
+      "name": "初代リン・ユリア復活演出",
+      "description": "継続バトル復活時に初代映像で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#9C27B0",
+      "id": "初代復活演出"
     }
   ],
   "trialSuccessRates": [
     {
-      "id": "weak_suika_cz",
-      "name": "弱スイカからのCZ当選",
-      "description": "通常時に弱スイカからCZに当選する確率",
-      "triggerName": "弱スイカ",
-      "targetName": "CZ当選",
-      "probabilities": {
-        "1": 0.05,
-        "2": 0.06,
-        "3": 0.07,
-        "4": 0.08,
-        "5": 0.1,
-        "6": 0.12
-      },
-      "color": "#4CAF50",
-      "displayOrder": 1
-    },
-    {
       "id": "at_hikimondoshi",
       "name": "AT引き戻し",
-      "description": "AT終了後の引き戻し率",
+      "description": "AT終了後の引き戻し率。高設定ほど天国モード移行率が高い",
       "triggerName": "AT終了",
       "targetName": "引き戻し成功",
       "probabilities": {
-        "1": 0.1,
+        "1": 0.10,
         "2": 0.12,
-        "3": 0.14,
         "4": 0.16,
         "5": 0.18,
-        "6": 0.2
+        "6": 0.20
       },
       "color": "#FF9800",
-      "displayOrder": 2
+      "displayOrder": 1
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "description": "スマスロ北斗の拳。弱スイカに設定差あり。トロフィー演出で設定示唆。"
+  "version": "1.1",
+  "description": "スマスロ北斗の拳。設定L,1,2,4,5,6の構成（設定3なし）。弱スイカ・強スイカ合算・中段チェリー合算・リーチ目役に設定差あり。トロフィー・ボイス・獲得枚数表示で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "でちゃう、一撃、ちょんぼりすた"
 }

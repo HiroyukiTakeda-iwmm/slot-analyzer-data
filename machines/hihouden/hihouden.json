@@ -1,0 +1,153 @@
+{
+  "name": "スマスロ秘宝伝",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.018282,
+        "2": 0.018553,
+        "3": 0.018832,
+        "4": 0.019120,
+        "5": 0.019920,
+        "6": 0.021505
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/54.7、設定6: 1/46.5。設定差の主要カウント対象"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.012180,
+        "2": 0.012180,
+        "3": 0.012180,
+        "4": 0.012180,
+        "5": 0.012180,
+        "6": 0.012180
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通 約1/82.1"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.007813,
+        "2": 0.007813,
+        "3": 0.007813,
+        "4": 0.007813,
+        "5": 0.007813,
+        "6": 0.007813
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/128.0"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.000244,
+        "2": 0.000244,
+        "3": 0.000244,
+        "4": 0.000244,
+        "5": 0.000244,
+        "6": 0.000244
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF5722",
+      "description": "全設定共通 約1/4096"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "コパンダトロフィー銅",
+      "description": "AT終了画面でコパンダトロフィー銅が出現で設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "コパンダトロフィー銀",
+      "description": "AT終了画面でコパンダトロフィー銀が出現で設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "コパンダトロフィー金",
+      "description": "AT終了画面でコパンダトロフィー金が出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "コパンダトロフィーイナズマ",
+      "description": "AT終了画面でイナズマトロフィーが出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFEB3B",
+      "id": "トロフィーイナズマ"
+    },
+    {
+      "name": "コパンダトロフィー虹",
+      "description": "AT終了画面で虹トロフィーが出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "246枚OVER表示",
+      "description": "AT中に246枚OVER表示で設定2・4・6濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#FF9800",
+      "id": "246枚OVER"
+    },
+    {
+      "name": "456枚OVER表示",
+      "description": "AT中に456枚OVER表示で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722",
+      "id": "456枚OVER"
+    },
+    {
+      "name": "666枚OVER表示",
+      "description": "AT中に666枚OVER表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚OVER"
+    },
+    {
+      "name": "秘宝ニュース2時46分",
+      "description": "秘宝ニュースで2時46分表示は設定2・4・6濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#2196F3",
+      "id": "ニュース246"
+    },
+    {
+      "name": "秘宝ニュース4時56分",
+      "description": "秘宝ニュースで4時56分表示は設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#673AB7",
+      "id": "ニュース456"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "大都技研（パオン・ディーピー）製AT機。6段階設定（1-6）。チェリー確率に設定差あり。コパンダトロフィー・獲得枚数表示・秘宝ニュースで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃"
+}

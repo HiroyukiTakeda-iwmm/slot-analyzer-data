@@ -1,0 +1,100 @@
+{
+  "name": "Lパチスロ かぐや様は告らせたい",
+  "type": "AT",
+  "roles": [],
+  "confirmationEvents": [
+    {
+      "name": "銀枠（ボーナス終了画面）",
+      "description": "ボーナス終了画面で銀枠が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#90CAF9",
+      "id": "銀枠終了画面"
+    },
+    {
+      "name": "金枠（ボーナス終了画面）",
+      "description": "ボーナス終了画面で金枠が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700",
+      "id": "金枠終了画面"
+    },
+    {
+      "name": "紫枠（ボーナス終了画面）",
+      "description": "ボーナス終了画面で紫枠が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0",
+      "id": "紫枠終了画面"
+    },
+    {
+      "name": "246枚OVER表示",
+      "description": "AT中に246枚OVER表示で設定2・4・6濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#FF9800",
+      "id": "246枚OVER"
+    },
+    {
+      "name": "456枚OVER表示",
+      "description": "AT中に456枚OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722",
+      "id": "456枚OVER"
+    },
+    {
+      "name": "666枚OVER表示",
+      "description": "AT中に666枚OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚OVER"
+    },
+    {
+      "name": "REG中 早坂愛シナリオ",
+      "description": "REG中キャラ紹介で早坂愛シナリオが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#E91E63",
+      "id": "早坂愛シナリオ"
+    },
+    {
+      "name": "REG中 白銀パパシナリオ",
+      "description": "REG中キャラ紹介で白銀パパシナリオが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#2196F3",
+      "id": "白銀パパシナリオ"
+    },
+    {
+      "name": "REG中 虹背景",
+      "description": "REG中に虹背景が出現で設定4以上濃厚+1G連",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722",
+      "id": "虹背景REG"
+    },
+    {
+      "name": "ミニ藤原 体操服→LOVE探偵",
+      "description": "ミニ藤原の衣装チェンジで体操服→LOVE探偵は設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#4CAF50",
+      "id": "藤原設定4以上"
+    },
+    {
+      "name": "ミニ藤原 体操服→制服",
+      "description": "ミニ藤原の衣装チェンジで体操服→制服は設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "藤原設定6"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "SANKYO製AT機。6段階設定（1-6）。小役確率の設定差は解析未判明。ボーナス終了画面枠色・REG中キャラ紹介・獲得枚数表示・ミニ藤原衣装チェンジで設定示唆。EDエピソード振り分けで奇偶判別可能。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、nana-press"
+}
