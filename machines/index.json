@@ -1,5 +1,5 @@
 {
-  "version": "1.7",
+  "version": "1.8",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -871,6 +871,26 @@
       "file": "codegeass/codegeass3-cckallen.json",
       "tags": ["A+AT", "コードギアス", "サミー", "6.5号機", "6段階設定", "2023年台"],
       "description": "チェリー・スイカ・チャンス目に設定差。REG確率に大きな設定差。AT終了画面とサミートロフィーで設定確定"
+    },
+    {
+      "id": "toloveru-darkness",
+      "name": "L ToLOVEるダークネス",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "toloveru/toloveru-darkness.json",
+      "tags": ["AT", "ToLOVEる", "オリンピアエステート", "スマスロ", "設定L", "5段階設定", "2024年台"],
+      "description": "設定1非搭載（設定L, 2, 3, 4, 5, 6）。小役確率は全設定共通。ST終了画面スタンプ・獲得枚数表示・隠れ凪ボイスで設定示唆"
+    },
+    {
+      "id": "gineiden-dnt",
+      "name": "銀河英雄伝説 Die Neue These",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "gineiden/gineiden-dnt.json",
+      "tags": ["AT", "ST", "銀河英雄伝説", "コナミ", "スマスロ", "6段階設定", "2025年新台"],
+      "description": "小役確率は全設定共通。ボーナス確率・ST確率に設定差。アリストロフィー5種で設定示唆。ギャラクシーボーナス中演出で偶奇示唆"
     }
   ]
 }

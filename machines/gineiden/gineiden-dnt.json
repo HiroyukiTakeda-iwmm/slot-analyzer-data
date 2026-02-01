@@ -1,0 +1,154 @@
+{
+  "name": "銀河英雄伝説 Die Neue These",
+  "type": "AT",
+  "roles": [],
+  "confirmationEvents": [
+    {
+      "id": "trophy_bronze",
+      "name": "アリストロフィー 銅",
+      "description": "ST終了画面",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "アリストロフィー 銀",
+      "description": "ST終了画面",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "アリストロフィー 金",
+      "description": "ST終了画面",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_clover",
+      "name": "アリストロフィー クローバー柄",
+      "description": "ST終了画面",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "アリストロフィー 虹",
+      "description": "ST終了画面",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "story_4th_season",
+      "name": "ギャラクシーボーナス中フォースシーズン",
+      "description": "ストーリー紹介がフォースシーズン",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "birthday_char",
+      "name": "ギャラクシーボーナス終了画面 キャラ誕生日イラスト",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "end_screen_protagonist",
+      "name": "ギャラクシーボーナス終了画面 ラインハルトorヤン",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "end_screen_april_fool",
+      "name": "ギャラクシーボーナス終了画面 キャラ集合（4/1）",
+      "description": "ボーナス終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "galaxy_yang",
+      "name": "ギャラクシーボーナス中 ヤンからスタート",
+      "type": "bonus",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "galaxy_frederica",
+      "name": "ギャラクシーボーナス中 フレデリカからスタート",
+      "type": "bonus",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "galaxy_reinhard",
+      "name": "ギャラクシーボーナス中 ラインハルトからスタート",
+      "type": "bonus",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "galaxy_hildegard",
+      "name": "ギャラクシーボーナス中 ヒルデガルドからスタート",
+      "type": "bonus",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "galaxy_merkatz",
+      "name": "ギャラクシーボーナス中 最後がメルカッツ",
+      "type": "bonus",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "galaxy_annerose",
+      "name": "ギャラクシーボーナス中 最後がアンネローゼ",
+      "type": "bonus",
+      "hint": "設定3以上濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/256.8、設定6: 1/191.9。REG+BB+EPBの合算",
+      "probabilities": {
+        "1": 0.003894,
+        "2": 0.003943,
+        "3": 0.004016,
+        "4": 0.004591,
+        "5": 0.004990,
+        "6": 0.005211
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "st_rate",
+      "name": "ST初当たり確率",
+      "description": "設定1: 1/393.7、設定6: 1/259.9。大きな設定差",
+      "probabilities": {
+        "1": 0.002540,
+        "2": 0.002574,
+        "3": 0.002682,
+        "4": 0.003266,
+        "5": 0.003647,
+        "6": 0.003848
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、ななプレス、DMMぱちタウン"
+}

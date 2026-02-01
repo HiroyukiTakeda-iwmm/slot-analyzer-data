@@ -1,0 +1,159 @@
+{
+  "name": "L ToLOVEるダークネス",
+  "type": "AT",
+  "roles": [],
+  "confirmationEvents": [
+    {
+      "id": "stamp_yoshi",
+      "name": "ST終了画面 吉スタンプ",
+      "description": "ハルルナスタンプ出現時",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["L", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "stamp_ryou",
+      "name": "ST終了画面 良スタンプ",
+      "description": "ハルルナスタンプ出現時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "stamp_yuu",
+      "name": "ST終了画面 優スタンプ",
+      "description": "ハルルナスタンプ出現時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["L", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "stamp_goku",
+      "name": "ST終了画面 極スタンプ",
+      "description": "ハルルナスタンプ出現時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "display_456",
+      "name": "獲得枚数表示 456枚OVER",
+      "description": "ST終了時の枚数表示",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "display_555",
+      "name": "獲得枚数表示 555枚OVER",
+      "description": "ST終了時の枚数表示",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["L", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "display_666",
+      "name": "獲得枚数表示 666枚OVER",
+      "description": "ST終了時の枚数表示",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "panel_off",
+      "name": "待機中パネル消灯",
+      "description": "待機状態中に筐体上下パネル消灯",
+      "confirmedSettings": ["L"],
+      "excludedSettings": ["2", "3", "4", "5", "6"],
+      "color": "#9E9E9E"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_mikan",
+      "name": "ST終了画面 美柑",
+      "type": "st_end",
+      "hint": "高設定示唆"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "nagi_white",
+      "name": "隠れ凪ボイス 白枠",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "デフォルト",
+      "color": "#FFFFFF"
+    },
+    {
+      "id": "nagi_blue",
+      "name": "隠れ凪ボイス 青枠「一味違いますね」",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "設定2以上",
+      "color": "#2196F3"
+    },
+    {
+      "id": "nagi_green",
+      "name": "隠れ凪ボイス 緑枠「不思議な気配です」",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "設定3以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "nagi_red",
+      "name": "隠れ凪ボイス 赤枠「良い予感がします」",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "設定4以上濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "nagi_silver",
+      "name": "隠れ凪ボイス 銀枠「遊び尽くしちゃいましょう」",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "設定5以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "nagi_gold",
+      "name": "隠れ凪ボイス 金枠「お肉～♪」",
+      "description": "1000G消化ごとのQR読み取り",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "at_rate",
+      "name": "AT初当たり確率",
+      "description": "設定2: 1/352.0、設定6: 1/311.1。設定Lはデータ非公開",
+      "probabilities": {
+        "L": 0,
+        "2": 0.002841,
+        "3": 0.002893,
+        "4": 0.003045,
+        "5": 0.003212,
+        "6": 0.003214
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "harem_whisper",
+      "name": "ハーレムモード中ウィスパー演出選択率",
+      "description": "設定2: 3.1%、設定6: 11.9%。大きな設定差",
+      "probabilities": {
+        "L": 0,
+        "2": 0.031,
+        "3": 0.036,
+        "4": 0.060,
+        "5": 0.071,
+        "6": 0.119
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、ななプレス、DMMぱちタウン"
+}
