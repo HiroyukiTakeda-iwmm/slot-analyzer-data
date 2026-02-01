@@ -1,0 +1,147 @@
+{
+  "name": "L主役は銭形5",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "2": 0.017065,
+        "3": 0.017065,
+        "4": 0.017065,
+        "5": 0.017065,
+        "6": 0.017065
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通 約1/58.6"
+    },
+    {
+      "name": "チャンスリプレイ",
+      "probabilities": {
+        "2": 0.011136,
+        "3": 0.011136,
+        "4": 0.011136,
+        "5": 0.011136,
+        "6": 0.011136
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "全設定共通 約1/89.8"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "2": 0.016807,
+        "3": 0.016807,
+        "4": 0.016807,
+        "5": 0.016807,
+        "6": 0.016807
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/59.5"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "2": 0.001953,
+        "3": 0.001953,
+        "4": 0.001953,
+        "5": 0.001953,
+        "6": 0.001953
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/512.0"
+    },
+    {
+      "name": "デカ目（通常時・非前兆中）",
+      "probabilities": {
+        "2": 0.000046,
+        "3": 0.000052,
+        "4": 0.000091,
+        "5": 0.000138,
+        "6": 0.000180
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定2: 1/21580.7、設定6: 1/5561.8。高設定ほど大幅に優遇。成立=ボーナス直撃"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "凪スタンプ「吉」（次元・ルパン・五エ門）",
+      "description": "ボーナス終了画面で次元・ルパン・五エ門+吉スタンプが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["2"],
+      "color": "#4CAF50",
+      "id": "吉スタンプ"
+    },
+    {
+      "name": "凪スタンプ「良」（次元・ルパン・五エ門・不二子）",
+      "description": "ボーナス終了画面で次元・ルパン・五エ門・不二子+良スタンプが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["2", "3"],
+      "color": "#FF9800",
+      "id": "良スタンプ"
+    },
+    {
+      "name": "凪スタンプ「優」（ゼニロボ）",
+      "description": "ボーナス終了画面でゼニロボ+優スタンプが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["2", "3", "4"],
+      "color": "#E91E63",
+      "id": "優スタンプ"
+    },
+    {
+      "name": "凪スタンプ「極」（銭形パネル）",
+      "description": "ボーナス終了画面で銭形パネル+極スタンプが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "極スタンプ"
+    },
+    {
+      "name": "333枚OVER表示",
+      "description": "AT中に333枚OVER表示で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["2"],
+      "color": "#4CAF50",
+      "id": "333枚OVER"
+    },
+    {
+      "name": "444枚OVER表示",
+      "description": "AT中に444枚OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["2", "3"],
+      "color": "#FF9800",
+      "id": "444枚OVER"
+    },
+    {
+      "name": "555枚OVER表示",
+      "description": "AT中に555枚OVER表示で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["2", "3", "4"],
+      "color": "#E91E63",
+      "id": "555枚OVER"
+    },
+    {
+      "name": "666枚OVER表示",
+      "description": "AT中に666枚OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚OVER"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "オリンピア製AT機。設定1非搭載の5段階設定（2-6）。小役確率は全設定共通。デカ目出現率に大きな設定差（設定2: 1/21580.7→設定6: 1/5561.8）。凪スタンプと獲得枚数表示で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

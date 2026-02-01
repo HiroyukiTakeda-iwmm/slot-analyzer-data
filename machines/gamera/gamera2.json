@@ -1,0 +1,161 @@
+{
+  "name": "Lパチスロ ガメラ2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.015267,
+        "2": 0.015267,
+        "3": 0.015267,
+        "4": 0.015267,
+        "5": 0.015267,
+        "6": 0.015267
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通 約1/65.5"
+    },
+    {
+      "name": "ギロン",
+      "probabilities": {
+        "1": 0.010834,
+        "2": 0.010834,
+        "3": 0.010834,
+        "4": 0.010834,
+        "5": 0.010834,
+        "6": 0.010834
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通 約1/92.3"
+    },
+    {
+      "name": "通常バトル目",
+      "probabilities": {
+        "1": 0.011325,
+        "2": 0.011325,
+        "3": 0.011325,
+        "4": 0.011325,
+        "5": 0.011325,
+        "6": 0.011325
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/88.3（順押し時）"
+    },
+    {
+      "name": "リーチ目合算（逆押し時）",
+      "probabilities": {
+        "1": 0.003113,
+        "2": 0.003174,
+        "3": 0.003296,
+        "4": 0.003418,
+        "5": 0.003754,
+        "6": 0.003967
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "設定1: 1/321.3、設定6: 1/252.1。逆押し時のリーチ目合算。設定差大"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "ボーナス終了画面でサミートロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "ボーナス終了画面でサミートロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "ボーナス終了画面でサミートロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "ボーナス終了画面でサミートロフィーキリンが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFEB3B",
+      "id": "トロフィーキリン"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "ボーナス終了画面でサミートロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "BB終了画面GAMERA",
+      "description": "BB終了画面でGAMERA画面が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "BB終了GAMERA"
+    },
+    {
+      "name": "RB終了画面怪獣集合",
+      "description": "RB終了画面で怪獣集合が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63",
+      "id": "RB終了怪獣集合"
+    },
+    {
+      "name": "RB終了画面You are No1",
+      "description": "RB終了画面でYou are No1が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "RB終了YouAreNo1"
+    },
+    {
+      "name": "RB中キャラ紹介・大怪獣ガメラ（金）",
+      "description": "RB中キャラ紹介で大怪獣ガメラ（金）が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700",
+      "id": "RBキャラガメラ金"
+    },
+    {
+      "name": "456枚突破表示",
+      "description": "獲得枚数で456枚突破が表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "456枚突破"
+    },
+    {
+      "name": "666枚突破表示",
+      "description": "獲得枚数で666枚突破が表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚突破"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "サミー（タイヨーエレック）製AT機。サミークラシック第7弾。6段階設定（1-6）。レア役確率に設定差なし。逆押し時のリーチ目出現率に設定差。サミートロフィー・終了画面・獲得枚数で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた"
+}

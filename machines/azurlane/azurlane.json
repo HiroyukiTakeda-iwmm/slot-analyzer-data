@@ -1,0 +1,183 @@
+{
+  "name": "L アズールレーン THE ANIMATION",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.045249,
+        "2": 0.046083,
+        "3": 0.047619,
+        "4": 0.049020,
+        "5": 0.050505,
+        "6": 0.052910
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "設定1: 1/22.1、設定6: 1/18.9。中段揃いベルが対象。主要カウント対象"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.012658,
+        "2": 0.012821,
+        "3": 0.012970,
+        "4": 0.013280,
+        "5": 0.013423,
+        "6": 0.013889
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/79.0、設定6: 1/72.0。共通ベルと合わせてカウント推奨"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009615,
+        "2": 0.009766,
+        "3": 0.009921,
+        "4": 0.010070,
+        "5": 0.010225,
+        "6": 0.010373
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/104.0、設定6: 1/96.4。3役合算でカウント推奨"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.008039,
+        "2": 0.008039,
+        "3": 0.008039,
+        "4": 0.008039,
+        "5": 0.008039,
+        "6": 0.008039
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/124.4"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.003052,
+        "2": 0.003052,
+        "3": 0.003052,
+        "4": 0.003052,
+        "5": 0.003052,
+        "6": 0.003052
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/327.7"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": {
+        "1": 0.000244,
+        "2": 0.000244,
+        "3": 0.000244,
+        "4": 0.000244,
+        "5": 0.000244,
+        "6": 0.000244
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#388E3C",
+      "description": "全設定共通 約1/4096"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "玉ちゃんトロフィー・ブロンズ",
+      "description": "ボーナス終了画面で玉ちゃんブロンズトロフィーが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィーブロンズ"
+    },
+    {
+      "name": "玉ちゃんトロフィー・シルバー",
+      "description": "ボーナス終了画面で玉ちゃんシルバートロフィーが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィーシルバー"
+    },
+    {
+      "name": "玉ちゃんトロフィー・ゴールド",
+      "description": "ボーナス終了画面で玉ちゃんゴールドトロフィーが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィーゴールド"
+    },
+    {
+      "name": "玉ちゃんトロフィー・ゼブラ",
+      "description": "ボーナス終了画面で玉ちゃんゼブラトロフィーが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#212121",
+      "id": "トロフィーゼブラ"
+    },
+    {
+      "name": "玉ちゃんトロフィー・レインボー",
+      "description": "ボーナス終了画面で玉ちゃんレインボートロフィーが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィーレインボー"
+    },
+    {
+      "name": "終了画面・全員集合",
+      "description": "ボーナス失敗時/AT終了時に全員集合画面が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3",
+      "id": "終了画面全員集合"
+    },
+    {
+      "name": "終了画面・加賀＆赤城",
+      "description": "ボーナス失敗時/AT終了時に加賀＆赤城画面が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "終了画面加賀赤城"
+    },
+    {
+      "name": "終了画面・パーティ",
+      "description": "ボーナス失敗時/AT終了時にパーティ画面が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "終了画面パーティ"
+    },
+    {
+      "name": "加賀バトル勝利ボイス「たぁーのしいなぁー！」",
+      "description": "加賀バトル勝利時裏ボタンで特殊ボイスが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63",
+      "id": "勝利ボイス設定5以上"
+    },
+    {
+      "name": "加賀バトル勝利ボイス「赤城の愛～」",
+      "description": "加賀バトル勝利時裏ボタンで赤城ボイスが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "勝利ボイス設定6"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "京楽製AT機。6段階設定（1-6）。共通ベル・チェリー・スイカ確率に設定差。玉ちゃんトロフィー・終了画面・加賀バトル勝利ボイスで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

@@ -1,0 +1,184 @@
+{
+  "name": "パチスロ傷物語 始マリノ刻",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.019841,
+        "2": 0.020450,
+        "3": 0.021053,
+        "4": 0.021645,
+        "5": 0.022272,
+        "6": 0.022883
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/50.4、設定6: 1/43.7。マイスロレベル4(15000G)で解放"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.009158,
+        "2": 0.009398,
+        "3": 0.009643,
+        "4": 0.009891,
+        "5": 0.010132,
+        "6": 0.010373
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/109.2、設定6: 1/96.4。マイスロレベル3(10000G)で解放"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通 約1/99.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.002503,
+        "2": 0.002503,
+        "3": 0.002503,
+        "4": 0.002503,
+        "5": 0.002503,
+        "6": 0.002503
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/399.6"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.002137,
+        "2": 0.002137,
+        "3": 0.002137,
+        "4": 0.002137,
+        "5": 0.002137,
+        "6": 0.002137
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "全設定共通 約1/468.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "AT終了後にサミートロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "AT終了後にサミートロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "AT終了後にサミートロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "AT終了後にサミートロフィーキリンが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFEB3B",
+      "id": "トロフィーキリン"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "AT終了後にサミートロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "AT終了画面キスショット2人",
+      "description": "AT終了画面でキスショット2人が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3",
+      "id": "終了画面設定2以上"
+    },
+    {
+      "name": "AT終了画面キスショット4人（ハート）",
+      "description": "AT終了画面でキスショット4人（ハート）が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#E91E63",
+      "id": "終了画面設定4以上"
+    },
+    {
+      "name": "AT終了画面キスショット4人（羽根）",
+      "description": "AT終了画面でキスショット4人（羽根）が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "終了画面設定6"
+    },
+    {
+      "name": "246枚OVER表示",
+      "description": "AT中に246枚OVER表示で設定2・4・6濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#FF9800",
+      "id": "246枚OVER"
+    },
+    {
+      "name": "456枚OVER表示",
+      "description": "AT中に456枚OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722",
+      "id": "456枚OVER"
+    },
+    {
+      "name": "555枚OVER表示",
+      "description": "AT中に555枚OVER表示で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63",
+      "id": "555枚OVER"
+    },
+    {
+      "name": "666枚OVER表示",
+      "description": "AT中に666枚OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666枚OVER"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "サミー（ロデオ）製AT機。6段階設定（1-6）。共通ベルと弱チェリー確率に設定差。150G以内AT当選率に大きな設定差。サミートロフィー・AT終了画面・獲得枚数で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

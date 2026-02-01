@@ -1,0 +1,167 @@
+{
+  "name": "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
+  "type": "ART",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.007874,
+        "2": 0.007886,
+        "3": 0.007886,
+        "4": 0.007886,
+        "5": 0.007886,
+        "6": 0.007924
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/127.0、設定6: 1/126.3。設定差は小さい"
+    },
+    {
+      "name": "弱スイカ",
+      "probabilities": {
+        "1": 0.012516,
+        "2": 0.012579,
+        "3": 0.012579,
+        "4": 0.012579,
+        "5": 0.012579,
+        "6": 0.012821
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/79.9、設定6: 1/78.0。設定差は小さい"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.006105,
+        "2": 0.006105,
+        "3": 0.006105,
+        "4": 0.006105,
+        "5": 0.006105,
+        "6": 0.006105
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/163.8"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": {
+        "1": 0.004272,
+        "2": 0.004272,
+        "3": 0.004272,
+        "4": 0.004272,
+        "5": 0.004272,
+        "6": 0.004272
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#388E3C",
+      "description": "全設定共通 約1/234.1"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.002503,
+        "2": 0.002503,
+        "3": 0.002503,
+        "4": 0.002503,
+        "5": 0.002503,
+        "6": 0.002503
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/399.6"
+    },
+    {
+      "name": "共通7枚ベル",
+      "probabilities": {
+        "1": 0.069444,
+        "2": 0.069444,
+        "3": 0.070922,
+        "4": 0.075758,
+        "5": 0.076923,
+        "6": 0.078740
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FFC107",
+      "description": "設定1: 1/14.4、設定6: 1/12.7。マイカウンターで確認可能"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "ボーナス終了画面でサミートロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "ボーナス終了画面でサミートロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "ボーナス終了画面でサミートロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "ボーナス終了画面でサミートロフィーキリンが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFEB3B",
+      "id": "トロフィーキリン"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "ボーナス終了画面でサミートロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "BB終了画面アクセル",
+      "description": "BB終了画面でアクセルが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "終了画面アクセル"
+    },
+    {
+      "name": "BB終了画面サクヤ",
+      "description": "BB終了画面でサクヤが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "終了画面サクヤ"
+    },
+    {
+      "name": "BB終了画面HIEVO全員集合（BB1回目）",
+      "description": "BB1回目終了画面でHIEVO全員集合が出現で設定変更+設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50",
+      "id": "終了画面全員集合"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "サミー製ボーナス+ART機。6段階設定（1-6）。共通7枚ベル確率に設定差。単独共通リリベ確率にART準備中大きな設定差。サミートロフィー・BB終了画面で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃"
+}

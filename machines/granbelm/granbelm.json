@@ -1,0 +1,137 @@
+{
+  "name": "スマスロ グランベルム",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.014025,
+        "2": 0.014025,
+        "3": 0.014025,
+        "4": 0.014025,
+        "5": 0.014025,
+        "6": 0.014025
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "全設定共通 約1/71.3"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.009921,
+        "2": 0.009921,
+        "3": 0.009921,
+        "4": 0.009921,
+        "5": 0.009921,
+        "6": 0.009921
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通 約1/100.8"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.007491,
+        "2": 0.007491,
+        "3": 0.007491,
+        "4": 0.007491,
+        "5": 0.007491,
+        "6": 0.007491
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/133.5"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.002640,
+        "2": 0.002640,
+        "3": 0.002640,
+        "4": 0.002640,
+        "5": 0.002640,
+        "6": 0.002640
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/378.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "リザルト画面イラスト・設定2以上",
+      "description": "AT終了リザルト画面タッチで設定2以上濃厚イラストが出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3",
+      "id": "リザルト設定2以上"
+    },
+    {
+      "name": "リザルト画面イラスト・設定4以上",
+      "description": "AT終了リザルト画面タッチで設定4以上濃厚イラストが出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "リザルト設定4以上"
+    },
+    {
+      "name": "リザルト画面イラスト・設定5以上",
+      "description": "AT終了リザルト画面タッチで設定5以上濃厚イラストが出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63",
+      "id": "リザルト設定5以上"
+    },
+    {
+      "name": "リザルト画面イラスト・設定6",
+      "description": "AT終了リザルト画面タッチで設定6濃厚イラストが出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "リザルト設定6"
+    },
+    {
+      "name": "ナカミミ・覚醒ホワイトリリー",
+      "description": "ナカミミエールモードで覚醒ホワイトリリーアイコンが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "ナカミミ設定4以上"
+    },
+    {
+      "name": "ナカミミ・セラドアノクターン",
+      "description": "ナカミミエールモードでセラドアノクターンアイコンが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63",
+      "id": "ナカミミ設定5以上"
+    },
+    {
+      "name": "ナカミミ・ジーグァンロン",
+      "description": "ナカミミエールモードでジーグァンロンアイコンが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "ナカミミ設定6"
+    },
+    {
+      "name": "DB突入6セット目（7セット目がDB）",
+      "description": "ディスティニーバトルが6セット目継続時（7セット目にDB突入）で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "DB7セット目設定6"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "ZXS（ゼクロスクリエイティブ）製AT機。6段階設定（1-6）。小役確率に設定差なし。ボーナス/AT/CZ出現率に設定差。リザルト画面タッチとナカミミエールモードアイコンで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた"
+}

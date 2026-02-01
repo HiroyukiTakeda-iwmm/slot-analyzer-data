@@ -1,0 +1,168 @@
+{
+  "name": "パチスロ ダンジョンに出会いを求めるのは間違っているだろうか2",
+  "type": "ART",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009355,
+        "2": 0.009533,
+        "3": 0.009690,
+        "4": 0.010173,
+        "5": 0.010604,
+        "6": 0.010989
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "設定1: 1/106.9、設定6: 1/91.0。設定差の主要カウント対象"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.002885,
+        "2": 0.002914,
+        "3": 0.002946,
+        "4": 0.003083,
+        "5": 0.003144,
+        "6": 0.003205
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF5722",
+      "description": "設定1: 1/346.7、設定6: 1/312.1。スイカと合わせてカウント推奨"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015267,
+        "2": 0.015267,
+        "3": 0.015267,
+        "4": 0.015267,
+        "5": 0.015267,
+        "6": 0.015267
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通 約1/65.5"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.005372,
+        "2": 0.005372,
+        "3": 0.005372,
+        "4": 0.005372,
+        "5": 0.005372,
+        "6": 0.005372
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/186.2"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.002594,
+        "2": 0.002594,
+        "3": 0.002594,
+        "4": 0.002594,
+        "5": 0.002594,
+        "6": 0.002594
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/385.5"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "終了画面No.4 全員集合",
+      "description": "ボーナス終了画面で全員集合（No.4）が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3",
+      "id": "終了画面全員集合"
+    },
+    {
+      "name": "終了画面No.5 アイズ/ベル",
+      "description": "ボーナス終了画面でアイズ/ベル（No.5）が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "終了画面アイズベル"
+    },
+    {
+      "name": "終了画面No.6 神様全員集合",
+      "description": "ボーナス終了画面で神様全員集合（No.6）が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "終了画面神様全員集合"
+    },
+    {
+      "name": "246VALIS OVER表示",
+      "description": "AT中に246VALIS OVER表示で偶数設定（2/4/6）濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#FF9800",
+      "id": "246VALIS"
+    },
+    {
+      "name": "456VALIS OVER表示",
+      "description": "AT中に456VALIS OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722",
+      "id": "456VALIS"
+    },
+    {
+      "name": "666VALIS OVER表示",
+      "description": "AT中に666VALIS OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "666VALIS"
+    },
+    {
+      "name": "エイナ「4体以上の～」（赤背景）",
+      "description": "スイカ成立時タッチ演出でエイナ赤背景セリフが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#E91E63",
+      "id": "エイナ設定4以上"
+    },
+    {
+      "name": "エイナ「6人かぁ…」（赤背景）",
+      "description": "スイカ成立時タッチ演出でエイナ「6人かぁ」セリフが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "エイナ設定6"
+    },
+    {
+      "name": "リュー「LV6にもなれば～」（赤背景）",
+      "description": "スイカ成立時タッチ演出でリュー赤背景セリフが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "リュー設定6"
+    },
+    {
+      "name": "ボーナス準備中センターLED紫フラッシュ",
+      "description": "ボーナス準備中レア役成立時にセンターLED紫フラッシュで設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#673AB7",
+      "id": "紫フラッシュ"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "北電子製ボーナス+ART機。6段階設定（1-6）。スイカと強チャンス目確率に設定差。ボーナス終了画面のカスタムキャラ選択で効率的な設定判別が可能。獲得枚数表示とタッチ演出で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

@@ -1,0 +1,136 @@
+{
+  "name": "パチスロコードギアス 反逆のルルーシュ3",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010730,
+        "2": 0.011099,
+        "3": 0.011561,
+        "4": 0.012019,
+        "5": 0.012469,
+        "6": 0.012987
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "設定1: 1/93.2、設定6: 1/77.0。設定差の主要カウント対象"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.010000,
+        "2": 0.010000,
+        "3": 0.010000,
+        "4": 0.010000,
+        "5": 0.010000,
+        "6": 0.010000
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.010000,
+        "2": 0.010000,
+        "3": 0.010000,
+        "4": 0.010000,
+        "5": 0.010000,
+        "6": 0.010000
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.005000,
+        "2": 0.005000,
+        "3": 0.005000,
+        "4": 0.005000,
+        "5": 0.005000,
+        "6": 0.005000
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF5722",
+      "description": "全設定共通"
+    },
+    {
+      "name": "C.C.揃い（通常時・AT直撃）",
+      "probabilities": {
+        "1": 0.000072,
+        "2": 0.000095,
+        "3": 0.000154,
+        "4": 0.000198,
+        "5": 0.000201,
+        "6": 0.000231
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/13937.5、設定6: 1/4337.0。設定差特大。AT直撃契機"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "ボーナス終了後にサミートロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "ボーナス終了後にサミートロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "ボーナス終了後にサミートロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "ボーナス終了後にサミートロフィーキリンが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFEB3B",
+      "id": "トロフィーキリン"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "ボーナス終了後にサミートロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "順押し斜めC.C.揃い",
+      "description": "RT0/RT1で順押しナビ時に斜めC.C.揃いが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50",
+      "id": "斜めCC設定3以上"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "サミー製AT+ボーナス機。6段階設定（1-6）。スイカ確率とC.C.揃い出現率に設定差。CZ戦略戦の成功期待度に設定差。サミートロフィーと順押し斜めC.C.揃いで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

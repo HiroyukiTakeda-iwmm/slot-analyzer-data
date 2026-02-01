@@ -1,0 +1,211 @@
+{
+  "name": "Lモンスターハンターライズ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "全設定共通 約1/99.9"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009497,
+        "2": 0.009497,
+        "3": 0.009497,
+        "4": 0.009497,
+        "5": 0.009497,
+        "6": 0.009497
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通 約1/105.3"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.008703,
+        "2": 0.008703,
+        "3": 0.008703,
+        "4": 0.008703,
+        "5": 0.008703,
+        "6": 0.008703
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通 約1/114.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001877,
+        "2": 0.001877,
+        "3": 0.001877,
+        "4": 0.001877,
+        "5": 0.001877,
+        "6": 0.001877
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#C2185B",
+      "description": "全設定共通 約1/532.8"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.001709,
+        "2": 0.001709,
+        "3": 0.001709,
+        "4": 0.001709,
+        "5": 0.001709,
+        "6": 0.001709
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "全設定共通 約1/585.1"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "rise_zone_entry",
+      "name": "ライズゾーン実質出現率",
+      "description": "ライズゾーンの実質出現率。高設定ほどやや高い",
+      "triggerName": "通常時G数消化",
+      "targetName": "ライズゾーン突入",
+      "probabilities": {
+        "1": 0.01323,
+        "2": 0.01331,
+        "3": 0.01372,
+        "4": 0.01393,
+        "5": 0.01451,
+        "6": 0.01466
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "エンタトロフィー銅",
+      "description": "ボーナス終了画面で銅トロフィーが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548",
+      "id": "トロフィー銅"
+    },
+    {
+      "name": "エンタトロフィー銀",
+      "description": "ボーナス終了画面で銀トロフィーが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E",
+      "id": "トロフィー銀"
+    },
+    {
+      "name": "エンタトロフィー金",
+      "description": "ボーナス終了画面で金トロフィーが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700",
+      "id": "トロフィー金"
+    },
+    {
+      "name": "エンタトロフィー紅葉",
+      "description": "ボーナス終了画面で紅葉トロフィーが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722",
+      "id": "トロフィー紅葉"
+    },
+    {
+      "name": "エンタトロフィー虹",
+      "description": "ボーナス終了画面で虹トロフィーが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF5722",
+      "id": "トロフィー虹"
+    },
+    {
+      "name": "全員集合画面（コングラッチュレーション）",
+      "description": "ボーナス終了画面で全員集合（コングラッチュレーション）が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#4CAF50",
+      "id": "全員集合画面"
+    },
+    {
+      "name": "ヒノエ＆ミノト＆エンタライオン画面",
+      "description": "ボーナス終了画面でヒノエ＆ミノト＆エンタライオンが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#9C27B0",
+      "id": "エンタライオン画面"
+    },
+    {
+      "name": "Lara＆ミランダ＆隊長（ボーナス確定画面）",
+      "description": "ボーナス確定画面でLara＆ミランダ＆隊長が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800",
+      "id": "確定画面設定4以上"
+    },
+    {
+      "name": "ウツシボイス「愛弟子とのスロット！！」",
+      "description": "集会所7を狙え時にウツシ特殊ボイスで設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#2196F3",
+      "id": "ウツシ設定5以上"
+    },
+    {
+      "name": "ヒノエボイス「ミノトに内緒ですよ」",
+      "description": "集会所7を狙え時にヒノエ特殊ボイスで設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63",
+      "id": "ヒノエ設定6"
+    },
+    {
+      "name": "エンタライオン1確ボイス",
+      "description": "集会所でエンタライオンボイスが発生で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "エンタライオンボイス"
+    },
+    {
+      "name": "ボーナス入賞時ボイス矛盾",
+      "description": "ボーナス入賞時のボイスキャラが参戦しない場合、設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#673AB7",
+      "id": "ボイス矛盾設定4以上"
+    },
+    {
+      "name": "早期討伐ムービー・エンタライオン出現",
+      "description": "早期討伐後ムービーでエンタライオンが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336",
+      "id": "討伐エンタライオン"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "アデリオン製AT機。6段階設定（1-6）。小役確率は全設定共通で設定差なし。ライズゾーン出現率やAT直撃当選率に設定差。エンタトロフィー・ボーナス終了画面・集会所ボイスで豊富な設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

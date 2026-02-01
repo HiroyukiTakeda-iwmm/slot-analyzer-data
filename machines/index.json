@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -87,7 +87,7 @@
       "name": "スマスロ化物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "monogatari/bakemonogatari.json",
       "tags": ["AT", "物語シリーズ", "スマスロ", "トロフィー", "2025年新台"],
       "description": "スイカ確率と弱チェリーAT直撃率に設定差"
@@ -117,7 +117,7 @@
       "name": "回胴黙示録カイジ 狂宴",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kaiji/kaiji-kyouen.json",
       "tags": ["AT", "カイジ", "スマスロ", "トロフィー", "2025年新台"],
       "description": "スイカ・弱チャンス目・弱チェリー・強チェリーに設定差"
@@ -481,6 +481,106 @@
       "file": "godeater/godeater-resurrection.json",
       "tags": ["AT", "ゴッドイーター", "スマスロ", "2024年新台"],
       "description": "小役確率は全設定共通、AT終了画面とストーリー終了ボイスで設定示唆"
+    },
+    {
+      "id": "zenishape5",
+      "name": "L主役は銭形5",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "zenishape/zenishape5.json",
+      "tags": ["AT", "銭形", "スマスロ", "オリンピア", "5段階設定", "2025年新台"],
+      "description": "設定1非搭載5段階設定、デカ目出現率に大きな設定差、凪スタンプと獲得枚数で設定示唆"
+    },
+    {
+      "id": "monhun-rise",
+      "name": "Lモンスターハンターライズ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "monhun/monhun-rise.json",
+      "tags": ["AT", "モンハン", "スマスロ", "アデリオン", "エンタトロフィー", "2024年新台"],
+      "description": "小役確率に設定差なし、ライズゾーン出現率に設定差、エンタトロフィーで設定示唆"
+    },
+    {
+      "id": "enen-shouboutai",
+      "name": "Lパチスロ炎炎ノ消防隊",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "enen/enen-shouboutai.json",
+      "tags": ["AT", "炎炎", "スマスロ", "SANKYO", "2024年新台"],
+      "description": "設定3なし5段階、チャンス目・強チェリーに設定差、REGキャラ紹介で設定示唆"
+    },
+    {
+      "id": "kizumonogatari",
+      "name": "パチスロ傷物語 始マリノ刻",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kizumonogatari/kizumonogatari.json",
+      "tags": ["AT", "傷物語", "物語シリーズ", "サミートロフィー", "2023年新台"],
+      "description": "共通ベルと弱チェリーに設定差、サミートロフィーとAT終了画面で設定示唆"
+    },
+    {
+      "id": "codegeass3",
+      "name": "パチスロコードギアス 反逆のルルーシュ3",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "codegeass/codegeass3.json",
+      "tags": ["AT", "コードギアス", "サミートロフィー", "サミー"],
+      "description": "スイカ確率とC.C.揃い出現率に設定差、サミートロフィーで設定示唆"
+    },
+    {
+      "id": "eureka-type-art",
+      "name": "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
+      "type": "ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "eureka/eureka-type-art.json",
+      "tags": ["ART", "エウレカ", "サミートロフィー", "サミー", "2023年新台"],
+      "description": "共通7枚ベル確率に設定差、サミートロフィーとBB終了画面で設定示唆"
+    },
+    {
+      "id": "danmachi2",
+      "name": "パチスロ ダンジョンに出会いを求めるのは間違っているだろうか2",
+      "type": "ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "danmachi/danmachi2.json",
+      "tags": ["ART", "ダンまち", "北電子", "2024年新台"],
+      "description": "スイカと強チャンス目に設定差、終了画面カスタムキャラで効率的な設定判別"
+    },
+    {
+      "id": "gamera2",
+      "name": "Lパチスロ ガメラ2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "gamera/gamera2.json",
+      "tags": ["AT", "ガメラ", "サミートロフィー", "サミークラシック", "2024年新台"],
+      "description": "逆押しリーチ目出現率に設定差、サミートロフィーと終了画面で設定示唆"
+    },
+    {
+      "id": "granbelm",
+      "name": "スマスロ グランベルム",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "granbelm/granbelm.json",
+      "tags": ["AT", "グランベルム", "スマスロ", "ZXS", "2023年新台"],
+      "description": "小役確率に設定差なし、ナカミミエールモードアイコンとリザルト画面で設定示唆"
+    },
+    {
+      "id": "azurlane",
+      "name": "L アズールレーン THE ANIMATION",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "azurlane/azurlane.json",
+      "tags": ["AT", "アズレン", "スマスロ", "京楽", "玉ちゃんトロフィー", "2025年新台"],
+      "description": "共通ベル・チェリー・スイカに設定差、玉ちゃんトロフィーと終了画面で設定示唆"
     }
   ]
 }
