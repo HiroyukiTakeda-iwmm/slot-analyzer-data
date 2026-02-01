@@ -1,5 +1,5 @@
 {
-  "version": "2.1",
+  "version": "2.2",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -846,7 +846,7 @@
       "name": "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "eureka/eureka-type-art.json",
       "tags": [
         "ART",
@@ -893,7 +893,7 @@
       "name": "スマスロ グランベルム",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "granbelm/granbelm.json",
       "tags": [
         "AT",
@@ -1054,7 +1054,7 @@
       "name": "Lダンベル何キロ持てる?",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "dumbbell/dumbbell.json",
       "tags": [
         "AT",

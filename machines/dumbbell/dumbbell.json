@@ -33,8 +33,98 @@
       "description": "設定1: 1/247、設定6: 1/239。CZ確率の設定差は小さい"
     }
   ],
+  "confirmationEvents": [
+    {
+      "id": "end_purple",
+      "name": "CZ/AT終了画面 紫枠",
+      "description": "CZ/AT終了画面で紫枠が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_silver_dress",
+      "name": "CZ/AT終了画面 銀枠（ドレス）",
+      "description": "CZ/AT終了画面で銀枠ドレスが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "end_silver_swim",
+      "name": "CZ/AT終了画面 銀枠（水着）",
+      "description": "CZ/AT終了画面で銀枠水着が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#B0BEC5"
+    },
+    {
+      "id": "end_gold",
+      "name": "CZ/AT終了画面 金枠",
+      "description": "CZ/AT終了画面で金枠が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "upper_at_hibiki",
+      "name": "上位AT終了画面 ひびき",
+      "description": "上位AT終了画面でひびきが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "upper_at_machio",
+      "name": "上位AT終了画面 街雄",
+      "description": "上位AT終了画面で街雄が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "calorie_456",
+      "name": "カロリー表示 456kcal",
+      "description": "チートデイ中に456kcal表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "calorie_666",
+      "name": "カロリー表示 666kcal",
+      "description": "チートデイ中に666kcal表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "medals_456",
+      "name": "獲得枚数 456枚OVER",
+      "description": "獲得枚数456枚OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "medals_555",
+      "name": "獲得枚数 555枚OVER",
+      "description": "獲得枚数555枚OVER表示で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "medals_666",
+      "name": "獲得枚数 666枚OVER",
+      "description": "獲得枚数666枚OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "description": "SANKYOのスマスロAT機。小役確率は全設定共通で設定差なし。CZ確率・AT初当り確率に設定差。CZ/AT終了画面の枠色（紫枠: 設定2以上、銀枠: 設定4以上、金枠: 設定6）とカロリー表示で設定示唆。",
   "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
