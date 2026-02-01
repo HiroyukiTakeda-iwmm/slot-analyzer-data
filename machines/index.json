@@ -1223,7 +1223,7 @@
       "name": "沖ドキ！GOLD",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "okidokigold/okidoki-gold.json",
       "tags": [
         "AT",
@@ -1241,7 +1241,7 @@
       "name": "スマスロバジリスク～甲賀忍法帖～絆2 天膳 BLACK EDITION",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "basilisk/basilisk-kizuna2-tenzen.json",
       "tags": [
         "AT",
@@ -1259,7 +1259,7 @@
       "name": "L不二子BT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "fujiko/fujiko-bt.json",
       "tags": [
         "BT",
@@ -1276,7 +1276,7 @@
       "name": "スマスロ とある科学の超電磁砲2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "railgun/railgun2.json",
       "tags": [
         "AT",
@@ -1294,7 +1294,7 @@
       "name": "S沖ドキ！ブラック",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "okidokiblack/okidoki-black.json",
       "tags": [
         "AT",
@@ -1310,7 +1310,7 @@
       "name": "Lプリズムナナ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "prismnana/prismnana.json",
       "tags": [
         "AT",
@@ -1328,7 +1328,7 @@
       "name": "SHAKE BONUS TRIGGER",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "shake/shake-bt.json",
       "tags": [
         "BT",
