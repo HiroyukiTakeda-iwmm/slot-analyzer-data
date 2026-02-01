@@ -1,5 +1,5 @@
 {
-  "version": "1.3",
+  "version": "1.4",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -711,6 +711,36 @@
       "file": "hanmabaki/hanma-baki.json",
       "tags": ["AT", "刃牙", "スマスロ", "オリンピア", "2026年新台"],
       "description": "小役確率に設定差なし。チャンスモード移行率に設定差。AT終了画面スタンプで設定示唆"
+    },
+    {
+      "id": "umineko2",
+      "name": "Lパチスロうみねこのなく頃に2",
+      "type": "A+ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "umineko/umineko2.json",
+      "tags": ["A+ART", "うみねこ", "オーイズミ", "6段階設定", "技術介入", "2026年新台"],
+      "description": "ボーナス合算確率に段階的な設定差。完全攻略時の機械割が高い技術介入機"
+    },
+    {
+      "id": "salaryman-kintaro",
+      "name": "Lサラリーマン金太郎",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kintaro/kintaro.json",
+      "tags": ["AT", "金太郎", "スマスロ", "EXCITE", "6段階設定", "ギンちゃんトロフィー"],
+      "description": "AT初当たり確率に大きな設定差。ギンちゃんトロフィー・獲得枚数表示で設定示唆"
+    },
+    {
+      "id": "enen-shouboutai2",
+      "name": "Lパチスロ炎炎ノ消防隊2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "enen2/enen-shouboutai2.json",
+      "tags": ["AT", "炎炎ノ消防隊", "スマスロ", "SANKYO", "6段階設定", "2026年新台"],
+      "description": "炎炎ループ初当たり確率に大きな設定差。前作5段階から今作は全6段階設定に変更"
     }
   ]
 }

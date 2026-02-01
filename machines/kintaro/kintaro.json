@@ -1,0 +1,159 @@
+{
+  "name": "Lサラリーマン金太郎",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チャンス目合算確率",
+      "probabilities": {
+        "1": 0.006775,
+        "2": 0.006835,
+        "3": 0.006897,
+        "4": 0.006959,
+        "5": 0.007018,
+        "6": 0.007082
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "設定1: 1/147.6、設定6: 1/141.2。設定差小"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.001185,
+        "2": 0.00123,
+        "3": 0.00128,
+        "4": 0.001404,
+        "5": 0.00156,
+        "6": 0.001742
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "設定1: 1/844、設定6: 1/574。金太郎チャンス"
+    },
+    {
+      "name": "ボーナス確率",
+      "probabilities": {
+        "1": 0.002398,
+        "2": 0.002451,
+        "3": 0.0025,
+        "4": 0.002584,
+        "5": 0.002681,
+        "6": 0.002809
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/417、設定6: 1/356"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "ギンちゃんトロフィー銅",
+      "name": "ギンちゃんトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "id": "ギンちゃんトロフィー銀",
+      "name": "ギンちゃんトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"]
+    },
+    {
+      "id": "ギンちゃんトロフィー金",
+      "name": "ギンちゃんトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "ギンちゃんトロフィー虎柄",
+      "name": "ギンちゃんトロフィー虎柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "ギンちゃんトロフィー虹",
+      "name": "ギンちゃんトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "ボーナス終了画面",
+      "patterns": [
+        {
+          "name": "漁師姿の金太郎",
+          "setting": "odd",
+          "description": "奇数設定示唆"
+        },
+        {
+          "name": "真顔の金太郎",
+          "setting": "even",
+          "description": "偶数設定示唆"
+        }
+      ]
+    },
+    {
+      "name": "獲得枚数表示",
+      "patterns": [
+        {
+          "name": "456獲得！",
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
+        },
+        {
+          "name": "555獲得！",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        },
+        {
+          "name": "666獲得！",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "通常時チャンス目AT当選率",
+      "description": "設定1: 0.8%、設定6: 2.7%。約3.4倍の差。重要判別要素",
+      "id": "通常時チャンス目at当選率",
+      "probabilities": {
+        "1": 0.008,
+        "2": 0.012,
+        "3": 0.016,
+        "4": 0.02,
+        "5": 0.023,
+        "6": 0.027
+      }
+    },
+    {
+      "name": "SB択当て正解時AT当選率",
+      "description": "設定1: 1.6%、設定6: 5.9%。約3.7倍の差（通常時）",
+      "id": "sb択当て正解時at当選率",
+      "probabilities": {
+        "1": 0.016,
+        "2": 0.02,
+        "3": 0.023,
+        "4": 0.031,
+        "5": 0.043,
+        "6": 0.059
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "EXCITEのスマスロAT機。AT純増約4.0枚/G、ボーナス中約6.0枚/G。天井は最大999G+α（REG後800G、リセット時600G）。チャンス目合算確率の設定差は小さいが、AT初当たり確率に大きな設定差。ギンちゃんトロフィー・獲得枚数表示・エンディング中ボイスで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス"
+}

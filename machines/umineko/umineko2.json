@@ -1,0 +1,60 @@
+{
+  "name": "Lパチスロうみねこのなく頃に2",
+  "type": "A+ART",
+  "roles": [
+    {
+      "name": "BIG合算確率",
+      "probabilities": {
+        "1": 0.002762,
+        "2": 0.002853,
+        "3": 0.00296,
+        "4": 0.003052,
+        "5": 0.003128,
+        "6": 0.003189
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/362.1、設定6: 1/313.6"
+    },
+    {
+      "name": "REG合算確率",
+      "probabilities": {
+        "1": 0.002518,
+        "2": 0.002563,
+        "3": 0.002625,
+        "4": 0.00267,
+        "5": 0.002732,
+        "6": 0.002777
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/397.2、設定6: 1/360.1"
+    },
+    {
+      "name": "ボーナス合算確率",
+      "probabilities": {
+        "1": 0.00528,
+        "2": 0.005417,
+        "3": 0.005583,
+        "4": 0.005721,
+        "5": 0.005858,
+        "6": 0.005967
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/189.4、設定6: 1/167.6"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "オーイズミのA+ART機（2026年2月2日導入）。ART純増約1.0枚/G。CZ間200Gで天井CZ突入。完全攻略時の機械割は設定1で103.0%と技術介入効果大。小役確率（共通ベル・スイカ・1枚役）に設定差あり（導入後解析待ち）。BB中ビタ押し成功時イラスト・RB中キャラ背景色・ボーナス終了画面で設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、ななプレス、DMMぱちタウン"
+}

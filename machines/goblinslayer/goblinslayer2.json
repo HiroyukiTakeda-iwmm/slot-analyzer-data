@@ -5,12 +5,12 @@
     {
       "name": "AT初当たり",
       "probabilities": {
-        "1": 0.00185,
+        "1": 0.001846,
         "2": 0.0019,
-        "3": 0.00197,
-        "4": 0.00221,
-        "5": 0.00239,
-        "6": 0.00249
+        "3": 0.001975,
+        "4": 0.002207,
+        "5": 0.002393,
+        "6": 0.002485
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -20,12 +20,12 @@
     {
       "name": "CZ確率",
       "probabilities": {
-        "1": 0.00418,
-        "2": 0.0044,
-        "3": 0.00465,
-        "4": 0.00495,
-        "5": 0.0052,
-        "6": 0.0055
+        "1": 0.004179,
+        "2": 0.004305,
+        "3": 0.004486,
+        "4": 0.00499,
+        "5": 0.005339,
+        "6": 0.005498
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
@@ -33,39 +33,49 @@
       "description": "設定1: 1/239.3、設定6: 1/181.9"
     }
   ],
-  "confirmationEvents": [],
-  "endScreens": [],
-  "voiceCounts": [],
-  "trialSuccessRates": [
+  "confirmationEvents": [
     {
-      "name": "リプレイ3連CZ当選率",
-      "description": "高設定ほどリプ3連でCZ当選しやすい。4連はCZ濃厚、5連はAT濃厚",
-      "id": "リプレイ3連cz当選率",
-      "probabilities": {
-        "1": 0.05,
-        "2": 0.08,
-        "3": 0.12,
-        "4": 0.18,
-        "5": 0.25,
-        "6": 0.32
-      }
+      "id": "藤丸コイン銅",
+      "name": "藤丸コイン銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
     },
     {
-      "name": "共通ベル確率",
-      "description": "特大の設定差。要カウント",
-      "id": "共通ベル確率",
-      "probabilities": {
-        "1": 0.012,
-        "2": 0.013,
-        "3": 0.014,
-        "4": 0.016,
-        "5": 0.018,
-        "6": 0.02
-      }
+      "id": "藤丸コイン銀",
+      "name": "藤丸コイン銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"]
+    },
+    {
+      "id": "藤丸コイン金",
+      "name": "藤丸コイン金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "藤丸コインDANGER柄",
+      "name": "藤丸コインDANGER柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "藤丸コイン虹",
+      "name": "藤丸コイン虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
     }
   ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
-  "source": "ちょんぼりすた、ナナプレス"
+  "version": "1.1",
+  "description": "JFJ（藤商事）のスマスロAT機（2026年2月2日導入、約8,000台）。AT純増約2.8枚/G（上位AT約6.0枚/G）。天井は最大1500G+α。CZ確率・AT確率に設定差。小役確率は全設定共通（弱チェリー1/60.0、スイカ1/79.9等）。藤丸コインで設定確定系示唆。AT終了画面・エンディング中ボイスでも設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、DMMぱちタウン、ななプレス"
 }
