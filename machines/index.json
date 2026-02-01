@@ -77,7 +77,7 @@
       "name": "スマスロ Re:ゼロから始める異世界生活 season2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "rezero/rezero-season2.json",
       "tags": ["AT", "リゼロ", "スマスロ", "2024年新台"],
       "description": "死に戻り（引き戻し）発生率に設定差、小役確率は全設定共通"
@@ -137,7 +137,7 @@
       "name": "Lパチスロ 機動戦士ガンダムSEED",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "gundam/gundam-seed.json",
       "tags": ["AT", "ガンダム", "スマスロ", "2025年新台"],
       "description": "小役確率は全設定共通、終了画面による豊富な設定示唆"
@@ -177,7 +177,7 @@
       "name": "スマスロ デビル メイ クライ5 スタイリッシュトライブ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "dmc/dmc5.json",
       "tags": ["AT", "DMC", "スマスロ", "エンタトロフィー", "2025年新台"],
       "description": "謎ダンテCZ出現率に特大の設定差"
@@ -457,7 +457,7 @@
       "name": "Lパチスロ かぐや様は告らせたい",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kaguya/kaguya-sama.json",
       "tags": ["AT", "かぐや様", "スマスロ", "SANKYO", "2024年新台"],
       "description": "ボーナス終了画面枠色とREG中キャラ紹介で設定示唆、ミニ藤原衣装チェンジで確定演出"
@@ -467,7 +467,7 @@
       "name": "スマスロ秘宝伝",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "hihouden/hihouden.json",
       "tags": ["AT", "秘宝伝", "スマスロ", "コパンダトロフィー", "2025年新台"],
       "description": "チェリー確率に設定差、コパンダトロフィーと秘宝ニュースで設定示唆"
