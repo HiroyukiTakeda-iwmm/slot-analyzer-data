@@ -35,6 +35,22 @@
   ],
   "confirmationEvents": [
     {
+      "id": "at終了トロフィー銅",
+      "name": "AT終了トロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
+      "color": "#CD7F32"
+    },
+    {
       "id": "at終了トロフィー銀",
       "name": "AT終了トロフィー銀",
       "description": "設定3以上濃厚",
@@ -63,6 +79,22 @@
         "2",
         "3"
       ]
+    },
+    {
+      "id": "at終了トロフィー紅葉柄",
+      "name": "AT終了トロフィー紅葉柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#FF5722"
     },
     {
       "id": "at終了トロフィー虹",
@@ -100,9 +132,8 @@
       "name": "獲得枚数表示",
       "patterns": [
         {
-          "name": "256枚",
-          "minSetting": 2,
-          "description": "設定示唆"
+          "name": "256枚over",
+          "description": "設定2・5・6濃厚"
         },
         {
           "name": "456枚",
@@ -195,7 +226,7 @@
   ],
   "trialSuccessRates": [],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
+  "version": "1.1",
+  "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃"
 }

@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -162,7 +162,7 @@
       "name": "スマスロ新鬼武者3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "onimusha/shin-onimusha3.json",
       "tags": [
         "AT",
@@ -317,7 +317,7 @@
       "name": "スマスロ ストライク・ザ・ブラッド",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "striketheblood/striketheblood.json",
       "tags": [
         "AT",
@@ -396,7 +396,7 @@
       "name": "Lパチスロ ありふれた職業で世界最強",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "arifureta/arifureta.json",
       "tags": [
         "AT",
@@ -412,7 +412,7 @@
       "name": "スマスロ スーパーブラックジャック",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "blackjack/blackjack.json",
       "tags": [
         "AT",
@@ -428,7 +428,7 @@
       "name": "L 東京喰種",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tokyoghoul/tokyoghoul.json",
       "tags": [
         "AT",
@@ -444,7 +444,7 @@
       "name": "スマスロ アイドルマスター ミリオンライブ! ネクストプロローグ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "idolmaster/idolmaster-million.json",
       "tags": [
         "AT",
@@ -526,7 +526,7 @@
       "name": "スマスロ 緑ドン VIVA!情熱南米編 REVIVAL",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "midoridon/midoridon-viva.json",
       "tags": [
         "AT",
@@ -574,7 +574,7 @@
       "name": "マタドールIII",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "matador/matador3.json",
       "tags": [
         "Aタイプ",
@@ -606,7 +606,7 @@
       "name": "スターハナハナ-30",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "starhanahana/starhanahana.json",
       "tags": [
         "Aタイプ",

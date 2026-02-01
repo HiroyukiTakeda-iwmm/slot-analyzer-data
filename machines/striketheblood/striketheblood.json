@@ -68,76 +68,57 @@
       "id": "エンタトロフィー銅",
       "name": "エンタトロフィー銅",
       "description": "設定2以上濃厚",
-      "confirmedSettings": [
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "excludedSettings": [
-        "1"
-      ]
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "エンタトロフィー銀",
+      "name": "エンタトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
     },
     {
       "id": "エンタトロフィー金",
       "name": "エンタトロフィー金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": [
-        "4",
-        "5",
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3"
-      ]
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "エンタトロフィー紅葉柄",
+      "name": "エンタトロフィー紅葉柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
     },
     {
       "id": "エンタトロフィー虹",
       "name": "エンタトロフィー虹",
       "description": "設定6濃厚",
-      "confirmedSettings": [
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ]
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
     },
     {
       "id": "終了時ランプ赤",
       "name": "終了時ランプ赤",
       "description": "設定4以上濃厚",
-      "confirmedSettings": [
-        "4",
-        "5",
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3"
-      ]
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#F44336"
     },
     {
       "id": "終了時ランプ虹",
       "name": "終了時ランプ虹",
       "description": "設定6濃厚",
-      "confirmedSettings": [
-        "6"
-      ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ]
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
     }
   ],
   "endScreens": [
@@ -161,24 +142,25 @@
       ]
     }
   ],
-  "voiceCounts": [],
   "trialSuccessRates": [
     {
+      "id": "ep50pt_rate",
       "name": "エピソードポイント50pt獲得率",
-      "description": "高設定ほど50pt振り分けが優遇",
-      "id": "エピソードポイント50pt獲得率",
+      "description": "設定1: 0.4%、設定6: 12.5%。高設定ほど50pt振り分けが大幅優遇",
       "probabilities": {
-        "1": 0.1,
-        "2": 0.13,
-        "3": 0.17,
-        "4": 0.22,
-        "5": 0.28,
-        "6": 0.35
-      }
+        "1": 0.004,
+        "2": 0.016,
+        "3": 0.031,
+        "4": 0.063,
+        "5": 0.125,
+        "6": 0.125
+      },
+      "color": "#9C27B0",
+      "displayOrder": 1
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-01-29",
-  "source": "ちょんぼりすた"
+  "version": "1.1",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、ナナプレス"
 }
