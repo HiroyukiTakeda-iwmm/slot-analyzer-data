@@ -33,9 +33,123 @@
       "description": "設定1: 1/525.3、設定6: 1/480.4。引き戻し含む"
     }
   ],
+  "confirmationEvents": [
+    {
+      "id": "at_end_retsu",
+      "name": "AT終了画面 烈海王",
+      "description": "AT終了画面で烈海王が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "at_end_katsumi",
+      "name": "AT終了画面 愚地克巳",
+      "description": "AT終了画面で愚地克巳が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "at_end_jack",
+      "name": "AT終了画面 ジャック・ハンマー",
+      "description": "AT終了画面でジャック・ハンマーが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "at_end_pickle1",
+      "name": "AT終了画面 刃牙vsピクル(1)",
+      "description": "AT終了画面で刃牙vsピクル(1)が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "at_end_pickle2",
+      "name": "AT終了画面 刃牙vsピクル(2)",
+      "description": "AT終了画面で刃牙vsピクル(2)が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "push_lamp_red",
+      "name": "エンディング中PUSHランプ赤",
+      "description": "エンディング中PUSHランプが赤に点灯で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "push_lamp_purple",
+      "name": "エンディング中PUSHランプ紫",
+      "description": "エンディング中PUSHランプが紫に点灯で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "push_lamp_rainbow",
+      "name": "エンディング中PUSHランプ虹",
+      "description": "エンディング中PUSHランプが虹に点灯で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "haruruna_push",
+      "name": "ハルルナPUSH",
+      "description": "ハルルナPUSH出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "kakure_nagi_blue",
+      "name": "隠れ凪 青",
+      "description": "隠れ凪が青で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "kakure_nagi_green",
+      "name": "隠れ凪 緑",
+      "description": "隠れ凪が緑で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "kakure_nagi_red",
+      "name": "隠れ凪 赤",
+      "description": "隠れ凪が赤で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "kakure_nagi_silver",
+      "name": "隠れ凪 銀",
+      "description": "隠れ凪が銀で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "kakure_nagi_gold",
+      "name": "隠れ凪 金",
+      "description": "隠れ凪が金で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "description": "オリンピアのスマスロAT機（2026年2月2日導入）。小役確率は全設定共通。チャンスモード移行率に設定差（200Gゾーン当選頻度に注目）。AT終了画面のスタンプ・獲得枚数表示・エンディング中PUSHランプで設定示唆。ハルルナPUSHで設定4以上濃厚。",
+  "version": "1.1",
+  "description": "オリンピアのスマスロAT機（2026年2月2日導入）。小役確率は全設定共通。チャンスモード移行率に設定差（200Gゾーン当選頻度に注目）。AT終了画面・エンディング中PUSHランプ・ハルルナPUSH・隠れ凪で設定示唆。",
   "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス"
 }

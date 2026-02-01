@@ -33,9 +33,51 @@
       "description": "設定1: 1/238.0、設定6: 1/210.1。設定差は小さめ"
     }
   ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_bronze",
+      "name": "サミートロフィー銅",
+      "description": "サミートロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー銀",
+      "description": "サミートロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー金",
+      "description": "サミートロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "description": "サミートロフィー虹が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィーキリン柄",
+      "description": "サミートロフィーキリン柄が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFEB3B"
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.0",
-  "description": "サミーのスマスロAT機（2026年2月2日導入）。小役確率は全設定共通。AT確率・引き戻しストック当選率・タチコマの家出当選率に設定差。サミートロフィーとAT終了画面で設定示唆。",
+  "version": "1.1",
+  "description": "サミーのスマスロAT機（2026年2月2日導入）。小役確率は全設定共通。AT確率・引き戻しストック当選率・タチコマの家出当選率に設定差。サミートロフィー（銅: 設定2以上、銀: 設定3以上、金: 設定4以上、虹: 設定5以上、キリン: 設定6）とAT終了画面で設定示唆。",
   "lastUpdated": "2026-02-01",
   "source": "ちょんぼりすた、ななプレス、DMMぱちタウン"
 }
