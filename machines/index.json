@@ -1104,7 +1104,7 @@
       "name": "スマスロ ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "sumaslohanabi/sumaslo-hanabi.json",
       "tags": [
         "A+RT",
@@ -1137,7 +1137,7 @@
       "name": "Lパチスロうみねこのなく頃に2",
       "type": "A+ART",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "umineko/umineko2.json",
       "tags": [
         "A+ART",
@@ -1154,7 +1154,7 @@
       "name": "Lサラリーマン金太郎",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kintaro/kintaro.json",
       "tags": [
         "AT",
@@ -1171,7 +1171,7 @@
       "name": "Lパチスロ炎炎ノ消防隊2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "enen2/enen-shouboutai2.json",
       "tags": [
         "AT",
@@ -1188,7 +1188,7 @@
       "name": "L戦国乙女4 戦乱に閃く炯眼の軍師",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "sengokuotome/sengokuotome4.json",
       "tags": [
         "AT",
@@ -1205,7 +1205,7 @@
       "name": "パチスロ甲鉄城のカバネリ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kabaneri/kabaneri-6.5.json",
       "tags": [
         "AT",
