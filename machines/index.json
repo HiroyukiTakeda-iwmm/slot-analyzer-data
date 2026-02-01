@@ -670,7 +670,7 @@
       "name": "ディスクアップ ULTRAREMIX",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "discup/discup-ultraremix.json",
       "tags": [
         "A+AT",
@@ -815,7 +815,7 @@
       "name": "パチスロ傷物語 始マリノ刻",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kizumonogatari/kizumonogatari.json",
       "tags": [
         "AT",
@@ -862,7 +862,7 @@
       "name": "パチスロ ダンジョンに出会いを求めるのは間違っているだろうか2",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "danmachi/danmachi2.json",
       "tags": [
         "ART",
@@ -877,7 +877,7 @@
       "name": "Lパチスロ ガメラ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "gamera/gamera2.json",
       "tags": [
         "AT",
@@ -909,7 +909,7 @@
       "name": "L アズールレーン THE ANIMATION",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "azurlane/azurlane.json",
       "tags": [
         "AT",
