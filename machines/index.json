@@ -750,7 +750,7 @@
       "name": "スマスロ ゴッドイーター リザレクション",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "godeater/godeater-resurrection.json",
       "tags": [
         "AT",
@@ -765,7 +765,7 @@
       "name": "L主役は銭形5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "zenishape/zenishape5.json",
       "tags": [
         "AT",
@@ -782,7 +782,7 @@
       "name": "Lモンスターハンターライズ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "monhun/monhun-rise.json",
       "tags": [
         "AT",
@@ -1003,7 +1003,7 @@
       "name": "クレアの秘宝伝 ボーナストリガーver.",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "crea/crea-bt.json",
       "tags": [
         "Aタイプ",
@@ -1020,7 +1020,7 @@
       "name": "L少女歌劇 レヴュースタァライト",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "revuestarlight/revue-starlight.json",
       "tags": [
         "A+AT",
@@ -1037,7 +1037,7 @@
       "name": "Lマジカルハロウィン8",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "magicalhalloween/magical-halloween8.json",
       "tags": [
         "ART",
@@ -1345,7 +1345,7 @@
       "name": "パチスロ バイオハザード RE:2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "biohazard-re2/biohazard-re2.json",
       "tags": [
         "AT",
@@ -1363,7 +1363,7 @@
       "name": "スマスロニューパルサーBT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "newpulsar/newpulsar-bt.json",
       "tags": [
         "BT",
@@ -1380,7 +1380,7 @@
       "name": "サンダーVライトニング",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "thunderv/thunderv-lightning.json",
       "tags": [
         "Aタイプ",
@@ -1414,7 +1414,7 @@
       "name": "L ToLOVEるダークネス",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "toloveru/toloveru-darkness.json",
       "tags": [
         "AT",
@@ -1432,7 +1432,7 @@
       "name": "銀河英雄伝説 Die Neue These",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "gineiden/gineiden-dnt.json",
       "tags": [
         "AT",
