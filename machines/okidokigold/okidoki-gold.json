@@ -1,0 +1,113 @@
+{
+  "name": "沖ドキ！GOLD",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー合算",
+      "probabilities": {
+        "1": 0.02500,
+        "2": 0.02558,
+        "3": 0.02591,
+        "5": 0.02639,
+        "6": 0.02688
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "設定1: 1/40.0、設定6: 1/37.2。5段階設定（設定4なし）"
+    },
+    {
+      "name": "チェリーB",
+      "probabilities": {
+        "1": 0.00595,
+        "2": 0.00656,
+        "3": 0.00687,
+        "5": 0.00733,
+        "6": 0.00781
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/168.0、設定6: 1/128.0。設定差大"
+    },
+    {
+      "name": "確定役合算",
+      "probabilities": {
+        "1": 0.000183,
+        "2": 0.000198,
+        "3": 0.000214,
+        "5": 0.000244,
+        "6": 0.000275
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FFD700",
+      "description": "設定1: 1/5461.3、設定6: 1/3640.9"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_rate",
+      "name": "初当たり合算確率",
+      "description": "設定1: 1/299.6、設定6: 1/237.0",
+      "probabilities": {
+        "1": 0.003338,
+        "2": 0.003481,
+        "3": 0.003750,
+        "5": 0.004039,
+        "6": 0.004219
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "big_rate",
+      "name": "BIG確率",
+      "description": "設定1: 1/175.3、設定6: 1/134.0",
+      "probabilities": {
+        "1": 0.005704,
+        "2": 0.005943,
+        "3": 0.006341,
+        "5": 0.006993,
+        "6": 0.007463
+      },
+      "color": "#E91E63",
+      "displayOrder": 2
+    },
+    {
+      "id": "reg_rate",
+      "name": "REG確率",
+      "description": "設定1: 1/368.7、設定6: 1/276.5",
+      "probabilities": {
+        "1": 0.002712,
+        "2": 0.002889,
+        "3": 0.003086,
+        "5": 0.003357,
+        "6": 0.003617
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    },
+    {
+      "id": "suika_douji",
+      "name": "スイカ同時当選率（通常A/B滞在）",
+      "description": "設定1: 2.8%、設定6: 4.0%",
+      "probabilities": {
+        "1": 0.028,
+        "2": 0.029,
+        "3": 0.034,
+        "5": 0.037,
+        "6": 0.040
+      },
+      "color": "#4CAF50",
+      "displayOrder": 4
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+}

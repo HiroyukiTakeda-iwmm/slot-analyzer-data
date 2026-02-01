@@ -1,0 +1,186 @@
+{
+  "name": "パチスロ甲鉄城のカバネリ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通6枚ベル",
+      "probabilities": {
+        "1": 0.03759,
+        "2": 0.03759,
+        "3": 0.03861,
+        "4": 0.03937,
+        "5": 0.04016,
+        "6": 0.04132
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFEB3B",
+      "description": "設定1: 1/26.6、設定6: 1/24.2。自力カウント必須"
+    },
+    {
+      "name": "単独チャンス目合算",
+      "probabilities": {
+        "1": 0.07407,
+        "2": 0.07407,
+        "3": 0.07407,
+        "4": 0.07407,
+        "5": 0.07407,
+        "6": 0.07407
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/13.5（無名+生駒+美馬チャンス目合算）"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "sammy_trophy_bronze",
+      "name": "サミートロフィー銅",
+      "description": "ST非当選の駿城ボーナス終了時等に出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "sammy_trophy_silver",
+      "name": "サミートロフィー銀",
+      "description": "ST非当選の駿城ボーナス終了時等に出現",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "sammy_trophy_gold",
+      "name": "サミートロフィー金",
+      "description": "ST非当選の駿城ボーナス終了時等に出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "sammy_trophy_kirin",
+      "name": "サミートロフィーキリン柄",
+      "description": "ST非当選の駿城ボーナス終了時等に出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "sammy_trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "description": "ST非当選の駿城ボーナス終了時等に出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "omikuji_bronze",
+      "name": "おみくじ小吉（銅）",
+      "description": "通常時サブ液晶に出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "omikuji_silver",
+      "name": "おみくじ中吉（銀）",
+      "description": "通常時サブ液晶に出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "omikuji_gold",
+      "name": "おみくじ大吉（金）",
+      "description": "通常時サブ液晶に出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "kabaneri_ep7",
+      "name": "カバネリボーナス中エピソード第7話",
+      "description": "ボーナス中残り50枚到達時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "kabaneri_456over",
+      "name": "獲得枚数456枚OVER表示",
+      "description": "ST/ボーナス終了時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "kabaneri_666over",
+      "name": "獲得枚数666枚OVER表示",
+      "description": "ST/ボーナス終了時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "st_ayame",
+      "name": "ST終了画面 菖蒲",
+      "type": "st_end",
+      "hint": "高設定示唆（設定1: 1.2%、設定6: 6.1%）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "st_rate",
+      "name": "ST合算確率",
+      "description": "設定1: 1/407.9、設定6: 1/290.6",
+      "probabilities": {
+        "1": 0.002452,
+        "2": 0.002543,
+        "3": 0.002685,
+        "4": 0.003056,
+        "5": 0.003254,
+        "6": 0.003441
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ確率",
+      "description": "設定1: 1/179.3、設定6: 1/136.8",
+      "probabilities": {
+        "1": 0.005577,
+        "2": 0.005621,
+        "3": 0.005907,
+        "4": 0.006313,
+        "5": 0.006868,
+        "6": 0.007310
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_3hit_success",
+      "name": "無名CZ 3連撃時成功率",
+      "description": "設定1: 18.7%、設定6: 40.7%。非常に大きな設定差",
+      "probabilities": {
+        "1": 0.187,
+        "2": 0.188,
+        "3": 0.235,
+        "4": 0.283,
+        "5": 0.306,
+        "6": 0.407
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    }
+  ],
+  "voiceCounts": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン、すろぱちくえすと"
+}

@@ -1,0 +1,193 @@
+{
+  "name": "L戦国乙女4 戦乱に閃く炯眼の軍師",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.01029,
+        "2": 0.01029,
+        "3": 0.01029,
+        "4": 0.01029,
+        "5": 0.01029,
+        "6": 0.01029
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 1/97.2"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.01441,
+        "2": 0.01441,
+        "3": 0.01441,
+        "4": 0.01441,
+        "5": 0.01441,
+        "6": 0.01441
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/69.4"
+    },
+    {
+      "name": "チャンス目合算",
+      "probabilities": {
+        "1": 0.00556,
+        "2": 0.00556,
+        "3": 0.00556,
+        "4": 0.00556,
+        "5": 0.00556,
+        "6": 0.00556
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/180.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00313,
+        "2": 0.00313,
+        "3": 0.00313,
+        "4": 0.00313,
+        "5": 0.00313,
+        "6": 0.00313
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/319.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "stamp_ka",
+      "name": "可スタンプ",
+      "description": "AT終了画面で出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "stamp_kichi",
+      "name": "吉スタンプ",
+      "description": "AT終了画面で出現",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#607D8B"
+    },
+    {
+      "id": "stamp_ryou",
+      "name": "良スタンプ",
+      "description": "AT終了画面で出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "stamp_yuu",
+      "name": "優スタンプ",
+      "description": "AT終了画面で出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "stamp_goku",
+      "name": "極スタンプ",
+      "description": "AT終了画面で出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "odd_chara",
+      "name": "ヒデヨシ&カンスケ&シンゲン&ノブナガ",
+      "type": "at_end",
+      "hint": "設定3・5示唆（奇数設定示唆）"
+    },
+    {
+      "id": "even_chara",
+      "name": "ヨシモト&ケンシン&ウジマサ&イエヤス",
+      "type": "at_end",
+      "hint": "設定2・4示唆（偶数設定示唆）"
+    },
+    {
+      "id": "high_chara",
+      "name": "モトチカ&ソウリン&ドウセツ&モトナリ",
+      "type": "at_end",
+      "hint": "高設定示唆（設定5・6で選択率UP）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "at_rate",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/429.2、設定6: 1/319.2。大きな設定差あり",
+      "probabilities": {
+        "1": 0.002330,
+        "2": 0.002393,
+        "3": 0.002541,
+        "4": 0.002768,
+        "5": 0.002993,
+        "6": 0.003133
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ乙女アタック突入率",
+      "description": "設定1: 1/467.6、設定6: 1/381.5",
+      "probabilities": {
+        "1": 0.002139,
+        "2": 0.002211,
+        "3": 0.002300,
+        "4": 0.002434,
+        "5": 0.002532,
+        "6": 0.002621
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_success",
+      "name": "巫女カウンター0到達時CZ当選率",
+      "description": "設定1: 20.3%、設定6: 24.4%",
+      "probabilities": {
+        "1": 0.203,
+        "2": 0.209,
+        "3": 0.218,
+        "4": 0.229,
+        "5": 0.238,
+        "6": 0.244
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    }
+  ],
+  "effectCounts": [
+    {
+      "id": "episode_ujimasa_hideaki",
+      "name": "ウジマサ・ヒデアキエピソード",
+      "hint": "高設定示唆（設定5・6で約33%）",
+      "color": "#FFD700"
+    },
+    {
+      "id": "secret_talk_enemy3",
+      "name": "シークレットトーク敵3人",
+      "hint": "設定4以上示唆（設定6で約25%出現）",
+      "color": "#E91E63"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、ちょんぼりすた、DMMぱちタウン"
+}

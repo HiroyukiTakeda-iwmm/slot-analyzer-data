@@ -1,0 +1,229 @@
+{
+  "name": "スマスロバジリスク～甲賀忍法帖～絆2 天膳 BLACK EDITION",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.02169,
+        "2": 0.02217,
+        "3": 0.02268,
+        "4": 0.02315,
+        "5": 0.02364,
+        "6": 0.02415
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "設定1: 1/46.1、設定6: 1/41.4"
+    },
+    {
+      "name": "巻物",
+      "probabilities": {
+        "1": 0.01374,
+        "2": 0.01374,
+        "3": 0.01374,
+        "4": 0.01374,
+        "5": 0.01374,
+        "6": 0.01374
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#795548",
+      "description": "全設定共通: 1/72.8"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.01221,
+        "2": 0.01221,
+        "3": 0.01221,
+        "4": 0.01221,
+        "5": 0.01221,
+        "6": 0.01221
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/81.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00763,
+        "2": 0.00763,
+        "3": 0.00763,
+        "4": 0.00763,
+        "5": 0.00763,
+        "6": 0.00763
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/131.1"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.00500,
+        "2": 0.00500,
+        "3": 0.00500,
+        "4": 0.00500,
+        "5": 0.00500,
+        "6": 0.00500
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/199.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "souninokoku_female",
+      "name": "争忍の刻開始画面 女性キャラ集合",
+      "description": "争忍の刻開始時",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "souninokoku_gennosuke_oboro_purple",
+      "name": "争忍の刻開始画面 弦之介&朧（紫）",
+      "description": "争忍の刻開始時",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "souninokoku_gennosuke_oboro_rainbow",
+      "name": "争忍の刻開始画面 弦之介&朧＋鼻歌（虹）",
+      "description": "争忍の刻開始時",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF1744"
+    },
+    {
+      "id": "univaplate_bronze",
+      "name": "ユニバプレート銅",
+      "description": "BT終了時サブ液晶タッチ",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "univaplate_silver",
+      "name": "ユニバプレート銀",
+      "description": "BT終了時サブ液晶タッチ",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "univaplate_gold",
+      "name": "ユニバプレート金",
+      "description": "BT終了時サブ液晶タッチ",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "univaplate_hanabi",
+      "name": "ユニバプレート花火柄",
+      "description": "BT終了時サブ液晶タッチ",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "univaplate_rainbow",
+      "name": "ユニバプレート虹",
+      "description": "BT終了時サブ液晶タッチ",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "iga_chars",
+      "name": "争忍の刻 伊賀キャラ集合",
+      "type": "bt_start",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "kouga_chars",
+      "name": "争忍の刻 甲賀キャラ集合",
+      "type": "bt_start",
+      "hint": "偶数設定示唆"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bt_rate",
+      "name": "BT初当たり確率",
+      "description": "設定1: 1/418.1、設定6: 1/247.3。大きな設定差",
+      "probabilities": {
+        "1": 0.002392,
+        "2": 0.002469,
+        "3": 0.002760,
+        "4": 0.003213,
+        "5": 0.003591,
+        "6": 0.004044
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bc_rate",
+      "name": "BC確率",
+      "description": "設定1: 1/124.7、設定6: 1/105.0",
+      "probabilities": {
+        "1": 0.008019,
+        "2": 0.008117,
+        "3": 0.008389,
+        "4": 0.008803,
+        "5": 0.009217,
+        "6": 0.009524
+      },
+      "color": "#FF9800",
+      "displayOrder": 2
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "habu_222",
+      "name": "弦之介BC 222人撃破",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "habu_333",
+      "name": "弦之介BC 333人撃破",
+      "hint": "設定3以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "habu_444",
+      "name": "弦之介BC 444人撃破",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "habu_555",
+      "name": "弦之介BC 555人撃破",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "habu_666",
+      "name": "弦之介BC 666人撃破",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-02-01",
+  "source": "一撃、DMMぱちタウン、すろぱちくえすと、なな徹"
+}

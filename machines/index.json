@@ -1,5 +1,5 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -741,6 +741,56 @@
       "file": "enen2/enen-shouboutai2.json",
       "tags": ["AT", "炎炎ノ消防隊", "スマスロ", "SANKYO", "6段階設定", "2026年新台"],
       "description": "炎炎ループ初当たり確率に大きな設定差。前作5段階から今作は全6段階設定に変更"
+    },
+    {
+      "id": "sengokuotome4",
+      "name": "L戦国乙女4 戦乱に閃く炯眼の軍師",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sengokuotome/sengokuotome4.json",
+      "tags": ["AT", "戦国乙女", "スマスロ", "オリンピアエステート", "6段階設定", "2023年新台"],
+      "description": "小役確率に設定差なし。CZ乙女アタック突入率とAT初当たり確率に設定差。AT終了画面スタンプで設定示唆"
+    },
+    {
+      "id": "kabaneri-6.5",
+      "name": "パチスロ甲鉄城のカバネリ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kabaneri/kabaneri-6.5.json",
+      "tags": ["AT", "カバネリ", "6.5号機", "サミー", "サミートロフィー", "6段階設定", "2022年新台"],
+      "description": "共通6枚ベルに設定差。CZ確率とST合算確率に大きな設定差。サミートロフィーとおみくじで設定示唆"
+    },
+    {
+      "id": "okidoki-gold",
+      "name": "沖ドキ！GOLD",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "okidokigold/okidoki-gold.json",
+      "tags": ["AT", "沖ドキ", "沖スロ", "6.5号機", "ユニバーサル", "5段階設定", "2022年新台"],
+      "description": "設定4なし5段階設定。チェリーB確率と確定役Bに設定差。モード移行とハイビスカス点灯パターンが特徴"
+    },
+    {
+      "id": "basilisk-kizuna2-tenzen",
+      "name": "スマスロバジリスク～甲賀忍法帖～絆2 天膳 BLACK EDITION",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "basilisk/basilisk-kizuna2-tenzen.json",
+      "tags": ["AT", "バジリスク", "スマスロ", "ミズホ", "ユニバプレート", "6段階設定", "2023年新台"],
+      "description": "弱チェリー確率に設定差。BT初当たり確率に大きな設定差。争忍の刻開始画面とユニバプレートで設定示唆"
+    },
+    {
+      "id": "fujiko-bt",
+      "name": "L不二子BT",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "fujiko/fujiko-bt.json",
+      "tags": ["BT", "不二子", "ルパン", "アムテックス", "5段階設定", "2025年新台"],
+      "description": "設定3非搭載5段階設定。プラム・チェリー確率に設定差。チェリー同時当選率に特大の設定差。ボイスで設定示唆"
     }
   ]
 }
