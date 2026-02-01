@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "updatedAt": "2026-02-01T00:00:00Z",
   "machines": [
     {
@@ -581,6 +581,136 @@
       "file": "azurlane/azurlane.json",
       "tags": ["AT", "アズレン", "スマスロ", "京楽", "玉ちゃんトロフィー", "2025年新台"],
       "description": "共通ベル・チェリー・スイカに設定差、玉ちゃんトロフィーと終了画面で設定示唆"
+    },
+    {
+      "id": "gogo-juggler3",
+      "name": "Sゴーゴージャグラー3",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "gogojuggler/gogo-juggler3.json",
+      "tags": ["ジャグラー", "Aタイプ", "6.5号機", "6段階設定"],
+      "description": "北電子の6.5号機ジャグラー。ぶどう・REG確率・チェリー重複に設定差あり"
+    },
+    {
+      "id": "funky-juggler2",
+      "name": "ファンキージャグラー2",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "funkyjuggler/funky-juggler2.json",
+      "tags": ["ジャグラー", "Aタイプ", "6号機", "6段階設定"],
+      "description": "6段階設定のジャグラー系Aタイプ。ぶどう確率と単独REGに設定差あり"
+    },
+    {
+      "id": "happy-juggler-viii",
+      "name": "SハッピージャグラーVIII",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "happyjuggler/happy-juggler-viii.json",
+      "tags": ["ジャグラー", "Aタイプ", "6号機", "6段階設定"],
+      "description": "北電子の6号機ジャグラー。ぶどう確率に設定3→4で大きな段階差。チェリー重複REGに最大約1.65倍の設定差"
+    },
+    {
+      "id": "aim-juggler-ex-6gou",
+      "name": "SアイムジャグラーEX",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "aimjuggler/aim-juggler-ex-6gou.json",
+      "tags": ["ジャグラー", "Aタイプ", "6号機", "アイム", "6段階設定"],
+      "description": "6号機アイムジャグラー。ぶどうは設定6のみ優遇、単独REGに最大約1.73倍の設定差"
+    },
+    {
+      "id": "bancho4",
+      "name": "L押忍!番長4",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "bancho4/bancho4.json",
+      "tags": ["AT", "番長", "スマスロ", "大都技研", "2024年新台"],
+      "description": "共通ベル・AT直撃に設定差。終了画面で設定確定演出あり"
+    },
+    {
+      "id": "crea-bt",
+      "name": "クレアの秘宝伝 ボーナストリガーver.",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "crea/crea-bt.json",
+      "tags": ["Aタイプ", "BT", "スマスロ", "大都技研", "コパンダトロフィー", "2025年新台"],
+      "description": "REG確率に大きな設定差。BT中ハズレ確率で設定4以上を判別可能"
+    },
+    {
+      "id": "revue-starlight",
+      "name": "L少女歌劇 レヴュースタァライト",
+      "type": "A+AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "revuestarlight/revue-starlight.json",
+      "tags": ["A+AT", "レヴュスタ", "スマスロ", "OIZUMI", "5段階設定", "2025年新台"],
+      "description": "設定3非搭載5段階設定。CZ確率とREG確率に設定差。ボーナス終了画面エフェクトで設定示唆"
+    },
+    {
+      "id": "magical-halloween8",
+      "name": "Lマジカルハロウィン8",
+      "type": "ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "magicalhalloween/magical-halloween8.json",
+      "tags": ["ART", "マジハロ", "スマスロ", "KONAMI", "アリストロフィー", "2023年新台"],
+      "description": "共通コイン確率とART初当りに設定差。どこまじ当選率に特大の設定差"
+    },
+    {
+      "id": "dumbbell",
+      "name": "Lダンベル何キロ持てる?",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "dumbbell/dumbbell.json",
+      "tags": ["AT", "ダンベル", "スマスロ", "SANKYO", "2024年新台"],
+      "description": "小役確率に設定差なし。CZ/AT終了画面の枠色で設定示唆"
+    },
+    {
+      "id": "zombielandsaga",
+      "name": "Lゾンビランドサガ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "zombielandsaga/zombielandsaga.json",
+      "tags": ["AT", "ゾンサガ", "スマスロ", "大都技研", "ST", "2024年新台"],
+      "description": "ST確率・CZ確率に設定差。徒花ボーナス中キャラ紹介で設定確定"
+    },
+    {
+      "id": "koukaku-kidoutai",
+      "name": "スマスロ攻殻機動隊",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "koukakukidoutai/koukaku-kidoutai.json",
+      "tags": ["AT", "攻殻機動隊", "スマスロ", "サミー", "サミートロフィー", "2026年新台"],
+      "description": "小役確率に設定差なし。AT確率と引き戻しストック当選率に設定差。サミートロフィーで設定示唆"
+    },
+    {
+      "id": "sumaslo-hanabi",
+      "name": "スマスロ ハナビ",
+      "type": "A+RT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sumaslohanabi/sumaslo-hanabi.json",
+      "tags": ["A+RT", "ハナビ", "スマスロ", "アクロス", "4段階設定", "2026年新台"],
+      "description": "4段階設定（1,2,5,6）。風鈴合算とREG確率に設定差。BIG中バラケ目で設定5以上濃厚"
+    },
+    {
+      "id": "hanma-baki",
+      "name": "L範馬刃牙",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hanmabaki/hanma-baki.json",
+      "tags": ["AT", "刃牙", "スマスロ", "オリンピア", "2026年新台"],
+      "description": "小役確率に設定差なし。チャンスモード移行率に設定差。AT終了画面スタンプで設定示唆"
     }
   ]
 }

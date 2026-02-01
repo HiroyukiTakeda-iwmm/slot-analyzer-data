@@ -1,0 +1,67 @@
+{
+  "name": "L少女歌劇 レヴュースタァライト",
+  "type": "A+AT",
+  "roles": [
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.002781,
+        "2": 0.002884,
+        "4": 0.003609,
+        "5": 0.003911,
+        "6": 0.004301
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/359.6、設定6: 1/232.5。設定3非搭載"
+    },
+    {
+      "name": "CZ確率",
+      "probabilities": {
+        "1": 0.003761,
+        "2": 0.003926,
+        "4": 0.004817,
+        "5": 0.005255,
+        "6": 0.005571
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/265.9、設定6: 1/179.5。設定差大"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.001608,
+        "2": 0.001655,
+        "4": 0.001900,
+        "5": 0.002001,
+        "6": 0.002151
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF5722",
+      "description": "設定1: 1/621.9、設定6: 1/465.0。設定差大"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005411,
+        "2": 0.005489,
+        "4": 0.005886,
+        "5": 0.006046,
+        "6": 0.006227
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 1/184.8、設定6: 1/160.6"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "OIZUMIのスマスロA+AT機。設定3非搭載の5段階設定。小役確率に設定差なし。CZ確率・REG確率・AT初当りに設定差。ボーナス終了画面エフェクトとキリンボイスで設定示唆。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、ななプレス"
+}

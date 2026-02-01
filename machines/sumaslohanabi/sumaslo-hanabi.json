@@ -1,0 +1,63 @@
+{
+  "name": "スマスロ ハナビ",
+  "type": "A+RT",
+  "roles": [
+    {
+      "name": "風鈴合算",
+      "probabilities": {
+        "1": 0.103306,
+        "2": 0.105820,
+        "5": 0.110375,
+        "6": 0.115741
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#7C4DFF",
+      "description": "設定1: 1/9.68、設定6: 1/8.64。4段階設定（1,2,5,6）"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.002533,
+        "2": 0.002791,
+        "5": 0.003189,
+        "6": 0.003540
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/394.8、設定6: 1/282.5。最大の設定差要素"
+    },
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.003357,
+        "2": 0.003418,
+        "5": 0.003510,
+        "6": 0.003662
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/297.9、設定6: 1/273.1"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005889,
+        "2": 0.006211,
+        "5": 0.006699,
+        "6": 0.007204
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 1/169.8、設定6: 1/138.8"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "アクロスのスマスロA+RT機（2026年2月2日導入）。4段階設定（1,2,5,6）。風鈴合算とREG確率に設定差。BIG中バラケ目で設定5以上濃厚、REG中バラケ目で設定6期待大。BIG中風鈴Bで奇偶判別。",
+  "lastUpdated": "2026-02-01",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス、P-WORLD"
+}
