@@ -1,0 +1,54 @@
+{
+  "name": "スマスロ チバリヨ2",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.045045,
+        "2": 0.045045,
+        "4": 0.045045,
+        "5": 0.045045,
+        "6": 0.045045
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/22.2"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.012542,
+        "2": 0.012542,
+        "4": 0.012542,
+        "5": 0.012542,
+        "6": 0.012542
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 約1/79.7"
+    },
+    {
+      "name": "ボーナス初当り",
+      "probabilities": {
+        "1": 0.003049,
+        "2": 0.003180,
+        "4": 0.003557,
+        "5": 0.003798,
+        "6": 0.004449
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/328.0、設定6: 1/224.8。設定3非搭載"
+    }
+  ],
+  "confirmationEvents": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "NETのスマスロAT機。設定3非搭載の5段階設定（1,2,4,5,6）。小役確率は全設定共通。ボーナス初当り確率に設定差。ボイス示唆あり（設定確定演出はなし）。",
+  "lastUpdated": "2026-02-09",
+  "source": "ちょんぼりすた、一撃、ななプレス"
+}

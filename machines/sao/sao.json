@@ -1,0 +1,159 @@
+{
+  "name": "スマスロ ソードアート・オンライン",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.004091,
+        "3": 0.004272,
+        "4": 0.004456,
+        "5": 0.004638,
+        "6": 0.004822
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFCA28",
+      "description": "設定1: 1/256.0、設定6: 1/207.4。設定判別の要"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.009158,
+        "2": 0.009158,
+        "3": 0.009158,
+        "4": 0.009158,
+        "5": 0.009158,
+        "6": 0.009158
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/109.2"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.018315,
+        "2": 0.018315,
+        "3": 0.018315,
+        "4": 0.018315,
+        "5": 0.018315,
+        "6": 0.018315
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 約1/54.6"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.009158,
+        "2": 0.009158,
+        "3": 0.009158,
+        "4": 0.009158,
+        "5": 0.009158,
+        "6": 0.009158
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "全設定共通: 約1/109.2"
+    },
+    {
+      "name": "CZ確率",
+      "probabilities": {
+        "1": 0.006469,
+        "2": 0.006803,
+        "3": 0.007143,
+        "4": 0.007519,
+        "5": 0.007937,
+        "6": 0.008757
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/154.6、設定6: 1/114.2"
+    },
+    {
+      "name": "ボーナス確率",
+      "probabilities": {
+        "1": 0.002807,
+        "2": 0.002994,
+        "3": 0.003195,
+        "4": 0.003472,
+        "5": 0.003906,
+        "6": 0.004815
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "設定1: 1/356.2、設定6: 1/207.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_kirito_silica",
+      "name": "AT終了画面 キリト＆シリカ",
+      "description": "AT終了画面でキリト＆シリカが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_asuna_lisbeth",
+      "name": "AT終了画面 アスナ＆リズベット",
+      "description": "AT終了画面でアスナ＆リズベットが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "end_asuna_yui",
+      "name": "AT終了画面 アスナ＆ユイ",
+      "description": "AT終了画面でアスナ＆ユイが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_kirito_sachi",
+      "name": "AT終了画面 キリト＆サチ",
+      "description": "AT終了画面でキリト＆サチが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_uniform",
+      "name": "AT終了画面 制服",
+      "description": "AT終了画面で制服画面が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "medals_456",
+      "name": "獲得枚数 456枚OVER",
+      "description": "獲得枚数456枚OVER表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "medals_666",
+      "name": "獲得枚数 666枚OVER",
+      "description": "獲得枚数666枚OVER表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "大都技研のスマスロAT機。コンプリート機能搭載。共通ベル確率に設定差。CZ確率・ボーナス確率に段階的な設定差。AT終了画面と獲得枚数表示で設定示唆。",
+  "lastUpdated": "2026-02-09",
+  "source": "ちょんぼりすた、一撃、ななプレス"
+}

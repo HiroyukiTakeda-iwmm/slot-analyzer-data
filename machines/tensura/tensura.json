@@ -1,0 +1,127 @@
+{
+  "name": "L転生したらスライムだった件",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.010753,
+        "2": 0.010753,
+        "4": 0.010753,
+        "5": 0.010753,
+        "6": 0.010753
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/93.0"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.013333,
+        "2": 0.013333,
+        "4": 0.013333,
+        "5": 0.013333,
+        "6": 0.013333
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 約1/75.0"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.002703,
+        "2": 0.002817,
+        "4": 0.003378,
+        "5": 0.003817,
+        "6": 0.004082
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/370.0、設定6: 1/245.0。設定3非搭載"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_rimuru_an",
+      "name": "AT終了画面 リムル庵",
+      "description": "AT終了画面でリムル庵が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_heroine_vacation",
+      "name": "AT終了画面 ヒロインバカンス",
+      "description": "AT終了画面でヒロインバカンスが出現で偶数設定（設定2/4/6）濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_heroine_hanami",
+      "name": "AT終了画面 ヒロイン花見",
+      "description": "AT終了画面でヒロイン花見が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_rimuru_raki",
+      "name": "AT終了画面 リムル・ラキ",
+      "description": "AT終了画面でリムル・ラキが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_all_members",
+      "name": "AT終了画面 全員集合",
+      "description": "AT終了画面で全員集合が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "description": "ケロットトロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "description": "ケロットトロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "description": "ケロットトロフィーケロット柄が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "description": "ケロットトロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "山佐のスマスロAT機。設定3非搭載の5段階設定（1,2,4,5,6）。小役確率は全設定共通。AT初当り確率に設定差。ケロットトロフィーとAT終了画面で設定示唆。",
+  "lastUpdated": "2026-02-09",
+  "source": "ちょんぼりすた、一撃、ななプレス"
+}

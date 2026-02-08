@@ -1,0 +1,152 @@
+{
+  "name": "L 絶対衝激IV",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱スイカ",
+      "probabilities": {
+        "1": 0.015267,
+        "2": 0.015267,
+        "3": 0.015267,
+        "4": 0.015267,
+        "5": 0.015267,
+        "6": 0.015267
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "全設定共通: 約1/65.5"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.011236,
+        "2": 0.011236,
+        "3": 0.011236,
+        "4": 0.011236,
+        "5": 0.011236,
+        "6": 0.011236
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/89.0"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.004456,
+        "2": 0.004456,
+        "3": 0.004456,
+        "4": 0.004456,
+        "5": 0.004456,
+        "6": 0.004456
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "全設定共通: 約1/224.4"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.001842,
+        "2": 0.001996,
+        "3": 0.002222,
+        "4": 0.002801,
+        "5": 0.003289,
+        "6": 0.003759
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/543.0、設定6: 1/266.0。設定差大"
+    },
+    {
+      "name": "ボーナス確率",
+      "probabilities": {
+        "1": 0.003704,
+        "2": 0.003846,
+        "3": 0.004000,
+        "4": 0.004167,
+        "5": 0.004310,
+        "6": 0.004444
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/270.0、設定6: 1/225.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "ダイナマイトトロフィー 銅",
+      "description": "ダイナマイトトロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ダイナマイトトロフィー 銀",
+      "description": "ダイナマイトトロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ダイナマイトトロフィー 金",
+      "description": "ダイナマイトトロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_ladybug",
+      "name": "ダイナマイトトロフィー テントウムシ",
+      "description": "ダイナマイトトロフィーテントウムシが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ダイナマイトトロフィー 虹",
+      "description": "ダイナマイトトロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "end_maid",
+      "name": "終了画面 メイドコス",
+      "description": "ボーナス終了画面でメイドコスが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_valentine",
+      "name": "終了画面 バレンタイン綾",
+      "description": "ボーナス終了画面でバレンタイン綾が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_numberone",
+      "name": "終了画面 ユーアーナンバーワン",
+      "description": "ボーナス終了画面でユーアーナンバーワンが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "Daiichi（アイドル）のスマスロAT機。小役確率は全設定共通。AT初当り確率に大きな設定差（約2.0倍）。ダイナマイトトロフィーとボーナス終了画面で設定示唆。",
+  "lastUpdated": "2026-02-09",
+  "source": "ちょんぼりすた、一撃、ななプレス"
+}
