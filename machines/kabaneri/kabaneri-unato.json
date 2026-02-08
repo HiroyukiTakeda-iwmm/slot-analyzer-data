@@ -78,7 +78,48 @@
       "description": "設定1: 1/254、設定6: 1/195"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー 銅",
+      "description": "ボーナス終了画面で銅トロフィーが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー 銀",
+      "description": "ボーナス終了画面で銀トロフィーが出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー 金",
+      "description": "ボーナス終了画面で金トロフィーが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィー キリン柄",
+      "description": "ボーナス終了画面でキリン柄トロフィーが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー 虹",
+      "description": "ボーナス終了画面で虹トロフィーが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "episode_bonus_rate",

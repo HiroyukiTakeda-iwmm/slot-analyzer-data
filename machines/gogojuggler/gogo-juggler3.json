@@ -78,6 +78,7 @@
       "description": "設定1: 1/1424.7、設定6: 1/910.2"
     }
   ],
+  "confirmationEvents": [],
   "author": "コミュニティ",
   "version": "1.1",
   "description": "北電子の6.5号機ジャグラー。ぶどう・REG確率・チェリー重複に設定差あり。",

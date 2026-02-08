@@ -78,7 +78,64 @@
       "description": "全設定共通: 1/819.2"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "end_rabbit_cosplay",
+      "name": "AT終了画面 ウサギコスプレ（レム・ラム）",
+      "description": "殲滅ラッシュ終了画面でウサギコスプレが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_teatime",
+      "name": "AT終了画面 ティータイム",
+      "description": "殲滅ラッシュ終了画面でティータイム画面が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_onsen_night",
+      "name": "AT終了画面 温泉（夜）",
+      "description": "殲滅ラッシュ終了画面で温泉（夜）が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_all_bath",
+      "name": "AT終了画面 全員集合入浴",
+      "description": "殲滅ラッシュ終了画面で全員集合入浴が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "clock_456",
+      "name": "菜月家ステージ 時計4時56分",
+      "description": "菜月家ステージの時計で4時56分表示で設定4以上示唆",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "clock_506",
+      "name": "菜月家ステージ 時計5時6分",
+      "description": "菜月家ステージの時計で5時6分表示で設定5以上示唆",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "clock_606",
+      "name": "菜月家ステージ 時計6時6分",
+      "description": "菜月家ステージの時計で6時6分表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
   "endScreens": [
     {
       "name": "殲滅ラッシュ終了画面",

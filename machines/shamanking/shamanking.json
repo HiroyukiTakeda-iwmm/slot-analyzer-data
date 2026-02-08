@@ -63,7 +63,104 @@
       "description": "全設定共通: 約1/75.4"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "end_patch_tribe",
+      "name": "AT終了画面 パッチ族",
+      "description": "AT終了画面でパッチ族が出現で設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_anna_yoh",
+      "name": "AT終了画面 アンナ&葉",
+      "description": "AT終了画面でアンナ&葉が出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_hao",
+      "name": "AT終了画面 ハオ",
+      "description": "AT終了画面でハオが出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_all_members",
+      "name": "AT終了画面 全員集合",
+      "description": "AT終了画面で全員集合が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_copper",
+      "name": "エンディング文字色 銅色",
+      "description": "エンディングのCongratulations文字が銅色で設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "ed_silver",
+      "name": "エンディング文字色 銀色",
+      "description": "エンディングのCongratulations文字が銀色で設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "ed_gold",
+      "name": "エンディング文字色 金色",
+      "description": "エンディングのCongratulations文字が金色で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_fireworks",
+      "name": "エンディング文字色 花火柄",
+      "description": "エンディングのCongratulations文字が花火柄で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "ed_rainbow",
+      "name": "エンディング文字色 虹色",
+      "description": "エンディングのCongratulations文字が虹色で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "kokkuri_roku",
+      "name": "こっくりさん占い 「ろく」文字",
+      "description": "たまおのこっくりさん占いで「ろく」が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "kokkuri_shujitsu",
+      "name": "こっくりさん占い 「終日」文字",
+      "description": "たまおのこっくりさん占いで「終日」が出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "medals_666",
+      "name": "獲得枚数 666枚OVER",
+      "description": "獲得枚数666枚OVER表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "os_at_direct",

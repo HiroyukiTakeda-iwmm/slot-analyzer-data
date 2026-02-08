@@ -48,7 +48,32 @@
       "description": "設定1: 1/189.4、設定6: 1/167.6"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "rb_all_silver",
+      "name": "RB中キャラ紹介 全て銀背景",
+      "description": "RB中のキャラ紹介が全て銀背景で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "rb_all_gold",
+      "name": "RB中キャラ紹介 全て金背景",
+      "description": "RB中のキャラ紹介が全て金背景で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_battler_gm2",
+      "name": "BB終了画面 ベアト・GM戦人②",
+      "description": "BB終了画面でベアト・GM戦人②が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
   "endScreens": [],
   "voiceCounts": [],
   "trialSuccessRates": [],

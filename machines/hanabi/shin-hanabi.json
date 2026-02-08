@@ -111,6 +111,7 @@
       ]
     }
   ],
+  "confirmationEvents": [],
   "author": "コミュニティ",
   "version": "1.1",
   "description": "新ハナビ。設定1,2,5,6の4段階設定。花火チャレンジでのハズレ確率に設定差あり。",

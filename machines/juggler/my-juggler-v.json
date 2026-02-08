@@ -48,6 +48,7 @@
       "description": "設定1: 1/1092.3、設定6: 1/762.1"
     }
   ],
+  "confirmationEvents": [],
   "author": "コミュニティ",
   "version": "1.1",
   "description": "6段階設定のジャグラー系Aタイプ。ぶどう確率と単独REG・チェリー重複REGに設定差あり。",

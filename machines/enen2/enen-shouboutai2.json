@@ -33,7 +33,56 @@
       "description": "設定1: 1/684、設定6: 1/486。設定差大"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "end_screen_4",
+      "name": "ボーナス終了画面④",
+      "description": "ボーナス終了画面④が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_5",
+      "name": "ボーナス終了画面⑤",
+      "description": "ボーナス終了画面⑤が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_screen_6",
+      "name": "ボーナス終了画面⑥",
+      "description": "ボーナス終了画面⑥が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "reg_gold_chara",
+      "name": "REG中キャラ紹介 金キャラ出現",
+      "description": "REG中のキャラ紹介で金キャラが出現で高設定濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_iris",
+      "name": "エンディング中ミニキャラ アイリス",
+      "description": "エンディング消化中にアイリスが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_benimaru_joker",
+      "name": "エンディング中ミニキャラ 紅丸&ジョーカー",
+      "description": "エンディング消化中に紅丸&ジョーカーが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
   "endScreens": [],
   "voiceCounts": [],
   "trialSuccessRates": [],
