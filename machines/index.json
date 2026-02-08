@@ -1,6 +1,6 @@
 {
-  "version": "2.2",
-  "updatedAt": "2026-02-01T00:00:00Z",
+  "version": "2.3",
+  "updatedAt": "2026-02-09T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -22,7 +22,7 @@
       "name": "ネオアイムジャグラーEX",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "juggler/aim-juggler-ex.json",
       "tags": [
         "ジャグラー",
@@ -53,7 +53,7 @@
       "name": "新ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "hanabi/shin-hanabi.json",
       "tags": [
         "ハナビ",
@@ -100,7 +100,7 @@
       "name": "ニューキングハナハナV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "hanahana/new-king-hanahana-v.json",
       "tags": [
         "Aタイプ",
@@ -333,7 +333,7 @@
       "name": "Lわたしの幸せな結婚",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "watakon/watakon.json",
       "tags": [
         "AT",
@@ -654,7 +654,7 @@
       "name": "スマスロ 甲鉄城のカバネリ 海門決戦",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kabaneri/kabaneri-unato.json",
       "tags": [
         "AT",
@@ -799,7 +799,7 @@
       "name": "Lパチスロ炎炎ノ消防隊",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "enen/enen-shouboutai.json",
       "tags": [
         "AT",

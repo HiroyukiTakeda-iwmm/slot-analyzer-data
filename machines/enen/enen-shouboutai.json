@@ -5,11 +5,11 @@
     {
       "name": "弱チェリー",
       "probabilities": {
-        "1": 0.010000,
-        "2": 0.010000,
-        "4": 0.010000,
-        "5": 0.010000,
-        "6": 0.010000
+        "1": 0.01,
+        "2": 0.01,
+        "4": 0.01,
+        "5": 0.01,
+        "6": 0.01
       },
       "hasSettingDiff": false,
       "displayOrder": 1,
@@ -19,11 +19,11 @@
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.010000,
-        "2": 0.010000,
-        "4": 0.010000,
-        "5": 0.010000,
-        "6": 0.010000
+        "1": 0.01,
+        "2": 0.01,
+        "4": 0.01,
+        "5": 0.01,
+        "6": 0.01
       },
       "hasSettingDiff": false,
       "displayOrder": 2,
@@ -77,63 +77,112 @@
     {
       "name": "REGキャラ紹介・第8C",
       "description": "REG中キャラ紹介で第8特殊シナリオCが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800",
       "id": "REG第8C"
     },
     {
       "name": "REGキャラ紹介・大隊長",
       "description": "REG中キャラ紹介で大隊長シナリオが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF5722",
       "id": "REG大隊長"
     },
     {
       "name": "REGキャラ紹介・伝導者B",
       "description": "REG中キャラ紹介で伝導者Bシナリオが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "REG伝導者B"
     },
     {
       "name": "REGキャラ紹介・アイリスE",
       "description": "REG中キャラ紹介でアイリスEシナリオが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#F44336",
       "id": "REGアイリスE"
     },
     {
       "name": "JAC開始キャラ・紅丸",
       "description": "アドラバースト中JAC開始キャラが紅丸で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800",
       "id": "JAC紅丸"
     },
     {
       "name": "JAC開始キャラ・アイリス",
       "description": "アドラバースト中JAC開始キャラがアイリスで設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "JACアイリス"
     },
     {
       "name": "JAC開始キャラ・ジョーカー",
       "description": "アドラバースト中JAC開始キャラがジョーカーで設定1・4・6濃厚",
-      "confirmedSettings": ["1", "4", "6"],
-      "excludedSettings": ["2", "5"],
+      "confirmedSettings": [
+        "1",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "2",
+        "5"
+      ],
       "color": "#9C27B0",
       "id": "JACジョーカー"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "description": "SANKYO（ジェイビー）製AT機。設定1,2,4,5,6（設定3なし）。チャンス目・強チェリー・十字リプレイに設定差。REG中キャラ紹介シナリオとJAC開始キャラで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-09",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }
