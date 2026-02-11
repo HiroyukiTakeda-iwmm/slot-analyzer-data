@@ -1,0 +1,139 @@
+{
+  "name": "S犬夜叉",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ボーナス確率",
+      "probabilities": {
+        "1": 0.003597,
+        "2": 0.003623,
+        "3": 0.003690,
+        "4": 0.003831,
+        "5": 0.003968,
+        "6": 0.004049
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/278、設定6: 1/247"
+    },
+    {
+      "name": "AT確率",
+      "probabilities": {
+        "1": 0.002188,
+        "2": 0.002278,
+        "3": 0.002421,
+        "4": 0.002740,
+        "5": 0.002994,
+        "6": 0.003195
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/457、設定6: 1/313。設定差大"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "voice_white_osuwari",
+      "name": "白BIGテンパイボイス おすわり！",
+      "description": "かごめボイス。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_white_daikirai",
+      "name": "白BIGテンパイボイス だいっきらい！",
+      "description": "かごめボイス。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "voice_white_shinjite",
+      "name": "白BIGテンパイボイス 信じて撃つのよ",
+      "description": "桔梗ボイス。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "voice_white_inochi",
+      "name": "白BIGテンパイボイス 俺は命を懸けてお前を守る",
+      "description": "犬夜叉ボイス。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "voice_blue_sesshoumaru",
+      "name": "青BIGテンパイボイス この殺生丸に切れぬものは無い",
+      "description": "殺生丸ボイス。設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "at_end_enemy",
+      "name": "AT終了画面 敵集合",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "at_end_ally",
+      "name": "AT終了画面 味方集合（金）",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "big_end_contradiction",
+      "name": "BIG終了画面 矛盾",
+      "description": "白BIGで殺生丸/青BIGで犬夜叉出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "ed_naraku",
+      "name": "エンディング 奈落エピソード",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "ed_buttakiri_inuyasha",
+      "name": "ブッた斬り役 犬夜叉",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "ed_buttakiri_sesshoumaru",
+      "name": "ブッた斬り役 殺生丸",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "ed_buttakiri_naraku",
+      "name": "ブッた斬り役 奈落",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "クロスアルファの6.5号機AT機。小役確率に設定差なし。ボーナス確率・AT確率・BIGテンパイボイス・AT終了画面・エンディング演出で設定判別。",
+  "lastUpdated": "2026-02-11",
+  "source": "ちょんぼりすた、一撃、スロパチクエスト"
+}

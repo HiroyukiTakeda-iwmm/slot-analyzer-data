@@ -1,0 +1,107 @@
+{
+  "name": "革命機ヴァルヴレイヴ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ出現率",
+      "probabilities": {
+        "1": 0.003610,
+        "2": 0.003636,
+        "3": 0.003650,
+        "4": 0.003717,
+        "5": 0.003788,
+        "6": 0.003876
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "共闘Vチャレンジ出現率。設定1: 1/277、設定6: 1/258"
+    },
+    {
+      "name": "ボーナス初当たり確率",
+      "probabilities": {
+        "1": 0.001927,
+        "2": 0.001938,
+        "3": 0.001946,
+        "4": 0.001972,
+        "5": 0.002004,
+        "6": 0.002041
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "革命ボーナス or 決戦ボーナス。設定1: 1/519、設定6: 1/490"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_red_5",
+      "name": "終了画面 赤枠ドルシア軍5人",
+      "description": "終了画面で赤枠ドルシア軍5人が出現で設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_red_6",
+      "name": "終了画面 赤枠ドルシア軍6人",
+      "description": "終了画面で赤枠ドルシア軍6人が出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_gold",
+      "name": "終了画面 金枠",
+      "description": "終了画面で金枠が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "medals_456",
+      "name": "獲得枚数 456枚OVER",
+      "description": "獲得枚数456枚OVER表示で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "medals_555",
+      "name": "獲得枚数 555枚OVER",
+      "description": "獲得枚数555枚OVER表示で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "medals_666",
+      "name": "獲得枚数 666枚OVER",
+      "description": "獲得枚数666枚OVER表示で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "round_beast_high",
+      "name": "ラウンド開始画面 ビーストハイ",
+      "description": "超革命ラッシュ10の倍数セット目のラウンド開始画面でビーストハイが出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "round_lieselotte",
+      "name": "ラウンド開始画面 リーゼロッテ",
+      "description": "ラウンド開始画面でリーゼロッテが出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "SANKYOのスマスロAT機。CZ出現率・ボーナス初当たりに設定差。小役確率に設定差なし。終了画面の枠色・獲得枚数・ラウンド開始画面で設定確定。",
+  "lastUpdated": "2026-02-11",
+  "source": "ちょんぼりすた、一撃、スロパチクエスト、スロット解析.com"
+}

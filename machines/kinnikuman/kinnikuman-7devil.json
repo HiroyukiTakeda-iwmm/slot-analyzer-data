@@ -1,0 +1,135 @@
+{
+  "name": "Lキン肉マン～7人の悪魔超人編～",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当たり確率",
+      "probabilities": {
+        "1": 0.002475,
+        "2": 0.002496,
+        "4": 0.002762,
+        "5": 0.002852,
+        "6": 0.002972
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "設定1: 1/404.1、設定6: 1/336.5。設定3非搭載"
+    },
+    {
+      "name": "弱チャンス役合算",
+      "probabilities": {
+        "1": 0.026110,
+        "2": 0.026596,
+        "4": 0.027322,
+        "5": 0.028571,
+        "6": 0.030303
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "弱チェリー+スイカ+チャンスベルの合算。設定1: 1/38.3、設定6: 1/33.0"
+    },
+    {
+      "name": "正義超人チャレンジ突入率",
+      "probabilities": {
+        "1": 0.010020,
+        "2": 0.010142,
+        "4": 0.010384,
+        "5": 0.010616,
+        "6": 0.010905
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "CZ突入率。設定1: 1/99.8、設定6: 1/91.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "menu_natsuko",
+      "name": "メニュー画面 ナツコさん",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "menu_referee",
+      "name": "メニュー画面 わたしはレフェリー",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "voice_natsuko",
+      "name": "ボイス ナツコ すごいすごい！",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_bibinba",
+      "name": "ボイス ビビンバ おめでとう！",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "power_456",
+      "name": "上乗せ +456万パワー",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "power_666",
+      "name": "上乗せ +666万パワー",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "山佐のスマスロAT機。設定3非搭載の5段階設定（1,2,4,5,6）。弱チャンス役合算に設定差あり（強は全設定共通1/390.1）。ケロットトロフィー・メニュー画面・エンディングボイスで設定示唆。",
+  "lastUpdated": "2026-02-11",
+  "source": "ちょんぼりすた、一撃、スロパチクエスト"
+}

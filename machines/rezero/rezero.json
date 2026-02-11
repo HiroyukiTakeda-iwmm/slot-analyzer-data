@@ -1,0 +1,131 @@
+{
+  "name": "Re:ゼロから始める異世界生活",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル確率",
+      "probabilities": {
+        "1": 0.017794,
+        "2": 0.017986,
+        "3": 0.019084,
+        "4": 0.019608,
+        "5": 0.020704,
+        "6": 0.021097
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#7C4DFF",
+      "description": "設定1: 1/56.2、設定6: 1/47.4。最重要カウント項目"
+    },
+    {
+      "name": "白鯨攻略戦突入率",
+      "probabilities": {
+        "1": 0.001909,
+        "2": 0.002055,
+        "3": 0.002035,
+        "4": 0.002484,
+        "5": 0.002633,
+        "6": 0.002996
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/523.8、設定6: 1/333.8。設定3が設定2より重い逆転仕様"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "hakugei_end_sunset",
+      "name": "白鯨攻略戦終了画面 夕陽",
+      "description": "設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "hakugei_end_night",
+      "name": "白鯨攻略戦終了画面 夜",
+      "description": "設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#3F51B5"
+    },
+    {
+      "id": "hakugei_end_heroine",
+      "name": "白鯨攻略戦終了画面 ヒロイン集合",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_child_rem_ram",
+      "name": "AT終了画面 幼少期レム＆ラム",
+      "description": "設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "at_end_king_candidates",
+      "name": "AT終了画面 王選候補者集合",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "at_end_onsen",
+      "name": "AT終了画面 温泉",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "conveni_otsuri_246",
+      "name": "コンビニおつり 246円",
+      "description": "偶数設定確定",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "conveni_otsuri_456",
+      "name": "コンビニおつり 456円",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "conveni_otsuri_666",
+      "name": "コンビニおつり 666円",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "point_456",
+      "name": "獲得ポイント +456pt",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "point_666",
+      "name": "獲得ポイント +666pt",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "大都技研の6号機AT機。共通ベル確率が最重要カウント項目。白鯨攻略戦突入率にも設定差あり（設定3が設定2より重い逆転仕様）。白鯨終了画面・AT終了画面・コンビニおつり・ポイント演出で設定確定。",
+  "lastUpdated": "2026-02-11",
+  "source": "ちょんぼりすた、一撃、スロパチクエスト"
+}

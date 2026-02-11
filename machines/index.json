@@ -1,6 +1,6 @@
 {
-  "version": "2.4",
-  "updatedAt": "2026-02-09T00:00:00Z",
+  "version": "2.5",
+  "updatedAt": "2026-02-11T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -1450,7 +1450,7 @@
       "name": "L転生したらスライムだった件",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tensura/tensura.json",
       "tags": [
         "AT",
@@ -1468,7 +1468,7 @@
       "name": "スマスロ ソードアート・オンライン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "sao/sao.json",
       "tags": [
         "AT",
@@ -1486,7 +1486,7 @@
       "name": "スマスロ チバリヨ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "chibariyo/chibariyo2.json",
       "tags": [
         "AT",
@@ -1503,7 +1503,7 @@
       "name": "L 絶対衝激IV",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "zettai/zettai-shougeki4.json",
       "tags": [
         "AT",
@@ -1515,6 +1515,119 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通。AT初当り確率に大きな設定差。ダイナマイトトロフィーで設定示唆"
+    },
+    {
+      "id": "inuyasha",
+      "name": "S犬夜叉",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "inuyasha/inuyasha.json",
+      "tags": [
+        "AT",
+        "犬夜叉",
+        "クロスアルファ",
+        "6.5号機",
+        "6段階設定"
+      ],
+      "description": "6.5号機AT機。ボーナス確率とAT確率に設定差。終了画面で豊富な設定確定演出"
+    },
+    {
+      "id": "kinnikuman-7devil",
+      "name": "Lキン肉マン～7人の悪魔超人編～",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kinnikuman/kinnikuman-7devil.json",
+      "tags": [
+        "AT",
+        "キン肉マン",
+        "山佐",
+        "スマスロ",
+        "ケロットトロフィー",
+        "5段階設定"
+      ],
+      "description": "設定3非搭載5段階設定。弱チャンス役合算に設定差。ケロットトロフィーで設定示唆"
+    },
+    {
+      "id": "madoka-hangyaku",
+      "name": "まどか☆マギカ叛逆の物語",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "madoka/madoka-hangyaku.json",
+      "tags": [
+        "AT",
+        "まどマギ",
+        "メーシー",
+        "6.5号機",
+        "6段階設定"
+      ],
+      "description": "マギカBONUS確率とAT初当たりに設定差。AT終了画面とセリフで設定確定"
+    },
+    {
+      "id": "rezero",
+      "name": "Re:ゼロから始める異世界生活",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "rezero/rezero.json",
+      "tags": [
+        "AT",
+        "リゼロ",
+        "大都技研",
+        "6号機",
+        "6段階設定"
+      ],
+      "description": "共通ベル確率が最重要。白鯨終了画面・コンビニおつりで設定確定"
+    },
+    {
+      "id": "valvrave",
+      "name": "革命機ヴァルヴレイヴ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "valvrave/valvrave.json",
+      "tags": [
+        "AT",
+        "ヴァルヴレイヴ",
+        "SANKYO",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "CZ出現率とボーナス初当たりに設定差。終了画面枠色と獲得枚数で設定確定"
+    },
+    {
+      "id": "keiji-bui",
+      "name": "パチスロ花の慶次～武威～",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "keiji/keiji-bui.json",
+      "tags": [
+        "AT",
+        "花の慶次",
+        "ニューギン",
+        "6号機",
+        "6段階設定"
+      ],
+      "description": "単チェリー確率とCZ+AT合算に設定差。CZ/AT終了画面で設定確定"
+    },
+    {
+      "id": "my-juggler5",
+      "name": "マイジャグラー5",
+      "type": "A-type",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "juggler/my-juggler5.json",
+      "tags": [
+        "ジャグラー",
+        "Aタイプ",
+        "6号機",
+        "北電子",
+        "6段階設定"
+      ],
+      "description": "6号機最人気ジャグラー。単独REGとRB確率に大きな設定差"
     }
   ]
 }
