@@ -31,6 +31,51 @@
       "displayOrder": 2,
       "color": "#4CAF50",
       "description": "設定1: 1/87.4、設定6: 1/69.9"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.007627,
+        "2": 0.007627,
+        "3": 0.007627,
+        "4": 0.007627,
+        "5": 0.007627,
+        "6": 0.007627
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通: 約1/131.1"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.010373,
+        "2": 0.010373,
+        "3": 0.010373,
+        "4": 0.010373,
+        "5": 0.010373,
+        "6": 0.010373
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 約1/96.4"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.003906,
+        "3": 0.003906,
+        "4": 0.003906,
+        "5": 0.003906,
+        "6": 0.003906
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "全設定共通: 約1/256.0"
     }
   ],
   "confirmationEvents": [
