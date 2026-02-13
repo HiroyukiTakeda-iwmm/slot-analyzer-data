@@ -1,13 +1,13 @@
 {
-  "version": "2.5",
-  "updatedAt": "2026-02-11T00:00:00Z",
+  "version": "2.6",
+  "updatedAt": "2026-02-14T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
       "name": "SマイジャグラーV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "juggler/my-juggler-v.json",
       "tags": [
         "ジャグラー",
@@ -22,7 +22,7 @@
       "name": "ネオアイムジャグラーEX",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "juggler/aim-juggler-ex.json",
       "tags": [
         "ジャグラー",
@@ -37,7 +37,7 @@
       "name": "スマスロ北斗の拳",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hokuto/hokuto-ken.json",
       "tags": [
         "AT",
@@ -53,7 +53,7 @@
       "name": "新ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hanabi/shin-hanabi.json",
       "tags": [
         "ハナビ",
@@ -69,7 +69,7 @@
       "name": "スマスロ北斗の拳 転生の章2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hokuto/hokuto-tenseino-shou2.json",
       "tags": [
         "AT",
@@ -85,7 +85,7 @@
       "name": "スマスロ鉄拳6",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tekken/tekken6.json",
       "tags": [
         "AT",
@@ -100,7 +100,7 @@
       "name": "ニューキングハナハナV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hanahana/new-king-hanahana-v.json",
       "tags": [
         "Aタイプ",
@@ -115,7 +115,7 @@
       "name": "スマスロ Re:ゼロから始める異世界生活 season2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "rezero/rezero-season2.json",
       "tags": [
         "AT",
@@ -130,7 +130,7 @@
       "name": "スマスロ化物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "monogatari/bakemonogatari.json",
       "tags": [
         "AT",
@@ -146,7 +146,7 @@
       "name": "スマスロ東京リベンジャーズ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tokyorevengers/tokyo-revengers.json",
       "tags": [
         "AT",
@@ -162,7 +162,7 @@
       "name": "スマスロ新鬼武者3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "onimusha/shin-onimusha3.json",
       "tags": [
         "AT",
@@ -178,7 +178,7 @@
       "name": "回胴黙示録カイジ 狂宴",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kaiji/kaiji-kyouen.json",
       "tags": [
         "AT",
@@ -194,7 +194,7 @@
       "name": "スマスロバイオハザード5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "biohazard/biohazard5.json",
       "tags": [
         "AT",
@@ -210,7 +210,7 @@
       "name": "Lパチスロ 機動戦士ガンダムSEED",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "gundam/gundam-seed.json",
       "tags": [
         "AT",
@@ -225,7 +225,7 @@
       "name": "スマスロ吉宗",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "yoshimune/yoshimune.json",
       "tags": [
         "AT",
@@ -241,7 +241,7 @@
       "name": "スマスロギルティクラウン2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "guiltycrown/guiltycrown2.json",
       "tags": [
         "AT",
@@ -256,7 +256,7 @@
       "name": "スマスロいざ！番長",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "bancho/iza-bancho.json",
       "tags": [
         "AT",
@@ -271,7 +271,7 @@
       "name": "スマスロ デビル メイ クライ5 スタイリッシュトライブ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "dmc/dmc5.json",
       "tags": [
         "AT",
@@ -287,7 +287,7 @@
       "name": "Lパチスロ シン・エヴァンゲリオン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "eva/shin-eva.json",
       "tags": [
         "AT",
@@ -302,7 +302,7 @@
       "name": "スマスロ ゴブリンスレイヤーII",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "goblinslayer/goblinslayer2.json",
       "tags": [
         "AT",
@@ -317,7 +317,7 @@
       "name": "スマスロ ストライク・ザ・ブラッド",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "striketheblood/striketheblood.json",
       "tags": [
         "AT",
@@ -333,7 +333,7 @@
       "name": "Lわたしの幸せな結婚",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "watakon/watakon.json",
       "tags": [
         "AT",
@@ -349,7 +349,7 @@
       "name": "スマスロバベル",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "babel/babel.json",
       "tags": [
         "Aタイプ",
@@ -364,7 +364,7 @@
       "name": "スマスロネオプラネット",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "neoplanet/neoplanet.json",
       "tags": [
         "Aタイプ",
@@ -380,7 +380,7 @@
       "name": "スマスロ シャーマンキング",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "shamanking/shamanking.json",
       "tags": [
         "AT",
@@ -396,7 +396,7 @@
       "name": "Lパチスロ ありふれた職業で世界最強",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "arifureta/arifureta.json",
       "tags": [
         "AT",
@@ -412,7 +412,7 @@
       "name": "スマスロ スーパーブラックジャック",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "blackjack/blackjack.json",
       "tags": [
         "AT",
@@ -428,7 +428,7 @@
       "name": "L 東京喰種",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tokyoghoul/tokyoghoul.json",
       "tags": [
         "AT",
@@ -444,7 +444,7 @@
       "name": "スマスロ アイドルマスター ミリオンライブ! ネクストプロローグ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "idolmaster/idolmaster-million.json",
       "tags": [
         "AT",
@@ -461,7 +461,7 @@
       "name": "L麻雀物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "mahjongmonogatari/mahjongmonogatari.json",
       "tags": [
         "AT",
@@ -477,7 +477,7 @@
       "name": "Lゴジラ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "godzilla/godzilla.json",
       "tags": [
         "AT",
@@ -493,7 +493,7 @@
       "name": "スマスロ マギアレコード 魔法少女まどか☆マギカ外伝",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "magireco/magireco.json",
       "tags": [
         "AT",
@@ -510,7 +510,7 @@
       "name": "スマスロ ようこそ実力至上主義の教室へ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "youjitsu/youjitsu.json",
       "tags": [
         "AT",
@@ -526,7 +526,7 @@
       "name": "スマスロ 緑ドン VIVA!情熱南米編 REVIVAL",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "midoridon/midoridon-viva.json",
       "tags": [
         "AT",
@@ -542,7 +542,7 @@
       "name": "L ULTRAMAN",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "ultraman/ultraman.json",
       "tags": [
         "AT",
@@ -558,7 +558,7 @@
       "name": "パチスロ 転生したら剣でした",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tenken/tenken.json",
       "tags": [
         "AT",
@@ -574,7 +574,7 @@
       "name": "マタドールIII",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "matador/matador3.json",
       "tags": [
         "Aタイプ",
@@ -590,7 +590,7 @@
       "name": "L 無職転生 ~異世界行ったら本気だす~",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "musyokutensei/musyokutensei.json",
       "tags": [
         "AT",
@@ -606,7 +606,7 @@
       "name": "スターハナハナ-30",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "starhanahana/starhanahana.json",
       "tags": [
         "Aタイプ",
@@ -622,7 +622,7 @@
       "name": "スマスロ 沖ドキ!DUO アンコール",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "okidoki/okidoki-duo-encore.json",
       "tags": [
         "AT",
@@ -638,7 +638,7 @@
       "name": "スマスロ からくりサーカス",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "karakuri/karakuri-circus.json",
       "tags": [
         "AT",
@@ -654,7 +654,7 @@
       "name": "スマスロ 甲鉄城のカバネリ 海門決戦",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kabaneri/kabaneri-unato.json",
       "tags": [
         "AT",
@@ -670,7 +670,7 @@
       "name": "ディスクアップ ULTRAREMIX",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "discup/discup-ultraremix.json",
       "tags": [
         "A+AT",
@@ -686,7 +686,7 @@
       "name": "Lパチスロ 革命機ヴァルヴレイヴ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "valvrave/valvrave2.json",
       "tags": [
         "AT",
@@ -702,7 +702,7 @@
       "name": "スマスロ モンキーターンV",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "monkeyturn/monkeyturn-v.json",
       "tags": [
         "AT",
@@ -718,7 +718,7 @@
       "name": "Lパチスロ かぐや様は告らせたい",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kaguya/kaguya-sama.json",
       "tags": [
         "AT",
@@ -734,7 +734,7 @@
       "name": "スマスロ秘宝伝",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hihouden/hihouden.json",
       "tags": [
         "AT",
@@ -750,7 +750,7 @@
       "name": "スマスロ ゴッドイーター リザレクション",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "godeater/godeater-resurrection.json",
       "tags": [
         "AT",
@@ -765,7 +765,7 @@
       "name": "L主役は銭形5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "zenishape/zenishape5.json",
       "tags": [
         "AT",
@@ -782,7 +782,7 @@
       "name": "Lモンスターハンターライズ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "monhun/monhun-rise.json",
       "tags": [
         "AT",
@@ -799,7 +799,7 @@
       "name": "Lパチスロ炎炎ノ消防隊",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "enen/enen-shouboutai.json",
       "tags": [
         "AT",
@@ -815,7 +815,7 @@
       "name": "パチスロ傷物語 始マリノ刻",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kizumonogatari/kizumonogatari.json",
       "tags": [
         "AT",
@@ -831,7 +831,7 @@
       "name": "パチスロコードギアス 反逆のルルーシュ3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "codegeass/codegeass3.json",
       "tags": [
         "AT",
@@ -846,7 +846,7 @@
       "name": "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "eureka/eureka-type-art.json",
       "tags": [
         "ART",
@@ -862,7 +862,7 @@
       "name": "パチスロ ダンジョンに出会いを求めるのは間違っているだろうか2",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "danmachi/danmachi2.json",
       "tags": [
         "ART",
@@ -877,7 +877,7 @@
       "name": "Lパチスロ ガメラ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "gamera/gamera2.json",
       "tags": [
         "AT",
@@ -893,7 +893,7 @@
       "name": "スマスロ グランベルム",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "granbelm/granbelm.json",
       "tags": [
         "AT",
@@ -909,7 +909,7 @@
       "name": "L アズールレーン THE ANIMATION",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "azurlane/azurlane.json",
       "tags": [
         "AT",
@@ -926,7 +926,7 @@
       "name": "Sゴーゴージャグラー3",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "gogojuggler/gogo-juggler3.json",
       "tags": [
         "ジャグラー",
@@ -941,7 +941,7 @@
       "name": "ファンキージャグラー2",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "funkyjuggler/funky-juggler2.json",
       "tags": [
         "ジャグラー",
@@ -956,7 +956,7 @@
       "name": "SハッピージャグラーVIII",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "happyjuggler/happy-juggler-viii.json",
       "tags": [
         "ジャグラー",
@@ -971,7 +971,7 @@
       "name": "SアイムジャグラーEX",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "aimjuggler/aim-juggler-ex-6gou.json",
       "tags": [
         "ジャグラー",
@@ -987,7 +987,7 @@
       "name": "L押忍!番長4",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "bancho4/bancho4.json",
       "tags": [
         "AT",
@@ -1003,7 +1003,7 @@
       "name": "クレアの秘宝伝 ボーナストリガーver.",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "crea/crea-bt.json",
       "tags": [
         "Aタイプ",
@@ -1020,7 +1020,7 @@
       "name": "L少女歌劇 レヴュースタァライト",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "revuestarlight/revue-starlight.json",
       "tags": [
         "A+AT",
@@ -1037,7 +1037,7 @@
       "name": "Lマジカルハロウィン8",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "magicalhalloween/magical-halloween8.json",
       "tags": [
         "ART",
@@ -1054,7 +1054,7 @@
       "name": "Lダンベル何キロ持てる?",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "dumbbell/dumbbell.json",
       "tags": [
         "AT",
@@ -1070,7 +1070,7 @@
       "name": "Lゾンビランドサガ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "zombielandsaga/zombielandsaga.json",
       "tags": [
         "AT",
@@ -1087,7 +1087,7 @@
       "name": "スマスロ攻殻機動隊",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "koukakukidoutai/koukaku-kidoutai.json",
       "tags": [
         "AT",
@@ -1104,7 +1104,7 @@
       "name": "スマスロ ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "sumaslohanabi/sumaslo-hanabi.json",
       "tags": [
         "A+RT",
@@ -1121,7 +1121,7 @@
       "name": "L範馬刃牙",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "hanmabaki/hanma-baki.json",
       "tags": [
         "AT",
@@ -1137,7 +1137,7 @@
       "name": "Lパチスロうみねこのなく頃に2",
       "type": "A+ART",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "umineko/umineko2.json",
       "tags": [
         "A+ART",
@@ -1154,7 +1154,7 @@
       "name": "Lサラリーマン金太郎",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kintaro/kintaro.json",
       "tags": [
         "AT",
@@ -1171,7 +1171,7 @@
       "name": "Lパチスロ炎炎ノ消防隊2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "enen2/enen-shouboutai2.json",
       "tags": [
         "AT",
@@ -1188,7 +1188,7 @@
       "name": "L戦国乙女4 戦乱に閃く炯眼の軍師",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "sengokuotome/sengokuotome4.json",
       "tags": [
         "AT",
@@ -1205,7 +1205,7 @@
       "name": "パチスロ甲鉄城のカバネリ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "kabaneri/kabaneri-6.5.json",
       "tags": [
         "AT",
@@ -1223,7 +1223,7 @@
       "name": "沖ドキ！GOLD",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "okidokigold/okidoki-gold.json",
       "tags": [
         "AT",
@@ -1241,7 +1241,7 @@
       "name": "スマスロバジリスク～甲賀忍法帖～絆2 天膳 BLACK EDITION",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "basilisk/basilisk-kizuna2-tenzen.json",
       "tags": [
         "AT",
@@ -1259,7 +1259,7 @@
       "name": "L不二子BT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "fujiko/fujiko-bt.json",
       "tags": [
         "BT",
@@ -1276,7 +1276,7 @@
       "name": "スマスロ とある科学の超電磁砲2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "railgun/railgun2.json",
       "tags": [
         "AT",
@@ -1294,7 +1294,7 @@
       "name": "S沖ドキ！ブラック",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "okidokiblack/okidoki-black.json",
       "tags": [
         "AT",
@@ -1310,7 +1310,7 @@
       "name": "Lプリズムナナ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "prismnana/prismnana.json",
       "tags": [
         "AT",
@@ -1328,7 +1328,7 @@
       "name": "SHAKE BONUS TRIGGER",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "shake/shake-bt.json",
       "tags": [
         "BT",
@@ -1345,7 +1345,7 @@
       "name": "パチスロ バイオハザード RE:2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "biohazard-re2/biohazard-re2.json",
       "tags": [
         "AT",
@@ -1363,7 +1363,7 @@
       "name": "スマスロニューパルサーBT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "newpulsar/newpulsar-bt.json",
       "tags": [
         "BT",
@@ -1380,7 +1380,7 @@
       "name": "サンダーVライトニング",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "thunderv/thunderv-lightning.json",
       "tags": [
         "Aタイプ",
@@ -1397,7 +1397,7 @@
       "name": "パチスロコードギアス3 C.C.&Kallen ver.",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "codegeass/codegeass3-cckallen.json",
       "tags": [
         "A+AT",
@@ -1414,7 +1414,7 @@
       "name": "L ToLOVEるダークネス",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "toloveru/toloveru-darkness.json",
       "tags": [
         "AT",
@@ -1432,7 +1432,7 @@
       "name": "銀河英雄伝説 Die Neue These",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "gineiden/gineiden-dnt.json",
       "tags": [
         "AT",
@@ -1450,7 +1450,7 @@
       "name": "L転生したらスライムだった件",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tensura/tensura.json",
       "tags": [
         "AT",
@@ -1468,7 +1468,7 @@
       "name": "スマスロ ソードアート・オンライン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "sao/sao.json",
       "tags": [
         "AT",
@@ -1486,7 +1486,7 @@
       "name": "スマスロ チバリヨ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "chibariyo/chibariyo2.json",
       "tags": [
         "AT",
@@ -1503,7 +1503,7 @@
       "name": "L 絶対衝激IV",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "zettai/zettai-shougeki4.json",
       "tags": [
         "AT",
@@ -1521,7 +1521,7 @@
       "name": "S犬夜叉",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "inuyasha/inuyasha.json",
       "tags": [
         "AT",
@@ -1537,7 +1537,7 @@
       "name": "Lキン肉マン～7人の悪魔超人編～",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "kinnikuman/kinnikuman-7devil.json",
       "tags": [
         "AT",
@@ -1554,7 +1554,7 @@
       "name": "まどか☆マギカ叛逆の物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "madoka/madoka-hangyaku.json",
       "tags": [
         "AT",
@@ -1570,7 +1570,7 @@
       "name": "Re:ゼロから始める異世界生活",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "rezero/rezero.json",
       "tags": [
         "AT",
@@ -1586,7 +1586,7 @@
       "name": "革命機ヴァルヴレイヴ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "valvrave/valvrave.json",
       "tags": [
         "AT",
@@ -1602,7 +1602,7 @@
       "name": "パチスロ花の慶次～武威～",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "keiji/keiji-bui.json",
       "tags": [
         "AT",
@@ -1618,7 +1618,7 @@
       "name": "マイジャグラー5",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.2",
       "file": "juggler/my-juggler5.json",
       "tags": [
         "ジャグラー",
