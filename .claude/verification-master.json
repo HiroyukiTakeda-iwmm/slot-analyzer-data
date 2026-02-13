@@ -1,0 +1,191 @@
+{
+  "description": "一撃クロスチェック検証マスター",
+  "created": "2026-02-14",
+  "totalMachines": 100,
+  "verified": 31,
+  "remaining": 69,
+  "batches": [
+    {
+      "id": "batch-1",
+      "status": "done",
+      "priority": "high",
+      "note": "v1.0 全6台（検証済み・全台OK）",
+      "machines": [
+        { "path": "machines/juggler/my-juggler5.json", "name": "マイジャグラー5", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/keiji/keiji-bui.json", "name": "花の慶次武威", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/kinnikuman/kinnikuman-7devil.json", "name": "キン肉マン", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/madoka/madoka-hangyaku.json", "name": "まどマギ叛逆", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/rezero/rezero.json", "name": "リゼロ初代", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/valvrave/valvrave.json", "name": "ヴァルヴレイヴ初代", "version": "1.2", "status": "ok", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-2",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 ジャグラー・ハナビ系（8台）",
+      "machines": [
+        { "path": "machines/aimjuggler/aim-juggler-ex-6gou.json", "name": "アイムジャグラーEX(6号)", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/juggler/aim-juggler-ex.json", "name": "ネオアイムジャグラーEX", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/juggler/my-juggler-v.json", "name": "マイジャグラーV", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/gogojuggler/gogo-juggler3.json", "name": "ゴーゴージャグラー3", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/happyjuggler/happy-juggler-viii.json", "name": "ハッピージャグラーVIII", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/funkyjuggler/funky-juggler2.json", "name": "ファンキージャグラー2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/hanahana/new-king-hanahana-v.json", "name": "ニューキングハナハナV", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/starhanahana/starhanahana.json", "name": "スターハナハナ-30", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-3",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 人気AT/ST機（8台）",
+      "machines": [
+        { "path": "machines/hokuto/hokuto-ken.json", "name": "北斗の拳", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/monogatari/bakemonogatari.json", "name": "化物語", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/eva/shin-eva.json", "name": "シンエヴァ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/gundam/gundam-seed.json", "name": "ガンダムSEED", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/kabaneri/kabaneri-6.5.json", "name": "カバネリ6.5", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/kabaneri/kabaneri-unato.json", "name": "カバネリ海門", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/rezero/rezero-season2.json", "name": "リゼロSeason2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/sao/sao.json", "name": "SAO", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-4",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 AT機①（8台）",
+      "machines": [
+        { "path": "machines/bancho/iza-bancho.json", "name": "いざ番長", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/bancho4/bancho4.json", "name": "番長4", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/codegeass/codegeass3.json", "name": "コードギアス3", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/danmachi/danmachi2.json", "name": "ダンまち2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/tokyorevengers/tokyo-revengers.json", "name": "東リベ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/youjitsu/youjitsu.json", "name": "ようじつ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/musyokutensei/musyokutensei.json", "name": "無職転生", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/babel/babel.json", "name": "バベル", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-5",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 AT機②（8台）",
+      "machines": [
+        { "path": "machines/biohazard-re2/biohazard-re2.json", "name": "バイオRE:2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/biohazard/biohazard5.json", "name": "バイオ5", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/godeater/godeater-resurrection.json", "name": "ゴッドイーター", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/monhun/monhun-rise.json", "name": "モンハンライズ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/godzilla/godzilla.json", "name": "ゴジラ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/dmc/dmc5.json", "name": "DMC5", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/hokuto/hokuto-tenseino-shou2.json", "name": "北斗転生2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/kaguya/kaguya-sama.json", "name": "かぐや様", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-6",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 AT/ART機（8台）",
+      "machines": [
+        { "path": "machines/kizumonogatari/kizumonogatari.json", "name": "傷物語", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/granbelm/granbelm.json", "name": "グランベルム", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/dumbbell/dumbbell.json", "name": "ダンベル", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/guiltycrown/guiltycrown2.json", "name": "ギルクラ2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/railgun/railgun2.json", "name": "レールガン2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/valvrave/valvrave2.json", "name": "ヴァルヴレイヴ2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/shamanking/shamanking.json", "name": "シャーマンキング", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/ultraman/ultraman.json", "name": "ウルトラマン", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-7",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 残り①（8台）",
+      "machines": [
+        { "path": "machines/enen/enen-shouboutai.json", "name": "炎炎1", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/enen2/enen-shouboutai2.json", "name": "炎炎2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/eureka/eureka-type-art.json", "name": "エウレカ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/fujiko/fujiko-bt.json", "name": "不二子BT", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/gamera/gamera2.json", "name": "ガメラ2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/gineiden/gineiden-dnt.json", "name": "銀英伝", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/inuyasha/inuyasha.json", "name": "犬夜叉", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/azurlane/azurlane.json", "name": "アズールレーン", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-8",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 残り②（8台）",
+      "machines": [
+        { "path": "machines/crea/crea-bt.json", "name": "クレアBT", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/discup/discup-ultraremix.json", "name": "ディスクアップ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/hihouden/hihouden.json", "name": "秘宝伝", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/matador/matador3.json", "name": "マタドール3", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/midoridon/midoridon-viva.json", "name": "緑ドン", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/newpulsar/newpulsar-bt.json", "name": "ニューパルサーBT", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/prismnana/prismnana.json", "name": "プリズムナナ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/toloveru/toloveru-darkness.json", "name": "ToLOVEる", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-9",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 残り③（7台）",
+      "machines": [
+        { "path": "machines/okidoki/okidoki-duo-encore.json", "name": "沖ドキDUOアンコール", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/okidokiblack/okidoki-black.json", "name": "沖ドキBLACK", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/sengokuotome/sengokuotome4.json", "name": "戦国乙女4", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/shake/shake-bt.json", "name": "シェイクBT", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/striketheblood/striketheblood.json", "name": "ストブラ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/tenken/tenken.json", "name": "転生剣", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/tensura/tensura.json", "name": "転スラ", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    },
+    {
+      "id": "batch-10",
+      "status": "pending",
+      "priority": "medium",
+      "note": "v1.1 残り④（6台）",
+      "machines": [
+        { "path": "machines/thunderv/thunderv-lightning.json", "name": "サンダーVライトニング", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/tokyoghoul/tokyoghoul.json", "name": "東京喰種", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/watakon/watakon.json", "name": "わた婚", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/zombielandsaga/zombielandsaga.json", "name": "ゾンサガ", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/chibariyo/chibariyo2.json", "name": "チバリヨ2", "version": "1.1", "status": "pending", "issues": [] },
+        { "path": "machines/zettai/zettai-shougeki4.json", "name": "絶対衝激IV", "version": "1.1", "status": "pending", "issues": [] }
+      ]
+    }
+  ],
+  "completedV12": [
+    "machines/arifureta/arifureta.json",
+    "machines/basilisk/basilisk-kizuna2-tenzen.json",
+    "machines/blackjack/blackjack.json",
+    "machines/codegeass/codegeass3-cckallen.json",
+    "machines/goblinslayer/goblinslayer2.json",
+    "machines/hanabi/shin-hanabi.json",
+    "machines/hanmabaki/hanma-baki.json",
+    "machines/idolmaster/idolmaster-million.json",
+    "machines/kaiji/kaiji-kyouen.json",
+    "machines/karakuri/karakuri-circus.json",
+    "machines/kintaro/kintaro.json",
+    "machines/koukakukidoutai/koukaku-kidoutai.json",
+    "machines/magicalhalloween/magical-halloween8.json",
+    "machines/magireco/magireco.json",
+    "machines/mahjongmonogatari/mahjongmonogatari.json",
+    "machines/monkeyturn/monkeyturn-v.json",
+    "machines/neoplanet/neoplanet.json",
+    "machines/okidokigold/okidoki-gold.json",
+    "machines/onimusha/shin-onimusha3.json",
+    "machines/revuestarlight/revue-starlight.json",
+    "machines/sumaslohanabi/sumaslo-hanabi.json",
+    "machines/tekken/tekken6.json",
+    "machines/umineko/umineko2.json",
+    "machines/yoshimune/yoshimune.json",
+    "machines/zenishape/zenishape5.json"
+  ]
+}
