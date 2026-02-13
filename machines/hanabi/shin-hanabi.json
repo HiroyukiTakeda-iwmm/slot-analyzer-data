@@ -4,7 +4,7 @@
   "availableSettings": ["1", "2", "5", "6"],
   "roles": [
     {
-      "name": "風鈴（ベル）",
+      "name": "風鈴（ベル）合算",
       "probabilities": {
         "1": 0.1298701,
         "2": 0.1315789,
@@ -16,28 +16,64 @@
       "color": "#FFCA28"
     },
     {
-      "name": "ドンちゃんスイカ",
+      "name": "チェリー合算",
       "probabilities": {
-        "1": 0.0135135,
-        "2": 0.0138889,
-        "5": 0.0142857,
-        "6": 0.0147059
+        "1": 0.0609756,
+        "2": 0.0653595,
+        "5": 0.0621118,
+        "6": 0.0641026
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
-      "color": "#4CAF50"
+      "color": "#E91E63"
     },
     {
-      "name": "氷",
+      "name": "氷合算",
       "probabilities": {
-        "1": 0.0285714,
-        "2": 0.0285714,
-        "5": 0.0285714,
-        "6": 0.0285714
+        "1": 0.0195313,
+        "2": 0.0193050,
+        "5": 0.0207469,
+        "6": 0.0202840
       },
-      "hasSettingDiff": false,
+      "hasSettingDiff": true,
       "displayOrder": 3,
       "color": "#03A9F4"
+    },
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.0036010,
+        "2": 0.0037231,
+        "5": 0.0039063,
+        "6": 0.0040290
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#F44336"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.0028075,
+        "2": 0.0030211,
+        "5": 0.0032659,
+        "6": 0.0035702
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.0064103,
+        "2": 0.0067431,
+        "5": 0.0071736,
+        "6": 0.0075988
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF9800"
     }
   ],
   "zones": [
@@ -46,6 +82,68 @@
       "isDefault": true,
       "description": "通常プレイ中",
       "roles": []
+    },
+    {
+      "name": "BIG中",
+      "isDefault": false,
+      "description": "ビッグボーナス中",
+      "color": "#F44336",
+      "roles": [
+        {
+          "name": "斜めベル",
+          "probabilities": {
+            "1": 0.0909091,
+            "2": 0.1111111,
+            "5": 0.0909091,
+            "6": 0.1111111
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#FFCA28"
+        },
+        {
+          "name": "バラケ目",
+          "probabilities": {
+            "1": 0.0000610,
+            "2": 0.0000610,
+            "5": 0.0000610,
+            "6": 0.0015259
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 2,
+          "color": "#FFD700"
+        }
+      ]
+    },
+    {
+      "name": "REG中",
+      "isDefault": false,
+      "description": "レギュラーボーナス中",
+      "color": "#9C27B0",
+      "roles": [
+        {
+          "name": "1枚役",
+          "probabilities": {
+            "1": 0.1250000,
+            "2": 0.1250000,
+            "5": 0.1428571,
+            "6": 0.1428571
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#78909C"
+        },
+        {
+          "name": "ハズレ",
+          "probabilities": {
+            "5": 0.0026553,
+            "6": 0.0026553
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 2,
+          "color": "#FF5722"
+        }
+      ]
     },
     {
       "name": "花火チャレンジ",
@@ -65,23 +163,60 @@
           "hasSettingDiff": true,
           "displayOrder": 1,
           "color": "#9E9E9E"
+        },
+        {
+          "name": "通常リプレイ",
+          "probabilities": {
+            "1": 0.3333333,
+            "2": 0.3225806,
+            "5": 0.3030303,
+            "6": 0.2941176
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 2,
+          "color": "#4CAF50"
         }
       ]
     },
     {
       "name": "花火GAME",
       "isDefault": false,
-      "description": "花火チャレンジ成功後のRT",
+      "description": "花火チャレンジ成功後のRT（20G）",
       "gameCountLabel": "花火GAME数",
       "color": "#E91E63",
-      "defaultIncrementValue": 40,
-      "roles": []
+      "defaultIncrementValue": 20,
+      "roles": [
+        {
+          "name": "ハズレ",
+          "probabilities": {
+            "1": 0.0746269,
+            "2": 0.0806452,
+            "5": 0.0990099,
+            "6": 0.1052632
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#9E9E9E"
+        },
+        {
+          "name": "RTリプレイ",
+          "probabilities": {
+            "1": 0.5714286,
+            "2": 0.5617978,
+            "5": 0.5405405,
+            "6": 0.5291005
+          },
+          "hasSettingDiff": true,
+          "displayOrder": 2,
+          "color": "#2196F3"
+        }
+      ]
     }
   ],
   "endScreenGroups": [
     {
-      "name": "ボーナス終了画面",
-      "description": "BIG/REG終了時の画面",
+      "name": "REG終了画面",
+      "description": "REG終了時の画面",
       "displayOrder": 1,
       "endScreens": [
         {
@@ -91,30 +226,31 @@
           "confirmedSettings": ["2", "5", "6"],
           "excludedSettings": ["1"],
           "color": "#FFD54F"
-        },
-        {
-          "name": "ドンちゃん＆ねずみ",
-          "type": "bonus_end",
-          "hint": "設定5以上確定",
-          "confirmedSettings": ["5", "6"],
-          "excludedSettings": ["1", "2"],
-          "color": "#FF7043"
-        },
-        {
-          "name": "金カットイン",
-          "type": "bonus_end",
-          "hint": "設定6確定",
-          "confirmedSettings": ["6"],
-          "excludedSettings": ["1", "2", "5"],
-          "color": "#FFD700"
         }
       ]
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "reg-hazure",
+      "name": "REG中ハズレ",
+      "description": "REG中パネルフラッシュ発生時に氷を狙ってハズレた場合、設定5以上確定。点滅フラッシュが発生。",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "big-barakeme",
+      "name": "BIG中バラケ目",
+      "description": "BIG中にバラケ目が出現すると設定6濃厚。設定6のみ1/655.4、他設定は1/16384。",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "description": "新ハナビ。設定1,2,5,6の4段階設定。花火チャレンジでのハズレ確率に設定差あり。",
-  "lastUpdated": "2026-02-09",
-  "source": "一撃、なな徹、p-gabu"
+  "version": "1.2",
+  "description": "新ハナビ。設定1,2,5,6の4段階設定。通常時の風鈴・チェリー・氷に設定差。花火チャレンジ・花火GAMEでのハズレ確率、BIG中斜めベル・バラケ目、REG中1枚役・ハズレにも設定差あり。",
+  "lastUpdated": "2026-02-14",
+  "source": "一撃、なな徹"
 }

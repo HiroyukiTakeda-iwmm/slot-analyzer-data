@@ -68,7 +68,7 @@
     },
     {
       "id": "voice_blue_sesshoumaru",
-      "name": "青BIGテンパイボイス この殺生丸に切れぬものは無い",
+      "name": "青BIGテンパイボイス この殺生丸に斬れぬものは無い",
       "description": "殺生丸ボイス。設定3以上濃厚",
       "confirmedSettings": ["3", "4", "5", "6"],
       "excludedSettings": ["1", "2"],
@@ -132,8 +132,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "description": "クロスアルファの6.5号機AT機。小役確率に設定差なし。ボーナス確率・AT確率・BIGテンパイボイス・AT終了画面・エンディング演出で設定判別。",
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、スロパチクエスト"
 }

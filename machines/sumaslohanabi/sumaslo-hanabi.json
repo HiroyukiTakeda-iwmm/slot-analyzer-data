@@ -19,7 +19,7 @@
       "name": "REG確率",
       "probabilities": {
         "1": 0.002533,
-        "2": 0.002791,
+        "2": 0.002793,
         "5": 0.003189,
         "6": 0.003540
       },
@@ -55,10 +55,35 @@
       "description": "設定1: 1/169.8、設定6: 1/138.8"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "rb_end_peace",
+      "name": "RB終了画面 ピースマーク",
+      "description": "RB終了画面でピースマークが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FFD54F"
+    },
+    {
+      "id": "bb_barakeme",
+      "name": "BB中バラケ目",
+      "description": "BB中にバラケ目が出現で設定5以上濃厚。設定5-6: 1/819.2、設定1-2: 1/16384.0",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "rb_barakeme_6",
+      "name": "RB中バラケ目（予告音時）",
+      "description": "RB中の予告音発生時にバラケ目が出現で設定6濃厚。設定6のみ1/1092.3、他設定は1/16384.0",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#FFD700"
+    }
+  ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "アクロスのスマスロA+RT機（2026年2月2日導入）。4段階設定（1,2,5,6）。風鈴合算とREG確率に設定差。BIG中バラケ目で設定5以上濃厚、REG中バラケ目で設定6期待大。BIG中風鈴Bで奇偶判別。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス、P-WORLD"
 }
