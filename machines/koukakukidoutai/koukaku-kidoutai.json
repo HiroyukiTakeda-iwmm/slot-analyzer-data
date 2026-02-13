@@ -61,23 +61,23 @@
     {
       "id": "trophy_rainbow",
       "name": "サミートロフィー虹",
-      "description": "サミートロフィー虹が出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "description": "サミートロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
       "color": "#E91E63"
     },
     {
       "id": "trophy_kirin",
       "name": "サミートロフィーキリン柄",
-      "description": "サミートロフィーキリン柄が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "description": "サミートロフィーキリン柄が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
       "color": "#FFEB3B"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "サミーのスマスロAT機（2026年2月2日導入）。小役確率は全設定共通。AT確率・引き戻しストック当選率・タチコマの家出当選率に設定差。サミートロフィー（銅: 設定2以上、銀: 設定3以上、金: 設定4以上、虹: 設定5以上、キリン: 設定6）とAT終了画面で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、ななプレス、DMMぱちタウン"
 }

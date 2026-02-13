@@ -66,20 +66,68 @@
       "color": "#FFD700"
     },
     {
+      "id": "end_battler_family",
+      "name": "BB終了画面 戦人一家",
+      "description": "BB終了画面で戦人一家が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "end_beato_battler1",
+      "name": "BB終了画面 ベアト・戦人①",
+      "description": "BB終了画面でベアト・戦人①が出現で設定2,4,6濃厚",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["1", "3", "5"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_beato_battler2",
+      "name": "BB終了画面 ベアト・戦人②",
+      "description": "BB終了画面でベアト・戦人②が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_beato_gm_battler1",
+      "name": "BB終了画面 ベアト・GM戦人①",
+      "description": "BB終了画面でベアト・GM戦人①が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
       "id": "end_battler_gm2",
       "name": "BB終了画面 ベアト・GM戦人②",
       "description": "BB終了画面でベアト・GM戦人②が出現で設定6濃厚",
       "confirmedSettings": ["6"],
       "excludedSettings": ["1", "2", "3", "4", "5"],
       "color": "#F44336"
+    },
+    {
+      "id": "rb_gold_dress_erica",
+      "name": "RB中 金背景・ドレスエリカ",
+      "description": "RB中のキャラ紹介で金背景・ドレスエリカが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "rb_gold_gm_battler",
+      "name": "RB中 金背景・GM戦人",
+      "description": "RB中のキャラ紹介で金背景・GM戦人が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
     }
   ],
   "endScreens": [],
   "voiceCounts": [],
   "trialSuccessRates": [],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "オーイズミのA+ART機（2026年2月2日導入）。ART純増約1.0枚/G。CZ間200Gで天井CZ突入。完全攻略時の機械割は設定1で103.0%と技術介入効果大。小役確率（共通ベル・スイカ・1枚役）に設定差あり（導入後解析待ち）。BB中ビタ押し成功時イラスト・RB中キャラ背景色・ボーナス終了画面で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、ななプレス、DMMぱちタウン"
 }

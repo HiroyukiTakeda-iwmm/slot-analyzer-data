@@ -54,35 +54,40 @@
       "name": "ギンちゃんトロフィー銅",
       "description": "設定2以上濃厚",
       "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"]
+      "excludedSettings": ["1"],
+      "color": "#795548"
     },
     {
       "id": "ギンちゃんトロフィー銀",
       "name": "ギンちゃんトロフィー銀",
       "description": "設定3以上濃厚",
       "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"]
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
     },
     {
       "id": "ギンちゃんトロフィー金",
       "name": "ギンちゃんトロフィー金",
       "description": "設定4以上濃厚",
       "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
     },
     {
       "id": "ギンちゃんトロフィー虎柄",
       "name": "ギンちゃんトロフィー虎柄",
       "description": "設定5以上濃厚",
       "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"]
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
     },
     {
       "id": "ギンちゃんトロフィー虹",
       "name": "ギンちゃんトロフィー虹",
       "description": "設定6濃厚",
       "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
     }
   ],
   "endScreens": [
@@ -152,8 +157,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "EXCITEのスマスロAT機。AT純増約4.0枚/G、ボーナス中約6.0枚/G。天井は最大999G+α（REG後800G、リセット時600G）。チャンス目合算確率の設定差は小さいが、AT初当たり確率に大きな設定差。ギンちゃんトロフィー・獲得枚数表示・エンディング中ボイスで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス"
 }

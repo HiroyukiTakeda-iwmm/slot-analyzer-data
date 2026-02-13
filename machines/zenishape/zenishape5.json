@@ -108,7 +108,7 @@
     },
     {
       "name": "333枚OVER表示",
-      "description": "AT中に333枚OVER表示で設定3以上濃厚",
+      "description": "AT中に333枚/1333枚OVER表示で設定3以上濃厚",
       "confirmedSettings": ["3", "4", "5", "6"],
       "excludedSettings": ["2"],
       "color": "#4CAF50",
@@ -116,7 +116,7 @@
     },
     {
       "name": "444枚OVER表示",
-      "description": "AT中に444枚OVER表示で設定4以上濃厚",
+      "description": "AT中に444枚/1444枚OVER表示で設定4以上濃厚",
       "confirmedSettings": ["4", "5", "6"],
       "excludedSettings": ["2", "3"],
       "color": "#FF9800",
@@ -124,7 +124,7 @@
     },
     {
       "name": "555枚OVER表示",
-      "description": "AT中に555枚OVER表示で設定5以上濃厚",
+      "description": "AT中に555枚/1555枚OVER表示で設定5以上濃厚",
       "confirmedSettings": ["5", "6"],
       "excludedSettings": ["2", "3", "4"],
       "color": "#E91E63",
@@ -132,7 +132,7 @@
     },
     {
       "name": "666枚OVER表示",
-      "description": "AT中に666枚OVER表示で設定6濃厚",
+      "description": "AT中に666枚/1666枚OVER表示で設定6濃厚",
       "confirmedSettings": ["6"],
       "excludedSettings": ["2", "3", "4", "5"],
       "color": "#F44336",
@@ -140,8 +140,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "オリンピア製AT機。設定1非搭載の5段階設定（2-6）。小役確率は全設定共通。デカ目出現率に大きな設定差（設定2: 1/21580.7→設定6: 1/5561.8）。凪スタンプと獲得枚数表示で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン"
 }

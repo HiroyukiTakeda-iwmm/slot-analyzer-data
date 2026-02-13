@@ -33,6 +33,38 @@
       "confirmedSettings": ["4", "5", "6"],
       "excludedSettings": ["1", "2"],
       "color": "#FFD700"
+    },
+    {
+      "id": "ashibana_guy",
+      "name": "阿紫花＆ギイ終了画面",
+      "description": "AT終了画面。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "odore_olympia_20",
+      "name": "踊れ！オリンピア +20表示",
+      "description": "踊れ！オリンピア中に+20表示で設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "odore_olympia_4",
+      "name": "踊れ！オリンピア +4表示",
+      "description": "踊れ！オリンピア中に+4表示で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "odore_olympia_6",
+      "name": "踊れ！オリンピア +6表示",
+      "description": "踊れ！オリンピア中に+6表示で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
     }
   ],
   "trialSuccessRates": [
@@ -127,7 +159,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }
