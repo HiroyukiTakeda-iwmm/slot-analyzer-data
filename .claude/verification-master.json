@@ -2,8 +2,8 @@
   "description": "一撃クロスチェック検証マスター",
   "created": "2026-02-14",
   "totalMachines": 100,
-  "verified": 31,
-  "remaining": 69,
+  "verified": 39,
+  "remaining": 61,
   "batches": [
     {
       "id": "batch-1",
@@ -21,18 +21,18 @@
     },
     {
       "id": "batch-2",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 ジャグラー・ハナビ系（8台）",
+      "note": "v1.1 ジャグラー・ハナビ系（8台・検証済み）",
       "machines": [
-        { "path": "machines/aimjuggler/aim-juggler-ex-6gou.json", "name": "アイムジャグラーEX(6号)", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/juggler/aim-juggler-ex.json", "name": "ネオアイムジャグラーEX", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/juggler/my-juggler-v.json", "name": "マイジャグラーV", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/gogojuggler/gogo-juggler3.json", "name": "ゴーゴージャグラー3", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/happyjuggler/happy-juggler-viii.json", "name": "ハッピージャグラーVIII", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/funkyjuggler/funky-juggler2.json", "name": "ファンキージャグラー2", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/hanahana/new-king-hanahana-v.json", "name": "ニューキングハナハナV", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/starhanahana/starhanahana.json", "name": "スターハナハナ-30", "version": "1.1", "status": "pending", "issues": [] }
+        { "path": "machines/aimjuggler/aim-juggler-ex-6gou.json", "name": "アイムジャグラーEX(6号)", "version": "1.2", "status": "fixed", "issues": ["BB/RB/合算確率を追加"] },
+        { "path": "machines/juggler/aim-juggler-ex.json", "name": "ネオアイムジャグラーEX", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/juggler/my-juggler-v.json", "name": "マイジャグラーV", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/gogojuggler/gogo-juggler3.json", "name": "ゴーゴージャグラー3", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/happyjuggler/happy-juggler-viii.json", "name": "ハッピージャグラーVIII", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/funkyjuggler/funky-juggler2.json", "name": "ファンキージャグラー2", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/hanahana/new-king-hanahana-v.json", "name": "ニューキングハナハナV", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/starhanahana/starhanahana.json", "name": "スターハナハナ-30", "version": "1.2", "status": "ok", "issues": [] }
       ]
     },
     {

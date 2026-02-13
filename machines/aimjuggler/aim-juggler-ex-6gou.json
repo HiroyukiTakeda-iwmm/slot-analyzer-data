@@ -76,12 +76,57 @@
       "displayOrder": 5,
       "color": "#2196F3",
       "description": "設定1-3: 1/923.0、設定4-6: 1/862.3（2段階）"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.003662,
+        "2": 0.003708,
+        "3": 0.003708,
+        "4": 0.003861,
+        "5": 0.003861,
+        "6": 0.003922
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "BIG合算。設定1: 1/273.1、設定6: 1/255.0。設定2=3、設定4=5"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.002274,
+        "2": 0.002503,
+        "3": 0.003021,
+        "4": 0.003174,
+        "5": 0.003922,
+        "6": 0.003922
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#9C27B0",
+      "description": "REG合算。設定1: 1/439.8、設定6: 1/255.0。設定差大"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005935,
+        "2": 0.006211,
+        "3": 0.006729,
+        "4": 0.007032,
+        "5": 0.007782,
+        "6": 0.007843
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#4CAF50",
+      "description": "BIG+REG合算。設定1: 1/168.5、設定6: 1/127.5"
     }
   ],
   "confirmationEvents": [],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "北電子の6号機アイムジャグラー。ぶどうは設定6のみ優遇（1/5.78）、設定1-5は共通。単独REGに最大約1.73倍の設定差。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ガリぞう氏調べ、DMMぱちタウン、kenslo65536.com"
 }
