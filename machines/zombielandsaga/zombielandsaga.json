@@ -39,7 +39,7 @@
         "2": 0.005165,
         "3": 0.005379,
         "4": 0.005708,
-        "5": 0.006050,
+        "5": 0.00605,
         "6": 0.006357
       },
       "hasSettingDiff": true,
@@ -68,62 +68,118 @@
       "id": "adabana_saki",
       "name": "徒花ボーナス中キャラ サキ",
       "description": "徒花ボーナス中キャラ紹介でサキが出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#F44336"
     },
     {
       "id": "adabana_ai",
       "name": "徒花ボーナス中キャラ 愛",
       "description": "徒花ボーナス中キャラ紹介で愛が出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#2196F3"
     },
     {
       "id": "adabana_junko",
       "name": "徒花ボーナス中キャラ 純子",
       "description": "徒花ボーナス中キャラ紹介で純子が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "adabana_yugiri",
       "name": "徒花ボーナス中キャラ ゆうぎり",
       "description": "徒花ボーナス中キャラ紹介でゆうぎりが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "adabana_lily",
       "name": "徒花ボーナス中キャラ リリィ",
       "description": "徒花ボーナス中キャラ紹介でリリィが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "ed_voice_mottoru",
       "name": "ED中ボイス「俺がもっとるんじゃーい」",
       "description": "エンディング中に幸太郎「俺がもっとるんじゃーい」ボイスで設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "ed_voice_tatoe",
       "name": "ED中ボイス「たとえ誰に～」",
       "description": "エンディング中に幸太郎「たとえ誰に～」ボイスで設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "大都技研のスマスロAT機（ST型）。ST確率・CZ確率・ST直撃に設定差。徒花ボーナス中キャラ紹介で設定確定（サキ: 設定2以上、愛: 設定3以上、純子: 設定4以上、ゆうぎり: 設定5以上、リリィ: 設定6）。ED中ボイスで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン、ななプレス"
 }

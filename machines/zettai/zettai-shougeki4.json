@@ -83,70 +83,134 @@
       "id": "trophy_copper",
       "name": "ダイナマイトトロフィー 銅",
       "description": "ダイナマイトトロフィー銅が出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "id": "trophy_silver",
       "name": "ダイナマイトトロフィー 銀",
       "description": "ダイナマイトトロフィー銀が出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "trophy_gold",
       "name": "ダイナマイトトロフィー 金",
       "description": "ダイナマイトトロフィー金が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_ladybug",
       "name": "ダイナマイトトロフィー テントウムシ",
       "description": "ダイナマイトトロフィーテントウムシが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "trophy_rainbow",
       "name": "ダイナマイトトロフィー 虹",
       "description": "ダイナマイトトロフィー虹が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     },
     {
       "id": "end_maid",
       "name": "終了画面 メイドコス",
       "description": "ボーナス終了画面でメイドコスが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "end_valentine",
       "name": "終了画面 バレンタイン綾",
       "description": "ボーナス終了画面でバレンタイン綾が出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "end_numberone",
       "name": "終了画面 ユーアーナンバーワン",
       "description": "ボーナス終了画面でユーアーナンバーワンが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Daiichi（アイドル）のスマスロAT機。小役確率は全設定共通。AT初当り確率に大きな設定差（約2.0倍）。ダイナマイトトロフィーとボーナス終了画面で設定示唆。",
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ななプレス"
 }

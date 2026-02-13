@@ -2,8 +2,8 @@
   "description": "一撃クロスチェック検証マスター",
   "created": "2026-02-14",
   "totalMachines": 100,
-  "verified": 87,
-  "remaining": 13,
+  "verified": 100,
+  "remaining": 0,
   "batches": [
     {
       "id": "batch-1",
@@ -516,107 +516,107 @@
     },
     {
       "id": "batch-9",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 残り③（7台）",
+      "note": "v1.1 残り③（7台・検証済み・全台OK）",
       "machines": [
         {
           "path": "machines/okidoki/okidoki-duo-encore.json",
           "name": "沖ドキDUOアンコール",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/okidokiblack/okidoki-black.json",
           "name": "沖ドキBLACK",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/sengokuotome/sengokuotome4.json",
           "name": "戦国乙女4",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/shake/shake-bt.json",
           "name": "シェイクBT",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/striketheblood/striketheblood.json",
           "name": "ストブラ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/tenken/tenken.json",
           "name": "転生剣",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/tensura/tensura.json",
           "name": "転スラ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         }
       ]
     },
     {
       "id": "batch-10",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 残り④（6台）",
+      "note": "v1.1 残り④（6台・検証済み・全台OK）",
       "machines": [
         {
           "path": "machines/thunderv/thunderv-lightning.json",
           "name": "サンダーVライトニング",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/tokyoghoul/tokyoghoul.json",
           "name": "東京喰種",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/watakon/watakon.json",
           "name": "わた婚",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/zombielandsaga/zombielandsaga.json",
           "name": "ゾンサガ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/chibariyo/chibariyo2.json",
           "name": "チバリヨ2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/zettai/zettai-shougeki4.json",
           "name": "絶対衝激IV",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         }
       ]

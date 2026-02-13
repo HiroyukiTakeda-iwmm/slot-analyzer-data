@@ -38,16 +38,32 @@
       "id": "at_end_wafuku",
       "name": "AT終了画面「和服」",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "at_end_all",
       "name": "AT終了画面「全員集合」",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
@@ -81,7 +97,7 @@
       "description": "設定1: 9%、設定6: 14%",
       "probabilities": {
         "1": 0.09,
-        "2": 0.10,
+        "2": 0.1,
         "3": 0.11,
         "4": 0.12,
         "5": 0.13,
@@ -107,7 +123,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

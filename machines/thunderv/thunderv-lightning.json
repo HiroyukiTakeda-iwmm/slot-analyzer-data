@@ -21,7 +21,7 @@
         "1": 0.05464,
         "2": 0.05376,
         "5": 0.05814,
-        "6": 0.05650
+        "6": 0.0565
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
@@ -60,16 +60,28 @@
       "id": "rizin_zoromi",
       "name": "RIZIN ZONEゾロ目ゲーム数（55G/77G/99G）",
       "description": "BIG後RIZIN ZONE終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "reg_rizin_low",
       "name": "REG後RIZIN ZONE突入（1枚役2回以下）",
       "description": "REG中1枚役2回以下でRIZIN ZONE突入",
-      "confirmedSettings": ["2", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     }
   ],
@@ -82,7 +94,7 @@
       "description": "設定1: 1/162.6、設定6: 1/128.0",
       "probabilities": {
         "1": 0.00615,
-        "2": 0.00670,
+        "2": 0.0067,
         "5": 0.00725,
         "6": 0.00781
       },
@@ -94,8 +106,8 @@
       "name": "BIG確率",
       "description": "設定1-2: 1/277.7、設定6: 1/256.0",
       "probabilities": {
-        "1": 0.00360,
-        "2": 0.00360,
+        "1": 0.0036,
+        "2": 0.0036,
         "5": 0.00378,
         "6": 0.00391
       },
@@ -108,7 +120,7 @@
       "description": "設定1: 1/392.4、設定6: 1/256.0。大きな設定差",
       "probabilities": {
         "1": 0.00255,
-        "2": 0.00310,
+        "2": 0.0031,
         "5": 0.00346,
         "6": 0.00391
       },
@@ -120,8 +132,8 @@
       "name": "BIG中ハズレ出現率",
       "description": "設定1-2: 1/16384.0、設定5-6: 1/420.1。特大設定差",
       "probabilities": {
-        "1": 0.000061,
-        "2": 0.000061,
+        "1": 6.1e-05,
+        "2": 6.1e-05,
         "5": 0.00238,
         "6": 0.00238
       },
@@ -130,7 +142,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }

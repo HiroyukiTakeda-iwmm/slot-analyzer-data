@@ -18,7 +18,7 @@
     {
       "name": "チェリー",
       "probabilities": {
-        "1": 0.02710,
+        "1": 0.0271,
         "2": 0.02747,
         "5": 0.02786,
         "6": 0.02976
@@ -47,24 +47,42 @@
       "id": "trophy_bronze",
       "name": "コパンダトロフィー 銅",
       "description": "BB終了時",
-      "confirmedSettings": ["2", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "trophy_lightning",
       "name": "コパンダトロフィー イナズマ柄",
       "description": "BB終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "trophy_rainbow",
       "name": "コパンダトロフィー 虹",
       "description": "BB終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -137,7 +155,7 @@
       "probabilities": {
         "1": 0.002853,
         "2": 0.003052,
-        "5": 0.002930,
+        "5": 0.00293,
         "6": 0.003357
       },
       "color": "#E91E63",
@@ -148,7 +166,7 @@
       "name": "RB確率",
       "description": "設定1: 1/425.6、設定6: 1/297.9。偶数設定ほど軽い",
       "probabilities": {
-        "1": 0.002350,
+        "1": 0.00235,
         "2": 0.003006,
         "5": 0.002441,
         "6": 0.003357
@@ -161,17 +179,17 @@
       "name": "BT実質継続率",
       "description": "設定1: 50.0%、設定5: 55.0%。奇数設定が優遇",
       "probabilities": {
-        "1": 0.500,
-        "2": 0.430,
-        "5": 0.550,
-        "6": 0.400
+        "1": 0.5,
+        "2": 0.43,
+        "5": 0.55,
+        "6": 0.4
       },
       "color": "#FF9800",
       "displayOrder": 4
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }
