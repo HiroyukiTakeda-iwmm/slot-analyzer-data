@@ -63,7 +63,48 @@
       "description": "設定1: 1/73.6、設定6: 1/63.0（通常スイカ+滑りスイカ合算）"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "trophy_bronze",
+      "name": "コパンダトロフィー 銅",
+      "description": "BT終了時に銅トロフィー出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "コパンダトロフィー 銀",
+      "description": "BT終了時に銀トロフィー出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "コパンダトロフィー 金",
+      "description": "BT終了時に金トロフィー出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_lightning",
+      "name": "コパンダトロフィー イナズマ柄",
+      "description": "BT終了時にイナズマ柄トロフィー出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "コパンダトロフィー 虹",
+      "description": "BT終了時に虹トロフィー出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
   "author": "コミュニティ",
   "version": "1.1",
   "description": "大都技研のスマスロノーマルタイプ＋BT。REG確率に大きな設定差。BT中ハズレ確率で設定4以上を2段階判別可能（設定1-3: 1/420.1→設定4-6: 1/30.0）。コパンダトロフィーで設定示唆。",

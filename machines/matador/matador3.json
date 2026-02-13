@@ -63,16 +63,7 @@
       "description": "設定1: 1/434.0、設定6: 1/299.3。REG確率に設定差大"
     }
   ],
-  "confirmationEvents": [
-    {
-      "id": "bt_barakeme",
-      "name": "BT中バラケ目1枚役",
-      "description": "BT中に1枚役出現。設定1と6で128倍の差",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": [],
-      "color": "#FFD700"
-    }
-  ],
+  "confirmationEvents": [],
   "trialSuccessRates": [
     {
       "id": "bonus_goukei",
@@ -88,6 +79,21 @@
       },
       "color": "#9C27B0",
       "displayOrder": 1
+    },
+    {
+      "id": "bt_ichimaiyaku",
+      "name": "BT中1枚役出現率",
+      "description": "設定1: 1/8192.0、設定6: 1/64.0。設定1と6で128倍の差がある特大設定差要素",
+      "probabilities": {
+        "1": 0.000122,
+        "2": 0.000244,
+        "3": 0.000488,
+        "4": 0.001953,
+        "5": 0.003906,
+        "6": 0.015625
+      },
+      "color": "#FFD700",
+      "displayOrder": 2
     }
   ],
   "endScreens": [

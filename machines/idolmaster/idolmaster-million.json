@@ -94,6 +94,94 @@
       "confirmedSettings": [],
       "excludedSettings": [],
       "color": "#E91E63"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "description": "ケロットトロフィー銅が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ケロットトロフィー 銀",
+      "description": "ケロットトロフィー銀が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "description": "ケロットトロフィー金が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "description": "ケロットトロフィーケロット柄が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "description": "ケロットトロフィー虹が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "end_red_frame",
+      "name": "ボーナス終了画面 赤枠",
+      "description": "ボーナス終了画面で赤枠が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_purple_frame",
+      "name": "ボーナス終了画面 紫枠",
+      "description": "ボーナス終了画面で紫枠が出現で設定2以上濃厚かつ高設定期待",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_silver_frame",
+      "name": "ボーナス終了画面 銀枠",
+      "description": "ボーナス終了画面で銀枠が出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "end_gold_frame_4",
+      "name": "ボーナス終了画面 金枠（指が4）",
+      "description": "ボーナス終了画面で金枠（指が4本）が出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_gold_frame_5",
+      "name": "ボーナス終了画面 金枠（ケーキの数字5）",
+      "description": "ボーナス終了画面で金枠（ケーキの数字が5）が出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_rainbow_frame",
+      "name": "ボーナス終了画面 虹枠",
+      "description": "ボーナス終了画面で虹枠が出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
     }
   ],
   "trialSuccessRates": [
@@ -156,7 +244,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }

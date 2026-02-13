@@ -63,6 +63,21 @@
       "description": "設定1: 1/387、設定6: 1/242。REG確率に大きめの設定差"
     },
     {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.006289,
+        "2": 0.006667,
+        "3": 0.007092,
+        "4": 0.007576,
+        "5": 0.008130,
+        "6": 0.008772
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/159、設定6: 1/114"
+    },
+    {
       "name": "BIG中スイカ",
       "probabilities": {
         "1": 0.15,
@@ -73,28 +88,13 @@
         "6": 0.90
       },
       "hasSettingDiff": true,
-      "displayOrder": 5,
+      "displayOrder": 6,
       "color": "#388E3C",
       "description": "設定5・6は約1BIGに1回成立"
     }
   ],
   "confirmationEvents": [],
   "trialSuccessRates": [
-    {
-      "id": "bonus_goukei",
-      "name": "ボーナス合算確率",
-      "description": "設定1: 1/159、設定6: 1/114",
-      "probabilities": {
-        "1": 0.006289,
-        "2": 0.006667,
-        "3": 0.007092,
-        "4": 0.007576,
-        "5": 0.008130,
-        "6": 0.008772
-      },
-      "color": "#9C27B0",
-      "displayOrder": 1
-    },
     {
       "id": "retro_sound",
       "name": "レトロサウンド発生確率",
@@ -108,7 +108,7 @@
         "6": 0.18
       },
       "color": "#FF9800",
-      "displayOrder": 2
+      "displayOrder": 1
     }
   ],
   "endScreens": [

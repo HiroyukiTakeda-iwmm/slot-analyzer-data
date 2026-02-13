@@ -39,10 +39,10 @@
         "5": 0.012346,
         "6": 0.012346
       },
-      "hasSettingDiff": true,
+      "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#FF9800",
-      "description": "約1/81。設定差あり"
+      "description": "全設定共通 約1/81"
     },
     {
       "name": "強チェリー",
@@ -53,10 +53,10 @@
         "5": 0.001374,
         "6": 0.001374
       },
-      "hasSettingDiff": true,
+      "hasSettingDiff": false,
       "displayOrder": 4,
       "color": "#C2185B",
-      "description": "約1/728。設定差あり"
+      "description": "全設定共通 約1/728"
     },
     {
       "name": "十字リプレイ",
@@ -67,10 +67,10 @@
         "5": 0.000229,
         "6": 0.000229
       },
-      "hasSettingDiff": true,
+      "hasSettingDiff": false,
       "displayOrder": 5,
       "color": "#9C27B0",
-      "description": "約1/4369。設定差あり"
+      "description": "全設定共通 約1/4369"
     }
   ],
   "confirmationEvents": [

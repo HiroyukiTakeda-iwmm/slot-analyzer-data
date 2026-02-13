@@ -64,6 +64,46 @@
       "confirmedSettings": [],
       "excludedSettings": [],
       "color": "#E91E63"
+    },
+    {
+      "id": "bb_end_mizugi",
+      "name": "BB終了画面 水着みかづき荘",
+      "description": "BB終了画面で水着みかづき荘が出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#03A9F4"
+    },
+    {
+      "id": "bb_end_2nd_key",
+      "name": "BB終了画面 2ndキービジュアル",
+      "description": "BB終了画面で2nd Seasonキービジュアルが出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "bb_end_1st_key",
+      "name": "BB終了画面 1stキービジュアル",
+      "description": "BB終了画面で1st Seasonキービジュアルが出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "bb_end_small_kyubey",
+      "name": "BB終了画面 小さいキュゥべえ",
+      "description": "BB終了画面で小さいキュゥべえが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_madoka_iroha",
+      "name": "AT終了画面 まどか&いろは",
+      "description": "AT終了画面でまどか&いろはが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
     }
   ],
   "trialSuccessRates": [
@@ -141,7 +181,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ"
 }
