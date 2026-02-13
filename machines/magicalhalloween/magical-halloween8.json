@@ -114,25 +114,33 @@
       "color": "#00BCD4"
     },
     {
+      "id": "medals_222",
+      "name": "獲得枚数 222枚/2222枚",
+      "description": "獲得枚数222枚/2222枚表示で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
       "id": "medals_444",
-      "name": "獲得枚数 444枚",
-      "description": "獲得枚数444枚表示で設定4以上濃厚",
+      "name": "獲得枚数 444枚/4444枚",
+      "description": "獲得枚数444枚/4444枚表示で設定4以上濃厚",
       "confirmedSettings": ["4", "5", "6"],
       "excludedSettings": ["1", "2", "3"],
       "color": "#FFC107"
     },
     {
       "id": "medals_666",
-      "name": "獲得枚数 666枚",
-      "description": "獲得枚数666枚表示で設定6濃厚",
+      "name": "獲得枚数 666枚/6666枚",
+      "description": "獲得枚数666枚/6666枚表示で設定6濃厚",
       "confirmedSettings": ["6"],
       "excludedSettings": ["1", "2", "3", "4", "5"],
       "color": "#F44336"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "KONAMIのスマスロBONUS+ART機。共通コイン確率とART初当りに設定差。どこまじ当選率に特大の設定差（設定1: 1/11336→設定6: 1/715）。殲滅ボーナス規定撃破数25体or50体で高設定期待大。アリストロフィーで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン"
 }
