@@ -49,6 +49,59 @@
       "confirmedSettings": [],
       "excludedSettings": [],
       "color": "#E91E63"
+    },
+    {
+      "id": "end_godzilla_red",
+      "name": "AT終了画面 ゴジラ(赤)",
+      "description": "AT終了画面でゴジラ(赤)が出現で設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_godzilla_monochrome",
+      "name": "AT終了画面 ゴジラ(白黒)",
+      "description": "AT終了画面でゴジラ(白黒)が出現で設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "menu_kiryu",
+      "name": "メニュー画面 3式機龍",
+      "description": "メニュー画面で3式機龍が出現で設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "トロフィー虹",
+      "description": "トロフィー虹で設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "トロフィー金",
+      "description": "トロフィー金で設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "color": "#FFD700"
     }
   ],
   "trialSuccessRates": [
@@ -59,8 +112,8 @@
       "probabilities": {
         "1": 0.003258,
         "2": 0.003289,
-        "3": 0.003300,
-        "4": 0.003310,
+        "3": 0.0033,
+        "4": 0.00331,
         "5": 0.003338,
         "6": 0.003384
       },
@@ -107,7 +160,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

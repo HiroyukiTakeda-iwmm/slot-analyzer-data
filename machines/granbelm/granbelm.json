@@ -50,12 +50,12 @@
     {
       "name": "強チェリー",
       "probabilities": {
-        "1": 0.002640,
-        "2": 0.002640,
-        "3": 0.002640,
-        "4": 0.002640,
-        "5": 0.002640,
-        "6": 0.002640
+        "1": 0.00264,
+        "2": 0.00264,
+        "3": 0.00264,
+        "4": 0.00264,
+        "5": 0.00264,
+        "6": 0.00264
       },
       "hasSettingDiff": false,
       "displayOrder": 4,
@@ -97,87 +97,167 @@
     {
       "name": "リザルト画面イラスト・設定2以上",
       "description": "AT終了リザルト画面タッチで設定2以上濃厚イラストが出現",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3",
       "id": "リザルト設定2以上"
     },
     {
       "name": "リザルト画面イラスト・設定4以上",
       "description": "AT終了リザルト画面タッチで設定4以上濃厚イラストが出現",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800",
       "id": "リザルト設定4以上"
     },
     {
       "name": "リザルト画面イラスト・設定5以上",
       "description": "AT終了リザルト画面タッチで設定5以上濃厚イラストが出現",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "リザルト設定5以上"
     },
     {
       "name": "リザルト画面イラスト・設定6",
       "description": "AT終了リザルト画面タッチで設定6濃厚イラストが出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336",
       "id": "リザルト設定6"
     },
     {
       "name": "ナカミミ・覚醒ホワイトリリー",
       "description": "ナカミミエールモードで覚醒ホワイトリリーアイコンが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800",
       "id": "ナカミミ設定4以上"
     },
     {
       "name": "ナカミミ・セラドアノクターン",
       "description": "ナカミミエールモードでセラドアノクターンアイコンが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "ナカミミ設定5以上"
     },
     {
       "name": "ナカミミ・ジーグァンロン",
       "description": "ナカミミエールモードでジーグァンロンアイコンが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336",
       "id": "ナカミミ設定6"
     },
     {
       "name": "DB突入2セット目（3セット目がDB）",
       "description": "ディスティニーバトルが2セット目継続時（3セット目にDB突入）で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3",
       "id": "DB3セット目設定2以上"
     },
     {
       "name": "DB突入5セット目（6セット目がDB）",
       "description": "ディスティニーバトルが5セット目継続時（6セット目にDB突入）で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "DB6セット目設定5以上"
     },
     {
       "name": "DB突入6セット目（7セット目がDB）",
       "description": "ディスティニーバトルが6セット目継続時（7セット目にDB突入）で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0",
       "id": "DB7セット目設定6"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "ZXS（ゼクロスクリエイティブ）製AT機。6段階設定（1-6）。小役確率に設定差なし。CZ合算確率・AT初当り確率に設定差。リザルト画面タッチ・ナカミミエールモードアイコン・DB突入セット数で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた"
 }

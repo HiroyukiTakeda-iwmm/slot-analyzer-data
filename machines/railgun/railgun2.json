@@ -53,80 +53,160 @@
       "id": "end_screen_misaka_sister",
       "name": "AT終了画面 御坂美琴&御坂妹",
       "description": "AT終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "end_screen_kongou",
       "name": "AT終了画面 婚后一派（赤枠）",
       "description": "AT終了時",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#F44336"
     },
     {
       "id": "end_screen_misaka_morning",
       "name": "AT終了画面 御坂美琴・寝起き（紫枠）",
       "description": "AT終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "end_screen_misaka_shokuhou_gold",
       "name": "AT終了画面 御坂美琴&食蜂操祈B（金枠）",
       "description": "AT終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "end_screen_misaka_wedding",
       "name": "AT終了画面 御坂美琴ウエディング（虹枠）",
       "description": "AT終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "fujimaru_coin_bronze",
       "name": "藤丸コイン 銅",
       "description": "AT終了時",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "fujimaru_coin_silver",
       "name": "藤丸コイン 銀",
       "description": "AT終了時",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "fujimaru_coin_gold",
       "name": "藤丸コイン 金",
       "description": "AT終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "fujimaru_coin_danger",
       "name": "藤丸コイン DANGER",
       "description": "AT終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "fujimaru_coin_rainbow",
       "name": "藤丸コイン 虹",
       "description": "AT終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -187,7 +267,7 @@
         "3": 0.003285,
         "4": 0.003671,
         "5": 0.004031,
-        "6": 0.004250
+        "6": 0.00425
       },
       "color": "#2196F3",
       "displayOrder": 1
@@ -197,7 +277,7 @@
       "name": "CZ確率（GJ+婚后CZ合算）",
       "description": "設定1: 1/175.7、設定6: 1/137.5。上位CZに大きな設定差",
       "probabilities": {
-        "1": 0.005690,
+        "1": 0.00569,
         "2": 0.005793,
         "3": 0.005934,
         "4": 0.006387,
@@ -224,7 +304,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン"
 }

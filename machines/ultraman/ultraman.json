@@ -5,11 +5,11 @@
     {
       "name": "共通ベル",
       "probabilities": {
-        "1": 0.1190,
+        "1": 0.119,
         "2": 0.1205,
-        "4": 0.1220,
+        "4": 0.122,
         "5": 0.1235,
-        "6": 0.1250
+        "6": 0.125
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -75,59 +75,108 @@
   ],
   "confirmationEvents": [
     {
-      "id": "timer_456",
-      "name": "タイマー04:56",
+      "id": "timer_446",
+      "name": "タイマー04:46",
       "description": "レッドゾーン中タイマー演出",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "timer_555",
       "name": "タイマー05:55",
       "description": "レッドゾーン中タイマー演出",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "timer_666",
       "name": "タイマー06:66",
       "description": "レッドゾーン中タイマー演出",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "mai_222",
       "name": "獲得222枚",
       "description": "獲得枚数表示",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "mai_456",
       "name": "獲得456枚",
       "description": "獲得枚数表示",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "mai_555",
       "name": "獲得555枚",
       "description": "獲得枚数表示",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "mai_666",
       "name": "獲得666枚",
       "description": "獲得枚数表示",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -199,8 +248,15 @@
       "name": "ウルトラマン",
       "type": "at_end",
       "hint": "設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#C0C0C0"
     },
     {
@@ -208,7 +264,9 @@
       "name": "セブン",
       "type": "at_end",
       "hint": "設定2否定",
-      "excludedSettings": ["2"],
+      "excludedSettings": [
+        "2"
+      ],
       "color": "#FF5722"
     },
     {
@@ -216,7 +274,9 @@
       "name": "エース",
       "type": "at_end",
       "hint": "設定4否定",
-      "excludedSettings": ["4"],
+      "excludedSettings": [
+        "4"
+      ],
       "color": "#9C27B0"
     },
     {
@@ -224,8 +284,15 @@
       "name": "ウルトラマンVSベムラー",
       "type": "at_end",
       "hint": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
@@ -233,8 +300,15 @@
       "name": "初代ウルトラマン",
       "type": "at_end",
       "hint": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
@@ -242,13 +316,20 @@
       "name": "ミニキャラ集合",
       "type": "at_end",
       "hint": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

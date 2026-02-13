@@ -2,8 +2,8 @@
   "description": "一撃クロスチェック検証マスター",
   "created": "2026-02-14",
   "totalMachines": 100,
-  "verified": 55,
-  "remaining": 45,
+  "verified": 71,
+  "remaining": 29,
   "batches": [
     {
       "id": "batch-1",
@@ -254,129 +254,133 @@
     },
     {
       "id": "batch-5",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 AT機②（8台）",
+      "note": "v1.1 AT機②（8台・検証済み）",
       "machines": [
         {
           "path": "machines/biohazard-re2/biohazard-re2.json",
           "name": "バイオRE:2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/biohazard/biohazard5.json",
           "name": "バイオ5",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/godeater/godeater-resurrection.json",
           "name": "ゴッドイーター",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/monhun/monhun-rise.json",
           "name": "モンハンライズ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/godzilla/godzilla.json",
           "name": "ゴジラ",
-          "version": "1.1",
-          "status": "pending",
-          "issues": []
+          "version": "1.2",
+          "status": "fixed",
+          "issues": [
+            "confirmationEvents 5件追加（AT終了画面・トロフィー・メニュー画面）"
+          ]
         },
         {
           "path": "machines/dmc/dmc5.json",
           "name": "DMC5",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/hokuto/hokuto-tenseino-shou2.json",
           "name": "北斗転生2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/kaguya/kaguya-sama.json",
           "name": "かぐや様",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         }
       ]
     },
     {
       "id": "batch-6",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 AT/ART機（8台）",
+      "note": "v1.1 AT/ART機（8台・検証済み）",
       "machines": [
         {
           "path": "machines/kizumonogatari/kizumonogatari.json",
           "name": "傷物語",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/granbelm/granbelm.json",
           "name": "グランベルム",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/dumbbell/dumbbell.json",
           "name": "ダンベル",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/guiltycrown/guiltycrown2.json",
           "name": "ギルクラ2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/railgun/railgun2.json",
           "name": "レールガン2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/valvrave/valvrave2.json",
           "name": "ヴァルヴレイヴ2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/shamanking/shamanking.json",
           "name": "シャーマンキング",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/ultraman/ultraman.json",
           "name": "ウルトラマン",
-          "version": "1.1",
-          "status": "pending",
-          "issues": []
+          "version": "1.2",
+          "status": "fixed",
+          "issues": [
+            "タイマー04:56→04:46に修正"
+          ]
         }
       ]
     },

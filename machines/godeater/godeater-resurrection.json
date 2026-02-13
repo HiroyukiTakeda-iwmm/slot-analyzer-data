@@ -80,12 +80,12 @@
     {
       "name": "神チェリー",
       "probabilities": {
-        "1": 0.000061,
-        "2": 0.000061,
-        "3": 0.000061,
-        "4": 0.000061,
-        "5": 0.000061,
-        "6": 0.000061
+        "1": 6.1e-05,
+        "2": 6.1e-05,
+        "3": 6.1e-05,
+        "4": 6.1e-05,
+        "5": 6.1e-05,
+        "6": 6.1e-05
       },
       "hasSettingDiff": false,
       "displayOrder": 6,
@@ -97,55 +97,103 @@
     {
       "name": "AT終了画面リンドウ",
       "description": "AT終了画面でリンドウが出現で設定3以上確定",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#2196F3",
       "id": "終了画面リンドウ"
     },
     {
       "name": "AT終了画面シオ",
       "description": "AT終了画面でシオが出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800",
       "id": "終了画面シオ"
     },
     {
       "name": "AT終了画面全員集合",
       "description": "AT終了画面で全員集合が出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#4CAF50",
       "id": "終了画面全員集合"
     },
     {
       "name": "AT終了画面デフォルメキャラ",
       "description": "AT終了画面でデフォルメキャラが出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF5722",
       "id": "終了画面デフォルメ"
     },
     {
       "name": "ストーリー終了ボイスリンドウ",
       "description": "ストーリー終了時のボイスがリンドウで設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3",
       "id": "ボイスリンドウ"
     },
     {
       "name": "ストーリー終了ボイスシオ",
       "description": "ストーリー終了時のボイスがシオで設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "ボイスシオ"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "セブンリーグ/山佐ネクスト製AT機。6段階設定（1-6）。小役確率は全設定共通で設定差なし。AT初当り確率とCZ出現率に設定差。AT終了画面とストーリー終了ボイスで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃"
 }
