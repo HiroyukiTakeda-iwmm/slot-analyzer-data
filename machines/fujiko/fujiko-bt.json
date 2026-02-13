@@ -50,32 +50,60 @@
       "id": "stamp_ka",
       "name": "BB/SBB終了画面 可スタンプ",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "stamp_ryou",
       "name": "BB/SBB終了画面 良スタンプ",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "stamp_yuu",
       "name": "BB/SBB終了画面 優スタンプ",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "stamp_goku",
       "name": "BB/SBB終了画面 極スタンプ",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -110,7 +138,7 @@
       "probabilities": {
         "1": 0.007082,
         "2": 0.007463,
-        "4": 0.008150,
+        "4": 0.00815,
         "5": 0.008834,
         "6": 0.010194
       },
@@ -166,16 +194,16 @@
       "probabilities": {
         "1": 0.2222,
         "2": 0.2326,
-        "4": 0.2410,
-        "5": 0.2500,
-        "6": 0.2500
+        "4": 0.241,
+        "5": 0.25,
+        "6": 0.25
       },
       "color": "#9C27B0",
       "displayOrder": 5
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }

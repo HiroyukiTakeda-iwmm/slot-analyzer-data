@@ -100,7 +100,7 @@
         "3": 0.070922,
         "4": 0.075758,
         "5": 0.076923,
-        "6": 0.078740
+        "6": 0.07874
       },
       "hasSettingDiff": true,
       "displayOrder": 7,
@@ -112,71 +112,135 @@
     {
       "name": "サミートロフィー銅",
       "description": "ボーナス終了画面でサミートロフィー銅が出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548",
       "id": "トロフィー銅"
     },
     {
       "name": "サミートロフィー銀",
       "description": "ボーナス終了画面でサミートロフィー銀が出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E",
       "id": "トロフィー銀"
     },
     {
       "name": "サミートロフィー金",
       "description": "ボーナス終了画面でサミートロフィー金が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700",
       "id": "トロフィー金"
     },
     {
       "name": "サミートロフィーキリン",
       "description": "ボーナス終了画面でサミートロフィーキリンが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFEB3B",
       "id": "トロフィーキリン"
     },
     {
       "name": "サミートロフィー虹",
       "description": "ボーナス終了画面でサミートロフィー虹が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF5722",
       "id": "トロフィー虹"
     },
     {
       "name": "BB終了画面アクセル",
       "description": "BB終了画面でアクセルが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800",
       "id": "終了画面アクセル"
     },
     {
       "name": "BB終了画面サクヤ",
       "description": "BB終了画面でサクヤが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0",
       "id": "終了画面サクヤ"
     },
     {
       "name": "BB終了画面HIEVO全員集合（BB1回目）",
       "description": "BB1回目終了画面でHIEVO全員集合が出現で設定変更+設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#4CAF50",
       "id": "終了画面全員集合"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "サミー製ボーナス+ART機。6段階設定（1-6）。共通7枚ベル確率に設定差。単独共通リリベ確率にART準備中大きな設定差。サミートロフィー・BB終了画面で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃"
 }

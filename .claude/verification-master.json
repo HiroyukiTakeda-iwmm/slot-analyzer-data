@@ -2,8 +2,8 @@
   "description": "一撃クロスチェック検証マスター",
   "created": "2026-02-14",
   "totalMachines": 100,
-  "verified": 71,
-  "remaining": 29,
+  "verified": 87,
+  "remaining": 13,
   "batches": [
     {
       "id": "batch-1",
@@ -386,128 +386,130 @@
     },
     {
       "id": "batch-7",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 残り①（8台）",
+      "note": "v1.1 残り①（8台・検証済み）",
       "machines": [
         {
           "path": "machines/enen/enen-shouboutai.json",
           "name": "炎炎1",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/enen2/enen-shouboutai2.json",
           "name": "炎炎2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/eureka/eureka-type-art.json",
           "name": "エウレカ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/fujiko/fujiko-bt.json",
           "name": "不二子BT",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/gamera/gamera2.json",
           "name": "ガメラ2",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/gineiden/gineiden-dnt.json",
           "name": "銀英伝",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/inuyasha/inuyasha.json",
           "name": "犬夜叉",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/azurlane/azurlane.json",
           "name": "アズールレーン",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         }
       ]
     },
     {
       "id": "batch-8",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 残り②（8台）",
+      "note": "v1.1 残り②（8台・検証済み）",
       "machines": [
         {
           "path": "machines/crea/crea-bt.json",
           "name": "クレアBT",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/discup/discup-ultraremix.json",
           "name": "ディスクアップ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/hihouden/hihouden.json",
           "name": "秘宝伝",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/matador/matador3.json",
           "name": "マタドール3",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/midoridon/midoridon-viva.json",
           "name": "緑ドン",
-          "version": "1.1",
-          "status": "pending",
-          "issues": []
+          "version": "1.2",
+          "status": "fixed",
+          "issues": [
+            "confirmationEvents 3件追加（XR終了ボイス・アオドン）"
+          ]
         },
         {
           "path": "machines/newpulsar/newpulsar-bt.json",
           "name": "ニューパルサーBT",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/prismnana/prismnana.json",
           "name": "プリズムナナ",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         },
         {
           "path": "machines/toloveru/toloveru-darkness.json",
           "name": "ToLOVEる",
-          "version": "1.1",
-          "status": "pending",
+          "version": "1.2",
+          "status": "ok",
           "issues": []
         }
       ]

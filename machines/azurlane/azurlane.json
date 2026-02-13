@@ -8,9 +8,9 @@
         "1": 0.045249,
         "2": 0.046083,
         "3": 0.047619,
-        "4": 0.049020,
+        "4": 0.04902,
         "5": 0.050505,
-        "6": 0.052910
+        "6": 0.05291
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -22,8 +22,8 @@
       "probabilities": {
         "1": 0.012658,
         "2": 0.012821,
-        "3": 0.012970,
-        "4": 0.013280,
+        "3": 0.01297,
+        "4": 0.01328,
         "5": 0.013423,
         "6": 0.013889
       },
@@ -38,7 +38,7 @@
         "1": 0.009615,
         "2": 0.009766,
         "3": 0.009921,
-        "4": 0.010070,
+        "4": 0.01007,
         "5": 0.010225,
         "6": 0.010373
       },
@@ -97,87 +97,167 @@
     {
       "name": "玉ちゃんトロフィー・ブロンズ",
       "description": "ボーナス終了画面で玉ちゃんブロンズトロフィーが出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548",
       "id": "トロフィーブロンズ"
     },
     {
       "name": "玉ちゃんトロフィー・シルバー",
       "description": "ボーナス終了画面で玉ちゃんシルバートロフィーが出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E",
       "id": "トロフィーシルバー"
     },
     {
       "name": "玉ちゃんトロフィー・ゴールド",
       "description": "ボーナス終了画面で玉ちゃんゴールドトロフィーが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700",
       "id": "トロフィーゴールド"
     },
     {
       "name": "玉ちゃんトロフィー・ゼブラ",
       "description": "ボーナス終了画面で玉ちゃんゼブラトロフィーが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#212121",
       "id": "トロフィーゼブラ"
     },
     {
       "name": "玉ちゃんトロフィー・レインボー",
       "description": "ボーナス終了画面で玉ちゃんレインボートロフィーが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF5722",
       "id": "トロフィーレインボー"
     },
     {
       "name": "終了画面・全員集合",
       "description": "ボーナス失敗時/AT終了時に全員集合画面が出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3",
       "id": "終了画面全員集合"
     },
     {
       "name": "終了画面・加賀＆赤城",
       "description": "ボーナス失敗時/AT終了時に加賀＆赤城画面が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800",
       "id": "終了画面加賀赤城"
     },
     {
       "name": "終了画面・パーティ",
       "description": "ボーナス失敗時/AT終了時にパーティ画面が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0",
       "id": "終了画面パーティ"
     },
     {
       "name": "加賀バトル勝利ボイス「たぁーのしいなぁー！」",
       "description": "加賀バトル勝利時裏ボタンで特殊ボイスが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "勝利ボイス設定5以上"
     },
     {
       "name": "加賀バトル勝利ボイス「赤城の愛～」",
       "description": "加賀バトル勝利時裏ボタンで赤城ボイスが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336",
       "id": "勝利ボイス設定6"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "京楽製AT機。6段階設定（1-6）。共通ベル・チェリー・スイカ確率に設定差。玉ちゃんトロフィー・終了画面・加賀バトル勝利ボイスで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン"
 }

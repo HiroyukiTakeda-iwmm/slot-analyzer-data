@@ -7,72 +7,144 @@
       "id": "trophy_bronze",
       "name": "アリストロフィー 銅",
       "description": "ST終了画面",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "trophy_silver",
       "name": "アリストロフィー 銀",
       "description": "ST終了画面",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "trophy_gold",
       "name": "アリストロフィー 金",
       "description": "ST終了画面",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_clover",
       "name": "アリストロフィー クローバー柄",
       "description": "ST終了画面",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "trophy_rainbow",
       "name": "アリストロフィー 虹",
       "description": "ST終了画面",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "story_4th_season",
       "name": "ギャラクシーボーナス中フォースシーズン",
       "description": "ストーリー紹介がフォースシーズン",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "birthday_char",
       "name": "ギャラクシーボーナス終了画面 キャラ誕生日イラスト",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "end_screen_protagonist",
       "name": "ギャラクシーボーナス終了画面 ラインハルトorヤン",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "end_screen_april_fool",
       "name": "ギャラクシーボーナス終了画面 キャラ集合（4/1）",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -125,7 +197,7 @@
         "2": 0.003943,
         "3": 0.004016,
         "4": 0.004591,
-        "5": 0.004990,
+        "5": 0.00499,
         "6": 0.005211
       },
       "color": "#2196F3",
@@ -136,7 +208,7 @@
       "name": "ST初当たり確率",
       "description": "設定1: 1/393.7、設定6: 1/259.9。大きな設定差",
       "probabilities": {
-        "1": 0.002540,
+        "1": 0.00254,
         "2": 0.002574,
         "3": 0.002682,
         "4": 0.003266,
@@ -148,7 +220,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、ななプレス、DMMぱちタウン"
 }
