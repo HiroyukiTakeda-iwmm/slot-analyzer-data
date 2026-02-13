@@ -38,88 +38,176 @@
       "id": "sammy_trophy_bronze",
       "name": "サミートロフィー銅",
       "description": "ST非当選の駿城ボーナス終了時等に出現",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "sammy_trophy_silver",
       "name": "サミートロフィー銀",
       "description": "ST非当選の駿城ボーナス終了時等に出現",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "sammy_trophy_gold",
       "name": "サミートロフィー金",
       "description": "ST非当選の駿城ボーナス終了時等に出現",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "sammy_trophy_kirin",
       "name": "サミートロフィーキリン柄",
       "description": "ST非当選の駿城ボーナス終了時等に出現",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "sammy_trophy_rainbow",
       "name": "サミートロフィー虹",
       "description": "ST非当選の駿城ボーナス終了時等に出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "omikuji_bronze",
       "name": "おみくじ小吉（銅）",
       "description": "通常時サブ液晶に出現",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "omikuji_silver",
       "name": "おみくじ中吉（銀）",
       "description": "通常時サブ液晶に出現",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "omikuji_gold",
       "name": "おみくじ大吉（金）",
       "description": "通常時サブ液晶に出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "kabaneri_ep7",
       "name": "カバネリボーナス中エピソード第7話",
       "description": "ボーナス中残り50枚到達時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#2196F3"
     },
     {
       "id": "kabaneri_456over",
       "name": "獲得枚数456枚OVER表示",
       "description": "ST/ボーナス終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "kabaneri_666over",
       "name": "獲得枚数666枚OVER表示",
       "description": "ST/ボーナス終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -157,7 +245,7 @@
         "3": 0.005907,
         "4": 0.006313,
         "5": 0.006868,
-        "6": 0.007310
+        "6": 0.00731
       },
       "color": "#FF9800",
       "displayOrder": 2
@@ -180,7 +268,7 @@
   ],
   "voiceCounts": [],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン、すろぱちくえすと"
 }

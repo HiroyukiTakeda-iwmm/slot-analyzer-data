@@ -98,62 +98,118 @@
       "id": "end_kirito_silica",
       "name": "AT終了画面 キリト＆シリカ",
       "description": "AT終了画面でキリト＆シリカが出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "end_asuna_lisbeth",
       "name": "AT終了画面 アスナ＆リズベット",
       "description": "AT終了画面でアスナ＆リズベットが出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "end_asuna_yui",
       "name": "AT終了画面 アスナ＆ユイ",
       "description": "AT終了画面でアスナ＆ユイが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "end_kirito_sachi",
       "name": "AT終了画面 キリト＆サチ",
       "description": "AT終了画面でキリト＆サチが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "end_uniform",
       "name": "AT終了画面 制服",
       "description": "AT終了画面で制服画面が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "medals_456",
       "name": "獲得枚数 456枚OVER",
       "description": "獲得枚数456枚OVER表示で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "medals_666",
       "name": "獲得枚数 666枚OVER",
       "description": "獲得枚数666枚OVER表示で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "大都技研のスマスロAT機。コンプリート機能搭載。共通ベル確率に設定差。CZ確率・ボーナス確率に段階的な設定差。AT終了画面と獲得枚数表示で設定示唆。",
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ななプレス"
 }

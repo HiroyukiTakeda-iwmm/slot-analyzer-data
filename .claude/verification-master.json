@@ -2,8 +2,8 @@
   "description": "一撃クロスチェック検証マスター",
   "created": "2026-02-14",
   "totalMachines": 100,
-  "verified": 39,
-  "remaining": 61,
+  "verified": 47,
+  "remaining": 53,
   "batches": [
     {
       "id": "batch-1",
@@ -37,18 +37,18 @@
     },
     {
       "id": "batch-3",
-      "status": "pending",
+      "status": "done",
       "priority": "medium",
-      "note": "v1.1 人気AT/ST機（8台）",
+      "note": "v1.1 人気AT/ST機（8台・検証済み）",
       "machines": [
-        { "path": "machines/hokuto/hokuto-ken.json", "name": "北斗の拳", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/monogatari/bakemonogatari.json", "name": "化物語", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/eva/shin-eva.json", "name": "シンエヴァ", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/gundam/gundam-seed.json", "name": "ガンダムSEED", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/kabaneri/kabaneri-6.5.json", "name": "カバネリ6.5", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/kabaneri/kabaneri-unato.json", "name": "カバネリ海門", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/rezero/rezero-season2.json", "name": "リゼロSeason2", "version": "1.1", "status": "pending", "issues": [] },
-        { "path": "machines/sao/sao.json", "name": "SAO", "version": "1.1", "status": "pending", "issues": [] }
+        { "path": "machines/hokuto/hokuto-ken.json", "name": "北斗の拳", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/monogatari/bakemonogatari.json", "name": "化物語", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/eva/shin-eva.json", "name": "シンエヴァ", "version": "1.2", "status": "fixed", "issues": ["confirmationEventsに銀枠/金枠/虹枠追加", "獲得枚数表示を具体化"] },
+        { "path": "machines/gundam/gundam-seed.json", "name": "ガンダムSEED", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/kabaneri/kabaneri-6.5.json", "name": "カバネリ6.5", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/kabaneri/kabaneri-unato.json", "name": "カバネリ海門", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/rezero/rezero-season2.json", "name": "リゼロSeason2", "version": "1.2", "status": "ok", "issues": [] },
+        { "path": "machines/sao/sao.json", "name": "SAO", "version": "1.2", "status": "ok", "issues": [] }
       ]
     },
     {

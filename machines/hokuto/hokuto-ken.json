@@ -6,9 +6,9 @@
       "name": "弱スイカ",
       "probabilities": {
         "1": 0.009174,
-        "2": 0.009200,
+        "2": 0.0092,
         "4": 0.009443,
-        "5": 0.009930,
+        "5": 0.00993,
         "6": 0.010173
       },
       "hasSettingDiff": true,
@@ -23,7 +23,7 @@
         "2": 0.002472,
         "4": 0.002655,
         "5": 0.002838,
-        "6": 0.002960
+        "6": 0.00296
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
@@ -47,7 +47,7 @@
     {
       "name": "中段チェリー合算",
       "probabilities": {
-        "1": 0.004760,
+        "1": 0.00476,
         "2": 0.004883,
         "4": 0.005005,
         "5": 0.005128,
@@ -75,9 +75,9 @@
     {
       "name": "リーチ目役",
       "probabilities": {
-        "1": 0.000061,
-        "2": 0.000076,
-        "4": 0.000092,
+        "1": 6.1e-05,
+        "2": 7.6e-05,
+        "4": 9.2e-05,
         "5": 0.000107,
         "6": 0.000122
       },
@@ -91,64 +91,120 @@
     {
       "name": "金トロフィー",
       "description": "AT終了時に出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700",
       "id": "金トロフィー"
     },
     {
       "name": "キリントロフィー",
       "description": "AT終了時に出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FFC107",
       "id": "キリントロフィー"
     },
     {
       "name": "レインボートロフィー",
       "description": "AT終了時に出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#FF5722",
       "id": "レインボートロフィー"
     },
     {
       "name": "ケンシロウ「戦うのが…宿命だ!!」",
       "description": "AT終了後タッチで設定4以上の期待大",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#2196F3",
       "id": "ボイス設定4以上"
     },
     {
       "name": "ユリア「まちつづけるのが…」",
       "description": "AT終了後タッチで設定5以上の期待大",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#E91E63",
       "id": "ボイス設定5以上"
     },
     {
       "name": "456枚突破表示",
       "description": "AT中に表示で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800",
       "id": "456枚突破"
     },
     {
       "name": "666枚突破表示",
       "description": "AT中に表示で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#F44336",
       "id": "666枚突破"
     },
     {
       "name": "初代リン・ユリア復活演出",
       "description": "継続バトル復活時に初代映像で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#9C27B0",
       "id": "初代復活演出"
     }
@@ -161,19 +217,19 @@
       "triggerName": "AT終了",
       "targetName": "引き戻し成功",
       "probabilities": {
-        "1": 0.10,
+        "1": 0.1,
         "2": 0.12,
         "4": 0.16,
         "5": 0.18,
-        "6": 0.20
+        "6": 0.2
       },
       "color": "#FF9800",
       "displayOrder": 1
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "スマスロ北斗の拳。設定L,1,2,4,5,6の構成（設定3なし）。弱スイカ・強スイカ合算・中段チェリー合算・リーチ目役に設定差あり。トロフィー・ボイス・獲得枚数表示で設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "でちゃう、一撃、ちょんぼりすた"
 }
