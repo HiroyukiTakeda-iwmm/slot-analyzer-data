@@ -5,7 +5,7 @@
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.010730,
+        "1": 0.01073,
         "2": 0.011099,
         "3": 0.011561,
         "4": 0.012019,
@@ -20,12 +20,12 @@
     {
       "name": "弱チェリー",
       "probabilities": {
-        "1": 0.007680,
-        "2": 0.007680,
-        "3": 0.007680,
-        "4": 0.007680,
-        "5": 0.007680,
-        "6": 0.007680
+        "1": 0.00768,
+        "2": 0.00768,
+        "3": 0.00768,
+        "4": 0.00768,
+        "5": 0.00768,
+        "6": 0.00768
       },
       "hasSettingDiff": false,
       "displayOrder": 2,
@@ -65,8 +65,8 @@
     {
       "name": "C.C.揃い（通常時・AT直撃）",
       "probabilities": {
-        "1": 0.000072,
-        "2": 0.000095,
+        "1": 7.2e-05,
+        "2": 9.5e-05,
         "3": 0.000154,
         "4": 0.000198,
         "5": 0.000201,
@@ -82,55 +82,103 @@
     {
       "name": "サミートロフィー銅",
       "description": "ボーナス終了後にサミートロフィー銅が出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548",
       "id": "トロフィー銅"
     },
     {
       "name": "サミートロフィー銀",
       "description": "ボーナス終了後にサミートロフィー銀が出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E",
       "id": "トロフィー銀"
     },
     {
       "name": "サミートロフィー金",
       "description": "ボーナス終了後にサミートロフィー金が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700",
       "id": "トロフィー金"
     },
     {
       "name": "サミートロフィーキリン",
       "description": "ボーナス終了後にサミートロフィーキリンが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFEB3B",
       "id": "トロフィーキリン"
     },
     {
       "name": "サミートロフィー虹",
       "description": "ボーナス終了後にサミートロフィー虹が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF5722",
       "id": "トロフィー虹"
     },
     {
       "name": "順押し斜めC.C.揃い",
       "description": "RT0/RT1で順押しナビ時に斜めC.C.揃いが出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#4CAF50",
       "id": "斜めCC設定3以上"
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
+  "version": "1.2",
   "description": "サミー製AT+ボーナス機。6段階設定（1-6）。スイカ確率とC.C.揃い出現率に設定差。CZ戦略戦の成功期待度に設定差。サミートロフィーと順押し斜めC.C.揃いで設定示唆。",
-  "lastUpdated": "2026-02-01",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、DMMぱちタウン"
 }

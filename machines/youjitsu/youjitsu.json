@@ -38,64 +38,128 @@
       "id": "end_horikita_special",
       "name": "AT終了画面 堀北（特殊）",
       "description": "AT終了画面で堀北（特殊）が出現で設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "end_sakayanagi_special",
       "name": "AT終了画面 坂柳（特殊）",
       "description": "AT終了画面で坂柳（特殊）が出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "end_ryuen_special",
       "name": "AT終了画面 龍園（特殊）",
       "description": "AT終了画面で龍園（特殊）が出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "end_ryuen_vs_ayanokoji",
       "name": "AT終了画面 龍園VS綾小路",
       "description": "AT終了画面で龍園VS綾小路が出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "medals_456",
       "name": "獲得枚数 456枚OVER",
       "description": "獲得枚数456枚OVER表示で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "medals_666",
       "name": "獲得枚数 666枚OVER",
       "description": "獲得枚数666枚OVER表示で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336"
     },
     {
       "id": "chara_ayanokoji_ryuen",
       "name": "キャラ紹介 綾小路→龍園",
       "description": "ボーナス中キャラ紹介で綾小路→龍園の組み合わせで設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "chara_horikita_horikita_gaku",
       "name": "キャラ紹介 堀北→堀北学",
       "description": "ボーナス中キャラ紹介で堀北→堀北学の組み合わせで設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     }
   ],
@@ -106,7 +170,7 @@
       "description": "設定1: 6.3%、設定6: 18.8%",
       "probabilities": {
         "1": 0.063,
-        "2": 0.070,
+        "2": 0.07,
         "3": 0.086,
         "4": 0.113,
         "5": 0.152,
@@ -122,7 +186,7 @@
       "probabilities": {
         "1": 0.103,
         "2": 0.122,
-        "3": 0.140,
+        "3": 0.14,
         "4": 0.152,
         "5": 0.163,
         "6": 0.173
@@ -137,9 +201,9 @@
       "probabilities": {
         "1": 0.005,
         "2": 0.006,
-        "3": 0.010,
+        "3": 0.01,
         "4": 0.015,
-        "5": 0.020,
+        "5": 0.02,
         "6": 0.025
       },
       "color": "#FFD700",
@@ -150,7 +214,7 @@
       "name": "連続演出成功時赤ボタン出現率",
       "description": "設定1: 1.0%、設定6: 1.9%",
       "probabilities": {
-        "1": 0.010,
+        "1": 0.01,
         "2": 0.012,
         "3": 0.014,
         "4": 0.015,
@@ -185,7 +249,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-02-01",
+  "version": "1.2",
+  "lastUpdated": "2026-02-14",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }
