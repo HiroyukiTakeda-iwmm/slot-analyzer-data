@@ -19,7 +19,7 @@
     {
       "name": "弱チャンス役合算",
       "probabilities": {
-        "1": 0.026110,
+        "1": 0.02611,
         "2": 0.026596,
         "4": 0.027322,
         "5": 0.028571,
@@ -33,7 +33,7 @@
     {
       "name": "正義超人チャレンジ突入率",
       "probabilities": {
-        "1": 0.010020,
+        "1": 0.01002,
         "2": 0.010142,
         "4": 0.010384,
         "5": 0.010616,
@@ -50,80 +50,150 @@
       "id": "trophy_copper",
       "name": "ケロットトロフィー 銅",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "id": "trophy_gold",
       "name": "ケロットトロフィー 金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_kerot",
       "name": "ケロットトロフィー ケロット柄",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "trophy_rainbow",
       "name": "ケロットトロフィー 虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     },
     {
       "id": "menu_natsuko",
       "name": "メニュー画面 ナツコさん",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "menu_referee",
       "name": "メニュー画面 わたしはレフェリー",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "voice_natsuko",
       "name": "ボイス ナツコ すごいすごい！",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "voice_bibinba",
       "name": "ボイス ビビンバ おめでとう！",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "power_456",
       "name": "上乗せ +456万パワー",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "power_666",
       "name": "上乗せ +666万パワー",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#F44336"
     }
   ],
@@ -131,5 +201,12 @@
   "version": "1.2",
   "description": "山佐のスマスロAT機。設定3非搭載の5段階設定（1,2,4,5,6）。弱チャンス役合算に設定差あり（強は全設定共通1/390.1）。ケロットトロフィー・メニュー画面・エンディングボイスで設定示唆。",
   "lastUpdated": "2026-02-14",
-  "source": "ちょんぼりすた、一撃、スロパチクエスト"
+  "source": "ちょんぼりすた、一撃、スロパチクエスト",
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ]
 }

@@ -191,5 +191,11 @@
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-02-14",
-  "source": "ちょんぼりすた、一撃、DMMぱちタウン"
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン",
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ]
 }

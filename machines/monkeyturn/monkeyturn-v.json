@@ -6,7 +6,7 @@
       "name": "5枚役",
       "probabilities": {
         "1": 0.026213,
-        "2": 0.027130,
+        "2": 0.02713,
         "4": 0.033036,
         "5": 0.040799,
         "6": 0.044385
@@ -109,11 +109,11 @@
       "triggerName": "ライバルモード抽選",
       "targetName": "ライバルモード突入",
       "probabilities": {
-        "1": 0.300,
+        "1": 0.3,
         "2": 0.316,
         "4": 0.363,
         "5": 0.417,
-        "6": 0.440
+        "6": 0.44
       },
       "color": "#2196F3",
       "displayOrder": 1
@@ -128,7 +128,7 @@
         "1": 0.016,
         "2": 0.017,
         "4": 0.022,
-        "5": 0.030,
+        "5": 0.03,
         "6": 0.037
       },
       "color": "#4CAF50",
@@ -140,88 +140,165 @@
       "id": "trophy_copper",
       "name": "ケロットトロフィー銅",
       "description": "AT終了画面で銅トロフィーが出現で設定2以上確定",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "trophy_gold",
       "name": "ケロットトロフィー金",
       "description": "AT終了画面で金トロフィーが出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_kerot",
       "name": "ケロットトロフィーケロット",
       "description": "AT終了画面でケロットトロフィーが出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "trophy_rainbow",
       "name": "ケロットトロフィー虹",
       "description": "AT終了画面で虹トロフィーが出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "medals_456",
       "name": "456枚表示",
       "description": "AT中に456枚表示で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "medals_666",
       "name": "666枚表示",
       "description": "AT中に666枚表示で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#F44336"
     },
     {
       "id": "medals_803",
       "name": "803枚表示",
       "description": "AT中に803枚表示で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "ticket_rainbow",
       "name": "舟券虹（ケロット柄）",
       "description": "サブ液晶の舟券で虹（ケロット柄）が出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "enoki_purple_lamp",
       "name": "榎木「これが艇王…」紫ランプ",
       "description": "激走チャージ終了時に榎木セリフ+紫ランプで設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#673AB7"
     },
     {
       "id": "sumi_purple_ed",
       "name": "澄ボイス紫ランプ（ED中）",
       "description": "エンディング中レア役成立時に澄ボイス+紫ランプで設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "hatano_aoshima_screen",
       "name": "波多野&青島画面（ラウンド開始）",
       "description": "ラウンド開始画面で波多野&青島画面が出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#2196F3"
     }
   ],
@@ -229,5 +306,12 @@
   "version": "1.2",
   "description": "山佐製AT機。設定L,1,2,4,5,6の構成（設定3なし）。AT初当たり確率と5枚役確率に設定差あり。ライバルモード突入率に設定差。ケロットトロフィー・獲得枚数表示・舟券で設定示唆。",
   "lastUpdated": "2026-02-11",
-  "source": "一撃、ちょんぼりすた、ナナプレス、パチーモ"
+  "source": "一撃、ちょんぼりすた、ナナプレス、パチーモ",
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ]
 }

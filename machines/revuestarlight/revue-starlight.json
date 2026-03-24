@@ -35,7 +35,7 @@
       "probabilities": {
         "1": 0.001608,
         "2": 0.001655,
-        "4": 0.001900,
+        "4": 0.0019,
         "5": 0.002001,
         "6": 0.002151
       },
@@ -64,56 +64,105 @@
       "id": "end_effect_blue",
       "name": "BB終了画面 エフェクト（青）",
       "description": "BB終了画面で青エフェクトが出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3"
     },
     {
       "id": "end_effect_red",
       "name": "BB終了画面 エフェクト（赤）",
       "description": "BB終了画面で赤エフェクトが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#F44336"
     },
     {
       "id": "end_effect_gold",
       "name": "BB終了画面 エフェクト（金）",
       "description": "BB終了画面で金エフェクトが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "end_effect_rainbow",
       "name": "BB終了画面 エフェクト（虹）",
       "description": "BB終了画面で虹エフェクトが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "voice_setting2",
       "name": "キリンボイス 設定2以上",
       "description": "AT終了時「あなたにもあるでしょう？眩しい舞台が」で設定2以上濃厚",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "voice_setting4",
       "name": "キリンボイス 設定4以上",
       "description": "AT終了時「運命の二人…ですか。わかります。」で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "voice_setting6",
       "name": "キリンボイス 設定6濃厚",
       "description": "AT終了時「これこそ私が観たかった舞台 わかります！」で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     }
   ],
@@ -121,5 +170,12 @@
   "version": "1.2",
   "description": "OIZUMIのスマスロA+AT機。設定3非搭載の5段階設定。小役確率に設定差なし。CZ確率・REG確率・AT初当りに設定差。ボーナス終了画面エフェクトとキリンボイスで設定示唆。",
   "lastUpdated": "2026-02-14",
-  "source": "ちょんぼりすた、一撃、ななプレス"
+  "source": "ちょんぼりすた、一撃、ななプレス",
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ]
 }
