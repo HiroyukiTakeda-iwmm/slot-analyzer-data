@@ -9,7 +9,7 @@
  *   node scripts/validate.mjs --index-only  # index整合性チェックのみ
  */
 
-import { readFileSync, readdirSync, statSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { validateSchemas } from './validators/schema-validator.mjs';

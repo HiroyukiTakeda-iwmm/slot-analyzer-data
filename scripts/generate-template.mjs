@@ -15,7 +15,7 @@
  *   --settings 利用可能設定（カンマ区切り、デフォルト: 1,2,3,4,5,6）
  */
 
-import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'fs';
+import { writeFileSync, mkdirSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
