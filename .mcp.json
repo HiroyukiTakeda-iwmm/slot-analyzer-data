@@ -1,0 +1,6 @@
+{
+  "mcpServers": {
+    "chrome-devtools": { "disabled": true },
+    "serena": { "disabled": true }
+  }
+}

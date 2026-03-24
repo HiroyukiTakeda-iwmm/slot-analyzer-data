@@ -1,0 +1,308 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "machine.schema.json",
+  "title": "Machine Data",
+  "description": "パチスロ機種の設定推測データスキーマ",
+  "type": "object",
+  "required": ["name", "type", "roles"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "機種名"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["A-type", "AT", "ART", "A+RT", "A+AT", "A+ART", "BT"],
+      "description": "機種タイプ"
+    },
+    "availableSettings": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[1-6LV]$"
+      },
+      "minItems": 2,
+      "uniqueItems": true,
+      "description": "利用可能な設定段階（省略時は1-6）"
+    },
+    "roles": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/role" },
+      "description": "小役データ"
+    },
+    "confirmationEvents": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/confirmationEvent" },
+      "description": "設定確定演出"
+    },
+    "zones": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/zone" },
+      "description": "ゾーン定義"
+    },
+    "endScreens": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/endScreen" },
+      "description": "終了画面"
+    },
+    "endScreenGroups": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/endScreenGroup" },
+      "description": "終了画面グループ"
+    },
+    "voiceCounts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/voiceCount" },
+      "description": "ボイスカウント"
+    },
+    "musicCounts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/musicCount" },
+      "description": "楽曲カウント"
+    },
+    "effectCounts": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/effectCount" },
+      "description": "演出カウント"
+    },
+    "trialSuccessRates": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/trialSuccessRate" },
+      "description": "試行/成功率データ"
+    },
+    "modeTransitions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/modeTransition" },
+      "description": "モード移行率"
+    },
+    "specialSettings": {
+      "type": "object",
+      "description": "特殊設定データ"
+    },
+    "notes": {
+      "type": "string",
+      "description": "補足メモ"
+    },
+    "author": {
+      "type": "string",
+      "description": "データ作成者"
+    },
+    "version": {
+      "type": "string",
+      "description": "データバージョン"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "最終更新日"
+    },
+    "source": {
+      "type": "string",
+      "description": "データソース"
+    },
+    "description": {
+      "type": "string",
+      "description": "機種の概要説明"
+    }
+  },
+  "definitions": {
+    "probabilities": {
+      "type": "object",
+      "patternProperties": {
+        "^[1-6LV]$": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "role": {
+      "type": "object",
+      "required": ["name", "probabilities", "hasSettingDiff", "displayOrder"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "hasSettingDiff": { "type": "boolean" },
+        "displayOrder": { "type": "integer", "minimum": 1 },
+        "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" },
+        "description": { "type": "string" },
+        "incrementValue": { "type": "number", "minimum": 1 },
+        "icon": { "type": "string" },
+        "category": { "type": "string", "enum": ["role", "confirmation"] }
+      }
+    },
+    "confirmationEvent": {
+      "type": "object",
+      "required": ["name", "confirmedSettings", "excludedSettings"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "confirmedSettings": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[1-6LV]$" }
+        },
+        "excludedSettings": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[1-6LV]$" }
+        },
+        "color": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+      }
+    },
+    "zone": {
+      "type": "object",
+      "required": ["name", "isDefault", "roles"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "isDefault": { "type": "boolean" },
+        "color": { "type": "string" },
+        "roles": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/role" }
+        },
+        "defaultIncrementValue": { "type": "number" },
+        "gameCountLabel": { "type": "string" }
+      }
+    },
+    "endScreen": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["bonus_end", "at_end", "bt_start", "st_end", "big_end", "bonus", "other"]
+        },
+        "hint": { "type": "string" },
+        "description": { "type": "string" },
+        "confirmedSettings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "excludedSettings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "color": { "type": "string" },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "設定別パターン（レガシー形式）"
+        },
+        "distribution": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "設定別分布（レガシー形式）"
+        }
+      }
+    },
+    "endScreenGroup": {
+      "type": "object",
+      "required": ["name", "endScreens"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "displayOrder": { "type": "integer", "minimum": 1 },
+        "color": { "type": "string" },
+        "endScreens": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/endScreen" }
+        }
+      }
+    },
+    "voiceCount": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "hint": { "type": "string" },
+        "description": { "type": "string" },
+        "confirmedSettings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "excludedSettings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "patterns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "設定別パターン"
+        },
+        "color": { "type": "string" }
+      }
+    },
+    "musicCount": {
+      "type": "object",
+      "required": ["name", "probabilities"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "hint": { "type": "string" },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "color": { "type": "string" }
+      }
+    },
+    "effectCount": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "hint": { "type": "string" },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "color": { "type": "string" }
+      }
+    },
+    "trialSuccessRate": {
+      "type": "object",
+      "required": ["name", "probabilities"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string" },
+        "triggerName": { "type": "string" },
+        "targetName": { "type": "string" },
+        "probabilities": { "$ref": "#/definitions/probabilities" },
+        "color": { "type": "string" },
+        "displayOrder": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "modeTransition": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" }
+      }
+    }
+  }
+}

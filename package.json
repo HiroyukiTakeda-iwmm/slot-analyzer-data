@@ -1,0 +1,23 @@
+{
+  "name": "slot-analyzer-data",
+  "version": "2.6.0",
+  "description": "パチスロ機種設定推測データリポジトリ",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "validate:schema": "node scripts/validate.mjs --schema-only",
+    "validate:index": "node scripts/validate.mjs --index-only",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "devDependencies": {
+    "vitest": "^3.0.0",
+    "husky": "^9.1.0"
+  },
+  "license": "MIT"
+}

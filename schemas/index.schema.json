@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "index.schema.json",
+  "title": "Machine Index",
+  "description": "機種一覧インデックスのスキーマ",
+  "type": "object",
+  "required": ["version", "updatedAt", "machines"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "インデックスバージョン"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "最終更新日時（ISO 8601）"
+    },
+    "machines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "type", "author", "version", "file"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9.-]+$",
+            "description": "一意識別子（kebab-case、ドット許可）"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "機種表示名"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["A-type", "AT", "ART", "A+RT", "A+AT", "A+ART", "BT"],
+            "description": "機種タイプ"
+          },
+          "author": {
+            "type": "string",
+            "description": "作成者"
+          },
+          "version": {
+            "type": "string",
+            "description": "データバージョン"
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+/[a-z0-9.-]+\\.json$",
+            "description": "JSONファイルの相対パス"
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "検索用タグ"
+          },
+          "description": {
+            "type": "string",
+            "description": "設定差の概要説明"
+          }
+        }
+      }
+    }
+  }
+}

@@ -94,10 +94,10 @@
         "5": 0.03984,
         "6": 0.03984
       },
-      "hasSettingDiff": false,
+      "hasSettingDiff": true,
       "displayOrder": 7,
       "color": "#F44336",
-      "description": "ほぼ全設定共通: 約1/25.2"
+      "description": "設定1,2: 1/25.2、設定5,6: 1/25.1。微差あり"
     },
     {
       "name": "確定チェリー",
@@ -120,10 +120,10 @@
         "5": 0.13333,
         "6": 0.13158
       },
-      "hasSettingDiff": false,
+      "hasSettingDiff": true,
       "displayOrder": 9,
       "color": "#607D8B",
-      "description": "ほぼ全設定共通: 約1/7.5"
+      "description": "設定6のみ1/7.6、他設定1/7.5。微差あり"
     }
   ],
   "confirmationEvents": [
