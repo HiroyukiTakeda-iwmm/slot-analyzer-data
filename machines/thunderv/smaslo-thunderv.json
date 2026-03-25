@@ -1,0 +1,219 @@
+{
+  "name": "スマスロ サンダーV",
+  "type": "BT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "ベルA",
+      "probabilities": {
+        "1": 0.061350,
+        "2": 0.063291,
+        "5": 0.065359,
+        "6": 0.067568
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "設定1: 1/16.3、設定6: 1/14.8"
+    },
+    {
+      "name": "ベルB",
+      "probabilities": {
+        "1": 0.018903,
+        "2": 0.016103,
+        "5": 0.018553,
+        "6": 0.021231
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FFC107",
+      "description": "設定1: 1/52.9、設定6: 1/47.1。設定6が最も高い"
+    },
+    {
+      "name": "チェリーB",
+      "probabilities": {
+        "1": 0.075758,
+        "2": 0.082645,
+        "5": 0.080000,
+        "6": 0.081967
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "設定1: 1/13.2、設定2: 1/12.1。設定2が最も高い"
+    },
+    {
+      "name": "スイカA",
+      "probabilities": {
+        "1": 0.009234,
+        "2": 0.009124,
+        "5": 0.010040,
+        "6": 0.009813
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "設定1: 1/108.3、設定5: 1/99.6。設定5が最も高い"
+    },
+    {
+      "name": "スイカB",
+      "probabilities": {
+        "1": 0.003097,
+        "2": 0.003037,
+        "5": 0.003372,
+        "6": 0.003293
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "設定1: 1/322.8、設定5: 1/296.6。設定5が最も高い"
+    },
+    {
+      "name": "チェリーA",
+      "probabilities": {
+        "1": 0.010020,
+        "2": 0.010020,
+        "5": 0.010020,
+        "6": 0.010020
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/99.8"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#9E9E9E",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.003601,
+        "2": 0.003632,
+        "5": 0.003692,
+        "6": 0.003784
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#FF5722",
+      "description": "設定1: 1/277.7、設定6: 1/264.3"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.002304,
+        "2": 0.002533,
+        "5": 0.002899,
+        "6": 0.003189
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 9,
+      "color": "#2196F3",
+      "description": "設定1: 1/434.1、設定6: 1/313.6。RB確率に大きな設定差"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005892,
+        "2": 0.006165,
+        "5": 0.006696,
+        "6": 0.006973
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/169.7、設定6: 1/143.4"
+    },
+    {
+      "name": "BIG中ベルC（高設定示唆弱）",
+      "probabilities": {
+        "1": 0.027778,
+        "2": 0.027778,
+        "5": 0.041152,
+        "6": 0.041152
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 11,
+      "color": "#FF9800",
+      "description": "設定1-2: 1/36.0、設定5-6: 1/24.3。BIG中に出現で高設定示唆"
+    },
+    {
+      "name": "BIG中リーチ目（高設定示唆強）",
+      "probabilities": {
+        "1": 0.000092,
+        "2": 0.000092,
+        "5": 0.002289,
+        "6": 0.002289
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 12,
+      "color": "#FF9800",
+      "description": "設定1-2: 1/10922.7、設定5-6: 1/436.9。出現で設定5以上濃厚"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "RB終了画面 イッカククン",
+      "description": "RB終了画面でイッカククンキャラが出現。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "BIG終了画面 放電パターン",
+      "description": "BIG終了画面でレアパターン（放電演出）が出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "1G連BIG終了画面 流星パターン",
+      "description": "1G連BB終了時に流星通過のレアパターンが出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "BIG終了 通常画面",
+      "type": "bonus_end",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "BIG終了 放電画面",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚"
+    },
+    {
+      "name": "1G連BIG終了 流星画面",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚"
+    },
+    {
+      "name": "RB終了 通常画面（END表示）",
+      "type": "bonus_end",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "RB終了 イッカククン画面",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、DMMぱちタウン(p-town.dmm.com)、ななプレス(nana-press.com)"
+}

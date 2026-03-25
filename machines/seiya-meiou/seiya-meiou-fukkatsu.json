@@ -1,0 +1,333 @@
+{
+  "name": "S聖闘士星矢 冥王復活",
+  "type": "AT",
+  "availableSettings": ["L", "1", "2", "4", "5", "6"],
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "L": 0.012210,
+        "1": 0.012210,
+        "2": 0.012210,
+        "4": 0.012210,
+        "5": 0.012210,
+        "6": 0.012210
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/81.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "L": 0.002747,
+        "1": 0.002747,
+        "2": 0.002747,
+        "4": 0.002747,
+        "5": 0.002747,
+        "6": 0.002747
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/364.1"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "L": 0.013736,
+        "1": 0.013736,
+        "2": 0.013736,
+        "4": 0.013736,
+        "5": 0.013736,
+        "6": 0.013736
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/72.8"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "L": 0.005495,
+        "1": 0.005495,
+        "2": 0.005495,
+        "4": 0.005495,
+        "5": 0.005495,
+        "6": 0.005495
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/182.0"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "L": 0.051546,
+        "1": 0.051546,
+        "2": 0.051546,
+        "4": 0.051546,
+        "5": 0.051546,
+        "6": 0.051546
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/19.4"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "L": 0.103093,
+        "1": 0.103093,
+        "2": 0.103093,
+        "4": 0.103093,
+        "5": 0.103093,
+        "6": 0.103093
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/9.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "sb_start_shun",
+      "name": "SBラウンド開始画面 瞬",
+      "description": "SB中ラウンド継続画面に瞬が出現",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["L", "1", "5"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "sb_start_hyoga",
+      "name": "SBラウンド開始画面 氷河",
+      "description": "SB中ラウンド継続画面に氷河が出現",
+      "confirmedSettings": ["1", "5"],
+      "excludedSettings": ["L", "2", "4", "6"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "sb_start_shiryu",
+      "name": "SBラウンド開始画面 紫龍",
+      "description": "SB中ラウンド継続画面に紫龍が出現。設定2以上濃厚かつ高設定期待度アップ",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["L", "1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "sb_start_charon",
+      "name": "SBラウンド開始画面 カロン",
+      "description": "SB中ラウンド継続画面にカロンが出現。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["L", "1", "2", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "sb_end_seiya_seika",
+      "name": "SB終了画面 星矢＆星華",
+      "description": "SB敗北画面。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["L", "1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "sb_end_shun_pandora_hades",
+      "name": "SB終了画面 瞬＆パンドラ＆ハーデス",
+      "description": "SB敗北画面。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "sb_end_seiya_saori_hades",
+      "name": "SB終了画面 星矢＆沙織＆ハーデス",
+      "description": "SB敗北画面。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "at_end_shun_pandora_hades",
+      "name": "AT終了画面 瞬＆パンドラ＆ハーデス",
+      "description": "聖闘士RUSH終了画面。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_hades_saori_seiya",
+      "name": "AT終了画面 ハーデス＆沙織＆神聖衣星矢",
+      "description": "聖闘士RUSH終了画面。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "cosmos_246",
+      "name": "小宇宙ポイント 246pt（偶数示唆）",
+      "description": "小宇宙チャージ・パンドラゾーン中の獲得ポイント。ハリセンボン・サメ・アンコウ表示",
+      "confirmedSettings": ["2", "4", "6"],
+      "excludedSettings": ["L", "1", "5"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "cosmos_456",
+      "name": "小宇宙ポイント 456pt（設定4以上示唆）",
+      "description": "小宇宙チャージ・パンドラゾーン中の獲得ポイント。サメ・エビ・アンコウ表示",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "cosmos_666",
+      "name": "小宇宙ポイント 666pt（設定6示唆）",
+      "description": "小宇宙チャージ・パンドラゾーン中の獲得ポイント。アンコウ3つ表示。レア役かつ700pt獲得時の約1/8で発生",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "ending_red_navi_not_strong_cherry",
+      "name": "ED中 赤ナビで強チェリー以外成立",
+      "description": "エンディング中レア役成立時の赤「!」ナビで強チェリー以外が成立。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "1", "2"],
+      "color": "#F44336"
+    },
+    {
+      "id": "ending_gekiatsu_strong_cherry",
+      "name": "ED中 激熱ナビで強チェリー成立",
+      "description": "エンディング中レア役成立時の激熱ナビで強チェリーが成立。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["L", "1", "2"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "ending_gekiatsu_not_strong_cherry",
+      "name": "ED中 激熱ナビで強チェリー以外成立",
+      "description": "エンディング中レア役成立時の激熱ナビで強チェリー以外が成立。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["L", "1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "panel_off",
+      "name": "待機中パネル消灯",
+      "description": "待機状態中に下パネルが常時消灯。設定L確定",
+      "confirmedSettings": ["L"],
+      "excludedSettings": ["1", "2", "4", "5", "6"],
+      "color": "#9E9E9E"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "sb_end_hades_castle",
+      "name": "SB終了画面 ハーデス城外観",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆（設定1・5）"
+    },
+    {
+      "id": "sb_end_ruined_12temples",
+      "name": "SB終了画面 荒廃した十二宮",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆（設定2・4・6）"
+    },
+    {
+      "id": "at_end_seiya",
+      "name": "AT終了画面 星矢",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "at_end_hyoga_shun",
+      "name": "AT終了画面 氷河＆瞬",
+      "type": "at_end",
+      "hint": "奇数設定示唆（設定1・5）"
+    },
+    {
+      "id": "at_end_seiya_shiryu",
+      "name": "AT終了画面 星矢＆紫龍",
+      "type": "at_end",
+      "hint": "偶数設定示唆（設定2・4・6）"
+    },
+    {
+      "id": "at_end_4saints",
+      "name": "AT終了画面 星矢＆紫龍＆氷河＆瞬",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "cz_rate",
+      "name": "CZ（冥闘士激闘）確率",
+      "description": "設定1: 1/330.7、設定6: 1/222.2。設定差が大きい主要判別要素",
+      "probabilities": {
+        "L": 0,
+        "1": 0.003024,
+        "2": 0.003490,
+        "4": 0.004153,
+        "5": 0.004384,
+        "6": 0.004500
+      },
+      "color": "#FF9800",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_rate",
+      "name": "AT（聖闘士RUSH）確率",
+      "description": "設定1: 1/562.8、設定6: 1/366.3。設定差が大きい主要判別要素",
+      "probabilities": {
+        "L": 0,
+        "1": 0.001777,
+        "2": 0.002061,
+        "4": 0.002490,
+        "5": 0.002653,
+        "6": 0.002730
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    },
+    {
+      "id": "at_direct_normal",
+      "name": "AT直撃確率（通常モード中）",
+      "description": "設定1: 1/7892.8、設定6: 1/5928.5。阿頼耶識モード中は全設定約1/1100",
+      "probabilities": {
+        "L": 0,
+        "1": 0.000127,
+        "2": 0.000142,
+        "4": 0.000161,
+        "5": 0.000166,
+        "6": 0.000169
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    },
+    {
+      "id": "gold_episode",
+      "name": "黄金想話トータル突入率",
+      "description": "設定1: 1/24930.2、設定6: 1/20426.3。AT直撃時の約1/4で発生。分母が大きいため参考程度",
+      "probabilities": {
+        "L": 0,
+        "1": 0.000040,
+        "2": 0.000043,
+        "4": 0.000047,
+        "5": 0.000048,
+        "6": 0.000049
+      },
+      "color": "#FFD700",
+      "displayOrder": 4
+    }
+  ],
+  "availableSettings": ["L", "1", "2", "4", "5", "6"],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "ちょんぼりすた、DMMぱちタウン、パチセブン、一撃、ななプレス、777パチガブ、flick7"
+}

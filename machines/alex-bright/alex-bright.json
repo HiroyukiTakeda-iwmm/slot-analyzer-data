@@ -1,0 +1,112 @@
+{
+  "name": "アレックス ブライト",
+  "type": "BT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "羽",
+      "probabilities": {
+        "1": 0.074627,
+        "2": 0.076923,
+        "5": 0.079365,
+        "6": 0.081967
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "設定1: 1/13.4、設定6: 1/12.2"
+    },
+    {
+      "name": "3枚役",
+      "probabilities": {
+        "1": 0.024691,
+        "2": 0.026247,
+        "5": 0.025510,
+        "6": 0.026110
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/40.5、設定2: 1/38.1。設定2が最も高い"
+    },
+    {
+      "name": "チェリー合算",
+      "probabilities": {
+        "1": 0.047393,
+        "2": 0.047393,
+        "5": 0.050251,
+        "6": 0.050761
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "設定1: 1/21.1、設定6: 1/19.7"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.003235,
+        "2": 0.003296,
+        "5": 0.003388,
+        "6": 0.003480
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF5722",
+      "description": "設定1: 1/309.1、設定6: 1/287.4"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.002335,
+        "2": 0.002441,
+        "5": 0.002732,
+        "6": 0.003204
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#2196F3",
+      "description": "設定1: 1/428.3、設定6: 1/312.1。RB確率に大きな設定差"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005568,
+        "2": 0.005737,
+        "5": 0.006120,
+        "6": 0.006685
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "設定1: 1/179.6、設定6: 1/149.6"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "RB終了画面 アレックス出現（壁画調）",
+      "description": "設定6の可能性アップ（設定1-2: 0.8%、設定6: 5.0%）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#FFD700"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "ENDの文字のみ（デフォルト）",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "背景にアレックス出現（壁画調）",
+      "type": "bonus_end",
+      "hint": "設定6の可能性アップ（出現率 設定1-2: 0.8% / 設定6: 5.0%）"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+}

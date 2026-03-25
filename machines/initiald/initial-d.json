@@ -1,0 +1,338 @@
+{
+  "name": "パチスロ頭文字D",
+  "type": "A+AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.016340,
+        "2": 0.016779,
+        "3": 0.017241,
+        "4": 0.017699,
+        "5": 0.018149,
+        "6": 0.018622
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/61.2、設定6: 1/53.7。高設定ほど出現率が高い"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.001527,
+        "2": 0.001678,
+        "3": 0.001831,
+        "4": 0.001984,
+        "5": 0.002136,
+        "6": 0.002289
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FFC107",
+      "description": "設定1: 1/655.4、設定6: 1/436.9。押し順不問の小V型停止ベル"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.013736,
+        "2": 0.013736,
+        "3": 0.013736,
+        "4": 0.013736,
+        "5": 0.013736,
+        "6": 0.013736
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/72.8"
+    },
+    {
+      "name": "チャンス目A",
+      "probabilities": {
+        "1": 0.000916,
+        "2": 0.000916,
+        "3": 0.000916,
+        "4": 0.000916,
+        "5": 0.000916,
+        "6": 0.000916
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/1092.3"
+    },
+    {
+      "name": "チャンス目B",
+      "probabilities": {
+        "1": 0.002136,
+        "2": 0.002136,
+        "3": 0.002136,
+        "4": 0.002136,
+        "5": 0.002136,
+        "6": 0.002136
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/468.1"
+    },
+    {
+      "name": "BIG中ハズレ",
+      "probabilities": {
+        "1": 0.216450,
+        "2": 0.221729,
+        "3": 0.227273,
+        "4": 0.232558,
+        "5": 0.238095,
+        "6": 0.243902
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "BIG BONUS中のハズレ確率。設定1: 1/4.62、設定6: 1/4.10"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "sammy_trophy_bronze",
+      "name": "サミートロフィー銅",
+      "description": "ボーナス終了画面・AT終了画面で左下に出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "sammy_trophy_silver",
+      "name": "サミートロフィー銀",
+      "description": "ボーナス終了画面・AT終了画面で左下に出現",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "sammy_trophy_gold",
+      "name": "サミートロフィー金",
+      "description": "ボーナス終了画面・AT終了画面で左下に出現",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "sammy_trophy_kirin",
+      "name": "サミートロフィーキリン柄",
+      "description": "ボーナス終了画面・AT終了画面で左下に出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "sammy_trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "description": "ボーナス終了画面・AT終了画面で左下に出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_screen_project_d",
+      "name": "AT終了画面 プロジェクトD",
+      "description": "有利区間完走時以外で出現した場合、設定6確定（+復活濃厚）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "flip_natsuki_doage",
+      "name": "ボーナス確定画面 なつき胴上げ",
+      "description": "ボーナス確定画面のフリップでなつき胴上げ出現（レジェンドボーナス時は除く）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#F48FB1"
+    },
+    {
+      "id": "flip_car",
+      "name": "ボーナス確定画面 車",
+      "description": "ボーナス確定画面のフリップで車が出現",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#2196F3"
+    },
+    {
+      "id": "flip_kirin_tofu",
+      "name": "ボーナス確定画面 キリン柄豆腐",
+      "description": "ボーナス確定画面のフリップでキリン柄豆腐が出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "medals_86_over",
+      "name": "獲得枚数 86枚OVER（初回）",
+      "description": "獲得枚数表示で86枚OVERが出現（初回）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FFC107"
+    },
+    {
+      "id": "medals_86_over_3times",
+      "name": "獲得枚数 86枚OVER（3回以上）",
+      "description": "86枚OVERが電源投入後3回以上出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "medals_85_over",
+      "name": "獲得枚数 85枚OVER",
+      "description": "獲得枚数表示で85枚OVERが出現",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "sub_lcd_purple",
+      "name": "サブ液晶タッチ 紫",
+      "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで紫が出現",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "sub_lcd_black",
+      "name": "サブ液晶タッチ 黒",
+      "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで黒が出現",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#212121"
+    },
+    {
+      "id": "sub_lcd_rainbow",
+      "name": "サブ液晶タッチ 虹",
+      "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで虹が出現",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_akinayama",
+      "name": "秋名山（夜景）",
+      "type": "at_end",
+      "hint": "デフォルト（示唆なし）"
+    },
+    {
+      "id": "end_itsuki_takumi",
+      "name": "拓海&いつき",
+      "type": "at_end",
+      "hint": "偶数設定示唆（設定2・4・6に期待）。復活期待度UP"
+    },
+    {
+      "id": "end_oyaji_3nin",
+      "name": "親父3人",
+      "type": "at_end",
+      "hint": "高設定示唆（設定4以上に期待）。復活期待度UP"
+    },
+    {
+      "id": "end_project_d",
+      "name": "プロジェクトD（7人）",
+      "type": "at_end",
+      "hint": "有利区間完走時以外で出現なら設定6確定。復活濃厚"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "sub_lcd_white",
+      "name": "サブ液晶タッチ 白",
+      "hint": "デフォルト（示唆なし）"
+    },
+    {
+      "id": "sub_lcd_blue",
+      "name": "サブ液晶タッチ 青",
+      "hint": "奇数設定示唆（弱）"
+    },
+    {
+      "id": "sub_lcd_yellow",
+      "name": "サブ液晶タッチ 黄",
+      "hint": "偶数設定示唆（弱）"
+    },
+    {
+      "id": "sub_lcd_green",
+      "name": "サブ液晶タッチ 緑",
+      "hint": "奇数設定示唆（強）"
+    },
+    {
+      "id": "sub_lcd_red",
+      "name": "サブ液晶タッチ 赤",
+      "hint": "偶数設定示唆（強）"
+    },
+    {
+      "id": "sub_lcd_purple_hint",
+      "name": "サブ液晶タッチ 紫",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "sub_lcd_black_hint",
+      "name": "サブ液晶タッチ 黒",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "sub_lcd_rainbow_hint",
+      "name": "サブ液晶タッチ 虹",
+      "hint": "設定6確定"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "at_first_hit",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/399.6、設定6: 1/175.6",
+      "probabilities": {
+        "1": 0.002503,
+        "2": 0.002566,
+        "3": 0.002951,
+        "4": 0.003685,
+        "5": 0.004593,
+        "6": 0.005695
+      },
+      "color": "#FF5722",
+      "displayOrder": 1
+    },
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/261.0、設定6: 1/226.8",
+      "probabilities": {
+        "1": 0.003831,
+        "2": 0.003888,
+        "3": 0.003986,
+        "4": 0.004115,
+        "5": 0.004255,
+        "6": 0.004409
+      },
+      "color": "#F44336",
+      "displayOrder": 2
+    },
+    {
+      "id": "at_direct_hit",
+      "name": "AT直撃確率",
+      "description": "設定1: 1/52612.1、設定6: 1/2900.3。最大約18倍の設定差",
+      "probabilities": {
+        "1": 0.000019,
+        "2": 0.000048,
+        "3": 0.000088,
+        "4": 0.000155,
+        "5": 0.000246,
+        "6": 0.000345
+      },
+      "color": "#9C27B0",
+      "displayOrder": 3
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "サミー（タイヨーエレック）のA+AT機。2021年1月導入。チェリー・共通ベルに設定差あり。AT終了画面・サミートロフィー・サブ液晶タッチ色・ボーナス確定画面フリップ・獲得枚数表示で設定示唆。AT直撃に最大約18倍の設定差。",
+  "lastUpdated": "2026-03-25",
+  "source": "p-town.dmm.com、1geki.jp、nana-press.com、p-gabu.jp、pachiseven.jp、chonborista.com、slopachi-quest.com"
+}

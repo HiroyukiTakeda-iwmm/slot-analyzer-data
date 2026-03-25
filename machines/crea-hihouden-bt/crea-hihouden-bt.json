@@ -1,0 +1,182 @@
+{
+  "name": "クレアの秘宝伝 ~はじまりの扉と太陽の石~ ボーナストリガーver.",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.167224,
+        "2": 0.169492,
+        "3": 0.172117,
+        "4": 0.174520,
+        "5": 0.175747,
+        "6": 0.177620
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "設定1: 1/5.98、設定6: 1/5.63"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.010989,
+        "2": 0.011038,
+        "3": 0.011173,
+        "4": 0.011236,
+        "5": 0.011429,
+        "6": 0.011614
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/91.0、設定6: 1/86.1"
+    },
+    {
+      "name": "スイカ合算",
+      "probabilities": {
+        "1": 0.013587,
+        "2": 0.013947,
+        "3": 0.014472,
+        "4": 0.014948,
+        "5": 0.015408,
+        "6": 0.015873
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/73.6、設定6: 1/63.0"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.021505,
+        "2": 0.021552,
+        "3": 0.021645,
+        "4": 0.021882,
+        "5": 0.022173,
+        "6": 0.022779
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/46.5、設定6: 1/43.9"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.003341,
+        "2": 0.003403,
+        "3": 0.003510,
+        "4": 0.003647,
+        "5": 0.003815,
+        "6": 0.004165
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "設定1: 1/299.3、設定6: 1/240.1"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.002609,
+        "2": 0.002655,
+        "3": 0.002793,
+        "4": 0.002990,
+        "5": 0.003341,
+        "6": 0.004044
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#2196F3",
+      "description": "設定1: 1/383.3、設定6: 1/247.3。RB確率に大きな設定差"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "コパンダトロフィー銅",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "コパンダトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "コパンダトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "コパンダトロフィーイナズマ",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "コパンダトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "RB中赤カード出現",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#F44336"
+    },
+    {
+      "name": "RB中赤カード2回出現",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "RB中銀と金のみ",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "BB終了画面 スタンプなし",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "BB終了画面 レオンスタンプ",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "BB終了画面 子供クレアスタンプ",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "BB終了画面 シャロンスタンプ",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+}

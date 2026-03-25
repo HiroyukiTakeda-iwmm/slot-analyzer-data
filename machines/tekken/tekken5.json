@@ -1,0 +1,478 @@
+{
+  "name": "パチスロ鉄拳5",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.008787,
+        "2": 0.008961,
+        "3": 0.009158,
+        "4": 0.009579,
+        "5": 0.010010,
+        "6": 0.010560
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "設定1: 1/113.8、設定6: 1/94.7"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.004029,
+        "2": 0.004073,
+        "3": 0.004120,
+        "4": 0.004212,
+        "5": 0.004303,
+        "6": 0.004393
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/248.2、設定6: 1/227.6"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015083,
+        "2": 0.015083,
+        "3": 0.015083,
+        "4": 0.015083,
+        "5": 0.015083,
+        "6": 0.015083
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/66.3"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.003418,
+        "2": 0.003418,
+        "3": 0.003418,
+        "4": 0.003418,
+        "5": 0.003418,
+        "6": 0.003418
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/292.6"
+    },
+    {
+      "name": "中段チェリー",
+      "probabilities": {
+        "1": 0.000061,
+        "2": 0.000061,
+        "3": 0.000061,
+        "4": 0.000061,
+        "5": 0.000061,
+        "6": 0.000061
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/16384.0"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.003662,
+        "2": 0.003754,
+        "3": 0.003845,
+        "4": 0.004013,
+        "5": 0.004180,
+        "6": 0.004365
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/273.1、設定6: 1/229.1"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.002104,
+        "2": 0.002136,
+        "3": 0.002201,
+        "4": 0.002342,
+        "5": 0.002493,
+        "6": 0.002709
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#2196F3",
+      "description": "設定1: 1/475.2、設定6: 1/369.2"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "トロフィー銅",
+      "name": "ケロットトロフィー銅",
+      "description": "設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "id": "トロフィー銀",
+      "name": "ケロットトロフィー銀",
+      "description": "設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"]
+    },
+    {
+      "id": "トロフィー金",
+      "name": "ケロットトロフィー金",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "トロフィーケロット柄",
+      "name": "ケロットトロフィーケロット柄",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "トロフィー虹",
+      "name": "ケロットトロフィー虹",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "終了画面_一八",
+      "name": "終了画面：一八",
+      "description": "設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "id": "終了画面_平八",
+      "name": "終了画面：平八",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "終了画面_一美",
+      "name": "終了画面：一美",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "終了画面_平八一八",
+      "name": "終了画面：平八&一八",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "終了画面_巌竜",
+      "name": "終了画面：巌竜",
+      "description": "設定上げ確定（実質設定2以上確定）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "id": "ATランクSSS",
+      "name": "AT終了時ランクSSS",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "獲得枚数803",
+      "name": "獲得枚数803枚突破表示",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "撃破44人",
+      "name": "連続演出撃破人数44人",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "撃破55人",
+      "name": "連続演出撃破人数55人",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "撃破66人",
+      "name": "連続演出撃破人数66人",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    },
+    {
+      "id": "BIG中セリフ_鉄拳衆",
+      "name": "BIG中セリフ：鉄拳衆「動くな」（紫ランプ）",
+      "description": "設定1または設定6確定",
+      "confirmedSettings": ["1", "6"],
+      "excludedSettings": ["2", "3", "4", "5"]
+    },
+    {
+      "id": "BIG中セリフ_平八",
+      "name": "BIG中セリフ：平八「この時を待っていたぞ」（赤ランプ）",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "BIG中セリフ_一美",
+      "name": "BIG中セリフ：一美「相容れない運命なのです」（赤ランプ）",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "id": "BIG中セリフ_カエル",
+      "name": "BIG中セリフ：カエル「ゲコゲコ」（赤ランプ）",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "キング_シャオユウ_ポール",
+      "name": "キング/シャオユウ/ポール",
+      "type": "bonus_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "アーマーキング_ジョシー_ラッキークロエ",
+      "name": "アーマーキング/ジョシー/ラッキークロエ",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆（設定2・4・6）"
+    },
+    {
+      "id": "マードック_ロウ_アリサ",
+      "name": "マードック/ロウ/アリサ",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆（設定1・3・5）"
+    },
+    {
+      "id": "仁",
+      "name": "仁",
+      "type": "bonus_end",
+      "hint": "高設定示唆（2連続で設定4以上確定）"
+    },
+    {
+      "id": "一八",
+      "name": "一八",
+      "type": "bonus_end",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "平八",
+      "name": "平八",
+      "type": "bonus_end",
+      "hint": "設定4以上確定"
+    },
+    {
+      "id": "一美",
+      "name": "一美",
+      "type": "bonus_end",
+      "hint": "設定5以上確定"
+    },
+    {
+      "id": "平八一八",
+      "name": "平八&一八",
+      "type": "bonus_end",
+      "hint": "設定6確定"
+    },
+    {
+      "id": "巌竜",
+      "name": "巌竜",
+      "type": "bonus_end",
+      "hint": "設定上げ確定（実質設定2以上確定）"
+    },
+    {
+      "id": "at_キング_シャオユウ_ポール",
+      "name": "キング/シャオユウ/ポール",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "at_アーマーキング_ジョシー_ラッキークロエ",
+      "name": "アーマーキング/ジョシー/ラッキークロエ",
+      "type": "at_end",
+      "hint": "偶数設定示唆（設定2・4・6）"
+    },
+    {
+      "id": "at_マードック_ロウ_アリサ",
+      "name": "マードック/ロウ/アリサ",
+      "type": "at_end",
+      "hint": "奇数設定示唆（設定1・3・5）"
+    },
+    {
+      "id": "at_仁",
+      "name": "仁",
+      "type": "at_end",
+      "hint": "高設定示唆（2連続で設定4以上確定）"
+    },
+    {
+      "id": "at_一八",
+      "name": "一八",
+      "type": "at_end",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "at_平八",
+      "name": "平八",
+      "type": "at_end",
+      "hint": "設定4以上確定"
+    },
+    {
+      "id": "at_一美",
+      "name": "一美",
+      "type": "at_end",
+      "hint": "設定5以上確定"
+    },
+    {
+      "id": "at_平八一八",
+      "name": "平八&一八",
+      "type": "at_end",
+      "hint": "設定6確定"
+    },
+    {
+      "id": "at_巌竜",
+      "name": "巌竜",
+      "type": "at_end",
+      "hint": "設定上げ確定（実質設定2以上確定）"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "big_voice_シャオユウ",
+      "name": "シャオユウ「やるじゃない」",
+      "hint": "デフォルト（青ランプ）"
+    },
+    {
+      "id": "big_voice_ポール",
+      "name": "ポール「よっしゃあああ！！」",
+      "hint": "デフォルト（青ランプ）"
+    },
+    {
+      "id": "big_voice_キング",
+      "name": "キング「ガウ」",
+      "hint": "デフォルト（青ランプ）"
+    },
+    {
+      "id": "big_voice_ジョシー",
+      "name": "ジョシー「すごーい！」",
+      "hint": "偶数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_ラッキークロエ",
+      "name": "ラッキークロエ「うーイェーイ！」",
+      "hint": "偶数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_アーマーキング",
+      "name": "アーマーキング「ガオオオオ！」",
+      "hint": "偶数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_アリサ",
+      "name": "アリサ「戦わなければいけないのですか？」",
+      "hint": "奇数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_ロウ",
+      "name": "ロウ「アチャア～！」",
+      "hint": "奇数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_マードック",
+      "name": "マードック「がっはっはっは！」",
+      "hint": "奇数設定示唆（青ランプ）"
+    },
+    {
+      "id": "big_voice_仁",
+      "name": "仁「くだらん」",
+      "hint": "高設定示唆（緑ランプ）"
+    },
+    {
+      "id": "big_voice_一八",
+      "name": "一八「感じるぞ…巨大な力を」",
+      "hint": "設定2以上確定（緑ランプ）"
+    },
+    {
+      "id": "big_voice_鉄拳衆",
+      "name": "鉄拳衆「動くな」",
+      "hint": "設定1または設定6確定（紫ランプ）"
+    },
+    {
+      "id": "big_voice_平八",
+      "name": "平八「この時を待っていたぞ」",
+      "hint": "設定4以上確定（赤ランプ）"
+    },
+    {
+      "id": "big_voice_一美",
+      "name": "一美「相容れない運命なのです」",
+      "hint": "設定5以上確定（赤ランプ）"
+    },
+    {
+      "id": "big_voice_カエル",
+      "name": "カエル「ゲコゲコ」",
+      "hint": "設定6確定（赤ランプ）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "チャンス目からAT当選率（通常時）",
+      "description": "設定1: 19.9%、設定6: 25.8%",
+      "id": "チャンス目at当選率",
+      "probabilities": {
+        "1": 0.199,
+        "2": 0.203,
+        "3": 0.211,
+        "4": 0.227,
+        "5": 0.234,
+        "6": 0.258
+      }
+    },
+    {
+      "name": "強チェリーからAT当選率（通常時）",
+      "description": "設定1: 10.2%、設定6: 18.0%",
+      "id": "強チェリーat当選率",
+      "probabilities": {
+        "1": 0.102,
+        "2": 0.105,
+        "3": 0.109,
+        "4": 0.133,
+        "5": 0.141,
+        "6": 0.180
+      }
+    },
+    {
+      "name": "平八無双当選率",
+      "description": "AT直撃時の平八無双当選率。設定1-2: 3.9%、設定3-4: 4.7%、設定5-6: 6.3%",
+      "id": "平八無双当選率",
+      "probabilities": {
+        "1": 0.039,
+        "2": 0.039,
+        "3": 0.047,
+        "4": 0.047,
+        "5": 0.063,
+        "6": 0.063
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "ちょんぼりすた、p-town.dmm.com、1geki.jp、ナナプレス、パチセブン"
+}

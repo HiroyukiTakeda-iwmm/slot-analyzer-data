@@ -1,0 +1,368 @@
+{
+  "name": "Ｌ ダーリン・イン・ザ・フランキス",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.070423,
+        "2": 0.070423,
+        "3": 0.070423,
+        "4": 0.070423,
+        "5": 0.070423,
+        "6": 0.070423
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/14.2"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.128205,
+        "2": 0.128205,
+        "3": 0.128205,
+        "4": 0.128205,
+        "5": 0.128205,
+        "6": 0.128205
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/7.8"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.019531,
+        "2": 0.019531,
+        "3": 0.019531,
+        "4": 0.019531,
+        "5": 0.019531,
+        "6": 0.019531
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/51.2"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.003051,
+        "2": 0.003051,
+        "3": 0.003051,
+        "4": 0.003051,
+        "5": 0.003051,
+        "6": 0.003051
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/327.7"
+    },
+    {
+      "name": "フランクス目",
+      "probabilities": {
+        "1": 0.005615,
+        "2": 0.005615,
+        "3": 0.005615,
+        "4": 0.005615,
+        "5": 0.005615,
+        "6": 0.005615
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/178.1"
+    },
+    {
+      "name": "ストレリチア目",
+      "probabilities": {
+        "1": 0.000427,
+        "2": 0.000427,
+        "3": 0.000427,
+        "4": 0.000427,
+        "5": 0.000427,
+        "6": 0.000427
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/2340.6"
+    },
+    {
+      "name": "ボーナス高確（フランクス高確）",
+      "probabilities": {
+        "1": 0.002915,
+        "2": 0.002993,
+        "3": 0.003124,
+        "4": 0.003345,
+        "5": 0.003700,
+        "6": 0.003963
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#9C27B0",
+      "description": "設定1: 1/343.0、設定6: 1/252.3"
+    },
+    {
+      "name": "ボーナス初当たり",
+      "probabilities": {
+        "1": 0.004352,
+        "2": 0.004462,
+        "3": 0.004654,
+        "4": 0.004824,
+        "5": 0.005255,
+        "6": 0.005547
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#FF5722",
+      "description": "設定1: 1/229.8、設定6: 1/180.3"
+    },
+    {
+      "name": "CZ当選確率",
+      "probabilities": {
+        "1": 0.007994,
+        "2": 0.007981,
+        "3": 0.008104,
+        "4": 0.008058,
+        "5": 0.008445,
+        "6": 0.008628
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 9,
+      "color": "#FF9800",
+      "description": "設定1: 1/125.1、設定6: 1/115.9"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ナミちゃんトロフィー銅",
+      "description": "ボーナス高確終了画面に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "ナミちゃんトロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "ナミちゃんトロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "ナミちゃんトロフィーフランクス柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "ナミちゃんトロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "エンディングカード ゼロツー（赤）",
+      "description": "エンディング中レア役成立時に出現。設定2以上濃厚・設定4・6で出やすい",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#F44336"
+    },
+    {
+      "name": "エンディングカード ストレリチア（虹）",
+      "description": "エンディング中レア役成立時に出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 222OVER",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "獲得枚数 456OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 556OVER",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 666OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "後ろ姿",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "絵本",
+      "type": "at_end",
+      "hint": "偶数設定濃厚 or 復活"
+    },
+    {
+      "name": "絵本の鳥",
+      "type": "at_end",
+      "hint": "設定3・5・6濃厚 or 復活"
+    },
+    {
+      "name": "幼少期ゼロツー",
+      "type": "at_end",
+      "hint": "設定4以上濃厚 or 復活"
+    },
+    {
+      "name": "ヒロ＆ゼロツー",
+      "type": "at_end",
+      "hint": "設定6濃厚 or 復活（復活時は設定4以上濃厚）"
+    },
+    {
+      "name": "ストレリチア目終了画面 駅",
+      "type": "at_end",
+      "hint": "ストレリチア目成立時デフォルト"
+    },
+    {
+      "name": "ストレリチア目終了画面 プレゼント",
+      "type": "at_end",
+      "hint": "設定2以上示唆"
+    },
+    {
+      "name": "ストレリチア目終了画面 集合写真",
+      "type": "at_end",
+      "hint": "設定3以上示唆"
+    },
+    {
+      "name": "ストレリチア目終了画面 後ろ姿",
+      "type": "at_end",
+      "hint": "設定4以上示唆"
+    },
+    {
+      "name": "ストレリチア目終了画面 絵本",
+      "type": "at_end",
+      "hint": "設定5以上示唆"
+    },
+    {
+      "name": "ストレリチア目終了画面 ゼロツー＆ヒロ",
+      "type": "at_end",
+      "hint": "設定6濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "コネクトチャンス Lv1（白）成功率",
+      "description": "設定1: 2.3%、設定6: 12.5%。設定差最大（約5.4倍）",
+      "probabilities": {
+        "1": 0.023000,
+        "2": 0.043000,
+        "3": 0.055000,
+        "4": 0.070000,
+        "5": 0.098000,
+        "6": 0.125000
+      }
+    },
+    {
+      "name": "コネクトチャンス Lv2（青）成功率",
+      "description": "設定1: 5.9%、設定6: 17.5%",
+      "probabilities": {
+        "1": 0.059000,
+        "2": 0.082000,
+        "3": 0.095000,
+        "4": 0.113000,
+        "5": 0.145000,
+        "6": 0.175000
+      }
+    },
+    {
+      "name": "コネクトチャンス Lv3（黄）成功率",
+      "description": "設定1: 20.3%、設定6: 33.5%",
+      "probabilities": {
+        "1": 0.203000,
+        "2": 0.229000,
+        "3": 0.245000,
+        "4": 0.264000,
+        "5": 0.301000,
+        "6": 0.335000
+      }
+    },
+    {
+      "name": "コネクトチャンス Lv4（緑）成功率",
+      "description": "設定1: 50.0%、設定6: 65.0%",
+      "probabilities": {
+        "1": 0.500000,
+        "2": 0.530000,
+        "3": 0.547000,
+        "4": 0.570000,
+        "5": 0.611000,
+        "6": 0.650000
+      }
+    },
+    {
+      "name": "コネクトチャンス Lv5（赤）成功率",
+      "description": "設定1: 85.9%、設定6: 93.3%",
+      "probabilities": {
+        "1": 0.859000,
+        "2": 0.874000,
+        "3": 0.883000,
+        "4": 0.894000,
+        "5": 0.914000,
+        "6": 0.933000
+      }
+    },
+    {
+      "name": "チェリー時フランクス高確移行率",
+      "description": "設定1: 16.41%、設定6: 20.30%。設定5・6で顕著に上昇",
+      "probabilities": {
+        "1": 0.164100,
+        "2": 0.164200,
+        "3": 0.172000,
+        "4": 0.172300,
+        "5": 0.192700,
+        "6": 0.203000
+      }
+    },
+    {
+      "name": "チャンス目時フランクス高確移行率",
+      "description": "設定1: 40.63%、設定6: 47.63%",
+      "probabilities": {
+        "1": 0.406300,
+        "2": 0.406500,
+        "3": 0.420500,
+        "4": 0.421100,
+        "5": 0.457900,
+        "6": 0.476300
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、DMMぱちタウン(p-town.dmm.com)、スロット解析.com(slotkaiseki.com)"
+}

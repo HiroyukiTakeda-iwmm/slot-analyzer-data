@@ -1,0 +1,165 @@
+{
+  "name": "LBパチスロ ヱヴァンゲリヲン ~約束の扉~",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "BB確率",
+      "probabilities": {
+        "1": 0.003327,
+        "2": 0.003448,
+        "3": 0.003555,
+        "4": 0.003754,
+        "5": 0.003937,
+        "6": 0.004151
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF5722",
+      "description": "設定1: 1/300.6、設定6: 1/240.9"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": {
+        "1": 0.001755,
+        "2": 0.001831,
+        "3": 0.001969,
+        "4": 0.002106,
+        "5": 0.002258,
+        "6": 0.002472
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/569.9、設定6: 1/404.5"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005081,
+        "2": 0.005280,
+        "3": 0.005525,
+        "4": 0.005858,
+        "5": 0.006196,
+        "6": 0.006623
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "設定1: 1/196.8、設定6: 1/151.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ボーナス終了画面 カヲル",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "REG中キャラクター紹介 カヲル出現",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "BT中ムービー ゲンドウ",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "BT中ムービー 加持",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "BT中ムービー カヲル",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "単独暴走モード出現",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "ベル+黄7BB同時当選",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "シンジ",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "レイ",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "アスカ",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "マリ",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "ミサト",
+      "type": "bonus_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "カヲル",
+      "type": "bonus_end",
+      "hint": "設定6濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "弱スイカ同時当選期待度",
+      "description": "設定1: 1.82%、設定6: 2.54%",
+      "probabilities": {
+        "1": 0.018200,
+        "2": 0.019100,
+        "3": 0.019700,
+        "4": 0.022300,
+        "5": 0.023100,
+        "6": 0.025400
+      }
+    },
+    {
+      "name": "チェリー同時当選期待度",
+      "description": "設定1: 10.3%、設定6: 11.4%",
+      "probabilities": {
+        "1": 0.103000,
+        "2": 0.106000,
+        "3": 0.107000,
+        "4": 0.111000,
+        "5": 0.110000,
+        "6": 0.114000
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+}

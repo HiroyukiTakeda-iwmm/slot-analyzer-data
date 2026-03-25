@@ -1,0 +1,220 @@
+{
+  "name": "パチスロ閃乱カグラ BURST UP",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015267,
+        "2": 0.015267,
+        "3": 0.015267,
+        "4": 0.015267,
+        "5": 0.015267,
+        "6": 0.015267
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/65.5"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001221,
+        "2": 0.001221,
+        "3": 0.001221,
+        "4": 0.001221,
+        "5": 0.001221,
+        "6": 0.001221
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/819.2"
+    },
+    {
+      "name": "弱スイカ",
+      "probabilities": {
+        "1": 0.012516,
+        "2": 0.012516,
+        "3": 0.012516,
+        "4": 0.012516,
+        "5": 0.012516,
+        "6": 0.012516
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/79.9"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": {
+        "1": 0.001221,
+        "2": 0.001221,
+        "3": 0.001221,
+        "4": 0.001221,
+        "5": 0.001221,
+        "6": 0.001221
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/819.2"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.004883,
+        "2": 0.004883,
+        "3": 0.004883,
+        "4": 0.004883,
+        "5": 0.004883,
+        "6": 0.004883
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/204.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "閃乱ゾーン終了1枚絵 銀枠No.010",
+      "description": "設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "閃乱ゾーン終了1枚絵 銀枠No.003",
+      "description": "設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "閃乱ゾーン終了1枚絵 金枠No.456",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "閃乱ゾーン終了1枚絵 金枠No.556",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "閃乱ゾーン終了1枚絵 金枠No.666",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "AT終了画面 雅緋（赤背景）",
+      "description": "設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#F44336"
+    },
+    {
+      "name": "AT終了画面 焔（赤背景）",
+      "description": "設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#F44336"
+    },
+    {
+      "name": "AT終了画面 飛鳥（金背景）",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "AT終了画面 雪泉（金背景）",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "AT終了画面 雪不帰（レインボー背景）",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数456枚OVER表示",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数666枚OVER表示",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "蛇女子学園キャラ（両備・忌夢・両奈・紫）",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "焔紅蓮隊キャラ（日影・未来・詠・春花）",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "半蔵学院キャラ（葛城・雲雀・斑鳩・柳生）",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "月閃女学館キャラ（美野里・夜桜・四季・叢）",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "AT初当り確率",
+      "description": "設定1: 1/558.7、設定6: 1/406.4",
+      "probabilities": {
+        "1": 0.001790,
+        "2": 0.001875,
+        "3": 0.001994,
+        "4": 0.002181,
+        "5": 0.002296,
+        "6": 0.002461
+      }
+    },
+    {
+      "name": "爆乳ハイパーバトル勝率",
+      "description": "設定1-2: 約38%、設定6: 約55%",
+      "probabilities": {
+        "1": 0.380000,
+        "2": 0.380000,
+        "3": 0.440000,
+        "4": 0.470000,
+        "5": 0.530000,
+        "6": 0.550000
+      }
+    }
+  ],
+  "voiceCounts": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "ちょんぼりすた、一撃、パチセブン、DMMぱちタウン、777パチガブ"
+}

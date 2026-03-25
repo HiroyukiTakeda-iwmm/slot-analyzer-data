@@ -1,0 +1,197 @@
+{
+  "name": "L咲-Saki- 頂上決戦",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ初当たり（特打）",
+      "probabilities": {
+        "1": 0.005435,
+        "2": 0.005504,
+        "3": 0.005665,
+        "4": 0.005935,
+        "5": 0.006309,
+        "6": 0.006486
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/184.0、設定6: 1/154.2"
+    },
+    {
+      "name": "AT初当たり（頂上決戦）",
+      "probabilities": {
+        "1": 0.002510,
+        "2": 0.002589,
+        "3": 0.002736,
+        "4": 0.002973,
+        "5": 0.003293,
+        "6": 0.003521
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF5722",
+      "description": "設定1: 1/398.4、設定6: 1/284.0"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015106,
+        "2": 0.015106,
+        "3": 0.015106,
+        "4": 0.015106,
+        "5": 0.015106,
+        "6": 0.015106
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/66.2"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.002594,
+        "2": 0.002594,
+        "3": 0.002594,
+        "4": 0.002594,
+        "5": 0.002594,
+        "6": 0.002594
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/385.5"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009990,
+        "2": 0.009990,
+        "3": 0.009990,
+        "4": 0.009990,
+        "5": 0.009990,
+        "6": 0.009990
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/100.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "クジラッキートロフィー銅",
+      "description": "AT終了画面に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "クジラッキートロフィー銀",
+      "description": "AT終了画面に出現。設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "クジラッキートロフィー金",
+      "description": "AT終了画面に出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "クジラッキートロフィークマノミ柄",
+      "description": "AT終了画面に出現。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "クジラッキートロフィー虹",
+      "description": "AT終了画面に出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "エンディング和ランプ赤",
+      "description": "エンディング中のレア役成立後PUSHで和ランプが赤発光。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#F44336"
+    },
+    {
+      "name": "エンディング和ランプ緑",
+      "description": "エンディング中のレア役成立後PUSHで和ランプが緑発光。設定1否定・高設定示唆（強）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "AT終了画面: 咲＆和",
+      "type": "at_end",
+      "hint": "奇数設定示唆（設定1・3・5で60%出現、設定2・4・6で40%出現）"
+    },
+    {
+      "name": "AT終了画面: 全国編ライバル",
+      "type": "at_end",
+      "hint": "偶数設定示唆（設定2・4・6で60%出現、設定1・3・5で40%出現）"
+    },
+    {
+      "name": "AT終了画面: 水着",
+      "type": "at_end",
+      "hint": "ライバルモード濃厚"
+    },
+    {
+      "name": "AT終了画面: バニーガール",
+      "type": "at_end",
+      "hint": "東場以内CZ当選濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "name": "エンディング弱レア役・和ランプ白",
+      "description": "弱レア役成立時の和ランプ白発光率。設定1: 59.0%、設定6: 32.0%",
+      "probabilities": {
+        "1": 0.590000,
+        "2": 0.400000,
+        "3": 0.380000,
+        "4": 0.360000,
+        "5": 0.340000,
+        "6": 0.320000
+      }
+    },
+    {
+      "name": "エンディング弱レア役・和ランプ青以上",
+      "description": "弱レア役成立時の和ランプ青以上発光率。設定1: 41.0%、設定6: 68.0%",
+      "probabilities": {
+        "1": 0.410000,
+        "2": 0.600000,
+        "3": 0.620000,
+        "4": 0.640000,
+        "5": 0.660000,
+        "6": 0.680000
+      }
+    },
+    {
+      "name": "エンディング強レア役・和ランプ黄以上",
+      "description": "強レア役成立時の和ランプ黄以上発光率。設定1: 50.0%、設定6: 70.0%",
+      "probabilities": {
+        "1": 0.500000,
+        "2": 0.650000,
+        "3": 0.660000,
+        "4": 0.670000,
+        "5": 0.680000,
+        "6": 0.700000
+      }
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、DMMぱちタウン(p-town.dmm.com)、ななプレス(nana-press.com)"
+}

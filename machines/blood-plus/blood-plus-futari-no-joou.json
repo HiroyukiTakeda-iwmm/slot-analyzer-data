@@ -1,0 +1,328 @@
+{
+  "name": "パチスロBLOOD+ 二人の女王",
+  "type": "ART",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.010707,
+        "2": 0.011038,
+        "3": 0.011364,
+        "4": 0.011723,
+        "5": 0.012063,
+        "6": 0.012755
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/93.4、設定6: 1/78.4。高設定ほど出現率が高い"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.012092,
+        "2": 0.012107,
+        "3": 0.012887,
+        "4": 0.012937,
+        "5": 0.013755,
+        "6": 0.013831
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/82.7、設定6: 1/72.3。奇偶で段階的に差がある"
+    },
+    {
+      "name": "BLOOD EYE揃い合算",
+      "probabilities": {
+        "1": 0.013514,
+        "2": 0.013774,
+        "3": 0.014265,
+        "4": 0.015456,
+        "5": 0.016420,
+        "6": 0.017483
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "設定1: 1/74.0、設定6: 1/57.2。設定差大。最重要カウント対象"
+    },
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.131579,
+        "2": 0.131579,
+        "3": 0.131579,
+        "4": 0.131579,
+        "5": 0.131579,
+        "6": 0.131579
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/7.6"
+    },
+    {
+      "name": "押し順ベル",
+      "probabilities": {
+        "1": 0.181818,
+        "2": 0.181818,
+        "3": 0.181818,
+        "4": 0.181818,
+        "5": 0.181818,
+        "6": 0.181818
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/5.5"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.057803,
+        "2": 0.057803,
+        "3": 0.057803,
+        "4": 0.057803,
+        "5": 0.057803,
+        "6": 0.057803
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/17.3"
+    },
+    {
+      "name": "チャンス目合算",
+      "probabilities": {
+        "1": 0.004348,
+        "2": 0.004348,
+        "3": 0.004348,
+        "4": 0.004348,
+        "5": 0.004348,
+        "6": 0.004348
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/230（チャンス目A: 1/748.1、B: 1/664.0、C: 1/662.0の合算）"
+    },
+    {
+      "name": "BEリプレイ",
+      "probabilities": {
+        "1": 0.001861,
+        "2": 0.001861,
+        "3": 0.001861,
+        "4": 0.001861,
+        "5": 0.001861,
+        "6": 0.001861
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/537.2"
+    },
+    {
+      "name": "BEフェイク",
+      "probabilities": {
+        "1": 0.001435,
+        "2": 0.001435,
+        "3": 0.001435,
+        "4": 0.001435,
+        "5": 0.001435,
+        "6": 0.001435
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/696.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "bonus_end_rare",
+      "name": "ボーナス終了画面 レア（星2）",
+      "description": "ボーナス終了画面左上に星2個表示",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#795548"
+    },
+    {
+      "id": "bonus_end_srare",
+      "name": "ボーナス終了画面 Sレア（星4）",
+      "description": "ボーナス終了画面左上に星4個表示",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "bonus_end_urare",
+      "name": "ボーナス終了画面 Uレア（星6）",
+      "description": "ボーナス終了画面左上に星6個表示",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "chapter_nathan",
+      "name": "CHAPTER演出 ネイサン出現",
+      "description": "ART中CHAPTER連続演出でネイサンがキャラ紹介される",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "chapter_solomon",
+      "name": "CHAPTER演出 ソロモン出現",
+      "description": "ART中CHAPTER連続演出でソロモンがキャラ紹介される",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "bonus_end_normal",
+      "name": "通常終了画面",
+      "type": "bonus_end",
+      "hint": "示唆なし（デフォルト）"
+    },
+    {
+      "id": "bonus_end_star2",
+      "name": "レア画面（星2個）",
+      "type": "bonus_end",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "bonus_end_star4",
+      "name": "Sレア画面（星4個）",
+      "type": "bonus_end",
+      "hint": "設定4以上確定"
+    },
+    {
+      "id": "bonus_end_star6",
+      "name": "Uレア画面（星6個）",
+      "type": "bonus_end",
+      "hint": "設定6確定"
+    },
+    {
+      "id": "chapter_ally",
+      "name": "CHAPTER演出 仲間キャラ紹介",
+      "type": "other",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "chapter_enemy",
+      "name": "CHAPTER演出 敵キャラ紹介",
+      "type": "other",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "chapter_berserk_saya",
+      "name": "CHAPTER演出 暴走小夜",
+      "type": "other",
+      "hint": "高設定示唆（設定1・4・5・6で出現しやすい）"
+    },
+    {
+      "id": "chapter_diva",
+      "name": "CHAPTER演出 ディーヴァ",
+      "type": "other",
+      "hint": "設定3以上示唆"
+    },
+    {
+      "id": "chapter_nathan",
+      "name": "CHAPTER演出 ネイサン",
+      "type": "other",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "chapter_solomon",
+      "name": "CHAPTER演出 ソロモン",
+      "type": "other",
+      "hint": "設定5以上濃厚"
+    }
+  ],
+  "voiceCounts": [],
+  "trialSuccessRates": [
+    {
+      "id": "art_rate",
+      "name": "ART初当り確率",
+      "description": "設定1: 1/398.0、設定6: 1/231.1。最大の設定差。約1.7倍の差",
+      "probabilities": {
+        "1": 0.002513,
+        "2": 0.002614,
+        "3": 0.002808,
+        "4": 0.003172,
+        "5": 0.003692,
+        "6": 0.004327
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/455.1、設定6: 1/381.0",
+      "probabilities": {
+        "1": 0.002197,
+        "2": 0.002227,
+        "3": 0.002288,
+        "4": 0.002381,
+        "5": 0.002469,
+        "6": 0.002625
+      },
+      "color": "#F44336",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ出現率",
+      "description": "設定1: 1/237.6、設定6: 1/138.6",
+      "probabilities": {
+        "1": 0.004209,
+        "2": 0.004543,
+        "3": 0.004833,
+        "4": 0.005621,
+        "5": 0.006101,
+        "6": 0.007215
+      },
+      "color": "#FF9800",
+      "displayOrder": 3
+    },
+    {
+      "id": "red_big",
+      "name": "赤同色BIG",
+      "description": "奇数設定優遇。設定1: 1/1771、設定6: 1/1394",
+      "probabilities": {
+        "1": 0.000565,
+        "2": 0.000442,
+        "3": 0.000626,
+        "4": 0.000534,
+        "5": 0.000718,
+        "6": 0.000718
+      },
+      "color": "#F44336",
+      "displayOrder": 4
+    },
+    {
+      "id": "blue_big",
+      "name": "青同色BIG",
+      "description": "偶数設定優遇。設定1: 1/2260、設定6: 1/1394",
+      "probabilities": {
+        "1": 0.000442,
+        "2": 0.000595,
+        "3": 0.000473,
+        "4": 0.000656,
+        "5": 0.000565,
+        "6": 0.000718
+      },
+      "color": "#2196F3",
+      "displayOrder": 5
+    }
+  ],
+  "description": "タイヨーエレック製ART機（2016年9月導入）。ボーナス+ART。天井は通常時999G+α消化でCZ確定。最大の設定差はART初当り確率（設定1: 1/398、設定6: 1/231）。通常時のBE揃い・チェリー・スイカに設定差。赤同色BIGは奇数設定優遇、青同色BIGは偶数設定優遇（設定6のみ1:1）。ボーナス終了画面の星表示とCHAPTER演出キャラで設定確定あり。CZ翼手選択率にも大きな設定差。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-25",
+  "source": "ちょんぼりすた、すろぱちくえすと、一撃、2-9伝説、ゆうべるのパチスロ勝利の方程式、pachislo-data.com"
+}

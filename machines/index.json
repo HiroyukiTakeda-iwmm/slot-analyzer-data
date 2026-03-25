@@ -1,6 +1,6 @@
 {
-  "version": "2.6",
-  "updatedAt": "2026-02-14T00:00:00Z",
+  "version": "2.9",
+  "updatedAt": "2026-03-25T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -1628,6 +1628,185 @@
         "6段階設定"
       ],
       "description": "6号機最人気ジャグラー。単独REGとRB確率に大きな設定差"
+    },
+    {
+      "id": "tekken5",
+      "name": "パチスロ鉄拳5",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tekken/tekken5.json",
+      "tags": [
+        "AT",
+        "6.5号機",
+        "サミー",
+        "6段階設定"
+      ],
+      "description": "スイカ確率とチャンス目に設定差。トロフィー・終了画面・BIG中セリフに設定確定パターン多数"
+    },
+    {
+      "id": "onihama-kyoutou",
+      "name": "S鬼浜爆走愚連隊 狂闘旅情編",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "onihama-kyoutou/onihama-kyoutou.json",
+      "tags": [
+        "AT",
+        "6.1号機",
+        "ベルコ",
+        "5段階設定"
+      ],
+      "description": "設定1,2,3,4,6の5段階。弱レア役AT直撃率に最大約15倍の設定差"
+    },
+    {
+      "id": "seiya-meiou-fukkatsu",
+      "name": "S聖闘士星矢 冥王復活",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "seiya-meiou/seiya-meiou-fukkatsu.json",
+      "tags": [
+        "AT",
+        "6.2号機",
+        "三洋物産",
+        "特殊設定"
+      ],
+      "description": "設定L,1,2,4,5,6。小役に設定差なし、CZ/AT確率で判別。SB開始画面・終了画面に確定パターン"
+    },
+    {
+      "id": "initial-d",
+      "name": "パチスロ頭文字D",
+      "type": "A+AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "initiald/initial-d.json",
+      "tags": [
+        "A+AT",
+        "6.5号機",
+        "サミー",
+        "6段階設定"
+      ],
+      "description": "チェリー・共通ベル・BIG中ハズレに設定差。トロフィー・フリップ・サブ液晶色に確定パターン"
+    },
+    {
+      "id": "blood-plus-futari-no-joou",
+      "name": "パチスロBLOOD+ 二人の女王",
+      "type": "ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "blood-plus/blood-plus-futari-no-joou.json",
+      "tags": [
+        "ART",
+        "5号機",
+        "タイヨーエレック",
+        "6段階設定"
+      ],
+      "description": "チェリー・スイカ・BLOOD EYE揃いに設定差。ボーナス終了画面レア度で設定示唆"
+    },
+    {
+      "id": "kagura-burstup",
+      "name": "パチスロ閃乱カグラ BURST UP",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kagura-burstup/kagura-burstup.json",
+      "tags": [
+        "AT",
+        "6.5号機",
+        "オーイズミ",
+        "6段階設定"
+      ],
+      "description": "小役に設定差なし。AT初当り確率と爆乳HB勝率で判別。閃乱ゾーン終了画面・AT終了画面に確定パターン"
+    },
+    {
+      "id": "eva-yakusoku",
+      "name": "LBパチスロ ヱヴァンゲリヲン ~約束の扉~",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "eva-yakusoku/eva-yakusoku.json",
+      "tags": [
+        "BT",
+        "ビスティ",
+        "6段階設定",
+        "エヴァンゲリオン"
+      ],
+      "description": "BB/RB/合算で判別。BT中ムービーとボーナス終了画面カヲルで設定6濃厚。弱スイカ同時当選に設定差"
+    },
+    {
+      "id": "crea-hihouden-bt",
+      "name": "クレアの秘宝伝 ~はじまりの扉と太陽の石~ ボーナストリガーver.",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "crea-hihouden-bt/crea-hihouden-bt.json",
+      "tags": [
+        "BT",
+        "大都技研",
+        "6段階設定",
+        "クレア"
+      ],
+      "description": "RB確率に大きな設定差。コパンダトロフィー5色とRB中カードで設定確定。BB終了画面で高設定示唆"
+    },
+    {
+      "id": "alex-bright",
+      "name": "アレックス ブライト",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "alex-bright/alex-bright.json",
+      "tags": [
+        "BT",
+        "4段階設定",
+        "ユニバーサル"
+      ],
+      "description": "設定1,2,5,6の4段階。羽・3枚役・チェリー合算・RB確率に設定差。RB終了画面アレックスで設定6示唆"
+    },
+    {
+      "id": "smaslo-thunderv",
+      "name": "スマスロ サンダーV",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "thunderv/smaslo-thunderv.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "ユニバーサル",
+        "4段階設定"
+      ],
+      "description": "設定1,2,5,6の4段階。RB確率に大きな設定差。BIG中リーチ目で設定5以上濃厚。スイカ・チェリーの設定差が非線形"
+    },
+    {
+      "id": "darlifra",
+      "name": "Ｌ ダーリン・イン・ザ・フランキス",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "darlifra/darlifra.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "SPIKY",
+        "6段階設定"
+      ],
+      "description": "小役に設定差なし。コネクトチャンスLv1成功率に約5.4倍の設定差。ナミちゃんトロフィーと終了画面で確定パターン"
+    },
+    {
+      "id": "saki-choujou-kessen",
+      "name": "L咲-Saki- 頂上決戦",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "saki/saki-choujou-kessen.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "三洋物産",
+        "6段階設定"
+      ],
+      "description": "小役に設定差なし。CZ/AT初当たりで判別。クジラッキートロフィーとエンディング和ランプで設定確定"
     }
   ]
 }

@@ -1,0 +1,487 @@
+{
+  "name": "S鬼浜爆走愚連隊 狂闘旅情編",
+  "type": "AT",
+  "availableSettings": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "6"
+  ],
+  "roles": [
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.003322,
+        "2": 0.00335,
+        "3": 0.003554,
+        "4": 0.003929,
+        "6": 0.004331
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/301.0、設定6: 1/230.9。設定差は約1.3倍程度で初当たりのみでの判別は困難"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.009311,
+        "2": 0.009615,
+        "3": 0.009921,
+        "4": 0.010225,
+        "6": 0.010684
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/107.4、設定6: 1/93.6。1/100以下なら高設定に期待"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.018904,
+        "2": 0.018904,
+        "3": 0.018904,
+        "4": 0.018904,
+        "6": 0.018904
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/52.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.00061,
+        "2": 0.00061,
+        "3": 0.00061,
+        "4": 0.00061,
+        "6": 0.00061
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/1638.4"
+    },
+    {
+      "name": "バリバリ目",
+      "probabilities": {
+        "1": 0.009158,
+        "2": 0.009158,
+        "3": 0.009158,
+        "4": 0.009158,
+        "6": 0.009158
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/109.2"
+    },
+    {
+      "name": "強バリバリ目",
+      "probabilities": {
+        "1": 0.00061,
+        "2": 0.00061,
+        "3": 0.00061,
+        "4": 0.00061,
+        "6": 0.00061
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/1638.4"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "kenka_33",
+      "name": "喧嘩上等演出 残り33人",
+      "description": "カッ飛びゾーン中の喧嘩上等演出で残り人数が33人なら設定3以上確定",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "kenka_44",
+      "name": "喧嘩上等演出 残り44人",
+      "description": "カッ飛びゾーン中の喧嘩上等演出で残り人数が44人なら設定4以上確定",
+      "confirmedSettings": [
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
+      "color": "#FF9800"
+    },
+    {
+      "id": "kenka_66",
+      "name": "喧嘩上等演出 残り66人",
+      "description": "カッ飛びゾーン中の喧嘩上等演出で残り人数が66人なら設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#F44336"
+    },
+    {
+      "id": "kenka_6",
+      "name": "喧嘩上等演出 残り6人",
+      "description": "カッ飛びゾーン中の喧嘩上等演出で残り人数が6人なら設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_screen_sho",
+      "name": "AT終了画面 翔",
+      "description": "AT終了画面に翔が出現で設定6確定（エンディング終了後は無効）",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#F44336"
+    },
+    {
+      "id": "end_screen_miyageya",
+      "name": "AT終了画面 土産屋（鬼浜4人）",
+      "description": "AT終了画面が土産屋（鬼浜4人）なら設定2以上確定（エンディング終了後は無効）",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "ed_sd_ai",
+      "name": "エンディング中SDキャラ アイちゃん",
+      "description": "エンディング中のレア役成立時にアイちゃんが出現で設定2以上確定",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
+      "color": "#E91E63"
+    },
+    {
+      "id": "ed_sd_sho",
+      "name": "エンディング中SDキャラ 翔",
+      "description": "エンディング中のレア役成立時に翔が出現で設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#F44336"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "at_end_default",
+      "name": "商店街（デフォルト）",
+      "type": "at_end",
+      "hint": "基本パターン",
+      "probabilities": {
+        "1": 0.92,
+        "2": 0.92,
+        "3": 0.85,
+        "4": 0.83,
+        "6": 0.79
+      }
+    },
+    {
+      "id": "at_end_ai_yui",
+      "name": "アイちゃん&ユイ",
+      "type": "at_end",
+      "hint": "高設定示唆",
+      "probabilities": {
+        "1": 0.04,
+        "2": 0.05,
+        "3": 0.08,
+        "4": 0.1,
+        "6": 0.13
+      }
+    },
+    {
+      "id": "at_end_miyageya",
+      "name": "土産屋（鬼浜4人）",
+      "type": "at_end",
+      "hint": "設定2以上確定",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
+      "probabilities": {
+        "2": 0.03,
+        "3": 0.03,
+        "4": 0.03,
+        "6": 0.03
+      }
+    },
+    {
+      "id": "at_end_ryuji_kouhei_taiga",
+      "name": "リュウジ&コウヘイ&タイガ",
+      "type": "at_end",
+      "hint": "設定2否定（奇数設定示唆）",
+      "probabilities": {
+        "1": 0.04,
+        "3": 0.04,
+        "4": 0.04,
+        "6": 0.04
+      }
+    },
+    {
+      "id": "at_end_sho",
+      "name": "翔",
+      "type": "at_end",
+      "hint": "設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "probabilities": {
+        "6": 0.01
+      }
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "ed_sd_nobuo",
+      "name": "ノブオ（EDミニキャラ）",
+      "hint": "基本パターン",
+      "description": "エンディング中レア役成立時に出現。設定差小"
+    },
+    {
+      "id": "ed_sd_daigo",
+      "name": "ダイゴ（EDミニキャラ）",
+      "hint": "偶数設定で出やすい",
+      "description": "エンディング中レア役成立時に出現。偶数設定で出現率が高い"
+    },
+    {
+      "id": "ed_sd_hayato",
+      "name": "ハヤト（EDミニキャラ）",
+      "hint": "設定3以上の強示唆",
+      "description": "エンディング中レア役成立時に出現。高設定ほど出現しやすく、設定3以上の強示唆"
+    },
+    {
+      "id": "ed_sd_ryuji",
+      "name": "リュウジ（EDミニキャラ）",
+      "hint": "偶数設定の強示唆",
+      "description": "エンディング中レア役成立時に出現。偶数設定の強示唆"
+    },
+    {
+      "id": "ed_sd_ai",
+      "name": "アイちゃん（EDミニキャラ）",
+      "hint": "設定2以上確定",
+      "description": "エンディング中レア役成立時に出現。設定2以上確定",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "ed_sd_bukokyousokai",
+      "name": "武虎狂走會（EDミニキャラ）",
+      "hint": "設定3以上確定",
+      "description": "エンディング中レア役成立時に出現。設定3以上確定",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "ed_sd_ankokuikka",
+      "name": "暗黒一家（EDミニキャラ）",
+      "hint": "設定4以上確定",
+      "description": "エンディング中レア役成立時に出現。設定4以上確定",
+      "confirmedSettings": [
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "id": "ed_sd_sho",
+      "name": "翔（EDミニキャラ）",
+      "hint": "設定6確定",
+      "description": "エンディング中レア役成立時に出現。設定6確定",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "cz_lv1",
+      "name": "カッ飛びゾーン レベル1",
+      "description": "CZ最終レベル1でのAT当選率",
+      "triggerName": "カッ飛びゾーン",
+      "targetName": "AT当選",
+      "probabilities": {
+        "1": 0.015,
+        "2": 0.015,
+        "3": 0.016,
+        "4": 0.017,
+        "6": 0.019
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_lv2",
+      "name": "カッ飛びゾーン レベル2",
+      "description": "CZ最終レベル2でのAT当選率",
+      "triggerName": "カッ飛びゾーン",
+      "targetName": "AT当選",
+      "probabilities": {
+        "1": 0.245,
+        "2": 0.246,
+        "3": 0.263,
+        "4": 0.288,
+        "6": 0.33
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    },
+    {
+      "id": "cz_lv3",
+      "name": "カッ飛びゾーン レベル3",
+      "description": "CZ最終レベル3でのAT当選率",
+      "triggerName": "カッ飛びゾーン",
+      "targetName": "AT当選",
+      "probabilities": {
+        "1": 0.448,
+        "2": 0.449,
+        "3": 0.481,
+        "4": 0.529,
+        "6": 0.611
+      },
+      "color": "#2196F3",
+      "displayOrder": 3
+    },
+    {
+      "id": "cz_lv4",
+      "name": "カッ飛びゾーン レベル4",
+      "description": "CZ最終レベル4でのAT当選率",
+      "triggerName": "カッ飛びゾーン",
+      "targetName": "AT当選",
+      "probabilities": {
+        "1": 0.66,
+        "2": 0.682,
+        "3": 0.715,
+        "4": 0.754,
+        "6": 0.827
+      },
+      "color": "#2196F3",
+      "displayOrder": 4
+    },
+    {
+      "id": "cz_lv5",
+      "name": "カッ飛びゾーン レベル5",
+      "description": "CZ最終レベル5でのAT当選率（AT確定）",
+      "triggerName": "カッ飛びゾーン",
+      "targetName": "AT当選",
+      "probabilities": {
+        "1": 1.0,
+        "2": 1.0,
+        "3": 1.0,
+        "4": 1.0,
+        "6": 1.0
+      },
+      "color": "#4CAF50",
+      "displayOrder": 5
+    },
+    {
+      "id": "at_direct_weak",
+      "name": "弱レア役からのAT直撃当選率",
+      "description": "通常時の弱チェリー・スイカからのAT直撃当選率。設定1と6で約15倍の差",
+      "triggerName": "弱チェリー・スイカ",
+      "targetName": "AT直撃",
+      "probabilities": {
+        "1": 0.0002,
+        "2": 0.0002,
+        "3": 0.0008,
+        "4": 0.0025,
+        "6": 0.0031
+      },
+      "color": "#E91E63",
+      "displayOrder": 6
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "ベルコの6.1号機AT機（2021年5月24日導入）。AT「ツッパリRUSH」は純増約2.8枚/G、1セット30G+αのセット数管理型。初回セット勝利期待度約50%を突破で継続率約80%の「真ツッパリRUSH」に移行。天井は最大768G+α。設定はL,1,2,3,4,6の5段階+特殊設定（設定5なし）。スイカ確率とCZ成功率に設定差。AT終了画面・喧嘩上等演出・エンディング中SDキャラで設定示唆。機械割97.6%〜108.2%。",
+  "lastUpdated": "2026-03-25",
+  "source": "ちょんぼりすた、DMMぱちタウン、一撃、スロパチクエスト、ななプレス、パチセブン、スロット解析.com"
+}
