@@ -98,32 +98,64 @@
       "id": "chara_noint_kaori",
       "name": "キャラ紹介3人目ノイント香織",
       "description": "ミュウボーナス中のキャラ紹介で3人目がノイント香織",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "silver_hajime",
       "name": "銀枠のハジメ",
       "description": "エンディング中のキャライラスト。設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "gold_yue",
       "name": "金枠のユエ",
       "description": "エンディング中のキャライラスト",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "rainbow_myu",
       "name": "虹枠のミュウ",
       "description": "エンディング中のキャライラスト",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -137,7 +169,7 @@
         "2": 0.06,
         "3": 0.09,
         "4": 0.15,
-        "5": 0.20,
+        "5": 0.2,
         "6": 0.27
       },
       "color": "#FF9800",
@@ -151,7 +183,7 @@
         "1": 0.15,
         "2": 0.16,
         "3": 0.19,
-        "4": 0.20,
+        "4": 0.2,
         "5": 0.21,
         "6": 0.22
       },
@@ -189,6 +221,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

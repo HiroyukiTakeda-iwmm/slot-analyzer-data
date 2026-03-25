@@ -36,7 +36,7 @@
       "name": "チャンス目",
       "probabilities": {
         "1": 0.00244,
-        "2": 0.00250,
+        "2": 0.0025,
         "3": 0.00259,
         "4": 0.00269,
         "5": 0.00275,
@@ -53,72 +53,144 @@
       "id": "end_screen_hanabatake",
       "name": "AT終了画面 お花畑",
       "description": "AT終了時",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "end_screen_heroine3",
       "name": "AT終了画面 ルルーシュ+ヒロイン3人",
       "description": "AT終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "end_screen_black_knights",
       "name": "AT終了画面 黒の騎士団",
       "description": "AT終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "end_screen_oz",
       "name": "AT終了画面 双貌のオズ",
       "description": "AT終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "trophy_bronze",
       "name": "サミートロフィー 銅",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "trophy_silver",
       "name": "サミートロフィー 銀",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "trophy_gold",
       "name": "サミートロフィー 金",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_kirin",
       "name": "サミートロフィー キリン柄",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "trophy_rainbow",
       "name": "サミートロフィー 虹",
       "description": "ボーナス終了時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -183,7 +255,7 @@
         "2": 0.001007,
         "3": 0.001038,
         "4": 0.001679,
-        "5": 0.002350,
+        "5": 0.00235,
         "6": 0.003021
       },
       "color": "#FF9800",
@@ -192,6 +264,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "DMMぱちタウン、一撃、ちょんぼりすた"
 }

@@ -38,32 +38,64 @@
       "id": "end_screen_silver",
       "name": "ボーナス終了画面 銀枠",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "end_screen_gold",
       "name": "ボーナス終了画面 金枠",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "end_screen_rainbow",
       "name": "ボーナス終了画面 虹枠",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF1493"
     },
     {
       "id": "end_screen_kaworu",
       "name": "終了画面 カヲル",
       "description": "設定6のみ出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#9C27B0"
     }
   ],
@@ -115,13 +147,13 @@
         "2": 0.239,
         "3": 0.272,
         "4": 0.303,
-        "5": 0.320,
+        "5": 0.32,
         "6": 0.334
       }
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "ちょんぼりすた、一撃"
 }

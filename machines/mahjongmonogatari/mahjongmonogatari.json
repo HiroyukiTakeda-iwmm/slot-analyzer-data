@@ -68,8 +68,16 @@
       "id": "haruruna_push",
       "name": "ハルルナPUSH",
       "description": "ラストジャッジ中等に出現",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     }
   ],
@@ -136,6 +144,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "ちょんぼりすた、一撃、ナナプレス"
 }

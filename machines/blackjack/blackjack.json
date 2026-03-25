@@ -7,7 +7,7 @@
       "probabilities": {
         "1": 0.01001,
         "2": 0.01098,
-        "3": 0.01140,
+        "3": 0.0114,
         "4": 0.01154,
         "5": 0.01176,
         "6": 0.01192
@@ -53,72 +53,144 @@
       "id": "panel_light",
       "name": "下パネル点灯のみ",
       "description": "当選告知Gのレバーオン時に下パネルのみ点灯",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "panel_only_setting6",
       "name": "下パネル点灯のみ（他演出なし）",
       "description": "最後まで下パネル点滅以外の演出が発生しない",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "trophy_bronze",
       "name": "ケロットトロフィー銅",
       "description": "ボーナス終了時に銅トロフィーが出現で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "trophy_silver",
       "name": "ケロットトロフィー銀",
       "description": "ボーナス終了時に銀トロフィーが出現で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "trophy_gold",
       "name": "ケロットトロフィー金",
       "description": "ボーナス終了時に金トロフィーが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_kerorin",
       "name": "ケロットトロフィーケロット柄",
       "description": "ボーナス終了時にケロット柄トロフィーが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "trophy_rainbow",
       "name": "ケロットトロフィー虹",
       "description": "ボーナス終了時に虹トロフィーが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "card_rio_lina_joker",
       "name": "ボーナス終了時カード リオ&リナ（ジョーカー）",
       "description": "ボーナス終了時にリオ&リナ（ジョーカー）カードが出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "card_rio_lina_mint",
       "name": "ボーナス終了時カード リオ&リナ&ミント",
       "description": "ボーナス終了時にリオ&リナ&ミントカードが出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -128,7 +200,7 @@
       "name": "チャンス目からのボーナス直撃率",
       "description": "設定1: 5.0%、設定6: 7.8%。通常滞在時のチャンス目成立時ボーナス当選率",
       "probabilities": {
-        "1": 0.050,
+        "1": 0.05,
         "2": 0.051,
         "3": 0.052,
         "4": 0.069,
@@ -186,6 +258,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "ちょんぼりすた、一撃、ナナプレス、altema"
 }

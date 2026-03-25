@@ -6,7 +6,7 @@
       "name": "単チェリー確率",
       "probabilities": {
         "1": 0.009083,
-        "2": 0.009690,
+        "2": 0.00969,
         "3": 0.010299,
         "4": 0.010905,
         "5": 0.011287,
@@ -38,24 +38,48 @@
       "id": "cz_end_kiseru",
       "name": "CZ終了画面 キセル",
       "description": "CZ終了画面でキセルが出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "cz_end_enemies",
       "name": "CZ終了画面 敵キャラ集合",
       "description": "CZ終了画面で敵キャラ集合が出現で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "cz_end_hideyoshi",
       "name": "CZ終了画面 秀吉",
       "description": "CZ終了画面で秀吉が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
@@ -63,7 +87,9 @@
       "name": "AT終了画面 伊達＆真田",
       "description": "AT終了画面で伊達＆真田が出現で設定2否定",
       "confirmedSettings": [],
-      "excludedSettings": ["2"],
+      "excludedSettings": [
+        "2"
+      ],
       "color": "#78909C"
     },
     {
@@ -71,77 +97,143 @@
       "name": "AT終了画面 奥村＆直江",
       "description": "AT終了画面で奥村＆直江が出現で設定3否定",
       "confirmedSettings": [],
-      "excludedSettings": ["3"],
+      "excludedSettings": [
+        "3"
+      ],
       "color": "#607D8B"
     },
     {
       "id": "at_end_ofu_genpaku",
       "name": "AT終了画面 おふう（原画）",
       "description": "AT終了画面でおふう（原画）が出現で設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "at_end_hotaru_genpaku",
       "name": "AT終了画面 蛍（原画）",
       "description": "AT終了画面で蛍（原画）が出現で設定3以上確定",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "at_end_omatsu",
       "name": "AT終了画面 おまつ",
       "description": "AT終了画面でおまつが出現で設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "at_end_risa",
       "name": "AT終了画面 理沙",
       "description": "AT終了画面で理沙が出現で設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "at_end_hyakumangoku",
       "name": "AT終了画面 百万石の酒",
       "description": "AT終了画面で百万石の酒が出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#F44336"
     },
     {
       "id": "fusuma_246",
       "name": "襖 金弐四六両",
       "description": "襖演出で金弐四六両が出現で偶数設定濃厚",
-      "confirmedSettings": ["2", "4", "6"],
-      "excludedSettings": ["1", "3", "5"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "3",
+        "5"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "fusuma_456",
       "name": "襖 金四五六両",
       "description": "襖演出で金四五六両が出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "fusuma_666",
       "name": "襖 金六六六両",
       "description": "襖演出で金六六六両が出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "description": "ニューギンの6号機AT機。単チェリー確率が最重要設定差要素（通常時のみ）。CZ+AT合算確率に大きな設定差。CZ/AT終了画面・襖演出で設定確定。",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "ちょんぼりすた、一撃、スロパチクエスト、パチセブン、なな徹"
 }

@@ -65,12 +65,12 @@
     {
       "name": "チャンス目",
       "probabilities": {
-        "1": 0.00500,
-        "2": 0.00500,
-        "3": 0.00500,
-        "4": 0.00500,
-        "5": 0.00500,
-        "6": 0.00500
+        "1": 0.005,
+        "2": 0.005,
+        "3": 0.005,
+        "4": 0.005,
+        "5": 0.005,
+        "6": 0.005
       },
       "hasSettingDiff": false,
       "displayOrder": 5,
@@ -83,64 +83,128 @@
       "id": "souninokoku_female",
       "name": "争忍の刻開始画面 女性キャラ集合",
       "description": "争忍の刻開始時",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "souninokoku_gennosuke_oboro_purple",
       "name": "争忍の刻開始画面 弦之介&朧（紫）",
       "description": "争忍の刻開始時",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "souninokoku_gennosuke_oboro_rainbow",
       "name": "争忍の刻開始画面 弦之介&朧＋鼻歌（虹）",
       "description": "争忍の刻開始時",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FF1744"
     },
     {
       "id": "univaplate_bronze",
       "name": "ユニバプレート銅",
       "description": "BT終了時サブ液晶タッチ",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "univaplate_silver",
       "name": "ユニバプレート銀",
       "description": "BT終了時サブ液晶タッチ",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "univaplate_gold",
       "name": "ユニバプレート金",
       "description": "BT終了時サブ液晶タッチ",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "univaplate_hanabi",
       "name": "ユニバプレート花火柄",
       "description": "BT終了時サブ液晶タッチ",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "univaplate_rainbow",
       "name": "ユニバプレート虹",
       "description": "BT終了時サブ液晶タッチ",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -166,7 +230,7 @@
       "probabilities": {
         "1": 0.002392,
         "2": 0.002469,
-        "3": 0.002760,
+        "3": 0.00276,
         "4": 0.003213,
         "5": 0.003478,
         "6": 0.004044
@@ -224,6 +288,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.2",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "一撃、DMMぱちタウン、すろぱちくえすと、なな徹"
 }

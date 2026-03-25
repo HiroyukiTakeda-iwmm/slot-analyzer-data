@@ -10,7 +10,7 @@
         "3": 0.166113,
         "4": 0.166113,
         "5": 0.166113,
-        "6": 0.173010
+        "6": 0.17301
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -84,6 +84,6 @@
   "author": "コミュニティ",
   "version": "1.2",
   "description": "アイムジャグラー系。ぶどう確率は設定6のみ優遇、単独REGに設定差あり。",
-  "lastUpdated": "2026-02-14",
+  "lastUpdated": "2026-03-25",
   "source": "juggler7.com、jugglertopics.jp、一撃"
 }

@@ -16,7 +16,7 @@
         "6段階設定"
       ],
       "description": "6段階設定のジャグラー系Aタイプ",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "juggler-aim-ex",
@@ -32,7 +32,7 @@
         "アイム"
       ],
       "description": "アイムジャグラー系",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "hokuto-smash",
@@ -49,7 +49,7 @@
         "トロフィー"
       ],
       "description": "金トロフィーで設定4以上確定、キリンで設定5以上確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "hanabi-shin",
@@ -66,7 +66,7 @@
         "4段階設定"
       ],
       "description": "花火チャレンジでの設定差あり、設定1,2,5,6の4段階",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "hokuto-tensei2",
@@ -83,7 +83,7 @@
         "2025年新台"
       ],
       "description": "天破の刻突入率と弱レア役からの高確移行率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tekken6",
@@ -99,7 +99,7 @@
         "2025年新台"
       ],
       "description": "小役確率に設定差なし、AT直撃確率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "new-king-hanahana-v",
@@ -115,7 +115,7 @@
         "2025年新台"
       ],
       "description": "V含む5段階設定、BIG中スイカ確率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "rezero-season2",
@@ -131,7 +131,7 @@
         "2024年新台"
       ],
       "description": "死に戻り（引き戻し）発生率に設定差、小役確率は全設定共通",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "bakemonogatari",
@@ -148,7 +148,7 @@
         "2025年新台"
       ],
       "description": "スイカ確率と弱チェリーAT直撃率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tokyo-revengers",
@@ -165,7 +165,7 @@
         "2024年新台"
       ],
       "description": "共通ベルと稀咲陰謀当選率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "shin-onimusha3",
@@ -182,7 +182,7 @@
         "2024年新台"
       ],
       "description": "エンディング中ボイスで設定示唆、弱チャンス目で真・鬼斬チャージ当選時は設定4以上濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kaiji-kyouen",
@@ -199,7 +199,7 @@
         "2025年新台"
       ],
       "description": "スイカ・弱チャンス目・弱チェリー・強チェリーに設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "biohazard5",
@@ -216,7 +216,7 @@
         "2025年新台"
       ],
       "description": "小役確率に設定差なし、CZ確率とインフェクション突入率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "gundam-seed",
@@ -232,7 +232,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通、終了画面による豊富な設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "yoshimune",
@@ -249,7 +249,7 @@
         "2025年新台"
       ],
       "description": "共通俵確率に設定差、花札による豊富な設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "guiltycrown2",
@@ -265,7 +265,7 @@
         "2025年新台"
       ],
       "description": "弱スイカボーナス同時当選率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "iza-bancho",
@@ -281,7 +281,7 @@
         "2025年新台"
       ],
       "description": "共通ベルAと青7BB直撃率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "dmc5",
@@ -298,7 +298,7 @@
         "2025年新台"
       ],
       "description": "謎ダンテCZ出現率に特大の設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "shin-eva",
@@ -314,7 +314,7 @@
         "2025年新台"
       ],
       "description": "150G以内AT当選率に設定差、カヲル画面は設定6のみ",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "goblinslayer2",
@@ -330,7 +330,7 @@
         "2025年新台"
       ],
       "description": "共通ベル確率とリプ3連CZ当選率に特大の設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "striketheblood",
@@ -347,7 +347,7 @@
         "2024年新台"
       ],
       "description": "小役確率に設定差なし、終了時ランプ色で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "watakon",
@@ -364,7 +364,7 @@
         "2025年新台"
       ],
       "description": "4スルー天井選択率に設定差、アリストロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "babel",
@@ -380,7 +380,7 @@
         "2025年新台"
       ],
       "description": "RB確率とボーナス合算に明瞭な設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "neoplanet",
@@ -397,7 +397,7 @@
         "2025年新台"
       ],
       "description": "モードF高確移行率に非常に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "shamanking",
@@ -414,7 +414,7 @@
         "2025年新台"
       ],
       "description": "共通ベルA確率に設定差大、OS揃いAT直撃で設定4以上期待度UP",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "arifureta",
@@ -431,7 +431,7 @@
         "2025年新台"
       ],
       "description": "ミュウボーナスAT当選率と天国モード移行率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "super-blackjack",
@@ -448,7 +448,7 @@
         "2025年新台"
       ],
       "description": "斜めスイカ確率とボーナス直撃当選率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tokyoghoul",
@@ -465,7 +465,7 @@
         "2025年新台"
       ],
       "description": "下段リプレイとエピソードボーナス出現率に設定差、虹枠終了画面で設定6濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "idolmaster-million",
@@ -483,7 +483,7 @@
         "2025年新台"
       ],
       "description": "CZ突入率に設定差、ボーナス終了画面で奇偶示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "mahjongmonogatari",
@@ -500,7 +500,7 @@
         "2025年新台"
       ],
       "description": "マシロック中7揃いと煌帝出現率に設定差、ハルルナPUSHで設定4以上濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "godzilla",
@@ -517,7 +517,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通、AT初当り確率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "magireco",
@@ -535,7 +535,7 @@
         "2025年新台"
       ],
       "description": "弱チェリー確率に微差、みたまボーナス最終ジャッジAT当選率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "youjitsu",
@@ -552,7 +552,7 @@
         "2025年新台"
       ],
       "description": "ダクセルフラッシュ発生率に設定1と6で5倍の差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "midoridon-viva",
@@ -569,7 +569,7 @@
         "2025年新台"
       ],
       "description": "弱波・弱チェリーに設定差、引き戻しゾーンハズレ当選率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "ultraman",
@@ -586,7 +586,7 @@
         "2025年新台"
       ],
       "description": "中押しウルトラ目に特大の設定差、タイマー演出と終了画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tenken",
@@ -603,7 +603,7 @@
         "2025年新台"
       ],
       "description": "弱スイカからのボーナス当選率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "matador3",
@@ -620,7 +620,7 @@
         "2025年新台"
       ],
       "description": "REG確率に設定差大、BT中バラケ目1枚役で高設定期待度大幅UP",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "musyokutensei",
@@ -637,7 +637,7 @@
         "2025年新台"
       ],
       "description": "AT初当り確率に大きな設定差、ダブル・オールヒロイン役でAT濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "starhanahana",
@@ -654,7 +654,7 @@
         "2025年新台"
       ],
       "description": "REG確率とBIG中スイカ確率に設定差、設定5・6は約1BIGに1回スイカ成立",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "okidoki-duo-encore",
@@ -671,7 +671,7 @@
         "2025年新台"
       ],
       "description": "角チェリー確率に設定差、ボーナステンパイ音で天国以上濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "karakuri-circus",
@@ -688,7 +688,7 @@
         "2024年新台"
       ],
       "description": "通常時幕間チャンス当選率に設定1と6で約3倍の差、フランシーヌ終了画面で設定6濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kabaneri-unato",
@@ -705,7 +705,7 @@
         "2026年新台"
       ],
       "description": "AT初当り確率とボーナス初当り確率に設定差、エピボ比率約50%でST突入濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "discup-ultraremix",
@@ -722,7 +722,7 @@
         "2025年新台"
       ],
       "description": "REG確率に大きな設定差、BB中ウルトラ上乗せ発生率に特大設定差、REG中3モードで豊富な設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "valvrave2",
@@ -739,7 +739,7 @@
         "2025年新台"
       ],
       "description": "小役確率に設定差なし、BAR揃いAT直撃率と特殊テーブル選択率に設定差、終了画面枠色で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "monkeyturn-v",
@@ -756,7 +756,7 @@
         "2023年新台"
       ],
       "description": "5枚役確率に設定差（非公式）、ライバルモード突入率に設定差、ケロットトロフィーで設定示唆",
-      "lastUpdated": "2026-02-11"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kaguya-sama",
@@ -773,7 +773,7 @@
         "2024年新台"
       ],
       "description": "ボーナス終了画面枠色とREG中キャラ紹介で設定示唆、ミニ藤原衣装チェンジで確定演出",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "hihouden",
@@ -790,7 +790,7 @@
         "2025年新台"
       ],
       "description": "チェリー確率に設定差、コパンダトロフィーと秘宝ニュースで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "godeater-resurrection",
@@ -806,7 +806,7 @@
         "2024年新台"
       ],
       "description": "小役確率は全設定共通、AT終了画面とストーリー終了ボイスで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "zenishape5",
@@ -824,7 +824,7 @@
         "2025年新台"
       ],
       "description": "設定1非搭載5段階設定、デカ目出現率に大きな設定差、凪スタンプと獲得枚数で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "monhun-rise",
@@ -842,7 +842,7 @@
         "2024年新台"
       ],
       "description": "小役確率に設定差なし、ライズゾーン出現率に設定差、エンタトロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "enen-shouboutai",
@@ -859,7 +859,7 @@
         "2024年新台"
       ],
       "description": "設定3なし5段階、チャンス目・強チェリーに設定差、REGキャラ紹介で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kizumonogatari",
@@ -876,7 +876,7 @@
         "2023年新台"
       ],
       "description": "共通ベルと弱チェリーに設定差、サミートロフィーとAT終了画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "codegeass3",
@@ -892,7 +892,7 @@
         "サミー"
       ],
       "description": "スイカ確率とC.C.揃い出現率に設定差、サミートロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "eureka-type-art",
@@ -909,7 +909,7 @@
         "2023年新台"
       ],
       "description": "共通7枚ベル確率に設定差、サミートロフィーとBB終了画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "danmachi2",
@@ -925,7 +925,7 @@
         "2024年新台"
       ],
       "description": "スイカと強チャンス目に設定差、終了画面カスタムキャラで効率的な設定判別",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "gamera2",
@@ -942,7 +942,7 @@
         "2024年新台"
       ],
       "description": "逆押しリーチ目出現率に設定差、サミートロフィーと終了画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "granbelm",
@@ -959,7 +959,7 @@
         "2023年新台"
       ],
       "description": "小役確率に設定差なし、ナカミミエールモードアイコンとリザルト画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "azurlane",
@@ -977,7 +977,7 @@
         "2025年新台"
       ],
       "description": "共通ベル・チェリー・スイカに設定差、玉ちゃんトロフィーと終了画面で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "gogo-juggler3",
@@ -993,7 +993,7 @@
         "6段階設定"
       ],
       "description": "北電子の6.5号機ジャグラー。ぶどう・REG確率・チェリー重複に設定差あり",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "funky-juggler2",
@@ -1009,7 +1009,7 @@
         "6段階設定"
       ],
       "description": "6段階設定のジャグラー系Aタイプ。ぶどう確率と単独REGに設定差あり",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "happy-juggler-viii",
@@ -1025,7 +1025,7 @@
         "6段階設定"
       ],
       "description": "北電子の6号機ジャグラー。ぶどう確率に設定3→4で大きな段階差。チェリー重複REGに最大約1.65倍の設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "aim-juggler-ex-6gou",
@@ -1042,7 +1042,7 @@
         "6段階設定"
       ],
       "description": "6号機アイムジャグラー。ぶどうは設定6のみ優遇、単独REGに最大約1.73倍の設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "bancho4",
@@ -1059,7 +1059,7 @@
         "2024年新台"
       ],
       "description": "共通ベル・AT直撃に設定差。終了画面で設定確定演出あり",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "crea-bt",
@@ -1077,7 +1077,7 @@
         "2025年新台"
       ],
       "description": "REG確率に大きな設定差。BT中ハズレ確率で設定4以上を判別可能",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "revue-starlight",
@@ -1095,7 +1095,7 @@
         "2025年新台"
       ],
       "description": "設定3非搭載5段階設定。CZ確率とREG確率に設定差。ボーナス終了画面エフェクトで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "magical-halloween8",
@@ -1113,7 +1113,7 @@
         "2023年新台"
       ],
       "description": "共通コイン確率とART初当りに設定差。どこまじ当選率に特大の設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "dumbbell",
@@ -1130,7 +1130,7 @@
         "2024年新台"
       ],
       "description": "小役確率に設定差なし。CZ/AT終了画面の枠色で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "zombielandsaga",
@@ -1148,7 +1148,7 @@
         "2024年新台"
       ],
       "description": "ST確率・CZ確率に設定差。徒花ボーナス中キャラ紹介で設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "koukaku-kidoutai",
@@ -1166,7 +1166,7 @@
         "2026年新台"
       ],
       "description": "小役確率に設定差なし。AT確率と引き戻しストック当選率に設定差。サミートロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "sumaslo-hanabi",
@@ -1184,7 +1184,7 @@
         "2026年新台"
       ],
       "description": "4段階設定（1,2,5,6）。風鈴合算とREG確率に設定差。BIG中バラケ目で設定5以上濃厚",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "hanma-baki",
@@ -1201,7 +1201,7 @@
         "2026年新台"
       ],
       "description": "小役確率に設定差なし。チャンスモード移行率に設定差。AT終了画面スタンプで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "umineko2",
@@ -1219,7 +1219,7 @@
         "2026年新台"
       ],
       "description": "ボーナス合算確率に段階的な設定差。完全攻略時の機械割が高い技術介入機",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "salaryman-kintaro",
@@ -1237,7 +1237,7 @@
         "ギンちゃんトロフィー"
       ],
       "description": "AT初当たり確率に大きな設定差。ギンちゃんトロフィー・獲得枚数表示で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "enen-shouboutai2",
@@ -1255,7 +1255,7 @@
         "2026年新台"
       ],
       "description": "炎炎ループ初当たり確率に大きな設定差。前作5段階から今作は全6段階設定に変更",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "sengokuotome4",
@@ -1273,7 +1273,7 @@
         "2023年新台"
       ],
       "description": "小役確率に設定差なし。CZ乙女アタック突入率とAT初当たり確率に設定差。AT終了画面スタンプで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kabaneri-6.5",
@@ -1292,7 +1292,7 @@
         "2022年新台"
       ],
       "description": "共通6枚ベルに設定差。CZ確率とST合算確率に大きな設定差。サミートロフィーとおみくじで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "okidoki-gold",
@@ -1311,7 +1311,7 @@
         "2022年新台"
       ],
       "description": "設定4なし5段階設定。チェリーB確率と確定役Bに設定差。モード移行とハイビスカス点灯パターンが特徴",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "basilisk-kizuna2-tenzen",
@@ -1330,7 +1330,7 @@
         "2023年新台"
       ],
       "description": "弱チェリー確率に設定差。BT初当たり確率に大きな設定差。争忍の刻開始画面とユニバプレートで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "fujiko-bt",
@@ -1348,7 +1348,7 @@
         "2025年新台"
       ],
       "description": "設定3非搭載5段階設定。プラム・チェリー確率に設定差。チェリー同時当選率に特大の設定差。ボイスで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "railgun2",
@@ -1367,7 +1367,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通。超電磁砲コイン出現率・CZ確率・AT初当たり確率に設定差。AT終了画面と藤丸コインで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "okidoki-black",
@@ -1384,7 +1384,7 @@
         "2024年新台"
       ],
       "description": "設定4非搭載5段階設定。チェリーB確率・確定役Bに設定差。ボーナス初当たり確率に設定差。ハイビスカス点灯パターンでモード示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "prismnana",
@@ -1403,7 +1403,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通。ST初当たり確率に設定差。ボーナス終了画面・会話演出・プリプリゾーンボイスで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "shake-bt",
@@ -1421,7 +1421,7 @@
         "2025年新台"
       ],
       "description": "4段階設定（1,2,5,6）。ベル・チェリー・スイカに設定差。偶数設定はボーナスが軽く、奇数設定はBT継続率が高い。コパンダトロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "biohazard-re2",
@@ -1440,7 +1440,7 @@
         "2022年台"
       ],
       "description": "小役確率は全設定共通。AT初当たり確率・リプレイ時CZ当選率に設定差。フィギュアコレクションで設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "newpulsar-bt",
@@ -1458,7 +1458,7 @@
         "2025年新台"
       ],
       "description": "4段階設定（1,2,5,6）。チェリー合算・チャンスチェリーに設定差。RB中リールフラッシュに特大設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "thunderv-lightning",
@@ -1476,7 +1476,7 @@
         "2020年台"
       ],
       "description": "4段階設定（1,2,5,6）。ベルA確率に設定差。BIG中ハズレに特大設定差。RIZIN ZONEゾロ目で設定6確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "codegeass3-cckallen",
@@ -1494,7 +1494,7 @@
         "2023年台"
       ],
       "description": "チェリー・スイカ・チャンス目に設定差。REG確率に大きな設定差。AT終了画面とサミートロフィーで設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "toloveru-darkness",
@@ -1513,7 +1513,7 @@
         "2024年台"
       ],
       "description": "設定1非搭載（設定L, 2, 3, 4, 5, 6）。小役確率は全設定共通。ST終了画面スタンプ・獲得枚数表示・隠れ凪ボイスで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "gineiden-dnt",
@@ -1532,7 +1532,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通。ボーナス確率・ST確率に設定差。アリストロフィー5種で設定示唆。ギャラクシーボーナス中演出で偶奇示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tensura",
@@ -1551,7 +1551,7 @@
         "2025年新台"
       ],
       "description": "設定3非搭載5段階設定。小役確率は全設定共通。AT初当り確率に設定差。ケロットトロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "sao",
@@ -1570,7 +1570,7 @@
         "2025年新台"
       ],
       "description": "共通ベル確率に設定差。CZ確率・ボーナス確率に段階的設定差。AT終了画面と獲得枚数で設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "chibariyo2",
@@ -1588,7 +1588,7 @@
         "2025年新台"
       ],
       "description": "設定3非搭載5段階設定。小役確率は全設定共通。ボーナス初当り確率に設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "zettai-shougeki4",
@@ -1607,7 +1607,7 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通。AT初当り確率に大きな設定差。ダイナマイトトロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "inuyasha",
@@ -1624,7 +1624,7 @@
         "6段階設定"
       ],
       "description": "6.5号機AT機。ボーナス確率とAT確率に設定差。終了画面で豊富な設定確定演出",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "kinnikuman-7devil",
@@ -1642,7 +1642,7 @@
         "5段階設定"
       ],
       "description": "設定3非搭載5段階設定。弱チャンス役合算に設定差。ケロットトロフィーで設定示唆",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "madoka-hangyaku",
@@ -1659,7 +1659,7 @@
         "6段階設定"
       ],
       "description": "マギカBONUS確率とAT初当たりに設定差。AT終了画面とセリフで設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "rezero",
@@ -1676,7 +1676,7 @@
         "6段階設定"
       ],
       "description": "共通ベル確率が最重要。白鯨終了画面・コンビニおつりで設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "valvrave",
@@ -1693,7 +1693,7 @@
         "6段階設定"
       ],
       "description": "CZ出現率とボーナス初当たりに設定差。終了画面枠色と獲得枚数で設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "keiji-bui",
@@ -1710,7 +1710,7 @@
         "6段階設定"
       ],
       "description": "単チェリー確率とCZ+AT合算に設定差。CZ/AT終了画面で設定確定",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "my-juggler5",
@@ -1727,7 +1727,7 @@
         "6段階設定"
       ],
       "description": "6号機最人気ジャグラー。単独REGとRB確率に大きな設定差",
-      "lastUpdated": "2026-02-14"
+      "lastUpdated": "2026-03-25"
     },
     {
       "id": "tekken5",
