@@ -95,7 +95,8 @@
     },
     "lastUpdated": {
       "type": "string",
-      "description": "最終更新日"
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "最終更新日（YYYY-MM-DD形式）"
     },
     "source": {
       "type": "string",

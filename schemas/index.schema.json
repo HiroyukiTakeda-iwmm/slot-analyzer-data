@@ -59,6 +59,11 @@
           "description": {
             "type": "string",
             "description": "設定差の概要説明"
+          },
+          "lastUpdated": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "データの最終更新日（YYYY-MM-DD形式）"
           }
         }
       }

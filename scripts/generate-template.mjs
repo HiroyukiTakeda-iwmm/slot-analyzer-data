@@ -83,6 +83,7 @@ function generateIndexEntry(id, name, type, dir) {
     file: `${dir}/${id}.json`,
     tags: [type],
     description: '',
+    lastUpdated: new Date().toISOString().split('T')[0],
   };
 }
 

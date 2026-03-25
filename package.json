@@ -7,6 +7,9 @@
     "validate": "node scripts/validate.mjs",
     "validate:schema": "node scripts/validate.mjs --schema-only",
     "validate:index": "node scripts/validate.mjs --index-only",
+    "sync": "node scripts/sync-last-updated.mjs",
+    "audit": "node scripts/audit-freshness.mjs",
+    "audit:stale": "node scripts/audit-freshness.mjs --stale 30",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky"

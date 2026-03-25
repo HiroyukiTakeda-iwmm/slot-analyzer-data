@@ -75,6 +75,16 @@ export function validateIndexConsistency(machineFiles, indexData) {
         message: `バージョン不一致: index="${entry.version}" / file="${fileData.data.version}"`,
       });
     }
+
+    // lastUpdated一致チェック
+    if (entry.lastUpdated && fileData.data.lastUpdated && entry.lastUpdated !== fileData.data.lastUpdated) {
+      errors.push({
+        file: `machines/${entry.file}`,
+        type: 'index-consistency',
+        severity: 'error',
+        message: `lastUpdated不一致: index="${entry.lastUpdated}" / file="${fileData.data.lastUpdated}"`,
+      });
+    }
   }
 
   // 実ファイル → index登録チェック
