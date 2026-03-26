@@ -1,6 +1,6 @@
 {
-  "version": "2.9",
-  "updatedAt": "2026-03-25T00:00:00Z",
+  "version": "3.0",
+  "updatedAt": "2026-03-26T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -1919,6 +1919,161 @@
       ],
       "description": "小役に設定差なし。CZ/AT初当たりで判別。クジラッキートロフィーとエンディング和ランプで設定確定",
       "lastUpdated": "2026-03-25"
+    },
+    {
+      "id": "koukaku-sac2045",
+      "name": "スマスロ 攻殻機動隊SAC_2045",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "koukaku-sac2045/koukaku-sac2045.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "サミー",
+        "6段階設定"
+      ],
+      "description": "サミー製スマスロ。2026年2月導入、設置約11,000台。小役確率に設定差はなく、AT初当たり・CZ出現率・視覚フラグ保有率・タチコマSAM出現率で設定判別。サミートロフィーや終了画面で設定示唆。",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "godzilla-vs-eva",
+      "name": "Lゴジラ対エヴァンゲリオン",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "godzilla-vs-eva/godzilla-vs-eva.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ビスティ",
+        "5段階設定"
+      ],
+      "description": "ビスティ製スマスロ。2024年2月導入。ゴジラとエヴァンゲリオンのコラボ。設定はL/1/2/4/5/6の5段階（設定3なし）。純増約5.0枚のAT機。小役確率に設定差なし。CZ当選率・殲滅作戦・ED中ボイスで設定判別。",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "rezero2-pack-rem",
+      "name": "Lリゼロ2 パック&レム",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "rezero2-pack-rem/rezero2-pack-rem.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "大都技研",
+        "6段階設定"
+      ],
+      "description": "大都技研製スマスロ。2025年導入。Re:ゼロから始める異世界生活season2のパチスロ。6段階設定。小役確率に設定差なし。AT初当たり確率・引き戻し率・ポイント抽選で設定判別。AT終了画面・菜月家時計で設定示唆。",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "symphogear",
+      "name": "Ｌパチスロ戦姫絶唱シンフォギア 正義の歌",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "symphogear/symphogear.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "三共",
+        "5段階設定"
+      ],
+      "description": "SANKYOの6.5号機AT機。2024年7月導入。純増約2.8枚/5.0枚。自力CZからATを目指し、上位ATでは純増5.0枚にアップ。設定1の万枚突破率5.7%と荒めのスペック。",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "gundam-unicorn2",
+      "name": "Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVE",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "0.1",
+      "file": "gundam-unicorn2/gundam-unicorn2.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "サミー",
+        "6段階設定"
+      ],
+      "description": "SANKYOのスマスロAT機。2026年4月導入予定。純増約2.0枚/6.0枚。約1/16の可能性役で自力感を演出。AT中ボーナスで覚醒HYPER→上位ATへ段階的にアップ。最強特化「覚醒DRIVE」は1000枚×約50%ループ。",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "bofuri",
+      "name": "スマスロ 痛いのは嫌なので防御力に極振りしたいと思います。",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "bofuri/bofuri.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "persona5",
+      "name": "パチスロ ペルソナ5",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "persona/persona5.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "keiji-sado",
+      "name": "L花の慶次～佐渡攻めの章～",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "keiji/keiji-sado.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "toaru-index",
+      "name": "スマスロ とある魔術の禁書目録",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "toaru-index/toaru-index.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "",
+      "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "tate-no-yusha",
+      "name": "パチスロ 盾の勇者の成り上がり",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tate-no-yusha/tate-no-yusha.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "6段階設定"
+      ],
+      "description": "",
+      "lastUpdated": "2026-03-26"
     }
   ]
 }

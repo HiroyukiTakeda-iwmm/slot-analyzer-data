@@ -1,0 +1,351 @@
+{
+  "name": "Ｌパチスロ戦姫絶唱シンフォギア 正義の歌",
+  "type": "AT",
+  "availableSettings": ["1", "2", "4", "5", "6"],
+  "roles": [
+    {
+      "name": "フォニック目",
+      "probabilities": {
+        "1": 0.025000,
+        "2": 0.025000,
+        "4": 0.025000,
+        "5": 0.025000,
+        "6": 0.025000
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/40"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.016949,
+        "2": 0.016949,
+        "4": 0.016949,
+        "5": 0.016949,
+        "6": 0.016949
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/59"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.013514,
+        "2": 0.013514,
+        "4": 0.013514,
+        "5": 0.013514,
+        "6": 0.013514
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/74"
+    },
+    {
+      "name": "ギアフラグ",
+      "probabilities": {
+        "1": 0.005051,
+        "2": 0.005051,
+        "4": 0.005051,
+        "5": 0.005051,
+        "6": 0.005051
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/198（抜剣中等含むトータル: 1/150）"
+    },
+    {
+      "name": "レア役合算",
+      "probabilities": {
+        "1": 0.035714,
+        "2": 0.035714,
+        "4": 0.035714,
+        "5": 0.035714,
+        "6": 0.035714
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/28"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.003390,
+        "2": 0.003509,
+        "4": 0.004000,
+        "5": 0.004405,
+        "6": 0.005025
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/295、設定6: 1/199"
+    },
+    {
+      "name": "最終決戦出現率",
+      "probabilities": {
+        "1": 0.000077,
+        "2": 0.000092,
+        "4": 0.000217,
+        "5": 0.000345,
+        "6": 0.000400
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#F44336",
+      "description": "設定1: 1/13000、設定6: 1/2500。複数回確認で設定4以上期待度アップ"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "設定示唆ボイス「響：簡単には離さないよ」",
+      "description": "AT終了画面で十字キー下を押した際に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "設定示唆ボイス「未来：いつかきっと〜」",
+      "description": "AT終了画面で十字キー下を押した際に出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "設定示唆ボイス「全員：パンパカパーンデース」",
+      "description": "AT終了画面で十字キー下を押した際に出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "設定示唆ボイス「響：急いで戻らなきゃ」",
+      "description": "AT終了画面で十字キー下を押した際に出現。設定2否定",
+      "confirmedSettings": ["1", "4", "5", "6"],
+      "excludedSettings": ["2"],
+      "color": "#607D8B"
+    },
+    {
+      "name": "設定示唆ボイス「響：私が今を守ってみせますね」",
+      "description": "AT終了画面で十字キー下を押した際に出現。設定4否定",
+      "confirmedSettings": ["1", "2", "5", "6"],
+      "excludedSettings": ["4"],
+      "color": "#607D8B"
+    },
+    {
+      "name": "戦姫絶唱しないシンフォギアPUSH",
+      "description": "最終決戦中にVストック2個以上所持時に出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "クリス連打時「20」表示",
+      "description": "クリスのギアVアタック連打中に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "クリス連打時「7」表示",
+      "description": "クリスのギアVアタック連打中に出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "クリス連打時「6」表示",
+      "description": "クリスのギアVアタック連打中に出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreenGroups": [
+    {
+      "name": "AT終了画面（枠色）",
+      "description": "AT終了画面の枠色で設定を示唆。赤枠以上は高設定示唆",
+      "displayOrder": 1,
+      "endScreens": [
+        {
+          "name": "枠なし",
+          "type": "at_end",
+          "hint": "デフォルト",
+          "probabilities": {
+            "1": 0.270000,
+            "2": 0.270000,
+            "4": 0.270000,
+            "5": 0.260000,
+            "6": 0.260000
+          }
+        },
+        {
+          "name": "白枠①",
+          "type": "at_end",
+          "hint": "デフォルト",
+          "probabilities": {
+            "1": 0.220000,
+            "2": 0.140000,
+            "4": 0.120000,
+            "5": 0.170000,
+            "6": 0.140000
+          }
+        },
+        {
+          "name": "白枠②",
+          "type": "at_end",
+          "hint": "デフォルト",
+          "probabilities": {
+            "1": 0.180000,
+            "2": 0.200000,
+            "4": 0.170000,
+            "5": 0.110000,
+            "6": 0.170000
+          }
+        },
+        {
+          "name": "赤枠①",
+          "type": "at_end",
+          "hint": "高設定示唆（弱）",
+          "probabilities": {
+            "1": 0.230000,
+            "2": 0.240000,
+            "4": 0.250000,
+            "5": 0.260000,
+            "6": 0.260000
+          }
+        },
+        {
+          "name": "赤枠②",
+          "type": "at_end",
+          "hint": "高設定示唆（強）",
+          "probabilities": {
+            "1": 0.050000,
+            "2": 0.060000,
+            "4": 0.080000,
+            "5": 0.090000,
+            "6": 0.080000
+          }
+        },
+        {
+          "name": "紫枠①②",
+          "type": "at_end",
+          "hint": "設定2以上示唆",
+          "confirmedSettings": ["2", "4", "5", "6"],
+          "excludedSettings": ["1"],
+          "probabilities": {
+            "1": 0.000000,
+            "2": 0.060000,
+            "4": 0.030000,
+            "5": 0.020000,
+            "6": 0.010000
+          }
+        },
+        {
+          "name": "紫枠③",
+          "type": "at_end",
+          "hint": "高設定示唆",
+          "probabilities": {
+            "1": 0.040000,
+            "2": 0.000000,
+            "4": 0.020000,
+            "5": 0.020000,
+            "6": 0.020000
+          }
+        },
+        {
+          "name": "紫枠④",
+          "type": "at_end",
+          "hint": "高設定示唆",
+          "probabilities": {
+            "1": 0.010000,
+            "2": 0.010000,
+            "4": 0.000000,
+            "5": 0.040000,
+            "6": 0.030000
+          }
+        },
+        {
+          "name": "紫枠⑤",
+          "type": "at_end",
+          "hint": "設定2以上示唆",
+          "confirmedSettings": ["2", "4", "5", "6"],
+          "excludedSettings": ["1"],
+          "probabilities": {
+            "1": 0.000000,
+            "2": 0.020000,
+            "4": 0.020000,
+            "5": 0.000000,
+            "6": 0.010000
+          }
+        },
+        {
+          "name": "銀枠",
+          "type": "at_end",
+          "hint": "設定4以上濃厚",
+          "confirmedSettings": ["4", "5", "6"],
+          "excludedSettings": ["1", "2"],
+          "probabilities": {
+            "1": 0.000000,
+            "2": 0.000000,
+            "4": 0.040000,
+            "5": 0.030000,
+            "6": 0.010000
+          }
+        },
+        {
+          "name": "金枠",
+          "type": "at_end",
+          "hint": "設定6濃厚",
+          "confirmedSettings": ["6"],
+          "excludedSettings": ["1", "2", "4", "5"],
+          "probabilities": {
+            "1": 0.000000,
+            "2": 0.000000,
+            "4": 0.000000,
+            "5": 0.000000,
+            "6": 0.010000
+          }
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "高確中チェリーAT当選率",
+      "description": "高確滞在中のチェリー成立時にAT直撃を抽選。設定差が非常に大きい",
+      "probabilities": {
+        "1": 0.040000,
+        "2": 0.060000,
+        "4": 0.110000,
+        "5": 0.170000,
+        "6": 0.210000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "天国モード移行率（有利区間移行時）",
+      "description": "設定1: 28%、設定6は約2倍（推定56%）。高設定ほど天国ループが優遇",
+      "probabilities": {
+        "1": 0.280000,
+        "2": 0.310000,
+        "4": 0.380000,
+        "5": 0.460000,
+        "6": 0.560000
+      },
+      "displayOrder": 2
+    }
+  ],
+  "notes": "小役確率は全設定共通（設定差なし）。設定判別は主にAT初当たり確率、天国モード移行率、高確中チェリーAT当選率、最終決戦出現率、AT終了画面・ボイスで行う。設定Lあり（設定1,2,4,5,6の5段階）。エクスドライブモード移行率は設定1,2と設定5,6で数十倍の差がある。ED中レア役成立時のランプ色（緑/赤/紫/虹）でも設定示唆あり。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)",
+  "description": "SANKYOの6.5号機AT機。2024年7月導入。純増約2.8枚/5.0枚。自力CZからATを目指し、上位ATでは純増5.0枚にアップ。設定1の万枚突破率5.7%と荒めのスペック。"
+}

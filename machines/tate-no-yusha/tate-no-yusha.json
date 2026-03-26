@@ -1,0 +1,248 @@
+{
+  "name": "パチスロ 盾の勇者の成り上がり",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.010070,
+        "2": 0.010070,
+        "3": 0.010070,
+        "4": 0.010070,
+        "5": 0.010070,
+        "6": 0.010070
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/99.3（設定1判明値）"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010070,
+        "2": 0.010070,
+        "3": 0.010070,
+        "4": 0.010070,
+        "5": 0.010070,
+        "6": 0.010070
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.3（設定1判明値）"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.008562,
+        "2": 0.008562,
+        "3": 0.008562,
+        "4": 0.008562,
+        "5": 0.008562,
+        "6": 0.008562
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/116.8（設定1判明値）"
+    },
+    {
+      "name": "共通ベル",
+      "probabilities": {
+        "1": 0.046083,
+        "2": 0.046083,
+        "3": 0.046083,
+        "4": 0.046083,
+        "5": 0.046083,
+        "6": 0.046083
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/21.7（設定1判明値）"
+    },
+    {
+      "name": "確定役",
+      "probabilities": {
+        "1": 0.000061,
+        "2": 0.000061,
+        "3": 0.000061,
+        "4": 0.000061,
+        "5": 0.000061,
+        "6": 0.000061
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/16384.0"
+    },
+    {
+      "name": "AT初当たり確率",
+      "probabilities": {
+        "1": 0.003346,
+        "2": 0.003521,
+        "3": 0.003646,
+        "4": 0.004053,
+        "5": 0.004376,
+        "6": 0.005249
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/298.9、設定6: 1/190.5。設定6が突出して優遇"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "ボーナス終了時またはAT終了時に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "EXP 2200獲得",
+      "description": "通常時やレベルアップゾーン中のEXP獲得数で設定示唆。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "EXP 4400獲得",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "EXP 5500獲得",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "EXP 6600獲得",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "AT終了ボイス フィトリア",
+      "description": "AT終了画面でPUSHボタン。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "AT終了ボイス ラルク",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "AT終了ボイス テリス",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 222枚OVER",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "獲得枚数 456枚OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 666枚OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "画面1（基本パターン）",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "画面2（基本パターン）",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "画面3",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "画面4",
+      "type": "at_end",
+      "hint": "高設定示唆（中）"
+    },
+    {
+      "name": "画面5",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "name": "画面6",
+      "type": "at_end",
+      "hint": "設定2以上濃厚+高設定ほど優遇",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "name": "画面7",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+}

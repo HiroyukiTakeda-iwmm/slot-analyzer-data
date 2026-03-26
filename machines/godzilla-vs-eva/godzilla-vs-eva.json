@@ -1,0 +1,270 @@
+{
+  "name": "Lゴジラ対エヴァンゲリオン",
+  "type": "AT",
+  "availableSettings": ["1", "2", "4", "5", "6"],
+  "roles": [
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.114943,
+        "2": 0.114943,
+        "4": 0.114943,
+        "5": 0.114943,
+        "6": 0.114943
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/8.7"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.051282,
+        "2": 0.051282,
+        "4": 0.051282,
+        "5": 0.051282,
+        "6": 0.051282
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/19.5"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.011111,
+        "2": 0.011111,
+        "4": 0.011111,
+        "5": 0.011111,
+        "6": 0.011111
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/90.0"
+    },
+    {
+      "name": "G侵食役",
+      "probabilities": {
+        "1": 0.011111,
+        "2": 0.011111,
+        "4": 0.011111,
+        "5": 0.011111,
+        "6": 0.011111
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/90.0（通常時）、高確時約1/10"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.007813,
+        "2": 0.007813,
+        "4": 0.007813,
+        "5": 0.007813,
+        "6": 0.007813
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/128.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001526,
+        "2": 0.001526,
+        "4": 0.001526,
+        "5": 0.001526,
+        "6": 0.001526
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#F44336",
+      "description": "全設定共通: 1/655.4"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.001526,
+        "2": 0.001526,
+        "4": 0.001526,
+        "5": 0.001526,
+        "6": 0.001526
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/655.4"
+    },
+    {
+      "name": "ボーナス確率",
+      "probabilities": {
+        "1": 0.003334,
+        "2": 0.003422,
+        "4": 0.003672,
+        "5": 0.003896,
+        "6": 0.004085
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#FF5722",
+      "description": "設定1: 1/299.9、設定6: 1/244.8"
+    },
+    {
+      "name": "AT確率",
+      "probabilities": {
+        "1": 0.001719,
+        "2": 0.001809,
+        "4": 0.002050,
+        "5": 0.002241,
+        "6": 0.002455
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 9,
+      "color": "#9C27B0",
+      "description": "設定1: 1/581.8、設定6: 1/407.3"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ボーナス終了画面シンジ以外",
+      "description": "シンジ画面がデフォルト。それ以外は設定示唆パターン",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#2196F3"
+    },
+    {
+      "name": "AT終了画面エヴァ&ゴジラ",
+      "description": "AT終了画面でエヴァ&ゴジラが出現すれば設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "ED中ボイスなし",
+      "description": "エンディング中レア役成立時にボイスなし。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "name": "ED中加持ボイス",
+      "description": "エンディング中レア役成立時。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "ED中カヲルボイス",
+      "description": "エンディング中レア役成立時。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数222枚表示",
+      "description": "AT中の獲得枚数表示。設定2以上濃厚",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "獲得枚数456枚表示",
+      "description": "AT中の獲得枚数表示。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数666枚表示",
+      "description": "AT中の獲得枚数表示。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "シンジ（ボーナス終了）",
+      "type": "bonus_end",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "初号機（AT終了）",
+      "type": "at_end",
+      "hint": "デフォルト"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "CZ「アスカVSレイ」当選率（スイカ成立時）",
+      "description": "通常時スイカ成立時のCZ突入率。設定1: 20.3%、設定6: 30.5%",
+      "probabilities": {
+        "1": 0.203000,
+        "2": 0.211000,
+        "4": 0.250000,
+        "5": 0.277000,
+        "6": 0.305000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "AT中殲滅作戦突入率（スイカ成立時）",
+      "description": "AT中スイカ成立時の殲滅作戦突入率。設定1: 30.1%、設定6: 39.1%",
+      "probabilities": {
+        "1": 0.301000,
+        "2": 0.301000,
+        "4": 0.375000,
+        "5": 0.375000,
+        "6": 0.391000
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "殲滅作戦勝利期待度",
+      "description": "設定1: 49.3%、設定6: 65.3%。設定6が大きく優遇",
+      "probabilities": {
+        "1": 0.493000,
+        "2": 0.504000,
+        "4": 0.517000,
+        "5": 0.529000,
+        "6": 0.653000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "初期状態高確以上移行率",
+      "description": "有利区間/ボーナス/AT後の高確スタート率。設定1: 10.9%、設定6: 21.1%",
+      "probabilities": {
+        "1": 0.109000,
+        "2": 0.133000,
+        "4": 0.164000,
+        "5": 0.188000,
+        "6": 0.211000
+      },
+      "displayOrder": 4
+    },
+    {
+      "name": "G侵食役発動失敗時スルー天井減算率",
+      "description": "設定1: 4.7%、設定6: 12.5%",
+      "probabilities": {
+        "1": 0.047000,
+        "2": 0.078000,
+        "4": 0.109000,
+        "5": 0.117000,
+        "6": 0.125000
+      },
+      "displayOrder": 5
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)",
+  "description": "ビスティ製スマスロ。2024年2月導入。ゴジラとエヴァンゲリオンのコラボ。設定はL/1/2/4/5/6の5段階（設定3なし）。純増約5.0枚のAT機。小役確率に設定差なし。CZ当選率・殲滅作戦・ED中ボイスで設定判別。"
+}

@@ -1,0 +1,327 @@
+{
+  "name": "L花の慶次～佐渡攻めの章～",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015625,
+        "2": 0.015625,
+        "3": 0.015625,
+        "4": 0.015625,
+        "5": 0.015625,
+        "6": 0.015625
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/64.0"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.011723,
+        "2": 0.011723,
+        "3": 0.011723,
+        "4": 0.011723,
+        "5": 0.011723,
+        "6": 0.011723
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/85.3"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.003906,
+        "3": 0.003906,
+        "4": 0.003906,
+        "5": 0.003906,
+        "6": 0.003906
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/256.0"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001953,
+        "2": 0.001953,
+        "3": 0.001953,
+        "4": 0.001953,
+        "5": 0.001953,
+        "6": 0.001953
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "全設定共通: 1/512.0"
+    },
+    {
+      "name": "御免役",
+      "probabilities": {
+        "1": 0.000244,
+        "2": 0.000244,
+        "3": 0.000244,
+        "4": 0.000244,
+        "5": 0.000244,
+        "6": 0.000244
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/4096.0。成立時は初当たり当選濃厚"
+    },
+    {
+      "name": "AT初当たり確率",
+      "probabilities": {
+        "1": 0.002107,
+        "2": 0.002173,
+        "3": 0.002283,
+        "4": 0.002508,
+        "5": 0.002747,
+        "6": 0.002978
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/474.7、設定6: 1/335.8"
+    },
+    {
+      "name": "初当たり確率（ボーナス/AT直行含む）",
+      "probabilities": {
+        "1": 0.003836,
+        "2": 0.003942,
+        "3": 0.004049,
+        "4": 0.004320,
+        "5": 0.004502,
+        "6": 0.004728
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#2196F3",
+      "description": "設定1: 1/260.7、設定6: 1/211.5"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "AT終了画面 景勝&直江",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "AT終了画面 高茂",
+      "description": "設定3を否定",
+      "confirmedSettings": ["1", "2", "4", "5", "6"],
+      "excludedSettings": ["3"],
+      "color": "#2196F3"
+    },
+    {
+      "name": "AT終了画面 左馬助",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "AT終了画面 女性キャラ集合",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "おみくじ 捨丸・離れ目(R)",
+      "description": "メニュー画面おみくじで出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "おみくじ おまつ(UR)",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "おみくじ 前田慶次・原画(LR)",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "おみくじ 豊臣秀吉(LR)",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 456枚OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 555枚OVER",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "獲得枚数 666枚OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "捨丸",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "岩兵衛",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "雪之丞",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）+奇数示唆"
+    },
+    {
+      "name": "大虎",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）+偶数示唆"
+    },
+    {
+      "name": "慶次",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "name": "高茂",
+      "type": "at_end",
+      "hint": "設定3否定"
+    },
+    {
+      "name": "景勝&直江",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"]
+    },
+    {
+      "name": "左馬助",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "name": "女性キャラ集合",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "弱チェリー時高確移行率（通常→高確）",
+      "description": "通常滞在時に弱チェリー成立で高確へ移行する確率",
+      "probabilities": {
+        "1": 0.062900,
+        "2": 0.069100,
+        "3": 0.077100,
+        "4": 0.091800,
+        "5": 0.103900,
+        "6": 0.114500
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "スイカ時高確移行率（通常→高確）",
+      "description": "通常滞在時にスイカ成立で高確へ移行する確率",
+      "probabilities": {
+        "1": 0.469700,
+        "2": 0.485200,
+        "3": 0.505400,
+        "4": 0.542000,
+        "5": 0.572200,
+        "6": 0.598800
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "強チェリー時初当たり当選率（通常時）",
+      "description": "通常滞在時の強チェリーによる初当たり当選率。設定差大",
+      "probabilities": {
+        "1": 0.200000,
+        "2": 0.213000,
+        "3": 0.230000,
+        "4": 0.261000,
+        "5": 0.287000,
+        "6": 0.310000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "強チェリー時初当たり当選率（高確時）",
+      "description": "高確滞在時の強チェリーによる初当たり当選率。設定差大",
+      "probabilities": {
+        "1": 0.400000,
+        "2": 0.426000,
+        "3": 0.461000,
+        "4": 0.523000,
+        "5": 0.574000,
+        "6": 0.619000
+      },
+      "displayOrder": 4
+    },
+    {
+      "name": "チャンス目時初当たり当選率（通常時）",
+      "description": "通常滞在時のチャンス目による初当たり当選率",
+      "probabilities": {
+        "1": 0.078000,
+        "2": 0.084000,
+        "3": 0.090000,
+        "4": 0.103000,
+        "5": 0.113000,
+        "6": 0.121000
+      },
+      "displayOrder": 5
+    },
+    {
+      "name": "チャンス目時初当たり当選率（高確時）",
+      "description": "高確滞在時のチャンス目による初当たり当選率",
+      "probabilities": {
+        "1": 0.157000,
+        "2": 0.167000,
+        "3": 0.181000,
+        "4": 0.205000,
+        "5": 0.225000,
+        "6": 0.243000
+      },
+      "displayOrder": 6
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+}

@@ -1,0 +1,279 @@
+{
+  "name": "スマスロ とある魔術の禁書目録",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "チェリー合算",
+      "probabilities": {
+        "1": 0.015823,
+        "2": 0.015823,
+        "3": 0.015823,
+        "4": 0.015823,
+        "5": 0.015823,
+        "6": 0.015823
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/63.2"
+    },
+    {
+      "name": "スイカ合算",
+      "probabilities": {
+        "1": 0.015823,
+        "2": 0.015823,
+        "3": 0.015823,
+        "4": 0.015823,
+        "5": 0.015823,
+        "6": 0.015823
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/63.2"
+    },
+    {
+      "name": "異能獲得目",
+      "probabilities": {
+        "1": 0.028026,
+        "2": 0.028026,
+        "3": 0.028026,
+        "4": 0.028026,
+        "5": 0.028026,
+        "6": 0.028026
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/35.7。一部状態で出現率変化"
+    },
+    {
+      "name": "AT初当たり確率",
+      "probabilities": {
+        "1": 0.002698,
+        "2": 0.002771,
+        "3": 0.002910,
+        "4": 0.003319,
+        "5": 0.003597,
+        "6": 0.003752
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF5722",
+      "description": "設定1: 1/370.7、設定6: 1/266.5"
+    },
+    {
+      "name": "CZ出現率",
+      "probabilities": {
+        "1": 0.005219,
+        "2": 0.005308,
+        "3": 0.005525,
+        "4": 0.006207,
+        "5": 0.006553,
+        "6": 0.006817
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "設定1: 1/191.6、設定6: 1/146.7"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "藤丸コイン（銅）",
+      "description": "AT終了画面に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "藤丸コイン（銀）",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "藤丸コイン（金）",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "藤丸コイン（デンジャー）",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "藤丸コイン（虹）",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "ガールズコレクション インデックス（巫女）",
+      "description": "とあるガールズコレクション中のキャラカード。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "ガールズコレクション 五和（ナース）",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "ガールズコレクション 美琴（ウェディング）",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "エンディングボイス「お腹いっぱい…」",
+      "description": "エンディング中レア役成立時ボイス+上部ランプ黄発光。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FFC107"
+    },
+    {
+      "name": "エンディングボイス「ビーフオアフィッシュ！」",
+      "description": "上部ランプ緑発光。設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "name": "エンディングボイス「私を信じて！」",
+      "description": "上部ランプ赤発光。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#F44336"
+    },
+    {
+      "name": "エンディングボイス「祈りは届くから…！」",
+      "description": "上部ランプ紫発光。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    },
+    {
+      "name": "エンディングボイス「おめでとうございます」",
+      "description": "上部ランプ虹発光。設定6濃厚。自動書記インデックスのボイス",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 220フジマルOVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 456OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 666OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "弱レア役CZ当選率（対応キャラなし）",
+      "description": "対応キャラ無し時の弱チェリー/弱スイカでのBREAK BATTLE当選率",
+      "probabilities": {
+        "1": 0.004000,
+        "2": 0.004000,
+        "3": 0.004000,
+        "4": 0.012000,
+        "5": 0.012000,
+        "6": 0.016000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "弱レア役CZ当選率（対応キャラあり・200G以降）",
+      "description": "対応キャラ有り+対応弱役成立時のCZ当選率（200G以降）。設定差大",
+      "probabilities": {
+        "1": 0.377000,
+        "2": 0.385000,
+        "3": 0.398000,
+        "4": 0.469000,
+        "5": 0.508000,
+        "6": 0.527000
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "OVER BREAK当選率（250以上余剰ダメージ時）",
+      "description": "CZ中の250以上余剰ダメージ時のOVER BREAK当選率。設定6で67.2%と特大設定差",
+      "probabilities": {
+        "1": 0.125000,
+        "2": 0.130000,
+        "3": 0.141000,
+        "4": 0.148000,
+        "5": 0.313000,
+        "6": 0.672000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "EP&SP当選率（通常時）",
+      "description": "EPISODE BATTLE/SPECIAL EPISODE当選率。複数回確認できれば高設定の強い示唆",
+      "probabilities": {
+        "1": 0.000111,
+        "2": 0.000144,
+        "3": 0.000183,
+        "4": 0.000257,
+        "5": 0.000292,
+        "6": 0.000356
+      },
+      "displayOrder": 4
+    },
+    {
+      "name": "ガールズコレクション当選率（通常状態）",
+      "description": "通常状態でのとあるガールズコレクション当選率",
+      "probabilities": {
+        "1": 0.004000,
+        "2": 0.004000,
+        "3": 0.004000,
+        "4": 0.008000,
+        "5": 0.012000,
+        "6": 0.016000
+      },
+      "displayOrder": 5
+    },
+    {
+      "name": "ガールズコレクション当選率（高確状態）",
+      "description": "高確状態でのとあるガールズコレクション当選率",
+      "probabilities": {
+        "1": 0.250000,
+        "2": 0.258000,
+        "3": 0.266000,
+        "4": 0.281000,
+        "5": 0.313000,
+        "6": 0.336000
+      },
+      "displayOrder": 6
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+}

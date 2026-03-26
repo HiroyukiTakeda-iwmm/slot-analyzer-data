@@ -1,0 +1,400 @@
+{
+  "name": "スマスロ 攻殻機動隊SAC_2045",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.104167,
+        "2": 0.104167,
+        "3": 0.104167,
+        "4": 0.104167,
+        "5": 0.104167,
+        "6": 0.104167
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#2196F3",
+      "description": "全設定共通: 1/9.6"
+    },
+    {
+      "name": "共通上段ベル",
+      "probabilities": {
+        "1": 0.083333,
+        "2": 0.083333,
+        "3": 0.083333,
+        "4": 0.083333,
+        "5": 0.083333,
+        "6": 0.083333
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/12.0"
+    },
+    {
+      "name": "共通右下がりベル",
+      "probabilities": {
+        "1": 0.036630,
+        "2": 0.036630,
+        "3": 0.036630,
+        "4": 0.036630,
+        "5": 0.036630,
+        "6": 0.036630
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/27.3"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.009461,
+        "2": 0.009461,
+        "3": 0.009461,
+        "4": 0.009461,
+        "5": 0.009461,
+        "6": 0.009461
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/105.7"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FF5722",
+      "description": "全設定共通: 1/546.1"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#F44336",
+      "description": "全設定共通: 1/546.1"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.002974,
+        "2": 0.003012,
+        "3": 0.003129,
+        "4": 0.003348,
+        "5": 0.003499,
+        "6": 0.003597
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 9,
+      "color": "#9C27B0",
+      "description": "設定1: 1/336.3、設定6: 1/278.0"
+    },
+    {
+      "name": "CZ出現率",
+      "probabilities": {
+        "1": 0.004202,
+        "2": 0.004232,
+        "3": 0.004316,
+        "4": 0.004527,
+        "5": 0.004673,
+        "6": 0.004760
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 10,
+      "color": "#FF9800",
+      "description": "設定1: 1/238.0、設定6: 1/210.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "AT終了時/上位AT終了時/エンディング終了時に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "S.A.M.同一エピソード連続",
+      "description": "S.A.M.で同一エピソードが連続出現した場合、設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "name": "エンディング上パネル紫",
+      "description": "エンディング中PUSHボタン押下時の上パネル色。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "name": "エンディング上パネル虹",
+      "description": "エンディング中PUSHボタン押下時の上パネル色。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "素子",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "素子（戦闘中）",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "トグサ",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "バトー",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "ポーカー",
+      "type": "at_end",
+      "hint": "高モード示唆"
+    },
+    {
+      "name": "素子（後姿）",
+      "type": "at_end",
+      "hint": "モードB以上濃厚"
+    },
+    {
+      "name": "公安9課（赤枠）",
+      "type": "at_end",
+      "hint": "モードC以上濃厚"
+    },
+    {
+      "name": "電脳素子（紫枠）",
+      "type": "at_end",
+      "hint": "モードC以上濃厚（強）"
+    },
+    {
+      "name": "アオイ（金枠）",
+      "type": "at_end",
+      "hint": "モードD濃厚＋設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    }
+  ],
+  "endScreenGroups": [
+    {
+      "name": "CZ終了画面",
+      "description": "S.A.M./タチコマS.A.M.終了画面（PUSHボタン押下で表示）",
+      "displayOrder": 1,
+      "endScreens": [
+        {
+          "name": "青空",
+          "type": "other",
+          "hint": "基本パターン"
+        },
+        {
+          "name": "青空+笑い男マーク",
+          "type": "other",
+          "hint": "復活期待度50%"
+        },
+        {
+          "name": "青空+公安9課",
+          "type": "other",
+          "hint": "設定2以上濃厚",
+          "confirmedSettings": ["2", "3", "4", "5", "6"],
+          "excludedSettings": ["1"]
+        },
+        {
+          "name": "オペ子",
+          "type": "other",
+          "hint": "奇数設定示唆"
+        },
+        {
+          "name": "タチコマ",
+          "type": "other",
+          "hint": "偶数設定示唆"
+        },
+        {
+          "name": "トグサ",
+          "type": "other",
+          "hint": "高設定示唆（弱）"
+        },
+        {
+          "name": "イシカワ",
+          "type": "other",
+          "hint": "高設定示唆（強）"
+        },
+        {
+          "name": "素子",
+          "type": "other",
+          "hint": "設定1・4・5・6濃厚＋高設定示唆（強）"
+        },
+        {
+          "name": "バカンス",
+          "type": "other",
+          "hint": "設定4以上濃厚",
+          "confirmedSettings": ["4", "5", "6"],
+          "excludedSettings": ["1", "2", "3"]
+        },
+        {
+          "name": "全員集合",
+          "type": "other",
+          "hint": "設定6濃厚",
+          "confirmedSettings": ["6"],
+          "excludedSettings": ["1", "2", "3", "4", "5"]
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "S.A.M.視覚フラグ保有率",
+      "description": "CZ失敗時の視覚HACK発生期待度。設定1: 5.7%、設定6: 10.6%",
+      "probabilities": {
+        "1": 0.057000,
+        "2": 0.061000,
+        "3": 0.069000,
+        "4": 0.090000,
+        "5": 0.101000,
+        "6": 0.106000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "タチコマSAM出現期待度（200G/400G合算）",
+      "description": "AT後通常移行時の規定ゲームタチコマSAM当選率。設定1: 30.0%、設定6: 48.3%",
+      "probabilities": {
+        "1": 0.300000,
+        "2": 0.329000,
+        "3": 0.375000,
+        "4": 0.417000,
+        "5": 0.458000,
+        "6": 0.483000
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "AT突入時引き戻しストック期待度",
+      "description": "AT突入時のREBOOT CHANCE成功ストック抽選。設定1: 3.3%、設定6: 9.6%",
+      "probabilities": {
+        "1": 0.033000,
+        "2": 0.046000,
+        "3": 0.058000,
+        "4": 0.071000,
+        "5": 0.083000,
+        "6": 0.096000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "設定変更時/AT後の高確以上移行率",
+      "description": "設定1: 50.0%、設定6: 58.4%",
+      "probabilities": {
+        "1": 0.500000,
+        "2": 0.517000,
+        "3": 0.533000,
+        "4": 0.551000,
+        "5": 0.567000,
+        "6": 0.584000
+      },
+      "displayOrder": 4
+    },
+    {
+      "name": "殲滅ZONE（白～紫）発展時のAT直撃確率",
+      "description": "設定1: 1/10676.6、設定6: 1/4473.0",
+      "probabilities": {
+        "1": 0.000094,
+        "2": 0.000102,
+        "3": 0.000129,
+        "4": 0.000163,
+        "5": 0.000191,
+        "6": 0.000224
+      },
+      "displayOrder": 5
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)",
+  "description": "サミー製スマスロ。2026年2月導入、設置約11,000台。小役確率に設定差はなく、AT初当たり・CZ出現率・視覚フラグ保有率・タチコマSAM出現率で設定判別。サミートロフィーや終了画面で設定示唆。"
+}

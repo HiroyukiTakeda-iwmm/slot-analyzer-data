@@ -1,0 +1,324 @@
+{
+  "name": "スマスロ 痛いのは嫌なので防御力に極振りしたいと思います。",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.015601,
+        "2": 0.015601,
+        "3": 0.015601,
+        "4": 0.015601,
+        "5": 0.015601,
+        "6": 0.015601
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/64.1"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "ヒドラ目",
+      "probabilities": {
+        "1": 0.015625,
+        "2": 0.015625,
+        "3": 0.015625,
+        "4": 0.015625,
+        "5": 0.015625,
+        "6": 0.015625
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/64.0"
+    },
+    {
+      "name": "強ヒドラ目",
+      "probabilities": {
+        "1": 0.000229,
+        "2": 0.000229,
+        "3": 0.000229,
+        "4": 0.000229,
+        "5": 0.000229,
+        "6": 0.000229
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF5722",
+      "description": "全設定共通: 1/4369.1"
+    },
+    {
+      "name": "上段ベル（5枚）",
+      "probabilities": {
+        "1": 0.054645,
+        "2": 0.054645,
+        "3": 0.054645,
+        "4": 0.055866,
+        "5": 0.057803,
+        "6": 0.060241
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FFC107",
+      "description": "設定1-3: 1/18.3、設定4: 1/17.9、設定5: 1/17.3、設定6: 1/16.6"
+    },
+    {
+      "name": "ボーナス初当たり合算",
+      "probabilities": {
+        "1": 0.003135,
+        "2": 0.003228,
+        "3": 0.003256,
+        "4": 0.003749,
+        "5": 0.003890,
+        "6": 0.004354
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/319.0、設定6: 1/229.7"
+    },
+    {
+      "name": "ボーナス合算（防御状態含む）",
+      "probabilities": {
+        "1": 0.008170,
+        "2": 0.008361,
+        "3": 0.008688,
+        "4": 0.009728,
+        "5": 0.010449,
+        "6": 0.011111
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#F44336",
+      "description": "設定1: 1/122.4、設定6: 1/90.0。データカウンタ上の合算値"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "AT終了時に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "サミートロフィーキリン",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "キャラ紹介 金背景（ドラぞう）",
+      "description": "ボーナス中のキャラ紹介で金背景ドラぞうが出現。設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "キャラ紹介 金背景（運営）",
+      "description": "ボーナス中のキャラ紹介で金背景運営が出現。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "終了画面 バニーガール",
+      "description": "ボーナス終了画面にバニーガール出現。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "終了画面 メイプルオールスター",
+      "description": "ボーナス終了画面にメイプルオールスター出現。設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "終了画面 楓の木ガールズ",
+      "description": "ボーナス終了画面に楓の木ガールズ出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数 456枚OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数 666枚OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "メイプル・サリー",
+      "type": "at_end",
+      "hint": "基本パターン"
+    },
+    {
+      "name": "マイ・ユイ（メイド）",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    },
+    {
+      "name": "ビーチ",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "name": "ビーチ2人（夕方）",
+      "type": "at_end",
+      "hint": "高設定示唆（極）"
+    },
+    {
+      "name": "バニーガール",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "name": "メイプルオールスター",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"]
+    },
+    {
+      "name": "楓の木ガールズ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "ヒドラ目CZ当選率（通常時）",
+      "description": "通常滞在時のヒドラ目成立時CZ当選率",
+      "probabilities": {
+        "1": 0.250000,
+        "2": 0.250000,
+        "3": 0.254000,
+        "4": 0.300000,
+        "5": 0.317000,
+        "6": 0.333000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "ヒドラ目CZ当選率（高確時）",
+      "description": "高確滞在時のヒドラ目成立時CZ当選率",
+      "probabilities": {
+        "1": 0.500000,
+        "2": 0.500000,
+        "3": 0.504000,
+        "4": 0.550000,
+        "5": 0.554000,
+        "6": 0.600000
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "チェリー/スイカCZ当選率（高確時）",
+      "description": "高確滞在時のチェリー・スイカ成立時CZ当選率。設定1: 3.8%、設定6: 9.2%",
+      "probabilities": {
+        "1": 0.038000,
+        "2": 0.063000,
+        "3": 0.063000,
+        "4": 0.083000,
+        "5": 0.088000,
+        "6": 0.092000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "BET高確率ZONE当選率",
+      "description": "ボーナス終了後の即CZ（BET高確率ZONE）当選率。設定1: 2.5%、設定6: 10.4%",
+      "probabilities": {
+        "1": 0.025000,
+        "2": 0.050000,
+        "3": 0.054000,
+        "4": 0.079000,
+        "5": 0.096000,
+        "6": 0.104000
+      },
+      "displayOrder": 4
+    },
+    {
+      "name": "450Gゾーン CZ当選率",
+      "description": "450Gゾーンでの規定ゲーム数によるCZ当選率。設定差大",
+      "probabilities": {
+        "1": 0.183000,
+        "2": 0.204000,
+        "3": 0.208000,
+        "4": 0.258000,
+        "5": 0.292000,
+        "6": 0.304000
+      },
+      "displayOrder": 5
+    },
+    {
+      "name": "650Gゾーン CZ当選率",
+      "description": "650Gゾーンでの規定ゲーム数によるCZ当選率。設定差大",
+      "probabilities": {
+        "1": 0.100000,
+        "2": 0.104000,
+        "3": 0.108000,
+        "4": 0.179000,
+        "5": 0.192000,
+        "6": 0.233000
+      },
+      "displayOrder": 6
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-26",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+}
