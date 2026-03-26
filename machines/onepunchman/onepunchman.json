@@ -1,0 +1,160 @@
+{
+  "name": "L ワンパンマン",
+  "type": "AT",
+  "description": "ニューギンのスマスロAT機。純増約2.0枚/約4.0枚。ボーナスからATを目指すゲーム性。2024年8月導入。弱チェリー・スイカに設定差あり。",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.014347,
+        "2": 0.014684,
+        "3": 0.015038,
+        "4": 0.015432,
+        "5": 0.016000,
+        "6": 0.016694
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/69.7、設定6: 1/59.9"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010091,
+        "2": 0.010373,
+        "3": 0.010661,
+        "4": 0.011062,
+        "5": 0.011669,
+        "6": 0.012516
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "設定1: 1/99.1、設定6: 1/79.9"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.003754,
+        "2": 0.003754,
+        "3": 0.003754,
+        "4": 0.003754,
+        "5": 0.003754,
+        "6": 0.003754
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/266.4"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001251,
+        "2": 0.001251,
+        "3": 0.001251,
+        "4": 0.001251,
+        "5": 0.001251,
+        "6": 0.001251
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/799.2"
+    },
+    {
+      "name": "通常時ボーナス出現率",
+      "probabilities": {
+        "1": 0.003167,
+        "2": 0.003244,
+        "3": 0.003334,
+        "4": 0.003486,
+        "5": 0.003643,
+        "6": 0.003795
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "設定1: 1/315.8、設定6: 1/263.5"
+    },
+    {
+      "name": "AT出現率",
+      "probabilities": {
+        "1": 0.001611,
+        "2": 0.001649,
+        "3": 0.001708,
+        "4": 0.001881,
+        "5": 0.001986,
+        "6": 0.002155
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#F44336",
+      "description": "設定1: 1/620.9、設定6: 1/464.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "終了画面 サイタマ+地底人",
+      "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "name": "終了画面 奮戦サイタマ",
+      "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "終了画面 S級ヒーロー集合",
+      "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "獲得枚数表示 456over",
+      "description": "獲得枚数が456枚以上の表示。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "獲得枚数表示 666over",
+      "description": "獲得枚数が666枚以上の表示。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "タンクトップタイガー出現",
+      "description": "コインアタックチャレンジの青コインまたはヒーロー図鑑で出現。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "ヒーローストックゾーン「熱」選択率",
+      "description": "ヒーローストックゾーンは「ノーマル」「温」「熱」の3種類。高設定ほど上位が選択されやすい",
+      "probabilities": {
+        "1": 0.047000,
+        "2": 0.051000,
+        "3": 0.055000,
+        "4": 0.059000,
+        "5": 0.063000,
+        "6": 0.066000
+      },
+      "displayOrder": 1
+    }
+  ],
+  "author": "community",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+}

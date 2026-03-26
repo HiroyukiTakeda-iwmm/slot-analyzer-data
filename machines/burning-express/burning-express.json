@@ -1,0 +1,70 @@
+{
+  "name": "バーニングエクスプレス",
+  "type": "AT",
+  "availableSettings": ["1", "2", "4", "5", "6"],
+  "description": "北電子のスマスロ完全告知AT機。設定3非搭載の5段階設定。純増約5.0枚。告知ランプ点灯でボーナス濃厚のシンプルなゲーム性。2025年12月導入。",
+  "roles": [
+    {
+      "name": "バーニングボーナス",
+      "probabilities": {
+        "1": 0.002595,
+        "2": 0.002631,
+        "4": 0.002761,
+        "5": 0.002855,
+        "6": 0.002918
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "紫7揃い。設定1: 1/385.3、設定6: 1/342.7"
+    },
+    {
+      "name": "エクスプレスボーナス",
+      "probabilities": {
+        "1": 0.002440,
+        "2": 0.002476,
+        "4": 0.002616,
+        "5": 0.002719,
+        "6": 0.002784
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "紫7・紫7・白BAR。設定1: 1/409.8、設定6: 1/359.2"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": {
+        "1": 0.005035,
+        "2": 0.005107,
+        "4": 0.005376,
+        "5": 0.005574,
+        "6": 0.005701
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "設定1: 1/198.6、設定6: 1/175.4"
+    },
+    {
+      "name": "リールロック合算出現率",
+      "probabilities": {
+        "1": 0.001398,
+        "2": 0.001402,
+        "4": 0.001464,
+        "5": 0.001502,
+        "6": 0.001519
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/715.5、設定6: 1/658.4。リールロック発生でボーナス期待度UP"
+    }
+  ],
+  "confirmationEvents": [],
+  "notes": "完全告知タイプのため、設定確定演出は存在しない。設定判別はボーナス確率とリールロック出現率がメイン。",
+  "author": "community",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "一撃(1geki.jp)、ななプレス(nana-press.com)、ちょんぼりすた(chonborista.com)"
+}

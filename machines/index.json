@@ -1,6 +1,6 @@
 {
-  "version": "3.0",
-  "updatedAt": "2026-03-26T00:00:00Z",
+  "version": "3.1",
+  "updatedAt": "2026-03-27T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -2074,6 +2074,53 @@
       ],
       "description": "",
       "lastUpdated": "2026-03-26"
+    },
+    {
+      "id": "koukaku-sumaslo",
+      "name": "スマスロ 攻殻機動隊",
+      "type": "AT",
+      "author": "community",
+      "version": "1.0",
+      "file": "koukaku-sumaslo/koukaku-sumaslo.json",
+      "tags": [
+        "sammy",
+        "at",
+        "cz",
+        "sumaslo"
+      ],
+      "description": "サミーのスマスロAT機。2026年2月導入。CZからATを目指すゲーム性。koukaku-sac2045とは別機種",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "burning-express",
+      "name": "バーニングエクスプレス",
+      "type": "AT",
+      "author": "community",
+      "version": "1.0",
+      "file": "burning-express/burning-express.json",
+      "tags": [
+        "kitadenshi",
+        "at",
+        "kokuchi",
+        "sumaslo"
+      ],
+      "description": "北電子のスマスロ完全告知AT機。設定3非搭載の5段階設定",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "onepunchman",
+      "name": "L ワンパンマン",
+      "type": "AT",
+      "author": "community",
+      "version": "1.0",
+      "file": "onepunchman/onepunchman.json",
+      "tags": [
+        "newgin",
+        "at",
+        "sumaslo"
+      ],
+      "description": "ニューギンのスマスロAT機。2024年8月導入。弱チェリー・スイカに設定差あり",
+      "lastUpdated": "2026-03-27"
     }
   ]
 }

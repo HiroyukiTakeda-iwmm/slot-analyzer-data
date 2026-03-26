@@ -1,0 +1,249 @@
+{
+  "name": "スマスロ 攻殻機動隊",
+  "type": "AT",
+  "description": "サミーのスマスロ。純増約4.0枚〜最大8.5枚のAT機。CZからATを目指すゲーム性。2026年2月導入。koukaku-sac2045（SAC_2045）とは別機種。",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "弱チャンス目",
+      "probabilities": {
+        "1": 0.009461,
+        "2": 0.009461,
+        "3": 0.009461,
+        "4": 0.009461,
+        "5": 0.009461,
+        "6": 0.009461
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/105.7"
+    },
+    {
+      "name": "強チャンス目",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "全設定共通: 1/546.1"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.001831,
+        "2": 0.001831,
+        "3": 0.001831,
+        "4": 0.001831,
+        "5": 0.001831,
+        "6": 0.001831
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/546.1"
+    },
+    {
+      "name": "AT初当たり",
+      "probabilities": {
+        "1": 0.002974,
+        "2": 0.003012,
+        "3": 0.003129,
+        "4": 0.003348,
+        "5": 0.003499,
+        "6": 0.003597
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/336.3、設定6: 1/278.0"
+    },
+    {
+      "name": "CZ出現率",
+      "probabilities": {
+        "1": 0.004202,
+        "2": 0.004231,
+        "3": 0.004316,
+        "4": 0.004527,
+        "5": 0.004673,
+        "6": 0.004760
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#2196F3",
+      "description": "設定1: 1/238.0、設定6: 1/210.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "サミートロフィー銅",
+      "description": "AT終了時・上位AT終了時・エンディング終了時に出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "name": "サミートロフィー銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "name": "サミートロフィー金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "サミートロフィーキリン柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "name": "サミートロフィー虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "CZ終了画面 青空+公安9課",
+      "description": "S.A.M.終了画面。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    },
+    {
+      "name": "CZ終了画面 バカンス",
+      "description": "S.A.M.終了画面。設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "name": "CZ終了画面 全員集合",
+      "description": "S.A.M.終了画面。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "S.A.M.同一エピソード連続",
+      "description": "CZのエピソード「暴走の証明」「恵まれし者たち」が連続で同じものが出現。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#00BCD4"
+    },
+    {
+      "name": "エンディング中PUSHボタン 虹パネル",
+      "description": "エンディング中のレア役成立時にPUSHボタンで上パネルが虹色に変化。設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "name": "エンディング中PUSHボタン 紫パネル",
+      "description": "エンディング中のレア役成立時にPUSHボタンで上パネルが紫に変化。設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "タチコマSAM出現期待度（200G or 400G合算）",
+      "description": "AT終了後の通常移行時に規定ゲームでのタチコマSAM当選期待度。白の境界失敗後は100%のためサンプル除外",
+      "probabilities": {
+        "1": 0.300000,
+        "2": 0.329000,
+        "3": 0.375000,
+        "4": 0.417000,
+        "5": 0.458000,
+        "6": 0.483000
+      },
+      "displayOrder": 1
+    },
+    {
+      "name": "AT突入時 引き戻しストック期待度",
+      "description": "AT突入時のREBOOT CHANCE成功ストック抽選",
+      "probabilities": {
+        "1": 0.033000,
+        "2": 0.046000,
+        "3": 0.058000,
+        "4": 0.071000,
+        "5": 0.083000,
+        "6": 0.096000
+      },
+      "displayOrder": 2
+    },
+    {
+      "name": "S.A.M.視覚フラグ保有率",
+      "description": "CZ失敗時の視覚HACK発生期待度。高設定ほど保有しやすい",
+      "probabilities": {
+        "1": 0.057000,
+        "2": 0.061000,
+        "3": 0.069000,
+        "4": 0.090000,
+        "5": 0.101000,
+        "6": 0.106000
+      },
+      "displayOrder": 3
+    },
+    {
+      "name": "設定変更時/AT後 高確移行率",
+      "description": "設定変更時及びAT後の高確以上への移行率",
+      "probabilities": {
+        "1": 0.500000,
+        "2": 0.517000,
+        "3": 0.533000,
+        "4": 0.551000,
+        "5": 0.567000,
+        "6": 0.584000
+      },
+      "displayOrder": 4
+    }
+  ],
+  "author": "community",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、ななプレス(nana-press.com)"
+}
