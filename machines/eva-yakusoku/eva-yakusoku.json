@@ -36,7 +36,7 @@
       "name": "ボーナス合算",
       "probabilities": {
         "1": 0.005081,
-        "2": 0.005280,
+        "2": 0.00528,
         "3": 0.005525,
         "4": 0.005858,
         "5": 0.006196,
@@ -52,50 +52,106 @@
     {
       "name": "ボーナス終了画面 カヲル",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "REG中キャラクター紹介 カヲル出現",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "BT中ムービー ゲンドウ",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "BT中ムービー 加持",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "BT中ムービー カヲル",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "単独暴走モード出現",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     },
     {
       "name": "ベル+黄7BB同時当選",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     }
   ],
@@ -137,29 +193,29 @@
       "name": "弱スイカ同時当選期待度",
       "description": "設定1: 1.82%、設定6: 2.54%",
       "probabilities": {
-        "1": 0.018200,
-        "2": 0.019100,
-        "3": 0.019700,
-        "4": 0.022300,
-        "5": 0.023100,
-        "6": 0.025400
+        "1": 0.0182,
+        "2": 0.0191,
+        "3": 0.0197,
+        "4": 0.0223,
+        "5": 0.0231,
+        "6": 0.0254
       }
     },
     {
       "name": "チェリー同時当選期待度",
       "description": "設定1: 10.3%、設定6: 11.4%",
       "probabilities": {
-        "1": 0.103000,
-        "2": 0.106000,
-        "3": 0.107000,
-        "4": 0.111000,
-        "5": 0.110000,
-        "6": 0.114000
+        "1": 0.103,
+        "2": 0.106,
+        "3": 0.107,
+        "4": 0.111,
+        "5": 0.11,
+        "6": 0.114
       }
     }
   ],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
 }

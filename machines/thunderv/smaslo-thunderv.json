@@ -1,12 +1,17 @@
 {
   "name": "スマスロ サンダーV",
   "type": "BT",
-  "availableSettings": ["1", "2", "5", "6"],
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ],
   "roles": [
     {
       "name": "ベルA",
       "probabilities": {
-        "1": 0.061350,
+        "1": 0.06135,
         "2": 0.063291,
         "5": 0.065359,
         "6": 0.067568
@@ -34,7 +39,7 @@
       "probabilities": {
         "1": 0.075758,
         "2": 0.082645,
-        "5": 0.080000,
+        "5": 0.08,
         "6": 0.081967
       },
       "hasSettingDiff": true,
@@ -47,7 +52,7 @@
       "probabilities": {
         "1": 0.009234,
         "2": 0.009124,
-        "5": 0.010040,
+        "5": 0.01004,
         "6": 0.009813
       },
       "hasSettingDiff": true,
@@ -71,10 +76,10 @@
     {
       "name": "チェリーA",
       "probabilities": {
-        "1": 0.010020,
-        "2": 0.010020,
-        "5": 0.010020,
-        "6": 0.010020
+        "1": 0.01002,
+        "2": 0.01002,
+        "5": 0.01002,
+        "6": 0.01002
       },
       "hasSettingDiff": false,
       "displayOrder": 6,
@@ -164,22 +169,40 @@
     {
       "name": "RB終了画面 イッカククン",
       "description": "RB終了画面でイッカククンキャラが出現。設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "BIG終了画面 放電パターン",
       "description": "BIG終了画面でレアパターン（放電演出）が出現。設定2以上濃厚",
-      "confirmedSettings": ["2", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     },
     {
       "name": "1G連BIG終了画面 流星パターン",
       "description": "1G連BB終了時に流星通過のレアパターンが出現。設定2以上濃厚",
-      "confirmedSettings": ["2", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     }
   ],
@@ -214,6 +237,6 @@
   "trialSuccessRates": [],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、DMMぱちタウン(p-town.dmm.com)、ななプレス(nana-press.com)"
 }

@@ -39,7 +39,7 @@
         "2": 0.013774,
         "3": 0.014265,
         "4": 0.015456,
-        "5": 0.016420,
+        "5": 0.01642,
         "6": 0.017483
       },
       "hasSettingDiff": true,
@@ -143,40 +143,80 @@
       "id": "bonus_end_rare",
       "name": "ボーナス終了画面 レア（星2）",
       "description": "ボーナス終了画面左上に星2個表示",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "bonus_end_srare",
       "name": "ボーナス終了画面 Sレア（星4）",
       "description": "ボーナス終了画面左上に星4個表示",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "bonus_end_urare",
       "name": "ボーナス終了画面 Uレア（星6）",
       "description": "ボーナス終了画面左上に星6個表示",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "chapter_nathan",
       "name": "CHAPTER演出 ネイサン出現",
       "description": "ART中CHAPTER連続演出でネイサンがキャラ紹介される",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "chapter_solomon",
       "name": "CHAPTER演出 ソロモン出現",
       "description": "ART中CHAPTER連続演出でソロモンがキャラ紹介される",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     }
   ],
@@ -323,6 +363,6 @@
   "description": "タイヨーエレック製ART機（2016年9月導入）。ボーナス+ART。天井は通常時999G+α消化でCZ確定。最大の設定差はART初当り確率（設定1: 1/398、設定6: 1/231）。通常時のBE揃い・チェリー・スイカに設定差。赤同色BIGは奇数設定優遇、青同色BIGは偶数設定優遇（設定6のみ1:1）。ボーナス終了画面の星表示とCHAPTER演出キャラで設定確定あり。CZ翼手選択率にも大きな設定差。",
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、すろぱちくえすと、一撃、2-9伝説、ゆうべるのパチスロ勝利の方程式、pachislo-data.com"
 }

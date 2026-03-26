@@ -5,7 +5,7 @@
     {
       "name": "チェリー",
       "probabilities": {
-        "1": 0.016340,
+        "1": 0.01634,
         "2": 0.016779,
         "3": 0.017241,
         "4": 0.017699,
@@ -80,7 +80,7 @@
     {
       "name": "BIG中ハズレ",
       "probabilities": {
-        "1": 0.216450,
+        "1": 0.21645,
         "2": 0.221729,
         "3": 0.227273,
         "4": 0.232558,
@@ -98,120 +98,240 @@
       "id": "sammy_trophy_bronze",
       "name": "サミートロフィー銅",
       "description": "ボーナス終了画面・AT終了画面で左下に出現",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#795548"
     },
     {
       "id": "sammy_trophy_silver",
       "name": "サミートロフィー銀",
       "description": "ボーナス終了画面・AT終了画面で左下に出現",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "id": "sammy_trophy_gold",
       "name": "サミートロフィー金",
       "description": "ボーナス終了画面・AT終了画面で左下に出現",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "sammy_trophy_kirin",
       "name": "サミートロフィーキリン柄",
       "description": "ボーナス終了画面・AT終了画面で左下に出現",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "sammy_trophy_rainbow",
       "name": "サミートロフィー虹",
       "description": "ボーナス終了画面・AT終了画面で左下に出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "end_screen_project_d",
       "name": "AT終了画面 プロジェクトD",
       "description": "有利区間完走時以外で出現した場合、設定6確定（+復活濃厚）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "flip_natsuki_doage",
       "name": "ボーナス確定画面 なつき胴上げ",
       "description": "ボーナス確定画面のフリップでなつき胴上げ出現（レジェンドボーナス時は除く）",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#F48FB1"
     },
     {
       "id": "flip_car",
       "name": "ボーナス確定画面 車",
       "description": "ボーナス確定画面のフリップで車が出現",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#2196F3"
     },
     {
       "id": "flip_kirin_tofu",
       "name": "ボーナス確定画面 キリン柄豆腐",
       "description": "ボーナス確定画面のフリップでキリン柄豆腐が出現",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "medals_86_over",
       "name": "獲得枚数 86枚OVER（初回）",
       "description": "獲得枚数表示で86枚OVERが出現（初回）",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#FFC107"
     },
     {
       "id": "medals_86_over_3times",
       "name": "獲得枚数 86枚OVER（3回以上）",
       "description": "86枚OVERが電源投入後3回以上出現で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "medals_85_over",
       "name": "獲得枚数 85枚OVER",
       "description": "獲得枚数表示で85枚OVERが出現",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "sub_lcd_purple",
       "name": "サブ液晶タッチ 紫",
       "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで紫が出現",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "id": "sub_lcd_black",
       "name": "サブ液晶タッチ 黒",
       "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで黒が出現",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#212121"
     },
     {
       "id": "sub_lcd_rainbow",
       "name": "サブ液晶タッチ 虹",
       "description": "レジェンドバトル終了時・ATセット継続時にサブ液晶タッチで虹が出現",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -333,6 +453,6 @@
   "author": "コミュニティ",
   "version": "1.0",
   "description": "サミー（タイヨーエレック）のA+AT機。2021年1月導入。チェリー・共通ベルに設定差あり。AT終了画面・サミートロフィー・サブ液晶タッチ色・ボーナス確定画面フリップ・獲得枚数表示で設定示唆。AT直撃に最大約18倍の設定差。",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "p-town.dmm.com、1geki.jp、nana-press.com、p-gabu.jp、pachiseven.jp、chonborista.com、slopachi-quest.com"
 }

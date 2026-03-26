@@ -5,12 +5,12 @@
     {
       "name": "チェリー",
       "probabilities": {
-        "1": 0.010070,
-        "2": 0.010070,
-        "3": 0.010070,
-        "4": 0.010070,
-        "5": 0.010070,
-        "6": 0.010070
+        "1": 0.01007,
+        "2": 0.01007,
+        "3": 0.01007,
+        "4": 0.01007,
+        "5": 0.01007,
+        "6": 0.01007
       },
       "hasSettingDiff": false,
       "displayOrder": 1,
@@ -20,12 +20,12 @@
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.010070,
-        "2": 0.010070,
-        "3": 0.010070,
-        "4": 0.010070,
-        "5": 0.010070,
-        "6": 0.010070
+        "1": 0.01007,
+        "2": 0.01007,
+        "3": 0.01007,
+        "4": 0.01007,
+        "5": 0.01007,
+        "6": 0.01007
       },
       "hasSettingDiff": false,
       "displayOrder": 2,
@@ -97,106 +97,226 @@
     {
       "name": "サミートロフィー銅",
       "description": "ボーナス終了時またはAT終了時に出現。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "name": "サミートロフィー銀",
       "description": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "サミートロフィー金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "サミートロフィーキリン",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "name": "サミートロフィー虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "EXP 2200獲得",
       "description": "通常時やレベルアップゾーン中のEXP獲得数で設定示唆。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     },
     {
       "name": "EXP 4400獲得",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "EXP 5500獲得",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "name": "EXP 6600獲得",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "AT終了ボイス フィトリア",
       "description": "AT終了画面でPUSHボタン。設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "AT終了ボイス ラルク",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "name": "AT終了ボイス テリス",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "獲得枚数 222枚OVER",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     },
     {
       "name": "獲得枚数 456枚OVER",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "獲得枚数 666枚OVER",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -230,19 +350,35 @@
       "name": "画面6",
       "type": "at_end",
       "hint": "設定2以上濃厚+高設定ほど優遇",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"]
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
     },
     {
       "name": "画面7",
       "type": "at_end",
       "hint": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     }
   ],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-26",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
 }

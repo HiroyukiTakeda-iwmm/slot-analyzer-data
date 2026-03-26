@@ -1,7 +1,12 @@
 {
   "name": "アレックス ブライト",
   "type": "BT",
-  "availableSettings": ["1", "2", "5", "6"],
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ],
   "roles": [
     {
       "name": "羽",
@@ -21,8 +26,8 @@
       "probabilities": {
         "1": 0.024691,
         "2": 0.026247,
-        "5": 0.025510,
-        "6": 0.026110
+        "5": 0.02551,
+        "6": 0.02611
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
@@ -48,7 +53,7 @@
         "1": 0.003235,
         "2": 0.003296,
         "5": 0.003388,
-        "6": 0.003480
+        "6": 0.00348
       },
       "hasSettingDiff": true,
       "displayOrder": 4,
@@ -73,7 +78,7 @@
       "probabilities": {
         "1": 0.005568,
         "2": 0.005737,
-        "5": 0.006120,
+        "5": 0.00612,
         "6": 0.006685
       },
       "hasSettingDiff": true,
@@ -86,8 +91,14 @@
     {
       "name": "RB終了画面 アレックス出現（壁画調）",
       "description": "設定6の可能性アップ（設定1-2: 0.8%、設定6: 5.0%）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "5"
+      ],
       "color": "#FFD700"
     }
   ],
@@ -107,6 +118,6 @@
   "trialSuccessRates": [],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
 }

@@ -8,9 +8,9 @@
         "1": 0.167224,
         "2": 0.169492,
         "3": 0.172117,
-        "4": 0.174520,
+        "4": 0.17452,
         "5": 0.175747,
-        "6": 0.177620
+        "6": 0.17762
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -67,7 +67,7 @@
       "probabilities": {
         "1": 0.003341,
         "2": 0.003403,
-        "3": 0.003510,
+        "3": 0.00351,
         "4": 0.003647,
         "5": 0.003815,
         "6": 0.004165
@@ -83,7 +83,7 @@
         "1": 0.002609,
         "2": 0.002655,
         "3": 0.002793,
-        "4": 0.002990,
+        "4": 0.00299,
         "5": 0.003341,
         "6": 0.004044
       },
@@ -97,57 +97,121 @@
     {
       "name": "コパンダトロフィー銅",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "name": "コパンダトロフィー銀",
       "description": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "コパンダトロフィー金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "コパンダトロフィーイナズマ",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "コパンダトロフィー虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "RB中赤カード出現",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#F44336"
     },
     {
       "name": "RB中赤カード2回出現",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "RB中銀と金のみ",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     }
   ],
@@ -177,6 +241,6 @@
   "trialSuccessRates": [],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
 }

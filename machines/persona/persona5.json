@@ -25,7 +25,7 @@
         "3": 0.011765,
         "4": 0.011919,
         "5": 0.012063,
-        "6": 0.012240
+        "6": 0.01224
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
@@ -37,9 +37,9 @@
       "probabilities": {
         "1": 0.003815,
         "2": 0.003815,
-        "3": 0.003830,
-        "4": 0.003830,
-        "5": 0.003830,
+        "3": 0.00383,
+        "4": 0.00383,
+        "5": 0.00383,
         "6": 0.003846
       },
       "hasSettingDiff": true,
@@ -81,7 +81,7 @@
       "name": "AT確率",
       "probabilities": {
         "1": 0.002953,
-        "2": 0.003100,
+        "2": 0.0031,
         "3": 0.003114,
         "4": 0.003448,
         "5": 0.003452,
@@ -97,50 +97,106 @@
     {
       "name": "サミートロフィー銅",
       "description": "AT終了時またはエンディング終了画面に出現。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "name": "サミートロフィー銀",
       "description": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "サミートロフィー金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "サミートロフィーキリン",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "name": "サミートロフィー虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "PC終了画面 背景赤（復活なし+次回非AT）",
       "description": "復活否定かつ次回PC当選時にテイクユアハート非当選で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#F44336"
     },
     {
       "name": "PC終了画面 背景紫（復活なし+次回非AT）",
       "description": "復活否定かつ次回PC当選時にテイクユアハート非当選で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#9C27B0"
     }
   ],
@@ -200,6 +256,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-26",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
 }

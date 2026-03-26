@@ -35,12 +35,12 @@
     {
       "name": "共通右下がりベル",
       "probabilities": {
-        "1": 0.036630,
-        "2": 0.036630,
-        "3": 0.036630,
-        "4": 0.036630,
-        "5": 0.036630,
-        "6": 0.036630
+        "1": 0.03663,
+        "2": 0.03663,
+        "3": 0.03663,
+        "4": 0.03663,
+        "5": 0.03663,
+        "6": 0.03663
       },
       "hasSettingDiff": false,
       "displayOrder": 3,
@@ -50,12 +50,12 @@
     {
       "name": "弱チェリー",
       "probabilities": {
-        "1": 0.010010,
-        "2": 0.010010,
-        "3": 0.010010,
-        "4": 0.010010,
-        "5": 0.010010,
-        "6": 0.010010
+        "1": 0.01001,
+        "2": 0.01001,
+        "3": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
       },
       "hasSettingDiff": false,
       "displayOrder": 4,
@@ -65,12 +65,12 @@
     {
       "name": "スイカ",
       "probabilities": {
-        "1": 0.010010,
-        "2": 0.010010,
-        "3": 0.010010,
-        "4": 0.010010,
-        "5": 0.010010,
-        "6": 0.010010
+        "1": 0.01001,
+        "2": 0.01001,
+        "3": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
       },
       "hasSettingDiff": false,
       "displayOrder": 5,
@@ -145,7 +145,7 @@
         "3": 0.004316,
         "4": 0.004527,
         "5": 0.004673,
-        "6": 0.004760
+        "6": 0.00476
       },
       "hasSettingDiff": true,
       "displayOrder": 10,
@@ -157,57 +157,121 @@
     {
       "name": "サミートロフィー銅",
       "description": "AT終了時/上位AT終了時/エンディング終了時に出現。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "name": "サミートロフィー銀",
       "description": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "サミートロフィー金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "サミートロフィーキリン柄",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "name": "サミートロフィー虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "S.A.M.同一エピソード連続",
       "description": "S.A.M.で同一エピソードが連続出現した場合、設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3"
     },
     {
       "name": "エンディング上パネル紫",
       "description": "エンディング中PUSHボタン押下時の上パネル色。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9C27B0"
     },
     {
       "name": "エンディング上パネル虹",
       "description": "エンディング中PUSHボタン押下時の上パネル色。設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -256,8 +320,16 @@
       "name": "アオイ（金枠）",
       "type": "at_end",
       "hint": "モードD濃厚＋設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     }
   ],
   "endScreenGroups": [
@@ -280,8 +352,16 @@
           "name": "青空+公安9課",
           "type": "other",
           "hint": "設定2以上濃厚",
-          "confirmedSettings": ["2", "3", "4", "5", "6"],
-          "excludedSettings": ["1"]
+          "confirmedSettings": [
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "excludedSettings": [
+            "1"
+          ]
         },
         {
           "name": "オペ子",
@@ -312,15 +392,31 @@
           "name": "バカンス",
           "type": "other",
           "hint": "設定4以上濃厚",
-          "confirmedSettings": ["4", "5", "6"],
-          "excludedSettings": ["1", "2", "3"]
+          "confirmedSettings": [
+            "4",
+            "5",
+            "6"
+          ],
+          "excludedSettings": [
+            "1",
+            "2",
+            "3"
+          ]
         },
         {
           "name": "全員集合",
           "type": "other",
           "hint": "設定6濃厚",
-          "confirmedSettings": ["6"],
-          "excludedSettings": ["1", "2", "3", "4", "5"]
+          "confirmedSettings": [
+            "6"
+          ],
+          "excludedSettings": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
         }
       ]
     }
@@ -330,12 +426,12 @@
       "name": "S.A.M.視覚フラグ保有率",
       "description": "CZ失敗時の視覚HACK発生期待度。設定1: 5.7%、設定6: 10.6%",
       "probabilities": {
-        "1": 0.057000,
-        "2": 0.061000,
-        "3": 0.069000,
-        "4": 0.090000,
-        "5": 0.101000,
-        "6": 0.106000
+        "1": 0.057,
+        "2": 0.061,
+        "3": 0.069,
+        "4": 0.09,
+        "5": 0.101,
+        "6": 0.106
       },
       "displayOrder": 1
     },
@@ -343,12 +439,12 @@
       "name": "タチコマSAM出現期待度（200G/400G合算）",
       "description": "AT後通常移行時の規定ゲームタチコマSAM当選率。設定1: 30.0%、設定6: 48.3%",
       "probabilities": {
-        "1": 0.300000,
-        "2": 0.329000,
-        "3": 0.375000,
-        "4": 0.417000,
-        "5": 0.458000,
-        "6": 0.483000
+        "1": 0.3,
+        "2": 0.329,
+        "3": 0.375,
+        "4": 0.417,
+        "5": 0.458,
+        "6": 0.483
       },
       "displayOrder": 2
     },
@@ -356,12 +452,12 @@
       "name": "AT突入時引き戻しストック期待度",
       "description": "AT突入時のREBOOT CHANCE成功ストック抽選。設定1: 3.3%、設定6: 9.6%",
       "probabilities": {
-        "1": 0.033000,
-        "2": 0.046000,
-        "3": 0.058000,
-        "4": 0.071000,
-        "5": 0.083000,
-        "6": 0.096000
+        "1": 0.033,
+        "2": 0.046,
+        "3": 0.058,
+        "4": 0.071,
+        "5": 0.083,
+        "6": 0.096
       },
       "displayOrder": 3
     },
@@ -369,12 +465,12 @@
       "name": "設定変更時/AT後の高確以上移行率",
       "description": "設定1: 50.0%、設定6: 58.4%",
       "probabilities": {
-        "1": 0.500000,
-        "2": 0.517000,
-        "3": 0.533000,
-        "4": 0.551000,
-        "5": 0.567000,
-        "6": 0.584000
+        "1": 0.5,
+        "2": 0.517,
+        "3": 0.533,
+        "4": 0.551,
+        "5": 0.567,
+        "6": 0.584
       },
       "displayOrder": 4
     },
@@ -394,7 +490,7 @@
   ],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-26",
+  "lastUpdated": "2026-03-27",
   "source": "一撃(1geki.jp)",
   "description": "サミー製スマスロ。2026年2月導入、設置約11,000台。小役確率に設定差はなく、AT初当たり・CZ出現率・視覚フラグ保有率・タチコマSAM出現率で設定判別。サミートロフィーや終了画面で設定示唆。"
 }

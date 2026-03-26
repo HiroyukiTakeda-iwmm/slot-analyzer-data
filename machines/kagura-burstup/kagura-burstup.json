@@ -82,85 +82,181 @@
     {
       "name": "閃乱ゾーン終了1枚絵 銀枠No.010",
       "description": "設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "閃乱ゾーン終了1枚絵 銀枠No.003",
       "description": "設定3以上確定",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#9E9E9E"
     },
     {
       "name": "閃乱ゾーン終了1枚絵 金枠No.456",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "閃乱ゾーン終了1枚絵 金枠No.556",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "閃乱ゾーン終了1枚絵 金枠No.666",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "AT終了画面 雅緋（赤背景）",
       "description": "設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#F44336"
     },
     {
       "name": "AT終了画面 焔（赤背景）",
       "description": "設定3以上確定",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#F44336"
     },
     {
       "name": "AT終了画面 飛鳥（金背景）",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "AT終了画面 雪泉（金背景）",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "AT終了画面 雪不帰（レインボー背景）",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "name": "獲得枚数456枚OVER表示",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "name": "獲得枚数666枚OVER表示",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -191,7 +287,7 @@
       "name": "AT初当り確率",
       "description": "設定1: 1/558.7、設定6: 1/406.4",
       "probabilities": {
-        "1": 0.001790,
+        "1": 0.00179,
         "2": 0.001875,
         "3": 0.001994,
         "4": 0.002181,
@@ -203,18 +299,18 @@
       "name": "爆乳ハイパーバトル勝率",
       "description": "設定1-2: 約38%、設定6: 約55%",
       "probabilities": {
-        "1": 0.380000,
-        "2": 0.380000,
-        "3": 0.440000,
-        "4": 0.470000,
-        "5": 0.530000,
-        "6": 0.550000
+        "1": 0.38,
+        "2": 0.38,
+        "3": 0.44,
+        "4": 0.47,
+        "5": 0.53,
+        "6": 0.55
       }
     }
   ],
   "voiceCounts": [],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、パチセブン、DMMぱちタウン、777パチガブ"
 }

@@ -9,8 +9,8 @@
         "2": 0.008961,
         "3": 0.009158,
         "4": 0.009579,
-        "5": 0.010010,
-        "6": 0.010560
+        "5": 0.01001,
+        "6": 0.01056
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
@@ -22,7 +22,7 @@
       "probabilities": {
         "1": 0.004029,
         "2": 0.004073,
-        "3": 0.004120,
+        "3": 0.00412,
         "4": 0.004212,
         "5": 0.004303,
         "6": 0.004393
@@ -84,7 +84,7 @@
         "2": 0.003754,
         "3": 0.003845,
         "4": 0.004013,
-        "5": 0.004180,
+        "5": 0.00418,
         "6": 0.004365
       },
       "hasSettingDiff": true,
@@ -113,134 +113,286 @@
       "id": "トロフィー銅",
       "name": "ケロットトロフィー銅",
       "description": "設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"]
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
     },
     {
       "id": "トロフィー銀",
       "name": "ケロットトロフィー銀",
       "description": "設定3以上確定",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"]
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
     },
     {
       "id": "トロフィー金",
       "name": "ケロットトロフィー金",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     {
       "id": "トロフィーケロット柄",
       "name": "ケロットトロフィーケロット柄",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"]
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "id": "トロフィー虹",
       "name": "ケロットトロフィー虹",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "終了画面_一八",
       "name": "終了画面：一八",
       "description": "設定2以上確定",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"]
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
     },
     {
       "id": "終了画面_平八",
       "name": "終了画面：平八",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     {
       "id": "終了画面_一美",
       "name": "終了画面：一美",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"]
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "id": "終了画面_平八一八",
       "name": "終了画面：平八&一八",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "終了画面_巌竜",
       "name": "終了画面：巌竜",
       "description": "設定上げ確定（実質設定2以上確定）",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"]
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ]
     },
     {
       "id": "ATランクSSS",
       "name": "AT終了時ランクSSS",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "獲得枚数803",
       "name": "獲得枚数803枚突破表示",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "撃破44人",
       "name": "連続演出撃破人数44人",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     {
       "id": "撃破55人",
       "name": "連続演出撃破人数55人",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"]
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "id": "撃破66人",
       "name": "連続演出撃破人数66人",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "BIG中セリフ_鉄拳衆",
       "name": "BIG中セリフ：鉄拳衆「動くな」（紫ランプ）",
       "description": "設定1または設定6確定",
-      "confirmedSettings": ["1", "6"],
-      "excludedSettings": ["2", "3", "4", "5"]
+      "confirmedSettings": [
+        "1",
+        "6"
+      ],
+      "excludedSettings": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     },
     {
       "id": "BIG中セリフ_平八",
       "name": "BIG中セリフ：平八「この時を待っていたぞ」（赤ランプ）",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"]
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ]
     },
     {
       "id": "BIG中セリフ_一美",
       "name": "BIG中セリフ：一美「相容れない運命なのです」（赤ランプ）",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"]
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
     },
     {
       "id": "BIG中セリフ_カエル",
       "name": "BIG中セリフ：カエル「ゲコゲコ」（赤ランプ）",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"]
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
     }
   ],
   "endScreens": [
@@ -454,7 +606,7 @@
         "3": 0.109,
         "4": 0.133,
         "5": 0.141,
-        "6": 0.180
+        "6": 0.18
       }
     },
     {
@@ -473,6 +625,6 @@
   ],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-03-25",
+  "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、p-town.dmm.com、1geki.jp、ナナプレス、パチセブン"
 }
