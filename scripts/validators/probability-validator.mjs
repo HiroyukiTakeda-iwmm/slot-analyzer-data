@@ -103,9 +103,12 @@ export function validateProbabilities(machineFiles) {
     }
 
     // availableSettings の必要性チェック
+    // roles が空の場合は trialSuccessRates からキーを取得
     const roleKeys = data.roles?.[0]?.probabilities
       ? Object.keys(data.roles[0].probabilities)
-      : [];
+      : data.trialSuccessRates?.[0]?.probabilities
+        ? Object.keys(data.trialSuccessRates[0].probabilities)
+        : [];
     const sortedRoleKeys = [...roleKeys].sort();
     const sortedDefault = [...DEFAULT_SETTINGS].sort();
     if (

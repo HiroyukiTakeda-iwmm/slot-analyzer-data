@@ -141,10 +141,12 @@
         {
           "name": "ハズレ",
           "probabilities": {
-            "5": 0.0026553,
-            "6": 0.0026553
+            "1": 0,
+            "2": 0,
+            "5": 0.002655,
+            "6": 0.002655
           },
-          "hasSettingDiff": false,
+          "hasSettingDiff": true,
           "displayOrder": 2,
           "color": "#FF5722"
         }

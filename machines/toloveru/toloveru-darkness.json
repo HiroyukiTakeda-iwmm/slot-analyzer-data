@@ -1,7 +1,48 @@
 {
   "name": "L ToLOVEるダークネス",
   "type": "AT",
-  "roles": [],
+  "roles": [
+    {
+      "name": "左チャンス目",
+      "probabilities": { "L": 0.031250, "2": 0.031250, "3": 0.031250, "4": 0.031250, "5": 0.031250, "6": 0.031250 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/32.0"
+    },
+    {
+      "name": "中チャンス目",
+      "probabilities": { "L": 0.025000, "2": 0.025000, "3": 0.025000, "4": 0.025000, "5": 0.025000, "6": 0.025000 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/40.0"
+    },
+    {
+      "name": "右チャンス目",
+      "probabilities": { "L": 0.014706, "2": 0.014706, "3": 0.014706, "4": 0.014706, "5": 0.014706, "6": 0.014706 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/68.0"
+    },
+    {
+      "name": "複合チャンス目合算",
+      "probabilities": { "L": 0.005859, "2": 0.005859, "3": 0.005859, "4": 0.005859, "5": 0.005859, "6": 0.005859 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/170.7（左中/左右/中右 各1/512）"
+    },
+    {
+      "name": "ハーレム目",
+      "probabilities": { "L": 0.000183, "2": 0.000183, "3": 0.000183, "4": 0.000183, "5": 0.000183, "6": 0.000183 },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#F44336",
+      "description": "全設定共通: 1/5461.3（左中右全停止）"
+    }
+  ],
   "confirmationEvents": [
     {
       "id": "stamp_yoshi",
@@ -216,8 +257,9 @@
       "displayOrder": 2
     }
   ],
+  "description": "SANKYO製スマスロAT機。設定L,2,3,4,5,6の6段階（設定1非搭載）。チェリー・スイカは存在せずチャンス目のみの独自役構成。小役確率は全設定共通。AT初当たり確率とハーレムモード中ウィスパー演出選択率に設定差。ST終了画面・隠れ凪ボイスで設定示唆。",
   "author": "コミュニティ",
-  "version": "1.2",
+  "version": "1.3",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ななプレス、DMMぱちタウン",
   "availableSettings": [
