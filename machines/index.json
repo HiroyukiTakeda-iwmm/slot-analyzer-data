@@ -172,7 +172,7 @@
       "name": "スマスロ新鬼武者3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "onimusha/shin-onimusha3.json",
       "tags": [
         "AT",
@@ -813,7 +813,7 @@
       "name": "L主役は銭形5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "zenishape/zenishape5.json",
       "tags": [
         "AT",
@@ -1137,7 +1137,7 @@
       "name": "Lゾンビランドサガ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "zombielandsaga/zombielandsaga.json",
       "tags": [
         "AT",
@@ -1155,7 +1155,7 @@
       "name": "スマスロ攻殻機動隊",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "koukakukidoutai/koukaku-kidoutai.json",
       "tags": [
         "AT",
@@ -1539,7 +1539,7 @@
       "name": "L転生したらスライムだった件",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "tensura/tensura.json",
       "tags": [
         "AT",
@@ -1577,7 +1577,7 @@
       "name": "スマスロ チバリヨ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "chibariyo/chibariyo2.json",
       "tags": [
         "AT",
@@ -1595,7 +1595,7 @@
       "name": "L 絶対衝激IV",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "zettai/zettai-shougeki4.json",
       "tags": [
         "AT",
@@ -1989,7 +1989,7 @@
       "name": "Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVE",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "0.1",
+      "version": "0.2",
       "file": "gundam-unicorn2/gundam-unicorn2.json",
       "tags": [
         "AT",
@@ -2065,7 +2065,7 @@
       "name": "パチスロ 盾の勇者の成り上がり",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "tate-no-yusha/tate-no-yusha.json",
       "tags": [
         "AT",
