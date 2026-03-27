@@ -127,7 +127,22 @@
   ],
   "endScreens": [],
   "voiceCounts": [],
-  "trialSuccessRates": [],
+  "trialSuccessRates": [
+    {
+      "id": "at_first_hit",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/366.0、設定6: 1/273.1",
+      "probabilities": { "1": 0.002732, "2": 0.002801, "3": 0.002974, "4": 0.003348, "5": 0.003531, "6": 0.003661 },
+      "displayOrder": 1
+    },
+    {
+      "id": "tenpa_totsunyu",
+      "name": "天破の刻突入率",
+      "description": "設定1: 1/100.2、設定6: 1/81.3",
+      "probabilities": { "1": 0.009980, "2": 0.010060, "3": 0.010299, "4": 0.010941, "5": 0.011655, "6": 0.012300 },
+      "displayOrder": 2
+    }
+  ],
   "modeTransitions": [
     {
       "name": "弱チェリー高確移行率",
@@ -143,7 +158,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
+  "version": "1.3",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、ナナプレス、一撃"
 }
