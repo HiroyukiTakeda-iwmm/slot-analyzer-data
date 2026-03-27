@@ -7,7 +7,7 @@
       "name": "SマイジャグラーV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "juggler/my-juggler-v.json",
       "tags": [
         "ジャグラー",
@@ -56,7 +56,7 @@
       "name": "新ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "hanabi/shin-hanabi.json",
       "tags": [
         "ハナビ",
@@ -1000,7 +1000,7 @@
       "name": "ファンキージャグラー2",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "funkyjuggler/funky-juggler2.json",
       "tags": [
         "ジャグラー",
@@ -1032,7 +1032,7 @@
       "name": "SアイムジャグラーEX",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "aimjuggler/aim-juggler-ex-6gou.json",
       "tags": [
         "ジャグラー",
@@ -1066,7 +1066,7 @@
       "name": "クレアの秘宝伝 ボーナストリガーver.",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "crea/crea-bt.json",
       "tags": [
         "Aタイプ",
@@ -1084,7 +1084,7 @@
       "name": "L少女歌劇 レヴュースタァライト",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "revuestarlight/revue-starlight.json",
       "tags": [
         "A+AT",
@@ -1102,7 +1102,7 @@
       "name": "Lマジカルハロウィン8",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "magicalhalloween/magical-halloween8.json",
       "tags": [
         "ART",
@@ -1173,7 +1173,7 @@
       "name": "スマスロ ハナビ",
       "type": "A+RT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "sumaslohanabi/sumaslo-hanabi.json",
       "tags": [
         "A+RT",
@@ -1208,7 +1208,7 @@
       "name": "Lパチスロうみねこのなく頃に2",
       "type": "A+ART",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "umineko/umineko2.json",
       "tags": [
         "A+ART",
@@ -1666,7 +1666,7 @@
       "name": "Re:ゼロから始める異世界生活",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "rezero/rezero.json",
       "tags": [
         "AT",
@@ -1717,7 +1717,7 @@
       "name": "マイジャグラー5",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "juggler/my-juggler5.json",
       "tags": [
         "ジャグラー",
@@ -1846,7 +1846,7 @@
       "name": "クレアの秘宝伝 ~はじまりの扉と太陽の石~ ボーナストリガーver.",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "crea-hihouden-bt/crea-hihouden-bt.json",
       "tags": [
         "BT",
@@ -1862,7 +1862,7 @@
       "name": "アレックス ブライト",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "alex-bright/alex-bright.json",
       "tags": [
         "BT",
@@ -1877,7 +1877,7 @@
       "name": "スマスロ サンダーV",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "thunderv/smaslo-thunderv.json",
       "tags": [
         "BT",
@@ -2284,7 +2284,7 @@
       "name": "LBパチスロ1000ちゃんA",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "1000chan/1000chan-a.json",
       "tags": [
         "oizumi",

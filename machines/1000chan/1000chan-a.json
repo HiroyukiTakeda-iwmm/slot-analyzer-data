@@ -1,11 +1,21 @@
 {
   "name": "LBパチスロ1000ちゃんA",
   "type": "BT",
-  "availableSettings": ["1", "2", "5", "6"],
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ],
   "roles": [
     {
       "name": "チェリー",
-      "probabilities": { "1": 0.025000, "2": 0.025016, "5": 0.025445, "6": 0.025707 },
+      "probabilities": {
+        "1": 0.025,
+        "2": 0.025016,
+        "5": 0.025445,
+        "6": 0.025707
+      },
       "hasSettingDiff": true,
       "displayOrder": 1,
       "color": "#E91E63",
@@ -13,7 +23,12 @@
     },
     {
       "name": "スイカ",
-      "probabilities": { "1": 0.012987, "2": 0.013038, "5": 0.013072, "6": 0.013123 },
+      "probabilities": {
+        "1": 0.012987,
+        "2": 0.013038,
+        "5": 0.013072,
+        "6": 0.013123
+      },
       "hasSettingDiff": true,
       "displayOrder": 2,
       "color": "#4CAF50",
@@ -21,7 +36,12 @@
     },
     {
       "name": "弱チャンス目",
-      "probabilities": { "1": 0.010010, "2": 0.010060, "5": 0.010194, "6": 0.010331 },
+      "probabilities": {
+        "1": 0.01001,
+        "2": 0.01006,
+        "5": 0.010194,
+        "6": 0.010331
+      },
       "hasSettingDiff": true,
       "displayOrder": 3,
       "color": "#9C27B0",
@@ -29,7 +49,12 @@
     },
     {
       "name": "BIG合算確率",
-      "probabilities": { "1": 0.005263, "2": 0.005495, "5": 0.006086, "6": 0.006545 },
+      "probabilities": {
+        "1": 0.005263,
+        "2": 0.005495,
+        "5": 0.006086,
+        "6": 0.006545
+      },
       "hasSettingDiff": true,
       "displayOrder": 4,
       "color": "#F44336",
@@ -37,7 +62,12 @@
     },
     {
       "name": "初当り合算（BIG+1000BONUS）",
-      "probabilities": { "1": 0.005952, "2": 0.006180, "5": 0.006775, "6": 0.007228 },
+      "probabilities": {
+        "1": 0.005952,
+        "2": 0.00618,
+        "5": 0.006775,
+        "6": 0.007228
+      },
       "hasSettingDiff": true,
       "displayOrder": 5,
       "color": "#FF9800",
@@ -49,47 +79,91 @@
       "id": "big_end_voice_e",
       "name": "BIG終了ボイス パターンE",
       "description": "BIG終了後PUSHボタンで特定ボイスが発生し設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "big_end_voice_g",
       "name": "BIG終了ボイス パターンG（運太郎/営子コンビ）",
       "description": "BIG終了後PUSHボタンで運太郎/営子コンビのボイスが発生し設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "bonus_confirm_3chars",
       "name": "ボーナス確定画面 3人同時ボイス",
       "description": "ボーナス確定画面で1000ちゃん・運太郎・営子の3人同時ボイスが発生し設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "bonus_confirm_unta_ei",
       "name": "ボーナス確定画面 運太郎/営子ボイス（1000BONUS以外）",
       "description": "1000BONUS以外のボーナス確定画面で運太郎/営子が発声で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FF5722"
     },
     {
       "id": "bonus_confirm_castera",
       "name": "ボーナス確定画面 キャスターAボイス（1000BONUS以外）",
       "description": "1000BONUS以外のボーナス確定画面でキャスターAが発声で設定2以上濃厚",
-      "confirmedSettings": ["2", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     }
   ],
   "notes": "設定3・4は存在しない4段階設定（1/2/5/6）。設定Hが存在（ボーナス合算1/662、ベース約7710G/50枚、機械割108.7%の特殊設定。通常時ほぼメダル減少なしで即判別可能）。設定Lのデータは未公開。小役確率に設定差あり（チェリー・スイカ・弱チャンス目）。BIG終了ボイスはA〜Gの7種で段階的に設定示唆。強チャンス目・リーチ目・確定役は全設定共通。",
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、なな徹、パチ7、一撃、パチガブ",
-  "description": "オーイズミ製スマスロBT機。4段階設定（1,2,5,6）+設定H。チェリー・スイカ・弱チャンス目に小さな設定差あり。BIG合算確率（設定1: 1/190→設定6: 1/152.8）が主要判別要素。BIG終了ボイス7パターン（パターンE=設定6、パターンG=設定5以上）で設定示唆。ボーナス確定画面の3人同時ボイスで設定6濃厚。"
+  "description": "オーイズミ製スマスロBT機。4段階設定（1,2,5,6）+設定H。チェリー・スイカ・弱チャンス目に小さな設定差あり。BIG合算確率（設定1: 1/190→設定6: 1/152.8）が主要判別要素。BIG終了ボイス7パターン（パターンE=設定6、パターンG=設定5以上）で設定示唆。ボーナス確定画面の3人同時ボイスで設定6濃厚。",
+  "trialSuccessRates": [
+    {
+      "id": "first_hit_total",
+      "name": "初当たり合算確率",
+      "description": "設定1: 1/168.0、設定6: 1/138.3",
+      "probabilities": {
+        "1": 0.005952,
+        "2": 0.00618,
+        "5": 0.006775,
+        "6": 0.007228
+      },
+      "displayOrder": 1
+    }
+  ]
 }
