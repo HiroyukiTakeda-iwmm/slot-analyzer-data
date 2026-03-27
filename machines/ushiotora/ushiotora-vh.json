@@ -4,7 +4,14 @@
   "roles": [
     {
       "name": "弱チェリー",
-      "probabilities": { "1": 0.011862, "2": 0.011862, "3": 0.011862, "4": 0.011862, "5": 0.011862, "6": 0.011862 },
+      "probabilities": {
+        "1": 0.011862,
+        "2": 0.011862,
+        "3": 0.011862,
+        "4": 0.011862,
+        "5": 0.011862,
+        "6": 0.011862
+      },
       "hasSettingDiff": false,
       "displayOrder": 1,
       "color": "#E91E63",
@@ -12,7 +19,14 @@
     },
     {
       "name": "スイカ",
-      "probabilities": { "1": 0.007813, "2": 0.007813, "3": 0.007813, "4": 0.007813, "5": 0.007813, "6": 0.007813 },
+      "probabilities": {
+        "1": 0.007813,
+        "2": 0.007813,
+        "3": 0.007813,
+        "4": 0.007813,
+        "5": 0.007813,
+        "6": 0.007813
+      },
       "hasSettingDiff": false,
       "displayOrder": 2,
       "color": "#4CAF50",
@@ -20,7 +34,14 @@
     },
     {
       "name": "うしお強チェリー",
-      "probabilities": { "1": 0.003906, "2": 0.003906, "3": 0.003906, "4": 0.003906, "5": 0.003906, "6": 0.003906 },
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.003906,
+        "3": 0.003906,
+        "4": 0.003906,
+        "5": 0.003906,
+        "6": 0.003906
+      },
       "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#F44336",
@@ -28,7 +49,14 @@
     },
     {
       "name": "とら強チェリー",
-      "probabilities": { "1": 0.003906, "2": 0.003906, "3": 0.003906, "4": 0.003906, "5": 0.003906, "6": 0.003906 },
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.003906,
+        "3": 0.003906,
+        "4": 0.003906,
+        "5": 0.003906,
+        "6": 0.003906
+      },
       "hasSettingDiff": false,
       "displayOrder": 4,
       "color": "#FF9800",
@@ -36,7 +64,14 @@
     },
     {
       "name": "チャンス目",
-      "probabilities": { "1": 0.003906, "2": 0.003906, "3": 0.003906, "4": 0.003906, "5": 0.003906, "6": 0.003906 },
+      "probabilities": {
+        "1": 0.003906,
+        "2": 0.003906,
+        "3": 0.003906,
+        "4": 0.003906,
+        "5": 0.003906,
+        "6": 0.003906
+      },
       "hasSettingDiff": false,
       "displayOrder": 5,
       "color": "#9C27B0",
@@ -44,7 +79,14 @@
     },
     {
       "name": "うしとら強チェリー",
-      "probabilities": { "1": 0.000977, "2": 0.000977, "3": 0.000977, "4": 0.000977, "5": 0.000977, "6": 0.000977 },
+      "probabilities": {
+        "1": 0.000977,
+        "2": 0.000977,
+        "3": 0.000977,
+        "4": 0.000977,
+        "5": 0.000977,
+        "6": 0.000977
+      },
       "hasSettingDiff": false,
       "displayOrder": 6,
       "color": "#FF5722",
@@ -56,71 +98,165 @@
       "id": "trophy_bronze",
       "name": "ダイナマイトトロフィー 銅",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "id": "trophy_silver",
       "name": "ダイナマイトトロフィー 銀",
       "description": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "trophy_gold",
       "name": "ダイナマイトトロフィー 金",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_ladybug",
       "name": "ダイナマイトトロフィー てんとう虫柄",
       "description": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "trophy_rainbow",
       "name": "ダイナマイトトロフィー 虹",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     },
     {
       "id": "medal_222",
       "name": "獲得枚数 222枚突破",
       "description": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "medal_456",
       "name": "獲得枚数 456枚突破",
       "description": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "medal_666",
       "name": "獲得枚数 666枚突破",
       "description": "設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
   "notes": "小役確率に設定差なし。AT間天井2000G選択率に最大の設定差（設定1: 15.5%→設定6: 56.6%）。うしとらモード移行率（0スルー時）にも設定差あり（設定1: 1.61%→設定6: 4.85%）。CZ/AT初当り差は小幅（設定1/6で約10%差）。設定2〜5の天井・モード移行率の詳細値は未判明。",
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、スロパチクエスト、flick7、なな徹、パチ7",
-  "description": "ダイイチ製スマスロAT機。6段階設定。小役確率は全設定共通。AT間天井2000G選択率に最大の設定差（設定1: 15.5%→設定6: 56.6%）。ダイナマイトトロフィー（銅〜虹）と獲得枚数表示で設定示唆。うしとらモード移行率で設定推測。"
+  "description": "ダイイチ製スマスロAT機。6段階設定。小役確率は全設定共通。AT間天井2000G選択率に最大の設定差（設定1: 15.5%→設定6: 56.6%）。ダイナマイトトロフィー（銅〜虹）と獲得枚数表示で設定示唆。うしとらモード移行率で設定推測。",
+  "trialSuccessRates": [
+    {
+      "id": "at_first_hit",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/397.3、設定6: 1/356.1",
+      "probabilities": {
+        "1": 0.002517,
+        "2": 0.002567,
+        "3": 0.002646,
+        "4": 0.002736,
+        "5": 0.002778,
+        "6": 0.002808
+      },
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ初当たり確率",
+      "description": "設定1: 1/178.0、設定6: 1/159.0",
+      "probabilities": {
+        "1": 0.005618,
+        "2": 0.005695,
+        "3": 0.005892,
+        "4": 0.006079,
+        "5": 0.006177,
+        "6": 0.006289
+      },
+      "displayOrder": 2
+    }
+  ]
 }

@@ -1,7 +1,13 @@
 {
   "name": "バーニングエクスプレス",
   "type": "AT",
-  "availableSettings": ["1", "2", "4", "5", "6"],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
   "description": "北電子のスマスロ完全告知AT機。設定3非搭載の5段階設定。純増約5.0枚。告知ランプ点灯でボーナス濃厚のシンプルなゲーム性。2025年12月導入。",
   "roles": [
     {
@@ -21,7 +27,7 @@
     {
       "name": "エクスプレスボーナス",
       "probabilities": {
-        "1": 0.002440,
+        "1": 0.00244,
         "2": 0.002476,
         "4": 0.002616,
         "5": 0.002719,
@@ -64,7 +70,22 @@
   "confirmationEvents": [],
   "notes": "完全告知タイプのため、設定確定演出は存在しない。設定判別はボーナス確率とリールロック出現率がメイン。",
   "author": "community",
-  "version": "1.0",
+  "version": "1.1",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、ななプレス(nana-press.com)、ちょんぼりすた(chonborista.com)"
+  "source": "一撃(1geki.jp)、ななプレス(nana-press.com)、ちょんぼりすた(chonborista.com)",
+  "trialSuccessRates": [
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/198.6、設定6: 1/175.4",
+      "probabilities": {
+        "1": 0.005035,
+        "2": 0.005107,
+        "4": 0.005376,
+        "5": 0.005574,
+        "6": 0.005701
+      },
+      "displayOrder": 1
+    }
+  ]
 }
