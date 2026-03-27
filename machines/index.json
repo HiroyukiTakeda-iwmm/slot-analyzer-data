@@ -321,7 +321,7 @@
       "name": "スマスロ ゴブリンスレイヤーII",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "goblinslayer/goblinslayer2.json",
       "tags": [
         "AT",
@@ -780,7 +780,7 @@
       "name": "スマスロ秘宝伝",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "hihouden/hihouden.json",
       "tags": [
         "AT",
@@ -797,7 +797,7 @@
       "name": "スマスロ ゴッドイーター リザレクション",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "godeater/godeater-resurrection.json",
       "tags": [
         "AT",
@@ -849,7 +849,7 @@
       "name": "Lパチスロ炎炎ノ消防隊",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "enen/enen-shouboutai.json",
       "tags": [
         "AT",
@@ -932,7 +932,7 @@
       "name": "Lパチスロ ガメラ2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "gamera/gamera2.json",
       "tags": [
         "AT",
@@ -949,7 +949,7 @@
       "name": "スマスロ グランベルム",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "granbelm/granbelm.json",
       "tags": [
         "AT",
@@ -966,7 +966,7 @@
       "name": "L アズールレーン THE ANIMATION",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "azurlane/azurlane.json",
       "tags": [
         "AT",
@@ -1244,7 +1244,7 @@
       "name": "Lパチスロ炎炎ノ消防隊2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "enen2/enen-shouboutai2.json",
       "tags": [
         "AT",
@@ -1614,7 +1614,7 @@
       "name": "S犬夜叉",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "inuyasha/inuyasha.json",
       "tags": [
         "AT",
@@ -1700,7 +1700,7 @@
       "name": "パチスロ花の慶次～武威～",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "keiji/keiji-bui.json",
       "tags": [
         "AT",
