@@ -1,8 +1,8 @@
 # 今後追加候補のパチスロ機種リスト
 
 最終更新: 2026-03-27
-現在の登録台数: 138台（index.json v3.2）
-品質指標: エラー0件/警告0件、trialSuccessRates実装率 100%（138/138台）、description実装率 100%
+現在の登録台数: 138台（index.json v3.3）
+品質指標: エラー0件/警告0件、trialSuccessRates 100%（138/138台）、description 100%、endScreens 87%（120/138台）、鮮度 100%最新
 
 ## 追加候補（優先度順）
 
