@@ -141,6 +141,30 @@
       "id": "tempai_special",
       "name": "特殊テンパイ音",
       "hint": "天国以上濃厚"
+    },
+    {
+      "id": "tempai_kirarin",
+      "name": "テンパイ音「きらりーん」",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "tempai_pikon_voice",
+      "name": "テンパイ音「ぴこーん（ボイス版）」",
+      "hint": "設定3以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "tempai_zutto",
+      "name": "テンパイ音「私、あなたのことが...ずっと」",
+      "hint": "リール停止時テンパイ音",
+      "color": "#FF9800"
+    },
+    {
+      "id": "tempai_3nin",
+      "name": "テンパイ音「今日は3人で楽しもー！」",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",

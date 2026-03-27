@@ -192,6 +192,13 @@
       "name": "カヲル",
       "type": "bonus_end",
       "hint": "設定6濃厚"
+    },
+    {
+      "id": "ボーナス終了画面_カヲル",
+      "name": "ボーナス終了画面 カヲル",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

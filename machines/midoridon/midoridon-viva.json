@@ -149,6 +149,18 @@
       "name": "葉月ボイス",
       "hint": "高設定示唆",
       "color": "#9C27B0"
+    },
+    {
+      "id": "xr_voice_popopon",
+      "name": "XR終了ボイス「ぽぽぽぽ～ん」",
+      "hint": "XR終了時のボイスで設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "xr_voice_hanabishi",
+      "name": "XR終了ボイス「世界一の花火師でぃ」",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",

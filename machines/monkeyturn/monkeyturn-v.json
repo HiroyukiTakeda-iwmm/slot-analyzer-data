@@ -313,5 +313,57 @@
     "4",
     "5",
     "6"
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィーケロット",
+      "type": "at_end",
+      "hint": "AT終了画面でケロットトロフィーが出現で設定5以上確定",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "enoki_purple_lamp",
+      "name": "榎木「これが艇王…」紫ランプ",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#673AB7"
+    },
+    {
+      "id": "sumi_purple_ed",
+      "name": "澄ボイス紫ランプ（ED中）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "hatano_aoshima_screen",
+      "name": "波多野&青島画面（ラウンド開始）",
+      "type": "bt_start",
+      "hint": "ラウンド開始画面で波多野&青島画面が出現で設定5以上確定",
+      "color": "#2196F3"
+    }
+  ],
+  "voiceCounts": []
 }

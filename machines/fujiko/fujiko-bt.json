@@ -107,7 +107,36 @@
       "color": "#E91E63"
     }
   ],
-  "endScreens": [],
+  "endScreens": [
+    {
+      "id": "stamp_ka",
+      "name": "BB/SBB終了画面 可スタンプ",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "stamp_ryou",
+      "name": "BB/SBB終了画面 良スタンプ",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "stamp_yuu",
+      "name": "BB/SBB終了画面 優スタンプ",
+      "type": "bonus_end",
+      "hint": "ボーナス終了時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "stamp_goku",
+      "name": "BB/SBB終了画面 極スタンプ",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ],
   "voiceCounts": [
     {
       "id": "voice_jigen",

@@ -258,5 +258,43 @@
       },
       "displayOrder": 2
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "trophy_bronze",
+      "name": "ダイナマイトトロフィー 銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ダイナマイトトロフィー 銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ダイナマイトトロフィー 金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_ladybug",
+      "name": "ダイナマイトトロフィー てんとう虫柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ダイナマイトトロフィー 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": []
 }

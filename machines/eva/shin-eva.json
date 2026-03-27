@@ -134,6 +134,34 @@
           "description": "設定6濃厚"
         }
       ]
+    },
+    {
+      "id": "end_screen_silver",
+      "name": "ボーナス終了画面 銀枠",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "end_screen_gold",
+      "name": "ボーナス終了画面 金枠",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_rainbow",
+      "name": "ボーナス終了画面 虹枠",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#FF1493"
+    },
+    {
+      "id": "end_screen_kaworu",
+      "name": "終了画面 カヲル",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#9C27B0"
     }
   ],
   "voiceCounts": [],

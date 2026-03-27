@@ -173,5 +173,22 @@
       },
       "displayOrder": 1
     }
+  ],
+  "endScreens": [
+    {
+      "id": "upper_lamp_rainbow",
+      "name": "上部ランプ虹色（ボーナス終了後）",
+      "type": "bonus_end",
+      "hint": "天国C以上濃縮示唆。高設定期待度UP",
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "takeda_voice_daily",
+      "name": "武田鉄矢ボイス（1日1回限定）",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    }
   ]
 }

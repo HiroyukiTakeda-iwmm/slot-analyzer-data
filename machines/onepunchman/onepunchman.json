@@ -210,5 +210,36 @@
   "author": "community",
   "version": "1.1",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)",
+  "endScreens": [
+    {
+      "id": "終了画面_サイタマ地底人",
+      "name": "終了画面 サイタマ+地底人",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "終了画面_奮戦サイタマ",
+      "name": "終了画面 奮戦サイタマ",
+      "type": "at_end",
+      "hint": "BIG/マジBIG/ワンパンATTACK終了画面。設定4以上",
+      "color": "#FFD700"
+    },
+    {
+      "id": "終了画面_s級ヒーロー集合",
+      "name": "終了画面 S級ヒーロー集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "タンクトップタイガー出現",
+      "name": "タンクトップタイガー出現",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ],
+  "voiceCounts": []
 }

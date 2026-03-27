@@ -265,5 +265,57 @@
   "version": "1.1",
   "description": "サミー製スマスロAT機。スイカ確率（設定1: 1/119.2、設定6: 1/108.9）と弱チェリー確率に設定差。AT直撃当選率に設定差大（低確時: 設定1→1/65536、設定6→1/4096）。PC終了画面の背景色（赤/紫）で設定示唆。サミートロフィーで設定確定。",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)",
+  "endScreens": [
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィーキリン",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "pc終了画面_背景赤_復活なし次回非at",
+      "name": "PC終了画面 背景赤（復活なし+次回非AT）",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "pc終了画面_背景紫_復活なし次回非at",
+      "name": "PC終了画面 背景紫（復活なし+次回非AT）",
+      "type": "at_end",
+      "hint": "復活否定かつ次回PC当選時にテイクユアハート非当選で設定4以",
+      "color": "#9C27B0"
+    }
+  ],
+  "voiceCounts": []
 }

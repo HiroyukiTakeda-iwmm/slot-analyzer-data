@@ -367,6 +367,62 @@
         "4",
         "5"
       ]
+    },
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィーキリン",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "終了画面_バニーガール",
+      "name": "終了画面 バニーガール",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面にバニーガール出現。設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "終了画面_メイプルオールスター",
+      "name": "終了画面 メイプルオールスター",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面にメイプルオールスター出現。設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "終了画面_楓の木ガールズ",
+      "name": "終了画面 楓の木ガールズ",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "trialSuccessRates": [
@@ -453,5 +509,6 @@
   "version": "1.1",
   "description": "サミー製スマスロAT機。上段ベル確率に設定差（設定1: 1/18.3、設定6: 1/16.6）。ヒドラ目からのCZ当選率に大きな設定差。ボーナス初当たり合算（設定1: 1/319.0、設定6: 1/229.7）。BET高確率ZONE当選率・ゲーム数ゾーンCZ当選率で設定推測。サミートロフィーとAT終了画面で設定示唆。",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)",
+  "voiceCounts": []
 }

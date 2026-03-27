@@ -80,6 +80,24 @@
           "description": "設定3・6で出やすい"
         }
       ]
+    },
+    {
+      "id": "水着ボーナス確定画面",
+      "name": "水着ボーナス確定画面",
+      "type": "at_end",
+      "hint": "設定1以上濃厚"
+    },
+    {
+      "id": "bb終了画面-集涯",
+      "name": "BB終了画面 集＆涯",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "bb終了画面-いのり真名",
+      "name": "BB終了画面 いのり＆真名",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚"
     }
   ],
   "voiceCounts": [],

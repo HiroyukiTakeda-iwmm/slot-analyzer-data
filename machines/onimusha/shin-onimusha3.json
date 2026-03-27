@@ -211,6 +211,38 @@
           "description": "設定6濃厚"
         }
       ]
+    },
+    {
+      "id": "at終了トロフィー銅",
+      "name": "AT終了トロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "at終了トロフィー銀",
+      "name": "AT終了トロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "at終了トロフィー金",
+      "name": "AT終了トロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "at終了トロフィー紅葉柄",
+      "name": "AT終了トロフィー紅葉柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "at終了トロフィー虹",
+      "name": "AT終了トロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚"
     }
   ],
   "voiceCounts": [

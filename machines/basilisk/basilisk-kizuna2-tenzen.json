@@ -220,6 +220,62 @@
       "name": "争忍の刻 甲賀キャラ集合",
       "type": "bt_start",
       "hint": "偶数設定示唆"
+    },
+    {
+      "id": "souninokoku_female",
+      "name": "争忍の刻開始画面 女性キャラ集合",
+      "type": "at_end",
+      "hint": "争忍の刻開始時",
+      "color": "#E91E63"
+    },
+    {
+      "id": "souninokoku_gennosuke_oboro_purple",
+      "name": "争忍の刻開始画面 弦之介&朧（紫）",
+      "type": "at_end",
+      "hint": "争忍の刻開始時",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "souninokoku_gennosuke_oboro_rainbow",
+      "name": "争忍の刻開始画面 弦之介&朧＋鼻歌（虹）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FF1744"
+    },
+    {
+      "id": "univaplate_bronze",
+      "name": "ユニバプレート銅",
+      "type": "bt_start",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "univaplate_silver",
+      "name": "ユニバプレート銀",
+      "type": "bt_start",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "univaplate_gold",
+      "name": "ユニバプレート金",
+      "type": "bt_start",
+      "hint": "BT終了時サブ液晶タッチ",
+      "color": "#FFD700"
+    },
+    {
+      "id": "univaplate_hanabi",
+      "name": "ユニバプレート花火柄",
+      "type": "bt_start",
+      "hint": "BT終了時サブ液晶タッチ",
+      "color": "#FF9800"
+    },
+    {
+      "id": "univaplate_rainbow",
+      "name": "ユニバプレート虹",
+      "type": "bt_start",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "trialSuccessRates": [

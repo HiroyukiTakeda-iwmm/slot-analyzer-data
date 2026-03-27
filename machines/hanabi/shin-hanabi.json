@@ -309,5 +309,15 @@
       },
       "displayOrder": 3
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "reg-hazure",
+      "name": "REG中ハズレ",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
+    }
+  ],
+  "voiceCounts": []
 }

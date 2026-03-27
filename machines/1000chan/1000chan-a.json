@@ -165,5 +165,42 @@
       },
       "displayOrder": 1
     }
+  ],
+  "endScreens": [
+    {
+      "id": "bonus_confirm_3chars",
+      "name": "ボーナス確定画面 3人同時ボイス",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "bonus_confirm_unta_ei",
+      "name": "ボーナス確定画面 運太郎/営子ボイス（1000BONUS以外）",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "bonus_confirm_castera",
+      "name": "ボーナス確定画面 キャスターAボイス（1000BONUS以外）",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "big_end_voice_e",
+      "name": "BIG終了ボイス パターンE",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "big_end_voice_g",
+      "name": "BIG終了ボイス パターンG（運太郎/営子コンビ）",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    }
   ]
 }

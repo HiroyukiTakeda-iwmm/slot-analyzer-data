@@ -190,11 +190,47 @@
       "type": "at_end",
       "hint": "高設定示唆",
       "color": "#FFC107"
+    },
+    {
+      "id": "silver_kaneki",
+      "name": "銀カード 金木研",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "gold_rize",
+      "name": "金カード 神代利世",
+      "type": "at_end",
+      "hint": "エンディング中カード演出",
+      "color": "#FFD700"
+    },
+    {
+      "id": "sekigan_fukuro",
+      "name": "隻眼の梟カード",
+      "type": "at_end",
+      "hint": "エンディング中カード演出",
+      "color": "#FF9800"
+    },
+    {
+      "id": "rainbow_arima",
+      "name": "虹カード 有馬貴将",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "anteku_rainbow",
+      "name": "あんていく全員集合（虹枠）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
-  "description": "スマスロAT機。CZ当選率に設定差（設定1: 1/263、設定6: 1/204。レミニセンス/大喰いの利世 合算確率）。小役確率は全設定共通。"
+  "description": "スマスロAT機。CZ当選率に設定差（設定1: 1/263、設定6: 1/204。レミニセンス/大喰いの利世 合算確率）。小役確率は全設定共通。",
+  "voiceCounts": []
 }

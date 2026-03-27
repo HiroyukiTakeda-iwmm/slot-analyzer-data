@@ -179,5 +179,43 @@
       },
       "displayOrder": 2
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "trophy_bronze",
+      "name": "コパンダトロフィー 銅",
+      "type": "bt_start",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "コパンダトロフィー 銀",
+      "type": "bt_start",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "コパンダトロフィー 金",
+      "type": "bt_start",
+      "hint": "BT終了時に金トロフィー出現で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_lightning",
+      "name": "コパンダトロフィー イナズマ柄",
+      "type": "bt_start",
+      "hint": "BT終了時にイナズマ柄トロフィー出現で設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "コパンダトロフィー 虹",
+      "type": "bt_start",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ],
+  "voiceCounts": []
 }

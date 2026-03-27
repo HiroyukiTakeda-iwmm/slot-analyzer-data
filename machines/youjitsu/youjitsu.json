@@ -238,6 +238,34 @@
       "type": "at_end",
       "hint": "設定示唆",
       "color": "#FFC107"
+    },
+    {
+      "id": "end_horikita_special",
+      "name": "AT終了画面 堀北（特殊）",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_sakayanagi_special",
+      "name": "AT終了画面 坂柳（特殊）",
+      "type": "at_end",
+      "hint": "AT終了画面で坂柳（特殊）が出現で設定4以上確定",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_ryuen_special",
+      "name": "AT終了画面 龍園（特殊）",
+      "type": "at_end",
+      "hint": "AT終了画面で龍園（特殊）が出現で設定5以上確定",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_ryuen_vs_ayanokoji",
+      "name": "AT終了画面 龍園VS綾小路",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
     }
   ],
   "voiceCounts": [

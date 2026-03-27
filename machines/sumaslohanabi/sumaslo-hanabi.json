@@ -147,5 +147,15 @@
       },
       "displayOrder": 3
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "rb_end_peace",
+      "name": "RB終了画面 ピースマーク",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#FFD54F"
+    }
+  ],
+  "voiceCounts": []
 }

@@ -217,11 +217,33 @@
       "type": "bonus_end",
       "hint": "高設定示唆（強）",
       "color": "#FF9800"
+    },
+    {
+      "id": "silver_hajime",
+      "name": "銀枠のハジメ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "gold_yue",
+      "name": "金枠のユエ",
+      "type": "at_end",
+      "hint": "エンディング中のキャライラスト",
+      "color": "#FFD700"
+    },
+    {
+      "id": "rainbow_myu",
+      "name": "虹枠のミュウ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",
   "version": "1.3",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
-  "description": "スマスロAT機。ミュウボーナス開始時AT当選率に設定差（設定1: 5%、設定6: 27%。ミュウボーナス開始時のAT当選率に大きな設定差）。小役確率は全設定共通。"
+  "description": "スマスロAT機。ミュウボーナス開始時AT当選率に設定差（設定1: 5%、設定6: 27%。ミュウボーナス開始時のAT当選率に大きな設定差）。小役確率は全設定共通。",
+  "voiceCounts": []
 }

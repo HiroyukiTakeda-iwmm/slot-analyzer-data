@@ -63,7 +63,14 @@
       "excludedSettings": []
     }
   ],
-  "endScreens": [],
+  "endScreens": [
+    {
+      "id": "ハイビスカスランプ特殊色",
+      "name": "ハイビスカスランプ特殊色",
+      "type": "bonus_end",
+      "hint": "ボーナス終了後のハイビスカスランプ色で設定示唆"
+    }
+  ],
   "voiceCounts": [],
   "trialSuccessRates": [
     {

@@ -251,5 +251,71 @@
   "version": "1.1",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、スロパチクエスト、パチ7",
-  "description": "京楽製スマスロAT機。5段階設定（1,2,4,5,6）。小役確率は全設定共通。電王ボーナス確率（設定1: 1/254.5→設定6: 1/211.9）とAT初当たり確率に設定差。玉ちゃんトロフィー（ブロンズ〜レインボー）・俺FEVER終了画面・ミニキャラ演出で設定示唆。上位AT「俺CLIMAX」初当たり確率に大きな設定差。"
+  "description": "京楽製スマスロAT機。5段階設定（1,2,4,5,6）。小役確率は全設定共通。電王ボーナス確率（設定1: 1/254.5→設定6: 1/211.9）とAT初当たり確率に設定差。玉ちゃんトロフィー（ブロンズ〜レインボー）・俺FEVER終了画面・ミニキャラ演出で設定示唆。上位AT「俺CLIMAX」初当たり確率に大きな設定差。",
+  "endScreens": [
+    {
+      "id": "trophy_bronze",
+      "name": "玉ちゃんトロフィー ブロンズ",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "玉ちゃんトロフィー シルバー",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "玉ちゃんトロフィー ゴールド",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_zebra",
+      "name": "玉ちゃんトロフィー ゼブラ柄",
+      "type": "at_end",
+      "hint": "設定5以上確定",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "玉ちゃんトロフィー レインボー",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    },
+    {
+      "id": "at_end_zeronos",
+      "name": "俺FEVER終了画面 ゼロノス出現",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_all_forms",
+      "name": "俺FEVER終了画面 全フォーム集合",
+      "type": "at_end",
+      "hint": "AT終了時の画面に全フォーム集合で設定5以上確定",
+      "color": "#FF5722"
+    },
+    {
+      "id": "mini_char_green",
+      "name": "ミニキャラ演出 緑吹き出し",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "mini_char_red",
+      "name": "ミニキャラ演出 赤吹き出し",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    }
+  ],
+  "voiceCounts": []
 }

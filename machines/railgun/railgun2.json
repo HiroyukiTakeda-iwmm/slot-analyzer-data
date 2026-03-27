@@ -222,6 +222,76 @@
       "name": "AT終了画面 御坂美琴&食蜂操祈A（枠なし）",
       "type": "at_end",
       "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "end_screen_misaka_sister",
+      "name": "AT終了画面 御坂美琴&御坂妹",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_kongou",
+      "name": "AT終了画面 婚后一派（赤枠）",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "end_screen_misaka_morning",
+      "name": "AT終了画面 御坂美琴・寝起き（紫枠）",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_screen_misaka_shokuhou_gold",
+      "name": "AT終了画面 御坂美琴&食蜂操祈B（金枠）",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_misaka_wedding",
+      "name": "AT終了画面 御坂美琴ウエディング（虹枠）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "fujimaru_coin_bronze",
+      "name": "藤丸コイン 銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "fujimaru_coin_silver",
+      "name": "藤丸コイン 銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "fujimaru_coin_gold",
+      "name": "藤丸コイン 金",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FFD700"
+    },
+    {
+      "id": "fujimaru_coin_danger",
+      "name": "藤丸コイン DANGER",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "fujimaru_coin_rainbow",
+      "name": "藤丸コイン 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [

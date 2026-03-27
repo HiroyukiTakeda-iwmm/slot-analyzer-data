@@ -293,6 +293,34 @@
       "probabilities": {
         "6": 0.01
       }
+    },
+    {
+      "id": "end_screen_sho",
+      "name": "AT終了画面 翔",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "end_screen_miyageya",
+      "name": "AT終了画面 土産屋（鬼浜4人）",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "ed_sd_ai",
+      "name": "エンディング中SDキャラ アイちゃん",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "ed_sd_sho",
+      "name": "エンディング中SDキャラ 翔",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
     }
   ],
   "voiceCounts": [

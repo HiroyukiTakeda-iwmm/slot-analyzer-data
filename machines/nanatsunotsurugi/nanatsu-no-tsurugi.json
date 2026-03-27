@@ -259,5 +259,70 @@
   "version": "1.1",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、なな徹、一撃、DMMぱちタウン、パチ7",
-  "description": "コナミアミューズメント製スマスロAT機。6段階設定。小役確率は全設定共通。ボーナス初当り確率（設定1: 1/228→設定6: 1/165）とST初当り確率（設定1: 1/408→設定6: 1/272）に大きな設定差。ST終了画面（剣花団集合=設定6確定）とエンディングボイスで設定判別。"
+  "description": "コナミアミューズメント製スマスロAT機。6段階設定。小役確率は全設定共通。ボーナス初当り確率（設定1: 1/228→設定6: 1/165）とST初当り確率（設定1: 1/408→設定6: 1/272）に大きな設定差。ST終了画面（剣花団集合=設定6確定）とエンディングボイスで設定判別。",
+  "endScreens": [
+    {
+      "id": "st_end_kenkadan",
+      "name": "ST終了画面 剣花団集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "st_end_oliver_nanao_cutin",
+      "name": "ST終了画面 オリバー＆ナナオ（カットイン）",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "st_end_nanao_houki",
+      "name": "ST終了画面 ナナオとホウキ",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "st_end_oliver_nanao_kenen",
+      "name": "ST終了画面 オリバー＆ナナオ（剣演習）",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "ending_voice_nanao",
+      "name": "エンディングボイス ナナオ「あっぱれ」",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "ending_voice_shela",
+      "name": "エンディングボイス シェラ「やりますわね」",
+      "type": "at_end",
+      "hint": "エンディング中チャンスボタンでシェラが発声で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "ending_voice_kati",
+      "name": "エンディングボイス カティ「やったね」",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "esmeralda_voice_4up",
+      "name": "エスメラルダボイス「第四魔剣アングスタヴィア」",
+      "hint": "2000G以上でボイスカスタム「エスメラルダ」選択時に設定4",
+      "color": "#FF9800"
+    },
+    {
+      "id": "esmeralda_voice_2up",
+      "name": "エスメラルダボイス「Dual Dominate Mode」",
+      "hint": "設定2以上濃厚",
+      "color": "#2196F3"
+    }
+  ]
 }

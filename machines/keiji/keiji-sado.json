@@ -361,6 +361,41 @@
         "3",
         "4"
       ]
+    },
+    {
+      "id": "at終了画面_景勝直江",
+      "name": "AT終了画面 景勝&直江",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "at終了画面_高茂",
+      "name": "AT終了画面 高茂",
+      "type": "at_end",
+      "hint": "設定1以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "at終了画面_左馬助",
+      "name": "AT終了画面 左馬助",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at終了画面_女性キャラ集合",
+      "name": "AT終了画面 女性キャラ集合",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "おみくじ_捨丸離れ目_r",
+      "name": "おみくじ 捨丸・離れ目(R)",
+      "type": "at_end",
+      "hint": "メニュー画面おみくじで出現。設定4以上濃厚",
+      "color": "#FFD700"
     }
   ],
   "trialSuccessRates": [
@@ -447,5 +482,6 @@
   "version": "1.1",
   "description": "ニューギン製スマスロAT機。AT初当たり確率に設定差（設定1: 1/474.7、設定6: 1/335.8）。強チェリー・チャンス目からの初当たり当選率に設定差大。弱チェリー時の高確移行率で設定推測。おみくじカード（LR/UR）とAT終了画面キャラで設定示唆。",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)",
+  "voiceCounts": []
 }

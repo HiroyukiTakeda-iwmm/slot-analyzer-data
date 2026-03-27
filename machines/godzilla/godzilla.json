@@ -157,11 +157,47 @@
       "name": "通常画面",
       "type": "at_end",
       "hint": "基本パターン"
+    },
+    {
+      "id": "end_godzilla_red",
+      "name": "AT終了画面 ゴジラ(赤)",
+      "type": "at_end",
+      "hint": "AT終了画面でゴジラ(赤)が出現で設定5以上濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_godzilla_monochrome",
+      "name": "AT終了画面 ゴジラ(白黒)",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "menu_kiryu",
+      "name": "メニュー画面 3式機龍",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "トロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "トロフィー金",
+      "type": "at_end",
+      "hint": "トロフィー金で設定4以上濃厚",
+      "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
-  "description": "スマスロAT機。CZ確率に設定差（設定1: 1/306.9、設定6: 1/295.5。設定差は小さい）。トロフィー虹・トロフィー金で設定示唆。"
+  "description": "スマスロAT機。CZ確率に設定差（設定1: 1/306.9、設定6: 1/295.5。設定差は小さい）。トロフィー虹・トロフィー金で設定示唆。",
+  "voiceCounts": []
 }

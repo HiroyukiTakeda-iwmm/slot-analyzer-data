@@ -120,11 +120,26 @@
       "type": "at_end",
       "hint": "設定示唆",
       "color": "#FFC107"
+    },
+    {
+      "id": "at_end_wafuku",
+      "name": "AT終了画面「和服」",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_all",
+      "name": "AT終了画面「全員集合」",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
-  "description": "スマスロAT機。弱チャンス目ボーナス当選率（通常時）に設定差（設定1: 3%、設定6: 11%。メインの設定差要素）。"
+  "description": "スマスロAT機。弱チャンス目ボーナス当選率（通常時）に設定差（設定1: 3%、設定6: 11%。メインの設定差要素）。",
+  "voiceCounts": []
 }

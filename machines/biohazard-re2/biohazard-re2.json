@@ -162,6 +162,34 @@
       "name": "フィギュア タイラント系（赤枠）",
       "type": "bonus_end",
       "hint": "高設定示唆"
+    },
+    {
+      "id": "figure_tofu",
+      "name": "フィギュア 豆腐（銀枠）",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "figure_boss",
+      "name": "フィギュア ボスクリーチャー（金枠）",
+      "type": "bonus_end",
+      "hint": "ボーナス終了時/エンディング中レア役時",
+      "color": "#FFD700"
+    },
+    {
+      "id": "figure_all",
+      "name": "フィギュア 全員集合（紅葉枠）",
+      "type": "bonus_end",
+      "hint": "ボーナス終了時/エンディング中レア役時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "figure_entalion",
+      "name": "フィギュア エンタライオン（虹枠）",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

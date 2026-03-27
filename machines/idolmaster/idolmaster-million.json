@@ -315,6 +315,83 @@
       "type": "bonus_end",
       "hint": "偶数設定示唆（強）",
       "color": "#FF5722"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ケロットトロフィー 銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "type": "at_end",
+      "hint": "ケロットトロフィー金が出現で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "type": "at_end",
+      "hint": "ケロットトロフィーケロット柄が出現で設定5以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    },
+    {
+      "id": "end_red_frame",
+      "name": "ボーナス終了画面 赤枠",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "end_purple_frame",
+      "name": "ボーナス終了画面 紫枠",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_silver_frame",
+      "name": "ボーナス終了画面 銀枠",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "end_gold_frame_4",
+      "name": "ボーナス終了画面 金枠（指が4）",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面で金枠（指が4本）が出現で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_gold_frame_5",
+      "name": "ボーナス終了画面 金枠（ケーキの数字5）",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面で金枠（ケーキの数字が5）が出現で設定5以上",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_rainbow_frame",
+      "name": "ボーナス終了画面 虹枠",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     }
   ],
   "voiceCounts": [

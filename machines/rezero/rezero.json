@@ -231,5 +231,50 @@
       },
       "displayOrder": 1
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "hakugei_end_sunset",
+      "name": "白鯨攻略戦終了画面 夕陽",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "hakugei_end_night",
+      "name": "白鯨攻略戦終了画面 夜",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#3F51B5"
+    },
+    {
+      "id": "hakugei_end_heroine",
+      "name": "白鯨攻略戦終了画面 ヒロイン集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_child_rem_ram",
+      "name": "AT終了画面 幼少期レム＆ラム",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "at_end_king_candidates",
+      "name": "AT終了画面 王選候補者集合",
+      "type": "at_end",
+      "hint": "設定4以上確定",
+      "color": "#FF5722"
+    },
+    {
+      "id": "at_end_onsen",
+      "name": "AT終了画面 温泉",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    }
+  ],
+  "voiceCounts": []
 }

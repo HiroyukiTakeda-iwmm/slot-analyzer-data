@@ -395,6 +395,97 @@
       "name": "AT終了画面 星矢＆紫龍＆氷河＆瞬",
       "type": "at_end",
       "hint": "高設定示唆"
+    },
+    {
+      "id": "sb_start_shun",
+      "name": "SBラウンド開始画面 瞬",
+      "type": "bt_start",
+      "hint": "SB中ラウンド継続画面に瞬が出現",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "sb_start_hyoga",
+      "name": "SBラウンド開始画面 氷河",
+      "type": "bt_start",
+      "hint": "SB中ラウンド継続画面に氷河が出現",
+      "color": "#2196F3"
+    },
+    {
+      "id": "sb_start_shiryu",
+      "name": "SBラウンド開始画面 紫龍",
+      "type": "bt_start",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "sb_start_charon",
+      "name": "SBラウンド開始画面 カロン",
+      "type": "bt_start",
+      "hint": "SB中ラウンド継続画面にカロンが出現。設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "sb_end_seiya_seika",
+      "name": "SB終了画面 星矢＆星華",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "sb_end_shun_pandora_hades",
+      "name": "SB終了画面 瞬＆パンドラ＆ハーデス",
+      "type": "at_end",
+      "hint": "SB敗北画面。設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "sb_end_seiya_saori_hades",
+      "name": "SB終了画面 星矢＆沙織＆ハーデス",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "at_end_shun_pandora_hades",
+      "name": "AT終了画面 瞬＆パンドラ＆ハーデス",
+      "type": "at_end",
+      "hint": "聖闘士RUSH終了画面。設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_hades_saori_seiya",
+      "name": "AT終了画面 ハーデス＆沙織＆神聖衣星矢",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "ending_red_navi_not_strong_cherry",
+      "name": "ED中 赤ナビで強チェリー以外成立",
+      "type": "at_end",
+      "hint": "エンディング中レア役成立時の赤「!」ナビで強チェリー以外が成",
+      "color": "#F44336"
+    },
+    {
+      "id": "ending_gekiatsu_strong_cherry",
+      "name": "ED中 激熱ナビで強チェリー成立",
+      "type": "at_end",
+      "hint": "エンディング中レア役成立時の激熱ナビで強チェリーが成立。設定",
+      "color": "#FF5722"
+    },
+    {
+      "id": "ending_gekiatsu_not_strong_cherry",
+      "name": "ED中 激熱ナビで強チェリー以外成立",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "panel_off",
+      "name": "待機中パネル消灯",
+      "type": "at_end",
+      "hint": "設定L濃厚",
+      "color": "#9E9E9E"
     }
   ],
   "voiceCounts": [],

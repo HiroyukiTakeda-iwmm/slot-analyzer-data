@@ -344,5 +344,85 @@
   "author": "community",
   "version": "1.1",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、ななプレス(nana-press.com)"
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、ななプレス(nana-press.com)",
+  "endScreens": [
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "cz終了画面_青空公安9課",
+      "name": "CZ終了画面 青空+公安9課",
+      "type": "other",
+      "hint": "設定2以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "cz終了画面_バカンス",
+      "name": "CZ終了画面 バカンス",
+      "type": "other",
+      "hint": "S.A.M.終了画面。設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "cz終了画面_全員集合",
+      "name": "CZ終了画面 全員集合",
+      "type": "other",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "エンディング中pushボタン_虹パネル",
+      "name": "エンディング中PUSHボタン 虹パネル",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "エンディング中pushボタン_紫パネル",
+      "name": "エンディング中PUSHボタン 紫パネル",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "sam同一エピソード連続",
+      "name": "S.A.M.同一エピソード連続",
+      "hint": "設定2以上濃厚",
+      "color": "#00BCD4"
+    }
+  ]
 }

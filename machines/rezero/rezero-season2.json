@@ -222,6 +222,34 @@
         }
       ],
       "description": "6パターンの設定示唆画面あり"
+    },
+    {
+      "id": "end_rabbit_cosplay",
+      "name": "AT終了画面 ウサギコスプレ（レム・ラム）",
+      "type": "at_end",
+      "hint": "殲滅ラッシュ終了画面でウサギコスプレが出現で設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_teatime",
+      "name": "AT終了画面 ティータイム",
+      "type": "at_end",
+      "hint": "殲滅ラッシュ終了画面でティータイム画面が出現で設定5以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_onsen_night",
+      "name": "AT終了画面 温泉（夜）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "end_all_bath",
+      "name": "AT終了画面 全員集合入浴",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
     }
   ],
   "voiceCounts": [],

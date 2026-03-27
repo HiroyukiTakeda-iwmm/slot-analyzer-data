@@ -187,14 +187,26 @@
       "id": "at_first_hit",
       "name": "AT初当たり確率",
       "description": "設定1: 1/370.0、設定6: 1/245.0",
-      "probabilities": { "1": 0.002703, "2": 0.002817, "4": 0.003378, "5": 0.003817, "6": 0.004082 },
+      "probabilities": {
+        "1": 0.002703,
+        "2": 0.002817,
+        "4": 0.003378,
+        "5": 0.003817,
+        "6": 0.004082
+      },
       "displayOrder": 1
     },
     {
       "id": "cz_rate",
       "name": "CZ出現率",
       "description": "設定1: 1/164.0、設定6: 1/138.0",
-      "probabilities": { "1": 0.006098, "2": 0.006211, "4": 0.006623, "5": 0.007042, "6": 0.007246 },
+      "probabilities": {
+        "1": 0.006098,
+        "2": 0.006211,
+        "4": 0.006623,
+        "5": 0.007042,
+        "6": 0.007246
+      },
       "displayOrder": 2
     }
   ],
@@ -209,5 +221,71 @@
     "4",
     "5",
     "6"
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "end_rimuru_an",
+      "name": "AT終了画面 リムル庵",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_heroine_vacation",
+      "name": "AT終了画面 ヒロインバカンス",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_heroine_hanami",
+      "name": "AT終了画面 ヒロイン花見",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_rimuru_raki",
+      "name": "AT終了画面 リムル・ラキ",
+      "type": "at_end",
+      "hint": "AT終了画面でリムル・ラキが出現で設定5以上濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_all_members",
+      "name": "AT終了画面 全員集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "type": "at_end",
+      "hint": "ケロットトロフィーケロット柄が出現で設定5以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": []
 }

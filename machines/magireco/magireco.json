@@ -226,11 +226,54 @@
       "type": "other",
       "hint": "高設定示唆",
       "color": "#9C27B0"
+    },
+    {
+      "id": "gold_card",
+      "name": "金枠（舞台装置の魔女）",
+      "type": "at_end",
+      "hint": "エンディング中レア役成立時のカード",
+      "color": "#FFD700"
+    },
+    {
+      "id": "bb_end_mizugi",
+      "name": "BB終了画面 水着みかづき荘",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#03A9F4"
+    },
+    {
+      "id": "bb_end_2nd_key",
+      "name": "BB終了画面 2ndキービジュアル",
+      "type": "bonus_end",
+      "hint": "BB終了画面で2nd Seasonキービジュアルが出現で設定",
+      "color": "#FF9800"
+    },
+    {
+      "id": "bb_end_1st_key",
+      "name": "BB終了画面 1stキービジュアル",
+      "type": "bonus_end",
+      "hint": "BB終了画面で1st Seasonキービジュアルが出現で設定",
+      "color": "#FF5722"
+    },
+    {
+      "id": "bb_end_small_kyubey",
+      "name": "BB終了画面 小さいキュゥべえ",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_madoka_iroha",
+      "name": "AT終了画面 まどか&いろは",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ",
-  "description": "スマスロAT機。みたまボーナス最終ジャッジウワサ発展時AT当選率（報酬Lv3）に設定差（報酬Lv3時のウワサ発展AT当選率。設定1: 5.1%、設定6: 12.5%）。小役確率は全設定共通。"
+  "description": "スマスロAT機。みたまボーナス最終ジャッジウワサ発展時AT当選率（報酬Lv3）に設定差（報酬Lv3時のウワサ発展AT当選率。設定1: 5.1%、設定6: 12.5%）。小役確率は全設定共通。",
+  "voiceCounts": []
 }

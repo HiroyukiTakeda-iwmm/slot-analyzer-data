@@ -205,7 +205,43 @@
       "color": "#00BCD4"
     }
   ],
-  "endScreens": [],
+  "endScreens": [
+    {
+      "id": "univaplate_copper",
+      "name": "ユニバプレート 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "univaplate_silver",
+      "name": "ユニバプレート 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "univaplate_gold",
+      "name": "ユニバプレート 金",
+      "type": "bonus_end",
+      "hint": "BIG/REG終了時にユニバプレート金が出現で設定4以上確定",
+      "color": "#FFD700"
+    },
+    {
+      "id": "univaplate_hanabi",
+      "name": "ユニバプレート 花火柄",
+      "type": "bonus_end",
+      "hint": "BIG/REG終了時にユニバプレート花火柄が出現で設定5以上",
+      "color": "#FF5722"
+    },
+    {
+      "id": "univaplate_rainbow",
+      "name": "ユニバプレート 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    }
+  ],
   "voiceCounts": [],
   "trialSuccessRates": [
     {

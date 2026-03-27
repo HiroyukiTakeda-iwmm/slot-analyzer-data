@@ -314,6 +314,85 @@
           "description": "設定6濃厚"
         }
       ]
+    },
+    {
+      "id": "サミートロフィー銅",
+      "name": "サミートロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚"
+    },
+    {
+      "id": "サミートロフィー銀",
+      "name": "サミートロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚"
+    },
+    {
+      "id": "サミートロフィー金",
+      "name": "サミートロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚"
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィーキリン柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚"
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚"
+    },
+    {
+      "id": "end_enemy_group",
+      "name": "ボーナス終了画面 敵キャラ集合",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_tonegawa",
+      "name": "ボーナス終了画面 トネガワ",
+      "type": "bonus_end",
+      "hint": "設定1以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_hanchou",
+      "name": "ボーナス終了画面 ハンチョウ",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面でハンチョウ（地下から来た）が出現で設定2・",
+      "color": "#FF5722"
+    },
+    {
+      "id": "end_misaki",
+      "name": "ボーナス終了画面 美心",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面で美心が出現で設定4以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_satsubaburo",
+      "name": "ボーナス終了画面 札束風呂",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "ending_456sai",
+      "name": "エンディング中セリフ「456賽に！」",
+      "type": "at_end",
+      "hint": "エンディング中レア役成立時「こいつ…気付いていない！456賽",
+      "color": "#FF9800"
+    },
+    {
+      "id": "ending_teiai",
+      "name": "エンディング中セリフ「帝愛は…」",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
     }
   ],
   "voiceCounts": [],

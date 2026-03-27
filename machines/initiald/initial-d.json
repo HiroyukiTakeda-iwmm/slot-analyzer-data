@@ -359,6 +359,69 @@
       "name": "プロジェクトD（7人）",
       "type": "at_end",
       "hint": "有利区間完走時以外で出現なら設定6確定。復活濃厚"
+    },
+    {
+      "id": "sammy_trophy_bronze",
+      "name": "サミートロフィー銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "sammy_trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "sammy_trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面・AT終了画面で左下に出現",
+      "color": "#FFD700"
+    },
+    {
+      "id": "sammy_trophy_kirin",
+      "name": "サミートロフィーキリン柄",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面・AT終了画面で左下に出現",
+      "color": "#FF9800"
+    },
+    {
+      "id": "sammy_trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_screen_project_d",
+      "name": "AT終了画面 プロジェクトD",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "flip_natsuki_doage",
+      "name": "ボーナス確定画面 なつき胴上げ",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#F48FB1"
+    },
+    {
+      "id": "flip_car",
+      "name": "ボーナス確定画面 車",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "flip_kirin_tofu",
+      "name": "ボーナス確定画面 キリン柄豆腐",
+      "type": "at_end",
+      "hint": "ボーナス確定画面のフリップでキリン柄豆腐が出現",
+      "color": "#FF9800"
     }
   ],
   "voiceCounts": [

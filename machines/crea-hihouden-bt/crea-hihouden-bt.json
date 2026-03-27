@@ -243,6 +243,41 @@
       "name": "BB終了画面 シャロンスタンプ",
       "type": "bonus_end",
       "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "コパンダトロフィー銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "コパンダトロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "コパンダトロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_lightning",
+      "name": "コパンダトロフィーイナズマ",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "コパンダトロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

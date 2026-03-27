@@ -172,6 +172,27 @@
       "type": "other",
       "hint": "高設定示唆",
       "color": "#FFC107"
+    },
+    {
+      "id": "francine",
+      "name": "フランシーヌ終了画面",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "masaru_narumi_shirogane",
+      "name": "勝+鳴海+しろがね終了画面",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "ashibana_guy",
+      "name": "阿紫花＆ギイ終了画面",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
     }
   ],
   "effectCounts": [
@@ -211,5 +232,6 @@
     "5",
     "6"
   ],
-  "description": "スマスロAT機（設定1/2/4/5/6の5段階設定）。通常時幕間チャンス当選率に設定差（設定1: 約1/3000、設定6: 約1/1000。約3倍の差）。"
+  "description": "スマスロAT機（設定1/2/4/5/6の5段階設定）。通常時幕間チャンス当選率に設定差（設定1: 約1/3000、設定6: 約1/1000。約3倍の差）。",
+  "voiceCounts": []
 }

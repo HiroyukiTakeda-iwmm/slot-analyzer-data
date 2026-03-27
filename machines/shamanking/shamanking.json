@@ -334,11 +334,88 @@
         "4"
       ],
       "color": "#FF5722"
+    },
+    {
+      "id": "end_patch_tribe",
+      "name": "AT終了画面 パッチ族",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_anna_yoh",
+      "name": "AT終了画面 アンナ&葉",
+      "type": "at_end",
+      "hint": "AT終了画面でアンナ&葉が出現で設定4以上確定",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_hao",
+      "name": "AT終了画面 ハオ",
+      "type": "at_end",
+      "hint": "AT終了画面でハオが出現で設定5以上確定",
+      "color": "#E91E63"
+    },
+    {
+      "id": "end_all_members",
+      "name": "AT終了画面 全員集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_copper",
+      "name": "エンディング文字色 銅色",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "ed_silver",
+      "name": "エンディング文字色 銀色",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "ed_gold",
+      "name": "エンディング文字色 金色",
+      "type": "at_end",
+      "hint": "エンディングのCongratulations文字が金色で設定",
+      "color": "#FFD700"
+    },
+    {
+      "id": "ed_fireworks",
+      "name": "エンディング文字色 花火柄",
+      "type": "at_end",
+      "hint": "エンディングのCongratulations文字が花火柄で設",
+      "color": "#FF4081"
+    },
+    {
+      "id": "ed_rainbow",
+      "name": "エンディング文字色 虹色",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     }
   ],
   "author": "コミュニティ",
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス、パチガブ",
-  "description": "スマスロAT機。OS揃いからAT直撃率に設定差（設定1: 3.1%、設定6: 15.6%。設定4以上で期待度大幅アップ）。小役確率は全設定共通。"
+  "description": "スマスロAT機。OS揃いからAT直撃率に設定差（設定1: 3.1%、設定6: 15.6%。設定4以上で期待度大幅アップ）。小役確率は全設定共通。",
+  "voiceCounts": [
+    {
+      "id": "kokkuri_roku",
+      "name": "こっくりさん占い 「ろく」文字",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "kokkuri_shujitsu",
+      "name": "こっくりさん占い 「終日」文字",
+      "hint": "たまおのこっくりさん占いで「終日」が出現で設定4以上確定",
+      "color": "#FF9800"
+    }
+  ]
 }

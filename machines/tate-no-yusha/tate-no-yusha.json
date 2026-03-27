@@ -390,6 +390,48 @@
         "2",
         "3"
       ]
+    },
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィーキリン",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "at終了ボイス_フィトリア",
+      "name": "AT終了ボイス フィトリア",
+      "type": "at_end",
+      "hint": "AT終了画面でPUSHボタン。設定4以上濃厚",
+      "color": "#FFD700"
     }
   ],
   "trialSuccessRates": [
@@ -412,5 +454,19 @@
   "version": "1.2",
   "description": "サミー製スマスロAT機。AT初当たり確率に大きな設定差（設定1: 1/298.9、設定6: 1/190.5）で設定6が突出して優遇。EXP獲得数による設定示唆（2200/4400/5500/6600）。AT終了ボイス（フィトリア/ラルク/テリス）とサミートロフィーで設定確定。",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)",
+  "voiceCounts": [
+    {
+      "id": "at終了ボイス_ラルク",
+      "name": "AT終了ボイス ラルク",
+      "hint": "設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "at終了ボイス_テリス",
+      "name": "AT終了ボイス テリス",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ]
 }

@@ -234,6 +234,27 @@
       "name": "RB終了 イッカククン画面",
       "type": "bonus_end",
       "hint": "設定5以上濃厚"
+    },
+    {
+      "id": "rb終了画面_イッカククン",
+      "name": "RB終了画面 イッカククン",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "big終了画面_放電パターン",
+      "name": "BIG終了画面 放電パターン",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "1g連big終了画面_流星パターン",
+      "name": "1G連BIG終了画面 流星パターン",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#4CAF50"
     }
   ],
   "voiceCounts": [],

@@ -205,11 +205,47 @@
       "type": "at_end",
       "hint": "設定示唆",
       "color": "#FFC107"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー 金",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面で金トロフィーが出現で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィー キリン柄",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面でキリン柄トロフィーが出現で設定5以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     }
   ],
   "author": "コミュニティ",
   "version": "1.3",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
-  "description": "スマスロAT機。エピソードボーナス比率に設定差（エピボ比率約50%。ST突入濃厚）。小役確率は全設定共通。サミートロフィーで設定示唆。"
+  "description": "スマスロAT機。エピソードボーナス比率に設定差（エピボ比率約50%。ST突入濃厚）。小役確率は全設定共通。サミートロフィーで設定示唆。",
+  "voiceCounts": []
 }

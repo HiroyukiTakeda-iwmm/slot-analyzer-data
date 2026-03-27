@@ -163,6 +163,41 @@
       "name": "モトチカ&ソウリン&ドウセツ&モトナリ",
       "type": "at_end",
       "hint": "高設定示唆（設定5・6で選択率UP）"
+    },
+    {
+      "id": "stamp_ka",
+      "name": "可スタンプ",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "stamp_kichi",
+      "name": "吉スタンプ",
+      "type": "at_end",
+      "hint": "設定3以上濃厚",
+      "color": "#607D8B"
+    },
+    {
+      "id": "stamp_ryou",
+      "name": "良スタンプ",
+      "type": "at_end",
+      "hint": "AT終了画面で出現",
+      "color": "#FFD700"
+    },
+    {
+      "id": "stamp_yuu",
+      "name": "優スタンプ",
+      "type": "at_end",
+      "hint": "AT終了画面で出現",
+      "color": "#FF9800"
+    },
+    {
+      "id": "stamp_goku",
+      "name": "極スタンプ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "trialSuccessRates": [
@@ -230,5 +265,6 @@
   "version": "1.2",
   "lastUpdated": "2026-03-27",
   "source": "一撃、ちょんぼりすた、DMMぱちタウン",
-  "description": "スマスロAT機。AT初当たり確率に設定差（設定1: 1/429.2、設定6: 1/319.2。大きな設定差あり）。"
+  "description": "スマスロAT機。AT初当たり確率に設定差（設定1: 1/429.2、設定6: 1/319.2。大きな設定差あり）。",
+  "voiceCounts": []
 }

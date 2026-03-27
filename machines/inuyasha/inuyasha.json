@@ -232,7 +232,14 @@
       "id": "at_first_hit",
       "name": "AT初当たり確率",
       "description": "設定1: 1/457、設定6: 1/313",
-      "probabilities": { "1": 0.002188, "2": 0.002278, "3": 0.002421, "4": 0.002740, "5": 0.002994, "6": 0.003195 },
+      "probabilities": {
+        "1": 0.002188,
+        "2": 0.002278,
+        "3": 0.002421,
+        "4": 0.00274,
+        "5": 0.002994,
+        "6": 0.003195
+      },
       "displayOrder": 1
     }
   ],
@@ -240,5 +247,67 @@
   "version": "1.3",
   "description": "クロスアルファの6.5号機AT機。小役確率に設定差なし。AT初当たり確率（設定1: 1/457→設定6: 1/313）に大きな設定差。ボーナス確率・BIGテンパイボイス・AT終了画面・エンディング演出で設定判別。",
   "lastUpdated": "2026-03-27",
-  "source": "ちょんぼりすた、一撃、スロパチクエスト"
+  "source": "ちょんぼりすた、一撃、スロパチクエスト",
+  "endScreens": [
+    {
+      "id": "at_end_enemy",
+      "name": "AT終了画面 敵集合",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FF5722"
+    },
+    {
+      "id": "at_end_ally",
+      "name": "AT終了画面 味方集合（金）",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "big_end_contradiction",
+      "name": "BIG終了画面 矛盾",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "ed_naraku",
+      "name": "エンディング 奈落エピソード",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#9C27B0"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "voice_white_osuwari",
+      "name": "白BIGテンパイボイス おすわり！",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_white_daikirai",
+      "name": "白BIGテンパイボイス だいっきらい！",
+      "hint": "かごめボイス。設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "voice_white_shinjite",
+      "name": "白BIGテンパイボイス 信じて撃つのよ",
+      "hint": "桔梗ボイス。設定5以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "voice_white_inochi",
+      "name": "白BIGテンパイボイス 俺は命を懸けてお前を守る",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "voice_blue_sesshoumaru",
+      "name": "青BIGテンパイボイス この殺生丸に斬れぬものは無い",
+      "hint": "設定3以上濃厚",
+      "color": "#4CAF50"
+    }
+  ]
 }

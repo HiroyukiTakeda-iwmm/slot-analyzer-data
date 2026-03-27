@@ -245,5 +245,50 @@
       },
       "displayOrder": 2
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "end_purple",
+      "name": "CZ/AT終了画面 紫枠",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_silver_dress",
+      "name": "CZ/AT終了画面 銀枠（ドレス）",
+      "type": "at_end",
+      "hint": "CZ/AT終了画面で銀枠ドレスが出現で設定4以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "end_silver_swim",
+      "name": "CZ/AT終了画面 銀枠（水着）",
+      "type": "at_end",
+      "hint": "CZ/AT終了画面で銀枠水着が出現で設定5以上濃厚",
+      "color": "#B0BEC5"
+    },
+    {
+      "id": "end_gold",
+      "name": "CZ/AT終了画面 金枠",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "upper_at_hibiki",
+      "name": "上位AT終了画面 ひびき",
+      "type": "at_end",
+      "hint": "上位AT終了画面でひびきが出現で設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "upper_at_machio",
+      "name": "上位AT終了画面 街雄",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#F44336"
+    }
+  ],
+  "voiceCounts": []
 }

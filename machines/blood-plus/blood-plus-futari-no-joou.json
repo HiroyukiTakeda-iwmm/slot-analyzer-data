@@ -280,6 +280,27 @@
       "name": "CHAPTER演出 ソロモン",
       "type": "other",
       "hint": "設定5以上濃厚"
+    },
+    {
+      "id": "bonus_end_rare",
+      "name": "ボーナス終了画面 レア（星2）",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "bonus_end_srare",
+      "name": "ボーナス終了画面 Sレア（星4）",
+      "type": "bonus_end",
+      "hint": "ボーナス終了画面左上に星4個表示",
+      "color": "#FFD700"
+    },
+    {
+      "id": "bonus_end_urare",
+      "name": "ボーナス終了画面 Uレア（星6）",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

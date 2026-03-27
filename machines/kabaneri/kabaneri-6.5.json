@@ -217,6 +217,41 @@
       "name": "ST終了画面 菖蒲",
       "type": "st_end",
       "hint": "高設定示唆（設定1: 1.2%、設定6: 6.1%）"
+    },
+    {
+      "id": "sammy_trophy_bronze",
+      "name": "サミートロフィー銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "sammy_trophy_silver",
+      "name": "サミートロフィー銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "sammy_trophy_gold",
+      "name": "サミートロフィー金",
+      "type": "bonus_end",
+      "hint": "ST非当選の駿城ボーナス終了時等に出現",
+      "color": "#FFD700"
+    },
+    {
+      "id": "sammy_trophy_kirin",
+      "name": "サミートロフィーキリン柄",
+      "type": "bonus_end",
+      "hint": "ST非当選の駿城ボーナス終了時等に出現",
+      "color": "#FF9800"
+    },
+    {
+      "id": "sammy_trophy_rainbow",
+      "name": "サミートロフィー虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "trialSuccessRates": [

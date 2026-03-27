@@ -246,5 +246,64 @@
       },
       "displayOrder": 1
     }
-  ]
+  ],
+  "endScreens": [
+    {
+      "id": "art_end_2chars",
+      "name": "ART終了画面 キャラ2人",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "art_end_4chars",
+      "name": "ART終了画面 キャラ4人",
+      "type": "at_end",
+      "hint": "ART終了画面でキャラ4人が出現で設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "art_end_6chars",
+      "name": "ART終了画面 キャラ6人",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "トロフィー 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "トロフィー 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "トロフィー 金",
+      "type": "bonus_end",
+      "hint": "BIG終了画面で金トロフィーが出現で設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_clover",
+      "name": "トロフィー クローバー柄",
+      "type": "bonus_end",
+      "hint": "BIG終了画面でクローバー柄トロフィーが出現で設定5以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "トロフィー 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": []
 }

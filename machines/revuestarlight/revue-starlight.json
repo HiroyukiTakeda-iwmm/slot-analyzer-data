@@ -205,5 +205,55 @@
       },
       "displayOrder": 2
     }
+  ],
+  "endScreens": [
+    {
+      "id": "end_effect_blue",
+      "name": "BB終了画面 エフェクト（青）",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#2196F3"
+    },
+    {
+      "id": "end_effect_red",
+      "name": "BB終了画面 エフェクト（赤）",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "color": "#F44336"
+    },
+    {
+      "id": "end_effect_gold",
+      "name": "BB終了画面 エフェクト（金）",
+      "type": "bonus_end",
+      "hint": "BB終了画面で金エフェクトが出現で設定5以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_effect_rainbow",
+      "name": "BB終了画面 エフェクト（虹）",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "voice_setting2",
+      "name": "キリンボイス 設定2以上",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_setting4",
+      "name": "キリンボイス 設定4以上",
+      "hint": "設定4以上濃厚",
+      "color": "#FF9800"
+    },
+    {
+      "id": "voice_setting6",
+      "name": "キリンボイス 設定6濃厚",
+      "hint": "設定6濃厚",
+      "color": "#FFD700"
+    }
   ]
 }

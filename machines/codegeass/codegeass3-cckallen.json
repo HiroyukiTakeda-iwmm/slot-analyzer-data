@@ -212,6 +212,69 @@
       "name": "AT終了画面 C.C.",
       "type": "at_end",
       "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "end_screen_hanabatake",
+      "name": "AT終了画面 お花畑",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "end_screen_heroine3",
+      "name": "AT終了画面 ルルーシュ+ヒロイン3人",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_screen_black_knights",
+      "name": "AT終了画面 黒の騎士団",
+      "type": "at_end",
+      "hint": "AT終了時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "end_screen_oz",
+      "name": "AT終了画面 双貌のオズ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_bronze",
+      "name": "サミートロフィー 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "color": "#795548"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー 金",
+      "type": "bonus_end",
+      "hint": "ボーナス終了時",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィー キリン柄",
+      "type": "bonus_end",
+      "hint": "ボーナス終了時",
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

@@ -202,14 +202,26 @@
       "id": "at_first_hit",
       "name": "AT初当たり確率",
       "description": "設定1: 1/404.1、設定6: 1/336.5",
-      "probabilities": { "1": 0.002475, "2": 0.002496, "4": 0.002762, "5": 0.002852, "6": 0.002971 },
+      "probabilities": {
+        "1": 0.002475,
+        "2": 0.002496,
+        "4": 0.002762,
+        "5": 0.002852,
+        "6": 0.002971
+      },
       "displayOrder": 1
     },
     {
       "id": "seigi_challenge",
       "name": "正義超人チャレンジ突入率",
       "description": "設定1: 1/99.8、設定6: 1/91.7",
-      "probabilities": { "1": 0.010020, "2": 0.010142, "4": 0.010384, "5": 0.010615, "6": 0.010905 },
+      "probabilities": {
+        "1": 0.01002,
+        "2": 0.010142,
+        "4": 0.010384,
+        "5": 0.010615,
+        "6": 0.010905
+      },
       "displayOrder": 2
     }
   ],
@@ -224,5 +236,63 @@
     "4",
     "5",
     "6"
+  ],
+  "endScreens": [
+    {
+      "id": "trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kerot",
+      "name": "ケロットトロフィー ケロット柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "color": "#4CAF50"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
+    },
+    {
+      "id": "menu_natsuko",
+      "name": "メニュー画面 ナツコさん",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "color": "#E91E63"
+    },
+    {
+      "id": "menu_referee",
+      "name": "メニュー画面 わたしはレフェリー",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "color": "#FF9800"
+    }
+  ],
+  "voiceCounts": [
+    {
+      "id": "voice_natsuko",
+      "name": "ボイス ナツコ すごいすごい！",
+      "hint": "設定2以上濃厚",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_bibinba",
+      "name": "ボイス ビビンバ おめでとう！",
+      "hint": "設定4以上濃厚",
+      "color": "#FF5722"
+    }
   ]
 }
