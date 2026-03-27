@@ -1,0 +1,110 @@
+{
+  "name": "マジカルハロウィン ボーナストリガー",
+  "type": "BT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "ベル",
+      "probabilities": { "1": 0.166667, "2": 0.166667, "5": 0.172414, "6": 0.175439 },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "設定1: 1/6.0、設定6: 1/5.7"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": { "1": 0.015649, "2": 0.015699, "5": 0.015873, "6": 0.016026 },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/63.9、設定6: 1/62.4"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.008772, "2": 0.008850, "5": 0.009066, "6": 0.009251 },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/114.0、設定6: 1/108.1"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": { "1": 0.010560, "2": 0.010616, "5": 0.010684, "6": 0.010707 },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "設定1: 1/94.7、設定6: 1/93.4"
+    },
+    {
+      "name": "リーチ目",
+      "probabilities": { "1": 0.001343, "2": 0.001450, "5": 0.001587, "6": 0.001770 },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "設定1: 1/744.7、設定6: 1/565.0。最大の設定差要素"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "pedestal_gold",
+      "name": "ミニキャラ台座 金",
+      "description": "ボーナス中ビタ押し時にミニキャラ台座が金色で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "pedestal_purple",
+      "name": "ミニキャラ台座 紫",
+      "description": "ボーナス中ビタ押し時にミニキャラ台座が紫で設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "trophy_appear",
+      "name": "アリストロフィー出現",
+      "description": "アリストロフィーが出現するだけで設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "アリストロフィー 虹",
+      "description": "虹トロフィーが出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "big_rate",
+      "name": "BIG確率",
+      "description": "設定1: 1/299.3、設定6: 1/262.1",
+      "probabilities": { "1": 0.003341, "2": 0.003388, "5": 0.003661, "6": 0.003815 },
+      "displayOrder": 1
+    },
+    {
+      "id": "reg_rate",
+      "name": "REG確率",
+      "description": "設定1: 1/390.1、設定6: 1/262.1。設定6でBIG:REG=1:1",
+      "probabilities": { "1": 0.002563, "2": 0.002884, "5": 0.003327, "6": 0.003815 },
+      "displayOrder": 2
+    },
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算",
+      "description": "設定1: 1/169.3、設定6: 1/131.1",
+      "probabilities": { "1": 0.005907, "2": 0.006270, "5": 0.006988, "6": 0.007628 },
+      "displayOrder": 3
+    }
+  ],
+  "notes": "マジカルハロウィン8（ART）とは別機種。4段階設定（1,2,5,6）。ミニキャラ台座色（ボーナス中左リール黒BAR・チェリー・白BARビタ押しで出現）で設定示唆。台座色の白A/青A=設定1・6示唆、白B/青B=設定2・5示唆、緑=高設定示唆（中）、赤=高設定示唆（強）。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、ナナプレス、一撃、DMMぱちタウン",
+  "description": "コナミアミューズメント製スマスロBT機。4段階設定（1,2,5,6）。リーチ目確率に最大の設定差（設定1: 1/744.7→設定6: 1/565.0）。ベル・チェリー・スイカ・チャンス目にも設定差あり。設定6でBIG:REG比率が1:1。ミニキャラ台座色（金=設定5以上、紫=設定2以上）とアリストロフィーで設定示唆。"
+}

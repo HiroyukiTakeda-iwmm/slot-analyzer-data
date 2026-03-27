@@ -1,0 +1,168 @@
+{
+  "name": "Lシスタークエスト",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ベル",
+      "probabilities": { "1": 0.135135, "2": 0.135135, "3": 0.135135, "4": 0.135135, "5": 0.135135, "6": 0.135135 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/7.4"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.009662, "2": 0.009662, "3": 0.009662, "4": 0.009662, "5": 0.009662, "6": 0.009662 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/103.5"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.009662, "2": 0.009662, "3": 0.009662, "4": 0.009662, "5": 0.009662, "6": 0.009662 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/103.5"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": { "1": 0.002793, "2": 0.002793, "3": 0.002793, "4": 0.002793, "5": 0.002793, "6": 0.002793 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "全設定共通: 1/358.1"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "end_shifon_stella",
+      "name": "AT終了画面 シフォン＆ステラ",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "end_4chars",
+      "name": "AT終了画面 味方4人",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_crea",
+      "name": "AT終了画面 水晶姫クレア",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "smatalk_red_4",
+      "name": "スマTALK「今日の調子は？」赤文字",
+      "description": "赤文字で回答が表示されると設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#F44336"
+    },
+    {
+      "id": "smatalk_red_5",
+      "name": "スマTALK「続けた方がいい？」赤文字",
+      "description": "赤文字で回答が表示されると設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "smatalk_red_6",
+      "name": "スマTALK「今日の意気込みは？」赤文字",
+      "description": "赤文字で回答が表示されると設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "smacollection_a",
+      "name": "スマコレガチャ Aランク",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "smacollection_s",
+      "name": "スマコレガチャ Sランク",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "smacollection_ss",
+      "name": "スマコレガチャ SSランク",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "medal_222",
+      "name": "獲得枚数 222枚OVER",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "medal_456",
+      "name": "獲得枚数 456枚OVER",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "medal_666",
+      "name": "獲得枚数 666枚OVER",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [
+    { "id": "sunny", "name": "晴れ", "type": "at_end", "hint": "基本パターン" },
+    { "id": "cloudy", "name": "くもり", "type": "at_end", "hint": "偶数設定示唆" },
+    { "id": "evening", "name": "夕方", "type": "at_end", "hint": "高設定示唆（弱）" },
+    { "id": "thunder", "name": "落雷", "type": "at_end", "hint": "高設定示唆（強）" },
+    {
+      "id": "shifon_stella", "name": "シフォン＆ステラ", "type": "at_end", "hint": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"], "excludedSettings": ["1"]
+    },
+    {
+      "id": "4allies", "name": "味方4人", "type": "at_end", "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"], "excludedSettings": ["1", "2", "3"]
+    },
+    {
+      "id": "crea", "name": "水晶姫クレア", "type": "at_end", "hint": "設定6確定",
+      "confirmedSettings": ["6"], "excludedSettings": ["1", "2", "3", "4", "5"]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "ceiling_999",
+      "name": "AT間天井999G選択率",
+      "description": "設定1: 0.8%、設定6: 12.5%。999G天井到達で高設定否定気味",
+      "probabilities": { "1": 0.008, "2": 0.016, "3": 0.031, "4": 0.047, "5": 0.078, "6": 0.125 },
+      "displayOrder": 1
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、DMMぱちタウン、一撃、スロパチクエスト",
+  "description": "カルミナ製スマスロAT機。6段階設定。小役確率は全設定共通。AT終了画面7パターン（水晶姫クレア=設定6確定）とスマTALK赤文字で設定判別。スマコレガチャのランク（A/S/SS）で設定示唆。獲得枚数表示（222/456/666）で設定確定。AT間天井999G選択率に設定差。"
+}

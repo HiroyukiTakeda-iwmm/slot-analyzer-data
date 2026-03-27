@@ -1,0 +1,93 @@
+{
+  "name": "SLOT ドルアーガの塔",
+  "type": "AT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "チェリー",
+      "probabilities": { "1": 0.015625, "2": 0.015625, "5": 0.015625, "6": 0.015625 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/64.0"
+    },
+    {
+      "name": "平行スイカ",
+      "probabilities": { "1": 0.015480, "2": 0.015480, "5": 0.015480, "6": 0.015480 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/64.6"
+    },
+    {
+      "name": "斜めスイカ",
+      "probabilities": { "1": 0.001221, "2": 0.001221, "5": 0.001221, "6": 0.001221 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#8BC34A",
+      "description": "全設定共通: 1/819.2"
+    },
+    {
+      "name": "BIG確率",
+      "probabilities": { "1": 0.003341, "2": 0.003433, "5": 0.003570, "6": 0.003754 },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "設定1: 1/299.3、設定6: 1/266.4"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": { "1": 0.002228, "2": 0.002289, "5": 0.002381, "6": 0.002503 },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#2196F3",
+      "description": "設定1: 1/448.9、設定6: 1/399.6"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": { "1": 0.005568, "2": 0.005722, "5": 0.005952, "6": 0.006258 },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "設定1: 1/179.6、設定6: 1/159.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "reg_bgm_ishtar",
+      "name": "REG中BGM「イシターの復活」メインテーマ",
+      "description": "REG中に「イシターの復活」メインテーマが流れると設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "suika_gil_big",
+      "name": "平行スイカ+ギルBIG同時当選率",
+      "description": "設定1: 1/8192、設定6: 1/3121。最重要設定差要素",
+      "probabilities": { "1": 0.000122, "2": 0.000171, "5": 0.000229, "6": 0.000320 },
+      "displayOrder": 1
+    },
+    {
+      "id": "cherry_reg",
+      "name": "チェリー+REG同時当選率",
+      "description": "設定1: 1/5461、設定6: 1/2185。大きな設定差",
+      "probabilities": { "1": 0.000183, "2": 0.000244, "5": 0.000336, "6": 0.000458 },
+      "displayOrder": 2
+    },
+    {
+      "id": "at_reg_point",
+      "name": "AT中REGポイント獲得率",
+      "description": "設定1: 19.9%、設定6: 33.2%",
+      "probabilities": { "1": 0.199, "2": 0.222, "5": 0.278, "6": 0.332 },
+      "displayOrder": 3
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、DMMぱちタウン、一撃",
+  "description": "ミズホ製スマスロAT機。4段階設定（1,2,5,6）。小役確率は全設定共通だが、ボーナス確率に設定差（合算: 設定1→1/179.6、設定6→1/159.8）。平行スイカ+ギルBIG同時当選率とチェリー+REG同時当選率に大きな設定差。AT中REGポイント獲得率で設定推測。REG中BGMで設定示唆。"
+}

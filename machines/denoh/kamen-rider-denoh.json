@@ -1,0 +1,144 @@
+{
+  "name": "L仮面ライダー電王",
+  "type": "AT",
+  "availableSettings": ["1", "2", "4", "5", "6"],
+  "roles": [
+    {
+      "name": "共通ベル",
+      "probabilities": { "1": 0.070922, "2": 0.070922, "4": 0.070922, "5": 0.070922, "6": 0.070922 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/14.1"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.015267, "2": 0.015267, "4": 0.015267, "5": 0.015267, "6": 0.015267 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/65.5"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.012019, "2": 0.012019, "4": 0.012019, "5": 0.012019, "6": 0.012019 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/83.2"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": { "1": 0.003052, "2": 0.003052, "4": 0.003052, "5": 0.003052, "6": 0.003052 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "全設定共通: 1/327.7"
+    },
+    {
+      "name": "電王ボーナス確率",
+      "probabilities": { "1": 0.003929, "2": 0.004000, "4": 0.004246, "5": 0.004502, "6": 0.004719 },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "設定1: 1/254.5、設定6: 1/211.9"
+    },
+    {
+      "name": "AT初当たり確率",
+      "probabilities": { "1": 0.002093, "2": 0.002142, "4": 0.002322, "5": 0.002511, "6": 0.002655 },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF5722",
+      "description": "設定1: 1/477.7、設定6: 1/376.6"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_bronze",
+      "name": "玉ちゃんトロフィー ブロンズ",
+      "description": "電王ボーナス終了時に出現で設定2以上確定",
+      "confirmedSettings": ["2", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "玉ちゃんトロフィー シルバー",
+      "description": "設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "玉ちゃんトロフィー ゴールド",
+      "description": "設定4以上確定（設定5以上に期待）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_zebra",
+      "name": "玉ちゃんトロフィー ゼブラ柄",
+      "description": "設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "玉ちゃんトロフィー レインボー",
+      "description": "設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "at_end_zeronos",
+      "name": "俺FEVER終了画面 ゼロノス出現",
+      "description": "AT終了時の画面にゼロノスが出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "at_end_all_forms",
+      "name": "俺FEVER終了画面 全フォーム集合",
+      "description": "AT終了時の画面に全フォーム集合で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "mini_char_green",
+      "name": "ミニキャラ演出 緑吹き出し",
+      "description": "レア役成立時PUSHで緑吹き出し出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "mini_char_red",
+      "name": "ミニキャラ演出 赤吹き出し",
+      "description": "レア役成立時PUSHで赤吹き出し出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "4", "5"],
+      "color": "#F44336"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "upper_at_rate",
+      "name": "上位AT初当たり確率（俺CLIMAX）",
+      "description": "設定1: 1/1357、設定6: 1/920。大きな設定差",
+      "probabilities": { "1": 0.000737, "2": 0.000778, "4": 0.000877, "5": 0.000984, "6": 0.001087 },
+      "displayOrder": 1
+    }
+  ],
+  "notes": "設定3は存在しない5段階設定（1/2/4/5/6）。小役確率に設定差なし。電王ボーナス中の完全告知タイプで第1停止告知=設定4以上濃厚、第2停止告知=設定6濃厚。俺CLIMAX中ボーナス終了画面で赤シンボル=設定4以上、虹シンボル=設定6確定。機械割: 設定1=97.5%〜設定6=113.1%。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、一撃、スロパチクエスト、パチ7",
+  "description": "京楽製スマスロAT機。5段階設定（1,2,4,5,6）。小役確率は全設定共通。電王ボーナス確率（設定1: 1/254.5→設定6: 1/211.9）とAT初当たり確率に設定差。玉ちゃんトロフィー（ブロンズ〜レインボー）・俺FEVER終了画面・ミニキャラ演出で設定示唆。上位AT「俺CLIMAX」初当たり確率に大きな設定差。"
+}

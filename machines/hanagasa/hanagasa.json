@@ -1,0 +1,95 @@
+{
+  "name": "L花笠",
+  "type": "AT",
+  "availableSettings": ["1", "2", "4", "5", "6"],
+  "roles": [
+    {
+      "name": "共通ベル（5枚）",
+      "probabilities": { "1": 0.051282, "2": 0.051282, "4": 0.051282, "5": 0.051282, "6": 0.051282 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/19.5（設定別差は未公開）"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.012500, "2": 0.012500, "4": 0.012500, "5": 0.012500, "6": 0.012500 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/80.0（設定別差は未公開）"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": { "1": 0.005963, "2": 0.005963, "4": 0.005963, "5": 0.005963, "6": 0.005963 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/167.7（設定別差は未公開）"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": { "1": 0.007299, "2": 0.007634, "4": 0.008621, "5": 0.009804, "6": 0.010989 },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "設定1: 1/137、設定6: 1/91"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": { "1": 0.004566, "2": 0.004717, "4": 0.005128, "5": 0.005263, "6": 0.004950 },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#2196F3",
+      "description": "設定1: 1/219、設定6: 1/202"
+    },
+    {
+      "name": "初当り確率（有利区間）",
+      "probabilities": { "1": 0.005155, "2": 0.005376, "4": 0.005848, "5": 0.006173, "6": 0.006579 },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "設定1: 1/194、設定6: 1/152"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "takeda_voice_daily",
+      "name": "武田鉄矢ボイス（1日1回限定）",
+      "description": "1日1回のみ出現する特殊ボイスで設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "crash_freeze",
+      "name": "クラッシュフリーズ",
+      "description": "虹パトモード確定（継続率92%+ストック5個以上）。高設定ほど出現しやすい",
+      "confirmedSettings": ["1", "2", "4", "5", "6"],
+      "excludedSettings": [],
+      "color": "#E91E63"
+    },
+    {
+      "id": "middle_cherry",
+      "name": "中段チェリー",
+      "description": "BIG+赤パト以上+ボーナスストック濃厚",
+      "confirmedSettings": ["1", "2", "4", "5", "6"],
+      "excludedSettings": [],
+      "color": "#F44336"
+    },
+    {
+      "id": "upper_lamp_rainbow",
+      "name": "上部ランプ虹色（ボーナス終了後）",
+      "description": "天国C以上濃縮示唆。高設定期待度UP",
+      "confirmedSettings": ["1", "2", "4", "5", "6"],
+      "excludedSettings": [],
+      "color": "#00BCD4"
+    }
+  ],
+  "notes": "設定Lが存在（下パネル常時消灯で判別可、機械割約80%）。設定Lのデータは未公開のため本データには含まない。設定3は非搭載。小役の設定別確率差は調査時点で未公開。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン",
+  "description": "ネット製スマスロAT機。5段階設定（1,2,4,5,6）+設定L。純増約3.2枚。BB確率に大きな設定差（設定1: 1/137→設定6: 1/91）。武田鉄矢ボイス（1日1回限定）で設定4以上濃厚。上部ランプ色・花笠ランプ点滅パターンで各種モード示唆。"
+}

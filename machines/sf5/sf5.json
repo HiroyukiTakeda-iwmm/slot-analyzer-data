@@ -1,0 +1,109 @@
+{
+  "name": "スマスロ ストリートファイターV 挑戦者の道",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.012210, "2": 0.012210, "3": 0.012210, "4": 0.012210, "5": 0.012210, "6": 0.012210 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/81.9"
+    },
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.015625, "2": 0.015625, "3": 0.015625, "4": 0.015625, "5": 0.015625, "6": 0.015625 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/64.0"
+    },
+    {
+      "name": "BB確率",
+      "probabilities": { "1": 0.003368, "2": 0.003427, "3": 0.003561, "4": 0.003727, "5": 0.003932, "6": 0.004265 },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "設定1: 1/296.9、設定6: 1/234.5"
+    },
+    {
+      "name": "RB確率",
+      "probabilities": { "1": 0.002753, "2": 0.002769, "3": 0.002827, "4": 0.002874, "5": 0.002953, "6": 0.003095 },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 1/363.2、設定6: 1/323.1"
+    },
+    {
+      "name": "ボーナス合算",
+      "probabilities": { "1": 0.006124, "2": 0.006196, "3": 0.006390, "4": 0.006601, "5": 0.006887, "6": 0.007358 },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "設定1: 1/163.3、設定6: 1/135.9"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "エンタトロフィー 銅",
+      "description": "ボーナス終了画面で銅トロフィーが出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "エンタトロフィー 銀",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "エンタトロフィー 金",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_momiji",
+      "name": "エンタトロフィー 紅葉柄",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "エンタトロフィー 虹",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "suika_direct_bonus",
+      "name": "スイカ直撃ボーナス率",
+      "description": "設定1: 0.4%、設定6: 3.9%。最重要設定差要素",
+      "probabilities": { "1": 0.004, "2": 0.008, "3": 0.012, "4": 0.020, "5": 0.027, "6": 0.039 },
+      "displayOrder": 1
+    },
+    {
+      "id": "bb_super_high",
+      "name": "BB後超高確移行率",
+      "description": "設定1: 1.6%、設定6: 13.3%。大きな設定差",
+      "probabilities": { "1": 0.016, "2": 0.031, "3": 0.047, "4": 0.066, "5": 0.094, "6": 0.133 },
+      "displayOrder": 2
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、なな徹、パチ7",
+  "description": "エンターライズ製スマスロAT機。6段階設定。技術介入で設定1機械割103.4%。小役確率は全設定共通だが、ボーナス合算確率に設定差（設定1: 1/163.3、設定6: 1/135.9）。スイカ直撃ボーナス率（設定1: 0.4%→設定6: 3.9%）とBB後超高確移行率に特大設定差。エンタトロフィーで設定示唆。"
+}

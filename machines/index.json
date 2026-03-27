@@ -1,5 +1,5 @@
 {
-  "version": "3.1",
+  "version": "3.2",
   "updatedAt": "2026-03-27T00:00:00Z",
   "machines": [
     {
@@ -106,7 +106,7 @@
       "name": "ニューキングハナハナV",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "hanahana/new-king-hanahana-v.json",
       "tags": [
         "Aタイプ",
@@ -763,7 +763,7 @@
       "name": "Lパチスロ かぐや様は告らせたい",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "kaguya/kaguya-sama.json",
       "tags": [
         "AT",
@@ -1520,7 +1520,7 @@
       "name": "銀河英雄伝説 Die Neue These",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "gineiden/gineiden-dnt.json",
       "tags": [
         "AT",
@@ -2005,7 +2005,7 @@
       "name": "スマスロ 痛いのは嫌なので防御力に極振りしたいと思います。",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "bofuri/bofuri.json",
       "tags": [
         "AT",
@@ -2020,7 +2020,7 @@
       "name": "パチスロ ペルソナ5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "persona/persona5.json",
       "tags": [
         "AT",
@@ -2035,7 +2035,7 @@
       "name": "L花の慶次～佐渡攻めの章～",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "keiji/keiji-sado.json",
       "tags": [
         "AT",
@@ -2050,7 +2050,7 @@
       "name": "スマスロ とある魔術の禁書目録",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "toaru-index/toaru-index.json",
       "tags": [
         "AT",
@@ -2065,7 +2065,7 @@
       "name": "パチスロ 盾の勇者の成り上がり",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tate-no-yusha/tate-no-yusha.json",
       "tags": [
         "AT",
@@ -2120,6 +2120,179 @@
         "sumaslo"
       ],
       "description": "ニューギンのスマスロAT機。2024年8月導入。弱チェリー・スイカに設定差あり",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "nyanko-daisensou",
+      "name": "Lにゃんこ大戦争 超神速",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "nyanko/nyanko-daisensou.json",
+      "tags": [
+        "kyoraku",
+        "at",
+        "sumaslo",
+        "5段階設定"
+      ],
+      "description": "京楽製スマスロAT機。5段階設定。通常モードAT当選率に最大の設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "hanagasa",
+      "name": "L花笠",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "hanagasa/hanagasa.json",
+      "tags": [
+        "net",
+        "at",
+        "sumaslo",
+        "5段階設定"
+      ],
+      "description": "ネット製スマスロAT機。5段階設定。BB確率に大きな設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "magical-halloween-bt",
+      "name": "マジカルハロウィン ボーナストリガー",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "magicalhalloween/magical-halloween-bt.json",
+      "tags": [
+        "konami",
+        "bt",
+        "sumaslo",
+        "4段階設定"
+      ],
+      "description": "コナミ製スマスロBT機。4段階設定。リーチ目確率に最大の設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "druaga",
+      "name": "SLOT ドルアーガの塔",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "druaga/druaga.json",
+      "tags": [
+        "mizuho",
+        "at",
+        "sumaslo",
+        "4段階設定"
+      ],
+      "description": "ミズホ製スマスロAT機。4段階設定。特定ボーナス同時当選率に大きな設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "sf5",
+      "name": "スマスロ ストリートファイターV 挑戦者の道",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sf5/sf5.json",
+      "tags": [
+        "enterrise",
+        "at",
+        "sumaslo"
+      ],
+      "description": "エンターライズ製スマスロAT機。スイカ直撃ボーナス率に特大設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "sister-quest",
+      "name": "Lシスタークエスト",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sisterquest/sister-quest.json",
+      "tags": [
+        "carmina",
+        "at",
+        "sumaslo"
+      ],
+      "description": "カルミナ製スマスロAT機。AT終了画面とスマTALKで設定判別",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "nanatsu-no-tsurugi",
+      "name": "L 七つの魔剣が支配する",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "nanatsunotsurugi/nanatsu-no-tsurugi.json",
+      "tags": [
+        "konami",
+        "at",
+        "sumaslo"
+      ],
+      "description": "コナミ製スマスロAT機。ST終了画面とエンディングボイスで設定判別",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "ushiotora-vh",
+      "name": "Lうしおととら 白面決戦VH",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "ushiotora/ushiotora-vh.json",
+      "tags": [
+        "daiichi",
+        "at",
+        "sumaslo"
+      ],
+      "description": "ダイイチ製スマスロAT機。AT間天井2000G選択率に最大の設定差",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "kamen-rider-denoh",
+      "name": "L仮面ライダー電王",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "denoh/kamen-rider-denoh.json",
+      "tags": [
+        "kyoraku",
+        "at",
+        "sumaslo",
+        "5段階設定"
+      ],
+      "description": "京楽製スマスロAT機。5段階設定。玉ちゃんトロフィーで設定示唆",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "okisuro-amazing-live",
+      "name": "スマート沖スロ アメイジングライブ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "okisuro/okisuro-amazing-live.json",
+      "tags": [
+        "pioneer",
+        "at",
+        "sumaslo",
+        "5段階設定",
+        "okisuro"
+      ],
+      "description": "パイオニア製スマスロAT機。5段階設定。沖スロ系ハイビスカス点灯型",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "1000chan-a",
+      "name": "LBパチスロ1000ちゃんA",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "1000chan/1000chan-a.json",
+      "tags": [
+        "oizumi",
+        "bt",
+        "sumaslo",
+        "4段階設定"
+      ],
+      "description": "オーイズミ製スマスロBT機。4段階設定。BIG終了ボイスで設定示唆",
       "lastUpdated": "2026-03-27"
     }
   ]

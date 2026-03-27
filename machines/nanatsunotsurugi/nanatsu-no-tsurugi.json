@@ -1,0 +1,142 @@
+{
+  "name": "L 七つの魔剣が支配する",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.016584, "2": 0.016584, "3": 0.016584, "4": 0.016584, "5": 0.016584, "6": 0.016584 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/60.3"
+    },
+    {
+      "name": "弱スイカ",
+      "probabilities": { "1": 0.014881, "2": 0.014881, "3": 0.014881, "4": 0.014881, "5": 0.014881, "6": 0.014881 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/67.2"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": { "1": 0.006684, "2": 0.006684, "3": 0.006684, "4": 0.006684, "5": 0.006684, "6": 0.006684 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "全設定共通: 1/149.6"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": { "1": 0.001129, "2": 0.001129, "3": 0.001129, "4": 0.001129, "5": 0.001129, "6": 0.001129 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#F44336",
+      "description": "全設定共通: 1/885.6"
+    },
+    {
+      "name": "強スイカ",
+      "probabilities": { "1": 0.001297, "2": 0.001297, "3": 0.001297, "4": 0.001297, "5": 0.001297, "6": 0.001297 },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#8BC34A",
+      "description": "全設定共通: 1/771.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "st_end_kenkadan",
+      "name": "ST終了画面 剣花団集合",
+      "description": "ST終了時に剣花団メンバー集合の画面で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "st_end_oliver_nanao_cutin",
+      "name": "ST終了画面 オリバー＆ナナオ（カットイン）",
+      "description": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "st_end_nanao_houki",
+      "name": "ST終了画面 ナナオとホウキ",
+      "description": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "st_end_oliver_nanao_kenen",
+      "name": "ST終了画面 オリバー＆ナナオ（剣演習）",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "ending_voice_nanao",
+      "name": "エンディングボイス ナナオ「あっぱれ」",
+      "description": "エンディング中チャンスボタンでナナオが発声で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "ending_voice_shela",
+      "name": "エンディングボイス シェラ「やりますわね」",
+      "description": "エンディング中チャンスボタンでシェラが発声で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "ending_voice_kati",
+      "name": "エンディングボイス カティ「やったね」",
+      "description": "エンディング中チャンスボタンでカティが発声で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "esmeralda_voice_4up",
+      "name": "エスメラルダボイス「第四魔剣アングスタヴィア」",
+      "description": "2000G以上でボイスカスタム「エスメラルダ」選択時に設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "esmeralda_voice_2up",
+      "name": "エスメラルダボイス「Dual Dominate Mode」",
+      "description": "2000G以上でボイスカスタム「エスメラルダ」選択時に設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#2196F3"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_first_hit",
+      "name": "ボーナス初当り確率",
+      "description": "設定1: 1/228、設定6: 1/165。プロローグ+キンバリーBONUS合算",
+      "probabilities": { "1": 0.004386, "2": 0.004505, "3": 0.004769, "4": 0.005388, "5": 0.005764, "6": 0.006072 },
+      "displayOrder": 1
+    },
+    {
+      "id": "st_first_hit",
+      "name": "ST初当り確率",
+      "description": "設定1: 1/408、設定6: 1/272。大きな設定差",
+      "probabilities": { "1": 0.002449, "2": 0.002532, "3": 0.002729, "4": 0.003185, "5": 0.003457, "6": 0.003671 },
+      "displayOrder": 2
+    }
+  ],
+  "notes": "小役確率に設定差なし。主要な設定判別要素はST終了画面・エンディングボイス・エスメラルダカスタムボイス。トロフィー演出は存在しない。CZ確率にも設定差あり（設定1: 1/266.6、設定6: 1/213.1）だが設定2〜5の数値は未判明のため割愛。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、なな徹、一撃、DMMぱちタウン、パチ7",
+  "description": "コナミアミューズメント製スマスロAT機。6段階設定。小役確率は全設定共通。ボーナス初当り確率（設定1: 1/228→設定6: 1/165）とST初当り確率（設定1: 1/408→設定6: 1/272）に大きな設定差。ST終了画面（剣花団集合=設定6確定）とエンディングボイスで設定判別。"
+}
