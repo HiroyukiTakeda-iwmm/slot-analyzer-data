@@ -10,7 +10,7 @@
         "2": 0.014684,
         "3": 0.015038,
         "4": 0.015432,
-        "5": 0.016000,
+        "5": 0.016,
         "6": 0.016694
       },
       "hasSettingDiff": true,
@@ -98,44 +98,98 @@
     {
       "name": "終了画面 サイタマ+地底人",
       "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
-      "color": "#2196F3"
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
+      "color": "#2196F3",
+      "id": "終了画面_サイタマ地底人"
     },
     {
       "name": "終了画面 奮戦サイタマ",
       "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
+      "color": "#FFD700",
+      "id": "終了画面_奮戦サイタマ"
     },
     {
       "name": "終了画面 S級ヒーロー集合",
       "description": "BIG/マジBIG/ワンパンATTACK終了画面。設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#E91E63"
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "color": "#E91E63",
+      "id": "終了画面_s級ヒーロー集合"
     },
     {
       "name": "獲得枚数表示 456over",
       "description": "獲得枚数が456枚以上の表示。設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
+      "color": "#FFD700",
+      "id": "獲得枚数表示_456over"
     },
     {
       "name": "獲得枚数表示 666over",
       "description": "獲得枚数が666枚以上の表示。設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#E91E63"
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "color": "#E91E63",
+      "id": "獲得枚数表示_666over"
     },
     {
       "name": "タンクトップタイガー出現",
       "description": "コインアタックチャレンジの青コインまたはヒーロー図鑑で出現。設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#E91E63"
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "color": "#E91E63",
+      "id": "タンクトップタイガー出現"
     }
   ],
   "trialSuccessRates": [
@@ -143,12 +197,12 @@
       "name": "ヒーローストックゾーン「熱」選択率",
       "description": "ヒーローストックゾーンは「ノーマル」「温」「熱」の3種類。高設定ほど上位が選択されやすい",
       "probabilities": {
-        "1": 0.047000,
-        "2": 0.051000,
-        "3": 0.055000,
-        "4": 0.059000,
-        "5": 0.063000,
-        "6": 0.066000
+        "1": 0.047,
+        "2": 0.051,
+        "3": 0.055,
+        "4": 0.059,
+        "5": 0.063,
+        "6": 0.066
       },
       "displayOrder": 1
     }

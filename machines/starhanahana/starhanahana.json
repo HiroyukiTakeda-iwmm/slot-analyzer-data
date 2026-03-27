@@ -98,40 +98,80 @@
       "id": "feather_blue",
       "name": "REG後フェザーランプ 青",
       "description": "REG終了後にフェザーランプ青が点灯で設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#2196F3"
     },
     {
       "id": "feather_yellow",
       "name": "REG後フェザーランプ 黄",
       "description": "REG終了後にフェザーランプ黄が点灯で設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFEB3B"
     },
     {
       "id": "feather_green",
       "name": "REG後フェザーランプ 緑",
       "description": "REG終了後にフェザーランプ緑が点灯で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#4CAF50"
     },
     {
       "id": "feather_red",
       "name": "REG後フェザーランプ 赤",
       "description": "REG終了後にフェザーランプ赤が点灯で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#F44336"
     },
     {
       "id": "feather_rainbow",
       "name": "REG後フェザーランプ 虹",
       "description": "REG終了後にフェザーランプ虹が点灯で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     }
   ],
@@ -191,5 +231,6 @@
   "author": "コミュニティ",
   "version": "1.3",
   "lastUpdated": "2026-03-27",
-  "source": "ちょんぼりすた、一撃、パイオニア公式PDF"
+  "source": "ちょんぼりすた、一撃、パイオニア公式PDF",
+  "description": "スマスロAタイプ。レトロサウンド発生確率に設定差（BIG中BGMがレトロサウンドに変化。高設定ほど発生しやすい）。小役確率は全設定共通。"
 }

@@ -99,7 +99,8 @@
         "2",
         "5"
       ],
-      "color": "#FFD700"
+      "color": "#FFD700",
+      "id": "rb終了画面_アレックス出現_壁画調"
     }
   ],
   "endScreens": [
@@ -132,5 +133,6 @@
   "author": "コミュニティ",
   "version": "1.1",
   "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)"
+  "source": "一撃(1geki.jp)、DMMぱちタウン(p-town.dmm.com)、ちょんぼりすた(chonborista.com)",
+  "description": "スマスロボーナストリガー機（設定1/2/5/6の4段階設定）。ボーナス合算確率に設定差（設定1: 1/179.6、設定6: 1/149.6）。"
 }
