@@ -123,7 +123,48 @@
       "description": "全設定共通: 1/585.1"
     }
   ],
-  "confirmationEvents": [],
+  "confirmationEvents": [
+    {
+      "id": "univaplate_copper",
+      "name": "ユニバプレート 銅",
+      "description": "BIG/REG終了時にユニバプレート銅が出現で設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "univaplate_silver",
+      "name": "ユニバプレート 銀",
+      "description": "BIG/REG終了時にユニバプレート銀が出現で設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "univaplate_gold",
+      "name": "ユニバプレート 金",
+      "description": "BIG/REG終了時にユニバプレート金が出現で設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "univaplate_hanabi",
+      "name": "ユニバプレート 花火柄",
+      "description": "BIG/REG終了時にユニバプレート花火柄が出現で設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "univaplate_rainbow",
+      "name": "ユニバプレート 虹",
+      "description": "BIG/REG終了時にユニバプレート虹が出現で設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
   "endScreens": [],
   "voiceCounts": [],
   "trialSuccessRates": [
@@ -168,7 +209,7 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
+  "version": "1.3",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた"
 }

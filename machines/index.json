@@ -371,7 +371,7 @@
       "name": "スマスロバベル",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "babel/babel.json",
       "tags": [
         "Aタイプ",
@@ -644,7 +644,7 @@
       "name": "スターハナハナ-30",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "starhanahana/starhanahana.json",
       "tags": [
         "Aタイプ",
@@ -1447,7 +1447,7 @@
       "name": "スマスロニューパルサーBT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "newpulsar/newpulsar-bt.json",
       "tags": [
         "BT",
