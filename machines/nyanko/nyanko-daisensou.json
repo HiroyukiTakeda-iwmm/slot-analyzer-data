@@ -1,11 +1,23 @@
 {
   "name": "Lにゃんこ大戦争 超神速",
   "type": "AT",
-  "availableSettings": ["1", "2", "4", "5", "6"],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
   "roles": [
     {
       "name": "下段ベル",
-      "probabilities": { "1": 0.103093, "2": 0.103093, "4": 0.103093, "5": 0.103093, "6": 0.103093 },
+      "probabilities": {
+        "1": 0.103093,
+        "2": 0.103093,
+        "4": 0.103093,
+        "5": 0.103093,
+        "6": 0.103093
+      },
       "hasSettingDiff": false,
       "displayOrder": 1,
       "color": "#FFC107",
@@ -13,7 +25,13 @@
     },
     {
       "name": "右上がりベル",
-      "probabilities": { "1": 0.020450, "2": 0.020450, "4": 0.020450, "5": 0.020450, "6": 0.020450 },
+      "probabilities": {
+        "1": 0.02045,
+        "2": 0.02045,
+        "4": 0.02045,
+        "5": 0.02045,
+        "6": 0.02045
+      },
       "hasSettingDiff": false,
       "displayOrder": 2,
       "color": "#FF9800",
@@ -21,7 +39,13 @@
     },
     {
       "name": "チャンス目",
-      "probabilities": { "1": 0.002441, "2": 0.002441, "4": 0.002441, "5": 0.002441, "6": 0.002441 },
+      "probabilities": {
+        "1": 0.002441,
+        "2": 0.002441,
+        "4": 0.002441,
+        "5": 0.002441,
+        "6": 0.002441
+      },
       "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#9C27B0",
@@ -29,7 +53,13 @@
     },
     {
       "name": "CZ確率",
-      "probabilities": { "1": 0.001838, "2": 0.001859, "4": 0.002045, "5": 0.002155, "6": 0.002169 },
+      "probabilities": {
+        "1": 0.001838,
+        "2": 0.001859,
+        "4": 0.002045,
+        "5": 0.002155,
+        "6": 0.002169
+      },
       "hasSettingDiff": true,
       "displayOrder": 4,
       "color": "#2196F3",
@@ -37,7 +67,13 @@
     },
     {
       "name": "AT初当り確率",
-      "probabilities": { "1": 0.002532, "2": 0.002611, "4": 0.002976, "5": 0.003195, "6": 0.003300 },
+      "probabilities": {
+        "1": 0.002532,
+        "2": 0.002611,
+        "4": 0.002976,
+        "5": 0.003195,
+        "6": 0.0033
+      },
       "hasSettingDiff": true,
       "displayOrder": 5,
       "color": "#FF5722",
@@ -49,48 +85,90 @@
       "id": "trophy_copper",
       "name": "玉ちゃんトロフィー 銅",
       "description": "設定2以上確定",
-      "confirmedSettings": ["2", "4", "5", "6"],
-      "excludedSettings": ["1"],
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1"
+      ],
       "color": "#CD7F32"
     },
     {
       "id": "trophy_silver",
       "name": "玉ちゃんトロフィー 銀",
       "description": "設定4以上確定",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#C0C0C0"
     },
     {
       "id": "trophy_gold",
       "name": "玉ちゃんトロフィー 金",
       "description": "設定4以上確定（設定5・6期待度UP）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#FFD700"
     },
     {
       "id": "trophy_zebra",
       "name": "玉ちゃんトロフィー ゼブラ柄",
       "description": "設定5以上確定",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "trophy_rainbow",
       "name": "玉ちゃんトロフィー 虹",
       "description": "設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     },
     {
       "id": "bgm_change_early",
       "name": "神さま勝撫 1・2セット目BGM変化",
       "description": "AT「神さま勝撫」の1・2セット目でBGM変化で設定4以上期待大",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2"
+      ],
       "color": "#4CAF50"
     }
   ],
@@ -99,27 +177,45 @@
       "id": "normal_at_rate",
       "name": "通常モードAT当選率",
       "description": "設定1: 1/2020、設定6: 1/253。最大の設定差要素",
-      "probabilities": { "1": 0.000495, "2": 0.001129, "4": 0.002119, "5": 0.002762, "6": 0.003953 },
+      "probabilities": {
+        "1": 0.000495,
+        "2": 0.001129,
+        "4": 0.002119,
+        "5": 0.002762,
+        "6": 0.003953
+      },
       "displayOrder": 1
     },
     {
       "id": "bell_kyouran_shimoberu",
       "name": "下段ベル時狂乱高確移行率",
       "description": "設定1-2: 0.4%、設定4: 0.4%、設定5-6: 0.8%",
-      "probabilities": { "1": 0.004, "2": 0.004, "4": 0.004, "5": 0.008, "6": 0.008 },
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.004,
+        "4": 0.004,
+        "5": 0.008,
+        "6": 0.008
+      },
       "displayOrder": 2
     },
     {
       "id": "bell_kyouran_migiagari",
       "name": "右上がりベル時狂乱高確移行率",
       "description": "設定1-2: 3.1%、設定4: 6.3%、設定5-6: 6.6〜7.0%",
-      "probabilities": { "1": 0.031, "2": 0.031, "4": 0.063, "5": 0.066, "6": 0.070 },
+      "probabilities": {
+        "1": 0.031,
+        "2": 0.031,
+        "4": 0.063,
+        "5": 0.066,
+        "6": 0.07
+      },
       "displayOrder": 3
     }
   ],
   "notes": "設定Lが存在（下パネル常時消灯で判別可、機械割約80%）。設定Lのデータは未公開のため本データには含まない。設定3は非搭載。",
   "author": "コミュニティ",
-  "version": "1.0",
+  "version": "1.1",
   "lastUpdated": "2026-03-27",
   "source": "ちょんぼりすた、なな徹、一撃、DMMぱちタウン",
   "description": "京楽製スマスロAT機。5段階設定（1,2,4,5,6）+設定L。純増約9.0枚。小役確率は全設定共通。通常モードAT当選率に最大の設定差（設定1: 1/2020→設定6: 1/253）。AT初当り確率（設定1: 1/395→設定6: 1/303）とCZ確率で設定推測。玉ちゃんトロフィーで設定示唆。"

@@ -1,0 +1,93 @@
+{
+  "name": "L真打吉宗",
+  "type": "AT",
+  "roles": [],
+  "confirmationEvents": [
+    {
+      "id": "maisu_456",
+      "name": "獲得枚数456枚突破",
+      "description": "AT中の獲得枚数が456枚を突破で設定4以上濃厚",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
+      "color": "#FF9800"
+    },
+    {
+      "id": "maisu_555",
+      "name": "獲得枚数555枚突破",
+      "description": "AT中の獲得枚数が555枚を突破で設定5以上濃厚",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "color": "#F44336"
+    },
+    {
+      "id": "maisu_666",
+      "name": "獲得枚数666枚突破",
+      "description": "AT中の獲得枚数が666枚を突破で設定6濃厚",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "color": "#E91E63"
+    }
+  ],
+  "endScreens": [],
+  "trialSuccessRates": [
+    {
+      "id": "at_first_hit",
+      "name": "AT初当たり確率",
+      "description": "設定1: 1/488.9、設定6: 1/354.9",
+      "probabilities": {
+        "1": 0.002046,
+        "2": 0.002121,
+        "3": 0.002281,
+        "4": 0.002512,
+        "5": 0.002653,
+        "6": 0.002818
+      },
+      "color": "#E91E63",
+      "displayOrder": 1
+    },
+    {
+      "id": "cz_rate",
+      "name": "CZ確率",
+      "description": "設定1: 1/313.0、設定6: 1/250.6",
+      "probabilities": {
+        "1": 0.003195,
+        "2": 0.0033,
+        "3": 0.003527,
+        "4": 0.003743,
+        "5": 0.003893,
+        "6": 0.00399
+      },
+      "color": "#2196F3",
+      "displayOrder": 2
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.1",
+  "lastUpdated": "2026-03-27",
+  "source": "ちょんぼりすた、DMMぱちタウン、パチ7、flick7",
+  "description": "大都技研製スマスロAT機（純増9.0枚/G）。AT初当たり確率に設定差（設定1: 1/488.9、設定6: 1/354.9）。CZ確率にも設定差あり。獲得枚数456/555/666枚突破で設定示唆。小役確率は導入前のため解析未公開。"
+}

@@ -899,7 +899,7 @@
       "name": "パチスロ交響詩篇エウレカセブン HI-EVOLUTION ZERO TYPE-ART",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "eureka/eureka-type-art.json",
       "tags": [
         "ART",
@@ -916,7 +916,7 @@
       "name": "パチスロ ダンジョンに出会いを求めるのは間違っているだろうか2",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "danmachi/danmachi2.json",
       "tags": [
         "ART",
@@ -1734,7 +1734,7 @@
       "name": "パチスロ鉄拳5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "tekken/tekken5.json",
       "tags": [
         "AT",
@@ -1750,7 +1750,7 @@
       "name": "S鬼浜爆走愚連隊 狂闘旅情編",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "onihama-kyoutou/onihama-kyoutou.json",
       "tags": [
         "AT",
@@ -1782,7 +1782,7 @@
       "name": "パチスロ頭文字D",
       "type": "A+AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "initiald/initial-d.json",
       "tags": [
         "A+AT",
@@ -1798,7 +1798,7 @@
       "name": "パチスロBLOOD+ 二人の女王",
       "type": "ART",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "blood-plus/blood-plus-futari-no-joou.json",
       "tags": [
         "ART",
@@ -1814,7 +1814,7 @@
       "name": "パチスロ閃乱カグラ BURST UP",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "kagura-burstup/kagura-burstup.json",
       "tags": [
         "AT",
@@ -1830,7 +1830,7 @@
       "name": "LBパチスロ ヱヴァンゲリヲン ~約束の扉~",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "eva-yakusoku/eva-yakusoku.json",
       "tags": [
         "BT",
@@ -1893,7 +1893,7 @@
       "name": "Ｌ ダーリン・イン・ザ・フランキス",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "darlifra/darlifra.json",
       "tags": [
         "AT",
@@ -1909,7 +1909,7 @@
       "name": "L咲-Saki- 頂上決戦",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "saki/saki-choujou-kessen.json",
       "tags": [
         "AT",
@@ -1925,7 +1925,7 @@
       "name": "スマスロ 攻殻機動隊SAC_2045",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "koukaku-sac2045/koukaku-sac2045.json",
       "tags": [
         "AT",
@@ -1941,7 +1941,7 @@
       "name": "Lゴジラ対エヴァンゲリオン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "godzilla-vs-eva/godzilla-vs-eva.json",
       "tags": [
         "AT",
@@ -1957,7 +1957,7 @@
       "name": "Lリゼロ2 パック&レム",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "rezero2-pack-rem/rezero2-pack-rem.json",
       "tags": [
         "AT",
@@ -1973,7 +1973,7 @@
       "name": "Ｌパチスロ戦姫絶唱シンフォギア 正義の歌",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "symphogear/symphogear.json",
       "tags": [
         "AT",
@@ -1989,7 +1989,7 @@
       "name": "Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVE",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "0.2",
+      "version": "1.0",
       "file": "gundam-unicorn2/gundam-unicorn2.json",
       "tags": [
         "AT",
@@ -2080,7 +2080,7 @@
       "name": "スマスロ 攻殻機動隊",
       "type": "AT",
       "author": "community",
-      "version": "1.0",
+      "version": "1.1",
       "file": "koukaku-sumaslo/koukaku-sumaslo.json",
       "tags": [
         "sammy",
@@ -2112,7 +2112,7 @@
       "name": "L ワンパンマン",
       "type": "AT",
       "author": "community",
-      "version": "1.0",
+      "version": "1.1",
       "file": "onepunchman/onepunchman.json",
       "tags": [
         "newgin",
@@ -2127,7 +2127,7 @@
       "name": "Lにゃんこ大戦争 超神速",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "nyanko/nyanko-daisensou.json",
       "tags": [
         "kyoraku",
@@ -2159,7 +2159,7 @@
       "name": "マジカルハロウィン ボーナストリガー",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "magicalhalloween/magical-halloween-bt.json",
       "tags": [
         "konami",
@@ -2175,7 +2175,7 @@
       "name": "SLOT ドルアーガの塔",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "druaga/druaga.json",
       "tags": [
         "mizuho",
@@ -2191,7 +2191,7 @@
       "name": "スマスロ ストリートファイターV 挑戦者の道",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "sf5/sf5.json",
       "tags": [
         "enterrise",
@@ -2206,7 +2206,7 @@
       "name": "Lシスタークエスト",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "sisterquest/sister-quest.json",
       "tags": [
         "carmina",
@@ -2221,7 +2221,7 @@
       "name": "L 七つの魔剣が支配する",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "nanatsunotsurugi/nanatsu-no-tsurugi.json",
       "tags": [
         "konami",
@@ -2251,7 +2251,7 @@
       "name": "L仮面ライダー電王",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "denoh/kamen-rider-denoh.json",
       "tags": [
         "kyoraku",
@@ -2293,6 +2293,40 @@
         "4段階設定"
       ],
       "description": "オーイズミ製スマスロBT機。4段階設定。BIG終了ボイスで設定示唆",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "shinuchi-yoshimune",
+      "name": "L真打吉宗",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.1",
+      "file": "shinuchi-yoshimune/shinuchi-yoshimune.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "大都技研",
+        "6段階設定",
+        "2026年4月"
+      ],
+      "description": "大都技研製スマスロAT機。純増9.0枚/G",
+      "lastUpdated": "2026-03-27"
+    },
+    {
+      "id": "yormungandr",
+      "name": "スマスロヨルムンガンド",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.1",
+      "file": "yormungandr/yormungandr.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "山佐ネクスト",
+        "6段階設定",
+        "2026年4月"
+      ],
+      "description": "山佐ネクスト製スマスロAT機",
       "lastUpdated": "2026-03-27"
     }
   ]
