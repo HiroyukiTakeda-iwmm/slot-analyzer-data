@@ -349,6 +349,24 @@
       "type": "at_end",
       "hint": "設定6濃厚",
       "color": "#9C27B0"
+    },
+    {
+      "id": "es_none",
+      "name": "キャラなし",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "es_hanekawa",
+      "name": "羽川",
+      "type": "at_end",
+      "hint": "高設定示唆[弱]"
+    },
+    {
+      "id": "es_hunter",
+      "name": "吸血鬼ハンター",
+      "type": "at_end",
+      "hint": "高設定示唆[強]"
     }
   ],
   "voiceCounts": []

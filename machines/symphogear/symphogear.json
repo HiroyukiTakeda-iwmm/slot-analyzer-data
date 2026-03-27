@@ -489,6 +489,60 @@
       "type": "at_end",
       "hint": "設定1以上濃厚",
       "color": "#607D8B"
+    },
+    {
+      "id": "es_hibiki",
+      "name": "響1人（デフォルト）",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "es_white1",
+      "name": "白①",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "id": "es_white2",
+      "name": "白②",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "es_red1",
+      "name": "赤①",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "es_red2",
+      "name": "赤②",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "es_purple1",
+      "name": "紫①",
+      "type": "at_end",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "es_purple2",
+      "name": "紫②",
+      "type": "at_end",
+      "hint": "設定2以上確定"
+    },
+    {
+      "id": "es_silver",
+      "name": "銀",
+      "type": "at_end",
+      "hint": "設定4以上確定"
+    },
+    {
+      "id": "es_gold",
+      "name": "金",
+      "type": "at_end",
+      "hint": "設定6確定"
     }
   ],
   "voiceCounts": [

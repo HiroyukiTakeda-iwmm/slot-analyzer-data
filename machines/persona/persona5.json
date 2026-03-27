@@ -315,6 +315,42 @@
       "type": "at_end",
       "hint": "復活否定かつ次回PC当選時にテイクユアハート非当選で設定4以",
       "color": "#9C27B0"
+    },
+    {
+      "id": "es_white",
+      "name": "PC終了画面 白背景",
+      "type": "bonus_end",
+      "hint": "天井期待度：低"
+    },
+    {
+      "id": "es_blue",
+      "name": "PC終了画面 青背景",
+      "type": "bonus_end",
+      "hint": "天井期待度：低〜中"
+    },
+    {
+      "id": "es_green",
+      "name": "PC終了画面 緑背景",
+      "type": "bonus_end",
+      "hint": "天井期待度：中"
+    },
+    {
+      "id": "es_true_end",
+      "name": "PC終了画面 白背景「真の終了画面」",
+      "type": "bonus_end",
+      "hint": "ATレベル2以上濃厚"
+    },
+    {
+      "id": "es_haijin",
+      "name": "PC終了画面 白背景「廃人」",
+      "type": "bonus_end",
+      "hint": "ATレベル4以上濃厚"
+    },
+    {
+      "id": "es_all",
+      "name": "PC終了画面 白背景「全員集合」",
+      "type": "bonus_end",
+      "hint": "ATレベル3以上期待度アップ"
     }
   ],
   "voiceCounts": []

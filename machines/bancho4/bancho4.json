@@ -298,6 +298,36 @@
       "name": "終了画面「富士山」5回",
       "type": "at_end",
       "hint": "設定6濃厚"
+    },
+    {
+      "id": "es_kongou",
+      "name": "轟金剛",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "es_hamburg",
+      "name": "ハンバーグ",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "es_safari",
+      "name": "サファリ",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "es_shopping",
+      "name": "ショッピング",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "es_sakasa_fuji",
+      "name": "逆さ富士",
+      "type": "bonus_end",
+      "hint": "逆さ富士モード濃厚"
     }
   ],
   "voiceCounts": [

@@ -363,6 +363,54 @@
       "type": "bt_start",
       "hint": "ラウンド開始画面で波多野&青島画面が出現で設定5以上確定",
       "color": "#2196F3"
+    },
+    {
+      "id": "sg_blue",
+      "name": "SGメダル青",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "id": "sg_yellow",
+      "name": "SGメダル黄",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "id": "sg_black",
+      "name": "SGメダル黒",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "id": "helmet_plain",
+      "name": "ヘルメット ロゴなし",
+      "type": "at_end",
+      "hint": "デフォルト"
+    },
+    {
+      "id": "helmet_logo",
+      "name": "ヘルメット ロゴあり",
+      "type": "at_end",
+      "hint": "通常B期待度アップ"
+    },
+    {
+      "id": "helmet_kirakira",
+      "name": "ヘルメット ロゴ+キラキラ",
+      "type": "at_end",
+      "hint": "通常B or 天国濃厚"
+    },
+    {
+      "id": "helmet_v",
+      "name": "ヘルメット ロゴ+V",
+      "type": "at_end",
+      "hint": "天国濃厚"
+    },
+    {
+      "id": "helmet_arisa",
+      "name": "ヘルメット ありさ映り込み",
+      "type": "at_end",
+      "hint": "AT復活濃厚"
     }
   ],
   "voiceCounts": []
