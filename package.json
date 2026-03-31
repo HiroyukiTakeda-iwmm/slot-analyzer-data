@@ -1,8 +1,22 @@
 {
   "name": "slot-analyzer-data",
-  "version": "2.6.0",
+  "version": "3.3.0",
   "description": "パチスロ機種設定推測データリポジトリ",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiroyukiTakeda-iwmm/slot-analyzer-data.git"
+  },
+  "keywords": [
+    "pachislot",
+    "slot-machine",
+    "settings",
+    "data",
+    "json"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "validate": "node scripts/validate.mjs",
     "validate:schema": "node scripts/validate.mjs --schema-only",
@@ -10,6 +24,8 @@
     "sync": "node scripts/sync-last-updated.mjs",
     "audit": "node scripts/audit-freshness.mjs",
     "audit:stale": "node scripts/audit-freshness.mjs --stale 30",
+    "quality": "node scripts/quality-report.mjs",
+    "quality:json": "node scripts/quality-report.mjs --json",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky"
@@ -19,8 +35,12 @@
     "ajv-formats": "^3.0.1"
   },
   "devDependencies": {
-    "vitest": "^3.0.0",
-    "husky": "^9.1.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
+    "globals": "^17.4.0",
+    "husky": "^9.1.0",
+    "prettier": "^3.8.1",
+    "vitest": "^3.0.0"
   },
   "license": "MIT"
 }
