@@ -46,6 +46,7 @@
     }
   ],
   "confirmationEvents": [],
+  "endScreens": [],
   "trialSuccessRates": [
     {
       "id": "bonus_first_hit",

@@ -4,7 +4,7 @@
   "title": "Machine Data",
   "description": "パチスロ機種の設定推測データスキーマ",
   "type": "object",
-  "required": ["name", "type", "roles"],
+  "required": ["name", "type", "roles", "author", "version", "lastUpdated"],
   "additionalProperties": false,
   "properties": {
     "name": {
@@ -299,10 +299,12 @@
     "modeTransition": {
       "type": "object",
       "required": ["name"],
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "id": { "type": "string" },
-        "name": { "type": "string" }
+        "name": { "type": "string", "minLength": 1 },
+        "rates": { "$ref": "#/definitions/probabilities" },
+        "description": { "type": "string" }
       }
     }
   }

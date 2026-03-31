@@ -25,7 +25,7 @@
         "properties": {
           "id": {
             "type": "string",
-            "pattern": "^[a-z0-9.-]+$",
+            "pattern": "^[a-z0-9.\\-]+$",
             "description": "一意識別子（kebab-case、ドット許可）"
           },
           "name": {
