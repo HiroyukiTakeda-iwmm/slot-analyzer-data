@@ -16,6 +16,7 @@ import { validateSchemas } from './validators/schema-validator.mjs';
 import { validateIndexConsistency } from './validators/index-consistency.mjs';
 import { validateProbabilities } from './validators/probability-validator.mjs';
 import { validateConfirmations } from './validators/confirmation-validator.mjs';
+import { validateCompleteness } from './validators/completeness-validator.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -75,7 +76,9 @@ function main() {
   }
 
   const validFiles = machineFiles.filter((f) => f.data !== null);
-  console.log(`読み込み: index.json + ${validFiles.length}機種ファイル (パースエラー: ${parseErrors.length})\n`);
+  console.log(
+    `読み込み: index.json + ${validFiles.length}機種ファイル (パースエラー: ${parseErrors.length})\n`
+  );
 
   let allErrors = [];
   let allWarnings = [];
@@ -114,6 +117,18 @@ function main() {
     allErrors.push(...conf.errors);
     allWarnings.push(...conf.warnings);
     console.log(`  エラー: ${conf.errors.length}件 / 警告: ${conf.warnings.length}件\n`);
+  }
+
+  // 5. 完全性チェック（情報レベル — exit codeに影響しない）
+  if (!schemaOnly && !indexOnly) {
+    console.log('--- 完全性チェック ---');
+    const comp = validateCompleteness(validFiles);
+    allWarnings.push(...comp.warnings);
+    const { summary } = comp;
+    console.log(
+      `  Complete: ${summary.complete} / Provisional: ${summary.provisional} / Incomplete: ${summary.incomplete}`
+    );
+    console.log(`  警告: ${comp.warnings.length}件 / 情報: ${comp.info.length}件\n`);
   }
 
   // --- 結果出力 ---
