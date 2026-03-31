@@ -2,6 +2,48 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.3] - 2026-03-27
+
+### 追加 (2台: 136台→138台)
+- **shinuchi-yoshimune** (L真打吉宗) — AT, 6段階（導入前暫定データ）
+- **yormungandr** (スマスロヨルムンガンド) — AT, 6段階（解析未公開）
+
+### 大規模品質改善
+- **trialSuccessRates 100%達成**（全138台）
+- **endScreens 87%達成**（120/138台）
+- confirmationEvents追加（バベル・ニューパルサーBT・スターハナハナ）
+- 既存機種補完（ToLOVEるダークネス、ヴァルヴレイヴ2、新ハナビ等）
+- バージョン一括更新: v1.0/0.2の22台をv1.1/1.0に更新
+
+### iOS互換性
+- **破壊的変更: なし**
+- 構造変更: なし（値の修正とエントリ追加のみ）
+
+## [3.2] - 2026-03-27
+
+### 追加 (11台: 125台→136台)
+- **nyanko-daisensou** (Lにゃんこ大戦争 超神速) — AT, 5段階(1,2,4,5,6)
+- **hanagasa** (L花笠) — AT, 5段階(1,2,4,5,6)
+- **magical-halloween-bt** (マジカルハロウィン ボーナストリガー) — BT, 4段階(1,2,5,6)
+- **druaga** (SLOT ドルアーガの塔) — AT, 4段階(1,2,5,6)
+- **sf5** (スマスロ ストリートファイターV) — AT, 6段階
+- **sister-quest** (Lシスタークエスト) — AT, 6段階
+- **nanatsu-no-tsurugi** (L七つの魔剣が支配する) — AT, 6段階
+- **ushiotora-vh** (Lうしおととら 白面決戦VH) — AT, 6段階
+- **kamen-rider-denoh** (L仮面ライダー電王) — AT, 5段階(1,2,4,5,6)
+- **okisuro-amazing-live** (スマート沖スロ アメイジングライブ) — AT, 5段階(1,2,4,5,6)
+- **1000chan-a** (LBパチスロ1000ちゃんA) — A+AT, 4段階(1,2,5,6)
+
+### 品質改善 (既存8台)
+- gineiden-dnt: roles追加 + description
+- kaguya-sama: trialSuccessRates追加
+- bofuri, persona5, keiji-sado, toaru-index, tate-no-yusha: description追加
+- new-king-hanahana-v: 30パイ版notes追加
+
+### iOS互換性
+- **破壊的変更: なし**
+- 構造変更: なし（値の修正とエントリ追加のみ）
+
 ## [3.1] - 2026-03-27
 
 ### 検証済み
