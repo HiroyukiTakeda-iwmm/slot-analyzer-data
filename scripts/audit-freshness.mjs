@@ -41,10 +41,10 @@ function daysSince(dateStr) {
 }
 
 function classifyFreshness(days) {
-  if (days <= 7) return 'fresh';       // 最新
-  if (days <= 30) return 'recent';     // 新しい
-  if (days <= 90) return 'stale';      // 古い
-  return 'very_stale';                  // 非常に古い
+  if (days <= 7) return 'fresh'; // 最新
+  if (days <= 30) return 'recent'; // 新しい
+  if (days <= 90) return 'stale'; // 古い
+  return 'very_stale'; // 非常に古い
 }
 
 function main() {
@@ -111,13 +111,24 @@ function main() {
   };
 
   if (params.json) {
-    console.log(JSON.stringify({ today, total: results.length, categories: {
-      fresh: categories.fresh.length,
-      recent: categories.recent.length,
-      stale: categories.stale.length,
-      very_stale: categories.very_stale.length,
-      unknown: categories.unknown.length,
-    }, machines: results }, null, 2));
+    console.log(
+      JSON.stringify(
+        {
+          today,
+          total: results.length,
+          categories: {
+            fresh: categories.fresh.length,
+            recent: categories.recent.length,
+            stale: categories.stale.length,
+            very_stale: categories.very_stale.length,
+            unknown: categories.unknown.length,
+          },
+          machines: results,
+        },
+        null,
+        2
+      )
+    );
     return;
   }
 
@@ -144,7 +155,9 @@ function main() {
   if (needsAttention.length > 0) {
     console.log(`\n--- 更新が必要な機種 (${needsAttention.length}台) ---\n`);
     for (const r of needsAttention) {
-      console.log(`  ${String(r.days).padStart(4)}日  ${r.lastUpdated || 'N/A'}  ${r.id} (${r.name})`);
+      console.log(
+        `  ${String(r.days).padStart(4)}日  ${r.lastUpdated || 'N/A'}  ${r.id} (${r.name})`
+      );
     }
   } else {
     console.log('\n全機種が最新状態です。');

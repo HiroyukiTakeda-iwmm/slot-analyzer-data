@@ -14,9 +14,7 @@ export function validateSchemas(machineFiles, indexData) {
   const machineSchema = JSON.parse(
     readFileSync(resolve(ROOT, 'schemas/machine.schema.json'), 'utf-8')
   );
-  const indexSchema = JSON.parse(
-    readFileSync(resolve(ROOT, 'schemas/index.schema.json'), 'utf-8')
-  );
+  const indexSchema = JSON.parse(readFileSync(resolve(ROOT, 'schemas/index.schema.json'), 'utf-8'));
 
   const ajv = new Ajv({ allErrors: true, strict: false });
   addFormats(ajv);

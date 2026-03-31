@@ -41,9 +41,7 @@ export function validateIndexConsistency(machineFiles, indexData) {
     }
 
     // 対応するファイルデータを検索
-    const fileData = machineFiles.find(
-      (f) => f.path === `machines/${entry.file}`
-    );
+    const fileData = machineFiles.find((f) => f.path === `machines/${entry.file}`);
     if (!fileData) continue;
 
     // name一致チェック
@@ -77,7 +75,11 @@ export function validateIndexConsistency(machineFiles, indexData) {
     }
 
     // lastUpdated一致チェック
-    if (entry.lastUpdated && fileData.data.lastUpdated && entry.lastUpdated !== fileData.data.lastUpdated) {
+    if (
+      entry.lastUpdated &&
+      fileData.data.lastUpdated &&
+      entry.lastUpdated !== fileData.data.lastUpdated
+    ) {
       errors.push({
         file: `machines/${entry.file}`,
         type: 'index-consistency',

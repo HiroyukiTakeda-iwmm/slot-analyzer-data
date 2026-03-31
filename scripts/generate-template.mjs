@@ -91,7 +91,9 @@ function main() {
   const params = parseArgs();
 
   if (!params.name || !params.type || !params.dir || !params.id) {
-    console.error('Usage: node scripts/generate-template.mjs --name "機種名" --type AT --dir dirname --id machine-id');
+    console.error(
+      'Usage: node scripts/generate-template.mjs --name "機種名" --type AT --dir dirname --id machine-id'
+    );
     console.error('');
     console.error('Options:');
     console.error('  --name     機種名（必須）');
@@ -108,9 +110,7 @@ function main() {
     process.exit(1);
   }
 
-  const settings = params.settings
-    ? params.settings.split(',')
-    : ['1', '2', '3', '4', '5', '6'];
+  const settings = params.settings ? params.settings.split(',') : ['1', '2', '3', '4', '5', '6'];
 
   const dirPath = resolve(MACHINES_DIR, params.dir);
   const filePath = resolve(dirPath, `${params.id}.json`);

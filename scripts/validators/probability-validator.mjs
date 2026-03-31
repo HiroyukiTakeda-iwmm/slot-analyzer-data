@@ -88,7 +88,13 @@ export function validateProbabilities(machineFiles) {
       for (const zone of data.zones) {
         if (zone.roles) {
           for (const role of zone.roles) {
-            checkProbabilities(role.probabilities, `${zone.name}/${role.name}`, filePath, expectedSettings, results);
+            checkProbabilities(
+              role.probabilities,
+              `${zone.name}/${role.name}`,
+              filePath,
+              expectedSettings,
+              results
+            );
             checkSettingDiffConsistency(role, filePath, results);
           }
         }

@@ -1,0 +1,6 @@
+node_modules/
+machines/
+schemas/
+coverage/
+.claude/
+package-lock.json
