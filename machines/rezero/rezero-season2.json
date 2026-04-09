@@ -222,7 +222,9 @@
         }
       ],
       "description": "6パターンの設定示唆画面あり",
-      "id": "殲滅ラッシュ終了画面"
+      "id": "殲滅ラッシュ終了画面",
+      "type": "at_end",
+      "hint": "設定示唆"
     },
     {
       "id": "end_rabbit_cosplay",

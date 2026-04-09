@@ -114,7 +114,9 @@
           "description": "高設定示唆"
         }
       ],
-      "id": "ボーナス終了画面"
+      "id": "ボーナス終了画面",
+      "type": "bonus_end",
+      "hint": "設定示唆"
     },
     {
       "name": "獲得枚数表示",
@@ -135,7 +137,9 @@
           "description": "設定6濃厚"
         }
       ],
-      "id": "獲得枚数表示"
+      "id": "獲得枚数表示",
+      "type": "at_end",
+      "hint": "設定示唆"
     },
     {
       "id": "end_screen_silver",

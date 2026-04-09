@@ -125,7 +125,9 @@
           "description": "高設定示唆強"
         }
       ],
-      "id": "ボーナス終了画面（花札）"
+      "id": "ボーナス終了画面（花札）",
+      "type": "bonus_end",
+      "hint": "設定示唆"
     }
   ],
   "voiceCounts": [],
