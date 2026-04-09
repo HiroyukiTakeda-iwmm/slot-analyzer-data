@@ -152,43 +152,53 @@
         },
         {
           "name": "奇数設定示唆パターン",
-          "setting": "odd"
+          "setting": "odd",
+          "description": "奇数設定（1,3,5）示唆"
         },
         {
           "name": "偶数設定示唆パターン",
-          "setting": "even"
+          "setting": "even",
+          "description": "偶数設定（2,4,6）示唆"
         },
         {
           "name": "高設定示唆（弱）",
-          "setting": "highWeak"
+          "setting": "highWeak",
+          "description": "高設定期待度アップ（弱）"
         },
         {
           "name": "高設定示唆（強）",
-          "setting": "highStrong"
+          "setting": "highStrong",
+          "description": "高設定期待度アップ（強）"
         },
         {
           "name": "偶数設定濃厚",
-          "setting": "evenConfirm"
+          "setting": "evenConfirm",
+          "description": "偶数設定（2,4,6）濃厚"
         },
         {
           "name": "設定1否定",
-          "setting": "not1"
+          "setting": "not1",
+          "description": "設定1否定"
         },
         {
           "name": "設定2否定",
-          "setting": "not2"
+          "setting": "not2",
+          "description": "設定2否定"
         },
         {
           "name": "設定3否定かつ高設定示唆",
-          "setting": "not3High"
+          "setting": "not3High",
+          "description": "設定3否定かつ高設定示唆"
         },
         {
           "name": "設定4以上濃厚",
-          "minSetting": 4
+          "minSetting": 4,
+          "description": "設定4以上濃厚"
         },
         {
           "name": "設定6濃厚",
-          "minSetting": 6
+          "minSetting": 6,
+          "description": "設定6以上濃厚"
         }
       ],
       "id": "CZ_ST終了画面",

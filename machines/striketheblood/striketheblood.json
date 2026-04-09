@@ -183,7 +183,8 @@
       "patterns": [
         {
           "name": "白",
-          "setting": "default"
+          "setting": "default",
+          "description": "デフォルト（設定示唆なし）"
         },
         {
           "name": "青",

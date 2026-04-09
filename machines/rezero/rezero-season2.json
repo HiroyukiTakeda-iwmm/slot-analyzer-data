@@ -198,27 +198,33 @@
       "patterns": [
         {
           "name": "通常パターン1",
-          "setting": "default"
+          "setting": "default",
+          "description": "デフォルト（設定示唆なし）"
         },
         {
           "name": "通常パターン2",
-          "setting": "default"
+          "setting": "default",
+          "description": "デフォルト（設定示唆なし）"
         },
         {
           "name": "通常パターン3",
-          "setting": "default"
+          "setting": "default",
+          "description": "デフォルト（設定示唆なし）"
         },
         {
           "name": "設定示唆パターン1",
-          "setting": "high"
+          "setting": "high",
+          "description": "高設定示唆"
         },
         {
           "name": "設定示唆パターン2",
-          "setting": "high"
+          "setting": "high",
+          "description": "高設定示唆"
         },
         {
           "name": "設定示唆パターン3",
-          "setting": "6"
+          "setting": "6",
+          "description": "設定6濃厚"
         }
       ],
       "description": "6パターンの設定示唆画面あり",
