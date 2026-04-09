@@ -2420,6 +2420,24 @@
       ],
       "description": "ミズホ製スマスロAT機。純増約7.0枚/G。GG初当たり確率に設定差。奇数設定は重いが機械割高い",
       "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "animalslot-docchi",
+      "name": "Lアニマルスロットドッチ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "animalslot-docchi/animalslot-docchi.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "北電子",
+        "6段階設定",
+        "2026年4月",
+        "新台"
+      ],
+      "description": "北電子製スマスロAT機（SSAT第2弾）。ボーナス合算確率に設定差。STループ率約82%",
+      "lastUpdated": "2026-04-09"
     }
   ]
 }
