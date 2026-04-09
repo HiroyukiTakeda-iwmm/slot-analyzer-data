@@ -262,7 +262,8 @@
         "3": 0.03,
         "4": 0.03,
         "6": 0.03
-      }
+      },
+      "color": "#FF9800"
     },
     {
       "id": "at_end_ryuji_kouhei_taiga",
@@ -292,7 +293,8 @@
       ],
       "probabilities": {
         "6": 0.01
-      }
+      },
+      "color": "#E91E63"
     },
     {
       "id": "end_screen_sho",

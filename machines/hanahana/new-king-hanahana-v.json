@@ -60,7 +60,8 @@
         "4",
         "V"
       ],
-      "excludedSettings": []
+      "excludedSettings": [],
+      "color": "#FF9800"
     }
   ],
   "endScreens": [

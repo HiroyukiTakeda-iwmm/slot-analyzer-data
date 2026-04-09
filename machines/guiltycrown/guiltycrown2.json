@@ -32,7 +32,8 @@
       "excludedSettings": [
         "2",
         "3"
-      ]
+      ],
+      "color": "#4CAF50"
     },
     {
       "id": "bb終了画面-集涯",
@@ -47,7 +48,8 @@
       "excludedSettings": [
         "1",
         "2"
-      ]
+      ],
+      "color": "#C0C0C0"
     },
     {
       "id": "bb終了画面-いのり真名",
@@ -62,7 +64,8 @@
         "2",
         "3",
         "4"
-      ]
+      ],
+      "color": "#FF5722"
     }
   ],
   "endScreens": [

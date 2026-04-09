@@ -380,7 +380,8 @@
       "excludedSettings": [
         "1"
       ],
-      "id": "画面6"
+      "id": "画面6",
+      "color": "#4CAF50"
     },
     {
       "name": "画面7",
@@ -396,7 +397,8 @@
         "2",
         "3"
       ],
-      "id": "画面7"
+      "id": "画面7",
+      "color": "#FFD700"
     },
     {
       "id": "trophy_copper",
