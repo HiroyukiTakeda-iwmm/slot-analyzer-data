@@ -2365,6 +2365,61 @@
       ],
       "description": "上乗せG数で設定確定演出（+22G=設定2以上〜+66G=設定6確定）。CZ当選率に設定差",
       "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "isekai-quartet-bt",
+      "name": "A-SLOT+ 異世界かるてっと BT",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "isekai-quartet/isekai-quartet-bt.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "サミー",
+        "GINZA",
+        "4段階設定",
+        "2026年4月",
+        "新台"
+      ],
+      "description": "サミー（GINZA）製BT機。4段階設定。BB中ハズレ目が最大判別要素。サミートロフィーで設定確定",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "triple-crown-seven",
+      "name": "LBトリプルクラウンセブン",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "triple-crown-seven/triple-crown-seven.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "岡崎産業",
+        "4段階設定",
+        "2026年4月",
+        "新台"
+      ],
+      "description": "岡崎産業製BT機。4段階設定。プラム・チェリーに設定差。バットランプで設定示唆",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "milliongod-kiseki",
+      "name": "スマスロ ミリオンゴッド-神々の軌跡-",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "milliongod/milliongod-kiseki.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ミズホ",
+        "6段階設定",
+        "2026年4月",
+        "新台"
+      ],
+      "description": "ミズホ製スマスロAT機。純増約7.0枚/G。GG初当たり確率に設定差。奇数設定は重いが機械割高い",
+      "lastUpdated": "2026-04-09"
     }
   ]
 }

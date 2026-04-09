@@ -1,0 +1,138 @@
+{
+  "name": "LBトリプルクラウンセブン",
+  "type": "BT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "プラム",
+      "probabilities": {
+        "1": 0.015480,
+        "2": 0.015873,
+        "5": 0.016835,
+        "6": 0.018215
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#7C4DFF",
+      "description": "設定1: 1/64.6、設定6: 1/54.9"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.020040,
+        "2": 0.020747,
+        "5": 0.021930,
+        "6": 0.023585
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "設定1: 1/49.9、設定6: 1/42.4"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "バットランプ虹色",
+      "name": "バットランプ虹色点灯",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "バットランプ青点滅",
+      "name": "バットランプ青色点滅",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#2196F3"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "ボーナス終了時ランプ演出",
+      "name": "ボーナス終了時ランプ演出",
+      "type": "bonus_end",
+      "hint": "設定示唆",
+      "color": "#78909C",
+      "patterns": [
+        {
+          "name": "クラウンランプ&下パネル点滅",
+          "minSetting": 2,
+          "description": "設定2以上濃厚"
+        },
+        {
+          "name": "バットランプ青色点滅",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        },
+        {
+          "name": "バットランプ虹色点灯",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "big_rate",
+      "name": "BIG確率",
+      "description": "設定1: 1/258.0、設定6: 1/203.5",
+      "probabilities": {
+        "1": 0.003876,
+        "2": 0.003953,
+        "5": 0.004348,
+        "6": 0.004914
+      },
+      "displayOrder": 1,
+      "color": "#E91E63"
+    },
+    {
+      "id": "reg_rate",
+      "name": "REG確率",
+      "description": "設定1: 1/590.4、設定6: 1/464.8。REG確率に設定差",
+      "probabilities": {
+        "1": 0.001694,
+        "2": 0.001724,
+        "5": 0.001907,
+        "6": 0.002151
+      },
+      "displayOrder": 2,
+      "color": "#2196F3"
+    },
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/179.6、設定6: 1/141.5",
+      "probabilities": {
+        "1": 0.005568,
+        "2": 0.005676,
+        "5": 0.006258,
+        "6": 0.007067
+      },
+      "displayOrder": 3,
+      "color": "#9C27B0"
+    }
+  ],
+  "voiceCounts": [],
+  "notes": "4段階設定（1/2/5/6）のBT機。AT・天井なしのシンプルなボーナスタイプ。疑似リプ連演出あり（1回: 約6%、2回: 約52%、3回: ボーナス確定）。BIG約312枚/REG104枚。前作LBトリプルクラウンの後継機。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-04-09",
+  "source": "一撃、DMMぱちタウン、スロパチクエスト",
+  "description": "岡崎産業製BT機。4段階設定（1,2,5,6）。プラム・チェリーに設定差（チェリー: 設定1: 1/49.9→設定6: 1/42.4）。バットランプ青点滅で設定5以上、虹で設定6濃厚。ボーナス合算確率に設定差（設定1: 1/179.6→設定6: 1/141.5）。"
+}

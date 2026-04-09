@@ -1,0 +1,203 @@
+{
+  "name": "A-SLOT+ 異世界かるてっと BT",
+  "type": "BT",
+  "availableSettings": ["1", "2", "5", "6"],
+  "roles": [
+    {
+      "name": "リプレイ",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#607D8B",
+      "description": "全設定共通: 1/7.3"
+    },
+    {
+      "name": "ベル",
+      "probabilities": {
+        "1": 0.142857,
+        "2": 0.142857,
+        "5": 0.142857,
+        "6": 0.142857
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FFEB3B",
+      "description": "全設定共通: 1/7.0"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.022222,
+        "2": 0.022222,
+        "5": 0.022222,
+        "6": 0.022222
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/45.0"
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.005584,
+        "2": 0.005584,
+        "5": 0.005662,
+        "6": 0.005737
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#E91E63",
+      "description": "設定1: 1/179.1、設定6: 1/174.3。設定差は小さい"
+    },
+    {
+      "name": "いせかる目",
+      "probabilities": {
+        "1": 0.009294,
+        "2": 0.009416,
+        "5": 0.010299,
+        "6": 0.011211
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/107.6、設定6: 1/89.2。突BT契機役"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "サミートロフィー銅",
+      "name": "サミートロフィー（銅）",
+      "description": "設定2以上濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "サミートロフィーキリン柄",
+      "name": "サミートロフィー（キリン柄）",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "サミートロフィー虹",
+      "name": "サミートロフィー（虹）",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "獲得枚数086枚",
+      "name": "獲得枚数表示086枚",
+      "description": "設定2以上濃厚。3回出現で設定5以上、4回出現で設定6濃厚",
+      "confirmedSettings": ["2", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "獲得枚数Re0枚",
+      "name": "獲得枚数表示Re:0枚",
+      "description": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "獲得枚数666枚",
+      "name": "獲得枚数表示666枚",
+      "description": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "5"],
+      "color": "#F44336"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "ボーナス終了画面",
+      "name": "ボーナス終了画面",
+      "type": "bonus_end",
+      "hint": "設定示唆",
+      "color": "#78909C",
+      "patterns": [
+        {
+          "name": "デフォルト",
+          "setting": "default",
+          "description": "示唆なし"
+        },
+        {
+          "name": "主人公&ヒロイン集合",
+          "setting": "highWeak",
+          "description": "高設定期待度UP（弱）"
+        },
+        {
+          "name": "ヒロイン集合",
+          "setting": "highWeak",
+          "description": "高設定期待度UP（弱）"
+        },
+        {
+          "name": "ペテルギウス",
+          "setting": "highStrong",
+          "description": "高設定期待度UP（強）"
+        },
+        {
+          "name": "金背景（騎馬戦）",
+          "minSetting": 2,
+          "description": "設定2以上濃厚"
+        },
+        {
+          "name": "金背景（水着）",
+          "minSetting": 5,
+          "description": "設定5以上濃厚"
+        },
+        {
+          "name": "金背景（カボチャ馬車）",
+          "minSetting": 6,
+          "description": "設定6濃厚"
+        }
+      ]
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_first_hit",
+      "name": "ボーナス初当たり確率",
+      "description": "設定1: 1/197.6、設定6: 1/161.1",
+      "probabilities": {
+        "1": 0.005061,
+        "2": 0.005157,
+        "5": 0.005701,
+        "6": 0.006207
+      },
+      "displayOrder": 1,
+      "color": "#E91E63"
+    },
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算確率",
+      "description": "設定1: 1/99.9、設定6: 1/82.1。BT含む合算",
+      "probabilities": {
+        "1": 0.01001,
+        "2": 0.010194,
+        "5": 0.011223,
+        "6": 0.012180
+      },
+      "displayOrder": 2,
+      "color": "#9C27B0"
+    }
+  ],
+  "voiceCounts": [],
+  "notes": "4段階設定（1/2/5/6）のBT機。BB中ハズレ目に最大の設定差（設定1: 1/21845.3→設定6: 1/512.0）。BT中の特殊7枚役にも大きな設定差あり。マイスロ対応で小役カウント可能。機械割: 設定1=97.9%〜設定6=109.0%。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-04-09",
+  "source": "ちょんぼりすた、一撃、DMMぱちタウン、スロパチクエスト",
+  "description": "サミー（GINZA）製BT機。4段階設定（1,2,5,6）。いせかる目確率に設定差（設定1: 1/107.6→設定6: 1/89.2）。BB中ハズレ目が最大判別要素（設定1: 1/21845→設定6: 1/512）。サミートロフィーや獲得枚数表示で設定確定あり。終了画面の金背景で設定示唆。"
+}
