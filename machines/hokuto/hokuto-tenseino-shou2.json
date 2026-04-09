@@ -177,7 +177,8 @@
         "5": 0.003531,
         "6": 0.003661
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "tenpa_totsunyu",
@@ -191,7 +192,8 @@
         "5": 0.011655,
         "6": 0.0123
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "modeTransitions": [

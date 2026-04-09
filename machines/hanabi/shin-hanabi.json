@@ -109,9 +109,9 @@
         {
           "name": "バラケ目",
           "probabilities": {
-            "1": 6.1e-05,
-            "2": 6.1e-05,
-            "5": 6.1e-05,
+            "1": 0.000061,
+            "2": 0.000061,
+            "5": 0.000061,
             "6": 0.0015259
           },
           "hasSettingDiff": true,
@@ -283,7 +283,8 @@
         "5": 0.0039063,
         "6": 0.004029
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "reg_rate",
@@ -295,7 +296,8 @@
         "5": 0.0032659,
         "6": 0.0035702
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "id": "bonus_total",
@@ -307,7 +309,8 @@
         "5": 0.0071736,
         "6": 0.0075988
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     }
   ],
   "endScreens": [

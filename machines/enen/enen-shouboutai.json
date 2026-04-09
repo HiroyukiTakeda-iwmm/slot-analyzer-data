@@ -192,7 +192,8 @@
         "5": 0.00578,
         "6": 0.005917
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "enen_gekitou",
@@ -205,7 +206,8 @@
         "5": 0.001636,
         "6": 0.001745
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

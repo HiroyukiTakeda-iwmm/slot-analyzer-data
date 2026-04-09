@@ -163,7 +163,8 @@
         "5": 0.003815,
         "6": 0.004165
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "reg_rate",
@@ -177,7 +178,8 @@
         "5": 0.003342,
         "6": 0.004044
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "endScreens": [

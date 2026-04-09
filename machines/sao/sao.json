@@ -220,7 +220,8 @@
         "5": 0.004232,
         "6": 0.004815
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "cz_first_hit",
@@ -234,7 +235,8 @@
         "5": 0.008137,
         "6": 0.008756
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

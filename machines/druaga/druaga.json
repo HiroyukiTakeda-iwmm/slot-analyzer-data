@@ -114,7 +114,8 @@
         "5": 0.000229,
         "6": 0.00032
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "cherry_reg",
@@ -126,7 +127,8 @@
         "5": 0.000336,
         "6": 0.000458
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "id": "at_reg_point",
@@ -138,7 +140,8 @@
         "5": 0.278,
         "6": 0.332
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     }
   ],
   "author": "コミュニティ",

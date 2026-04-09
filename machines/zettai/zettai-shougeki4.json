@@ -221,7 +221,8 @@
         "5": 0.003289,
         "6": 0.003759
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "bonus_rate",
@@ -235,7 +236,8 @@
         "5": 0.004329,
         "6": 0.004444
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#9C27B0"
     }
   ],
   "author": "コミュニティ",

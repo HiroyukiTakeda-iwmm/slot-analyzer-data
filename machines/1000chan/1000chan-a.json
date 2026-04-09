@@ -163,7 +163,8 @@
         "5": 0.006775,
         "6": 0.007228
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     }
   ],
   "endScreens": [

@@ -204,7 +204,8 @@
         "5": 0.063,
         "6": 0.066
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     }
   ],
   "author": "community",

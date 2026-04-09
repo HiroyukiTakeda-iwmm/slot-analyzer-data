@@ -182,7 +182,8 @@
         "5": 0.004237,
         "6": 0.004405
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#9C27B0"
     },
     {
       "id": "enen_loop",
@@ -196,7 +197,8 @@
         "5": 0.001931,
         "6": 0.002058
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

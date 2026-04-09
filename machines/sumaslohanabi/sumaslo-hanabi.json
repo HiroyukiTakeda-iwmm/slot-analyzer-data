@@ -121,7 +121,8 @@
         "5": 0.00351,
         "6": 0.003662
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "reg_rate",
@@ -133,7 +134,8 @@
         "5": 0.003189,
         "6": 0.00354
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "id": "bonus_total",
@@ -145,7 +147,8 @@
         "5": 0.006699,
         "6": 0.007204
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     }
   ],
   "endScreens": [

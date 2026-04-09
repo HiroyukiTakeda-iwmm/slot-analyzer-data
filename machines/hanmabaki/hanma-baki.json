@@ -336,7 +336,8 @@
         "5": 0.002075,
         "6": 0.002081
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "hanma_bonus",
@@ -350,7 +351,8 @@
         "5": 0.003984,
         "6": 0.003998
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

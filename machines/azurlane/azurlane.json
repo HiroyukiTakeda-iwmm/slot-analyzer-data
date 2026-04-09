@@ -268,7 +268,8 @@
         "5": 0.002014,
         "6": 0.002139
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "bonus_first_hit",
@@ -282,7 +283,8 @@
         "5": 0.006293,
         "6": 0.00641
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#9C27B0"
     }
   ],
   "author": "コミュニティ",

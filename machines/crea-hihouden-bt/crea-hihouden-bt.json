@@ -294,7 +294,8 @@
         "5": 0.003815,
         "6": 0.004165
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "rb_rate",
@@ -308,7 +309,8 @@
         "5": 0.003341,
         "6": 0.004044
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

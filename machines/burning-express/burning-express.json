@@ -86,7 +86,8 @@
         "5": 0.005574,
         "6": 0.005701
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#9C27B0"
     }
   ]
 }

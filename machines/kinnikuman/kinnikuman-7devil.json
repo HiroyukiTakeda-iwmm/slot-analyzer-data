@@ -209,7 +209,8 @@
         "5": 0.002852,
         "6": 0.002971
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "seigi_challenge",
@@ -222,7 +223,8 @@
         "5": 0.010615,
         "6": 0.010905
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

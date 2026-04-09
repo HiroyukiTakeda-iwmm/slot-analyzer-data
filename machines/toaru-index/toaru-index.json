@@ -332,7 +332,8 @@
         "5": 0.012,
         "6": 0.016
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "弱レア役CZ当選率（対応キャラあり・200G以降）",
@@ -345,7 +346,8 @@
         "5": 0.508,
         "6": 0.527
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "OVER BREAK当選率（250以上余剰ダメージ時）",
@@ -358,7 +360,8 @@
         "5": 0.313,
         "6": 0.672
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     },
     {
       "name": "EP&SP当選率（通常時）",
@@ -371,7 +374,8 @@
         "5": 0.000292,
         "6": 0.000356
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "color": "#FF9800"
     },
     {
       "name": "ガールズコレクション当選率（通常状態）",
@@ -384,7 +388,8 @@
         "5": 0.012,
         "6": 0.016
       },
-      "displayOrder": 5
+      "displayOrder": 5,
+      "color": "#4CAF50"
     },
     {
       "name": "ガールズコレクション当選率（高確状態）",
@@ -397,7 +402,8 @@
         "5": 0.313,
         "6": 0.336
       },
-      "displayOrder": 6
+      "displayOrder": 6,
+      "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",

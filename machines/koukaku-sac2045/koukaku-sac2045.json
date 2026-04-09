@@ -490,7 +490,8 @@
         "5": 0.101,
         "6": 0.106
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "タチコマSAM出現期待度（200G/400G合算）",
@@ -503,7 +504,8 @@
         "5": 0.458,
         "6": 0.483
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "AT突入時引き戻しストック期待度",
@@ -516,7 +518,8 @@
         "5": 0.083,
         "6": 0.096
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     },
     {
       "name": "設定変更時/AT後の高確以上移行率",
@@ -529,20 +532,22 @@
         "5": 0.567,
         "6": 0.584
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "color": "#FF9800"
     },
     {
       "name": "殲滅ZONE（白～紫）発展時のAT直撃確率",
       "description": "設定1: 1/10676.6、設定6: 1/4473.0",
       "probabilities": {
-        "1": 9.4e-05,
+        "1": 0.000094,
         "2": 0.000102,
         "3": 0.000129,
         "4": 0.000163,
         "5": 0.000191,
         "6": 0.000224
       },
-      "displayOrder": 5
+      "displayOrder": 5,
+      "color": "#4CAF50"
     }
   ],
   "author": "コミュニティ",

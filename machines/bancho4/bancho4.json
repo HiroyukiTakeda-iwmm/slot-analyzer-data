@@ -228,7 +228,8 @@
         "5": 0.129,
         "6": 0.156
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "kakutei_taiketsu_normal",
@@ -242,7 +243,8 @@
         "5": 0.186,
         "6": 0.192
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

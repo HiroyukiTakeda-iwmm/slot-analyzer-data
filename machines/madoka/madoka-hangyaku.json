@@ -206,7 +206,8 @@
         "5": 0.002746,
         "6": 0.003454
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "at_chokugeki",
@@ -220,7 +221,8 @@
         "5": 0.000574,
         "6": 0.000824
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

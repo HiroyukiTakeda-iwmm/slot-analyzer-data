@@ -242,7 +242,8 @@
         "5": 0.002778,
         "6": 0.002808
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "cz_rate",
@@ -256,7 +257,8 @@
         "5": 0.006177,
         "6": 0.006289
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "endScreens": [

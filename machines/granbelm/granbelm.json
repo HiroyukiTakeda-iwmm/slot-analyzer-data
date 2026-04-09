@@ -268,7 +268,8 @@
         "5": 0.002721,
         "6": 0.002889
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "cz_total",
@@ -282,7 +283,8 @@
         "5": 0.004079,
         "6": 0.004246
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

@@ -309,7 +309,8 @@
         "5": 0.277,
         "6": 0.305
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "AT中殲滅作戦突入率（スイカ成立時）",
@@ -321,7 +322,8 @@
         "5": 0.375,
         "6": 0.391
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "殲滅作戦勝利期待度",
@@ -333,7 +335,8 @@
         "5": 0.529,
         "6": 0.653
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     },
     {
       "name": "初期状態高確以上移行率",
@@ -345,7 +348,8 @@
         "5": 0.188,
         "6": 0.211
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "color": "#FF9800"
     },
     {
       "name": "G侵食役発動失敗時スルー天井減算率",
@@ -357,7 +361,8 @@
         "5": 0.117,
         "6": 0.125
       },
-      "displayOrder": 5
+      "displayOrder": 5,
+      "color": "#4CAF50"
     }
   ],
   "author": "コミュニティ",

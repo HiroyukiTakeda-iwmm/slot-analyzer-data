@@ -142,7 +142,8 @@
         "5": 0.004165,
         "6": 0.004365
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "rb_rate",
@@ -156,7 +157,8 @@
         "5": 0.003723,
         "6": 0.004365
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "id": "bonus_total",
@@ -170,7 +172,8 @@
         "5": 0.007886,
         "6": 0.008726
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     }
   ]
 }

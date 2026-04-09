@@ -238,7 +238,8 @@
         "5": 0.18,
         "6": 0.2
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "100ptごとの初当たり抽選（百の位が奇数pt）",
@@ -251,7 +252,8 @@
         "5": 0.027,
         "6": 0.031
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "100ptごとの初当たり抽選（百の位が偶数pt）",
@@ -264,7 +266,8 @@
         "5": 0.297,
         "6": 0.313
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     }
   ],
   "author": "コミュニティ",

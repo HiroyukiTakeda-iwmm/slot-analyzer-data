@@ -299,7 +299,8 @@
         "5": 0.458,
         "6": 0.483
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "AT突入時 引き戻しストック期待度",
@@ -312,7 +313,8 @@
         "5": 0.083,
         "6": 0.096
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "S.A.M.視覚フラグ保有率",
@@ -325,7 +327,8 @@
         "5": 0.101,
         "6": 0.106
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     },
     {
       "name": "設定変更時/AT後 高確移行率",
@@ -338,7 +341,8 @@
         "5": 0.567,
         "6": 0.584
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "color": "#FF9800"
     }
   ],
   "author": "community",

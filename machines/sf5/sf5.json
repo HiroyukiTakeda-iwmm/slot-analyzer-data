@@ -173,7 +173,8 @@
         "5": 0.027,
         "6": 0.039
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "bb_super_high",
@@ -187,7 +188,8 @@
         "5": 0.094,
         "6": 0.133
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ],
   "author": "コミュニティ",

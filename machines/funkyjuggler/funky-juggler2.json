@@ -112,7 +112,8 @@
         "5": 0.004164931,
         "6": 0.004548397
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "id": "reg_rate",
@@ -126,7 +127,8 @@
         "5": 0.003341125,
         "6": 0.00381551
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     }
   ]
 }

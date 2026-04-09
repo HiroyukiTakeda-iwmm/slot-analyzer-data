@@ -437,7 +437,8 @@
         "5": 0.317,
         "6": 0.333
       },
-      "displayOrder": 1
+      "displayOrder": 1,
+      "color": "#E91E63"
     },
     {
       "name": "ヒドラ目CZ当選率（高確時）",
@@ -450,7 +451,8 @@
         "5": 0.554,
         "6": 0.6
       },
-      "displayOrder": 2
+      "displayOrder": 2,
+      "color": "#2196F3"
     },
     {
       "name": "チェリー/スイカCZ当選率（高確時）",
@@ -463,7 +465,8 @@
         "5": 0.088,
         "6": 0.092
       },
-      "displayOrder": 3
+      "displayOrder": 3,
+      "color": "#9C27B0"
     },
     {
       "name": "BET高確率ZONE当選率",
@@ -476,7 +479,8 @@
         "5": 0.096,
         "6": 0.104
       },
-      "displayOrder": 4
+      "displayOrder": 4,
+      "color": "#FF9800"
     },
     {
       "name": "450Gゾーン CZ当選率",
@@ -489,7 +493,8 @@
         "5": 0.292,
         "6": 0.304
       },
-      "displayOrder": 5
+      "displayOrder": 5,
+      "color": "#4CAF50"
     },
     {
       "name": "650Gゾーン CZ当選率",
@@ -502,7 +507,8 @@
         "5": 0.192,
         "6": 0.233
       },
-      "displayOrder": 6
+      "displayOrder": 6,
+      "color": "#FFD700"
     }
   ],
   "author": "コミュニティ",
