@@ -1,25 +1,22 @@
-# DEBATE.md - 新規機種大量追加
+# DEBATE.md - データ追加・品質強化スウォーム（Ralph Loop #1）
 
 ## 議題
-2025-2026年の最新パチスロ機種を大量追加する
+新台データ追加 + 既存データ品質強化（Provisional機種完成、endScreens補完、voiceCounts向上）
 
 ## メタデータ
-- 日付: 2026-03-26
+- 日付: 2026-04-09
 - 重要度: Medium
-- 議論モード: 軽量（Phase 1のみ）
-- 参加エージェント: researcher × 3, implementer × 2
+- 議論モード: フル（5体任意）
+- Ralph Loop: Iteration 1/10
 
-## Phase 1: 独立評価
+## 議論ログ
 
-### CEO評価
-- FUTURE_ADDITIONS.md の8候補のうち2台は既登録（sumaslo-hanabi, hanma-baki）
-- 実質6台の候補 + 追加調査で未発見の人気機種を探す
-- 目標: 10-15台以上の新規追加（112台→125台以上）
-- リスク: スクレイピング制限、データ不足の可能性
-- 判定: 承認 → 実行フェーズへ
+（議論内容はここに追記）
 
 ## Ad-hoc Debates
-(なし)
+
+（実行中の緊急議論はここに追記）
 
 ## CEO判断記録
-- [2026-03-26] Medium重要度につきDA/Guardian省略。researcher×3並列 + implementer×2で実行。
+
+（判断記録はここに追記）
