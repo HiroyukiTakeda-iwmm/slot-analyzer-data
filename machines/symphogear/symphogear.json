@@ -496,55 +496,64 @@
       "id": "es_hibiki",
       "name": "響1人（デフォルト）",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     },
     {
       "id": "es_white1",
       "name": "白①",
       "type": "at_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "es_white2",
       "name": "白②",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "es_red1",
       "name": "赤①",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "es_red2",
       "name": "赤②",
       "type": "at_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "es_purple1",
       "name": "紫①",
       "type": "at_end",
-      "hint": "設定2以上確定"
+      "hint": "設定2以上確定",
+      "color": "#78909C"
     },
     {
       "id": "es_purple2",
       "name": "紫②",
       "type": "at_end",
-      "hint": "設定2以上確定"
+      "hint": "設定2以上確定",
+      "color": "#78909C"
     },
     {
       "id": "es_silver",
       "name": "銀",
       "type": "at_end",
-      "hint": "設定4以上確定"
+      "hint": "設定4以上確定",
+      "color": "#C0C0C0"
     },
     {
       "id": "es_gold",
       "name": "金",
       "type": "at_end",
-      "hint": "設定6確定"
+      "hint": "設定6確定",
+      "color": "#FFD700"
     }
   ],
   "voiceCounts": [

@@ -191,13 +191,15 @@
       "id": "story_1_3",
       "name": "1話or3話スタート",
       "type": "at_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "story_2_4",
       "name": "2話or4話スタート",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "story_5",

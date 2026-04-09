@@ -196,13 +196,15 @@
       "id": "hajime_kaori_aiko",
       "name": "ハジメ→香織→愛子",
       "type": "bonus_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "yue_shia_tio",
       "name": "ユエ→シア→ティオ",
       "type": "bonus_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "kouki_shizuku_sakagami",

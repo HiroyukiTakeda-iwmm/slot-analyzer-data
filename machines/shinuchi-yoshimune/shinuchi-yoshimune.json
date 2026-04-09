@@ -51,11 +51,11 @@
       "name": "CZ初当り",
       "probabilities": {
         "1": 0.003195,
-        "2": 0.003300,
+        "2": 0.0033,
         "3": 0.003527,
         "4": 0.003743,
         "5": 0.003893,
-        "6": 0.003990
+        "6": 0.00399
       },
       "hasSettingDiff": true,
       "displayOrder": 4,
@@ -83,32 +83,64 @@
       "id": "maisu_456",
       "name": "獲得枚数456枚突破",
       "description": "AT中の獲得枚数が456枚を突破で設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3"
+      ],
       "color": "#FF9800"
     },
     {
       "id": "maisu_555",
       "name": "獲得枚数555枚突破",
       "description": "AT中の獲得枚数が555枚を突破で設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "color": "#F44336"
     },
     {
       "id": "maisu_666",
       "name": "獲得枚数666枚突破",
       "description": "AT中の獲得枚数が666枚を突破で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#E91E63"
     },
     {
       "id": "copanda_trophy_rainbow",
       "name": "コパンダトロフィー 虹",
       "description": "コパンダトロフィー虹出現で設定6濃厚",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     }
   ],
@@ -117,7 +149,8 @@
       "id": "default",
       "name": "通常画面（吉宗）",
       "type": "at_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "oooka_echizen",
@@ -138,7 +171,13 @@
       "name": "コパンダトロフィー 銅",
       "type": "at_end",
       "hint": "設定2以上濃厚",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
       "color": "#CD7F32"
     },
     {
@@ -146,7 +185,12 @@
       "name": "コパンダトロフィー 銀",
       "type": "at_end",
       "hint": "設定3以上濃厚",
-      "confirmedSettings": ["3", "4", "5", "6"],
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
       "color": "#C0C0C0"
     },
     {
@@ -154,7 +198,11 @@
       "name": "コパンダトロフィー 金",
       "type": "at_end",
       "hint": "設定4以上濃厚",
-      "confirmedSettings": ["4", "5", "6"],
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
       "color": "#FFD700"
     },
     {
@@ -162,7 +210,10 @@
       "name": "コパンダトロフィー イナズマ",
       "type": "at_end",
       "hint": "設定5以上濃厚",
-      "confirmedSettings": ["5", "6"],
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
       "color": "#FFEB3B"
     },
     {
@@ -170,7 +221,9 @@
       "name": "コパンダトロフィー 虹",
       "type": "at_end",
       "hint": "設定6濃厚",
-      "confirmedSettings": ["6"],
+      "confirmedSettings": [
+        "6"
+      ],
       "color": "#00BCD4"
     }
   ],
@@ -196,11 +249,11 @@
       "description": "設定1: 1/313.0、設定6: 1/250.6",
       "probabilities": {
         "1": 0.003195,
-        "2": 0.003300,
+        "2": 0.0033,
         "3": 0.003527,
         "4": 0.003743,
         "5": 0.003893,
-        "6": 0.003990
+        "6": 0.00399
       },
       "color": "#2196F3",
       "displayOrder": 2

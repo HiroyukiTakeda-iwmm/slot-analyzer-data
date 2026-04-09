@@ -192,61 +192,71 @@
       "id": "es_motoko",
       "name": "素子（デフォルト）",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     },
     {
       "id": "es_2ndgig",
       "name": "2ndGIG",
       "type": "at_end",
-      "hint": "白の境界権利あり"
+      "hint": "白の境界権利あり",
+      "color": "#78909C"
     },
     {
       "id": "es_togusa",
       "name": "トグサ",
       "type": "at_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "es_batou",
       "name": "バトー",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "es_motoko_tachi",
       "name": "素子＆タチコマ",
       "type": "at_end",
-      "hint": "高設定示唆"
+      "hint": "高設定示唆",
+      "color": "#FF9800"
     },
     {
       "id": "es_poker",
       "name": "ポーカー",
       "type": "at_end",
-      "hint": "高モード期待度アップ"
+      "hint": "高モード期待度アップ",
+      "color": "#78909C"
     },
     {
       "id": "es_motoko_back",
       "name": "素子の後ろ姿",
       "type": "at_end",
-      "hint": "通常B以上濃厚"
+      "hint": "通常B以上濃厚",
+      "color": "#607D8B"
     },
     {
       "id": "es_9ka_red",
       "name": "公安9課（赤枠）",
       "type": "at_end",
-      "hint": "通常C以上濃厚"
+      "hint": "通常C以上濃厚",
+      "color": "#607D8B"
     },
     {
       "id": "es_dennou",
       "name": "電脳素子（紫枠）",
       "type": "at_end",
-      "hint": "通常C以上濃厚"
+      "hint": "通常C以上濃厚",
+      "color": "#607D8B"
     },
     {
       "id": "es_aoi",
       "name": "アオイ（金枠）",
       "type": "at_end",
-      "hint": "通常D確定＋設定4以上示唆"
+      "hint": "通常D確定＋設定4以上示唆",
+      "color": "#FFD700"
     }
   ],
   "voiceCounts": []

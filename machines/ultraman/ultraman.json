@@ -215,19 +215,22 @@
       "id": "shinji",
       "name": "進次郎",
       "type": "at_end",
-      "hint": "基本画面"
+      "hint": "基本画面",
+      "color": "#607D8B"
     },
     {
       "id": "moroboshi",
       "name": "諸星",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "hokuto",
       "name": "北斗",
       "type": "at_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "rena",

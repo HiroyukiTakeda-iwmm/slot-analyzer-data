@@ -294,13 +294,15 @@
       "id": "valentine",
       "name": "バレンタインデー（白枠）",
       "type": "bonus_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "whiteday",
       "name": "ホワイトデー（白枠）",
       "type": "bonus_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "valentine_strong",

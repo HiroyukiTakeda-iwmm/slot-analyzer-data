@@ -180,31 +180,36 @@
       "id": "トロフィー銅",
       "name": "トロフィー銅",
       "type": "at_end",
-      "hint": "設定2以上濃厚"
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
     },
     {
       "id": "トロフィー銀",
       "name": "トロフィー銀",
       "type": "at_end",
-      "hint": "設定3以上濃厚"
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
     },
     {
       "id": "トロフィー金",
       "name": "トロフィー金",
       "type": "at_end",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "トロフィーケロット",
       "name": "トロフィーケロット",
       "type": "at_end",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
     },
     {
       "id": "トロフィー虹",
       "name": "トロフィー虹",
       "type": "at_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     }
   ],
   "voiceCounts": [],

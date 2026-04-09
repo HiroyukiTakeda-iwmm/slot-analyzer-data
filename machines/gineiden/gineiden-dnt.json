@@ -229,37 +229,43 @@
       "id": "galaxy_yang",
       "name": "ギャラクシーボーナス中 ヤンからスタート",
       "type": "bonus",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "galaxy_frederica",
       "name": "ギャラクシーボーナス中 フレデリカからスタート",
       "type": "bonus",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "galaxy_reinhard",
       "name": "ギャラクシーボーナス中 ラインハルトからスタート",
       "type": "bonus",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "galaxy_hildegard",
       "name": "ギャラクシーボーナス中 ヒルデガルドからスタート",
       "type": "bonus",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "galaxy_merkatz",
       "name": "ギャラクシーボーナス中 最後がメルカッツ",
       "type": "bonus",
-      "hint": "設定3以上濃厚"
+      "hint": "設定3以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "galaxy_annerose",
       "name": "ギャラクシーボーナス中 最後がアンネローゼ",
       "type": "bonus",
-      "hint": "設定3以上濃厚"
+      "hint": "設定3以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "trophy_bronze",

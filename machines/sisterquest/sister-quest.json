@@ -262,25 +262,29 @@
       "id": "sunny",
       "name": "晴れ",
       "type": "at_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "cloudy",
       "name": "くもり",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "evening",
       "name": "夕方",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "thunder",
       "name": "落雷",
       "type": "at_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "shifon_stella",

@@ -230,7 +230,8 @@
       "id": "default",
       "name": "通常画面",
       "type": "at_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "setting_hint",

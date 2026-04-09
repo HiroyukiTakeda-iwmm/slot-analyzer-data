@@ -158,13 +158,15 @@
       "id": "narumi_stage",
       "name": "鳴海ステージ開始",
       "type": "at_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "masaru_stage",
       "name": "勝ステージ開始",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "same_stage",

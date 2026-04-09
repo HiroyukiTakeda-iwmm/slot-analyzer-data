@@ -268,79 +268,92 @@
       "id": "at_end_chatsumi",
       "name": "終了画面「茶摘み」",
       "type": "at_end",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "at_end_rq",
       "name": "終了画面「レースクイーン」",
       "type": "at_end",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
     },
     {
       "id": "at_end_onsen",
       "name": "終了画面「温泉」",
       "type": "at_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     },
     {
       "id": "fuji_1",
       "name": "終了画面「富士山」1回",
       "type": "at_end",
-      "hint": "設定2以上濃厚"
+      "hint": "設定2以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "fuji_2",
       "name": "終了画面「富士山」2回",
       "type": "at_end",
-      "hint": "設定3以上濃厚"
+      "hint": "設定3以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "fuji_3",
       "name": "終了画面「富士山」3回",
       "type": "at_end",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "fuji_4",
       "name": "終了画面「富士山」4回",
       "type": "at_end",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
     },
     {
       "id": "fuji_5",
       "name": "終了画面「富士山」5回",
       "type": "at_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     },
     {
       "id": "es_kongou",
       "name": "轟金剛",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#FFD700"
     },
     {
       "id": "es_hamburg",
       "name": "ハンバーグ",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "es_safari",
       "name": "サファリ",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "es_shopping",
       "name": "ショッピング",
       "type": "at_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "es_sakasa_fuji",
       "name": "逆さ富士",
       "type": "bonus_end",
-      "hint": "逆さ富士モード濃厚"
+      "hint": "逆さ富士モード濃厚",
+      "color": "#78909C"
     }
   ],
   "voiceCounts": [

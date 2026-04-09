@@ -104,19 +104,22 @@
       ],
       "id": "AT終了画面",
       "type": "at_end",
-      "hint": "設定示唆"
+      "hint": "設定示唆",
+      "color": "#78909C"
     },
     {
       "id": "at終了画面-小太郎日記",
       "name": "AT終了画面 小太郎日記",
       "type": "at_end",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "at終了画面-秘湯",
       "name": "AT終了画面 秘湯",
       "type": "at_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#E91E63"
     }
   ],
   "voiceCounts": [],

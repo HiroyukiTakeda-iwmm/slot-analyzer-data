@@ -256,7 +256,8 @@
       "id": "es_default",
       "name": "基本画面",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     }
   ],
   "voiceCounts": [

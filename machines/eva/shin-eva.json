@@ -116,7 +116,8 @@
       ],
       "id": "ボーナス終了画面",
       "type": "bonus_end",
-      "hint": "設定示唆"
+      "hint": "設定示唆",
+      "color": "#78909C"
     },
     {
       "name": "獲得枚数表示",
@@ -139,7 +140,8 @@
       ],
       "id": "獲得枚数表示",
       "type": "at_end",
-      "hint": "設定示唆"
+      "hint": "設定示唆",
+      "color": "#78909C"
     },
     {
       "id": "end_screen_silver",

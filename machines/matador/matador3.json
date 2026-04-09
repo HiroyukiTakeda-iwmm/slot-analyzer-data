@@ -101,7 +101,8 @@
       "id": "condor_blue",
       "name": "コンドルランプ青",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "condor_green",

@@ -355,19 +355,22 @@
       "id": "es_none",
       "name": "キャラなし",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     },
     {
       "id": "es_hanekawa",
       "name": "羽川",
       "type": "at_end",
-      "hint": "高設定示唆[弱]"
+      "hint": "高設定示唆[弱]",
+      "color": "#FF9800"
     },
     {
       "id": "es_hunter",
       "name": "吸血鬼ハンター",
       "type": "at_end",
-      "hint": "高設定示唆[強]"
+      "hint": "高設定示唆[強]",
+      "color": "#FF9800"
     }
   ],
   "voiceCounts": []

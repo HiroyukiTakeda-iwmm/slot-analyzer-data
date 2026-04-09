@@ -126,7 +126,8 @@
       "id": "default",
       "name": "通常写真",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "setting_hint",

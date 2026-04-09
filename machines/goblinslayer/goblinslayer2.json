@@ -200,31 +200,36 @@
       "id": "藤丸コイン銅",
       "name": "藤丸コイン銅",
       "type": "at_end",
-      "hint": "設定2以上濃厚"
+      "hint": "設定2以上濃厚",
+      "color": "#CD7F32"
     },
     {
       "id": "藤丸コイン銀",
       "name": "藤丸コイン銀",
       "type": "at_end",
-      "hint": "設定3以上濃厚"
+      "hint": "設定3以上濃厚",
+      "color": "#C0C0C0"
     },
     {
       "id": "藤丸コイン金",
       "name": "藤丸コイン金",
       "type": "at_end",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "藤丸コインDANGER柄",
       "name": "藤丸コインDANGER柄",
       "type": "at_end",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
     },
     {
       "id": "藤丸コイン虹",
       "name": "藤丸コイン虹",
       "type": "at_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     }
   ],
   "voiceCounts": [],

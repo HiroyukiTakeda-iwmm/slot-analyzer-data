@@ -91,25 +91,29 @@
       "id": "bg_yellow",
       "name": "BIG終了画面 黄背景",
       "type": "big_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "bg_green",
       "name": "BIG終了画面 緑背景",
       "type": "big_end",
-      "hint": "高設定示唆（中）"
+      "hint": "高設定示唆（中）",
+      "color": "#FF9800"
     },
     {
       "id": "bg_purple",
       "name": "BIG終了画面 紫背景",
       "type": "big_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "bg_rainbow",
       "name": "BIG終了画面 虹背景",
       "type": "big_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "color": "#00BCD4"
     },
     {
       "id": "trophy_bronze",

@@ -214,31 +214,36 @@
       "name": "BIG終了 通常画面",
       "type": "bonus_end",
       "hint": "デフォルト",
-      "id": "BIG終了_通常画面"
+      "id": "BIG終了_通常画面",
+      "color": "#607D8B"
     },
     {
       "name": "BIG終了 放電画面",
       "type": "bonus_end",
       "hint": "設定2以上濃厚",
-      "id": "BIG終了_放電画面"
+      "id": "BIG終了_放電画面",
+      "color": "#78909C"
     },
     {
       "name": "1G連BIG終了 流星画面",
       "type": "bonus_end",
       "hint": "設定2以上濃厚",
-      "id": "1G連BIG終了_流星画面"
+      "id": "1G連BIG終了_流星画面",
+      "color": "#78909C"
     },
     {
       "name": "RB終了 通常画面（END表示）",
       "type": "bonus_end",
       "hint": "デフォルト",
-      "id": "RB終了_通常画面（END表示）"
+      "id": "RB終了_通常画面（END表示）",
+      "color": "#607D8B"
     },
     {
       "name": "RB終了 イッカククン画面",
       "type": "bonus_end",
       "hint": "設定5以上濃厚",
-      "id": "RB終了_イッカククン画面"
+      "id": "RB終了_イッカククン画面",
+      "color": "#FF5722"
     },
     {
       "id": "rb終了画面_イッカククン",

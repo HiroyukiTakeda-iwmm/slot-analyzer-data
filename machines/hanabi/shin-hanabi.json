@@ -18,7 +18,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 1,
-      "color": "#FFCA28"
+      "color": "#FFCA28",
+      "description": "設定1: 1/7.7、設定6: 1/7.3"
     },
     {
       "name": "チェリー合算",
@@ -30,7 +31,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 2,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "description": "設定1: 1/16.4、設定6: 1/15.6"
     },
     {
       "name": "氷合算",
@@ -42,7 +44,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 3,
-      "color": "#03A9F4"
+      "color": "#03A9F4",
+      "description": "設定1: 1/51.2、設定6: 1/49.3"
     },
     {
       "name": "BIG確率",
@@ -54,7 +57,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 4,
-      "color": "#F44336"
+      "color": "#F44336",
+      "description": "設定1: 1/277.7、設定6: 1/248.2"
     },
     {
       "name": "REG確率",
@@ -66,7 +70,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 5,
-      "color": "#9C27B0"
+      "color": "#9C27B0",
+      "description": "設定1: 1/356.2、設定6: 1/280.1"
     },
     {
       "name": "ボーナス合算",
@@ -78,7 +83,8 @@
       },
       "hasSettingDiff": true,
       "displayOrder": 6,
-      "color": "#FF9800"
+      "color": "#FF9800",
+      "description": "設定1: 1/156.0、設定6: 1/131.6"
     }
   ],
   "zones": [

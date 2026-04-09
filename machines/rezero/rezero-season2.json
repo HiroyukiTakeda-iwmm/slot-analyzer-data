@@ -224,7 +224,8 @@
       "description": "6パターンの設定示唆画面あり",
       "id": "殲滅ラッシュ終了画面",
       "type": "at_end",
-      "hint": "設定示唆"
+      "hint": "設定示唆",
+      "color": "#78909C"
     },
     {
       "id": "end_rabbit_cosplay",

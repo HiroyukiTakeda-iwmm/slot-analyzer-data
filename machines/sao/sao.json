@@ -284,13 +284,15 @@
       "id": "es_asuna_kirito",
       "name": "アスナ/キリト",
       "type": "at_end",
-      "hint": "デフォルト（基本パターン1）"
+      "hint": "デフォルト（基本パターン1）",
+      "color": "#607D8B"
     },
     {
       "id": "es_kayaba",
       "name": "茅場/ヒースクリフ対峙",
       "type": "at_end",
-      "hint": "デフォルト（基本パターン2）"
+      "hint": "デフォルト（基本パターン2）",
+      "color": "#607D8B"
     }
   ],
   "voiceCounts": []

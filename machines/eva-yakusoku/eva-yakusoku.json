@@ -167,37 +167,43 @@
       "name": "シンジ",
       "type": "bonus_end",
       "hint": "基本パターン",
-      "id": "シンジ"
+      "id": "シンジ",
+      "color": "#607D8B"
     },
     {
       "name": "レイ",
       "type": "bonus_end",
       "hint": "基本パターン",
-      "id": "レイ"
+      "id": "レイ",
+      "color": "#607D8B"
     },
     {
       "name": "アスカ",
       "type": "bonus_end",
       "hint": "基本パターン",
-      "id": "アスカ"
+      "id": "アスカ",
+      "color": "#607D8B"
     },
     {
       "name": "マリ",
       "type": "bonus_end",
       "hint": "基本パターン",
-      "id": "マリ"
+      "id": "マリ",
+      "color": "#607D8B"
     },
     {
       "name": "ミサト",
       "type": "bonus_end",
       "hint": "基本パターン",
-      "id": "ミサト"
+      "id": "ミサト",
+      "color": "#607D8B"
     },
     {
       "name": "カヲル",
       "type": "bonus_end",
       "hint": "設定6濃厚",
-      "id": "カヲル"
+      "id": "カヲル",
+      "color": "#E91E63"
     },
     {
       "id": "ボーナス終了画面_カヲル",

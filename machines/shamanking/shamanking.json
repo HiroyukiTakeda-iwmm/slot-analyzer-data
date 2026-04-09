@@ -309,7 +309,8 @@
       "id": "default",
       "name": "基本パターン",
       "type": "at_end",
-      "hint": "基本画面"
+      "hint": "基本画面",
+      "color": "#607D8B"
     },
     {
       "id": "multi_chara",

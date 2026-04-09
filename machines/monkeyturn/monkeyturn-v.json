@@ -368,49 +368,57 @@
       "id": "sg_blue",
       "name": "SGメダル青",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "sg_yellow",
       "name": "SGメダル黄",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "sg_black",
       "name": "SGメダル黒",
       "type": "at_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "helmet_plain",
       "name": "ヘルメット ロゴなし",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     },
     {
       "id": "helmet_logo",
       "name": "ヘルメット ロゴあり",
       "type": "at_end",
-      "hint": "通常B期待度アップ"
+      "hint": "通常B期待度アップ",
+      "color": "#607D8B"
     },
     {
       "id": "helmet_kirakira",
       "name": "ヘルメット ロゴ+キラキラ",
       "type": "at_end",
-      "hint": "通常B or 天国濃厚"
+      "hint": "通常B or 天国濃厚",
+      "color": "#607D8B"
     },
     {
       "id": "helmet_v",
       "name": "ヘルメット ロゴ+V",
       "type": "at_end",
-      "hint": "天国濃厚"
+      "hint": "天国濃厚",
+      "color": "#78909C"
     },
     {
       "id": "helmet_arisa",
       "name": "ヘルメット ありさ映り込み",
       "type": "at_end",
-      "hint": "AT復活濃厚"
+      "hint": "AT復活濃厚",
+      "color": "#78909C"
     }
   ],
   "voiceCounts": []

@@ -364,37 +364,43 @@
       "id": "sb_end_hades_castle",
       "name": "SB終了画面 ハーデス城外観",
       "type": "bonus_end",
-      "hint": "奇数設定示唆（設定1・5）"
+      "hint": "奇数設定示唆（設定1・5）",
+      "color": "#9C27B0"
     },
     {
       "id": "sb_end_ruined_12temples",
       "name": "SB終了画面 荒廃した十二宮",
       "type": "bonus_end",
-      "hint": "偶数設定示唆（設定2・4・6）"
+      "hint": "偶数設定示唆（設定2・4・6）",
+      "color": "#2196F3"
     },
     {
       "id": "at_end_seiya",
       "name": "AT終了画面 星矢",
       "type": "at_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "color": "#607D8B"
     },
     {
       "id": "at_end_hyoga_shun",
       "name": "AT終了画面 氷河＆瞬",
       "type": "at_end",
-      "hint": "奇数設定示唆（設定1・5）"
+      "hint": "奇数設定示唆（設定1・5）",
+      "color": "#9C27B0"
     },
     {
       "id": "at_end_seiya_shiryu",
       "name": "AT終了画面 星矢＆紫龍",
       "type": "at_end",
-      "hint": "偶数設定示唆（設定2・4・6）"
+      "hint": "偶数設定示唆（設定2・4・6）",
+      "color": "#2196F3"
     },
     {
       "id": "at_end_4saints",
       "name": "AT終了画面 星矢＆紫龍＆氷河＆瞬",
       "type": "at_end",
-      "hint": "高設定示唆"
+      "hint": "高設定示唆",
+      "color": "#FF9800"
     },
     {
       "id": "sb_start_shun",
@@ -540,11 +546,11 @@
       "name": "黄金想話トータル突入率",
       "description": "設定1: 1/24930.2、設定6: 1/20426.3。AT直撃時の約1/4で発生。分母が大きいため参考程度",
       "probabilities": {
-        "1": 4e-05,
-        "2": 4.3e-05,
-        "4": 4.7e-05,
-        "5": 4.8e-05,
-        "6": 4.9e-05,
+        "1": 0.00004,
+        "2": 0.000043,
+        "4": 0.000047,
+        "5": 0.000048,
+        "6": 0.000049,
         "L": 0
       },
       "color": "#FFD700",

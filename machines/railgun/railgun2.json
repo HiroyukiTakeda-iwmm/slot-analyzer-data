@@ -215,13 +215,15 @@
       "id": "end_screen_friends_b",
       "name": "AT終了画面 大切な友達B",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "end_screen_misaka_shokuhou_a",
       "name": "AT終了画面 御坂美琴&食蜂操祈A（枠なし）",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "end_screen_misaka_sister",

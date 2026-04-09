@@ -149,19 +149,22 @@
       "id": "end_screen_itaru",
       "name": "ボーナス終了画面 イタル",
       "type": "bonus_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "end_screen_asuka_kotone",
       "name": "ボーナス終了画面 アスカ/コトネ",
       "type": "bonus_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "end_screen_three",
       "name": "ボーナス終了画面 イタル/アスカ/コトネ",
       "type": "bonus_end",
-      "hint": "高設定示唆"
+      "hint": "高設定示唆",
+      "color": "#FF9800"
     },
     {
       "id": "end_screen_aru_miku_shirube",

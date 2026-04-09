@@ -216,7 +216,8 @@
       "id": "st_ayame",
       "name": "ST終了画面 菖蒲",
       "type": "st_end",
-      "hint": "高設定示唆（設定1: 1.2%、設定6: 6.1%）"
+      "hint": "高設定示唆（設定1: 1.2%、設定6: 6.1%）",
+      "color": "#E91E63"
     },
     {
       "id": "sammy_trophy_bronze",

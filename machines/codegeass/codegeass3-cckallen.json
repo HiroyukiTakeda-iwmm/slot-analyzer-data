@@ -199,19 +199,22 @@
       "id": "end_screen_kallen",
       "name": "AT終了画面 カレン",
       "type": "at_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "end_screen_childhood",
       "name": "AT終了画面 幼少期",
       "type": "at_end",
-      "hint": "高設定示唆（弱）"
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
     },
     {
       "id": "end_screen_cc",
       "name": "AT終了画面 C.C.",
       "type": "at_end",
-      "hint": "高設定示唆（強）"
+      "hint": "高設定示唆（強）",
+      "color": "#FF9800"
     },
     {
       "id": "end_screen_hanabatake",

@@ -225,61 +225,71 @@
       "id": "bonus_end_normal",
       "name": "通常終了画面",
       "type": "bonus_end",
-      "hint": "示唆なし（デフォルト）"
+      "hint": "示唆なし（デフォルト）",
+      "color": "#607D8B"
     },
     {
       "id": "bonus_end_star2",
       "name": "レア画面（星2個）",
       "type": "bonus_end",
-      "hint": "設定2以上確定"
+      "hint": "設定2以上確定",
+      "color": "#78909C"
     },
     {
       "id": "bonus_end_star4",
       "name": "Sレア画面（星4個）",
       "type": "bonus_end",
-      "hint": "設定4以上確定"
+      "hint": "設定4以上確定",
+      "color": "#FFD700"
     },
     {
       "id": "bonus_end_star6",
       "name": "Uレア画面（星6個）",
       "type": "bonus_end",
-      "hint": "設定6確定"
+      "hint": "設定6確定",
+      "color": "#E91E63"
     },
     {
       "id": "chapter_ally",
       "name": "CHAPTER演出 仲間キャラ紹介",
       "type": "other",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "chapter_enemy",
       "name": "CHAPTER演出 敵キャラ紹介",
       "type": "other",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "chapter_berserk_saya",
       "name": "CHAPTER演出 暴走小夜",
       "type": "other",
-      "hint": "高設定示唆（設定1・4・5・6で出現しやすい）"
+      "hint": "高設定示唆（設定1・4・5・6で出現しやすい）",
+      "color": "#FF9800"
     },
     {
       "id": "chapter_diva",
       "name": "CHAPTER演出 ディーヴァ",
       "type": "other",
-      "hint": "設定3以上示唆"
+      "hint": "設定3以上示唆",
+      "color": "#78909C"
     },
     {
       "id": "chapter_nathan",
       "name": "CHAPTER演出 ネイサン",
       "type": "other",
-      "hint": "設定4以上濃厚"
+      "hint": "設定4以上濃厚",
+      "color": "#FFD700"
     },
     {
       "id": "chapter_solomon",
       "name": "CHAPTER演出 ソロモン",
       "type": "other",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "color": "#FF5722"
     },
     {
       "id": "bonus_end_rare",

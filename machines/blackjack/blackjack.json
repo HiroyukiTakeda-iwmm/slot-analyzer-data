@@ -246,7 +246,8 @@
       "id": "default_screen",
       "name": "基本画面",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "high_setting_hint",

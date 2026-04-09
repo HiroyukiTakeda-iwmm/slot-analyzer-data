@@ -98,8 +98,16 @@
       "id": "kerot_trophy_rainbow",
       "name": "ケロットトロフィー 虹",
       "description": "ケロットトロフィー虹出現で設定6確定",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
       "color": "#00BCD4"
     }
   ],
@@ -108,7 +116,8 @@
       "id": "default",
       "name": "通常画面",
       "type": "at_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "color": "#607D8B"
     },
     {
       "id": "old_koko_team",
@@ -122,7 +131,9 @@
       "name": "黄金の畑のカカシ",
       "type": "at_end",
       "hint": "設定6濃厚",
-      "confirmedSettings": ["6"],
+      "confirmedSettings": [
+        "6"
+      ],
       "color": "#FFD700"
     }
   ],

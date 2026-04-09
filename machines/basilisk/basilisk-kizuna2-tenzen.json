@@ -213,13 +213,15 @@
       "id": "iga_chars",
       "name": "争忍の刻 伊賀キャラ集合",
       "type": "bt_start",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "kouga_chars",
       "name": "争忍の刻 甲賀キャラ集合",
       "type": "bt_start",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "souninokoku_female",

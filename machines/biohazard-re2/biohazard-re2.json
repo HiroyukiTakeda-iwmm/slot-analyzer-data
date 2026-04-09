@@ -149,19 +149,22 @@
       "id": "figure_zombie_male",
       "name": "フィギュア ゾンビ系（黒枠）",
       "type": "bonus_end",
-      "hint": "奇数設定示唆"
+      "hint": "奇数設定示唆",
+      "color": "#9C27B0"
     },
     {
       "id": "figure_leon",
       "name": "フィギュア レオン系（青枠）",
       "type": "bonus_end",
-      "hint": "偶数設定示唆"
+      "hint": "偶数設定示唆",
+      "color": "#2196F3"
     },
     {
       "id": "figure_tyrant",
       "name": "フィギュア タイラント系（赤枠）",
       "type": "bonus_end",
-      "hint": "高設定示唆"
+      "hint": "高設定示唆",
+      "color": "#FF9800"
     },
     {
       "id": "figure_tofu",

@@ -324,37 +324,43 @@
       "id": "es_white",
       "name": "PC終了画面 白背景",
       "type": "bonus_end",
-      "hint": "天井期待度：低"
+      "hint": "天井期待度：低",
+      "color": "#78909C"
     },
     {
       "id": "es_blue",
       "name": "PC終了画面 青背景",
       "type": "bonus_end",
-      "hint": "天井期待度：低〜中"
+      "hint": "天井期待度：低〜中",
+      "color": "#78909C"
     },
     {
       "id": "es_green",
       "name": "PC終了画面 緑背景",
       "type": "bonus_end",
-      "hint": "天井期待度：中"
+      "hint": "天井期待度：中",
+      "color": "#78909C"
     },
     {
       "id": "es_true_end",
       "name": "PC終了画面 白背景「真の終了画面」",
       "type": "bonus_end",
-      "hint": "ATレベル2以上濃厚"
+      "hint": "ATレベル2以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "es_haijin",
       "name": "PC終了画面 白背景「廃人」",
       "type": "bonus_end",
-      "hint": "ATレベル4以上濃厚"
+      "hint": "ATレベル4以上濃厚",
+      "color": "#78909C"
     },
     {
       "id": "es_all",
       "name": "PC終了画面 白背景「全員集合」",
       "type": "bonus_end",
-      "hint": "ATレベル3以上期待度アップ"
+      "hint": "ATレベル3以上期待度アップ",
+      "color": "#78909C"
     }
   ],
   "voiceCounts": []
