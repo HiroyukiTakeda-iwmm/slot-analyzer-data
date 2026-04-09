@@ -113,7 +113,8 @@
           "setting": "high",
           "description": "高設定示唆"
         }
-      ]
+      ],
+      "id": "ボーナス終了画面"
     },
     {
       "name": "獲得枚数表示",
@@ -133,7 +134,8 @@
           "minSetting": 6,
           "description": "設定6濃厚"
         }
-      ]
+      ],
+      "id": "獲得枚数表示"
     },
     {
       "id": "end_screen_silver",

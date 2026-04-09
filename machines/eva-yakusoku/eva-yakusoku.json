@@ -166,32 +166,38 @@
     {
       "name": "シンジ",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "id": "シンジ"
     },
     {
       "name": "レイ",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "id": "レイ"
     },
     {
       "name": "アスカ",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "id": "アスカ"
     },
     {
       "name": "マリ",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "id": "マリ"
     },
     {
       "name": "ミサト",
       "type": "bonus_end",
-      "hint": "基本パターン"
+      "hint": "基本パターン",
+      "id": "ミサト"
     },
     {
       "name": "カヲル",
       "type": "bonus_end",
-      "hint": "設定6濃厚"
+      "hint": "設定6濃厚",
+      "id": "カヲル"
     },
     {
       "id": "ボーナス終了画面_カヲル",

@@ -195,7 +195,8 @@
           "setting": "highStrong",
           "description": "高設定強"
         }
-      ]
+      ],
+      "id": "AT_ボーナス終了時ランプ色"
     },
     {
       "id": "エンタトロフィー銅",

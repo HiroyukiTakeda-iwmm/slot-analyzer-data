@@ -213,27 +213,32 @@
     {
       "name": "BIG終了 通常画面",
       "type": "bonus_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "id": "BIG終了_通常画面"
     },
     {
       "name": "BIG終了 放電画面",
       "type": "bonus_end",
-      "hint": "設定2以上濃厚"
+      "hint": "設定2以上濃厚",
+      "id": "BIG終了_放電画面"
     },
     {
       "name": "1G連BIG終了 流星画面",
       "type": "bonus_end",
-      "hint": "設定2以上濃厚"
+      "hint": "設定2以上濃厚",
+      "id": "1G連BIG終了_流星画面"
     },
     {
       "name": "RB終了 通常画面（END表示）",
       "type": "bonus_end",
-      "hint": "デフォルト"
+      "hint": "デフォルト",
+      "id": "RB終了_通常画面（END表示）"
     },
     {
       "name": "RB終了 イッカククン画面",
       "type": "bonus_end",
-      "hint": "設定5以上濃厚"
+      "hint": "設定5以上濃厚",
+      "id": "RB終了_イッカククン画面"
     },
     {
       "id": "rb終了画面_イッカククン",
