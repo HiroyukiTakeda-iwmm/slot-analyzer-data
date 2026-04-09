@@ -1,6 +1,6 @@
 {
-  "version": "3.3",
-  "updatedAt": "2026-03-27T10:55:00Z",
+  "version": "3.4",
+  "updatedAt": "2026-04-09T13:30:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -2300,7 +2300,7 @@
       "name": "L真打吉宗",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "shinuchi-yoshimune/shinuchi-yoshimune.json",
       "tags": [
         "AT",
@@ -2310,14 +2310,14 @@
         "2026年4月"
       ],
       "description": "大都技研製スマスロAT機。純増9.0枚/G",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-04-09"
     },
     {
       "id": "yormungandr",
       "name": "スマスロヨルムンガンド",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "yormungandr/yormungandr.json",
       "tags": [
         "AT",
@@ -2327,7 +2327,44 @@
         "2026年4月"
       ],
       "description": "山佐ネクスト製スマスロAT機",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "kyoko-suiri",
+      "name": "スマスロ虚構推理",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kyokosuiri/kyoko-suiri.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ディ・ライト",
+        "6段階設定",
+        "2026年4月",
+        "トロフィー",
+        "新台"
+      ],
+      "description": "ダイナマイトトロフィーとボーナス終了画面キャラで設定示唆。CZ・ボーナス初当り確率に設定差",
+      "lastUpdated": "2026-04-09"
+    },
+    {
+      "id": "akudama-drive",
+      "name": "スマスロ アクダマドライブ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "akudamadrive/akudama-drive.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "三洋物産",
+        "6段階設定",
+        "2026年4月",
+        "新台"
+      ],
+      "description": "上乗せG数で設定確定演出（+22G=設定2以上〜+66G=設定6確定）。CZ当選率に設定差",
+      "lastUpdated": "2026-04-09"
     }
   ]
 }

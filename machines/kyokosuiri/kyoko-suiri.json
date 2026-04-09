@@ -1,0 +1,263 @@
+{
+  "name": "スマスロ虚構推理",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": {
+        "1": 0.015015,
+        "2": 0.015015,
+        "3": 0.015015,
+        "4": 0.015015,
+        "5": 0.015015,
+        "6": 0.015015
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "全設定共通: 1/66.6"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": {
+        "1": 0.003235,
+        "2": 0.003235,
+        "3": 0.003235,
+        "4": 0.003235,
+        "5": 0.003235,
+        "6": 0.003235
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#F44336",
+      "description": "全設定共通: 1/309.1"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.004577,
+        "2": 0.004577,
+        "3": 0.004577,
+        "4": 0.004577,
+        "5": 0.004577,
+        "6": 0.004577
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/218.5"
+    },
+    {
+      "name": "CZ初当り",
+      "probabilities": {
+        "1": 0.008032,
+        "2": 0.008203,
+        "3": 0.008431,
+        "4": 0.008889,
+        "5": 0.009337,
+        "6": 0.009662
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#2196F3",
+      "description": "設定1: 1/124.5、設定6: 1/103.5。CZ「鋼人七瀬攻略議会」への突入率"
+    },
+    {
+      "name": "ボーナス初当り",
+      "probabilities": {
+        "1": 0.002865,
+        "2": 0.002930,
+        "3": 0.003037,
+        "4": 0.003331,
+        "5": 0.003575,
+        "6": 0.003777
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "設定1: 1/349.0、設定6: 1/264.8"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "ダイナマイトトロフィー 銅",
+      "description": "ボーナス終了後に銅トロフィー出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ダイナマイトトロフィー 銀",
+      "description": "ボーナス終了後に銀トロフィー出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ダイナマイトトロフィー 金",
+      "description": "ボーナス終了後に金トロフィー出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_ladybug",
+      "name": "ダイナマイトトロフィー てんとう虫柄",
+      "description": "ボーナス終了後にてんとう虫柄トロフィー出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ダイナマイトトロフィー 虹",
+      "description": "ボーナス終了後に虹トロフィー出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    },
+    {
+      "id": "screen_kuro_kotoko_wedding",
+      "name": "九郎＆琴子（結婚）画面",
+      "description": "ボーナス終了画面で結婚画面出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#E91E63"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "cz_rate",
+      "name": "CZ初当り確率",
+      "description": "鋼人七瀬攻略議会の初当り確率。設定差あり",
+      "probabilities": {
+        "1": 0.008032,
+        "2": 0.008203,
+        "3": 0.008431,
+        "4": 0.008889,
+        "5": 0.009337,
+        "6": 0.009662
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "bonus_rate",
+      "name": "ボーナス初当り確率",
+      "description": "ボーナス初当り確率。設定差あり",
+      "probabilities": {
+        "1": 0.002865,
+        "2": 0.002930,
+        "3": 0.003037,
+        "4": 0.003331,
+        "5": 0.003575,
+        "6": 0.003777
+      },
+      "color": "#9C27B0",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "kuro",
+      "name": "九郎",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆",
+      "color": "#3F51B5"
+    },
+    {
+      "id": "kotoko",
+      "name": "琴子",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆",
+      "color": "#E91E63"
+    },
+    {
+      "id": "kotoko_saki",
+      "name": "琴子＆紗季",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）",
+      "color": "#FF9800"
+    },
+    {
+      "id": "rikka",
+      "name": "六花",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）",
+      "color": "#FF5722"
+    },
+    {
+      "id": "kuro_kotoko_wedding",
+      "name": "九郎＆琴子（結婚）",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "color": "#E91E63"
+    },
+    {
+      "id": "trophy_copper",
+      "name": "ダイナマイトトロフィー 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "ダイナマイトトロフィー 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "ダイナマイトトロフィー 金",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_ladybug",
+      "name": "ダイナマイトトロフィー てんとう虫柄",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "ダイナマイトトロフィー 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-04-09",
+  "source": "ちょんぼりすた、すろぱちくえすと",
+  "description": "純増約6.0枚のスマスロAT機。CZ「鋼人七瀬攻略議会」→ボーナス→「虚構連モード」のゲームフロー。ダイナマイトトロフィーとボーナス終了画面キャラで設定示唆。小役確率は全設定共通のためCZ・ボーナス初当り確率が主な設定判別要素。",
+  "notes": "2026年4月6日導入の新台。速報値を含む可能性あり。虚構連モードには3段階（ショート約56%/ミドル約81%/ロング約95%）の継続率あり。"
+}

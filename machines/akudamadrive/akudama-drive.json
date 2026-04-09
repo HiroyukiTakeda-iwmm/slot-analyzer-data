@@ -1,0 +1,195 @@
+{
+  "name": "スマスロ アクダマドライブ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "小Vベル",
+      "probabilities": {
+        "1": 0.010010,
+        "2": 0.010010,
+        "3": 0.010010,
+        "4": 0.010010,
+        "5": 0.010010,
+        "6": 0.010010
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#FFC107",
+      "description": "全設定共通: 1/99.9"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": {
+        "1": 0.004184,
+        "2": 0.004184,
+        "3": 0.004184,
+        "4": 0.004184,
+        "5": 0.004184,
+        "6": 0.004184
+      },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "全設定共通: 1/239.2"
+    },
+    {
+      "name": "CZ初当り",
+      "probabilities": {
+        "1": 0.006021,
+        "2": 0.006171,
+        "3": 0.006329,
+        "4": 0.006494,
+        "5": 0.006369,
+        "6": 0.006579
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/166.1、設定6: 1/152.1"
+    },
+    {
+      "name": "ボーナス初当り",
+      "probabilities": {
+        "1": 0.003114,
+        "2": 0.003205,
+        "3": 0.003300,
+        "4": 0.003399,
+        "5": 0.003338,
+        "6": 0.003435
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#9C27B0",
+      "description": "設定1: 1/321.2、設定6: 1/291.1"
+    },
+    {
+      "name": "AT初当り",
+      "probabilities": {
+        "1": 0.001800,
+        "2": 0.001870,
+        "3": 0.001942,
+        "4": 0.002016,
+        "5": 0.001978,
+        "6": 0.002119
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "設定1: 1/555.5、設定6: 1/472.0"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "g22",
+      "name": "上乗せ+22G",
+      "description": "+22Gの上乗せで設定2以上確定",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#4CAF50"
+    },
+    {
+      "id": "g33",
+      "name": "上乗せ+33G",
+      "description": "+33Gの上乗せで設定3以上確定",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#8BC34A"
+    },
+    {
+      "id": "g44",
+      "name": "上乗せ+44G",
+      "description": "+44Gの上乗せで設定4以上確定",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#CDDC39"
+    },
+    {
+      "id": "g55",
+      "name": "上乗せ+55G",
+      "description": "+55Gの上乗せで設定5以上確定",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
+      "id": "g66",
+      "name": "上乗せ+66G",
+      "description": "+66Gの上乗せで設定6確定",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#F44336"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "クジラッキートロフィー 虹",
+      "description": "ST終了画面でクジラッキートロフィー虹出現で設定6濃厚",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#00BCD4"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "id": "cz_rate",
+      "name": "CZ初当り確率",
+      "description": "アナライズチャレンジ初当り確率",
+      "probabilities": {
+        "1": 0.006021,
+        "2": 0.006171,
+        "3": 0.006329,
+        "4": 0.006494,
+        "5": 0.006369,
+        "6": 0.006579
+      },
+      "color": "#2196F3",
+      "displayOrder": 1
+    },
+    {
+      "id": "at_rate",
+      "name": "AT初当り確率",
+      "description": "AT初当り確率。設定差あり",
+      "probabilities": {
+        "1": 0.001800,
+        "2": 0.001870,
+        "3": 0.001942,
+        "4": 0.002016,
+        "5": 0.001978,
+        "6": 0.002119
+      },
+      "color": "#FF5722",
+      "displayOrder": 2
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "kenka_chinpira",
+      "name": "喧嘩屋＆チンピラ",
+      "type": "at_end",
+      "hint": "設定示唆",
+      "color": "#FF9800"
+    },
+    {
+      "id": "kumanomi",
+      "name": "クマノミ柄",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "color": "#FF5722"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "クジラッキートロフィー 虹",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "confirmedSettings": ["6"],
+      "color": "#00BCD4"
+    }
+  ],
+  "voiceCounts": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-04-09",
+  "source": "ちょんぼりすた、一撃",
+  "description": "純増約7.1枚のスマスロAT機。ゲーム数上乗せ＋STループの荒波タイプ。上乗せG数による設定確定演出（+22G=設定2以上〜+66G=設定6確定）が特徴。CZ「アナライズチャレンジ」当選率に設定差あり。",
+  "notes": "2026年4月導入の新台。速報値を含む可能性あり。三洋物産初のスマスロ機。"
+}
