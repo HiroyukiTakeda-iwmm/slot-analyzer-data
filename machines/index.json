@@ -1,6 +1,6 @@
 {
-  "version": "3.5",
-  "updatedAt": "2026-04-09T23:15:00Z",
+  "version": "3.6",
+  "updatedAt": "2026-04-19T12:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -49,7 +49,7 @@
         "トロフィー"
       ],
       "description": "金トロフィーで設定4以上確定、キリンで設定5以上確定",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-04-19"
     },
     {
       "id": "hanabi-shin",
@@ -73,7 +73,7 @@
       "name": "スマスロ北斗の拳 転生の章2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.3",
+      "version": "1.4",
       "file": "hokuto/hokuto-tenseino-shou2.json",
       "tags": [
         "AT",
@@ -82,8 +82,8 @@
         "トロフィー",
         "2025年新台"
       ],
-      "description": "天破の刻突入率と弱レア役からの高確移行率に大きな設定差",
-      "lastUpdated": "2026-03-27"
+      "description": "天破の刻突入率と弱レア役からの高確移行率に大きな設定差。朝一256G以内AT当選率にも設定差（設定6で50%以上）",
+      "lastUpdated": "2026-04-19"
     },
     {
       "id": "tekken6",
@@ -1957,7 +1957,7 @@
       "name": "Lリゼロ2 パック&レム",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "rezero2-pack-rem/rezero2-pack-rem.json",
       "tags": [
         "AT",
@@ -1966,7 +1966,7 @@
         "6段階設定"
       ],
       "description": "大都技研製スマスロ。2025年導入。Re:ゼロから始める異世界生活season2のパチスロ。6段階設定。小役確率に設定差なし。AT初当たり確率・引き戻し率・ポイント抽選で設定判別。AT終了画面・菜月家時計で設定示唆。",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-04-19"
     },
     {
       "id": "symphogear",
@@ -2317,7 +2317,7 @@
       "name": "スマスロヨルムンガンド",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "yormungandr/yormungandr.json",
       "tags": [
         "AT",
@@ -2326,8 +2326,8 @@
         "6段階設定",
         "2026年4月"
       ],
-      "description": "山佐ネクスト製スマスロAT機。CZ確率が主要判別要素。ケロットトロフィー虹で設定6確定",
-      "lastUpdated": "2026-04-09"
+      "description": "山佐ネクスト製スマスロAT機。CZ確率が主要判別要素。ケロットトロフィー虹で設定6確定。REG中キャラ紹介6グループ・エンディング中筐体ランプ色で補助判別",
+      "lastUpdated": "2026-04-19"
     },
     {
       "id": "kyoko-suiri",
