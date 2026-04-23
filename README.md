@@ -4,25 +4,25 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 
 **現在の登録台数: 144台** (v3.6, 2026-04-19更新)
 
-| タイプ | 台数 |
-|--------|------|
-| AT | 108台 |
-| A-type | 14台 |
-| BT | 11台 |
-| A+AT | 4台 |
-| ART | 4台 |
-| A+RT | 2台 |
-| A+ART | 1台 |
+| タイプ | 台数  |
+| ------ | ----- |
+| AT     | 108台 |
+| A-type | 14台  |
+| BT     | 11台  |
+| A+AT   | 4台   |
+| ART    | 4台   |
+| A+RT   | 2台   |
+| A+ART  | 1台   |
 
 ### 品質指標
 
-| 指標 | 達成率 |
-|------|--------|
-| trialSuccessRates | 100% (144/144台) |
-| description | 100% (144/144台) |
+| 指標               | 達成率           |
+| ------------------ | ---------------- |
+| trialSuccessRates  | 100% (144/144台) |
+| description        | 100% (144/144台) |
 | confirmationEvents | 100% (144/144台) |
-| roles (非空) | 99% (143/144台) |
-| endScreens (非空) | 88% (126/144台) |
+| roles (非空)       | 99% (143/144台)  |
+| endScreens (非空)  | 88% (126/144台)  |
 
 ## 使い方
 
@@ -114,19 +114,20 @@ slot-analyzer-data/
 
 ### 機種タイプ
 
-| type | 説明 |
-|------|------|
+| type   | 説明                           |
+| ------ | ------------------------------ |
 | A-type | ノーマルタイプ（ジャグラー等） |
-| AT | AT機（最も多い） |
-| ART | ART機 |
-| BT | ボーナストリガータイプ |
-| A+RT | A-type + RT |
-| A+AT | A-type + AT |
-| A+ART | A-type + ART |
+| AT     | AT機（最も多い）               |
+| ART    | ART機                          |
+| BT     | ボーナストリガータイプ         |
+| A+RT   | A-type + RT                    |
+| A+AT   | A-type + AT                    |
+| A+ART  | A-type + ART                   |
 
 ### 設定段階
 
 多くの機種は6段階(1,2,3,4,5,6)ですが、以下の例外があります:
+
 - **5段階 (1,2,4,5,6)**: ゴジエヴァ, シンフォギア, レヴュースタァライト, バーニングエクスプレス等
 - **4段階 (1,2,5,6)**: 新ハナビ, スマスロハナビ, ディスクアップUR, アレックスブライト, スマスロサンダーV等
 - **5段階 (1,2,3,4,V)**: ニューキングハナハナV
@@ -136,25 +137,29 @@ slot-analyzer-data/
 ## iOS開発者向け
 
 ### データ取得方法
+
 - `machines/index.json` → GitHub Raw URLで取得
 - 各機種: `machines/{entry.file}` のパスでアクセス
 
 ### 互換性情報
+
 - 変更履歴は [CHANGELOG.md](CHANGELOG.md) を参照
 - **構造変更は行いません**（値の修正とエントリ追加のみ）
 - 破壊的変更がある場合は CHANGELOG.md で明示します
 
 ### iOS側で使用するフィールド
-| フィールド | 用途 |
-|-----------|------|
-| name, type | 機種情報表示 |
-| roles[].probabilities | 小役確率カウンター |
-| confirmationEvents | 確定演出チェッカー |
-| zones | ゾーン別確率 |
-| endScreenGroups | 終了画面判別 |
-| settings / availableSettings | 設定段階の決定 |
+
+| フィールド                   | 用途               |
+| ---------------------------- | ------------------ |
+| name, type                   | 機種情報表示       |
+| roles[].probabilities        | 小役確率カウンター |
+| confirmationEvents           | 確定演出チェッカー |
+| zones                        | ゾーン別確率       |
+| endScreenGroups              | 終了画面判別       |
+| settings / availableSettings | 設定段階の決定     |
 
 ### iOS側で未使用（自由に変更可能）
+
 `trialSuccessRates`, `voiceCounts`, `musicCounts`, `effectCounts`, `modeTransitions`, `specialSettings`, `notes`, `source`
 
 ## 貢献方法
@@ -196,12 +201,12 @@ ESLint と Prettier は devDependencies に含まれています。pre-commit �
 
 ## 関連ドキュメント
 
-| ドキュメント | 内容 |
-|-------------|------|
-| [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) | 貢献ガイド（環境構築、追加・修正手順、PRチェックリスト） |
-| [docs/data-format.md](docs/data-format.md) | データ形式仕様（全フィールド詳細、実例） |
+| ドキュメント                                           | 内容                                                                  |
+| ------------------------------------------------------ | --------------------------------------------------------------------- |
+| [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)           | 貢献ガイド（環境構築、追加・修正手順、PRチェックリスト）              |
+| [docs/data-format.md](docs/data-format.md)             | データ形式仕様（全フィールド詳細、実例）                              |
 | [docs/quality-standards.md](docs/quality-standards.md) | 品質基準（Complete/Provisional/Incomplete定義、バリデーションルール） |
-| [CHANGELOG.md](CHANGELOG.md) | 変更履歴（iOS互換性情報含む） |
+| [CHANGELOG.md](CHANGELOG.md)                           | 変更履歴（iOS互換性情報含む）                                         |
 
 ## ライセンス
 
