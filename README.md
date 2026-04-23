@@ -2,15 +2,15 @@
 
 SlotAnalyzerアプリで使用するパチスロ機種データのコミュニティリポジトリです。
 
-**現在の登録台数: 138台** (v3.3, 2026-03-27更新)
+**現在の登録台数: 144台** (v3.6, 2026-04-19更新)
 
 | タイプ | 台数 |
 |--------|------|
-| AT | 104台 |
+| AT | 108台 |
 | A-type | 14台 |
-| BT | 9台 |
-| ART | 4台 |
+| BT | 11台 |
 | A+AT | 4台 |
+| ART | 4台 |
 | A+RT | 2台 |
 | A+ART | 1台 |
 
@@ -18,9 +18,11 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 
 | 指標 | 達成率 |
 |------|--------|
-| trialSuccessRates | 100% (138/138台) |
-| description | 100% (138/138台) |
-| endScreens | 87% (120/138台) |
+| trialSuccessRates | 100% (144/144台) |
+| description | 100% (144/144台) |
+| confirmationEvents | 100% (144/144台) |
+| roles (非空) | 99% (143/144台) |
+| endScreens (非空) | 88% (126/144台) |
 
 ## 使い方
 
@@ -34,7 +36,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 ```
 slot-analyzer-data/
 ├── machines/
-│   ├── index.json              # 機種一覧インデックス (v3.3)
+│   ├── index.json              # 機種一覧インデックス (v3.6)
 │   ├── juggler/                # ジャグラー系
 │   ├── hokuto/                 # 北斗系
 │   ├── hanabi/                 # ハナビ系
@@ -61,8 +63,8 @@ slot-analyzer-data/
 
 ```json
 {
-  "version": "3.3",
-  "updatedAt": "2026-03-27T00:00:00Z",
+  "version": "3.6",
+  "updatedAt": "2026-04-19T12:00:00Z",
   "machines": [
     {
       "id": "unique-id",
@@ -73,7 +75,7 @@ slot-analyzer-data/
       "file": "folder/filename.json",
       "tags": ["6号機", "AT"],
       "description": "説明",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-04-19"
     }
   ]
 }
@@ -104,7 +106,7 @@ slot-analyzer-data/
   "endScreenGroups": [],
   "author": "community",
   "version": "1.2",
-  "lastUpdated": "2026-03-27"
+  "lastUpdated": "2026-04-19"
 }
 ```
 
@@ -158,14 +160,18 @@ slot-analyzer-data/
 ## 貢献方法
 
 1. このリポジトリをフォーク
-2. テンプレートを生成:
+2. 依存関係をインストール（Node.js 20 以上）:
+   ```bash
+   npm install
+   ```
+3. テンプレートを生成:
    ```bash
    node scripts/generate-template.mjs --name "機種名" --type AT --dir dirname --id machine-id
    ```
-3. 生成されたテンプレートにデータを記入
-4. `npm run validate` でエラー0件を確認
-5. `npm test` でテスト通過を確認
-6. プルリクエストを送信
+4. 生成されたテンプレートにデータを記入
+5. `npm run validate` でエラー0件を確認
+6. `npm test` でテスト通過を確認
+7. プルリクエストを送信
 
 詳細な手順は [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) を参照してください。
 
