@@ -245,3 +245,105 @@ Pre-task baseline（130 tests, 0 errors, 144機種）維持。新規4機種追�
 - AI Slop Scan: Critical/High/Medium 0件、Low 2件（FS-5リスク開示の意図的反復、許容範囲）
 - ULTRATHINK 評価: 保守原則 10/10、FS-5対策 10/10、確度評価 9/10、iOS連携 9/10
 - 詳細: `.claude/board/reviews/skeptical-evaluator-second-20260430.md`
+
+---
+
+# 第3弾 swarm: WIP コミット永続化 (2026-05-01)
+
+**開始日時**: 2026-05-01
+**トラック**: Standard（保守バイアス強）
+**作業ブランチ**: feature/data-update-2026-04-30-pt2（継続）
+**起動コマンド**: /swarm 計画を詳細に立てた上でコミットを行なってください。ultrathinkにて。
+**ultrathink**: 有効
+
+## 目標
+過去の swarm で意図的に「監査対象外・WIP」として除外されてきた以下のファイル群を、完成度評価のうえで適切な粒度でコミットする:
+
+1. `scripts/migrate-v1-to-v2.mjs` (630行) — V1→V2 schema migration with KC-2/KC-3 contract
+2. `scripts/lib/slugify.mjs` (299行) — 日本語→Hepburnローマ字変換
+3. `tests/migrate-v1-to-v2.test.mjs` (356行) — 48 tests
+4. `tests/slugify.test.mjs` (294行) — 54 tests
+5. `tests/fixtures/expected-role-ids/` — 10機種の golden fixtures
+6. `.claude/agent-memory/` — エージェントメモリ（→ .gitignore）
+7. `.claude/ralph-loop.local.md`（既削除）— ローカル設定（→ .gitignore + 削除確定）
+
+## 重大発見（ULTRATHINK で発覚）
+
+`npm test` で報告される「130 tests pass」のうち **102件 (slugify 54 + migrate 48) が untracked 状態** で実行されていた。git 履歴に残らないため将来のリグレッション特定が困難。本swarm で正式化することは品質基盤上の必須作業。
+
+## ユーザー判断（AskUserQuestion 結果）
+- agent-memory: **.claude/agent-memory/ 全体を .gitignore（推奨）**
+- マイグレ粒度: **4コミットに分割（推奨）** — 本体とテストを分離
+
+## Execution Plan（タスク分解）
+
+### 確定タスク
+
+| # | タスク | 担当 | 依存 | 完了基準（Sprint Contract） |
+|---|--------|------|------|----------------------------|
+| T2 | .gitignore 更新 | CEO | なし | (1) `.claude/agent-memory/` と `.claude/*.local.md` パターン追加 (2) git status で agent-memory が untracked から消える |
+| T3 | ralph-loop.local.md 削除確定 | CEO | T2 | (1) 削除を含む chore コミット作成 (2) git status から該当行が消える |
+| T4 | slugify.mjs 本体コミット | CEO | T3 | (1) `scripts/lib/slugify.mjs` のみ追加 (2) コミット粒度 1ファイル (3) feat(lib) prefix |
+| T5 | slugify テストコミット | CEO | T4 | (1) `tests/slugify.test.mjs` のみ追加 (2) test(lib) prefix (3) npm test で 130/130 pass 維持 |
+| T6 | migrate-v1-to-v2.mjs 本体コミット | CEO | T5 | (1) `scripts/migrate-v1-to-v2.mjs` のみ追加 (2) feat(scripts) prefix |
+| T7 | migrate テスト + fixtures コミット | CEO | T6 | (1) `tests/migrate-v1-to-v2.test.mjs` + `tests/fixtures/` 追加 (2) test(scripts) prefix (3) npm test で 130/130 pass |
+| T8 | Triple Verification + GAN 5軸評価 | CEO | T7 | (1) npm test 130/130 (2) npm run validate 0/0 (3) git log で6コミット順序確認 (4) 各コミットが1論理単位 |
+
+### Carlini 品質チェック
+- 各完了基準が **Observable / Binary / Independent** を満たすか
+- T2-T7 の (1) → git diff で観測可能 ✅
+- T8 (1)(2) → exitcode で Binary 判定 ✅
+- T8 (3) → git log で順序を機械的に確認 ✅
+
+## Risks（Pre-mortem）
+
+| # | リスク | Kill Criteria | 対策 |
+|---|--------|-------------|------|
+| R1 | コミット間で npm test が失敗（T4-T6 の途中で本体だけあってテストが消える） | npm test fail | working tree には全ファイル存在のため失敗しないが、checkout 時のリスクは残る。各コミットメッセージに「テストは次commitで追加」を明記 |
+| R2 | .gitignore 追加で既追跡ファイルが意図せず消える | git ls-files で .claude/agent-memory が出ない | T2 で .gitignore のみ追加し、`git rm --cached` は不要（agent-memory はそもそも untracked） |
+| R3 | migrate スクリプトを誤って実行してデータ汚染 | machines/*/[id].json が大量変更 | スクリプトはデフォルト dry-run、--write フラグ必須。本swarm では実行しない |
+| R4 | 1つのコミットが500行超え（PR推奨上限） | git diff --stat で1コミット>500 | T6 (migrate本体 630行) は単一論理単位として許容、説明コミットメッセージで補完 |
+| R5 | 「.local.md パターン」が他のローカル仕様ファイルを意図せず除外 | git status で必要ファイルが消える | `.claude/*.local.md` のみピンポイント指定 |
+
+GO/NO-GO: **GO**（R1-R5 すべて対策あり、Kill Criteria 接近なし）
+
+## Smart Selection
+- **選択エージェント**: CEO単独実行（既存ファイルのコミット作業のため、新規コード生成不要）
+- **選択理由**: ファイルは Explore agent で完成度評価済み（929行 + 130 tests pass）、コミット作業は機械的判断のため CEO 直接執行が効率的
+- **検証フェーズ**: T8 で skeptical-evaluator + tester を起動し、GAN 5軸評価を行う
+
+## Completed（実行結果・第3弾）
+- [2026-05-01] (CEO) Step 1 環境把握: 6 WIP ファイル群を確認、102件未追跡テストの危険を発見
+- [2026-05-01] (Explore agent) WIP 完成度評価: 全コミット可、4コミット推奨を答申
+- [2026-05-01] (CEO) ユーザー判断確認: agent-memory は .gitignore、4コミットに分割
+- [2026-05-01] (CEO) コミット 121f662: chore(gitignore) - .claude/agent-memory と *.local.md 除外
+- [2026-05-01] (CEO) コミット 0c09d22: chore: ralph-loop.local.md 削除確定
+- [2026-05-01] (CEO) コミット 7d73e96: feat(lib) slugify.mjs 本体 (299行)
+- [2026-05-01] (CEO) コミット 1999815: test(lib) slugify テストスイート (54 tests, 294行)
+- [2026-05-01] (CEO) コミット babda76: feat(scripts) migrate-v1-to-v2 本体 (630行、KC-2/KC-3契約)
+- [2026-05-01] (CEO) コミット ac3b061: test(scripts) migrate テスト (48 tests, 356行) + golden fixtures (10機種)
+- [2026-05-01] (skeptical-evaluator) GAN 5軸 PASS: 平均 9.0/10、AI Slop Clean (Low 2件のみ)
+- [2026-05-01] (tester) Triple Verification 全通過: T2-T7 8項目 Pass、機種数148維持
+
+### 結果サマリー（第3弾）
+- 新規コミット: 6件 (121f662 ~ ac3b061)
+- 永続化された行数: 1,576行 (slugify本体299 + slugifyテスト294 + migrate本体630 + migrateテスト356) + fixtures 10ファイル
+- npm test: 130/130 pass 維持（102件の untracked テストが正式追跡入り）
+- npm run validate: 0 errors / 0 warnings 維持
+- 機種数: 148 維持（変動なし）
+- .gitignore 衛生化: agent-memory と *.local.md パターン追加
+
+## Failed Approaches（第3弾）
+- 該当なし。Plan agent の事前評価（929行 + 130 tests pass）が正確で、6コミットすべて初回成功
+
+## GAN 評価結果（第3弾）
+- skeptical-evaluator: **PASS**（平均 9.0/10）
+- Correctness 9 / Design 9 / Craft 8 / Testability 10 / Security 9
+- AI Slop Scan: Critical/High/Medium 0件、Low 2件 (S7 マジックナンバー20, S13 runCli 94行)
+- 詳細: `.claude/board/reviews/skeptical-evaluator-third-20260501.md`
+
+### 重要な学習
+- **untracked テストの罠**: vitest が拾って実行するため `npm test 130 pass` の表面的なグリーンに騙されていた。git 履歴に残らないため将来のリグレッション特定が困難になっていた
+- **依存順コミット**: slugify (依存先) → migrate (依存元) の順は、各コミットを単独で完結させる（自己充足性）原則に沿う
+- **本体とテストの分離**: TDDの逆行ではなく「既存WIPコードの後付け永続化」というユースケースとして妥当。コミットメッセージで明示する
+- **Generator-Evaluator 規律**: babda76 の「machines/ への一括適用は別 swarm」注意書きは、本swarm の責任範囲を明確化し誤実行を防ぐ模範例

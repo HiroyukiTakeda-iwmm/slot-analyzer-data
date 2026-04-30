@@ -8,6 +8,16 @@
 - **Track適切性**: 適切（Standard）。8ファイル変更・破壊的変更なし・2段階リリース設計で Full は過剰、Light は検証不足になる範囲だった
 - **Phase分割の効用**: 4/20導入機種は本日時点で解析未公開のため、Phase 1（既存機種補強）/Phase 2（4/21+正式昇格）の時間軸分離が拙速コミットを防いだ
 
+## 2026-05-01 wip-commit-persistence | Track: Standard | GAN iterations: 1（PASS, 9.0/10, AI Slop Clean）
+
+- **Key learning**: 過去 swarm が「監査対象外・触れない」と判断した WIP ファイル群を、完成度評価のうえで適切な粒度（4コミット指示+gitignore/削除2コミット = 計6コミット）で永続化。ULTRATHINK で **「npm test 130 pass の表面的グリーンに騙されていた」罠（102件のテストが untracked 状態で実行されていた）** を発見し、品質基盤の死角を可視化したことが最大の収穫
+- **Track適切性**: 適切（Standard）。複数ファイル（929行+130テスト）の論理単位分割は Light では網羅性が不足、Full では過剰。Standard の Sprint Contract + Pre-mortem + GAN 1ループが最適
+- **依存順コミット**: slugify (依存先) → migrate (依存元) の順は git bisect 時の自己充足性に貢献。逆順だと bisect 中に missing dependency error が出る
+- **AskUserQuestion で2問のスコープ判断を効率化**: agent-memory 扱い + コミット粒度の2問。両方とも推奨案で確定し、GAN 9.0/10 へ即収束
+- **本体 + テスト分離 vs 同梱**: ユーザーは「分離」を選択。test 後発の懸念は「既存 WIP コードの後付け永続化」というユースケースで吸収可能（コミットメッセージに明示すれば bisect 時の文脈は保たれる）
+- **migrate 630行は単一論理単位として許容**: 推奨300行を超えるが、V1→V2 schema migration は内部分割すると変換ロジックの一貫性が崩壊する。「単一不可分性」を判断基準に追加
+- **Generator-Evaluator 規律の反映**: babda76 のコミットメッセージに「machines/ への一括適用は別 swarm」と明示することで、本swarm のスコープ境界を Git 履歴に記録。次回 swarm の誤実行を防ぐ予防策
+
 ## 2026-04-30 data-update-2026-04-30-pt2 | Track: Standard | GAN iterations: 1（PASS, AI Slop Low 2件のみ）
 
 - **Key learning**: 同日に同じ目標で /swarm を再発火するケースで、前回の中断点（Track C 中途終了 + ISSUE化 8件）を起点に第2弾を実行。ULTRATHINK 視点では「データを増やす」より「品質指標を毀損しない」を優先する保守バイアスが正しく機能し、researcher-C2 で **採用ゼロ** を成功と定義できた
