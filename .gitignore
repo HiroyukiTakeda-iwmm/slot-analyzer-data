@@ -29,3 +29,7 @@ npm-debug.log*
 
 # Playwright MCP
 .playwright-mcp/
+
+# Claude local files (ephemeral agent memory and per-environment configs)
+.claude/agent-memory/
+.claude/*.local.md
