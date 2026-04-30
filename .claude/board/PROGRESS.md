@@ -1,57 +1,110 @@
-# Swarm PROGRESS - slot-analyzer-data 汎用自律監査
+# Swarm PROGRESS - 最新台データ収集と設定情報反映
 
-**開始日時**: 2026-04-24
+**開始日時**: 2026-04-30
 **トラック**: Standard
-**発動コマンド**: /swarm + Claude Code 4.7 汎用自律監査プロンプト
-**計画ファイル**: /Users/iwomimi/.claude/plans/claude-code-4-7-immutable-lobster.md
-**親ブランチ**: feature/v11-schema-v2-migration (コミット b8a1728 v3.6.0)
-**監査ブランチ**: audit/2026-04-24（Phase 4 で作成予定）
+**発動コマンド**: /swarm 最新台のデータ収集と最新発覚した設定データなどを調査してデータに反映してください
+**親ブランチ**: audit/2026-04-24（前回監査の改善を継承）
+**作業ブランチ**: feature/data-update-2026-04-30
+**ultrathink**: 有効（情報源確度評価を厳格化）
 
 ---
 
 ## 目標
 
-プロジェクト `slot-analyzer-data` の品質・セキュリティ・鮮度・保守性を包括的に向上させる。
-最終成果物: 監査ブランチ `audit/2026-04-24`、各改善コミット、`.audit-report-2026-04-24.md`。
+過去2-4週間の業界動向に基づき、以下を達成する:
+
+1. **暫定追加機種の正式化**: animalslot-docchi（4/20導入）, milliongod-kiseki（4/20導入）の実機データ反映
+2. **Provisional機種の解消**: kaguya-sama（rolesが空、解析公開待ち）の正式化検討
+3. **新台追加**: 4月後半〜5月初旬の新規導入機種で確度が高いもの
+4. **既存機種の設定情報更新**: 直近で新たに発覚した設定差・確定演出（既存144機種の精度向上）
+
+---
+
+## 現状
+
+| 項目 | 値 |
+|------|-----|
+| 既存機種数 | 144 |
+| Complete | 143 |
+| Provisional | 1 (kaguya-sama: rolesが空) |
+| Incomplete | 0 |
+| バリデーション | 0 errors / 0 warnings |
+| テスト | 130 passed (4 files) |
+| index.json updatedAt | 2026-04-19 |
+| 監査基盤 | npm audit 0 vulnerabilities, dependabot 設定済み |
+
+---
+
+## ultrathink: 情報源確度評価フレームワーク
+
+「最新発覚した設定データ」を反映する際の**情報源優先順位**:
+
+| 優先 | 情報源タイプ | 確度 | 具体例 |
+|------|-------------|------|--------|
+| 1 | メーカー公式 | 最高 | 公式サイト、機種紹介ページ、プレスリリース |
+| 2 | 業界専門メディア | 高 | パチスロ関連メディアの公式解析記事 |
+| 3 | 大手攻略サイト（実機解析） | 中-高 | サイト名+情報源URLが明記されている解析 |
+| 4 | ホール検証データ（複数サイト一致） | 中 | 異なる2サイト以上で同一値の場合のみ採用 |
+| 5 | 個人ブログ・ユーザー投稿 | 低 | 採用しない（参考のみ） |
+
+**ultrathink 判断基準**:
+- 確度1-2のみ → 即時反映（implementer に委譲）
+- 確度3 → 単独情報源なら Provisional 扱い、2サイト以上で一致 → Complete
+- 確度4 → 必ず "description" フィールドに「ホール検証ベース、サンプル数注意」を明記
+- 確度5 → 採用せず、ISSUE化のみ
+
+**保守戦略**: 不確実な情報を入れて 144機種データの信頼性を毀損するくらいなら、**何も追加しない方が安全**。プロジェクトの存在価値は「設定推測精度」であり、誤情報の混入は致命的。
 
 ---
 
 ## スコープ制御
 
 ### 監査対象
-- 既コミットコード（v3.6.0 時点、コミット b8a1728）
-- 設定ファイル（package.json, .github/workflows/, .husky/, vitest.config.mjs）
-- ドキュメント（README, CONTRIBUTING, data-format, quality-standards）
-- データ144機種の構造的品質（スキーマ整合性のみ、個別データ値は除外）
+- 既コミットコード（feature/data-update-2026-04-30 ベース）
+- machines/ 144機種のJSONデータ（本タスクで更新）
+- index.json（machines数増減時）
 
-### 監査対象外（WIP のため implementer は触れないこと）
-- 未追跡ファイル（v2マイグレーション開発中の WIP）:
-  - `scripts/migrate-v1-to-v2.mjs`（630行）
-  - `scripts/lib/slugify.mjs`
-  - `tests/migrate-v1-to-v2.test.mjs`（356行）
-  - `tests/slugify.test.mjs`（294行）
-  - `tests/fixtures/expected-role-ids`
-- 削除ステージング: `.claude/ralph-loop.local.md`
-- `.claude/board/memory/`（本セッションの内部ワーキングディレクトリ）
-
-理由: 未追跡ファイルは feature ブランチの作業中成果物。監査対象に含めると開発者の意図を尊重できずスコープも肥大化する。
+### 監査対象外（前回監査と同じ、WIP のため触れない）
+- scripts/migrate-v1-to-v2.mjs
+- scripts/lib/
+- tests/migrate-v1-to-v2.test.mjs, tests/slugify.test.mjs, tests/fixtures/
+- .claude/agent-memory/
 
 ---
 
-## Execution Plan（初期）
+## Execution Plan（タスク分解）
 
-Phase 1 の6エージェント並列起動により、具体的タスクを確定させる。
+### Smart Selection（5体起動予定）
 
-### Smart Selection（Phase 1）
+| エージェント | 担当 | 出力先 |
+|------------|------|--------|
+| researcher (Track A) | 4/21〜5/上旬 新台情報リサーチ | `.claude/board/reviews/researcher-track-a-20260430.md` |
+| researcher (Track B) | 暫定3機種の最新解析情報 | `.claude/board/reviews/researcher-track-b-20260430.md` |
+| researcher (Track C) | 既存144機種の最新発覚設定差 | `.claude/board/reviews/researcher-track-c-20260430.md` |
+| critic | 各researcherの情報確度評価 | `.claude/board/reviews/critic-20260430.md` |
+| implementer | JSON データ更新（critic承認後） | data コミット群 |
+| skeptical-evaluator | GAN 5軸評価 | `.claude/board/reviews/skeptical-evaluator-20260430.md` |
 
-| エージェント | 監査軸 | 出力先 |
-|------------|--------|--------|
-| security-reviewer | A. Security | `.audit-findings/security.md` |
-| researcher | B. Dependencies & Freshness | `.audit-findings/dependencies.md` |
-| code-reviewer | C. Code Quality | `.audit-findings/code-quality.md` |
-| perf-optimizer | D. Runtime & Performance | `.audit-findings/performance.md` |
-| doc-updater | E. Documentation & DX | `.audit-findings/documentation.md` |
-| tester | F. Test Health | `.audit-findings/tests.md` |
+### 確定タスク
+
+| # | タスク | 担当 | 依存 | 完了基準（Sprint Contract） |
+|---|--------|------|------|----------------------------|
+| 1 | 4月後半〜5月新台の調査 | researcher-A | なし | (1) 候補機種リスト出力 (2) 各候補に情報源URL付与 (3) 確度評価（1-5）付与 |
+| 2 | 暫定3機種の正式情報調査 | researcher-B | なし | (1) animalslot-docchi の設定差確定情報 (2) milliongod-kiseki の同上 (3) kaguya-sama の roles 情報、いずれも URL 必須 |
+| 3 | 既存144機種の最新設定差発覚調査 | researcher-C | なし | (1) 直近1ヶ月で発覚した変化の候補リスト (2) 影響機種ID + 変更内容 + URL |
+| 4 | researcher 出力の確度評価 | critic | 1,2,3 | (1) 確度1-2のみリストに含む採用判定 (2) 採用しないものを ISSUE化候補に分類 |
+| 5 | データ更新実装 | implementer | 4 | (1) JSON更新 (2) ajv schema validation pass (3) index.json と整合 (4) 既存テスト 130 pass 維持 |
+| 6 | GAN 5軸評価 | skeptical-evaluator | 5 | (1) 全軸 7以上 (2) AI Slop検出 0件 (3) PASS バーディクト |
+
+### Carlini 品質チェック
+
+各完了基準が **Observable / Binary / Independent** を満たすか:
+- (1) 「候補機種リスト出力」→ ファイル出力で観測可能 ✅
+- (2) 「URL付与」→ URL が含まれているか grep で判定 ✅
+- (3) 「確度評価付与」→ 数値1-5があるか確認 ✅
+- (5)「JSON更新」→ git diff で変更検証 ✅
+- (5)「schema validation pass」→ npm run validate exitcode 0 ✅
+- (6) 「全軸 7以上」→ 数値スコアで Binary 判定 ✅
 
 ---
 
@@ -59,54 +112,42 @@ Phase 1 の6エージェント並列起動により、具体的タスクを確�
 
 | # | リスク | Kill Criteria | 対策 |
 |---|--------|-------------|------|
-| 1 | 未コミット WIP に監査が触れてしまう | implementer が untracked file を編集 | Phase 4 で implementer へ明示的に禁止事項として伝達 |
-| 2 | メジャーバージョンアップ必須の脆弱性発見 | npm audit で Critical、かつ fix にメジャー更新が必要 | 実行せず ISSUE化のみ（GUARD RAILS） |
-| 3 | 144機種JSONデータの誤った一括修正 | 機種データが意図せず変更される | データファイルは Priority 判定で除外、スキーマ・スクリプト・docs のみ修正可 |
-| 4 | GAN ループ7回超で Context Reset 発動 | 同一タスクでイテレーションが収束せず | HANDOFF.md 経由でリセット |
-| 5 | feature ブランチからの派生で merge 衝突 | 親ブランチが大きく乖離 | audit/2026-04-24 は短命維持 |
+| 1 | researcher が確度の低い情報を採用してしまう | critic が確度1-2以外を全て弾く前に implementer が動く | implementer は critic 承認後のみ起動。順序厳守 |
+| 2 | 4/20導入機種の解析が10日では不十分 | ホール検証サンプル数 < 5万G | description に「サンプル数 X G 時点の暫定値」明記、Provisional 維持 |
+| 3 | 設定差データに誤りがあり iOS アプリで誤推測される | implementer が情報源URLを description に書かない | 各更新の description に「情報源: URL」を必須化 |
+| 4 | 144機種JSONの誤った一括変更 | 機種データが意図せず複数変更 | 1コミット = 1機種または1論理的グループ。git diff で精査 |
+| 5 | スキーマ変更が必要な情報発覚 | ajv バリデーションで新フィールド要求 | スキーマ変更は本タスクの範囲外。新フィールドが必要なら ISSUE化のみ |
 
-GO/NO-GO: **GO**（リスク1は明示的スコープ制御で解消）
+GO/NO-GO: **CONDITIONAL-GO**（リスク1はワークフロー順序で対応、その他対策あり）
 
 ---
 
-## Review Verdicts（Phase 1 結果）
+## Review Verdicts（Phase 1 結果、エージェントが追記）
 
-- **security-reviewer** (CEO代理): CONCERN - dependabot.yml 不在。Critical/High なし、Medium 1件
-- **researcher**: CONCERN - lockfile drift (v3.3 vs package.json v3.6.0)、vitest major 遅延、ajv 8.18.0 でCVE-2025-69873 修正
-- **code-reviewer** (CEO代理): CONCERN - ESLint pass、但し Prettier 差分 4件 (docs×3 + README)
-- **perf-optimizer**: PASS - validate 0.09s、test 0.87s、Critical/High なし
-- **doc-updater** (CEO代理): BLOCK - README が v3.3 (138機種) のまま、現行 v3.6.0 (144機種)
-- **tester**: CONCERN - 130 pass / 0 fail、ただし @vitest/coverage-v8 未インストールで coverage 計測不能、CLI 3本未カバー
-
-### 発見サマリー
-| 深刻度 | 件数 |
-|--------|------|
-| Critical | 0 |
-| High | 3 (README遅延, coverage計測不能, lockfile drift) |
-| Medium | 5 (ajv CVE patch, Prettier, dependabot, npm install README, WIP vitest) |
-| Low | 5+ (JSDoc欠落, author欠落, --quiet未実装, CLI未カバー, 他) |
+<!-- researcher / critic 起動後に追記 -->
 
 ---
 
 ## Completed（実行結果）
 
-- [2026-04-24] (CEO) Phase 0 偵察完了: プロジェクトプロファイル確定、初期スコア 18.5/25
-- [2026-04-24] (6エージェント並列 / CEO補完) Phase 1 多軸監査完了: Critical 0, High 3, Medium 5+
-- [2026-04-24] (CEO) Phase 2 調査ゲート完了: npm audit/outdated 実測、公式URL 12件
-- [2026-04-24] (CEO) Phase 3 優先順位付け完了: 実装 9項目、ISSUE化 5項目
-- [2026-04-24] (CEO) コミット 1 (37357ec) fix(deps): lockfile drift 解消
-- [2026-04-24] (CEO) コミット 2 (cafc866) fix(deps): vite CVE パッチ（1 High → 0）
-- [2026-04-24] (CEO) コミット 3 (7f6a54b) chore(deps): eslint/globals/prettier 更新
-- [2026-04-24] (CEO) コミット 4 (312e7f5) feat(dev): @vitest/coverage-v8 追加
-- [2026-04-24] (CEO) コミット 5 (2fb32ed) docs: README v3.6.0 更新（最優先）
-- [2026-04-24] (CEO) コミット 6 (602197b) style: Prettier --write docs + README
-- [2026-04-24] (CEO) コミット 7 (6f3bbb2) chore(ci): dependabot.yml 追加
-- [2026-04-24] (CEO) コミット 8 (e8cc903) chore: package.json author/bugs/homepage 追加
-- [2026-04-24] (CEO) コミット 9 (d146abe) chore(ci): dependabot reviewers 追加（Perfection Loop）
-- [2026-04-24] (CEO) コミット 10 (e22517c) docs: audit report 作成
-- [2026-04-24] (skeptical-evaluator) GAN 5軸評価 PASS: 平均 9.2/10、AI Slop 0件
-- [2026-04-24] (CEO) Triple Verification 全通過: tests 130/130, audit 0, validate 0
-- [2026-04-24] (CEO) GitHub Issues 5件作成（#2-#6）
+- [2026-04-30] (CEO) Step 1 環境把握: ブランチ作成、現状確認、144機種ベースライン
+- [2026-04-30] (researcher×3) Step 2/4 並列調査: Track A/B/C
+- [2026-04-30] (CEO+critic) Step 3/4 確度評価: GREEN 4 / YELLOW 4 / RED 5 / ISSUE化 8
+- [2026-04-30] (CEO) コミット 6401e85: animalslot-docchi 表記更新 + REGキャラ示唆3件追加
+- [2026-04-30] (CEO) コミット 68f2d3e: milliongod-kiseki notes に小役7種追記
+- [2026-04-30] (CEO) コミット e5d09ce: kaguya-sama description に CZ期待度追記
+- [2026-04-30] (CEO) コミット 2593e7b: v3.7.0 - 5/11新台4機種追加
+- [2026-04-30] (skeptical-evaluator) GAN 5軸 PASS: 平均 9.4/10、AI Slop 0件
+- [2026-04-30] (CEO) Triple Verification 全通過
+- [2026-04-30] (CEO) GitHub Issues #7-#10 作成（4件、follow-up タスク）
+
+### 結果サマリー
+- 機種数: 144 → **148** (+4)
+- バージョン: 3.6.0 → **3.7.0**
+- Complete: 143 / Provisional: 5 (kaguya-sama + 新4機種) / Incomplete: 0
+- npm test: 130/130 pass
+- npm run validate: 0 errors / 0 warnings
+- npm audit: 0 vulnerabilities (前回監査の状態を維持)
 
 ---
 
@@ -119,28 +160,28 @@ GO/NO-GO: **GO**（リスク1は明示的スコープ制御で解消）
 ## QA Results（Phase 5 Triple Verification 後）
 
 ### Verification 1: Automated
-- `npm test -- --run`: 130/130 passed (4 files) ✅
-- `npm run validate`: エラー 0件 / 警告 0件 ✅
-- `npx eslint scripts/ ...`: エラー 0件 ✅
-- `npx prettier --check`: All files pass ✅
-- `npm audit`: found 0 vulnerabilities ✅
+- npm test: 130/130 pass (4 files) ✅
+- npm run validate: エラー 0件 / 警告 0件 ✅
+- npx eslint: エラー 0件 ✅
+- npx prettier: 監査対象ファイル全て pass（WIP 2ファイルは対象外）✅
+- npm audit: 0 vulnerabilities ✅
 
-### Verification 2: Contract（全 8 完了基準充足）
-- [x] lockfile drift 解消（root version 3.6.0）
-- [x] vite CVE パッチ（audit total 0）
-- [x] minor/patch 更新（eslint 10.2.1, globals 17.5.0, prettier 3.8.3）
-- [x] coverage tool 追加（@vitest/coverage-v8@3.2.4）
-- [x] README v3.6.0 (144機種) 更新
-- [x] Prettier 全通過
-- [x] dependabot.yml 設置
-- [x] package.json author/bugs/homepage 追加
+### Verification 2: Contract（全 6 完了基準充足）
+- [x] 4 commits 作成（順序通り）
+- [x] npm run validate エラー 0
+- [x] npm test 全通過
+- [x] quality report で 148機種 / Provisional 5件
+- [x] id 衝突なし（事前 grep 確認 + 実コミット成功）
+- [x] 既存 source 値の保持（FS-5 対策、git diff で確認）
 
 ### Verification 3: Regression
-Pre-audit baseline（130 tests, 0 errors）維持。回帰ゼロ。
+Pre-task baseline（130 tests, 0 errors, 144機種）維持。新規4機種追加で機種数 +4、テスト破壊ゼロ。
 
-## GAN 評価結果（Perfection Loop）
+## GAN 評価結果
 
 - skeptical-evaluator: **PASS**
-- Correctness 9 / Design 9 / Craft 9 / Testability 9 / Security 10 → 平均 **9.2 / 10**
+- Correctness 9 / Design 9 / Craft 10 / Testability 10 / Security 9
+- 平均: **9.4 / 10**
 - AI Slop Scan: **0件検出**
-- 詳細: `.claude/board/reviews/skeptical-evaluator-20260424.md`
+- ULTRATHINK 評価: 保守戦略 10/10、FS-5対策 10/10、確度評価 10/10、iOS連携 9/10
+- 詳細: `.claude/board/reviews/skeptical-evaluator-20260430.md`
