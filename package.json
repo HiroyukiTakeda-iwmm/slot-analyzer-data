@@ -1,6 +1,6 @@
 {
   "name": "slot-analyzer-data",
-  "version": "3.6.0",
+  "version": "3.7.0",
   "description": "パチスロ機種設定推測データリポジトリ",
   "type": "module",
   "author": "Hiroyuki Takeda (iWMM Works)",

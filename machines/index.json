@@ -1,6 +1,6 @@
 {
-  "version": "3.6",
-  "updatedAt": "2026-04-19T12:00:00Z",
+  "version": "3.7",
+  "updatedAt": "2026-04-30T12:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -2437,6 +2437,80 @@
         "新台"
       ],
       "description": "北電子製スマスロAT機（SSAT第2弾）。ボーナス合算確率に設定差。STループ率約82%",
+      "lastUpdated": "2026-04-30"
+    },
+    {
+      "id": "biohazard-re3",
+      "name": "Lパチスロ バイオハザードRE:3",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "biohazard-re3/biohazard-re3.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "エンターライズ",
+        "6段階設定",
+        "2026年5月",
+        "新台"
+      ],
+      "description": "エンターライズ製スマスロAT機。純増約4.5枚/G。AT初当たり確率に設定差。導入前のため設定2-5は線形補間値",
+      "lastUpdated": "2026-04-30"
+    },
+    {
+      "id": "big-dream-golden-pusher",
+      "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "big-dream-golden-pusher/big-dream-golden-pusher.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "サミー",
+        "銀座",
+        "6段階設定",
+        "2026年5月",
+        "新台"
+      ],
+      "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差。コイン単価5.7円",
+      "lastUpdated": "2026-04-30"
+    },
+    {
+      "id": "super-rio-ace2",
+      "name": "スマスロ スーパーリオエース2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "super-rio-ace2/super-rio-ace2.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "山佐ネクスト",
+        "6段階設定",
+        "2026年5月",
+        "新台"
+      ],
+      "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差",
+      "lastUpdated": "2026-04-30"
+    },
+    {
+      "id": "takt-opus-destiny",
+      "name": "Lタクトオーパス デスティニー",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "takt-opus-destiny/takt-opus-destiny.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "アムテックス",
+        "平和",
+        "6段階設定",
+        "2026年5月",
+        "新台"
+      ],
+      "description": "アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり設定6突出型（設定4-6近接）",
       "lastUpdated": "2026-04-30"
     }
   ]
