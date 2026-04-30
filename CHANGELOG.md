@@ -2,6 +2,34 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.7.1] - 2026-04-30 (第2弾 swarm)
+
+### 改訂（既存2機種、新規追加なし）
+- **animalslot-docchi** v1.0→1.1: ST終了画面 No.174/555/666 を `endScreens[]` に正式登録（GREEN G-1、3サイト一致）。チェリー・スイカ確率テーブル（設定1-6）を `notes` 内「【小役設定別テーブル】」として整理（YELLOW Y-1、Tier3 2媒体一致だが独立検証未確立のため roles 降格）。FS-5 循環参照リスク開示を全 description に明記
+- **milliongod-kiseki** v1.0→1.1: ユニバプレート色（金/花火/虹）を `confirmationEvents[]` に追加（YELLOW Y-2、機械割クロスチェック成立）。銅・銀は独立検証未成立のため見送り（RED R-1）。GG当選率設定3-6 は3媒体「調査中」のため見送り（RED R-2）
+
+### 品質ゲート
+- skeptical-evaluator GAN 5軸評価: **PASS**（平均 9.2/10、Correctness 9 / Design 9 / Craft 8 / Testability 10 / Security 10）
+- AI Slop Scan: Critical/High/Medium 検出ゼロ（Low 2件は意図的反復）
+- Triple Verification: Pass（Automated + Contract + Regression すべて Pass）
+- FS-5 既存値保持: Pass（確率値・description 削除0件）
+
+### FUTURE_ADDITIONS 同期
+- 「現在の登録台数」を 144 → 148 に更新
+- BIRDIE WING を「中→高」に昇格（2026-06-08 導入確定）
+- GALFY (5/25導入予定) を低→中に追加
+- Lミリオンゴッド を「→ milliongod-kiseki として登録済み」に更新
+- オープンISSUE 9件を新セクションで体系的追跡開始（I1, I2-residual, I3-residual, I4-residual, I5-residual, I7, I8, I9, C2-bis）
+
+### 品質指標
+- エラー0件/警告0件（維持）
+- 機種数148（変動なし）
+- Complete 143 / Provisional 5（biohazard-re3, big-dream-golden-pusher, super-rio-ace2, takt-opus-destiny, kaguya-sama）
+
+### iOS互換性
+- **破壊的変更: なし**
+- 構造変更: なし（endScreens / confirmationEvents の値追加と notes 整理のみ）
+
 ## [3.6] - 2026-04-19
 
 ### 改訂（4機種 + メタ更新、新規追加なし）

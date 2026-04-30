@@ -185,3 +185,63 @@ Pre-task baseline（130 tests, 0 errors, 144機種）維持。新規4機種追�
 - AI Slop Scan: **0件検出**
 - ULTRATHINK 評価: 保守戦略 10/10、FS-5対策 10/10、確度評価 10/10、iOS連携 9/10
 - 詳細: `.claude/board/reviews/skeptical-evaluator-20260430.md`
+
+---
+
+# 第2弾 swarm: Track C / I2-I5 完遂 (2026-04-30)
+
+**開始日時**: 2026-04-30（v3.7.0 直後）
+**トラック**: Standard（保守バイアス強）
+**作業ブランチ**: feature/data-update-2026-04-30-pt2
+**親ブランチ**: feature/data-update-2026-04-30
+**起動コマンド**: /swarm 最新台のデータ収集と最新発覚した設定データなどを調査してデータに反映してください
+**ultrathink**: 有効
+
+## 目標
+前回 swarm で中断された Track C（既存148機種の最新発覚設定差調査）の完遂と、ISSUE化された I2-I5（animalslot-docchi / milliongod-kiseki 細部補完）の反映。
+
+## ユーザー判断（AskUserQuestion 結果）
+- BIRDIE WING (6/8): 今は追加せず FUTURE_ADDITIONS のみ更新（推奨案）
+- ジャグラー系7機種: 別swarmに分離（推奨案）
+- I8 URL統一: 別ISSUE維持（推奨案）
+
+## Execution Plan
+| # | タスク | 担当 | 結果 |
+|---|--------|------|------|
+| T1 | Track C 残り機種の設定差調査 | researcher-C2 | 採用ゼロ（保守原則） |
+| T2 | I2-I5 細部補完情報調査 | researcher-B2 | I2/I3/I5 採用候補、I4 見送り |
+| T3 | critic 確度評価 + FS-5 違反チェック | critic | CONCERN: I2 roles 降格、I5 銅銀除外 |
+| T4 | implementer JSONデータ更新 | implementer | 2コミット (f1689c5, 71359cb) |
+| T5 | FUTURE_ADDITIONS / ISSUES 更新 | CEO | 1コミット (302f346)、ISSUE 9件記録 |
+| T6 | GAN 5軸評価 + Triple Verification | skeptical-evaluator + tester | PASS 平均 9.2/10、All Verification Pass |
+| T7 | v3.7.0→v3.7.1 bump + CHANGELOG | CEO | 進行中 |
+
+## Completed（実行結果・第2弾）
+- [2026-04-30] (CEO) Step 1 環境把握: feature/data-update-2026-04-30-pt2 ブランチ作成
+- [2026-04-30] (researcher-B2) Track B2: I2 採用、I3 部分採用、I5 採用、I4 見送り
+- [2026-04-30] (researcher-C2) Track C2: 6機種すべて見送り（保守原則）
+- [2026-04-30] (critic) GREEN 1 / YELLOW 2 / RED 3 / ISSUE 5、I5 銅銀の独立性疑義で除外、I2 roles 降格
+- [2026-04-30] (implementer) コミット f1689c5: animalslot-docchi - ST終了画面3パターン追加 + チェリー/スイカtable notes整理
+- [2026-04-30] (implementer) コミット 71359cb: milliongod-kiseki - ユニバプレート確定演出3色追加（銅銀除外）
+- [2026-04-30] (CEO) コミット 302f346: FUTURE_ADDITIONS.md - BIRDIE WING優先度高昇格 + オープンISSUE 9件記録
+- [2026-04-30] (skeptical-evaluator) GAN 5軸 PASS: 平均 9.2/10
+- [2026-04-30] (tester) Triple Verification 全通過、FS-5 削除行数（許容外）0件
+
+### 結果サマリー（第2弾）
+- 機種数: 148 維持
+- バージョン: 3.7.0 → **3.7.1** (T7で bump)
+- Complete: 143 / Provisional: 5 (変動なし)
+- 反映: animalslot-docchi (endScreens 3件追加 + notes整理)、milliongod-kiseki (confirmationEvents 3件追加)
+- 採用ゼロ実績: Track C2 で6機種すべて見送り（保守原則の正常完了状態）
+- 新規ISSUE記録: 9件（I1, I2-residual, I3-residual, I4-residual, I5-residual, I7, I8, I9, C2-bis）
+
+### Failed Approaches（第2弾）
+- **researcher-C2 第1版（agentId a8ffd23df94cc68e5）**: 元 Track C と同じ「全148機種を網羅探索」プロンプトで呼ぶと既登録チェックに時間を消費し、ファイル出力前に終了する傾向。第2版で「6機種に絞って深掘り」に変更してから完遂。
+  - **学習**: researcher を広範囲に投げず、5-7機種にスコープを絞り「採用ゼロも成功」を明示すべき
+
+## GAN 評価結果（第2弾）
+- skeptical-evaluator: **PASS**（平均 9.2/10）
+- Correctness 9 / Design 9 / Craft 8 / Testability 10 / Security 10
+- AI Slop Scan: Critical/High/Medium 0件、Low 2件（FS-5リスク開示の意図的反復、許容範囲）
+- ULTRATHINK 評価: 保守原則 10/10、FS-5対策 10/10、確度評価 9/10、iOS連携 9/10
+- 詳細: `.claude/board/reviews/skeptical-evaluator-second-20260430.md`
