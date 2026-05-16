@@ -2499,7 +2499,7 @@
       "name": "Lタクトオーパス デスティニー",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "takt-opus-destiny/takt-opus-destiny.json",
       "tags": [
         "AT",
@@ -2511,7 +2511,7 @@
         "新台"
       ],
       "description": "アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり設定6突出型（設定4-6近接）",
-      "lastUpdated": "2026-04-30"
+      "lastUpdated": "2026-05-16"
     }
   ]
 }
