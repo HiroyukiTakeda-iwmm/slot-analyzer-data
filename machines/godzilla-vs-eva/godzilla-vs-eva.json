@@ -147,15 +147,15 @@
     },
     {
       "name": "AT終了画面エヴァ&ゴジラ",
-      "description": "AT終了画面でエヴァ&ゴジラが出現すれば設定4以上濃厚",
+      "description": "AT終了画面でエヴァ&ゴジラ出現で設定5以上濃厚（情報源: nana-press 確度1, p-town.dmm 確度1-2 の独立2源一致）",
       "confirmedSettings": [
-        "4",
         "5",
         "6"
       ],
       "excludedSettings": [
         "1",
-        "2"
+        "2",
+        "4"
       ],
       "color": "#FFD700",
       "id": "at終了画面エヴァゴジラ"
@@ -277,7 +277,7 @@
       "id": "at終了画面エヴァゴジラ",
       "name": "AT終了画面エヴァ&ゴジラ",
       "type": "at_end",
-      "hint": "設定4以上濃厚",
+      "hint": "設定5以上濃厚",
       "color": "#FFD700"
     },
     {
@@ -375,9 +375,9 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-03-27",
-  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)",
+  "version": "1.2",
+  "lastUpdated": "2026-05-16",
+  "source": "一撃(1geki.jp)、ちょんぼりすた(chonborista.com)、ななプレス(nana-press.com)、P-TOWN(p-town.dmm.com)",
   "description": "ビスティ製スマスロ。2024年2月導入。ゴジラとエヴァンゲリオンのコラボ。設定はL/1/2/4/5/6の5段階（設定3なし）。純増約5.0枚のAT機。小役確率に設定差なし。CZ当選率・殲滅作戦・ED中ボイスで設定判別。",
   "voiceCounts": []
 }

@@ -1941,7 +1941,7 @@
       "name": "Lゴジラ対エヴァンゲリオン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "godzilla-vs-eva/godzilla-vs-eva.json",
       "tags": [
         "AT",
@@ -1950,7 +1950,7 @@
         "5段階設定"
       ],
       "description": "ビスティ製スマスロ。2024年2月導入。ゴジラとエヴァンゲリオンのコラボ。設定はL/1/2/4/5/6の5段階（設定3なし）。純増約5.0枚のAT機。小役確率に設定差なし。CZ当選率・殲滅作戦・ED中ボイスで設定判別。",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-05-16"
     },
     {
       "id": "rezero2-pack-rem",
