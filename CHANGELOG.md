@@ -2,6 +2,41 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.7.2] - 2026-05-16 (第4弾 swarm)
+
+### 誤データ是正（GREEN・最優先）
+- **godzilla-vs-eva** v1.1→1.2: AT終了画面「エヴァ&ゴジラ」の設定示唆を `[4,5,6]（設定4以上濃厚）` → `[5,6]（設定5以上濃厚）` へ修正、excludedSettings `[1,2,4]`。nana-press + p-town.dmm の確度1独立2源一致、現値を裏付ける情報源ゼロ（AT/ボーナス終了画面取り違えの構造仮説と整合）。iOS判別エンジンの誤推測を是正
+
+### Provisional値差替（YELLOW・5/11新台、Provisional維持）
+- **takt-opus-destiny** v1.0→1.1: AT初当たり設定2-5を線形補間値→確度2解析メディア（nana-press/chonborista）公表値へ差替（設定4の+6.6%乖離を是正）。導入5日でホール検証僅少のため Provisional 維持、description に確度2・サンプル僅少を明記（正式値化せず）
+- **biohazard-re3** v1.0→1.1: AT初当たり設定2-5を確度2解析値へ差替 + 小役共通役6種を `roles` 追加（`hasSettingDiff:false`）。Provisional 維持
+- **bakemonogatari** v1.2→1.3: 「解呪ノ儀200G到達時CZ当選率」を `trialSuccessRates` に追加（設定1:10%→6:20%、設定2-5線形補間明記）。nana-press確度1 + 1geki確度2 傾向一致。300G値は単独ソースのため未採用（ISSUE化）
+
+### 定性示唆追加（YELLOW・出現率数値なし）
+- **super-rio-ace2**: 小役共通役 `roles` 登録 + 終了画面/ケロットトロフィー/ボイス示唆を定性追加（confirmed/excludedSettings のみ、出現率未判明明記）。初当たり/CZ中間値は変更なし
+- **big-dream-golden-pusher**: 終了画面6種/サミートロフィー5段階/獲得枚数/エンディングボイスを定性示唆追加（同上）
+
+### 見送り（保守原則の正常結論・採用ゼロ）
+- 5/12〜5/16 新台導入なし（GALFY 5/25導入予定は設定判別「調査中」のため I7 維持）
+- kaguya-sama 小役設定差は3媒体未公表 → roles空維持
+- 5/11新台4機種の機械割・示唆出現率は導入5日でサンプル僅少 → 数値化せず（2026-05-25 再評価）
+
+### 品質ゲート
+- skeptical-evaluator GAN 5軸評価: **PASS**（平均 9.2/10、Correctness 9 / Design 9 / Craft 9 / Testability 10 / Security 9）
+- AI Slop Scan: Critical/High/Medium 検出ゼロ（Clean）
+- Triple Verification: Pass（Automated 130 tests/0 errors + Contract ALL-PASS + Regression 維持）
+- critic 確度評価: GREEN 1 / YELLOW 6 / RED 5 / ISSUE化 6（FS-5循環参照チェック実施、researcher-B「メーカー公式確度1-2」誇張を是正）
+
+### FUTURE_ADDITIONS 同期 / オープンISSUE更新
+- からくりサーカス2 導入日「2026-07-06 確定（検定通過済）」へ更新
+- ULTRAMAN最終決戦ME（オッケー・5/15検定通過）を追跡項目追加
+- godzilla-vs-eva 構造再設計（モスラ/カヲル未登録、AT/ボーナス終了画面取り違え）を高優先ISSUE化
+- 完全性バリデータの Provisional 分類限界（roles付与でComplete誤分類）を ISSUE化
+- bakemonogatari 解呪300G値（単独ソース要追検証）を ISSUE化
+
+### 品質指標
+- 機種数: 148 維持（新規追加なし）/ エラー0件・警告0件（維持）/ 130 tests pass（維持）
+
 ## [3.7.1] - 2026-04-30 (第2弾 swarm)
 
 ### 改訂（既存2機種、新規追加なし）
