@@ -2481,7 +2481,7 @@
       "name": "スマスロ スーパーリオエース2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "super-rio-ace2/super-rio-ace2.json",
       "tags": [
         "AT",
@@ -2492,7 +2492,7 @@
         "新台"
       ],
       "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差",
-      "lastUpdated": "2026-04-30"
+      "lastUpdated": "2026-05-16"
     },
     {
       "id": "takt-opus-destiny",

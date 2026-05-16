@@ -1,9 +1,96 @@
 {
   "name": "スマスロ スーパーリオエース2",
   "type": "AT",
-  "roles": [],
-  "confirmationEvents": [],
-  "endScreens": [],
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.01397, "2": 0.01397, "3": 0.01397, "4": 0.01397, "5": 0.01397, "6": 0.01397 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通想定: 約1/71.6。情報源: nana-press 確度2（設定差有無は媒体間未確定のため共通役として登録）"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.01189, "2": 0.01189, "3": 0.01189, "4": 0.01189, "5": 0.01189, "6": 0.01189 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通想定: 約1/84.1。情報源: nana-press 確度2（設定差有無は媒体間未確定のため共通役として登録）"
+    },
+    {
+      "name": "チャンスリプレイ",
+      "probabilities": { "1": 0.004026, "2": 0.004026, "3": 0.004026, "4": 0.004026, "5": 0.004026, "6": 0.004026 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "全設定共通想定: 約1/248.4。情報源: nana-press 確度2（設定差有無は媒体間未確定のため共通役として登録）"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": { "1": 0.001845, "2": 0.001845, "3": 0.001845, "4": 0.001845, "5": 0.001845, "6": 0.001845 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通想定: 約1/542.1。情報源: nana-press 確度2（設定差有無は媒体間未確定のため共通役として登録）"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": { "1": 0.001438, "2": 0.001438, "3": 0.001438, "4": 0.001438, "5": 0.001438, "6": 0.001438 },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "全設定共通想定: 約1/695.6。情報源: nana-press 確度2（設定差有無は媒体間未確定のため共通役として登録）"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "kerot_trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "description": "獲得時に虹のケロットトロフィー出現で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "ending_push_rainbow",
+      "name": "エンディングPUSH 虹「激ヤバじゃん」",
+      "description": "エンディングPUSHで虹「激ヤバじゃん」表示で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "big_sign_rina",
+      "name": "BIG中サイン演出「リナ」",
+      "description": "BIG中のサイン演出で「リナ」表示は高設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "coin_666_over",
+      "name": "獲得枚数 666枚OVER",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "description": "AT終了時の獲得枚数表示が666枚OVERで設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "coin_803_over",
+      "name": "獲得枚数 803枚OVER",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "description": "AT終了時の獲得枚数表示が803枚OVERで設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "first_hit",
@@ -22,10 +109,10 @@
     }
   ],
   "voiceCounts": [],
-  "notes": "2026年5月11日導入予定。導入前のため小役確率の設定差、終了画面、確定演出等の詳細データは未公開。山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり設定1=1/289.8〜設定6=1/219.2、機械割設定1=97.7%〜設定6=112.1%。設置予定約8000台。設定2-5は線形補間値（暫定）。情報源URL: https://yamasa-next.co.jp/slot/ac2ro/ , https://www.p-world.co.jp/machine/database/10449",
+  "notes": "2026年5月11日導入予定。導入前のため小役確率の設定差、終了画面、確定演出等の詳細データは未公開。山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり設定1=1/289.8〜設定6=1/219.2、機械割設定1=97.7%〜設定6=112.1%。設置予定約8000台。設定2-5は線形補間値（暫定、変更なし）。小役は共通役想定でroles登録（情報源: nana-press 確度2、設定差有無は媒体間未確定）。ケロットトロフィー/エンディングPUSH/BIG中サイン演出/獲得枚数を定性示唆として追加（情報源: nana-press/chonborista 確度2、出現率未判明）。情報源URL: https://yamasa-next.co.jp/slot/ac2ro/ , https://www.p-world.co.jp/machine/database/10449 , https://nana-press.com/kaiseki/machine/1143/ , https://chonborista.com/slot/yamasa-slot/255067/",
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-04-30",
-  "source": "メーカー公式（山佐ネクスト）、P-WORLD、ちょんぼりすた、なな徹",
+  "version": "1.1",
+  "lastUpdated": "2026-05-16",
+  "source": "メーカー公式（山佐ネクスト）、P-WORLD、ちょんぼりすた、なな徹、nana-press（確度2）、chonborista（確度2）",
   "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差（設定1: 1/289.8→設定6: 1/219.2）。機械割: 設定1=97.7%〜設定6=112.1%。設置予定約8000台。導入前のため roles・終了画面・確定演出は未公開、設定2-5は線形補間値（暫定）。"
 }
