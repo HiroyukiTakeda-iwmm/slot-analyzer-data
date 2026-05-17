@@ -1,20 +1,139 @@
 {
   "name": "スマスロ スーパーリオエース2",
   "type": "AT",
-  "roles": [],
-  "confirmationEvents": [],
-  "endScreens": [],
+  "roles": [
+    {
+      "name": "弱チェリー",
+      "probabilities": { "1": 0.01397, "2": 0.01397, "3": 0.01397, "4": 0.01397, "5": 0.01397, "6": 0.01397 },
+      "hasSettingDiff": false,
+      "displayOrder": 1,
+      "color": "#F44336",
+      "description": "全設定共通想定: 約1/71.6。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+    },
+    {
+      "name": "スイカ",
+      "probabilities": { "1": 0.01189, "2": 0.01189, "3": 0.01189, "4": 0.01189, "5": 0.01189, "6": 0.01189 },
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#4CAF50",
+      "description": "全設定共通想定: 約1/84.1。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+    },
+    {
+      "name": "チャンスリプレイ",
+      "probabilities": { "1": 0.004026, "2": 0.004026, "3": 0.004026, "4": 0.004026, "5": 0.004026, "6": 0.004026 },
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "全設定共通想定: 約1/248.4。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+    },
+    {
+      "name": "チャンス目",
+      "probabilities": { "1": 0.001845, "2": 0.001845, "3": 0.001845, "4": 0.001845, "5": 0.001845, "6": 0.001845 },
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "全設定共通想定: 約1/542.1。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+    },
+    {
+      "name": "強チェリー",
+      "probabilities": { "1": 0.001438, "2": 0.001438, "3": 0.001438, "4": 0.001438, "5": 0.001438, "6": 0.001438 },
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "全設定共通想定: 約1/695.6。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "kerot_trophy_copper",
+      "name": "ケロットトロフィー 銅",
+      "description": "銅のケロットトロフィー出現で設定2以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#B87333"
+    },
+    {
+      "id": "kerot_trophy_silver",
+      "name": "ケロットトロフィー 銀",
+      "description": "銀のケロットトロフィー出現で設定3以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "kerot_trophy_gold",
+      "name": "ケロットトロフィー 金",
+      "description": "金のケロットトロフィー出現で設定4以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "kerot_trophy_pattern",
+      "name": "ケロットトロフィー ケロット柄",
+      "description": "ケロット柄のケロットトロフィー出現で設定5以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E0A800"
+    },
+    {
+      "id": "kerot_trophy_rainbow",
+      "name": "ケロットトロフィー 虹",
+      "description": "獲得時に虹のケロットトロフィー出現で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "ending_push_rainbow",
+      "name": "エンディングPUSH 虹「激ヤバじゃん」",
+      "description": "エンディングPUSHで虹「激ヤバじゃん」表示で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "big_sign_rina",
+      "name": "BIG中サイン演出「リナ」",
+      "description": "BIG中のサイン演出で「リナ」表示は高設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": [],
+      "excludedSettings": [],
+      "color": "#FFD700"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "coin_666_over",
+      "name": "獲得枚数 666枚OVER",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "description": "AT終了時の獲得枚数表示が666枚OVERで設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "coin_803_over",
+      "name": "獲得枚数 803枚OVER",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "description": "AT終了時の獲得枚数表示が803枚OVERで設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "first_hit",
       "name": "初当たり確率",
-      "description": "設定1: 1/289.8、設定6: 1/219.2（メーカー公式値）。設定2-5は線形補間値（暫定、ホール検証前）",
+      "description": "設定1: 1/289.8、設定2: 1/281.9、設定3: 1/268.0、設定4: 1/238.9、設定5: 1/230.0、設定6: 1/219.2。全設定とも実解析値（一撃/ちょんぼりすた/なな徹で独立一致、2026-05検証、線形補間は破棄済）",
       "probabilities": {
         "1": 0.003451,
-        "2": 0.003673,
-        "3": 0.003896,
-        "4": 0.004118,
-        "5": 0.004340,
+        "2": 0.003547,
+        "3": 0.003731,
+        "4": 0.004186,
+        "5": 0.004348,
         "6": 0.004562
       },
       "displayOrder": 1,
@@ -22,10 +141,10 @@
     }
   ],
   "voiceCounts": [],
-  "notes": "2026年5月11日導入予定。導入前のため小役確率の設定差、終了画面、確定演出等の詳細データは未公開。山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり設定1=1/289.8〜設定6=1/219.2、機械割設定1=97.7%〜設定6=112.1%。設置予定約8000台。設定2-5は線形補間値（暫定）。情報源URL: https://yamasa-next.co.jp/slot/ac2ro/ , https://www.p-world.co.jp/machine/database/10449",
+  "notes": "2026年5月11日導入。導入から実解析値判明済み（一撃/ちょんぼりすた/なな徹で独立一致、2026-05検証、線形補間は破棄）。山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり設定1=1/289.8〜設定6=1/219.2（設定2-5も実解析値）、機械割設定1=97.7%〜設定6=112.1%。設置約8000台。小役は全設定共通（情報源: 一撃/ちょんぼりすた/なな徹 確度2、3ソース確定）。ケロットトロフィー5段階（銅/銀/金/ケロット柄/虹）/エンディングPUSH/BIG中サイン演出/獲得枚数を定性示唆として追加（情報源: nana-press/chonborista 確度2、出現率未判明）。ボーナス直撃は特大設定差（設定1=1/53905.6→設定6=1/4326.7、設定2-5の実値未公開・Provisional）。情報源URL: https://yamasa-next.co.jp/slot/ac2ro/ , https://www.p-world.co.jp/machine/database/10449 , https://nana-press.com/kaiseki/machine/1143/ , https://chonborista.com/slot/yamasa-slot/255067/",
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-04-30",
-  "source": "メーカー公式（山佐ネクスト）、P-WORLD、ちょんぼりすた、なな徹",
-  "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差（設定1: 1/289.8→設定6: 1/219.2）。機械割: 設定1=97.7%〜設定6=112.1%。設置予定約8000台。導入前のため roles・終了画面・確定演出は未公開、設定2-5は線形補間値（暫定）。"
+  "version": "1.1",
+  "lastUpdated": "2026-05-17",
+  "source": "メーカー公式（山佐ネクスト）、P-WORLD、ちょんぼりすた、なな徹、nana-press（確度2）、chonborista（確度2）",
+  "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差（設定1: 1/289.8→設定6: 1/219.2、確度2解析公表値・Provisional、線形補間は破棄済）。機械割: 設定1=97.7%〜設定6=112.1%。設置約8000台。2026-05-11導入済。設定2-6まで実解析値判明（独立3ソース一致）。小役は全設定共通（3ソース確定）。ボーナス直撃に特大設定差（設定1: 約1/53905.6→設定6: 約1/4326.7、一撃/ちょんぼりすた独立一致・2026-05検証。設定2-5は未公開のためProvisional・数値未登録）。"
 }

@@ -171,9 +171,7 @@ describe('migrate-v1-to-v2: role id generation', () => {
     const v1 = {
       name: 'test',
       type: 'AT',
-      roles: [
-        { id: 'custom-id', name: 'チェリー', probabilities: { 1: 0.01 } },
-      ],
+      roles: [{ id: 'custom-id', name: 'チェリー', probabilities: { 1: 0.01 } }],
     };
     const v2 = migrateV1ToV2(v1);
     expect(v2.roles[0].id).toBe('custom-id');
@@ -183,9 +181,7 @@ describe('migrate-v1-to-v2: role id generation', () => {
     const v1 = {
       name: 'test',
       type: 'AT',
-      roles: [
-        { name: '大', probabilities: { 1: 0.01 }, displayOrder: 1 },
-      ],
+      roles: [{ name: '大', probabilities: { 1: 0.01 }, displayOrder: 1 }],
     };
     const v2 = migrateV1ToV2(v1);
     expect(v2.roles[0].id).toBe('role_1');
@@ -213,10 +209,10 @@ describe('migrate-v1-to-v2: role id generation', () => {
 describe('migrate-v1-to-v2: endScreens', () => {
   it('renames distribution → probabilities', () => {
     const v1 = {
-      name: 'x', type: 'AT', roles: [],
-      endScreens: [
-        { name: 'A', distribution: { 1: 0.5, 6: 0.5 } },
-      ],
+      name: 'x',
+      type: 'AT',
+      roles: [],
+      endScreens: [{ name: 'A', distribution: { 1: 0.5, 6: 0.5 } }],
     };
     const v2 = migrateV1ToV2(v1);
     expect(v2.endScreens[0].probabilities).toEqual({ 1: 0.5, 6: 0.5 });
@@ -225,7 +221,9 @@ describe('migrate-v1-to-v2: endScreens', () => {
 
   it('expands patterns into individual endScreens', () => {
     const v1 = {
-      name: 'x', type: 'AT', roles: [],
+      name: 'x',
+      type: 'AT',
+      roles: [],
       availableSettings: ['1', '2', '3', '4', '5', '6'],
       endScreens: [
         {
@@ -248,7 +246,9 @@ describe('migrate-v1-to-v2: endScreens', () => {
 
   it('applies minSetting filter over availableSettings', () => {
     const v1 = {
-      name: 'x', type: 'AT', roles: [],
+      name: 'x',
+      type: 'AT',
+      roles: [],
       availableSettings: ['1', '2', '3', '4', '5', '6'],
       endScreens: [
         {
@@ -264,7 +264,9 @@ describe('migrate-v1-to-v2: endScreens', () => {
 
   it('fills default type = "other" when absent', () => {
     const v1 = {
-      name: 'x', type: 'AT', roles: [],
+      name: 'x',
+      type: 'AT',
+      roles: [],
       endScreens: [{ name: 'A' }],
     };
     const v2 = migrateV1ToV2(v1);
@@ -279,7 +281,9 @@ describe('migrate-v1-to-v2: endScreens', () => {
 describe('migrate-v1-to-v2: settings.order reindex', () => {
   it('reindexes settings.order to 1..N', () => {
     const v1 = {
-      name: 'x', type: 'AT', roles: [],
+      name: 'x',
+      type: 'AT',
+      roles: [],
       settings: [
         { id: '1', name: '設定1', order: 10 },
         { id: '6', name: '設定6', order: 20 },
@@ -302,7 +306,8 @@ describe('migrate-v1-to-v2: settings.order reindex', () => {
 describe('migrate-v1-to-v2: purity', () => {
   it('does not mutate input v1', () => {
     const v1 = {
-      name: 'x', type: 'AT',
+      name: 'x',
+      type: 'AT',
       roles: [{ name: 'チェリー', probabilities: { 1: 0.01 }, displayOrder: 1 }],
     };
     const snapshot = JSON.parse(JSON.stringify(v1));

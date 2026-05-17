@@ -2,6 +2,47 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.7.2] - 2026-05-16 (第4弾 swarm)
+
+### 誤データ是正（GREEN・最優先）
+- **godzilla-vs-eva** v1.1→1.2: AT終了画面「エヴァ&ゴジラ」の設定示唆を `[4,5,6]（設定4以上濃厚）` → `[5,6]（設定5以上濃厚）` へ修正、excludedSettings `[1,2,4]`。nana-press + p-town.dmm の確度1独立2源一致、現値を裏付ける情報源ゼロ（AT/ボーナス終了画面取り違えの構造仮説と整合）。iOS判別エンジンの誤推測を是正
+
+### Provisional値差替（YELLOW・5/11新台、Provisional維持）
+- **takt-opus-destiny** v1.0→1.1: AT初当たり設定2-5を線形補間値→確度2解析メディア（nana-press/chonborista）公表値へ差替（設定4の+6.6%乖離を是正）。導入5日でホール検証僅少のため Provisional 維持、description に確度2・サンプル僅少を明記（正式値化せず）
+- **biohazard-re3** v1.0→1.1: AT初当たり設定2-5を確度2解析値へ差替 + 小役共通役6種を `roles` 追加（`hasSettingDiff:false`）。Provisional 維持
+- **bakemonogatari** v1.2→1.3: 「解呪ノ儀200G到達時CZ当選率」を `trialSuccessRates` に追加（設定1:10%→6:20%、設定2-5線形補間明記）。nana-press確度1 + 1geki確度2 傾向一致。300G値は単独ソースのため未採用（ISSUE化）
+
+### main投入前 第6弾超詳細レビュー訂正（2026-05-17・researcher 独立2ソース裏取り）
+- **bakemonogatari**: 「解呪ノ儀200G到達時CZ当選率」設定2-5を線形補間値（2:0.12/3:0.14/4:0.16/5:0.18）→ 実2ソース確認値（2:0.10/3:0.104/4:0.15/5:0.175）へ訂正。nana-press 確度1 / altema 独立系列 / 1geki で再確認。端値（設定1:0.10・設定6:0.20）は2ソース確認済で不変。description を実値ベースへ更新、roles[] 不変（KC-2維持）
+- **biohazard-re3**: AT初当たり確率 設定3を 0.002682 → 0.002683（1/372.7、nana-press/altema/chonborista 3ソース完全一致への丸め精緻化）。他設定値・role構造は不変
+- **super-rio-ace2**: 初当たり確率 設定2-5 を線形補間値 → 実3ソース値（一撃/ちょんぼりすた/なな徹 独立一致）へ訂正（設定2: 1/281.9・設定3: 1/268.0・設定4: 1/238.9・設定5: 1/230.0、bakemonogatari型乖離是正）。description/notes/roles description の「導入前・未公開・線形補間暫定」stale文言を実態（導入済・3ソース確定・線形補間破棄）へ訂正。ケロットトロフィー 銅(設定2以上)/銀(設定3以上)/金(設定4以上)/ケロット柄(設定5以上) を `confirmationEvents` に純追加（big-dream 5段階形式準拠、虹は不変）。ボーナス直撃確率（特大設定差・設定1: 1/53905.6→設定6: 1/4326.7）を端点のみ description に散文記載（設定2-5実値未公開のため補間せず Provisional 明記）。roles[] 不変（KC-2維持）
+- **big-dream-golden-pusher**: CZ突入確率 設定2-5（設定2: 1/333.3・設定3: 1/326.6・設定4: 1/316.4・設定5: 1/311.4）/ AT初当たり確率 設定2-5（設定2: 1/615.3・設定3: 1/599.1・設定4: 1/562.6・設定5: 1/551.1）を線形補間値 → 実3ソース値（一撃/ちょんぼりすた/p-town 独立一致）へ訂正。description/notes の「導入前・未公開・線形補間暫定」stale文言を実態へ訂正。終了画面/トロフィー/ボイスの定性示唆は3ソース整合済のため文言据置、roles[] 据置（小役設定差未公開・正）
+
+### 定性示唆追加（YELLOW・出現率数値なし）
+- **super-rio-ace2**: 小役共通役 `roles` 登録 + 終了画面/ケロットトロフィー/ボイス示唆を定性追加（confirmed/excludedSettings のみ、出現率未判明明記）。初当たり/CZ中間値は変更なし
+- **big-dream-golden-pusher**: 終了画面6種/サミートロフィー5段階/獲得枚数/エンディングボイスを定性示唆追加（同上）
+
+### 見送り（保守原則の正常結論・採用ゼロ）
+- 5/12〜5/16 新台導入なし（GALFY 5/25導入予定は設定判別「調査中」のため I7 維持）
+- kaguya-sama 小役設定差は3媒体未公表 → roles空維持
+- 5/11新台4機種の機械割・示唆出現率は導入5日でサンプル僅少 → 数値化せず（2026-05-25 再評価）
+
+### 品質ゲート
+- skeptical-evaluator GAN 5軸評価: **PASS**（平均 9.2/10、Correctness 9 / Design 9 / Craft 9 / Testability 10 / Security 9）
+- AI Slop Scan: Critical/High/Medium 検出ゼロ（Clean）
+- Triple Verification: Pass（Automated 130 tests/0 errors + Contract ALL-PASS + Regression 維持）
+- critic 確度評価: GREEN 1 / YELLOW 6 / RED 5 / ISSUE化 6（FS-5循環参照チェック実施、researcher-B「メーカー公式確度1-2」誇張を是正）
+
+### FUTURE_ADDITIONS 同期 / オープンISSUE更新
+- からくりサーカス2 導入日「2026-07-06 確定（検定通過済）」へ更新
+- ULTRAMAN最終決戦ME（オッケー・5/15検定通過）を追跡項目追加
+- godzilla-vs-eva 構造再設計（モスラ/カヲル未登録、AT/ボーナス終了画面取り違え）を高優先ISSUE化
+- 完全性バリデータの Provisional 分類限界（roles付与でComplete誤分類）を ISSUE化
+- bakemonogatari 解呪300G値（単独ソース要追検証）を ISSUE化
+
+### 品質指標
+- 機種数: 148 維持（新規追加なし）/ エラー0件・警告0件（維持）/ 130 tests pass（維持）
+
 ## [3.7.1] - 2026-04-30 (第2弾 swarm)
 
 ### 改訂（既存2機種、新規追加なし）

@@ -2,19 +2,147 @@
   "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
   "type": "AT",
   "roles": [],
-  "confirmationEvents": [],
-  "endScreens": [],
+  "confirmationEvents": [
+    {
+      "id": "trophy_copper",
+      "name": "サミートロフィー 銅",
+      "description": "銅トロフィー出現で設定2以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#B87333"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "サミートロフィー 銀",
+      "description": "銀トロフィー出現で設定3以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#C0C0C0"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "サミートロフィー 金",
+      "description": "金トロフィー出現で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kirin",
+      "name": "サミートロフィー キリン柄",
+      "description": "キリン柄トロフィー出現で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#E0A800"
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "サミートロフィー 虹",
+      "description": "虹トロフィー出現で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "coin_456_4560",
+      "name": "獲得枚数 456枚・4560枚",
+      "description": "獲得枚数表示456枚または4560枚で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "coin_666_6666",
+      "name": "獲得枚数 666枚・6666枚",
+      "description": "獲得枚数表示666枚または6666枚で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    },
+    {
+      "id": "voice_kami_itadaki",
+      "name": "エンディングボイス「お前は神の頂きに〜」",
+      "description": "エンディングボイス「お前は神の頂きに〜」で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "voice_ougon",
+      "name": "エンディングボイス「その力で更なる黄金を〜」",
+      "description": "エンディングボイス「その力で更なる黄金を〜」で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "end_hat",
+      "name": "帽子",
+      "type": "at_end",
+      "hint": "デフォルト",
+      "description": "AT終了画面が帽子（デフォルト・示唆なし）。情報源: nana-press/chonborista 確度2、出現率未判明",
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "end_gun_ball",
+      "name": "銃&玉",
+      "type": "at_end",
+      "hint": "偶数設定示唆",
+      "description": "AT終了画面が銃&玉で偶数設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "color": "#2196F3"
+    },
+    {
+      "id": "end_sword",
+      "name": "剣",
+      "type": "at_end",
+      "hint": "高設定示唆",
+      "description": "AT終了画面が剣で高設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "color": "#673AB7"
+    },
+    {
+      "id": "end_treasure",
+      "name": "宝の山",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "description": "AT終了画面が宝の山で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "end_throne",
+      "name": "玉座",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "description": "AT終了画面が玉座で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#9C27B0"
+    },
+    {
+      "id": "end_gilgamesh",
+      "name": "覚醒ギルガメッシュ",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "description": "AT終了画面が覚醒ギルガメッシュで設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
+      "confirmedSettings": ["6"],
+      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "color": "#FF4081"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "cz_rate",
       "name": "CZ突入確率",
-      "description": "設定1: 1/337.7、設定6: 1/303.4（メーカー公式値）。設定2-5は線形補間値（暫定、ホール検証前）",
+      "description": "設定1: 1/337.7、設定2: 1/333.3、設定3: 1/326.6、設定4: 1/316.4、設定5: 1/311.4、設定6: 1/303.4。全設定とも実解析値（一撃/ちょんぼりすた/p-town独立一致、2026-05検証、線形補間は破棄済）",
       "probabilities": {
         "1": 0.002961,
-        "2": 0.003028,
-        "3": 0.003095,
-        "4": 0.003162,
-        "5": 0.003229,
+        "2": 0.003000,
+        "3": 0.003062,
+        "4": 0.003161,
+        "5": 0.003212,
         "6": 0.003296
       },
       "displayOrder": 1,
@@ -23,13 +151,13 @@
     {
       "id": "at_first_hit",
       "name": "AT初当たり確率",
-      "description": "設定1: 1/629.3、設定6: 1/536.2（メーカー公式値）。設定2-5は線形補間値（暫定、ホール検証前）",
+      "description": "設定1: 1/629.3、設定2: 1/615.3、設定3: 1/599.1、設定4: 1/562.6、設定5: 1/551.1、設定6: 1/536.2。全設定とも実解析値（一撃/ちょんぼりすた独立一致、2026-05検証、線形補間は破棄済）",
       "probabilities": {
         "1": 0.001589,
-        "2": 0.001644,
-        "3": 0.001699,
-        "4": 0.001754,
-        "5": 0.001810,
+        "2": 0.001625,
+        "3": 0.001669,
+        "4": 0.001777,
+        "5": 0.001815,
         "6": 0.001865
       },
       "displayOrder": 2,
@@ -37,10 +165,10 @@
     }
   ],
   "voiceCounts": [],
-  "notes": "2026年5月11日導入予定。導入前のため小役確率の設定差、終了画面、確定演出等の詳細データは未公開。サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ確率設定1=1/337.7〜設定6=1/303.4、AT確率設定1=1/629.3〜設定6=1/536.2、機械割設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。設定2-5は線形補間値（暫定）。情報源URL: https://www.p-world.co.jp/machine/database/10446 , https://web-greenbelt.jp/post-109819/",
+  "notes": "2026年5月11日導入。導入から実解析値判明済み（一撃/ちょんぼりすた/p-town で独立一致、2026-05検証、線形補間は破棄）。サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ確率設定1=1/337.7〜設定6=1/303.4、AT確率設定1=1/629.3〜設定6=1/536.2（CZ/AT初当たりとも設定1-6実解析値）、機械割設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。小役設定差は未公開のためroles未登録。終了画面6種/サミートロフィー5段階/獲得枚数/エンディングボイスを定性示唆として追加（情報源: nana-press/chonborista 確度2、出現率未判明）。情報源URL: https://www.p-world.co.jp/machine/database/10446 , https://web-greenbelt.jp/post-109819/ , https://nana-press.com/kaiseki/machine/1151/ , https://chonborista.com/slot/sammy-slot/254356/",
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-04-30",
-  "source": "メーカー公式（サミー/銀座）、P-WORLD、ちょんぼりすた、なな徹",
-  "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差。機械割: 設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。導入前のため roles・終了画面・確定演出は未公開、設定2-5は線形補間値（暫定）。"
+  "version": "1.1",
+  "lastUpdated": "2026-05-17",
+  "source": "メーカー公式（サミー/銀座）、P-WORLD、ちょんぼりすた、なな徹、nana-press（確度2）、chonborista（確度2）",
+  "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差（確度2解析公表値・Provisional、線形補間は破棄済）。機械割: 設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。2026-05-11導入済。CZ/AT初当たり設定1-6実解析値判明（独立3ソース一致）。終了画面/トロフィー/ボイスは定性示唆判明。小役設定差は未公開のためroles未登録。"
 }
