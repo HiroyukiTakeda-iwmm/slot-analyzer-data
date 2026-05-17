@@ -134,9 +134,12 @@ function buildEndScreenFromPattern(parent, pattern, patternIndex, availableSetti
     id,
     name: pattern.name,
     type: typeof parent.type === 'string' ? parent.type : DEFAULT_END_SCREEN_TYPE,
-    hint: typeof pattern.description === 'string'
-      ? pattern.description
-      : (typeof parent.hint === 'string' ? parent.hint : ''),
+    hint:
+      typeof pattern.description === 'string'
+        ? pattern.description
+        : typeof parent.hint === 'string'
+          ? parent.hint
+          : '',
     confirmedSettings,
   };
   if (parent.color !== undefined) {
@@ -187,9 +190,10 @@ function deriveConfirmedSettings(pattern, availableSettings) {
  * @returns {Record<string, unknown>}
  */
 function buildEndScreenFromStandard(es, usedIds) {
-  const id = typeof es.id === 'string' && es.id.length > 0
-    ? claimSlug(es.id, usedIds)
-    : generateEndScreenId(typeof es.name === 'string' ? es.name : '', usedIds);
+  const id =
+    typeof es.id === 'string' && es.id.length > 0
+      ? claimSlug(es.id, usedIds)
+      : generateEndScreenId(typeof es.name === 'string' ? es.name : '', usedIds);
 
   const probabilities = es.probabilities ?? es.distribution;
 
@@ -256,9 +260,10 @@ function migrateZones(zones) {
     const roles = Array.isArray(zone.roles)
       ? zone.roles.map((role, i) => migrateRole(role, i, usedRoleIds))
       : zone.roles;
-    const rawId = typeof zone.id === 'string' && zone.id.length > 0
-      ? zone.id
-      : slugify(typeof zone.name === 'string' ? zone.name : '');
+    const rawId =
+      typeof zone.id === 'string' && zone.id.length > 0
+        ? zone.id
+        : slugify(typeof zone.name === 'string' ? zone.name : '');
     const candidate = rawId.length > 0 ? rawId : 'zone';
     const id = claimSlug(candidate, usedZoneIds);
     return { ...zone, id, roles };
@@ -310,9 +315,10 @@ function resolveGroupId(group, usedGroupIds) {
  * @returns {Record<string, unknown>}
  */
 function migrateInnerEndScreen(es, usedIds) {
-  const id = typeof es.id === 'string' && es.id.length > 0
-    ? claimSlug(es.id, usedIds)
-    : generateEndScreenId(typeof es.name === 'string' ? es.name : '', usedIds);
+  const id =
+    typeof es.id === 'string' && es.id.length > 0
+      ? claimSlug(es.id, usedIds)
+      : generateEndScreenId(typeof es.name === 'string' ? es.name : '', usedIds);
 
   return {
     ...es,
@@ -469,14 +475,12 @@ function computeDiff(path, v1, v2) {
   });
 
   const endScreensNormalized =
-    Array.isArray(v1.endScreens) &&
-    JSON.stringify(v1.endScreens) !== JSON.stringify(v2.endScreens);
+    Array.isArray(v1.endScreens) && JSON.stringify(v1.endScreens) !== JSON.stringify(v2.endScreens);
 
   const schemaVersionAdded = v1.schemaVersion !== 2 && v2.schemaVersion === 2;
 
   const settingsReindexed =
-    Array.isArray(v1.settings) &&
-    JSON.stringify(v1.settings) !== JSON.stringify(v2.settings);
+    Array.isArray(v1.settings) && JSON.stringify(v1.settings) !== JSON.stringify(v2.settings);
 
   const changed = JSON.stringify(v1) !== JSON.stringify(v2);
 
@@ -540,10 +544,12 @@ function runCli({ dryRun, write, file, reportPath }) {
   if (dryRun && changed.length > 0) {
     console.log('--- 変更予定機種 (上位 20) ---');
     for (const r of changed.slice(0, 20)) {
-      console.log(`  ${r.path}: ids+${r.idsAdded}` +
-        (r.endScreensNormalized ? ' endScreens=std' : '') +
-        (r.schemaVersionAdded ? ' schema=2' : '') +
-        (r.settingsReindexed ? ' settings=reidx' : ''));
+      console.log(
+        `  ${r.path}: ids+${r.idsAdded}` +
+          (r.endScreensNormalized ? ' endScreens=std' : '') +
+          (r.schemaVersionAdded ? ' schema=2' : '') +
+          (r.settingsReindexed ? ' settings=reidx' : '')
+      );
     }
     if (changed.length > 20) {
       console.log(`  ... 他 ${changed.length - 20} 機種`);
