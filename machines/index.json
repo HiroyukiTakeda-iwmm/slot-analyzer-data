@@ -1,6 +1,6 @@
 {
-  "version": "3.7.2",
-  "updatedAt": "2026-05-16T11:30:00Z",
+  "version": "3.7.3",
+  "updatedAt": "2026-05-17T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -1255,7 +1255,7 @@
         "2026年新台"
       ],
       "description": "炎炎ループ初当たり確率に大きな設定差。前作5段階から今作は全6段階設定に変更",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "sengokuotome4",
@@ -1823,7 +1823,7 @@
         "6段階設定"
       ],
       "description": "小役に設定差なし。AT初当り確率と爆乳HB勝率で判別。閃乱ゾーン終了画面・AT終了画面に確定パターン",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "eva-yakusoku",
@@ -1886,7 +1886,7 @@
         "4段階設定"
       ],
       "description": "設定1,2,5,6の4段階。RB確率に大きな設定差。BIG中リーチ目で設定5以上濃厚。スイカ・チェリーの設定差が非線形",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "darlifra",
@@ -2364,7 +2364,7 @@
         "新台"
       ],
       "description": "上乗せG数で設定確定演出（+22G=設定2以上〜+66G=設定6確定）。CZ当選率に設定差",
-      "lastUpdated": "2026-04-09"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "isekai-quartet-bt",

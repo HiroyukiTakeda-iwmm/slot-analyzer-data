@@ -120,6 +120,38 @@
       "color": "#F44336"
     },
     {
+      "id": "trophy_copper",
+      "name": "クジラッキートロフィー 銅",
+      "description": "ST終了画面で銅トロフィー出現で設定2以上濃厚",
+      "confirmedSettings": ["2", "3", "4", "5", "6"],
+      "excludedSettings": ["1"],
+      "color": "#CD7F32"
+    },
+    {
+      "id": "trophy_silver",
+      "name": "クジラッキートロフィー 銀",
+      "description": "ST終了画面で銀トロフィー出現で設定3以上濃厚",
+      "confirmedSettings": ["3", "4", "5", "6"],
+      "excludedSettings": ["1", "2"],
+      "color": "#9E9E9E"
+    },
+    {
+      "id": "trophy_gold",
+      "name": "クジラッキートロフィー 金",
+      "description": "ST終了画面で金トロフィー出現で設定4以上濃厚",
+      "confirmedSettings": ["4", "5", "6"],
+      "excludedSettings": ["1", "2", "3"],
+      "color": "#FFD700"
+    },
+    {
+      "id": "trophy_kumanomi",
+      "name": "クジラッキートロフィー クマノミ",
+      "description": "ST終了画面でクマノミ柄トロフィー出現で設定5以上濃厚",
+      "confirmedSettings": ["5", "6"],
+      "excludedSettings": ["1", "2", "3", "4"],
+      "color": "#FF9800"
+    },
+    {
       "id": "trophy_rainbow",
       "name": "クジラッキートロフィー 虹",
       "description": "ST終了画面でクジラッキートロフィー虹出現で設定6濃厚",
@@ -188,7 +220,7 @@
   "voiceCounts": [],
   "author": "コミュニティ",
   "version": "1.0",
-  "lastUpdated": "2026-04-09",
+  "lastUpdated": "2026-05-17",
   "source": "ちょんぼりすた、一撃",
   "description": "純増約7.1枚のスマスロAT機。ゲーム数上乗せ＋STループの荒波タイプ。上乗せG数による設定確定演出（+22G=設定2以上〜+66G=設定6確定）が特徴。CZ「アナライズチャレンジ」当選率に設定差あり。",
   "notes": "2026年4月導入の新台。速報値を含む可能性あり。三洋物産初のスマスロ機。"
