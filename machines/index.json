@@ -148,7 +148,7 @@
         "2025年新台"
       ],
       "description": "スイカ確率と弱チェリーAT直撃率に設定差",
-      "lastUpdated": "2026-05-16"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "tokyo-revengers",
@@ -2454,8 +2454,8 @@
         "2026年5月",
         "新台"
       ],
-      "description": "エンターライズ製スマスロAT機。純増約4.5枚/G。AT初当たり確率に設定差。導入前のため設定2-5は線形補間値",
-      "lastUpdated": "2026-05-16"
+      "description": "エンターライズ製スマスロAT機。純増約4.5枚/G。AT初当たり確率に設定差（設定1: 1/399.0→設定6: 1/311.2）。設定2-5は確度2解析公表値・サンプル僅少のため Provisional（線形補間は破棄済）",
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "big-dream-golden-pusher",
@@ -2474,7 +2474,7 @@
         "新台"
       ],
       "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差。コイン単価5.7円",
-      "lastUpdated": "2026-05-16"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "super-rio-ace2",
@@ -2492,7 +2492,7 @@
         "新台"
       ],
       "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差",
-      "lastUpdated": "2026-05-16"
+      "lastUpdated": "2026-05-17"
     },
     {
       "id": "takt-opus-destiny",
