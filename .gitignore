@@ -33,3 +33,7 @@ npm-debug.log*
 # Claude local files (ephemeral agent memory and per-environment configs)
 .claude/agent-memory/
 .claude/*.local.md
+
+# Swarm research scratch (一時リサーチ作業用・成果物はboard/コミットへ反映)
+slot-analyzer-data-temp/
+slot-analyzer-temp-placeholder.md
