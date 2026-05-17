@@ -2,6 +2,37 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.7.3] - 2026-05-17 (第5弾 swarm)
+
+### 全148機種独立再検証（設定確率値の訂正0件）
+- 過去1ヶ月分の独立再検証で全148機種の設定別確率値を照合。**設定確率値の訂正は0件**（確立済み機種データは正確と実証）。反映は以下のKC-2安全な軽微修正のみ（`roles[]`・確率値は一切不変、role.id 導出維持）
+
+### 確定演出純追加（GREEN・確度1独立2源以上一致）
+- **akudama-drive** lastUpdated 2026-04-09→2026-05-17: クジラッキートロフィー **銅（設定2以上濃厚）/銀（設定3以上濃厚）/金（設定4以上濃厚）/クマノミ（設定5以上濃厚）** を `confirmationEvents[]` に純追加（虹=設定6確定は既存据置）。なな徹/altema/すろぱちくえすと/ちょんぼりすたで意味論一致
+
+### description 鮮度・記述メタ訂正（既存値保持・確率値不変）
+- **enen-shouboutai2** lastUpdated 2026-03-27→2026-05-17: description鮮度訂正（小役「導入前で未解析」→「全設定共通（2026-05-17に独立2ソース再検証で確認）」）
+- **kagura-burstup** lastUpdated 2026-03-27→2026-05-17: description訂正（「マーベラス製スマスロ」→「オーイズミ製6.5号機（2022年8月導入。閃乱カグラはマーベラスのゲームIPで製造はオーイズミ）」、P-BOMB/ちょんぼりすた/1geki/P-WORLDで確定）+ 末尾「スマスロ版」の世代矛盾を除去
+- **smaslo-thunderv** lastUpdated 2026-03-27→2026-05-17: description訂正（小役「全設定共通」→「ベル・スイカ等に設定差あり、リプレイ・チェリーAは全設定共通」、役データと整合）
+
+### 品質ゲート
+- skeptical-evaluator GAN 5軸評価: **PASS**（平均 9.2/10）
+- AI Slop Scan: Critical/High/Medium 検出ゼロ（Clean）
+- Triple Verification: Pass（Automated 130 tests/0 errors + Contract ALL-PASS + Regression 維持、KC-2 golden migrate-v1-to-v2 48 passed）
+- 完全性: Complete 145 非減少（quality 維持）
+
+### FUTURE_ADDITIONS 同期 / オープンISSUE更新
+- 最終更新 2026-05-17（第5弾 swarm: 全148機種独立再検証）、登録台数 148台（index.json v3.7.3）に更新
+- 第5弾再検証結果サマリー（設定確率値訂正0件・記述メタ訂正3件・確定演出純追加1件）を追記
+- **umineko2 を ISSUE I13 登録**: 確定役A+赤異色BB（設定1 1/16384→設定6 1/7281.8）・RB中青7斜め揃い（設定1 1/555.4→設定6 1/258.0）が公式級設定差役として独立2ソース（一撃 l_umineko2 / なな徹 machine/1089）で確認済。ただし `roles` 追加 = role.id 導出変化で iOS QR v1/v3 互換破壊（KC-2）のため反映見送り。iOS側同時対応が必要な独立タスクとして分離
+
+### 品質指標
+- 機種数: 148 維持（新規追加なし）/ エラー0件・警告0件（維持）/ 130 tests pass（維持）
+
+### iOS互換性
+- **破壊的変更: なし**
+- 構造変更: なし（`roles[]` 不触・role.id 導出不変、confirmationEvents の値純追加と description 訂正のみ。golden48 pass）
+
 ## [3.7.2] - 2026-05-16 (第4弾 swarm)
 
 ### 誤データ是正（GREEN・最優先）
