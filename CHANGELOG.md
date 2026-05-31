@@ -2,6 +2,49 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.8.0] - 2026-05-31 (第7弾 swarm)
+
+### Added
+- **新機種追加（149台目）**: GALFY（LBスロット GALFY）
+  - メーカー: オーイズミ / 導入: 2026-05-25 / タイプ: BT
+  - 設定構成: 設定1 / 2 / 5 / 6 の4段階（設定3 / 4 は欠番）
+  - roles 5件: BIG / REG / BAR揃いA / ホネ揃い / GCチェリー
+    - 確度2・5ソース（ちょんぼりすた / なな徹 / スロパチクエスト / 一撃 / P-WORLD）
+  - trialSuccessRates「ボーナス合算確率」設定1 / 2 / 5 / 6
+  - **Provisional（暫定）**: 導入7日の実戦値ベース。母数蓄積に伴い更新予定
+  - 未登録（解析待ち・I7 として継続）: BT中ハズレ（設定2未解析）/ サイドランプ終了画面振り分け / トロフィー
+
+### Changed
+- **description 鮮度訂正**: スマスロ ミリオンゴッド-神々の軌跡-（milliongod/milliongod-kiseki.json）version 1.0 → 1.1
+  - stale 文言「導入前のため暫定」を「2026-04-20 導入済（導入後40日）・確定演出登録済」へ訂正
+  - **確率値・roles[] 構造は不変（KC-2 維持）**。description のみの訂正
+- `machines/index.json`: version 3.7.3 → 3.8.0（新機種追加のため minor 版上げ）、updatedAt 2026-05-31
+- `package.json`: version 同期（3.8.0）
+- ※ GALFY / milliongod-kiseki の個別エントリ version は据え置き（galfy=1.0、milliongod-kiseki=1.1）
+
+### 見送り / ISSUE 化
+- **ISSUE I14 登録**: milliongod-kiseki「押し順15枚役」のベース約3倍の設定差（設定1 30.8G → 設定6 34.4G / 50枚）
+  - `roles` 追加は role.id 導出を変化させ iOS QR v1/v3 互換を破壊する（KC-2）ため**今弾は反映見送り**
+  - umineko2 I13 と同型の iOS 同時対応タスクとして分離
+- **I13（継続）**: umineko2 確定役A + 赤異色BB 等の roles 追加（iOS QR 互換対応が必要なため継続保留）
+- **I7（継続）**: GALFY BT中ハズレ（設定2）/ 終了画面振り分けの解析待ち
+
+### 全機種フル再監査の結論
+- 自動検証層（validate / test / golden48 / quality）が全149機種を機械検査
+- researcher が 2026 年新台21機種 + 5/17 以降の新発覚値を再スキャン（GALFY 以外に新規確定値なし）
+- 第5弾で全148機種の既往再検証済（訂正0件）
+- 今弾の実反映は **GALFY 新規追加 + milliongod-kiseki の stale description 訂正のみ**。
+  それ以外の147機種は**変更不要を確認**（不要差分を作らず AI Slop を回避）
+
+### 品質ゲート
+- _（GAN / Triple Verification 結果は CEO が追記）_
+
+### iOS互換性
+- **破壊的変更: なし**
+- GALFY は新規機種で roles 純追加（既存 role.id 不変）
+- milliongod-kiseki は値訂正0件・description のみの変更（role.id 不変）
+- golden migrate-v1-to-v2 48 pass 維持
+
 ## [3.7.3] - 2026-05-17 (第5弾 swarm)
 
 ### 全148機種独立再検証（設定確率値の訂正0件）

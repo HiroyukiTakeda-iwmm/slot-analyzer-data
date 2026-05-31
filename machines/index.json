@@ -1,6 +1,6 @@
 {
-  "version": "3.7.3",
-  "updatedAt": "2026-05-17T00:00:00Z",
+  "version": "3.8.0",
+  "updatedAt": "2026-05-31T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -2408,7 +2408,7 @@
       "name": "スマスロ ミリオンゴッド-神々の軌跡-",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "milliongod/milliongod-kiseki.json",
       "tags": [
         "AT",
@@ -2419,7 +2419,7 @@
         "新台"
       ],
       "description": "ミズホ製スマスロAT機。純増約7.0枚/G。GG初当たり確率に設定差。奇数設定は重いが機械割高い",
-      "lastUpdated": "2026-04-30"
+      "lastUpdated": "2026-05-31"
     },
     {
       "id": "animalslot-docchi",
@@ -2512,6 +2512,25 @@
       ],
       "description": "アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり設定6突出型（設定4-6近接）",
       "lastUpdated": "2026-05-16"
+    },
+    {
+      "id": "galfy",
+      "name": "LBスロット GALFY",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "galfy/galfy.json",
+      "tags": [
+        "BT",
+        "GALFY",
+        "オーイズミ",
+        "スマスロ",
+        "4段階設定",
+        "2026年5月",
+        "新台"
+      ],
+      "description": "オーイズミのスマスロBT機（2026-05-25導入）。設定1・2・5・6の4段階。BIG/REG/BAR揃いA/ホネ揃い/GCチェリーに設定差。2026-05-31時点の実戦解析値ベースの暫定データ。",
+      "lastUpdated": "2026-05-31"
     }
   ]
 }

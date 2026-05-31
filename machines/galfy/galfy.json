@@ -1,0 +1,96 @@
+{
+  "name": "LBスロット GALFY",
+  "type": "BT",
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ],
+  "roles": [
+    {
+      "name": "BIG",
+      "probabilities": {
+        "1": 0.003388,
+        "2": 0.003418,
+        "5": 0.003510,
+        "6": 0.003601
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#F44336"
+    },
+    {
+      "name": "REG",
+      "probabilities": {
+        "1": 0.002503,
+        "2": 0.002777,
+        "5": 0.003204,
+        "6": 0.003601
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3"
+    },
+    {
+      "name": "BAR揃いA",
+      "probabilities": {
+        "1": 0.000122,
+        "2": 0.000122,
+        "5": 0.000153,
+        "6": 0.000183
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0"
+    },
+    {
+      "name": "ホネ揃い",
+      "probabilities": {
+        "1": 0.001602,
+        "2": 0.001633,
+        "5": 0.001663,
+        "6": 0.001724
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800"
+    },
+    {
+      "name": "GCチェリー",
+      "probabilities": {
+        "1": 0.003815,
+        "2": 0.003845,
+        "5": 0.003876,
+        "6": 0.003937
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#4CAF50"
+    }
+  ],
+  "confirmationEvents": [],
+  "trialSuccessRates": [
+    {
+      "id": "bonus_total",
+      "name": "ボーナス合算確率",
+      "probabilities": {
+        "1": 0.005889,
+        "2": 0.006196,
+        "5": 0.006716,
+        "6": 0.007205
+      },
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "BIG+REGの合算。設定1: 1/169.8→設定6: 1/138.8。5ソース確定値"
+    }
+  ],
+  "endScreens": [],
+  "voiceCounts": [],
+  "notes": "2026-05-31時点の実戦解析値ベースの暫定データ（2026-05-25導入・導入後7日）。内部公開値の確定後に再検証する。BT中ハズレ（設定2が未解析）・サイドランプ終了画面・トロフィーは解析待ちのため未登録（I7 ISSUE継続）。設定段階は1・2・5・6の4段階（設定3・4は欠番）。共通役（チェリー/スイカ/ベル等）は設定差不明のため未登録。確率値はBIG=設1:1/295.2〜設6:1/277.7、REG=設1:1/399.6〜設6:1/277.7、BAR揃いA=設1:1/8192〜設6:1/5461、ホネ揃い=設1:1/624.2〜設6:1/580.0、GCチェリー=設1:1/262.1〜設6:1/254.0。",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-05-31",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/oizumi-slot/257968/)、なな徹(https://nana-press.com/kaiseki/machine/1145/)、スロパチクエスト、P-WORLD",
+  "description": "オーイズミのスマスロBT機（2026-05-25導入）。設定は1・2・5・6の4段階（設定3・4は欠番）。設定差はBIG/REG/BAR揃いA/ホネ揃い/GCチェリー確率に表れ、特にREGは設定間の差が大きい（設定1: 1/399.6→設定6: 1/277.7）。本データは2026-05-31時点の実戦解析値ベースの暫定値で、内部公開値の確定後に再検証予定。BT中ハズレ・終了画面・トロフィーは解析待ち（I7 ISSUE継続）。"
+}
