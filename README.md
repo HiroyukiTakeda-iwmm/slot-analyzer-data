@@ -29,11 +29,17 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 | endScreens (非空)  | 87% (129/149台)  |
 | voiceCounts (非空) | 25% (37/149台)   |
 
-品質分類: Complete 146台 / Provisional 3台 / Incomplete 0台（`npm run validate` エラー0・警告0）
+品質分類（**構造上の自動分類**）: Complete 146台 / Provisional 3台 / Incomplete 0台
+（`npm run validate` エラー0・警告0）
 
-> ⚠️ **データの鮮度は別問題**。上記は「項目が埋まっているか」であって「内容が最新か」ではない。
+> ⚠️ この分類は `scripts/validators/completeness-validator.mjs` が**フィールドの充填状況だけ**で
+> 判定する。内容の確度は見ていないため、文書上は暫定登録（Provisional）の機種でも
+> `roles` が非空なら Complete に数えられる。**146台の内容が完全であるという意味ではない。**
+
+> ⚠️ **鮮度は上記とは別の軸**。品質指標は「項目が埋まっているか」であって「内容が最新か」ではない。
 > 鮮度は `node scripts/audit-freshness.mjs` で確認する（2026-08-16 時点で全149台が31日以上未更新、
-> うち147台が91日以上）。追加予定の機種は `machines/FUTURE_ADDITIONS.md` を参照。
+> うち147台が91日以上）。ただしこのスクリプトが測るのも `lastUpdated` からの**経過日数だけ**で、
+> 内容の最新性を直接保証するものではない。追加予定の機種は `machines/FUTURE_ADDITIONS.md` を参照。
 
 ## 使い方
 
@@ -72,10 +78,13 @@ slot-analyzer-data/
 
 ### index.json
 
+構造の例（**値はプレースホルダー**。現行値は `machines/index.json` を直接見ること。
+ここに実値を書くと、データ更新のたびに陳腐化して冒頭の台数表記と矛盾する）。
+
 ```json
 {
-  "version": "3.6",
-  "updatedAt": "2026-04-19T12:00:00Z",
+  "version": "<semver 例: 3.8.0>",
+  "updatedAt": "<ISO 8601 UTC 例: 2026-05-31T00:00:00Z>",
   "machines": [
     {
       "id": "unique-id",
@@ -86,7 +95,7 @@ slot-analyzer-data/
       "file": "folder/filename.json",
       "tags": ["6号機", "AT"],
       "description": "説明",
-      "lastUpdated": "2026-04-19"
+      "lastUpdated": "<YYYY-MM-DD>"
     }
   ]
 }
