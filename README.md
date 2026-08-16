@@ -2,13 +2,13 @@
 
 SlotAnalyzerアプリで使用するパチスロ機種データのコミュニティリポジトリです。
 
-**現在の登録台数: 144台** (v3.6, 2026-04-19更新)
+**現在の登録台数: 149台** (v3.8.0, 2026-05-31更新)
 
 | タイプ | 台数  |
 | ------ | ----- |
-| AT     | 108台 |
+| AT     | 112台 |
 | A-type | 14台  |
-| BT     | 11台  |
+| BT     | 12台  |
 | A+AT   | 4台   |
 | ART    | 4台   |
 | A+RT   | 2台   |
@@ -16,13 +16,24 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 
 ### 品質指標
 
+`node scripts/quality-report.mjs` の実測値（2026-08-16 実行）。数値を手で書き換えず、
+このスクリプトの出力を転記すること。
+
 | 指標               | 達成率           |
 | ------------------ | ---------------- |
-| trialSuccessRates  | 100% (144/144台) |
-| description        | 100% (144/144台) |
-| confirmationEvents | 100% (144/144台) |
-| roles (非空)       | 99% (143/144台)  |
-| endScreens (非空)  | 88% (126/144台)  |
+| trialSuccessRates  | 100% (149/149台) |
+| description        | 100% (149/149台) |
+| source             | 100% (149/149台) |
+| confirmationEvents | 100% (149/149台) |
+| roles (非空)       | 98% (146/149台)  |
+| endScreens (非空)  | 87% (129/149台)  |
+| voiceCounts (非空) | 25% (37/149台)   |
+
+品質分類: Complete 146台 / Provisional 3台 / Incomplete 0台（`npm run validate` エラー0・警告0）
+
+> ⚠️ **データの鮮度は別問題**。上記は「項目が埋まっているか」であって「内容が最新か」ではない。
+> 鮮度は `node scripts/audit-freshness.mjs` で確認する（2026-08-16 時点で全149台が31日以上未更新、
+> うち147台が91日以上）。追加予定の機種は `machines/FUTURE_ADDITIONS.md` を参照。
 
 ## 使い方
 
@@ -36,7 +47,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 ```
 slot-analyzer-data/
 ├── machines/
-│   ├── index.json              # 機種一覧インデックス (v3.6)
+│   ├── index.json              # 機種一覧インデックス (v3.8.0)
 │   ├── juggler/                # ジャグラー系
 │   ├── hokuto/                 # 北斗系
 │   ├── hanabi/                 # ハナビ系
