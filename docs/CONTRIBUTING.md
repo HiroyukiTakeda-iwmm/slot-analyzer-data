@@ -78,7 +78,7 @@ node scripts/generate-template.mjs \
 
 ### 3-2. 出典記録を作る
 
-`provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
+`provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。記録を置く機種では、機種ファイルのすべての項目を `items` に書きます（1項目でも欠けると validate が止めます）。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
 
 ### 4. バリデーション
 
@@ -101,7 +101,7 @@ git commit -m "feat(machines): {機種名}を追加"
 
 既存の機種データを修正する場合は、以下のルールに従ってください。
 
-値を変えたら `provenance/{id}.json` も直します。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
+出典記録（`provenance/{id}.json`）がある機種で値を変えたら、記録も直します（機種ファイルと記録が食い違うと validate が止めます）。記録がまだ無い機種は、段階2の見直しで記録を作るまでは、記録なしで直してかまいません（全機種で必須にするのは段階3）。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
 
 ### version の更新ルール
 
@@ -165,7 +165,7 @@ npm run sync   # index.json の lastUpdated を機種ファイルから同期
 - [ ] `lastUpdated` が更新されている
 - [ ] `index.json` の `version` と `lastUpdated` が同期している
 - [ ] 修正理由がコミットメッセージに記述されている
-- [ ] `provenance/{id}.json` を更新し、出典記録バリデーションがエラー0件
+- [ ] 出典記録がある機種は `provenance/{id}.json` も更新し、出典記録バリデーションがエラー0件
 - [ ] `npm run check:base` が問題なし
 
 ### ドキュメント修正の場合

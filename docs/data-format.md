@@ -365,14 +365,26 @@ CZ突入率やAT当選率など、設定差のある確率データです。
 
 ### 例
 
+BIG の1項目だけを抜き出した例。実際の記録には、機種ファイルのすべての項目（下の「項目の種類と名前」）を `items` に書く（1項目でも欠けると validate が止める）。
+
 ```json
 {
   "machineId": "galfy",
   "machineFile": "galfy/galfy.json",
   "reviewedAt": "2026-09-26",
   "sources": [
-    { "key": "chonborista", "kind": "analysis-site", "url": "https://chonborista.com/…", "retrievedAt": "2026-09-26" },
-    { "key": "nana-press", "kind": "analysis-site", "url": "https://nana-press.com/…", "retrievedAt": "2026-09-26" }
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/…",
+      "retrievedAt": "2026-09-26"
+    },
+    {
+      "key": "nana-press",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/…",
+      "retrievedAt": "2026-09-26"
+    }
   ],
   "items": [
     {
@@ -401,7 +413,7 @@ CZ突入率やAT当選率など、設定差のある確率データです。
 | `settings`    | `{"confirmed": [...], "excluded": [...]}`                | `confirmedSettings` / `excludedSettings`                    |
 | `presence`    | `true`                                                   | 数値は比べず、出典に載っていることだけを記録する            |
 
-unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く確定・否定の設定があれば `settings`、どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
+unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く、確定・否定の設定の欄（`confirmedSettings` / `excludedSettings`）があれば、中身が空の配列でも `settings`。どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
 
 出典に載っていない設定は書かない（キーを入れない）。分母の `null` は「確率 0」の意味で、「不明」には使わない。
 
@@ -432,6 +444,13 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 | `kept-single-source`      | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
 
 `candidates` は見つけたが採用しなかった値、`removed` は見直しで外した値（前の値と理由）。
+
+### 記録の決まり（検証器が確かめる）
+
+- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く
+- ちょんぼりすたは出典キーを `chonborista` にし、URL は `https://chonborista.com/` で始める
+- `adopted` は、選んだ出典の値そのものにする（許容差の中の別の値にしない）。`kept-single-source` では、上の表のとおり今の機種ファイルの値そのもの
+- 2つの値が一致するには、載っている設定（キー）の組が同じである必要がある。一部の設定だけを載せる出典の扱いは段階2で決める
 
 ### 保存する数値
 
