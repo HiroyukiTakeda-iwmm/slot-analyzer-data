@@ -67,8 +67,9 @@
   - `itemKey(kind: string, name: string): string` … `"kind::name"`
   - `shapeError(unit: string, value: unknown): string | null`
   - `valuesAgree(unit: string, a: unknown, b: unknown): boolean`
-  - `toStoredProbability(denominator: number): number` / `toStoredRate(percent: number): number`
-  - `machineValue(entry: object, unit: string): object | true | null`（空の probabilities も null）
+  - `toStoredProbability(denominator: number | null): number`（null は確率 0）/ `toStoredRate(percent: number): number`
+  - `machineValue(entry: object, unit: string): object | true | null`（空の probabilities も null。denominator では確率 0 の設定を null にする）
+  - `allowedUnits(kind: string, entry: object): string[]`（機種ファイルの項目の種類と中身から、記録に使える unit を決める。仕様 5.4）
   - `createNameDisambiguator(): (kind: string, name: string) => string` … 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて返す（実データの tekken5・valvrave2 に同名の終了画面がある）
   - `listMachineItems(machine: object): Array<{ kind: string, name: string, entry: object }>`（同名の項目は `createNameDisambiguator` で区別した名前）
 
@@ -79,6 +80,7 @@
 ```js
 import { describe, it, expect } from 'vitest';
 import {
+  allowedUnits,
   createNameDisambiguator,
   itemKey,
   listMachineItems,
@@ -92,6 +94,11 @@ import {
 describe('valuesAgree: denominator（分母）', () => {
   it('差が 0.1% 以内なら一致', () => {
     expect(valuesAgree('denominator', { 1: 295.2, 6: 277.7 }, { 1: 295.24, 6: 277.7 })).toBe(true);
+  });
+
+  it('確率 0（null）は null とだけ一致', () => {
+    expect(valuesAgree('denominator', { 1: null, 6: 8192 }, { 1: null, 6: 8192 })).toBe(true);
+    expect(valuesAgree('denominator', { 1: null }, { 1: 8192 })).toBe(false);
   });
 
   it('差が 0.1% を超えると不一致', () => {
@@ -165,6 +172,7 @@ describe('valuesAgree: settings / presence', () => {
 describe('shapeError', () => {
   it('正しい形なら null', () => {
     expect(shapeError('denominator', { 1: 295.2 })).toBeNull();
+    expect(shapeError('denominator', { 1: null, 6: 8192 })).toBeNull();
     expect(shapeError('percent', { 1: 0, 6: 100 })).toBeNull();
     expect(shapeError('settings', { confirmed: ['6'], excluded: [] })).toBeNull();
     expect(shapeError('presence', true)).toBeNull();
@@ -184,6 +192,7 @@ describe('toStoredProbability / toStoredRate（有効数字6桁）', () => {
     expect(toStoredProbability(295.2)).toBe(0.00338753);
     expect(toStoredProbability(65536)).toBe(0.0000152588);
     expect(toStoredProbability(8192)).toBe(0.00012207);
+    expect(toStoredProbability(null)).toBe(0);
   });
 
   it('割合から 0〜1 へ', () => {
@@ -210,8 +219,16 @@ describe('machineValue', () => {
     expect(value[6]).toBeCloseTo(277.7, 1);
   });
 
-  it('denominator: 確率 0 を含むと表せない（null）', () => {
-    expect(machineValue({ probabilities: { 1: 0, 6: 0.1 } }, 'denominator')).toBeNull();
+  it('denominator: 確率 0 の設定は null', () => {
+    expect(machineValue({ probabilities: { 1: 0, 6: 0.1 } }, 'denominator')).toEqual({
+      1: null,
+      6: 10,
+    });
+  });
+
+  it('denominator: 負の値や 1 を超える値があると表せない（null）', () => {
+    expect(machineValue({ probabilities: { 1: -0.1, 6: 0.1 } }, 'denominator')).toBeNull();
+    expect(machineValue({ probabilities: { 1: 1.5 } }, 'denominator')).toBeNull();
   });
 
   it('percent: probabilities と rates を割合にする', () => {
@@ -310,6 +327,34 @@ describe('machineValue: 空の probabilities', () => {
     expect(machineValue({ probabilities: {} }, 'percent')).toBeNull();
   });
 });
+
+describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
+  it('役は denominator だけ', () => {
+    expect(allowedUnits('role', { probabilities: { 1: 0.5 } })).toEqual(['denominator']);
+    expect(allowedUnits('zoneRole', { probabilities: { 1: 0, 6: 0.25 } })).toEqual(['denominator']);
+  });
+
+  it('ほかの数値の項目は、0 でない値がすべて 10% 以上なら percent も使える', () => {
+    const wide = allowedUnits('trialSuccessRate', { probabilities: { 1: 0.25, 6: 0 } });
+    expect(wide).toEqual(['denominator', 'percent']);
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.003661 } })).toEqual([
+      'denominator',
+    ]);
+    expect(allowedUnits('modeTransition', { rates: { 1: 0.1, 6: 0.047 } })).toEqual([
+      'denominator',
+    ]);
+  });
+
+  it('数値が無ければ、設定の組があれば settings、無ければ presence', () => {
+    expect(allowedUnits('confirmationEvent', { confirmedSettings: ['6'] })).toEqual(['settings']);
+    expect(allowedUnits('endScreen', { hint: '示唆' })).toEqual(['presence']);
+  });
+
+  it('数値と設定の組の両方がある項目は、数値の側で決める', () => {
+    const both = { probabilities: { 1: 0.05 }, confirmedSettings: ['6'] };
+    expect(allowedUnits('endScreen', both)).toEqual(['denominator']);
+  });
+});
 ```
 
 - [ ] **Step 2: テストが失敗することを確かめる**
@@ -368,6 +413,19 @@ function isNumberMap(value) {
   );
 }
 
+/** 分母の値: 設定ごとの 1 以上の有限数。確率 0 の設定は null */
+function isDenominatorMap(value) {
+  return (
+    value !== null &&
+    typeof value === 'object' &&
+    !Array.isArray(value) &&
+    Object.keys(value).length > 0 &&
+    Object.values(value).every(
+      (v) => v === null || (typeof v === 'number' && Number.isFinite(v) && v >= 1)
+    )
+  );
+}
+
 function isStringArray(value) {
   return Array.isArray(value) && value.every((v) => typeof v === 'string');
 }
@@ -379,9 +437,9 @@ function isStringArray(value) {
 export function shapeError(unit, value) {
   switch (unit) {
     case 'denominator':
-      return isNumberMap(value) && Object.values(value).every((v) => v >= 1)
+      return isDenominatorMap(value)
         ? null
-        : '設定ごとの 1 以上の分母が必要（確率が 1 を超えないように）';
+        : '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
     case 'percent':
       return isNumberMap(value) && Object.values(value).every((v) => v >= 0 && v <= 100)
         ? null
@@ -412,6 +470,12 @@ function sameSet(a, b) {
   return sa.length === sb.length && sa.every((v, i) => v === sb[i]);
 }
 
+/** 分母どうしが一致するか（差が 0.1% 以内）。確率 0（null）は null とだけ一致する */
+function denominatorsAgree(x, y) {
+  if (x === null || y === null) return x === y;
+  return Math.abs(x - y) / Math.max(x, y) <= DENOMINATOR_TOLERANCE + FLOAT_EPSILON;
+}
+
 /**
  * 2つの値が一致するか（仕様 5.4）。形が unit に合わない値は一致しないとみなす。
  */
@@ -419,13 +483,7 @@ export function valuesAgree(unit, a, b) {
   if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
   switch (unit) {
     case 'denominator':
-      return (
-        sameKeys(a, b) &&
-        Object.keys(a).every(
-          (k) =>
-            Math.abs(a[k] - b[k]) / Math.max(a[k], b[k]) <= DENOMINATOR_TOLERANCE + FLOAT_EPSILON
-        )
-      );
+      return sameKeys(a, b) && Object.keys(a).every((k) => denominatorsAgree(a[k], b[k]));
     case 'percent':
       return (
         sameKeys(a, b) &&
@@ -440,10 +498,11 @@ export function valuesAgree(unit, a, b) {
   }
 }
 
-/** 分母（1/x の x）を、保存する確率（有効数字6桁）にする */
+/** 分母（1/x の x）を、保存する確率（有効数字6桁）にする。null は確率 0 */
 export function toStoredProbability(denominator) {
+  if (denominator === null) return 0;
   if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator < 1) {
-    throw new RangeError(`分母は 1 以上の有限数が必要: ${denominator}`);
+    throw new RangeError(`分母は 1 以上の有限数か、確率 0 を表す null が必要: ${denominator}`);
   }
   return Number((1 / denominator).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
@@ -465,17 +524,18 @@ function mapValues(obj, fn) {
 }
 
 /**
- * 機種ファイルの項目の値を、出典記録と同じ unit の形にする。
+ * 機種ファイルの項目の値を、出典記録と同じ unit の形にする。denominator では、確率 0 の設定を null にする。
  * @returns {object | true | null} unit で表せないときは null
  */
 export function machineValue(entry, unit) {
   switch (unit) {
     case 'denominator': {
       const map = numericMap(entry);
-      if (!map || Object.keys(map).length === 0 || Object.values(map).some((p) => !(p > 0))) {
+      const isProbability = (p) => typeof p === 'number' && p >= 0 && p <= 1;
+      if (!map || Object.keys(map).length === 0 || !Object.values(map).every(isProbability)) {
         return null;
       }
-      return mapValues(map, (p) => 1 / p);
+      return mapValues(map, (p) => (p === 0 ? null : 1 / p));
     }
     case 'percent': {
       const map = numericMap(entry);
@@ -491,6 +551,32 @@ export function machineValue(entry, unit) {
     default:
       return null;
   }
+}
+
+/** percent で記録できるのは、0 でない確率がすべてこれ以上の項目だけ（仕様 5.4） */
+const PERCENT_MIN_PROBABILITY = 0.1;
+
+/**
+ * 機種ファイルの項目の種類と中身から、出典記録に使える unit を決める（仕様 5.4）。
+ * 記録する側が選べると、緩い比べ方にして値の照合を外せてしまうので、ここで決める。
+ * - 役（role・zoneRole）は denominator
+ * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら denominator か
+ *   percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）
+ * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
+ * 数値と設定の組の両方がある項目は、数値の側で決める。
+ * @returns {string[]}
+ */
+export function allowedUnits(kind, entry) {
+  const map = numericMap(entry);
+  if (map && Object.keys(map).length > 0) {
+    if (kind === 'role' || kind === 'zoneRole') return ['denominator'];
+    const nonZero = Object.values(map).filter((p) => p !== 0);
+    return nonZero.every((p) => p >= PERCENT_MIN_PROBABILITY)
+      ? ['denominator', 'percent']
+      : ['denominator'];
+  }
+  if (machineValue(entry, 'settings') !== null) return ['settings'];
+  return ['presence'];
 }
 
 /**
@@ -550,7 +636,7 @@ export function listMachineItems(machine) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-lib.test.mjs`
-Expected: PASS（30 tests）
+Expected: PASS（36 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -612,6 +698,8 @@ describe('valuesEqual（許容差なしの完全一致）', () => {
   it('denominator / percent は、許容差の中でも違えば false', () => {
     expect(valuesEqual(DEN, { 1: 295.2, 6: 277.7 }, { 6: 277.7, 1: 295.2 })).toBe(true);
     expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
+    expect(valuesEqual(DEN, { 1: null, 6: 277.7 }, { 1: null, 6: 277.7 })).toBe(true);
+    expect(valuesEqual(DEN, { 1: null }, { 1: 8192 })).toBe(false);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10 })).toBe(true);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10.05 })).toBe(false);
   });
@@ -1176,7 +1264,7 @@ export function statusError(item, sourceKinds) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-rules.test.mjs tests/provenance-lib.test.mjs`
-Expected: PASS（provenance-rules 40 tests、provenance-lib 30 tests）
+Expected: PASS（provenance-rules 40 tests、provenance-lib 36 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -1431,13 +1519,33 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('外したはずの項目が機種ファイルにある');
   });
 
-  it('unit と値の形が合わなければ、形のエラーだけを出す', () => {
+  it('値の形が unit に合わなければ、形のエラーだけを出す', () => {
+    const bad = { 1: 0.5, 6: 277.7 };
     const rec = record();
-    rec.items[0] = { ...rec.items[0], unit: 'percent' };
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: bad, 'nana-press': bad },
+      adopted: bad,
+    };
+    const problem = '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
     expect(run(rec).errors.map((e) => e.message)).toEqual([
-      'role::BIG: adopted が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
-      'role::BIG: values.chonborista が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
-      'role::BIG: values.nana-press が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      `role::BIG: adopted が unit=denominator の形に合わない（${problem}）`,
+      `role::BIG: values.chonborista が unit=denominator の形に合わない（${problem}）`,
+      `role::BIG: values.nana-press が unit=denominator の形に合わない（${problem}）`,
+    ]);
+  });
+
+  it('役は percent で記録できない（unit は形より先に確かめる）', () => {
+    const small = { 1: 0.34, 6: 0.36 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      unit: 'percent',
+      values: { chonborista: small, 'nana-press': small },
+      adopted: small,
+    };
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
     ]);
   });
 
@@ -1451,7 +1559,7 @@ describe('validateProvenance', () => {
     }));
     const result = messages(run(rec));
     expect(result).toContain(
-      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator か percent にする）'
+      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator にする）'
     );
     expect(result).toContain(
       'confirmationEvent::金トロフィー: unit=presence は使えない（機種ファイルの項目に合わせて settings にする）'
@@ -1503,13 +1611,23 @@ describe('validateProvenance', () => {
     expect(result.errors.map((e) => e.message)).toEqual(['JSON パースエラー: Unexpected token']);
   });
 
-  it('確率 0 を含む項目は分母で表せないのでエラー', () => {
+  it('確率 0 の設定は、分母の null で記録する', () => {
     const zero = {
       ...machine,
       roles: [{ ...machine.roles[0], probabilities: { 1: 0, 6: toStoredProbability(277.7) } }],
     };
     const files = [{ path: 'machines/test/test-machine.json', data: zero }];
-    expect(messages(run(record(), { files }))).toContain('で表せない');
+    const withZero = { 1: null, 6: 277.7 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: withZero, 'nana-press': withZero },
+      adopted: withZero,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+    expect(messages(run(record(), { files }))).toContain(
+      'role::BIG: 機種ファイルの値が採用値と一致しない'
+    );
   });
 
   it('機種ファイルの項目名を区別できないときは、落ちずにエラーとして報告する', () => {
@@ -1519,6 +1637,71 @@ describe('validateProvenance', () => {
     };
     const files = [{ path: 'machines/test/test-machine.json', data: clash }];
     expect(messages(run(record(), { files }))).toContain('項目の名前を区別できない');
+  });
+
+  it('requireAll で、ファイル名の違う記録の機種に「出典記録がない」を重ねて出さない', () => {
+    const provenanceFiles = [{ path: 'provenance/other.json', data: record() }];
+    const result = validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true });
+    expect(result.errors.map((e) => e.message)).toEqual([
+      'ファイル名は provenance/test-machine.json にする',
+    ]);
+  });
+
+  it('割合は、0 でない値がすべて 10% 以上の項目だけ percent で記録できる', () => {
+    const withRates = {
+      ...machine,
+      trialSuccessRates: [
+        { name: 'CZ成功率', probabilities: { 1: 0.25, 6: 0.5 } },
+        { name: 'BB確率', probabilities: { 1: 0.003661, 6: 0.004365 } },
+      ],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withRates }];
+    const item = (name, value) => ({
+      kind: 'trialSuccessRate',
+      name,
+      status: 'confirmed',
+      unit: 'percent',
+      values: { chonborista: value, 'nana-press': value },
+      adopted: value,
+    });
+    const rec = record();
+    rec.items.push(item('CZ成功率', { 1: 25, 6: 50 }), item('BB確率', { 1: 0.3661, 6: 0.4365 }));
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'trialSuccessRate::BB確率: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
+    ]);
+  });
+
+  it('数値と設定の組の両方がある項目は、数値の側で記録する', () => {
+    const both = {
+      ...machine,
+      endScreens: [{ name: '金', probabilities: { 1: 0.05 }, confirmedSettings: ['6'] }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: both }];
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '金',
+      status: 'confirmed',
+      unit: 'settings',
+      values: { chonborista: GOLD, 'nana-press': GOLD },
+      adopted: GOLD,
+    });
+    expect(messages(run(rec, { files }))).toContain(
+      'endScreen::金: unit=settings は使えない（機種ファイルの項目に合わせて denominator にする）'
+    );
+  });
+
+  it('同じサイトを2つの出典として数えない', () => {
+    const rec = record();
+    rec.sources.push({
+      key: 'chonborista-2',
+      kind: 'analysis-site',
+      url: 'https://www.chonborista.com/slot/other/',
+      retrievedAt: '2026-09-26',
+    });
+    expect(messages(run(rec))).toContain(
+      '同じサイト（chonborista.com）を2つの出典に登録している: chonborista・chonborista-2'
+    );
   });
 });
 ```
@@ -1584,7 +1767,7 @@ Expected: FAIL（`provenance-validator.mjs` が無いエラー）
     "settingKeyedNumbers": {
       "type": "object",
       "minProperties": 1,
-      "patternProperties": { "^[1-6LV]$": { "type": "number" } },
+      "patternProperties": { "^[1-6LV]$": { "type": ["number", "null"] } },
       "additionalProperties": false
     },
     "settingList": {
@@ -1677,6 +1860,7 @@ import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
   CHONBORISTA_KEY,
+  allowedUnits,
   itemKey,
   listMachineItems,
   machineValue,
@@ -1765,30 +1949,37 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   return { errors, warnings };
 }
 
+/** 出典の URL のサイト（ホスト名。先頭の www. は除く） */
+function siteOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
 function collectSourceKinds(path, sources, errors) {
   const sourceKinds = {};
+  const keyBySite = new Map();
   for (const source of sources) {
     if (source.key in sourceKinds) {
       errors.push(error(path, `出典キーの重複: ${source.key}`));
     }
     sourceKinds[source.key] = source.kind;
+    // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
+    const site = siteOf(source.url);
+    const other = keyBySite.get(site);
+    if (other !== undefined && other !== source.key) {
+      errors.push(
+        error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
+      );
+    }
+    keyBySite.set(site, source.key);
     if (source.key === CHONBORISTA_KEY && !source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
       errors.push(error(path, `chonborista の URL は ${CHONBORISTA_URL_PREFIX} で始める`));
     }
   }
   return sourceKinds;
-}
-
-/**
- * 機種ファイルの項目の中身から、記録に使える unit を決める（仕様 5.4）。
- * 数値（probabilities / rates）があれば denominator か percent、無くて設定の組があれば settings、
- * どちらも無ければ presence。数値と設定の組の両方がある項目は、数値の側で照合する。
- * 記録する側が unit を選べると、presence にして値の照合を外せてしまうため。
- */
-function allowedUnits(entry) {
-  if (machineValue(entry, 'percent') !== null) return ['denominator', 'percent'];
-  if (machineValue(entry, 'settings') !== null) return ['settings'];
-  return ['presence'];
 }
 
 function checkItem(path, item, sourceKinds, machineItems) {
@@ -1798,6 +1989,21 @@ function checkItem(path, item, sourceKinds, machineItems) {
   for (const sourceKey of Object.keys(item.values)) {
     if (!(sourceKey in sourceKinds)) {
       errors.push(error(path, `${key}: sources に無い出典キー: ${sourceKey}`));
+    }
+  }
+
+  // unit は機種ファイルの項目の種類と中身で決まる（記録する側は選べない）。形の検査より先に見る
+  const target = machineItems.get(key);
+  if (target) {
+    const allowed = allowedUnits(item.kind, target.entry);
+    if (!allowed.includes(item.unit)) {
+      errors.push(
+        error(
+          path,
+          `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
+        )
+      );
+      return errors;
     }
   }
 
@@ -1817,19 +2023,8 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const statusProblem = statusError(item, sourceKinds);
   if (statusProblem) errors.push(error(path, `${key}: ${statusProblem}`));
 
-  const target = machineItems.get(key);
   if (!target) {
     errors.push(error(path, `${key}: 機種ファイルに無い項目の記録`));
-    return errors;
-  }
-  const allowed = allowedUnits(target.entry);
-  if (!allowed.includes(item.unit)) {
-    errors.push(
-      error(
-        path,
-        `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
-      )
-    );
     return errors;
   }
   const actual = machineValue(target.entry, item.unit);
@@ -1890,7 +2085,7 @@ function checkRecord(path, record, machine) {
 - [ ] **Step 5: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-validator.test.mjs`
-Expected: PASS（27 tests）
+Expected: PASS（32 tests）
 
 - [ ] **Step 6: 整形と lint**
 
@@ -2973,12 +3168,14 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 
 | unit | 値 | 機種ファイル側との対応 |
 |---|---|---|
-| `denominator` | 設定ごとの分母（`{"1": 295.2}`） | `probabilities`（または `rates`）の `1 ÷ 値` |
+| `denominator` | 設定ごとの分母（`{"1": 295.2}`）。確率 0 の設定は `null` | `probabilities`（または `rates`）の `1 ÷ 値`（0 は `null`） |
 | `percent` | 設定ごとの割合 0〜100（`{"1": 10}`） | `probabilities`（または `rates`）の `値 × 100` |
 | `settings` | `{"confirmed": [...], "excluded": [...]}` | `confirmedSettings` / `excludedSettings` |
 | `presence` | `true` | 数値は比べず、出典に載っていることだけを記録する |
 
-unit は、機種ファイルの項目の中身で決まる（検証器が確かめる）。数値（`probabilities` / `rates`）があれば `denominator` か `percent`、数値が無く確定・否定の設定があれば `settings`、どちらも無ければ `presence`。確率が 0 の設定を含む項目は分母で表せないので、`percent` で記録する。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
+unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く確定・否定の設定があれば `settings`、どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
+
+`sources` の URL は、記録の中でサイト（ホスト名）が重ならないようにする（同じサイトを2つの出典として数えない）。`kind: "official"`（メーカー公式）は記録する側の申告で機械では確かめられないので、公式サイトの URL であることを手順で確かめる。
 
 ### 項目の種類と名前
 
@@ -3021,9 +3218,11 @@ unit は、機種ファイルの項目の中身で決まる（検証器が確か
 
 ### 一致の判定
 
-- 確率（分母）: すべての設定で差が 0.1% 以内
-- 割合: すべての設定で差が 0.1 ポイント以内
+- 確率（分母）: すべての設定で差が 0.1% 以内（確率 0 の設定は null どうしで一致）
+- 割合: すべての設定で差が 0.1 ポイント以内（0 でない値がすべて 10% 以上の項目だけ。役は割合で比べない）
 - 設定の組: 完全に同じ
+- 比べ方（unit）は項目の種類と中身で決まり、記録する側は選べない
+- 同じサイトを2つの出典として数えない。メーカー公式は申告なので、公式サイトの URL であることを手順で確かめる
 - 採用する値: メーカー公式 → ちょんぼりすた → 最初に見つかった出典
 
 ### 新しく入れる値
