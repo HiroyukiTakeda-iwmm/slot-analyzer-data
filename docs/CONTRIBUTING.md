@@ -76,11 +76,16 @@ node scripts/generate-template.mjs \
 
 テンプレート生成時にコンソールに出力されるエントリを `machines/index.json` の `machines` 配列に追加します。
 
+### 3-2. 出典記録を作る
+
+`provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
+
 ### 4. バリデーション
 
 ```bash
-npm run validate   # スキーマ・確率値・演出のバリデーション
+npm run validate   # スキーマ・確率値・演出・出典記録のバリデーション
 npm test           # テスト実行
+npm run check:base # main と比べる（アプリが作る ID・採否ルール）
 ```
 
 エラー0件、テスト全通過を確認してください。
@@ -88,13 +93,15 @@ npm test           # テスト実行
 ### 5. コミット・PR
 
 ```bash
-git add machines/{dir}/{id}.json machines/index.json
+git add machines/{dir}/{id}.json machines/index.json provenance/{id}.json
 git commit -m "feat(machines): {機種名}を追加"
 ```
 
 ## データ修正手順
 
 既存の機種データを修正する場合は、以下のルールに従ってください。
+
+値を変えたら `provenance/{id}.json` も直します。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
 
 ### version の更新ルール
 
@@ -145,6 +152,8 @@ npm run sync   # index.json の lastUpdated を機種ファイルから同期
 - [ ] `index.json` にエントリが追加されている
 - [ ] `description` が記述されている
 - [ ] 確率値を2サイト以上でクロスチェック済み
+- [ ] `provenance/{id}.json` があり、出典記録バリデーションがエラー0件
+- [ ] `npm run check:base` が問題なし
 - [ ] `lastUpdated` が正しい日付になっている
 - [ ] コミットメッセージが `feat(machines): 機種名を追加` の形式
 
@@ -156,6 +165,8 @@ npm run sync   # index.json の lastUpdated を機種ファイルから同期
 - [ ] `lastUpdated` が更新されている
 - [ ] `index.json` の `version` と `lastUpdated` が同期している
 - [ ] 修正理由がコミットメッセージに記述されている
+- [ ] `provenance/{id}.json` を更新し、出典記録バリデーションがエラー0件
+- [ ] `npm run check:base` が問題なし
 
 ### ドキュメント修正の場合
 

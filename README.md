@@ -16,7 +16,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 
 ### 品質指標
 
-`node scripts/quality-report.mjs` の実測値（2026-08-16 実行）。数値を手で書き換えず、
+`node scripts/quality-report.mjs` の実測値（2026-09-26 実行）。数値を手で書き換えず、
 このスクリプトの出力を転記すること。
 
 | 指標               | 達成率           |
@@ -28,6 +28,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 | roles (非空)       | 98% (146/149台)  |
 | endScreens (非空)  | 87% (129/149台)  |
 | voiceCounts (非空) | 25% (37/149台)   |
+| provenance（出典記録） | 0% (0/149台)     |
 
 品質分類（**構造上の自動分類**）: Complete 146台 / Provisional 3台 / Incomplete 0台
 （`npm run validate` エラー0・警告0）
@@ -50,6 +51,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 >
 > スキーマ上も `source` は **required ではない**（required は name / type / roles / author /
 > version / lastUpdated の6つ）。恒久対策の案は `docs/data-provenance-proposal.md` を参照。
+> 2026-09-26 から、出典は `provenance/` に項目ごとに記録する（段階的に全機種へ広げる）。
 
 > ⚠️ **鮮度は上記とは別の軸**。品質指標は「項目が埋まっているか」であって「内容が最新か」ではない。
 > 鮮度は `node scripts/audit-freshness.mjs` で確認する（2026-08-16 時点で全149台が31日以上未更新、
@@ -73,11 +75,15 @@ slot-analyzer-data/
 │   ├── hokuto/                 # 北斗系
 │   ├── hanabi/                 # ハナビ系
 │   └── {category}/{machine-id}.json # 各機種データ
+├── provenance/
+│   └── {machine-id}.json       # 出典記録（項目ごとの出典・取得日・値）
 ├── schemas/
 │   ├── machine.schema.json     # 機種データJSONスキーマ
-│   └── index.schema.json       # インデックスJSONスキーマ
+│   ├── index.schema.json       # インデックスJSONスキーマ
+│   └── provenance.schema.json  # 出典記録JSONスキーマ
 ├── scripts/
 │   ├── validate.mjs            # バリデーション実行
+│   ├── check-against-base.mjs  # main と比べる検査（アプリが作るID・採否ルール）
 │   ├── generate-template.mjs   # 新機種テンプレート生成
 │   ├── sync-last-updated.mjs   # lastUpdated同期
 │   └── audit-freshness.mjs     # 鮮度チェック
@@ -222,6 +228,7 @@ npm run validate          # スキーマ・確率値・演出のバリデーシ�
 npm run validate:schema   # スキーマチェックのみ
 npm run validate:index    # index整合性チェックのみ
 npm test                  # テスト実行（vitest）
+npm run check:base        # main と比べる（アプリが作るID・採否ルール）
 npm run audit             # lastUpdated の鮮度チェック
 ```
 

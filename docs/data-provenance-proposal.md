@@ -1,5 +1,7 @@
 # 出典（provenance）の恒久対策 — 提案 / 2026-08-17（rev2）
 
+> **2026-09-26 採用**: 案E を変形した「別ファイル方式」で実装した（出典記録は機種ファイルの外、`provenance/<機種ID>.json` に置く）。仕様は `docs/superpowers/specs/2026-09-26-data-expansion-design.md` の5章。以下は検討時の記録。
+
 ## なぜこの文書があるか
 
 Codex の第三者レビュー指摘:

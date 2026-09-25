@@ -132,4 +132,16 @@ describe('統合テスト: 実データ', () => {
     expect(run.status).toBe(0);
     expect(run.stdout).toContain('--- 出典記録バリデーション ---');
   });
+
+  it('品質レポートが出典記録のある機種数を出す', () => {
+    const run = spawnSync(process.execPath, ['scripts/quality-report.mjs', '--json'], {
+      cwd: ROOT,
+      encoding: 'utf-8',
+    });
+    expect(run.status).toBe(0);
+    const report = JSON.parse(run.stdout);
+    const recorded = loadProvenanceFiles(resolve(ROOT, 'provenance')).filter((file) => file.data);
+    expect(report.provenance.total).toBe(indexData.machines.length);
+    expect(report.provenance.withRecord).toBe(recorded.length);
+  });
 });
