@@ -682,6 +682,22 @@ describe('decideNewItem（新しく入れる値）', () => {
       reason: '出典なし',
     });
   });
+
+  it('公式が2つあって食い違う → candidate', () => {
+    const kinds = { ...KINDS, 'maker-site': 'official' };
+    const values = { maker: { 1: 295.2 }, 'maker-site': { 1: 300 } };
+    expect(decideNewItem({ unit: DEN, values, sourceKinds: kinds })).toEqual({
+      outcome: 'candidate',
+      reason: 'サイト間で食い違い',
+    });
+  });
+
+  it('形が unit に合わない値は例外にする', () => {
+    const values = { maker: { 1: 0.5 } };
+    expect(() => decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toThrow(
+      '形に合わない'
+    );
+  });
 });
 
 describe('decideExistingItem（既存の値の見直し）', () => {
@@ -795,6 +811,32 @@ describe('statusError（記録の status と値の関係）', () => {
     );
   });
 
+  it('confirmed: 別の値で2サイトが一致する組がある → エラー', () => {
+    const values = {
+      chonborista: { 1: 300 },
+      'nana-press': { 1: 300 },
+      '1geki': { 1: 400 },
+      'p-town-dmm': { 1: 400 },
+    };
+    expect(
+      statusError(item({ status: 'confirmed', values, adopted: { 1: 300 } }), KINDS)
+    ).toContain('confirmed には');
+  });
+
+  it('confirmed: 公式があるのに公式でない値を採用している → エラー', () => {
+    const values = { chonborista: { 1: 300 }, 'nana-press': { 1: 300 }, maker: { 1: 295.2 } };
+    expect(
+      statusError(item({ status: 'confirmed', values, adopted: { 1: 300 } }), KINDS)
+    ).toContain('confirmed には');
+  });
+
+  it('kept-single-source: 2サイト一致の値があるなら confirmed にすべき → エラー', () => {
+    const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.2 } };
+    expect(statusError(item({ status: 'kept-single-source', values }), KINDS)).toContain(
+      'confirmed にする'
+    );
+  });
+
   it('未知の status → エラー', () => {
     expect(statusError(item({ status: 'guess', values: {} }), KINDS)).toContain('未知の status');
   });
@@ -844,18 +886,36 @@ function hasRivalPair(unit, values, adopted) {
 
 /**
  * 公式の値、または2サイト以上で一致する値を探す。
+ * 公式どうしが食い違うとき、または別の値で2サイトが一致する組があるときは、食い違い（conflict）とする。
  * @returns {{ adopted: unknown } | { conflict: true } | null}
  */
 function findConfirmed(unit, values, sourceKinds) {
   const order = preferenceOrder(values, sourceKinds);
-  const official = order.find((key) => sourceKinds[key] === 'official');
-  if (official !== undefined) return { adopted: values[official] };
+  const officials = order.filter((key) => sourceKinds[key] === 'official');
+  if (officials.length > 0) {
+    const first = values[officials[0]];
+    return officials.every((key) => valuesAgree(unit, values[key], first))
+      ? { adopted: first }
+      : { conflict: true };
+  }
   for (const key of order) {
     if (supporters(unit, values, values[key]).length >= 2) {
       return hasRivalPair(unit, values, values[key]) ? { conflict: true } : { adopted: values[key] };
     }
   }
   return null;
+}
+
+/** 採否を決める前に、出典の値と読み直しの値の形を確かめる。形が合わなければ例外を投げる */
+function assertShapes(unit, values, reread) {
+  for (const [key, value] of Object.entries(values)) {
+    const problem = shapeError(unit, value);
+    if (problem) throw new Error(`values.${key} が unit=${unit} の形に合わない（${problem}）`);
+  }
+  if (reread !== undefined) {
+    const problem = shapeError(unit, reread);
+    if (problem) throw new Error(`reread が unit=${unit} の形に合わない（${problem}）`);
+  }
 }
 
 function isChonboristaOnly(values) {
@@ -875,6 +935,7 @@ function rereadAgrees(unit, values, reread) {
  *   | { outcome: 'candidate', reason: string }}
  */
 export function decideNewItem({ unit, values, sourceKinds, reread }) {
+  assertShapes(unit, values, reread);
   const found = findConfirmed(unit, values, sourceKinds);
   if (found?.conflict) return { outcome: 'candidate', reason: 'サイト間で食い違い' };
   if (found) return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
@@ -895,6 +956,7 @@ export function decideNewItem({ unit, values, sourceKinds, reread }) {
  *   | { outcome: 'remove', reason: string }}
  */
 export function decideExistingItem({ unit, values, sourceKinds, reread, current }) {
+  assertShapes(unit, values, reread);
   const found = findConfirmed(unit, values, sourceKinds);
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
@@ -914,22 +976,23 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current 
 
 /**
  * 出典記録の項目で、status と値の関係が仕様どおりかを確かめる。
+ * 採否ルール（decideNewItem / decideExistingItem）と同じ findConfirmed で確定値を求め直して比べるので、
+ * 採否ルールでは採用されない記録（食い違い・公式を無視した採用など）は通らない。
+ * 形が unit に合わない値は、呼び出す前に shapeError で弾いておくこと（検証器がそうしている）。
  * @param {{ unit: string, status: string, values: Record<string, unknown>, adopted: unknown,
- *   reread?: { by: string, value: unknown } }} item
+ *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）
  * @param {Record<string, string>} sourceKinds
  * @returns {string | null} 問題の説明。問題なければ null
  */
 export function statusError(item, sourceKinds) {
   const { unit, status, values, adopted, reread } = item;
+  const found = findConfirmed(unit, values, sourceKinds);
+  const confirmedValue = found && !found.conflict ? found.adopted : undefined;
   switch (status) {
-    case 'confirmed': {
-      const officialAgrees = Object.keys(values).some(
-        (key) => sourceKinds[key] === 'official' && valuesAgree(unit, values[key], adopted)
-      );
-      return officialAgrees || supporters(unit, values, adopted).length >= 2
+    case 'confirmed':
+      return confirmedValue !== undefined && valuesAgree(unit, confirmedValue, adopted)
         ? null
-        : 'confirmed には、採用値と一致する出典が2つ以上、または公式が1つ必要';
-    }
+        : 'confirmed には、公式の値、または別の値で一致する組の無い2サイト以上の一致が必要（公式があれば公式の値を採用する）';
     case 'provisional-chonborista':
       if (!isChonboristaOnly(values)) {
         return 'provisional-chonborista は、ちょんぼりすただけにある値に使う';
@@ -942,6 +1005,9 @@ export function statusError(item, sourceKinds) {
       }
       return null;
     case 'kept-single-source':
+      if (confirmedValue !== undefined) {
+        return 'kept-single-source は、公式の値や2サイト一致の値が無いときだけ使う（confirmed にする）';
+      }
       return supporters(unit, values, adopted).length >= 1
         ? null
         : 'kept-single-source には、採用値と一致する出典が1つ以上必要';
@@ -954,7 +1020,7 @@ export function statusError(item, sourceKinds) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-rules.test.mjs tests/provenance-lib.test.mjs`
-Expected: PASS（provenance-rules 24 tests、provenance-lib 30 tests）
+Expected: PASS（provenance-rules 29 tests、provenance-lib 30 tests）
 
 - [ ] **Step 5: 整形と lint**
 
