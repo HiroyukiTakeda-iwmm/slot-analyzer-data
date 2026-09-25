@@ -230,14 +230,14 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('役は percent で記録できない（unit は形より先に確かめる）', () => {
-    const small = { 1: 0.34, 6: 0.36 };
+  it('役は percent で記録できない（unit は形より先に確かめ、形のエラーを重ねない）', () => {
+    // BIG の分母は割合（0〜100）の形にも合わないので、順番か return が崩れると形のエラーが3件増える
     const rec = record();
     rec.items[0] = {
       ...rec.items[0],
       unit: 'percent',
-      values: { chonborista: small, 'nana-press': small },
-      adopted: small,
+      values: { chonborista: BIG, 'nana-press': BIG },
+      adopted: BIG,
     };
     expect(run(rec).errors.map((e) => e.message)).toEqual([
       'role::BIG: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
@@ -396,6 +396,113 @@ describe('validateProvenance', () => {
     });
     expect(messages(run(rec))).toContain(
       '同じサイト（chonborista.com）を2つの出典に登録している: chonborista・chonborista-2'
+    );
+  });
+
+  it('distribution（アプリが確率として読む古い形）の項目は denominator で記録する', () => {
+    const withDistribution = {
+      ...machine,
+      endScreens: [{ name: '金枠', distribution: { 1: 0, 6: 0.01 } }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withDistribution }];
+    const gold = { 1: null, 6: 100 };
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '金枠',
+      status: 'confirmed',
+      unit: 'denominator',
+      values: { chonborista: gold, 'nana-press': gold },
+      adopted: gold,
+    });
+    expect(run(rec, { files }).errors).toEqual([]);
+    rec.items[2] = {
+      ...rec.items[2],
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    };
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'endScreen::金枠: unit=presence は使えない（機種ファイルの項目に合わせて denominator にする）',
+    ]);
+  });
+
+  it('patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）', () => {
+    const withPatterns = {
+      ...machine,
+      endScreens: [{ name: '殲滅', patterns: [{ name: 'P1', setting: 'default' }] }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withPatterns }];
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '殲滅',
+      status: 'confirmed',
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    });
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'endScreen::殲滅: patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）',
+    ]);
+  });
+
+  it('機種ファイルの項目名に「::」があれば、落ちずにエラーとして報告する', () => {
+    const colon = { ...machine, roles: [{ ...machine.roles[0], name: '強::弱' }] };
+    const files = [{ path: 'machines/test/test-machine.json', data: colon }];
+    expect(run(record(), { files }).errors.map((e) => e.message)).toEqual([
+      '項目の名前に「::」は使えない: role 強::弱',
+    ]);
+  });
+
+  it('chonborista.com の出典（サブドメイン・末尾のドットを含む）は、キーを chonborista にする', () => {
+    for (const url of [
+      'https://sp.chonborista.com/slot/test/',
+      'https://chonborista.com./slot/test/',
+    ]) {
+      const rec = record();
+      rec.sources.push({ key: 'chonbo', kind: 'analysis-site', url, retrievedAt: '2026-09-26' });
+      expect(messages(run(rec))).toContain(
+        'chonborista.com の出典は、キーを chonborista にする: chonbo'
+      );
+    }
+  });
+
+  it('chonborista の出典は kind を analysis-site にする', () => {
+    const rec = record();
+    rec.sources[0] = { ...rec.sources[0], kind: 'official' };
+    expect(messages(run(rec))).toContain('chonborista の出典は kind を analysis-site にする');
+  });
+
+  it('サブドメインが違っても、同じサイト（登録ドメイン）として数える', () => {
+    const rec = record();
+    rec.sources.push({
+      key: 'nana-press-sp',
+      kind: 'analysis-site',
+      url: 'https://sp.nana-press.com/kaiseki/machine/1/',
+      retrievedAt: '2026-09-26',
+    });
+    expect(messages(run(rec))).toContain(
+      '同じサイト（nana-press.com）を2つの出典に登録している: nana-press・nana-press-sp'
+    );
+  });
+
+  it('.co.jp などの属性型 JP ドメインは末尾3ラベルで数える（別の会社を同じサイトにしない）', () => {
+    const source = (key, url) => ({ key, kind: 'official', url, retrievedAt: '2026-09-26' });
+    const rec = record();
+    rec.sources.push(
+      source('maker-a', 'https://www.maker-a.co.jp/slot/'),
+      source('maker-a-sp', 'https://SP.Maker-A.co.jp/slot/'),
+      source('maker-b', 'https://maker-b.co.jp/slot/')
+    );
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      '同じサイト（maker-a.co.jp）を2つの出典に登録している: maker-a・maker-a-sp',
+    ]);
+  });
+
+  it('実在しない日付はスキーマ違反', () => {
+    expect(messages(run(record({ reviewedAt: '2026-13-45' })))).toContain(
+      'スキーマ違反 /reviewedAt'
     );
   });
 });

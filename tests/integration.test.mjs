@@ -6,7 +6,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'fs';
 import { spawnSync } from 'child_process';
-import { resolve, dirname, relative } from 'path';
+import { basename, resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { validateSchemas } from '../scripts/validators/schema-validator.mjs';
 import { validateIndexConsistency } from '../scripts/validators/index-consistency.mjs';
@@ -131,6 +131,22 @@ describe('統合テスト: 実データ', () => {
     });
     expect(run.status).toBe(0);
     expect(run.stdout).toContain('--- 出典記録バリデーション ---');
+  });
+
+  it('validate.mjs --require-provenance は、出典記録の無い機種ごとにエラーを出し、終了コード 1', () => {
+    const run = spawnSync(process.execPath, ['scripts/validate.mjs', '--require-provenance'], {
+      cwd: ROOT,
+      encoding: 'utf-8',
+    });
+    expect(run.status).toBe(1);
+    const missing = run.stdout
+      .split('\n')
+      .filter((line) => line.includes('出典記録がない（全機種必須）')).length;
+    // 記録の無い機種の数と比べる。段階0は記録が0件なので、index.json の全機種の数になる
+    const recorded = new Set(
+      loadProvenanceFiles(resolve(ROOT, 'provenance')).map((file) => basename(file.path, '.json'))
+    );
+    expect(missing).toBe(indexData.machines.filter((entry) => !recorded.has(entry.id)).length);
   });
 
   it('品質レポートが出典記録のある機種数を出す', () => {

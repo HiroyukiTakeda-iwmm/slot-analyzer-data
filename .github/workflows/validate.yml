@@ -43,3 +43,9 @@ jobs:
         env:
           BASE_REF: ${{ github.base_ref }}
         run: node scripts/check-against-base.mjs --base "origin/$BASE_REF"
+
+      - name: 直前の main との比較（main への push のみ）
+        if: github.event_name == 'push' && github.event.before != '0000000000000000000000000000000000000000'
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+        run: node scripts/check-against-base.mjs --base "$BEFORE_SHA"

@@ -17,6 +17,10 @@ import {
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '../..');
 const CHONBORISTA_URL_PREFIX = 'https://chonborista.com/';
+const CHONBORISTA_SITE = 'chonborista.com';
+
+/** 属性型 JP ドメイン（example.co.jp など）の2番目のラベル。この形は末尾3ラベルを1つのサイトにする */
+const JP_SECOND_LEVEL_LABELS = new Set(['co', 'ne', 'or', 'ac', 'go', 'ed', 'gr', 'lg', 'ad']);
 
 function error(file, message) {
   return { file, type: 'provenance', severity: 'error', message };
@@ -94,13 +98,28 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   return { errors, warnings };
 }
 
-/** 出典の URL のサイト（ホスト名。先頭の www. は除く） */
+/**
+ * 出典の URL のサイト（登録ドメイン）。サブドメインは同じサイトにまとめる
+ * （例: sp.chonborista.com → chonborista.com、www.example.co.jp → example.co.jp）。
+ * ホスト名を小文字にし、空のラベル（末尾の「.」など）と先頭の「www.」を除いてから、
+ * ラベルが3つ以上の属性型 JP ドメイン（`.co.jp` など）は末尾3ラベル、それ以外は末尾2ラベルにする。
+ * URL として読めなければ、URL の文字列をそのままサイトとして扱う。
+ */
 function siteOf(url) {
+  let hostname;
   try {
-    return new URL(url).hostname.replace(/^www\./, '');
+    hostname = new URL(url).hostname;
   } catch {
     return url;
   }
+  const labels = hostname
+    .toLowerCase()
+    .split('.')
+    .filter((label) => label !== '');
+  if (labels.length > 1 && labels[0] === 'www') labels.shift();
+  const attributeJp =
+    labels.length >= 3 && labels.at(-1) === 'jp' && JP_SECOND_LEVEL_LABELS.has(labels.at(-2));
+  return labels.slice(attributeJp ? -3 : -2).join('.');
 }
 
 function collectSourceKinds(path, sources, errors) {
@@ -120,8 +139,20 @@ function collectSourceKinds(path, sources, errors) {
       );
     }
     keyBySite.set(site, source.key);
-    if (source.key === CHONBORISTA_KEY && !source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
-      errors.push(error(path, `chonborista の URL は ${CHONBORISTA_URL_PREFIX} で始める`));
+    // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
+    // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
+    if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
+      errors.push(
+        error(path, `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`)
+      );
+    }
+    if (source.key === CHONBORISTA_KEY) {
+      if (!source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
+        errors.push(error(path, `chonborista の URL は ${CHONBORISTA_URL_PREFIX} で始める`));
+      }
+      if (source.kind !== 'analysis-site') {
+        errors.push(error(path, `${CHONBORISTA_KEY} の出典は kind を analysis-site にする`));
+      }
     }
   }
   return sourceKinds;
@@ -141,6 +172,15 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const target = machineItems.get(key);
   if (target) {
     const allowed = allowedUnits(item.kind, target.entry);
+    if (allowed.length === 0) {
+      errors.push(
+        error(
+          path,
+          `${key}: patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）`
+        )
+      );
+      return errors;
+    }
     if (!allowed.includes(item.unit)) {
       errors.push(
         error(
@@ -186,7 +226,7 @@ function checkRecord(path, record, machine) {
   const sourceKinds = collectSourceKinds(path, record.sources, errors);
 
   // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない。
-  // 区別できない名前（「#数字」を含む名前との重なり）は例外になるので、エラーとして報告する
+  // 区別できない名前（「#数字」を含む名前との重なり）と「::」を含む名前は例外になるので、エラーとして報告する
   let machineItems;
   try {
     machineItems = new Map(

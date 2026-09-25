@@ -3,8 +3,10 @@
 /**
  * main（既定: origin/main）と比べて確かめる。validate は main を読まないので、こちらで見る（仕様 5.7・5.8）。
  * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか、
- *   新しい項目が基準の別の項目の ID を使っていないか
+ *   新しい項目が基準の別の項目の ID を使っていないか、同じ名前の項目に明示の id があるか
  * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
+ * - ID を持たない種類の項目（確定演出など）を消したら、出典記録の removed に書いてあるか
+ * - 新しく足した機種に、出典記録があるか
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる

@@ -108,6 +108,15 @@ function denominatorsAgree(x, y) {
 }
 
 /**
+ * 割合どうしが一致するか（差が 0.1 ポイント以内）。0 は「その設定では起きない」（設定を否定できる）を
+ * 表すので、0 とだけ一致する（0.1 ポイントの許容差で 0.1% と一致させない）
+ */
+function percentsAgree(x, y) {
+  if (x === 0 || y === 0) return x === y;
+  return Math.abs(x - y) <= PERCENT_TOLERANCE + FLOAT_EPSILON;
+}
+
+/**
  * 2つの値が一致するか（仕様 5.4）。形が unit に合わない値は一致しないとみなす。
  */
 export function valuesAgree(unit, a, b) {
@@ -116,10 +125,7 @@ export function valuesAgree(unit, a, b) {
     case 'denominator':
       return sameKeys(a, b) && Object.keys(a).every((k) => denominatorsAgree(a[k], b[k]));
     case 'percent':
-      return (
-        sameKeys(a, b) &&
-        Object.keys(a).every((k) => Math.abs(a[k] - b[k]) <= PERCENT_TOLERANCE + FLOAT_EPSILON)
-      );
+      return sameKeys(a, b) && Object.keys(a).every((k) => percentsAgree(a[k], b[k]));
     case 'settings':
       return sameSet(a.confirmed, b.confirmed) && sameSet(a.excluded, b.excluded);
     case 'presence':
@@ -146,8 +152,12 @@ export function toStoredRate(percent) {
   return Number((percent / 100).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
 
+/**
+ * 項目の設定ごとの数値。`distribution` は終了画面の古い形で、アプリの移行処理
+ * （migrate-v1-to-v2.mjs）が `probabilities` に改名して確率として使うので、確率として読む。
+ */
 function numericMap(entry) {
-  return entry.probabilities ?? entry.rates ?? null;
+  return entry.probabilities ?? entry.rates ?? entry.distribution ?? null;
 }
 
 function mapValues(obj, fn) {
@@ -190,14 +200,17 @@ const PERCENT_MIN_PROBABILITY = 0.1;
 /**
  * 機種ファイルの項目の種類と中身から、出典記録に使える unit を決める（仕様 5.4）。
  * 記録する側が選べると、緩い比べ方にして値の照合を外せてしまうので、ここで決める。
+ * - patterns 形式（アプリは終了画面の patterns を別々の終了画面に展開する）は、出典記録の形を
+ *   段階1で決めるまで記録できない（空の配列を返す）
  * - 役（role・zoneRole）は denominator
- * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら denominator か
- *   percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）
+ * - ほかの数値（probabilities / rates / distribution）の項目は、0 でない値がすべて 10% 以上なら
+ *   denominator か percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）
  * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
  * 数値と設定の組の両方がある項目は、数値の側で決める。
  * @returns {string[]}
  */
 export function allowedUnits(kind, entry) {
+  if (Array.isArray(entry.patterns) && entry.patterns.length > 0) return [];
   const map = numericMap(entry);
   if (map && Object.keys(map).length > 0) {
     if (kind === 'role' || kind === 'zoneRole') return ['denominator'];
@@ -236,31 +249,57 @@ export function createNameDisambiguator() {
 }
 
 /**
+ * 項目の元の名前（`親::子` に組み立てる前の名前）を確かめて返す。
+ * 名前に「::」があると、項目キーの親と子の切れ目や、ID が重なってはいけない範囲が分からなくなり、
+ * 別々の項目を取り違えても気づけないので、例外を投げる。
+ * @param {string} kind 種類（ゾーンは zone、終了画面グループは endScreenGroup）
+ * @returns {unknown} name そのもの
+ */
+export function plainName(kind, name) {
+  if (typeof name === 'string' && name.includes(NAME_SEPARATOR)) {
+    throw new Error(`項目の名前に「${NAME_SEPARATOR}」は使えない: ${kind} ${name}`);
+  }
+  return name;
+}
+
+/**
  * 機種ファイルの中で、出典記録の対象になる項目を並べる（仕様 5.4）。
  * 同じ種類で同じ名前の項目は、createNameDisambiguator で `#2` などを付けた名前にする。
+ * 元の名前（役・ゾーン・終了画面・グループ・そのほかの項目の名前）に「::」があれば例外を投げる（plainName）。
  */
 export function listMachineItems(machine) {
   const items = [];
   const disambiguate = createNameDisambiguator();
-  const add = (kind, name, entry) => items.push({ kind, name: disambiguate(kind, name), entry });
-  const child = (parent, name) => `${parent}${NAME_SEPARATOR}${name}`;
+  // 子（ゾーン内の役・グループ内の終了画面）の名前は「親::子」にする
+  const add = (kind, entry, parent) => {
+    const name = plainName(kind, entry.name);
+    const full = parent === undefined ? name : `${parent}${NAME_SEPARATOR}${name}`;
+    items.push({ kind, name: disambiguate(kind, full), entry });
+  };
 
-  for (const r of machine.roles ?? []) add('role', r.name, r);
+  for (const r of machine.roles ?? []) add('role', r);
   for (const z of machine.zones ?? []) {
-    for (const r of z.roles ?? []) add('zoneRole', child(z.name, r.name), r);
+    const zone = plainName('zone', z.name);
+    for (const r of z.roles ?? []) add('zoneRole', r, zone);
   }
-  for (const e of machine.confirmationEvents ?? []) add('confirmationEvent', e.name, e);
-  for (const s of machine.endScreens ?? []) add('endScreen', s.name, s);
+  for (const e of machine.confirmationEvents ?? []) add('confirmationEvent', e);
+  for (const s of machine.endScreens ?? []) add('endScreen', s);
   for (const g of machine.endScreenGroups ?? []) {
-    for (const s of g.endScreens ?? []) add('endScreenGroupItem', child(g.name, s.name), s);
+    const group = plainName('endScreenGroup', g.name);
+    for (const s of g.endScreens ?? []) add('endScreenGroupItem', s, group);
   }
-  for (const v of machine.voiceCounts ?? []) add('voiceCount', v.name, v);
-  for (const m of machine.musicCounts ?? []) add('musicCount', m.name, m);
-  for (const e of machine.effectCounts ?? []) add('effectCount', e.name, e);
-  for (const t of machine.trialSuccessRates ?? []) add('trialSuccessRate', t.name, t);
-  for (const t of machine.modeTransitions ?? []) add('modeTransition', t.name, t);
+  for (const v of machine.voiceCounts ?? []) add('voiceCount', v);
+  for (const m of machine.musicCounts ?? []) add('musicCount', m);
+  for (const e of machine.effectCounts ?? []) add('effectCount', e);
+  for (const t of machine.trialSuccessRates ?? []) add('trialSuccessRate', t);
+  for (const t of machine.modeTransitions ?? []) add('modeTransition', t);
   if (machine.specialSettings && Object.keys(machine.specialSettings).length > 0) {
-    add('specialSettings', 'specialSettings', machine.specialSettings);
+    // 機種に1つだけの項目なので、名前は種類と同じ固定の名前にする
+    items.push({
+      kind: 'specialSettings',
+      name: 'specialSettings',
+      entry: machine.specialSettings,
+    });
   }
   return items;
 }

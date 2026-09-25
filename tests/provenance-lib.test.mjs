@@ -56,6 +56,13 @@ describe('valuesAgree: percent（割合）', () => {
   it('差が 0.1 ポイントを超えると不一致', () => {
     expect(valuesAgree('percent', { 1: 10 }, { 1: 10.2 })).toBe(false);
   });
+
+  it('0（その設定では起きない）は 0 とだけ一致する', () => {
+    expect(valuesAgree('percent', { 1: 0 }, { 1: 0.1 })).toBe(false);
+    expect(valuesAgree('percent', { 1: 0.1 }, { 1: 0 })).toBe(false);
+    expect(valuesAgree('percent', { 1: 0 }, { 1: 0 })).toBe(true);
+    expect(valuesAgree('percent', { 1: 10 }, { 1: 10.05 })).toBe(true);
+  });
 });
 
 describe('valuesAgree: settings / presence', () => {
@@ -75,6 +82,16 @@ describe('valuesAgree: settings / presence', () => {
         'settings',
         { confirmed: ['4', '5', '6'], excluded: [] },
         { confirmed: ['5', '6'], excluded: [] }
+      )
+    ).toBe(false);
+  });
+
+  it('否定する設定（excluded）だけが違っても不一致', () => {
+    expect(
+      valuesAgree(
+        'settings',
+        { confirmed: ['6'], excluded: ['1'] },
+        { confirmed: ['6'], excluded: ['2'] }
       )
     ).toBe(false);
   });
@@ -143,6 +160,13 @@ describe('machineValue', () => {
     expect(machineValue({ probabilities: { 1: 0, 6: 0.1 } }, 'denominator')).toEqual({
       1: null,
       6: 10,
+    });
+  });
+
+  it('denominator: distribution（アプリが probabilities に改名して読む古い形）も確率として読む', () => {
+    expect(machineValue({ distribution: { 1: 0, 6: 0.01 } }, 'denominator')).toEqual({
+      1: null,
+      6: 100,
     });
   });
 
@@ -230,6 +254,36 @@ describe('listMachineItems', () => {
     const machine = { endScreens: [{ name: '仁' }, { name: '仁#2' }, { name: '仁' }] };
     expect(() => listMachineItems(machine)).toThrow('項目の名前を区別できない');
   });
+
+  it('「#数字」を含む名前が先にあっても、区別した名前と重なれば例外を投げる', () => {
+    const machine = { endScreens: [{ name: '仁#2' }, { name: '仁' }, { name: '仁' }] };
+    expect(() => listMachineItems(machine)).toThrow('項目の名前を区別できない');
+  });
+
+  it('名前に「::」を含む項目は、親と子の切れ目が分からなくなるので例外を投げる', () => {
+    expect(() => listMachineItems({ roles: [{ name: '強::弱' }] })).toThrow(
+      '項目の名前に「::」は使えない: role 強::弱'
+    );
+  });
+
+  it('「::」は、組み立てる前の元の名前（親・子・ID を持たない種類の名前）で見る', () => {
+    const cases = [
+      [{ zones: [{ name: 'CZ::1', roles: [{ name: 'ベル' }] }] }, 'zone CZ::1'],
+      [{ zones: [{ name: 'CZ', roles: [{ name: 'ベル::強' }] }] }, 'zoneRole ベル::強'],
+      [
+        { endScreenGroups: [{ name: 'AT::終了', endScreens: [{ name: '赤' }] }] },
+        'endScreenGroup AT::終了',
+      ],
+      [{ confirmationEvents: [{ name: '金::銀' }] }, 'confirmationEvent 金::銀'],
+      [{ voiceCounts: [{ name: '声::1' }] }, 'voiceCount 声::1'],
+    ];
+    for (const [machine, label] of cases) {
+      expect(() => listMachineItems(machine)).toThrow(`項目の名前に「::」は使えない: ${label}`);
+    }
+    expect(() =>
+      listMachineItems({ zones: [{ name: 'CZ', roles: [{ name: 'ベル' }] }] })
+    ).not.toThrow();
+  });
 });
 
 describe('createNameDisambiguator', () => {
@@ -263,6 +317,24 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
     expect(allowedUnits('modeTransition', { rates: { 1: 0.1, 6: 0.047 } })).toEqual([
       'denominator',
     ]);
+  });
+
+  it('10% ちょうどは percent も使える（境界を含む）', () => {
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.1, 6: 0.2 } })).toEqual([
+      'denominator',
+      'percent',
+    ]);
+  });
+
+  it('distribution（古い形）も数値として扱う', () => {
+    expect(allowedUnits('endScreen', { distribution: { 1: 0, 6: 0.01 } })).toEqual(['denominator']);
+  });
+
+  it('patterns 形式の項目は、出典記録の形を決めるまで記録できない（空）', () => {
+    expect(allowedUnits('endScreen', { patterns: [{ name: 'A', setting: 'default' }] })).toEqual(
+      []
+    );
+    expect(allowedUnits('voiceCount', { patterns: [{ voice: 'x', minSetting: 5 }] })).toEqual([]);
   });
 
   it('数値が無ければ、設定の組があれば settings、無ければ presence', () => {

@@ -73,4 +73,41 @@ describe('runAgainstBase', () => {
       lines: ['比べられませんでした（基準: origin/main）: no such file: machines/index.json'],
     });
   });
+
+  it('名前に「::」を含む項目があれば終了コード 2', () => {
+    const head = files([{ ...role(1, 0.00338753), name: '強::弱' }]);
+    expect(run(files([role(1, 0.00338753)]), head)).toEqual({
+      code: 2,
+      lines: [
+        '比べられませんでした（基準: origin/main）: 項目の名前に「::」は使えない: role 強::弱',
+      ],
+    });
+  });
+
+  it('ID を持たない項目の削除と、新しい機種の出典記録の無さもまとめて、終了コード 1', () => {
+    const added = { ...entry, id: 'new-machine', file: 'test/new-machine.json' };
+    const machine = (fields) =>
+      JSON.stringify({ name: 'テスト機種', type: 'AT', roles: [role(1, 0.00338753)], ...fields });
+    const index = (machines) =>
+      JSON.stringify({ version: '3.8.0', updatedAt: '2026-09-26', machines });
+    const base = {
+      'machines/index.json': index([entry]),
+      'machines/test/test-machine.json': machine({
+        confirmationEvents: [{ name: '金トロフィー', confirmedSettings: ['6'] }],
+      }),
+    };
+    const head = {
+      'machines/index.json': index([entry, added]),
+      'machines/test/test-machine.json': machine({}),
+      'machines/test/new-machine.json': machine({}),
+    };
+    expect(run(base, head)).toEqual({
+      code: 1,
+      lines: [
+        '問題: 2件',
+        '  ERROR test-machine: confirmationEvent::金トロフィー: 項目が消えたのに、出典記録の removed に無い',
+        '  ERROR new-machine: 新しく足した機種に出典記録（provenance/new-machine.json）が無い',
+      ],
+    });
+  });
 });

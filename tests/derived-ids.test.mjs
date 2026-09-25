@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  DERIVED_ID_KINDS,
   checkDerivedIds,
   collectDerivedIds,
   compareDerivedIds,
@@ -56,6 +57,29 @@ describe('collectDerivedIds', () => {
     const ids = collectDerivedIds(machine);
     expect(ids.get('endScreen::仁')).toBe('jin_bonus');
     expect(ids.get('endScreen::仁#2')).toBe('jin_at');
+  });
+
+  it('名前に「::」を含む項目は例外を投げる（ID の範囲が分からなくなるため）', () => {
+    const roles = [
+      { name: '強::弱', probabilities: { 1: 0.01 }, hasSettingDiff: false, displayOrder: 1 },
+    ];
+    expect(() => collectDerivedIds({ ...baseMachine, roles })).toThrow(
+      '項目の名前に「::」は使えない: role 強::弱'
+    );
+  });
+
+  it('「::」は、アプリが ID を作る名前（patterns を展開した終了画面の名前も）で見る', () => {
+    const endScreens = [{ name: '殲滅', patterns: [{ name: 'P::1', setting: '6' }] }];
+    expect(() => collectDerivedIds({ ...baseMachine, endScreens })).toThrow(
+      '項目の名前に「::」は使えない: endScreen P::1'
+    );
+  });
+
+  it('DERIVED_ID_KINDS は、collectDerivedIds が ID を作る種類と同じ', () => {
+    const kinds = [...collectDerivedIds(baseMachine).keys()].map((key) =>
+      key.slice(0, key.indexOf('::'))
+    );
+    expect(new Set(kinds)).toEqual(DERIVED_ID_KINDS);
   });
 });
 
@@ -253,5 +277,89 @@ describe('checkDerivedIds', () => {
         provenanceFiles: [],
       })
     ).toThrow('no such file');
+  });
+
+  it('同じ名前の項目に明示の id が無ければ報告する', () => {
+    const map = files({
+      ...baseMachine,
+      endScreens: [
+        { name: '仁', hint: '' },
+        { name: '仁', hint: '' },
+      ],
+    });
+    expect(
+      checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles: [] })
+    ).toEqual(['test-machine: endScreen::仁: 同じ名前の項目が複数あるので、明示の id を付ける']);
+  });
+
+  it('同じ名前の項目のすべてに明示の id があれば報告しない', () => {
+    const map = files({
+      ...baseMachine,
+      endScreens: [
+        { name: '仁', id: 'jin_bonus', hint: '' },
+        { name: '仁', id: 'jin_at', hint: '' },
+      ],
+    });
+    expect(
+      checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles: [] })
+    ).toEqual([]);
+  });
+
+  it('同じ名前は、ID を作る種類ごとに項目キーと同じ単位で数え、1つの名前につき1回報告する', () => {
+    const role = (name, displayOrder) => ({
+      name,
+      probabilities: { 1: 0.01 },
+      hasSettingDiff: false,
+      displayOrder,
+    });
+    const map = files({
+      ...baseMachine,
+      roles: [role('強', 1), role('強', 2)],
+      zones: [
+        { name: 'CZ', isDefault: false, roles: [role('ベル', 1)] },
+        { name: 'CZ', isDefault: false, roles: [role('ベル', 1)] },
+      ],
+      endScreens: [
+        { name: '仁', hint: '' },
+        { name: '仁', id: 'jin_at', hint: '' },
+        { name: '仁', hint: '' },
+      ],
+      endScreenGroups: [
+        {
+          name: 'End',
+          endScreens: [
+            { name: '赤', hint: '' },
+            { name: '赤', hint: '' },
+          ],
+        },
+        { name: 'End', endScreens: [] },
+      ],
+    });
+    const problem = (key) =>
+      `test-machine: ${key}: 同じ名前の項目が複数あるので、明示の id を付ける`;
+    expect(
+      checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles: [] })
+    ).toEqual([
+      problem('role::強'),
+      problem('zone::CZ'),
+      problem('zoneRole::CZ::ベル'),
+      problem('endScreen::仁'),
+      problem('endScreenGroup::End'),
+      problem('endScreenGroupItem::End::赤'),
+    ]);
+  });
+
+  it('新しく足した機種も、同じ名前の項目を確かめる', () => {
+    const base = { 'machines/index.json': JSON.stringify({ ...index, machines: [] }) };
+    const head = files({
+      ...baseMachine,
+      endScreens: [
+        { name: '仁', hint: '' },
+        { name: '仁', hint: '' },
+      ],
+    });
+    expect(
+      checkDerivedIds({ readBase: reader(base), readHead: reader(head), provenanceFiles: [] })
+    ).toEqual(['test-machine: endScreen::仁: 同じ名前の項目が複数あるので、明示の id を付ける']);
   });
 });

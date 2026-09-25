@@ -17,8 +17,11 @@ const KINDS = {
 };
 
 describe('valuesEqual（許容差なしの完全一致）', () => {
+  it('設定の並び順は見ない（JS が並べ直さない、整数でないキーで確かめる）', () => {
+    expect(valuesEqual(DEN, { L: 300, V: 200 }, { V: 200, L: 300 })).toBe(true);
+  });
+
   it('denominator / percent は、許容差の中でも違えば false', () => {
-    expect(valuesEqual(DEN, { 1: 295.2, 6: 277.7 }, { 6: 277.7, 1: 295.2 })).toBe(true);
     expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
     expect(valuesEqual(DEN, { 1: null, 6: 277.7 }, { 1: null, 6: 277.7 })).toBe(true);
     expect(valuesEqual(DEN, { 1: null }, { 1: 8192 })).toBe(false);
@@ -30,6 +33,13 @@ describe('valuesEqual（許容差なしの完全一致）', () => {
     const a = { confirmed: ['6', '5'], excluded: ['1'] };
     expect(valuesEqual('settings', a, { confirmed: ['5', '6', '6'], excluded: ['1'] })).toBe(true);
     expect(valuesEqual('settings', a, { confirmed: ['6'], excluded: ['1'] })).toBe(false);
+    expect(
+      valuesEqual(
+        'settings',
+        { confirmed: ['6'], excluded: ['1'] },
+        { confirmed: ['6'], excluded: ['2'] }
+      )
+    ).toBe(false);
   });
 
   it('presence は true どうしなら true', () => {
