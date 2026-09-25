@@ -3748,12 +3748,12 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ブランチ全体の最終レビュー（`.superpowers/sdd/final-review.md`）の指摘をまとめて直す。指示書は `.superpowers/sdd/final-fix-brief.md`。機種データと version（3.8.0）は変えない。
 
 - A. アプリが読む古い形（I-1）
-  - `distribution` も確率として読む（`numericMap` を `probabilities ?? rates ?? distribution` にする。アプリの移行処理は終了画面の `distribution` を `probabilities` に改名して使う）
+  - 最上位の終了画面の `distribution` も確率として読む（アプリの移行処理が `probabilities` に改名するのは最上位の終了画面だけなので、`listMachineItems` がその項目だけ改名した形を渡す。1回目は `numericMap` で全種類を読んでいたのを、2回目で直した）
   - `patterns` 形式の項目は、出典記録の形を段階1で決めるまで記録できない（`allowedUnits` が空を返し、検証器が専用のエラーを出す。止める向き）
 - B. main と比べる検査の穴
   - ID を持たない種類の項目（確定演出・試行成功率・ボイスなど）を消したら、`removed` に記録が要る（`checkRemovedItems`。ID を作る種類は `checkDerivedIds` が同じ文面で報告するので見ない。ID を作る種類の集合は `DERIVED_ID_KINDS` の1か所に置く）（I-2）
   - 新しく足した機種には出典記録が要る（`checkNewMachineRecords`。パスか `machineId` で見つけ、壊れた記録も「ある」と数える）（I-3）
-  - ID を作る種類で同じ名前の項目には、明示の `id` を求める（比べる側の index のすべての機種を、移行前の元の形で見る）（F1）
+  - ID を作る種類で同じ名前の項目には、別々の明示の `id` を求める（比べる側の index のすべての機種を、移行前の元の形で見る。値の重なりは2回目で足した）（F1）
   - 名前に `::` を含む項目を拒む（`listMachineItems`・`collectDerivedIds` が元の名前で例外を投げる。検証器はエラー、check:base は終了コード 2）（q）
 - C. 値の比べ方
   - 割合の 0 は 0 とだけ一致させる（0 は「その設定では起きない」を表すため）（h）
@@ -3762,6 +3762,8 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 - D. テスト: 名前の重なりの逆順（T1-2）、`excluded` だけが違う設定の組と整数でないキーの並び順（a・F2）、unit のエラーが形の検査より先で return すること（d）、10% ちょうどの境界（f）、実データでの `validate.mjs --require-provenance` の spawn（m）
 - E. CI: main への push のときも、直前の main（`github.event.before`）と比べる（同時に開いた PR の組み合わせは PR の比較では見えないため）（F3）
 - F. 文書: data-format（unit の表・記録の決まり）、quality-standards と仕様 5.7（main と比べる検査の3項目）、仕様 5.2（例の `unit`）・5.4（`distribution` と `patterns`）・5.8（同じ名前の項目の明示の `id`）、CONTRIBUTING（項目を外すときは全項目の記録を作る・先に `git fetch origin`）、README（先に `git fetch origin`）、CHANGELOG（check:base の行）
+
+再レビューの Minor のうち M1〜M4・M6 の一部を2回目で直した（読めない URL の出典を止める・`distribution` は最上位の終了画面だけ・同じ名前の項目の明示の `id` は別々の値にする・段階1への持ち越しをこの計画の末尾に残す・テストと削除の文面の定数）。M5（check:base の読み直し・性能だけ）・M6 の d（3行の重なり）・e（問題なしの表示文。計画と文書が原文を引用している）は直さない。
 
 ---
 
@@ -3947,3 +3949,13 @@ Task 1〜7 とは独立。読み取りだけなので並行して進めてよい
 ## 段階1以降について
 
 この計画は段階0だけを扱う。段階1（新台と暫定9機種）、段階2（既存の見直し）、段階3（出典記録の必須化）は、段階0の道具（`decideNewItem`・`decideExistingItem`・`validateProvenance`・`check:base`）と Task 9 の結果をもとに、それぞれ別の計画を書く。
+
+### 段階1の計画の冒頭で決めること（段階0の最終レビューから）
+
+- `patterns` 形式の記録の形（アプリと同じ展開で項目を並べるか）。17機種・23項目。決めるまで、これらの機種では項目を外す修正も CI を通らない（外すには全項目の記録が要るため）
+- `patterns` を記録できるようにするときは、同じ名前の明示の id の検査を、展開した終了画面の名前にも広げる（今は展開前の形だけを見る）
+- 外した ID の台帳と、`removed` に出典の値を持たせる仕組み。項目を外す最初の PR（段階1の暫定9機種の確定を含む）より前に作る
+- 一部の設定だけを載せる出典の扱い（段階1の前）
+- 公式（official）の出典を、誰がどの手順で確かめるか（段階1の前）
+- 本人が決めること（段階2の前まで）: 1〜10% の値の % 表記の丸め（57件）と、小数6桁で保存した小さい確率の丸め（最大251値・46機種）
+- 段階1の記録の道具: 確率 0 は `null`、percent を使えない項目で percent を出さない、`kept-single-source` の採用値は `machineValue` の結果そのもの

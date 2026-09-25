@@ -189,4 +189,4 @@ node scripts/audit-freshness.mjs  # 鮮度（lastUpdated からの経過日数�
 - main にある項目の `provisional-chonborista` は、ちょんぼりすたの値が main の値と一致しないときだけか（一致するなら `kept-single-source`）
 - ID を持たない種類の項目も、消したら `removed` に記録する
 - 新しく足した機種には出典記録が要る
-- ID を作る種類で同じ名前の項目には、明示の `id` を付ける
+- ID を作る種類で同じ名前の項目には、別々の明示の `id` を付ける

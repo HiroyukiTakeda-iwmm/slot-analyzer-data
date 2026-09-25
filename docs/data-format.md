@@ -406,14 +406,14 @@ BIG の1項目だけを抜き出した例。実際の記録には、機種ファ
 
 ### 値の表し方（unit）
 
-| unit          | 値                                                       | 機種ファイル側との対応                                                      |
-| ------------- | -------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `denominator` | 設定ごとの分母（`{"1": 295.2}`）。確率 0 の設定は `null` | `probabilities`（または `rates`・`distribution`）の `1 ÷ 値`（0 は `null`） |
-| `percent`     | 設定ごとの割合 0〜100（`{"1": 10}`）                     | `probabilities`（または `rates`・`distribution`）の `値 × 100`              |
-| `settings`    | `{"confirmed": [...], "excluded": [...]}`                | `confirmedSettings` / `excludedSettings`                                    |
-| `presence`    | `true`                                                   | 数値は比べず、出典に載っていることだけを記録する                            |
+| unit          | 値                                                       | 機種ファイル側との対応                                                                         |
+| ------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `denominator` | 設定ごとの分母（`{"1": 295.2}`）。確率 0 の設定は `null` | `probabilities`（または `rates`・最上位の終了画面の `distribution`）の `1 ÷ 値`（0 は `null`） |
+| `percent`     | 設定ごとの割合 0〜100（`{"1": 10}`）                     | `probabilities`（または `rates`・最上位の終了画面の `distribution`）の `値 × 100`              |
+| `settings`    | `{"confirmed": [...], "excluded": [...]}`                | `confirmedSettings` / `excludedSettings`                                                       |
+| `presence`    | `true`                                                   | 数値は比べず、出典に載っていることだけを記録する                                               |
 
-unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates` / `distribution`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く、確定・否定の設定の欄（`confirmedSettings` / `excludedSettings`）があれば、中身が空の配列でも `settings`。どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
+unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`、最上位の終了画面では `distribution` も）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く、確定・否定の設定の欄（`confirmedSettings` / `excludedSettings`）があれば、中身が空の配列でも `settings`。どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。`distribution` を確率として扱うのは、アプリの移行処理が `probabilities` に改名して使う最上位の終了画面（`endScreens[]`）だけで、グループの中の終了画面の `distribution` はアプリが読まないので扱わない。
 
 出典に載っていない設定は書かない（キーを入れない）。分母の `null` は「確率 0」の意味で、「不明」には使わない。
 
@@ -449,7 +449,7 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 
 - 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く
 - ちょんぼりすたは出典キーを `chonborista`・kind を `analysis-site` にし、URL は `https://chonborista.com/` で始める。chonborista.com（サブドメインを含む）の URL を別のキーで登録しない
-- 同じサイトを2つの出典に登録しない。サイトは登録ドメインで数える（`sp.example.com` と `example.com`、`a.example.co.jp` と `example.co.jp` は同じサイト。ブログサービスのサブドメインにある別々のブログも、1つのサイトに数える）
+- 同じサイトを2つの出典に登録しない。サイトは登録ドメインで数える（`sp.example.com` と `example.com`、`a.example.co.jp` と `example.co.jp` は同じサイト。ブログサービスのサブドメインにある別々のブログも、1つのサイトに数える）。URL として読めない出典は、サイトが分からないので止める
 - `adopted` は、選んだ出典の値そのものにする（許容差の中の別の値にしない）。`kept-single-source` では、上の表のとおり今の機種ファイルの値そのもの（これは main と比べる検査が確かめる）
 - 2つの値が一致するには、載っている設定（キー）の組が同じである必要がある。一部の設定だけを載せる出典の扱いは段階2で決める
 - `patterns` 形式の項目（終了画面・ボイス）は、出典記録の形を段階1で決めるまで記録できない（検証器が止める）。記録にはすべての項目を書くので、この項目を持つ機種（今は17機種）の記録は、それまで完成しない
