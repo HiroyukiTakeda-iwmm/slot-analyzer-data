@@ -1431,10 +1431,76 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('外したはずの項目が機種ファイルにある');
   });
 
-  it('unit と値の形が合わなければエラー', () => {
+  it('unit と値の形が合わなければ、形のエラーだけを出す', () => {
     const rec = record();
     rec.items[0] = { ...rec.items[0], unit: 'percent' };
-    expect(messages(run(rec))).toContain('の形に合わない');
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: adopted が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      'role::BIG: values.chonborista が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      'role::BIG: values.nana-press が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+    ]);
+  });
+
+  it('unit は機種ファイルの項目の中身に合わせる（数値・設定の組の項目を presence にするとエラー）', () => {
+    const rec = record();
+    rec.items = rec.items.map((item) => ({
+      ...item,
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    }));
+    const result = messages(run(rec));
+    expect(result).toContain(
+      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator か percent にする）'
+    );
+    expect(result).toContain(
+      'confirmationEvent::金トロフィー: unit=presence は使えない（機種ファイルの項目に合わせて settings にする）'
+    );
+  });
+
+  it('数値も設定の組も無い項目は presence だけ', () => {
+    const hintOnly = { ...machine, endScreens: [{ name: '青', hint: '示唆' }] };
+    const files = [{ path: 'machines/test/test-machine.json', data: hintOnly }];
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '青',
+      status: 'confirmed',
+      unit: 'settings',
+      values: { chonborista: GOLD, 'nana-press': GOLD },
+      adopted: GOLD,
+    });
+    expect(messages(run(rec, { files }))).toContain(
+      'endScreen::青: unit=settings は使えない（機種ファイルの項目に合わせて presence にする）'
+    );
+    rec.items[2] = {
+      ...rec.items[2],
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+  });
+
+  it('機種ファイルを読めなければエラー', () => {
+    expect(messages(run(record(), { files: [] }))).toContain(
+      '機種ファイルを読めない: machines/test/test-machine.json'
+    );
+  });
+
+  it('requireAll でも、正しい記録がある機種はエラーにしない', () => {
+    const provenanceFiles = [{ path: 'provenance/test-machine.json', data: record() }];
+    expect(
+      validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true }).errors
+    ).toEqual([]);
+  });
+
+  it('requireAll で、壊れた記録の機種に「出典記録がない」を重ねて出さない', () => {
+    const provenanceFiles = [
+      { path: 'provenance/test-machine.json', data: null, parseError: 'Unexpected token' },
+    ];
+    const result = validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true });
+    expect(result.errors.map((e) => e.message)).toEqual(['JSON パースエラー: Unexpected token']);
   });
 
   it('確率 0 を含む項目は分母で表せないのでエラー', () => {
@@ -1607,7 +1673,7 @@ Expected: FAIL（`provenance-validator.mjs` が無いエラー）
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs';
-import { resolve, dirname } from 'path';
+import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
   CHONBORISTA_KEY,
@@ -1641,9 +1707,7 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   const errors = [];
   const warnings = [];
 
-  const schema = JSON.parse(
-    readFileSync(resolve(ROOT, 'schemas/provenance.schema.json'), 'utf-8')
-  );
+  const schema = JSON.parse(readFileSync(resolve(ROOT, 'schemas/provenance.schema.json'), 'utf-8'));
   const ajv = new Ajv({ allErrors: true, strict: false });
   addFormats(ajv);
   const validateSchema = ajv.compile(schema);
@@ -1654,6 +1718,8 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   const recordedIds = new Set();
 
   for (const { path, data, parseError } of provenanceFiles) {
+    // 壊れた記録も「記録はある」と数える（requireAll で「出典記録がない」を重ねて出さない）
+    recordedIds.add(basename(path, '.json'));
     if (parseError) {
       errors.push(error(path, `JSON パースエラー: ${parseError}`));
       continue;
@@ -1713,6 +1779,18 @@ function collectSourceKinds(path, sources, errors) {
   return sourceKinds;
 }
 
+/**
+ * 機種ファイルの項目の中身から、記録に使える unit を決める（仕様 5.4）。
+ * 数値（probabilities / rates）があれば denominator か percent、無くて設定の組があれば settings、
+ * どちらも無ければ presence。数値と設定の組の両方がある項目は、数値の側で照合する。
+ * 記録する側が unit を選べると、presence にして値の照合を外せてしまうため。
+ */
+function allowedUnits(entry) {
+  if (machineValue(entry, 'percent') !== null) return ['denominator', 'percent'];
+  if (machineValue(entry, 'settings') !== null) return ['settings'];
+  return ['presence'];
+}
+
 function checkItem(path, item, sourceKinds, machineItems) {
   const errors = [];
   const key = itemKey(item.kind, item.name);
@@ -1742,6 +1820,16 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const target = machineItems.get(key);
   if (!target) {
     errors.push(error(path, `${key}: 機種ファイルに無い項目の記録`));
+    return errors;
+  }
+  const allowed = allowedUnits(target.entry);
+  if (!allowed.includes(item.unit)) {
+    errors.push(
+      error(
+        path,
+        `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
+      )
+    );
     return errors;
   }
   const actual = machineValue(target.entry, item.unit);
@@ -1802,7 +1890,7 @@ function checkRecord(path, record, machine) {
 - [ ] **Step 5: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-validator.test.mjs`
-Expected: PASS（22 tests）
+Expected: PASS（27 tests）
 
 - [ ] **Step 6: 整形と lint**
 
@@ -2890,7 +2978,7 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 | `settings` | `{"confirmed": [...], "excluded": [...]}` | `confirmedSettings` / `excludedSettings` |
 | `presence` | `true` | 数値は比べず、出典に載っていることだけを記録する |
 
-確率が 0 の設定を含む項目は分母で表せないので、`percent` で記録する。
+unit は、機種ファイルの項目の中身で決まる（検証器が確かめる）。数値（`probabilities` / `rates`）があれば `denominator` か `percent`、数値が無く確定・否定の設定があれば `settings`、どちらも無ければ `presence`。確率が 0 の設定を含む項目は分母で表せないので、`percent` で記録する。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
 
 ### 項目の種類と名前
 
