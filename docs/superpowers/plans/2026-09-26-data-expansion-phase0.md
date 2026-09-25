@@ -3958,4 +3958,4 @@ Task 1〜7 とは独立。読み取りだけなので並行して進めてよい
 - 一部の設定だけを載せる出典の扱い（段階1の前）
 - 公式（official）の出典を、誰がどの手順で確かめるか（段階1の前）
 - 本人が決めること（段階2の前まで）: 1〜10% の値の % 表記の丸め（57件）と、小数6桁で保存した小さい確率の丸め（最大251値・46機種）
-- 段階1の記録の道具: 確率 0 は `null`、percent を使えない項目で percent を出さない、`kept-single-source` の採用値は `machineValue` の結果そのもの
+- 段階1の記録の道具: 確率 0 は `null`、percent を使えない項目で percent を出さない、`kept-single-source` の採用値は `machineValue` の結果そのもの。`machineValue`・`allowedUnits` には、機種ファイルの生の項目ではなく `listMachineItems` の項目の entry を渡す（最上位の終了画面の `distribution` が見えなくなるため）

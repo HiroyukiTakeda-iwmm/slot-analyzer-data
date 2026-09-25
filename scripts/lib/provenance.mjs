@@ -163,6 +163,7 @@ function mapValues(obj, fn) {
 
 /**
  * 機種ファイルの項目の値を、出典記録と同じ unit の形にする。denominator では、確率 0 の設定を null にする。
+ * entry は `listMachineItems` の項目の entry を渡す（最上位の終了画面の `distribution` は、そこで確率として渡し直している）。
  * @returns {object | true | null} unit で表せないときは null
  */
 export function machineValue(entry, unit) {
