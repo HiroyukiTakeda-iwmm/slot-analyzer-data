@@ -3438,8 +3438,11 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
       "name": "BIG",
       "status": "confirmed",
       "unit": "denominator",
-      "values": { "chonborista": { "1": 295.2, "6": 277.7 }, "nana-press": { "1": 295.2, "6": 277.7 } },
-      "adopted": { "1": 295.2, "6": 277.7 }
+      "values": {
+        "chonborista": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 },
+        "nana-press": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 }
+      },
+      "adopted": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 }
     }
   ],
   "candidates": [],
@@ -3676,6 +3679,12 @@ npm run check:base        # main と比べる（アプリが作るID・採否ル
 > 2026-09-26 から、出典は `provenance/` に項目ごとに記録する（段階的に全機種へ広げる）。
 ```
 
+(e) バリデーションの説明。`npm run validate          # スキーマ・確率値・演出のバリデーション` を次に置き換える:
+
+```bash
+npm run validate          # スキーマ・確率値・演出・出典記録のバリデーション
+```
+
 - [ ] **Step 10: `CHANGELOG.md` に記録する**
 
 `slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。` の次に足す:
@@ -3684,7 +3693,7 @@ npm run check:base        # main と比べる（アプリが作るID・採否ル
 
 ## [Unreleased] - 段階0: 出典記録の仕組み
 
-データ（`machines/`）と `index.json` の version（3.8.0）は変えていない。公開中のアプリへの影響はない。
+機種データ（`machines/` の JSON）と `index.json` の version（3.8.0）は変えていない（`machines/FUTURE_ADDITIONS.md` は文書の修正だけ）。公開中のアプリへの影響はない。
 
 ### Added
 - `provenance/<機種ID>.json`（出典記録）と `schemas/provenance.schema.json`
