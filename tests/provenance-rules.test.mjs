@@ -4,6 +4,7 @@ import {
   decideNewItem,
   preferenceOrder,
   statusError,
+  valuesEqual,
 } from '../scripts/lib/provenance.mjs';
 
 const DEN = 'denominator';
@@ -14,6 +15,33 @@ const KINDS = {
   'p-town-dmm': 'analysis-site',
   maker: 'official',
 };
+
+describe('valuesEqual（許容差なしの完全一致）', () => {
+  it('denominator / percent は、許容差の中でも違えば false', () => {
+    expect(valuesEqual(DEN, { 1: 295.2, 6: 277.7 }, { 6: 277.7, 1: 295.2 })).toBe(true);
+    expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
+    expect(valuesEqual('percent', { 1: 10 }, { 1: 10 })).toBe(true);
+    expect(valuesEqual('percent', { 1: 10 }, { 1: 10.05 })).toBe(false);
+  });
+
+  it('settings は組として比べる（並び順と重なりは見ない）', () => {
+    const a = { confirmed: ['6', '5'], excluded: ['1'] };
+    expect(valuesEqual('settings', a, { confirmed: ['5', '6', '6'], excluded: ['1'] })).toBe(true);
+    expect(valuesEqual('settings', a, { confirmed: ['6'], excluded: ['1'] })).toBe(false);
+  });
+
+  it('presence は true どうしなら true', () => {
+    expect(valuesEqual('presence', true, true)).toBe(true);
+    expect(valuesEqual('presence', true, false)).toBe(false);
+  });
+
+  it('形が unit に合わない値・設定の欠け・未知の unit は false', () => {
+    expect(valuesEqual(DEN, null, null)).toBe(false);
+    expect(valuesEqual(DEN, { 1: 0.5 }, { 1: 0.5 })).toBe(false);
+    expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.2, 2: 292.6 })).toBe(false);
+    expect(valuesEqual('unknown', { 1: 1 }, { 1: 1 })).toBe(false);
+  });
+});
 
 describe('preferenceOrder', () => {
   it('公式 → ちょんぼりすた → 記録順', () => {
@@ -241,6 +269,14 @@ describe('statusError（記録の status と値の関係）', () => {
     expect(statusError(item({ status: 'provisional-chonborista', values }), KINDS)).toContain(
       '読み直し'
     );
+  });
+
+  it('provisional-chonborista: 読み直しがあっても、ちょんぼりすたの値と一致しない → エラー', () => {
+    const values = { chonborista: { 1: 295.2 } };
+    const reread = { by: 'verifier', value: { 1: 310 } };
+    expect(
+      statusError(item({ status: 'provisional-chonborista', values, reread }), KINDS)
+    ).toContain('読み直し');
   });
 
   it('kept-single-source: 一致が1つ → null、0 → エラー', () => {

@@ -378,9 +378,11 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current 
  * 採用値がその値（または選んだ出典の値）と完全に同じかを比べる。
  * このため、採否ルールでは採用されない記録（食い違い・公式を無視した採用・出典に無い値）は通らない。
  *
- * ここで確かめられないこと: kept-single-source の採用値が見直し前の値と同じか（見直し前の値を知らないため）。
- * これは main と比べる検査（scripts/lib/kept-values.mjs の checkKeptValues）が確かめる。
- * 形が unit に合わない値は、呼ぶ前に shapeError で弾いておくこと（Task 3 の検証器はそうする）。
+ * ここで確かめられないこと（見直し前の値を知らないため）: kept-single-source の採用値が見直し前の値そのものか、
+ * 見直し前の値を裏づける出典があるのに provisional-chonborista にしていないか。
+ * これらは main と比べる検査（scripts/lib/rules-against-base.mjs の checkRulesAgainstBase）が確かめる。
+ * 形が unit に合わない値は、呼ぶ前に shapeError で弾いておくこと
+ * （scripts/validators/provenance-validator.mjs はそうする）。
  *
  * @param {{ unit: string, status: string, values: Record<string, unknown>, adopted: unknown,
  *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）。
