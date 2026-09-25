@@ -93,6 +93,20 @@ describe('decideNewItem（新しく入れる値）', () => {
       reason: '出典なし',
     });
   });
+
+  it('公式が2つあって食い違う → candidate', () => {
+    const kinds = { ...KINDS, 'maker-site': 'official' };
+    const values = { maker: { 1: 295.2 }, 'maker-site': { 1: 300 } };
+    expect(decideNewItem({ unit: DEN, values, sourceKinds: kinds })).toEqual({
+      outcome: 'candidate',
+      reason: 'サイト間で食い違い',
+    });
+  });
+
+  it('形が unit に合わない値は例外にする', () => {
+    const values = { maker: { 1: 0.5 } };
+    expect(() => decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toThrow('形に合わない');
+  });
 });
 
 describe('decideExistingItem（既存の値の見直し）', () => {
@@ -203,6 +217,32 @@ describe('statusError（記録の status と値の関係）', () => {
     expect(statusError(item({ status: 'kept-single-source', values: one }), KINDS)).toBeNull();
     expect(statusError(item({ status: 'kept-single-source', values: none }), KINDS)).toContain(
       'kept-single-source には'
+    );
+  });
+
+  it('confirmed: 別の値で2サイトが一致する組がある → エラー', () => {
+    const values = {
+      chonborista: { 1: 300 },
+      'nana-press': { 1: 300 },
+      '1geki': { 1: 400 },
+      'p-town-dmm': { 1: 400 },
+    };
+    expect(
+      statusError(item({ status: 'confirmed', values, adopted: { 1: 300 } }), KINDS)
+    ).toContain('confirmed には');
+  });
+
+  it('confirmed: 公式があるのに公式でない値を採用している → エラー', () => {
+    const values = { chonborista: { 1: 300 }, 'nana-press': { 1: 300 }, maker: { 1: 295.2 } };
+    expect(
+      statusError(item({ status: 'confirmed', values, adopted: { 1: 300 } }), KINDS)
+    ).toContain('confirmed には');
+  });
+
+  it('kept-single-source: 2サイト一致の値があるなら confirmed にすべき → エラー', () => {
+    const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.2 } };
+    expect(statusError(item({ status: 'kept-single-source', values }), KINDS)).toContain(
+      'confirmed にする'
     );
   });
 
