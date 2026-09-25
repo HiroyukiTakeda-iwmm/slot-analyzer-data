@@ -7,6 +7,7 @@
  *   node scripts/validate.mjs              # 全チェック実行
  *   node scripts/validate.mjs --schema-only # スキーマチェックのみ
  *   node scripts/validate.mjs --index-only  # index整合性チェックのみ
+ *   node scripts/validate.mjs --require-provenance # 出典記録を全機種に求める（段階3）
  */
 
 import { readFileSync, readdirSync } from 'fs';
@@ -17,10 +18,13 @@ import { validateIndexConsistency } from './validators/index-consistency.mjs';
 import { validateProbabilities } from './validators/probability-validator.mjs';
 import { validateConfirmations } from './validators/confirmation-validator.mjs';
 import { validateCompleteness } from './validators/completeness-validator.mjs';
+import { validateProvenance } from './validators/provenance-validator.mjs';
+import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const MACHINES_DIR = resolve(ROOT, 'machines');
+const PROVENANCE_DIR = resolve(ROOT, 'provenance');
 
 // --- ファイル読み込み ---
 
@@ -129,6 +133,20 @@ function main() {
       `  Complete: ${summary.complete} / Provisional: ${summary.provisional} / Incomplete: ${summary.incomplete}`
     );
     console.log(`  警告: ${comp.warnings.length}件 / 情報: ${comp.info.length}件\n`);
+  }
+
+  // 6. 出典記録バリデーション（段階3までは、記録がある機種だけを検証する）
+  if (!schemaOnly && !indexOnly) {
+    console.log('--- 出典記録バリデーション ---');
+    const provenanceFiles = loadProvenanceFiles(PROVENANCE_DIR);
+    const prov = validateProvenance(validFiles, indexData, provenanceFiles, {
+      requireAll: args.includes('--require-provenance'),
+    });
+    allErrors.push(...prov.errors);
+    allWarnings.push(...prov.warnings);
+    console.log(
+      `  記録: ${provenanceFiles.length}件 / エラー: ${prov.errors.length}件 / 警告: ${prov.warnings.length}件\n`
+    );
   }
 
   // --- 結果出力 ---

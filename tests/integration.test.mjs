@@ -5,6 +5,7 @@
 
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync } from 'fs';
+import { spawnSync } from 'child_process';
 import { resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { validateSchemas } from '../scripts/validators/schema-validator.mjs';
@@ -12,6 +13,8 @@ import { validateIndexConsistency } from '../scripts/validators/index-consistenc
 import { validateProbabilities } from '../scripts/validators/probability-validator.mjs';
 import { validateConfirmations } from '../scripts/validators/confirmation-validator.mjs';
 import { validateCompleteness } from '../scripts/validators/completeness-validator.mjs';
+import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
+import { loadProvenanceFiles } from '../scripts/lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -107,5 +110,26 @@ describe('統合テスト: 実データ', () => {
   it('description: 100%充填', () => {
     const result = validateCompleteness(machineFiles);
     expect(result.summary.stats.description).toBe(result.summary.stats.total);
+  });
+
+  it('出典記録: エラーゼロ', () => {
+    const provenanceFiles = loadProvenanceFiles(resolve(ROOT, 'provenance'));
+    const result = validateProvenance(machineFiles, indexData, provenanceFiles);
+    if (result.errors.length > 0) {
+      console.log(
+        'Provenance errors:',
+        result.errors.map((e) => `${e.file}: ${e.message}`)
+      );
+    }
+    expect(result.errors).toHaveLength(0);
+  });
+
+  it('validate.mjs が出典記録の検査を実行して成功する', () => {
+    const run = spawnSync(process.execPath, ['scripts/validate.mjs'], {
+      cwd: ROOT,
+      encoding: 'utf-8',
+    });
+    expect(run.status).toBe(0);
+    expect(run.stdout).toContain('--- 出典記録バリデーション ---');
   });
 });
