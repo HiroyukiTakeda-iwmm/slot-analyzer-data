@@ -168,6 +168,38 @@ describe('decideExistingItem（既存の値の見直し）', () => {
       decideExistingItem({ unit: 'presence', values, sourceKinds: KINDS, current: true })
     ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: true });
   });
+
+  it('公式があれば、今の値に関係なく公式の値で confirmed', () => {
+    const values = { 'nana-press': { 1: 300 }, maker: { 1: 295.2 } };
+    expect(
+      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 300 } })
+    ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: { 1: 295.2 } });
+  });
+
+  it('ちょんぼりすただけが今の値と一致 → 暫定より先に kept-single-source', () => {
+    const values = { chonborista: { 1: 295.2 } };
+    expect(
+      decideExistingItem({
+        unit: DEN,
+        values,
+        sourceKinds: KINDS,
+        current: { 1: 295.2 },
+        reread: { 1: 295.2 },
+      })
+    ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: { 1: 295.2 } });
+  });
+
+  it('食い違いがあり、今の値の裏づけも無い → 理由つきで remove', () => {
+    const values = {
+      chonborista: { 1: 300 },
+      'nana-press': { 1: 300 },
+      '1geki': { 1: 400 },
+      'p-town-dmm': { 1: 400 },
+    };
+    expect(
+      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 500 } })
+    ).toEqual({ outcome: 'remove', reason: 'サイト間で食い違い、今の値を裏づける出典なし' });
+  });
 });
 
 describe('statusError（記録の status と値の関係）', () => {
@@ -246,7 +278,65 @@ describe('statusError（記録の status と値の関係）', () => {
     );
   });
 
+  it('confirmed: 採用値が選んだ出典の値そのものでない（許容差の中でも）→ エラー', () => {
+    const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.24 } };
+    expect(
+      statusError(item({ status: 'confirmed', values, adopted: { 1: 294.92 } }), KINDS)
+    ).toContain('confirmed には');
+  });
+
+  it('provisional-chonborista: 採用値がちょんぼりすたの値と違う → エラー', () => {
+    const values = { chonborista: { 1: 1000 } };
+    const reread = { by: 'verifier', value: { 1: 1000 } };
+    expect(
+      statusError(
+        item({ status: 'provisional-chonborista', values, reread, adopted: { 1: 1000.95 } }),
+        KINDS
+      )
+    ).toContain('同じでない');
+  });
+
   it('未知の status → エラー', () => {
     expect(statusError(item({ status: 'guess', values: {} }), KINDS)).toContain('未知の status');
+  });
+});
+
+describe('採否と検査の一貫性', () => {
+  const cases = [
+    { unit: DEN, values: { 'nana-press': { 1: 295.24 }, chonborista: { 1: 295.2 } } },
+    { unit: DEN, values: { chonborista: { 1: 300 }, maker: { 1: 295.2 } } },
+    { unit: DEN, values: { chonborista: { 1: 8192 } }, reread: { 1: 8192 } },
+    {
+      unit: DEN,
+      values: { 'nana-press': { 1: 295.2 }, '1geki': { 1: 310 } },
+      current: { 1: 295.2 },
+    },
+    {
+      unit: DEN,
+      values: { chonborista: { 1: 295.2 } },
+      current: { 1: 300 },
+      reread: { 1: 295.2 },
+    },
+    { unit: 'presence', values: { chonborista: true, 'nana-press': true }, current: true },
+  ];
+
+  it('decideNewItem / decideExistingItem が採用した記録は、すべて statusError を通る', () => {
+    let adopted = 0;
+    for (const c of cases) {
+      const results = [decideNewItem({ ...c, sourceKinds: KINDS })];
+      if (c.current !== undefined) results.push(decideExistingItem({ ...c, sourceKinds: KINDS }));
+      for (const result of results.filter((r) => r.outcome === 'adopt')) {
+        const record = {
+          unit: c.unit,
+          status: result.status,
+          values: c.values,
+          adopted: result.adopted,
+          ...(c.reread ? { reread: { by: 'verifier', value: c.reread } } : {}),
+        };
+        expect(statusError(record, KINDS)).toBeNull();
+        adopted += 1;
+      }
+    }
+    expect(adopted).toBe(8);
   });
 });

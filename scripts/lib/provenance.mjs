@@ -244,6 +244,25 @@ export function preferenceOrder(values, sourceKinds) {
     .map(({ key }) => key);
 }
 
+/**
+ * 2つの値が完全に同じか（許容差なし）。採用値が、選んだ出典の値そのものかを確かめるのに使う。
+ * 形が unit に合わない値は同じとみなさない。
+ */
+export function valuesEqual(unit, a, b) {
+  if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
+  switch (unit) {
+    case 'denominator':
+    case 'percent':
+      return sameKeys(a, b) && Object.keys(a).every((k) => a[k] === b[k]);
+    case 'settings':
+      return sameSet(a.confirmed, b.confirmed) && sameSet(a.excluded, b.excluded);
+    case 'presence':
+      return true;
+    default:
+      return false;
+  }
+}
+
 /** value と一致する値を出している出典のキー */
 export function supporters(unit, values, value) {
   return Object.keys(values).filter((key) => valuesAgree(unit, values[key], value));
@@ -355,11 +374,17 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current 
 
 /**
  * 出典記録の項目で、status と値の関係が仕様どおりかを確かめる。
- * 採否ルール（decideNewItem / decideExistingItem）と同じ findConfirmed で確定値を求め直して比べるので、
- * 採否ルールでは採用されない記録（食い違い・公式を無視した採用など）は通らない。
- * 形が unit に合わない値は、呼び出す前に shapeError で弾いておくこと（検証器がそうしている）。
+ * 採否ルール（decideNewItem / decideExistingItem）と同じ findConfirmed で確定値を求め直し、
+ * 採用値がその値（または選んだ出典の値）と完全に同じかを比べる。
+ * このため、採否ルールでは採用されない記録（食い違い・公式を無視した採用・出典に無い値）は通らない。
+ *
+ * ここで確かめられないこと: kept-single-source の採用値が見直し前の値と同じか（見直し前の値を知らないため）。
+ * これは main と比べる検査（scripts/lib/kept-values.mjs の checkKeptValues）が確かめる。
+ * 形が unit に合わない値は、呼ぶ前に shapeError で弾いておくこと（Task 3 の検証器はそうする）。
+ *
  * @param {{ unit: string, status: string, values: Record<string, unknown>, adopted: unknown,
- *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）
+ *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）。
+ *   decideNewItem / decideExistingItem の reread は値そのもの
  * @param {Record<string, string>} sourceKinds
  * @returns {string | null} 問題の説明。問題なければ null
  */
@@ -369,18 +394,18 @@ export function statusError(item, sourceKinds) {
   const confirmedValue = found && !found.conflict ? found.adopted : undefined;
   switch (status) {
     case 'confirmed':
-      return confirmedValue !== undefined && valuesAgree(unit, confirmedValue, adopted)
+      return confirmedValue !== undefined && valuesEqual(unit, confirmedValue, adopted)
         ? null
-        : 'confirmed には、公式の値、または別の値で一致する組の無い2サイト以上の一致が必要（公式があれば公式の値を採用する）';
+        : 'confirmed には、公式の値、または別の値で一致する組の無い2サイト以上の一致が必要（採用値は選んだ出典の値そのもの。公式があれば公式の値）';
     case 'provisional-chonborista':
       if (!isChonboristaOnly(values)) {
         return 'provisional-chonborista は、ちょんぼりすただけにある値に使う';
       }
-      if (!valuesAgree(unit, values[CHONBORISTA_KEY], adopted)) {
-        return '採用値がちょんぼりすたの値と一致しない';
+      if (!valuesEqual(unit, values[CHONBORISTA_KEY], adopted)) {
+        return '採用値がちょんぼりすたの値と同じでない';
       }
-      if (!reread || !valuesAgree(unit, reread.value, adopted)) {
-        return '読み直し（reread）が無いか、採用値と一致しない';
+      if (!reread || !valuesAgree(unit, values[CHONBORISTA_KEY], reread.value)) {
+        return '読み直し（reread）が無いか、ちょんぼりすたの値と一致しない';
       }
       return null;
     case 'kept-single-source':
