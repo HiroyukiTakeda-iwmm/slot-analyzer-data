@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  createNameDisambiguator,
   itemKey,
   listMachineItems,
   machineValue,
@@ -169,5 +170,34 @@ describe('listMachineItems', () => {
 
   it('空の specialSettings や無い配列は項目にしない', () => {
     expect(listMachineItems({ roles: [], specialSettings: {} })).toEqual([]);
+  });
+
+  it('同じ種類で同じ名前の項目は、2つ目から #2 を付けて区別する', () => {
+    const machine = {
+      roles: [{ name: '仁' }],
+      endScreens: [{ name: '仁' }, { name: '仁' }, { name: '仁' }],
+    };
+    expect(listMachineItems(machine).map((item) => itemKey(item.kind, item.name))).toEqual([
+      'role::仁',
+      'endScreen::仁',
+      'endScreen::仁#2',
+      'endScreen::仁#3',
+    ]);
+  });
+});
+
+describe('createNameDisambiguator', () => {
+  it('種類ごとに数え、1つ目はそのまま、2つ目から #n を付ける', () => {
+    const disambiguate = createNameDisambiguator();
+    expect(disambiguate('endScreen', '青')).toBe('青');
+    expect(disambiguate('role', '青')).toBe('青');
+    expect(disambiguate('endScreen', '青')).toBe('青#2');
+  });
+});
+
+describe('machineValue: 空の probabilities', () => {
+  it('分母・割合とも表せない（null）', () => {
+    expect(machineValue({ probabilities: {} }, 'denominator')).toBeNull();
+    expect(machineValue({ probabilities: {} }, 'percent')).toBeNull();
   });
 });

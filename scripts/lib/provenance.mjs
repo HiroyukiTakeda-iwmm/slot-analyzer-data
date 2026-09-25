@@ -148,12 +148,14 @@ export function machineValue(entry, unit) {
   switch (unit) {
     case 'denominator': {
       const map = numericMap(entry);
-      if (!map || Object.values(map).some((p) => !(p > 0))) return null;
+      if (!map || Object.keys(map).length === 0 || Object.values(map).some((p) => !(p > 0))) {
+        return null;
+      }
       return mapValues(map, (p) => 1 / p);
     }
     case 'percent': {
       const map = numericMap(entry);
-      return map ? mapValues(map, (p) => p * 100) : null;
+      return map && Object.keys(map).length > 0 ? mapValues(map, (p) => p * 100) : null;
     }
     case 'settings':
       if (entry.confirmedSettings === undefined && entry.excludedSettings === undefined) {
@@ -168,11 +170,28 @@ export function machineValue(entry, unit) {
 }
 
 /**
+ * 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて区別する関数を作る。
+ * 並び順で数えるので、項目を並べ替えないこと（仕様 5.8）。
+ * @returns {(kind: string, name: string) => string}
+ */
+export function createNameDisambiguator() {
+  const counts = new Map();
+  return (kind, name) => {
+    const key = itemKey(kind, name);
+    const count = (counts.get(key) ?? 0) + 1;
+    counts.set(key, count);
+    return count === 1 ? name : `${name}#${count}`;
+  };
+}
+
+/**
  * 機種ファイルの中で、出典記録の対象になる項目を並べる（仕様 5.4）。
+ * 同じ種類で同じ名前の項目は、createNameDisambiguator で `#2` などを付けた名前にする。
  */
 export function listMachineItems(machine) {
   const items = [];
-  const add = (kind, name, entry) => items.push({ kind, name, entry });
+  const disambiguate = createNameDisambiguator();
+  const add = (kind, name, entry) => items.push({ kind, name: disambiguate(kind, name), entry });
   const child = (parent, name) => `${parent}${NAME_SEPARATOR}${name}`;
 
   for (const r of machine.roles ?? []) add('role', r.name, r);
