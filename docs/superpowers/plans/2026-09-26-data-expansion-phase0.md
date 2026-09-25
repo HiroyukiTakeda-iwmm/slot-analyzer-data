@@ -103,11 +103,25 @@ describe('valuesAgree: denominator（分母）', () => {
   it('形が合わない値は不一致', () => {
     expect(valuesAgree('denominator', true, true)).toBe(false);
   });
+
+  it('差がちょうど 0.1% なら一致（境界を含む）', () => {
+    expect(valuesAgree('denominator', { 1: 8192 }, { 1: 8183.808 })).toBe(true);
+  });
+
+  it('空・NaN・1 未満を含む値は不一致', () => {
+    expect(valuesAgree('denominator', {}, {})).toBe(false);
+    expect(valuesAgree('denominator', { 1: Number.NaN }, { 1: Number.NaN })).toBe(false);
+    expect(valuesAgree('denominator', { 1: 0.5 }, { 1: 0.5 })).toBe(false);
+  });
 });
 
 describe('valuesAgree: percent（割合）', () => {
   it('差が 0.1 ポイント以内なら一致', () => {
     expect(valuesAgree('percent', { 1: 10, 6: 20 }, { 1: 10.05, 6: 20 })).toBe(true);
+  });
+
+  it('差がちょうど 0.1 ポイントなら一致（境界を含む）', () => {
+    expect(valuesAgree('percent', { 1: 20 }, { 1: 20.1 })).toBe(true);
   });
 
   it('差が 0.1 ポイントを超えると不一致', () => {
@@ -179,8 +193,11 @@ describe('toStoredProbability / toStoredRate（有効数字6桁）', () => {
   it('範囲外は RangeError', () => {
     expect(() => toStoredProbability(0)).toThrow(RangeError);
     expect(() => toStoredProbability(-1)).toThrow(RangeError);
+    expect(() => toStoredProbability(0.5)).toThrow(RangeError);
     expect(() => toStoredProbability(Number.NaN)).toThrow(RangeError);
     expect(() => toStoredRate(101)).toThrow(RangeError);
+    expect(() => toStoredRate(-1)).toThrow(RangeError);
+    expect(() => toStoredRate(Number.NaN)).toThrow(RangeError);
   });
 });
 
@@ -260,6 +277,19 @@ describe('listMachineItems', () => {
       'endScreen::仁#2',
       'endScreen::仁#3',
     ]);
+  });
+
+  it('親子の名前（ゾーン内の役）でも、同じ名前は #2 で区別する', () => {
+    const machine = { zones: [{ name: 'CZ', roles: [{ name: 'ベル' }, { name: 'ベル' }] }] };
+    expect(listMachineItems(machine).map((item) => itemKey(item.kind, item.name))).toEqual([
+      'zoneRole::CZ::ベル',
+      'zoneRole::CZ::ベル#2',
+    ]);
+  });
+
+  it('区別した名前が「#数字」を含む名前と重なったら例外を投げる', () => {
+    const machine = { endScreens: [{ name: '仁' }, { name: '仁#2' }, { name: '仁' }] };
+    expect(() => listMachineItems(machine)).toThrow('項目の名前を区別できない');
   });
 });
 
@@ -347,9 +377,9 @@ function isStringArray(value) {
 export function shapeError(unit, value) {
   switch (unit) {
     case 'denominator':
-      return isNumberMap(value) && Object.values(value).every((v) => v > 0)
+      return isNumberMap(value) && Object.values(value).every((v) => v >= 1)
         ? null
-        : '設定ごとの正の分母が必要';
+        : '設定ごとの 1 以上の分母が必要（確率が 1 を超えないように）';
     case 'percent':
       return isNumberMap(value) && Object.values(value).every((v) => v >= 0 && v <= 100)
         ? null
@@ -410,8 +440,8 @@ export function valuesAgree(unit, a, b) {
 
 /** 分母（1/x の x）を、保存する確率（有効数字6桁）にする */
 export function toStoredProbability(denominator) {
-  if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator <= 0) {
-    throw new RangeError(`分母は正の有限数が必要: ${denominator}`);
+  if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator < 1) {
+    throw new RangeError(`分母は 1 以上の有限数が必要: ${denominator}`);
   }
   return Number((1 / denominator).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
@@ -464,15 +494,23 @@ export function machineValue(entry, unit) {
 /**
  * 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて区別する関数を作る。
  * 並び順で数えるので、項目を並べ替えないこと（仕様 5.8）。
+ * 区別した名前が、もともと「#数字」を含む名前と重なったときは、黙って結び付けずに例外を投げる。
  * @returns {(kind: string, name: string) => string}
  */
 export function createNameDisambiguator() {
   const counts = new Map();
+  const issued = new Set();
   return (kind, name) => {
     const key = itemKey(kind, name);
     const count = (counts.get(key) ?? 0) + 1;
     counts.set(key, count);
-    return count === 1 ? name : `${name}#${count}`;
+    const unique = count === 1 ? name : `${name}#${count}`;
+    const uniqueKey = itemKey(kind, unique);
+    if (issued.has(uniqueKey)) {
+      throw new Error(`項目の名前を区別できない: ${uniqueKey}（名前に「#数字」を含む項目と重なった）`);
+    }
+    issued.add(uniqueKey);
+    return unique;
   };
 }
 
@@ -510,7 +548,7 @@ export function listMachineItems(machine) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-lib.test.mjs`
-Expected: PASS（25 tests）
+Expected: PASS（30 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -916,7 +954,7 @@ export function statusError(item, sourceKinds) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-rules.test.mjs tests/provenance-lib.test.mjs`
-Expected: PASS（provenance-rules 24 tests、provenance-lib 25 tests）
+Expected: PASS（provenance-rules 24 tests、provenance-lib 30 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -1184,6 +1222,15 @@ describe('validateProvenance', () => {
     };
     const files = [{ path: 'machines/test/test-machine.json', data: zero }];
     expect(messages(run(record(), { files }))).toContain('で表せない');
+  });
+
+  it('機種ファイルの項目名を区別できないときは、落ちずにエラーとして報告する', () => {
+    const clash = {
+      ...machine,
+      endScreens: [{ name: '仁' }, { name: '仁#2' }, { name: '仁' }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: clash }];
+    expect(messages(run(record(), { files }))).toContain('項目の名前を区別できない');
   });
 });
 ```
@@ -1488,10 +1535,17 @@ function checkRecord(path, record, machine) {
   const errors = [];
   const sourceKinds = collectSourceKinds(path, record.sources, errors);
 
-  // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない
-  const machineItems = new Map(
-    listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])
-  );
+  // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない。
+  // 区別できない名前（「#数字」を含む名前との重なり）は例外になるので、エラーとして報告する
+  let machineItems;
+  try {
+    machineItems = new Map(
+      listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])
+    );
+  } catch (e) {
+    errors.push(error(path, e.message));
+    return errors;
+  }
 
   const recorded = new Set();
   for (const item of record.items) {
@@ -1526,7 +1580,7 @@ function checkRecord(path, record, machine) {
 - [ ] **Step 5: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-validator.test.mjs`
-Expected: PASS（21 tests）
+Expected: PASS（22 tests）
 
 - [ ] **Step 6: 整形と lint**
 
