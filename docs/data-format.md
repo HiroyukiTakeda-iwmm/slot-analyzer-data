@@ -358,3 +358,102 @@ CZ突入率やAT当選率など、設定差のある確率データです。
   "description": "弱チェリーとスイカに設定差あり。初当り合算で大きな差が出る。高設定ほど偶数示唆演出の出現率が高い。"
 }
 ```
+
+## provenance（出典記録）
+
+2026-09-26 から、出典を `provenance/<機種ID>.json` に項目ごとに記録する。機種ファイルには何も足さない（アプリと pachi-manager は読まない）。仕様は `docs/superpowers/specs/2026-09-26-data-expansion-design.md` の5章、スキーマは `schemas/provenance.schema.json`。
+
+### 例
+
+BIG の1項目だけを抜き出した例。実際の記録には、機種ファイルのすべての項目（下の「項目の種類と名前」）を `items` に書く（1項目でも欠けると validate が止める）。
+
+```json
+{
+  "machineId": "galfy",
+  "machineFile": "galfy/galfy.json",
+  "reviewedAt": "2026-09-26",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/…",
+      "retrievedAt": "2026-09-26"
+    },
+    {
+      "key": "nana-press",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/…",
+      "retrievedAt": "2026-09-26"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "BIG",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 },
+        "nana-press": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 }
+      },
+      "adopted": { "1": 295.2, "2": 292.6, "5": 284.9, "6": 277.7 }
+    }
+  ],
+  "candidates": [],
+  "removed": []
+}
+```
+
+### 値の表し方（unit）
+
+| unit          | 値                                                       | 機種ファイル側との対応                                                                         |
+| ------------- | -------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `denominator` | 設定ごとの分母（`{"1": 295.2}`）。確率 0 の設定は `null` | `probabilities`（または `rates`・最上位の終了画面の `distribution`）の `1 ÷ 値`（0 は `null`） |
+| `percent`     | 設定ごとの割合 0〜100（`{"1": 10}`）                     | `probabilities`（または `rates`・最上位の終了画面の `distribution`）の `値 × 100`              |
+| `settings`    | `{"confirmed": [...], "excluded": [...]}`                | `confirmedSettings` / `excludedSettings`                                                       |
+| `presence`    | `true`                                                   | 数値は比べず、出典に載っていることだけを記録する                                               |
+
+unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`、最上位の終了画面では `distribution` も）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く、確定・否定の設定の欄（`confirmedSettings` / `excludedSettings`）があれば、中身が空の配列でも `settings`。どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。`distribution` を確率として扱うのは、アプリの移行処理が `probabilities` に改名して使う最上位の終了画面（`endScreens[]`）だけで、グループの中の終了画面の `distribution` はアプリが読まないので扱わない。
+
+出典に載っていない設定は書かない（キーを入れない）。分母の `null` は「確率 0」の意味で、「不明」には使わない。
+
+`sources` の URL は、記録の中でサイト（登録ドメイン。下の「記録の決まり」）が重ならないようにする（同じサイトを2つの出典として数えない）。`kind: "official"`（メーカー公式）は記録する側の申告で機械では確かめられないので、公式サイトの URL であることを手順で確かめる。
+
+### 項目の種類と名前
+
+| kind                                        | 機種ファイルの場所               | name                     |
+| ------------------------------------------- | -------------------------------- | ------------------------ |
+| `role`                                      | `roles[]`                        | 役の名前                 |
+| `zoneRole`                                  | `zones[].roles[]`                | `ゾーン名::役の名前`     |
+| `confirmationEvent`                         | `confirmationEvents[]`           | 名前                     |
+| `endScreen`                                 | `endScreens[]`                   | 名前                     |
+| `endScreenGroupItem`                        | `endScreenGroups[].endScreens[]` | `グループ名::画面の名前` |
+| `voiceCount` / `musicCount` / `effectCount` | 各配列                           | 名前                     |
+| `trialSuccessRate`                          | `trialSuccessRates[]`            | 名前                     |
+| `modeTransition`                            | `modeTransitions[]`              | 名前                     |
+| `specialSettings`                           | `specialSettings`                | `specialSettings`        |
+
+同じ種類で同じ名前の項目が複数あるときは、並び順で2つ目から名前に `#2`、`#3` を付けて区別する（例: tekken5 の終了画面 `仁` と `仁#2`）。並び順で数えるので、項目を並べ替えない。
+
+### status
+
+| status                    | 意味                                                                                                                                                                                                        |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `confirmed`               | 2サイト以上で一致、またはメーカー公式                                                                                                                                                                       |
+| `provisional-chonborista` | ちょんぼりすたにしか無く、別の担当が読み直して一致した（`reread` が必須）                                                                                                                                   |
+| `kept-single-source`      | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
+
+`candidates` は見つけたが採用しなかった値、`removed` は見直しで外した値（前の値と理由）。
+
+### 記録の決まり（検証器が確かめる）
+
+- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く
+- ちょんぼりすたは出典キーを `chonborista`・kind を `analysis-site` にし、URL は `https://chonborista.com/` で始める。chonborista.com（サブドメインを含む）の URL を別のキーで登録しない
+- 同じサイトを2つの出典に登録しない。サイトは登録ドメインで数える（`sp.example.com` と `example.com`、`a.example.co.jp` と `example.co.jp` は同じサイト。ブログサービスのサブドメインにある別々のブログも、1つのサイトに数える）。URL として読めない出典は、サイトが分からないので止める
+- `adopted` は、選んだ出典の値そのものにする（許容差の中の別の値にしない）。`kept-single-source` では、上の表のとおり今の機種ファイルの値そのもの（これは main と比べる検査が確かめる）
+- 2つの値が一致するには、載っている設定（キー）の組が同じである必要がある。一部の設定だけを載せる出典の扱いは段階2で決める
+- `patterns` 形式の項目（終了画面・ボイス）は、出典記録の形を段階1で決めるまで記録できない（検証器が止める）。記録にはすべての項目を書くので、この項目を持つ機種（今は17機種）の記録は、それまで完成しない
+
+### 保存する数値
+
+確率・割合は `scripts/lib/provenance.mjs` の `toStoredProbability(分母)` / `toStoredRate(割合)` で有効数字6桁にして保存する（小数6桁では 1/65536 のような小さい確率が約1.7%ずれるため）。

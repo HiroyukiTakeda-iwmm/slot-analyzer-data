@@ -2,6 +2,22 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [Unreleased] - 段階0: 出典記録の仕組み
+
+機種データ（`machines/` の JSON）と `index.json` の version（3.8.0）は変えていない（`machines/FUTURE_ADDITIONS.md` は文書の修正だけ）。公開中のアプリへの影響はない。
+
+### Added
+- `provenance/<機種ID>.json`（出典記録）と `schemas/provenance.schema.json`
+- `scripts/lib/provenance.mjs`: 値の比較（分母 0.1%・割合 0.1 ポイント・設定の組）、有効数字6桁への変換、採否ルール
+- `scripts/validators/provenance-validator.mjs`: `npm run validate` の6番目の検査。`--require-provenance` で全機種に必須（段階3で有効化）
+- `scripts/check-against-base.mjs` と `npm run check:base`: main と比べて、アプリが名前から作る ID（役・ゾーン・終了画面）が変わっていないか、見直し前の値が要る採否ルール（`kept-single-source`・`provisional-chonborista` の使い方）を守っているかを確かめる。ID を持たない項目の削除・新しい機種の出典記録・同じ名前の項目の別々の明示の id も確かめる。PR の CI でも実行し、main への push のときも直前の main と比べる
+- 品質レポートに「provenance (出典記録)」の行
+
+### Changed
+- CI: checkout を全履歴にし、PR で main と比べる検査（ID・採否ルール）を実行する
+- 文書: data-format / quality-standards / CONTRIBUTING / README に出典記録と ID の規則を追記。出典対策の提案書（案E）を「別ファイル方式」で採用と明記
+- 2026-08-16〜17 の文書修正（README・FUTURE_ADDITIONS・品質基準・出典対策の提案書）を main へ反映
+
 ## [3.8.0] - 2026-05-31 (第7弾 swarm)
 
 ### Added

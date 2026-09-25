@@ -13,10 +13,12 @@ import { readFileSync, readdirSync } from 'fs';
 import { resolve, dirname, relative } from 'path';
 import { fileURLToPath } from 'url';
 import { validateCompleteness } from './validators/completeness-validator.mjs';
+import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const MACHINES_DIR = resolve(ROOT, 'machines');
+const PROVENANCE_DIR = resolve(ROOT, 'provenance');
 
 function loadJsonFile(filePath) {
   return JSON.parse(readFileSync(filePath, 'utf-8'));
@@ -60,8 +62,28 @@ function main() {
   const { stats } = summary;
   const total = stats.total;
 
+  const recordedIds = new Set(
+    loadProvenanceFiles(PROVENANCE_DIR)
+      .filter((file) => file.data)
+      .map((file) => file.data.machineId)
+  );
+  const withProvenance = (indexData.machines ?? []).filter((entry) =>
+    recordedIds.has(entry.id)
+  ).length;
+
   if (jsonOutput) {
-    console.log(JSON.stringify({ summary, warnings: result.warnings, info: result.info }, null, 2));
+    console.log(
+      JSON.stringify(
+        {
+          summary,
+          provenance: { withRecord: withProvenance, total },
+          warnings: result.warnings,
+          info: result.info,
+        },
+        null,
+        2
+      )
+    );
     return;
   }
 
@@ -80,6 +102,7 @@ function main() {
     ['description', stats.description],
     ['source', stats.source],
     ['voiceCounts (non-empty)', stats.voiceCountsNonEmpty],
+    ['provenance (出典記録)', withProvenance],
   ];
 
   for (const [name, count] of fields) {
