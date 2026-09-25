@@ -1,7 +1,7 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs';
-import { resolve, dirname } from 'path';
+import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
   CHONBORISTA_KEY,
@@ -46,6 +46,8 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   const recordedIds = new Set();
 
   for (const { path, data, parseError } of provenanceFiles) {
+    // 壊れた記録も「記録はある」と数える（requireAll で「出典記録がない」を重ねて出さない）
+    recordedIds.add(basename(path, '.json'));
     if (parseError) {
       errors.push(error(path, `JSON パースエラー: ${parseError}`));
       continue;
@@ -105,6 +107,18 @@ function collectSourceKinds(path, sources, errors) {
   return sourceKinds;
 }
 
+/**
+ * 機種ファイルの項目の中身から、記録に使える unit を決める（仕様 5.4）。
+ * 数値（probabilities / rates）があれば denominator か percent、無くて設定の組があれば settings、
+ * どちらも無ければ presence。数値と設定の組の両方がある項目は、数値の側で照合する。
+ * 記録する側が unit を選べると、presence にして値の照合を外せてしまうため。
+ */
+function allowedUnits(entry) {
+  if (machineValue(entry, 'percent') !== null) return ['denominator', 'percent'];
+  if (machineValue(entry, 'settings') !== null) return ['settings'];
+  return ['presence'];
+}
+
 function checkItem(path, item, sourceKinds, machineItems) {
   const errors = [];
   const key = itemKey(item.kind, item.name);
@@ -134,6 +148,16 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const target = machineItems.get(key);
   if (!target) {
     errors.push(error(path, `${key}: 機種ファイルに無い項目の記録`));
+    return errors;
+  }
+  const allowed = allowedUnits(target.entry);
+  if (!allowed.includes(item.unit)) {
+    errors.push(
+      error(
+        path,
+        `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
+      )
+    );
     return errors;
   }
   const actual = machineValue(target.entry, item.unit);

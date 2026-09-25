@@ -214,10 +214,76 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('外したはずの項目が機種ファイルにある');
   });
 
-  it('unit と値の形が合わなければエラー', () => {
+  it('unit と値の形が合わなければ、形のエラーだけを出す', () => {
     const rec = record();
     rec.items[0] = { ...rec.items[0], unit: 'percent' };
-    expect(messages(run(rec))).toContain('の形に合わない');
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: adopted が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      'role::BIG: values.chonborista が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      'role::BIG: values.nana-press が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+    ]);
+  });
+
+  it('unit は機種ファイルの項目の中身に合わせる（数値・設定の組の項目を presence にするとエラー）', () => {
+    const rec = record();
+    rec.items = rec.items.map((item) => ({
+      ...item,
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    }));
+    const result = messages(run(rec));
+    expect(result).toContain(
+      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator か percent にする）'
+    );
+    expect(result).toContain(
+      'confirmationEvent::金トロフィー: unit=presence は使えない（機種ファイルの項目に合わせて settings にする）'
+    );
+  });
+
+  it('数値も設定の組も無い項目は presence だけ', () => {
+    const hintOnly = { ...machine, endScreens: [{ name: '青', hint: '示唆' }] };
+    const files = [{ path: 'machines/test/test-machine.json', data: hintOnly }];
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '青',
+      status: 'confirmed',
+      unit: 'settings',
+      values: { chonborista: GOLD, 'nana-press': GOLD },
+      adopted: GOLD,
+    });
+    expect(messages(run(rec, { files }))).toContain(
+      'endScreen::青: unit=settings は使えない（機種ファイルの項目に合わせて presence にする）'
+    );
+    rec.items[2] = {
+      ...rec.items[2],
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+  });
+
+  it('機種ファイルを読めなければエラー', () => {
+    expect(messages(run(record(), { files: [] }))).toContain(
+      '機種ファイルを読めない: machines/test/test-machine.json'
+    );
+  });
+
+  it('requireAll でも、正しい記録がある機種はエラーにしない', () => {
+    const provenanceFiles = [{ path: 'provenance/test-machine.json', data: record() }];
+    expect(
+      validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true }).errors
+    ).toEqual([]);
+  });
+
+  it('requireAll で、壊れた記録の機種に「出典記録がない」を重ねて出さない', () => {
+    const provenanceFiles = [
+      { path: 'provenance/test-machine.json', data: null, parseError: 'Unexpected token' },
+    ];
+    const result = validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true });
+    expect(result.errors.map((e) => e.message)).toEqual(['JSON パースエラー: Unexpected token']);
   });
 
   it('確率 0 を含む項目は分母で表せないのでエラー', () => {
