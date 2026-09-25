@@ -223,3 +223,150 @@ export function listMachineItems(machine) {
   }
   return items;
 }
+
+// ================================================================
+// 採否ルール（仕様 5.5）
+// ================================================================
+
+function rank(key, sourceKinds) {
+  if (sourceKinds[key] === 'official') return 0;
+  if (key === CHONBORISTA_KEY) return 1;
+  return 2;
+}
+
+/**
+ * 採用する値を選ぶ順（公式 → ちょんぼりすた → 記録順）。
+ */
+export function preferenceOrder(values, sourceKinds) {
+  return Object.keys(values)
+    .map((key, index) => ({ key, index }))
+    .sort((a, b) => rank(a.key, sourceKinds) - rank(b.key, sourceKinds) || a.index - b.index)
+    .map(({ key }) => key);
+}
+
+/** value と一致する値を出している出典のキー */
+export function supporters(unit, values, value) {
+  return Object.keys(values).filter((key) => valuesAgree(unit, values[key], value));
+}
+
+/** adopted と違う値で、2つの出典が一致しているか（＝別の値を支持する組がある） */
+function hasRivalPair(unit, values, adopted) {
+  const others = Object.keys(values).filter((key) => !valuesAgree(unit, values[key], adopted));
+  return others.some((a, i) =>
+    others.slice(i + 1).some((b) => valuesAgree(unit, values[a], values[b]))
+  );
+}
+
+/**
+ * 公式の値、または2サイト以上で一致する値を探す。
+ * @returns {{ adopted: unknown } | { conflict: true } | null}
+ */
+function findConfirmed(unit, values, sourceKinds) {
+  const order = preferenceOrder(values, sourceKinds);
+  const official = order.find((key) => sourceKinds[key] === 'official');
+  if (official !== undefined) return { adopted: values[official] };
+  for (const key of order) {
+    if (supporters(unit, values, values[key]).length >= 2) {
+      return hasRivalPair(unit, values, values[key])
+        ? { conflict: true }
+        : { adopted: values[key] };
+    }
+  }
+  return null;
+}
+
+function isChonboristaOnly(values) {
+  const keys = Object.keys(values);
+  return keys.length === 1 && keys[0] === CHONBORISTA_KEY;
+}
+
+function rereadAgrees(unit, values, reread) {
+  return reread !== undefined && valuesAgree(unit, values[CHONBORISTA_KEY], reread);
+}
+
+/**
+ * 新しく入れる値の採否（仕様 5.5 前半）。
+ * @param {{ unit: string, values: Record<string, unknown>,
+ *   sourceKinds: Record<string, string>, reread?: unknown }} input
+ * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
+ *   | { outcome: 'candidate', reason: string }}
+ */
+export function decideNewItem({ unit, values, sourceKinds, reread }) {
+  const found = findConfirmed(unit, values, sourceKinds);
+  if (found?.conflict) return { outcome: 'candidate', reason: 'サイト間で食い違い' };
+  if (found) return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
+  if (isChonboristaOnly(values)) {
+    return rereadAgrees(unit, values, reread)
+      ? { outcome: 'adopt', status: 'provisional-chonborista', adopted: values[CHONBORISTA_KEY] }
+      : { outcome: 'candidate', reason: 'ちょんぼりすたのみで、読み直しが無いか一致しない' };
+  }
+  const count = Object.keys(values).length;
+  if (count === 0) return { outcome: 'candidate', reason: '出典なし' };
+  if (count === 1) return { outcome: 'candidate', reason: 'ちょんぼりすた以外の1サイトのみ' };
+  return { outcome: 'candidate', reason: 'サイト間で食い違い' };
+}
+
+/**
+ * 既存の値の採否（仕様 5.5 後半）。current は今の機種ファイルの値（unit の形）。
+ * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
+ *   | { outcome: 'remove', reason: string }}
+ */
+export function decideExistingItem({ unit, values, sourceKinds, reread, current }) {
+  const found = findConfirmed(unit, values, sourceKinds);
+  if (found && !found.conflict) {
+    return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
+  }
+  if (supporters(unit, values, current).length >= 1) {
+    return { outcome: 'adopt', status: 'kept-single-source', adopted: current };
+  }
+  if (!found && isChonboristaOnly(values) && rereadAgrees(unit, values, reread)) {
+    return {
+      outcome: 'adopt',
+      status: 'provisional-chonborista',
+      adopted: values[CHONBORISTA_KEY],
+    };
+  }
+  if (found?.conflict) {
+    return { outcome: 'remove', reason: 'サイト間で食い違い、今の値を裏づける出典なし' };
+  }
+  if (Object.keys(values).length === 0) return { outcome: 'remove', reason: '出典なし' };
+  return { outcome: 'remove', reason: '今の値を裏づける出典なし' };
+}
+
+/**
+ * 出典記録の項目で、status と値の関係が仕様どおりかを確かめる。
+ * @param {{ unit: string, status: string, values: Record<string, unknown>, adopted: unknown,
+ *   reread?: { by: string, value: unknown } }} item
+ * @param {Record<string, string>} sourceKinds
+ * @returns {string | null} 問題の説明。問題なければ null
+ */
+export function statusError(item, sourceKinds) {
+  const { unit, status, values, adopted, reread } = item;
+  switch (status) {
+    case 'confirmed': {
+      const officialAgrees = Object.keys(values).some(
+        (key) => sourceKinds[key] === 'official' && valuesAgree(unit, values[key], adopted)
+      );
+      return officialAgrees || supporters(unit, values, adopted).length >= 2
+        ? null
+        : 'confirmed には、採用値と一致する出典が2つ以上、または公式が1つ必要';
+    }
+    case 'provisional-chonborista':
+      if (!isChonboristaOnly(values)) {
+        return 'provisional-chonborista は、ちょんぼりすただけにある値に使う';
+      }
+      if (!valuesAgree(unit, values[CHONBORISTA_KEY], adopted)) {
+        return '採用値がちょんぼりすたの値と一致しない';
+      }
+      if (!reread || !valuesAgree(unit, reread.value, adopted)) {
+        return '読み直し（reread）が無いか、採用値と一致しない';
+      }
+      return null;
+    case 'kept-single-source':
+      return supporters(unit, values, adopted).length >= 1
+        ? null
+        : 'kept-single-source には、採用値と一致する出典が1つ以上必要';
+    default:
+      return `未知の status: ${status}`;
+  }
+}
