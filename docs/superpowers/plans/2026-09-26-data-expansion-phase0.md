@@ -66,8 +66,9 @@
   - `shapeError(unit: string, value: unknown): string | null`
   - `valuesAgree(unit: string, a: unknown, b: unknown): boolean`
   - `toStoredProbability(denominator: number): number` / `toStoredRate(percent: number): number`
-  - `machineValue(entry: object, unit: string): object | true | null`
-  - `listMachineItems(machine: object): Array<{ kind: string, name: string, entry: object }>`
+  - `machineValue(entry: object, unit: string): object | true | null`（空の probabilities も null）
+  - `createNameDisambiguator(): (kind: string, name: string) => string` … 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて返す（実データの tekken5・valvrave2 に同名の終了画面がある）
+  - `listMachineItems(machine: object): Array<{ kind: string, name: string, entry: object }>`（同名の項目は `createNameDisambiguator` で区別した名前）
 
 - [ ] **Step 1: 失敗するテストを書く**
 
@@ -76,6 +77,7 @@
 ```js
 import { describe, it, expect } from 'vitest';
 import {
+  createNameDisambiguator,
   itemKey,
   listMachineItems,
   machineValue,
@@ -246,6 +248,35 @@ describe('listMachineItems', () => {
   it('空の specialSettings や無い配列は項目にしない', () => {
     expect(listMachineItems({ roles: [], specialSettings: {} })).toEqual([]);
   });
+
+  it('同じ種類で同じ名前の項目は、2つ目から #2 を付けて区別する', () => {
+    const machine = {
+      roles: [{ name: '仁' }],
+      endScreens: [{ name: '仁' }, { name: '仁' }, { name: '仁' }],
+    };
+    expect(listMachineItems(machine).map((item) => itemKey(item.kind, item.name))).toEqual([
+      'role::仁',
+      'endScreen::仁',
+      'endScreen::仁#2',
+      'endScreen::仁#3',
+    ]);
+  });
+});
+
+describe('createNameDisambiguator', () => {
+  it('種類ごとに数え、1つ目はそのまま、2つ目から #n を付ける', () => {
+    const disambiguate = createNameDisambiguator();
+    expect(disambiguate('endScreen', '青')).toBe('青');
+    expect(disambiguate('role', '青')).toBe('青');
+    expect(disambiguate('endScreen', '青')).toBe('青#2');
+  });
+});
+
+describe('machineValue: 空の probabilities', () => {
+  it('分母・割合とも表せない（null）', () => {
+    expect(machineValue({ probabilities: {} }, 'denominator')).toBeNull();
+    expect(machineValue({ probabilities: {} }, 'percent')).toBeNull();
+  });
 });
 ```
 
@@ -409,12 +440,14 @@ export function machineValue(entry, unit) {
   switch (unit) {
     case 'denominator': {
       const map = numericMap(entry);
-      if (!map || Object.values(map).some((p) => !(p > 0))) return null;
+      if (!map || Object.keys(map).length === 0 || Object.values(map).some((p) => !(p > 0))) {
+        return null;
+      }
       return mapValues(map, (p) => 1 / p);
     }
     case 'percent': {
       const map = numericMap(entry);
-      return map ? mapValues(map, (p) => p * 100) : null;
+      return map && Object.keys(map).length > 0 ? mapValues(map, (p) => p * 100) : null;
     }
     case 'settings':
       if (entry.confirmedSettings === undefined && entry.excludedSettings === undefined) {
@@ -429,11 +462,28 @@ export function machineValue(entry, unit) {
 }
 
 /**
+ * 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて区別する関数を作る。
+ * 並び順で数えるので、項目を並べ替えないこと（仕様 5.8）。
+ * @returns {(kind: string, name: string) => string}
+ */
+export function createNameDisambiguator() {
+  const counts = new Map();
+  return (kind, name) => {
+    const key = itemKey(kind, name);
+    const count = (counts.get(key) ?? 0) + 1;
+    counts.set(key, count);
+    return count === 1 ? name : `${name}#${count}`;
+  };
+}
+
+/**
  * 機種ファイルの中で、出典記録の対象になる項目を並べる（仕様 5.4）。
+ * 同じ種類で同じ名前の項目は、createNameDisambiguator で `#2` などを付けた名前にする。
  */
 export function listMachineItems(machine) {
   const items = [];
-  const add = (kind, name, entry) => items.push({ kind, name, entry });
+  const disambiguate = createNameDisambiguator();
+  const add = (kind, name, entry) => items.push({ kind, name: disambiguate(kind, name), entry });
   const child = (parent, name) => `${parent}${NAME_SEPARATOR}${name}`;
 
   for (const r of machine.roles ?? []) add('role', r.name, r);
@@ -460,7 +510,7 @@ export function listMachineItems(machine) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-lib.test.mjs`
-Expected: PASS（22 tests）
+Expected: PASS（25 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -866,7 +916,7 @@ export function statusError(item, sourceKinds) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-rules.test.mjs tests/provenance-lib.test.mjs`
-Expected: PASS（provenance-rules 24 tests、provenance-lib 22 tests）
+Expected: PASS（provenance-rules 24 tests、provenance-lib 25 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -1438,14 +1488,10 @@ function checkRecord(path, record, machine) {
   const errors = [];
   const sourceKinds = collectSourceKinds(path, record.sources, errors);
 
-  const machineItems = new Map();
-  for (const item of listMachineItems(machine)) {
-    const key = itemKey(item.kind, item.name);
-    if (machineItems.has(key)) {
-      errors.push(error(path, `${key}: 機種ファイルに同じ名前の項目が複数ある`));
-    }
-    machineItems.set(key, item);
-  }
+  // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない
+  const machineItems = new Map(
+    listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])
+  );
 
   const recorded = new Set();
   for (const item of record.items) {
@@ -1741,7 +1787,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 - Test: `tests/derived-ids.test.mjs`
 
 **Interfaces:**
-- Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `itemKey`・`NAME_SEPARATOR`、Task 4 の `loadProvenanceFiles`
+- Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `itemKey`・`NAME_SEPARATOR`・`createNameDisambiguator`、Task 4 の `loadProvenanceFiles`
 - Produces:
   - `collectDerivedIds(machine: object): Map<string, string>`（項目キー → ID。キーは `role::名前`、`zone::名前`、`zoneRole::ゾーン::役`、`endScreen::名前`、`endScreenGroup::名前`、`endScreenGroupItem::グループ::画面`。重なったら `#2`、`#3`）
   - `compareDerivedIds(baseIds: Map, headIds: Map, removedKeys: Set<string>): string[]`
@@ -1798,6 +1844,19 @@ describe('collectDerivedIds', () => {
       'endScreenGroup::End': 'end',
       'endScreenGroupItem::End::Red': 'red',
     });
+  });
+
+  it('同じ名前の項目は、2つ目から #2 を付けて区別する', () => {
+    const machine = {
+      ...baseMachine,
+      endScreens: [
+        { name: '仁', id: 'jin_bonus', hint: '' },
+        { name: '仁', id: 'jin_at', hint: '' },
+      ],
+    };
+    const ids = collectDerivedIds(machine);
+    expect(ids.get('endScreen::仁')).toBe('jin_bonus');
+    expect(ids.get('endScreen::仁#2')).toBe('jin_at');
   });
 });
 
@@ -1914,12 +1973,12 @@ Expected: FAIL（`derived-ids.mjs` が無いエラー）
 
 ```js
 import { migrateV1ToV2 } from '../migrate-v1-to-v2.mjs';
-import { NAME_SEPARATOR, itemKey } from './provenance.mjs';
+import { NAME_SEPARATOR, createNameDisambiguator, itemKey } from './provenance.mjs';
 
 /**
  * アプリが名前から作る ID（役・ゾーン・終了画面・終了画面グループ）を、元の項目ごとに集める（仕様 5.8）。
  * アプリと同じ移行処理（migrate-v1-to-v2.mjs は iOS の services/migrations/v1ToV2.ts の移植）を通す。
- * 同じ項目キーが重なるときは、2つ目から `#2`、`#3` を付けて区別する。
+ * 同じ種類で同じ名前の項目は、出典記録と同じく `#2`、`#3` を付けて区別する。
  *
  * @param {object} machine 機種ファイルの中身
  * @returns {Map<string, string>} 項目キー → ID
@@ -1927,25 +1986,20 @@ import { NAME_SEPARATOR, itemKey } from './provenance.mjs';
 export function collectDerivedIds(machine) {
   const v2 = migrateV1ToV2(machine);
   const ids = new Map();
-  const put = (key, id) => {
-    let unique = key;
-    for (let n = 2; ids.has(unique); n += 1) unique = `${key}#${n}`;
-    ids.set(unique, id);
-  };
+  const disambiguate = createNameDisambiguator();
+  const put = (kind, name, id) => ids.set(itemKey(kind, disambiguate(kind, name)), id);
   const child = (parent, name) => `${parent}${NAME_SEPARATOR}${name}`;
 
-  for (const role of v2.roles ?? []) put(itemKey('role', role.name), role.id);
+  for (const role of v2.roles ?? []) put('role', role.name, role.id);
   for (const zone of v2.zones ?? []) {
-    put(itemKey('zone', zone.name), zone.id);
-    for (const role of zone.roles ?? []) {
-      put(itemKey('zoneRole', child(zone.name, role.name)), role.id);
-    }
+    put('zone', zone.name, zone.id);
+    for (const role of zone.roles ?? []) put('zoneRole', child(zone.name, role.name), role.id);
   }
-  for (const screen of v2.endScreens ?? []) put(itemKey('endScreen', screen.name), screen.id);
+  for (const screen of v2.endScreens ?? []) put('endScreen', screen.name, screen.id);
   for (const group of v2.endScreenGroups ?? []) {
-    put(itemKey('endScreenGroup', group.name), group.id);
+    put('endScreenGroup', group.name, group.id);
     for (const screen of group.endScreens ?? []) {
-      put(itemKey('endScreenGroupItem', child(group.name, screen.name)), screen.id);
+      put('endScreenGroupItem', child(group.name, screen.name), screen.id);
     }
   }
   return ids;
@@ -2079,7 +2133,7 @@ main();
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/derived-ids.test.mjs`
-Expected: PASS（9 tests）
+Expected: PASS（10 tests）
 
 - [ ] **Step 5: npm スクリプトを足す**
 
@@ -2313,6 +2367,8 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 | `trialSuccessRate` | `trialSuccessRates[]` | 名前 |
 | `modeTransition` | `modeTransitions[]` | 名前 |
 | `specialSettings` | `specialSettings` | `specialSettings` |
+
+同じ種類で同じ名前の項目が複数あるときは、並び順で2つ目から名前に `#2`、`#3` を付けて区別する（例: tekken5 の終了画面 `仁` と `仁#2`）。並び順で数えるので、項目を並べ替えない。
 
 ### status
 
