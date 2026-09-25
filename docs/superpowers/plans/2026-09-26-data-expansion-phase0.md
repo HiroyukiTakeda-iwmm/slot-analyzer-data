@@ -2179,8 +2179,9 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
     });
     expect(run.status).toBe(0);
     const report = JSON.parse(run.stdout);
+    const recorded = loadProvenanceFiles(resolve(ROOT, 'provenance')).filter((file) => file.data);
     expect(report.provenance.total).toBe(indexData.machines.length);
-    expect(report.provenance.withRecord).toBeGreaterThanOrEqual(0);
+    expect(report.provenance.withRecord).toBe(recorded.length);
   });
 ```
 
