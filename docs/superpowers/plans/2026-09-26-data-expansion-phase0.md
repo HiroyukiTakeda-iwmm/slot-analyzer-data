@@ -2168,7 +2168,8 @@ function main() {
       provenanceFiles: loadProvenanceFiles(resolve(ROOT, 'provenance')),
     });
   } catch (e) {
-    console.error(`比べられませんでした（基準 ${base} を読めない、または JSON が壊れている）: ${e.message}`);
+    // 基準を読めない・JSON が壊れている・項目の名前を区別できない（createNameDisambiguator の例外）のどれか
+    console.error(`比べられませんでした（基準: ${base}）: ${e.message}`);
     process.exit(2);
   }
 
@@ -2202,8 +2203,8 @@ Expected: PASS（10 tests）
 Run: `git fetch origin && npm run -s check:ids; echo "exit=$?"`
 Expected: `問題なし: 既存の ID はすべて同じです` と `exit=0`
 
-Run: `node scripts/check-derived-ids.mjs --base no-such-ref; echo "exit=$?"`
-Expected: `比べられませんでした（基準 no-such-ref を読めない…）` と `exit=2`
+Run: `node scripts/check-derived-ids.mjs --base no-such-ref > "$TMPDIR/ids.txt" 2>&1; echo "exit=$?"; head -3 "$TMPDIR/ids.txt"`
+Expected: `exit=2` と `比べられませんでした（基準: no-such-ref）: Command failed: git show no-such-ref:machines/index.json`（パイプで tail に渡すと tail の終了コードを拾うので、ファイルに書いてから見る）
 
 - [ ] **Step 7: CI で PR のときに実行する**
 
