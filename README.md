@@ -224,7 +224,7 @@ slot-analyzer-data/
 ## バリデーション
 
 ```bash
-npm run validate          # スキーマ・確率値・演出のバリデーション
+npm run validate          # スキーマ・確率値・演出・出典記録のバリデーション
 npm run validate:schema   # スキーマチェックのみ
 npm run validate:index    # index整合性チェックのみ
 npm test                  # テスト実行（vitest）

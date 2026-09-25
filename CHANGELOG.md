@@ -4,7 +4,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 
 ## [Unreleased] - 段階0: 出典記録の仕組み
 
-データ（`machines/`）と `index.json` の version（3.8.0）は変えていない。公開中のアプリへの影響はない。
+機種データ（`machines/` の JSON）と `index.json` の version（3.8.0）は変えていない（`machines/FUTURE_ADDITIONS.md` は文書の修正だけ）。公開中のアプリへの影響はない。
 
 ### Added
 - `provenance/<機種ID>.json`（出典記録）と `schemas/provenance.schema.json`
