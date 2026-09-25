@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 出典記録（provenance）の形・値の比較・採否ルール・検証と、main と比べる検査（アプリが名前から作る ID・見直しで残した値）を slot-analyzer-data に入れる。データは変えずに main へマージする。
+**Goal:** 出典記録（provenance）の形・値の比較・採否ルール・検証と、main と比べる検査（アプリが名前から作る ID・見直し前の値が要る採否ルール）を slot-analyzer-data に入れる。データは変えずに main へマージする。
 
-**Architecture:** 純粋関数の `scripts/lib/provenance.mjs`（値の比較・変換・採否ルール）と `scripts/lib/derived-ids.mjs`（ID の収集と比較）を土台にする。その上に、既存の検証器と同じ形の `scripts/validators/provenance-validator.mjs` を置き、`validate.mjs` の6番目の検査として呼ぶ。出典記録は機種ファイルとは別の `provenance/<機種ID>.json` に置く。validate は main を読まないので、ID の安定性と見直しで残した値（`scripts/lib/kept-values.mjs`）は `scripts/check-against-base.mjs` で main と比べ、PR の CI でも実行する。
+**Architecture:** 純粋関数の `scripts/lib/provenance.mjs`（値の比較・変換・採否ルール）と `scripts/lib/derived-ids.mjs`（ID の収集と比較）を土台にする。その上に、既存の検証器と同じ形の `scripts/validators/provenance-validator.mjs` を置き、`validate.mjs` の6番目の検査として呼ぶ。出典記録は機種ファイルとは別の `provenance/<機種ID>.json` に置く。validate は main を読まないので、ID の安定性と、見直し前の値が要る採否ルール（`scripts/lib/rules-against-base.mjs`）は `scripts/check-against-base.mjs` で main と比べ、PR の CI でも実行する。
 
 **Tech Stack:** Node.js（ESM `.mjs`）、ajv 8 + ajv-formats、vitest 3、ESLint 9、Prettier。
 
@@ -34,9 +34,9 @@
 | `scripts/lib/provenance.mjs` | 値の比較・変換・項目の列挙・採否ルール（純粋関数） | 新規 |
 | `scripts/lib/load-provenance.mjs` | `provenance/*.json` の読み込み | 新規 |
 | `scripts/lib/derived-ids.mjs` | アプリが作る ID の収集・比較・全機種チェック | 新規 |
-| `scripts/lib/kept-values.mjs` | 見直しで残した値（kept-single-source）を main と比べる | 新規 |
+| `scripts/lib/rules-against-base.mjs` | 採否ルールのうち、見直し前の値（main）が要るものを確かめる | 新規 |
 | `scripts/validators/provenance-validator.mjs` | 出典記録の検証（スキーマと機種ファイルとの整合） | 新規 |
-| `scripts/check-against-base.mjs` | main と比べる検査（ID の安定性・残した値）の CLI | 新規 |
+| `scripts/check-against-base.mjs` | main と比べる検査（ID の安定性・採否ルール）の CLI | 新規 |
 | `schemas/provenance.schema.json` | 出典記録の JSON Schema | 新規 |
 | `provenance/README.md` | 置き場所の説明 | 新規 |
 | `scripts/validate.mjs` | 6番目の検査として出典記録を検証。`--require-provenance` | 変更 |
@@ -48,7 +48,7 @@
 | `tests/provenance-validator.test.mjs` | Task 3 のテスト | 新規 |
 | `tests/load-provenance.test.mjs` | Task 4 のテスト | 新規 |
 | `tests/derived-ids.test.mjs` | Task 5 のテスト（ID） | 新規 |
-| `tests/kept-values.test.mjs` | Task 5 のテスト（残した値） | 新規 |
+| `tests/rules-against-base.test.mjs` | Task 5 のテスト（採否ルール） | 新規 |
 | `tests/integration.test.mjs` | 実データでの確認を追加 | 変更 |
 | `docs/data-format.md` ほか文書 | 出典記録と ID の規則 | 変更 |
 
@@ -596,6 +596,7 @@ import {
   decideNewItem,
   preferenceOrder,
   statusError,
+  valuesEqual,
 } from '../scripts/lib/provenance.mjs';
 
 const DEN = 'denominator';
@@ -606,6 +607,33 @@ const KINDS = {
   'p-town-dmm': 'analysis-site',
   maker: 'official',
 };
+
+describe('valuesEqual（許容差なしの完全一致）', () => {
+  it('denominator / percent は、許容差の中でも違えば false', () => {
+    expect(valuesEqual(DEN, { 1: 295.2, 6: 277.7 }, { 6: 277.7, 1: 295.2 })).toBe(true);
+    expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
+    expect(valuesEqual('percent', { 1: 10 }, { 1: 10 })).toBe(true);
+    expect(valuesEqual('percent', { 1: 10 }, { 1: 10.05 })).toBe(false);
+  });
+
+  it('settings は組として比べる（並び順と重なりは見ない）', () => {
+    const a = { confirmed: ['6', '5'], excluded: ['1'] };
+    expect(valuesEqual('settings', a, { confirmed: ['5', '6', '6'], excluded: ['1'] })).toBe(true);
+    expect(valuesEqual('settings', a, { confirmed: ['6'], excluded: ['1'] })).toBe(false);
+  });
+
+  it('presence は true どうしなら true', () => {
+    expect(valuesEqual('presence', true, true)).toBe(true);
+    expect(valuesEqual('presence', true, false)).toBe(false);
+  });
+
+  it('形が unit に合わない値・設定の欠け・未知の unit は false', () => {
+    expect(valuesEqual(DEN, null, null)).toBe(false);
+    expect(valuesEqual(DEN, { 1: 0.5 }, { 1: 0.5 })).toBe(false);
+    expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.2, 2: 292.6 })).toBe(false);
+    expect(valuesEqual('unknown', { 1: 1 }, { 1: 1 })).toBe(false);
+  });
+});
 
 describe('preferenceOrder', () => {
   it('公式 → ちょんぼりすた → 記録順', () => {
@@ -835,6 +863,14 @@ describe('statusError（記録の status と値の関係）', () => {
     expect(statusError(item({ status: 'provisional-chonborista', values }), KINDS)).toContain(
       '読み直し'
     );
+  });
+
+  it('provisional-chonborista: 読み直しがあっても、ちょんぼりすたの値と一致しない → エラー', () => {
+    const values = { chonborista: { 1: 295.2 } };
+    const reread = { by: 'verifier', value: { 1: 310 } };
+    expect(
+      statusError(item({ status: 'provisional-chonborista', values, reread }), KINDS)
+    ).toContain('読み直し');
   });
 
   it('kept-single-source: 一致が1つ → null、0 → エラー', () => {
@@ -1092,9 +1128,11 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current 
  * 採用値がその値（または選んだ出典の値）と完全に同じかを比べる。
  * このため、採否ルールでは採用されない記録（食い違い・公式を無視した採用・出典に無い値）は通らない。
  *
- * ここで確かめられないこと: kept-single-source の採用値が見直し前の値と同じか（見直し前の値を知らないため）。
- * これは main と比べる検査（scripts/lib/kept-values.mjs の checkKeptValues）が確かめる。
- * 形が unit に合わない値は、呼ぶ前に shapeError で弾いておくこと（Task 3 の検証器はそうする）。
+ * ここで確かめられないこと（見直し前の値を知らないため）: kept-single-source の採用値が見直し前の値そのものか、
+ * 見直し前の値を裏づける出典があるのに provisional-chonborista にしていないか。
+ * これらは main と比べる検査（scripts/lib/rules-against-base.mjs の checkRulesAgainstBase）が確かめる。
+ * 形が unit に合わない値は、呼ぶ前に shapeError で弾いておくこと
+ * （scripts/validators/provenance-validator.mjs はそうする）。
  *
  * @param {{ unit: string, status: string, values: Record<string, unknown>, adopted: unknown,
  *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）。
@@ -1138,7 +1176,7 @@ export function statusError(item, sourceKinds) {
 - [ ] **Step 4: テストが通ることを確かめる**
 
 Run: `npx vitest run tests/provenance-rules.test.mjs tests/provenance-lib.test.mjs`
-Expected: PASS（provenance-rules 35 tests、provenance-lib 30 tests）
+Expected: PASS（provenance-rules 40 tests、provenance-lib 30 tests）
 
 - [ ] **Step 5: 整形と lint**
 
@@ -2015,23 +2053,23 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ---
 
-### Task 5: main と比べる検査（アプリが作る ID・見直しで残した値）
+### Task 5: main と比べる検査（アプリが作る ID・採否ルール）
 
 **Files:**
 - Create: `scripts/lib/derived-ids.mjs`
-- Create: `scripts/lib/kept-values.mjs`
+- Create: `scripts/lib/rules-against-base.mjs`
 - Create: `scripts/check-against-base.mjs`
 - Modify: `package.json`（`check:base`）
 - Modify: `.github/workflows/validate.yml`
-- Test: `tests/derived-ids.test.mjs`、`tests/kept-values.test.mjs`
+- Test: `tests/derived-ids.test.mjs`、`tests/rules-against-base.test.mjs`
 
 **Interfaces:**
-- Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `itemKey`・`NAME_SEPARATOR`・`createNameDisambiguator`・`listMachineItems`・`machineValue`、Task 2 の `valuesEqual`、Task 4 の `loadProvenanceFiles`
+- Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `CHONBORISTA_KEY`・`itemKey`・`NAME_SEPARATOR`・`createNameDisambiguator`・`listMachineItems`・`machineValue`・`valuesAgree`、Task 2 の `valuesEqual`、Task 4 の `loadProvenanceFiles`
 - Produces:
   - `collectDerivedIds(machine: object): Map<string, string>`（項目キー → ID。キーは `role::名前`、`zone::名前`、`zoneRole::ゾーン::役`、`endScreen::名前`、`endScreenGroup::名前`、`endScreenGroupItem::グループ::画面`。重なったら `#2`、`#3`）
   - `compareDerivedIds(baseIds: Map, headIds: Map, removedKeys: Set<string>): string[]`
   - `checkDerivedIds({ readBase, readHead, provenanceFiles }): string[]`（`readBase` / `readHead` はリポジトリからの相対パスを受け取って中身を返す）
-  - `checkKeptValues({ readBase, readHead, provenanceFiles }): string[]`（kept-single-source の項目の機種ファイルの値が main と完全に同じか。main に無い機種・項目に使っていないか。Task 2 の `statusError` と Task 3 の検証器は見直し前の値を知らないので、ここで確かめる。採用値と機種ファイルの値の一致は検証器が見る）
+  - `checkRulesAgainstBase({ readBase, readHead, provenanceFiles }): string[]`（採否ルール（仕様 5.5）のうち、見直し前の値（main）が要るものを確かめる。kept-single-source は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか。main にある項目の provisional-chonborista は、ちょんぼりすたの値が main の値と一致しないときだけか（一致するなら規則2の kept-single-source）。Task 2 の `statusError` と Task 3 の検証器は見直し前の値を知らないので、ここで確かめる）
   - `npm run check:base`（上の2つをまとめて実行。終了コード 0 = 問題なし、1 = 問題あり、2 = 比べられない）
 
 - [ ] **Step 1: ID の検査の失敗するテストを書く**
@@ -2309,13 +2347,13 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
 Run: `npx vitest run tests/derived-ids.test.mjs`
 Expected: PASS（10 tests）
 
-- [ ] **Step 5: 残した値の検査の失敗するテストを書く**
+- [ ] **Step 5: 採否ルールの検査の失敗するテストを書く**
 
-`tests/kept-values.test.mjs`:
+`tests/rules-against-base.test.mjs`:
 
 ```js
 import { describe, it, expect } from 'vitest';
-import { checkKeptValues } from '../scripts/lib/kept-values.mjs';
+import { checkRulesAgainstBase } from '../scripts/lib/rules-against-base.mjs';
 
 const entry = {
   id: 'test-machine',
@@ -2348,59 +2386,89 @@ const reader = (map) => (path) => {
   if (!(path in map)) throw new Error(`no such file: ${path}`);
   return map[path];
 };
-const recordWith = (status) => [
-  {
-    data: {
-      machineId: 'test-machine',
-      items: [{ kind: 'role', name: 'BIG', unit: 'denominator', status }],
-    },
-  },
-];
-const run = (base, head, provenanceFiles = recordWith('kept-single-source')) =>
-  checkKeptValues({ readBase: reader(base), readHead: reader(head), provenanceFiles });
 
-describe('checkKeptValues', () => {
-  it('残した値が main と同じなら問題なし', () => {
+// kept-single-source の採用値は、今の機種ファイルの値を unit の形にしたもの（1 ÷ 確率）そのもの
+const kept = (adopted = { 1: 1 / 0.00338753 }) => ({
+  kind: 'role',
+  name: 'BIG',
+  unit: 'denominator',
+  status: 'kept-single-source',
+  values: { 'nana-press': { 1: 295.2 } },
+  adopted,
+});
+const provisional = (chonborista) => ({
+  kind: 'role',
+  name: 'BIG',
+  unit: 'denominator',
+  status: 'provisional-chonborista',
+  values: { chonborista },
+  adopted: chonborista,
+  reread: { by: 'verifier', value: chonborista },
+});
+const recordsOf = (...items) => [{ data: { machineId: 'test-machine', items } }];
+const run = (base, head, provenanceFiles) =>
+  checkRulesAgainstBase({ readBase: reader(base), readHead: reader(head), provenanceFiles });
+
+describe('checkRulesAgainstBase: kept-single-source', () => {
+  it('採用値と機種ファイルの値が main の値そのものなら問題なし', () => {
     const map = files([big(0.00338753)]);
-    expect(run(map, map)).toEqual([]);
+    expect(run(map, map, recordsOf(kept()))).toEqual([]);
   });
 
-  it('残した値が main から変わったら、一致の条件の範囲でも報告する', () => {
+  it('機種ファイルの値が main から変わったら、一致の条件の範囲でも報告する', () => {
     // 1/295.2 → 1/295.3 は 5.4 の一致の条件（0.1% 以内）に入るが、残す値は変えない
-    expect(run(files([big(0.00338753)]), files([big(0.00338639)]))).toEqual([
+    expect(run(files([big(0.00338753)]), files([big(0.00338639)]), recordsOf(kept()))).toEqual([
       'test-machine: role::BIG: kept-single-source の値が main から変わった',
     ]);
   });
 
-  it('main に無い項目に使ったら報告する', () => {
-    expect(run(files([]), files([big(0.00338753)]))).toEqual([
-      'test-machine: role::BIG: main に無い項目に kept-single-source を使っている',
-    ]);
-  });
-
-  it('main に無い機種に使ったら報告する', () => {
-    const base = { 'machines/index.json': indexJson([]) };
-    expect(run(base, files([big(0.00338753)]))).toEqual([
-      'test-machine: main に無い機種に kept-single-source を使っている',
-    ]);
-  });
-
-  it('index.json から外した機種の記録に使ったら報告する', () => {
+  it('採用値が main の値そのものでなければ、一致の条件の範囲でも報告する', () => {
+    // 許容差による一致は推移しない。間の値を採用値に書くと、今の値を裏づけない出典でも通ってしまう
     const map = files([big(0.00338753)]);
-    expect(run(map, files([big(0.00338753)], []))).toEqual([
-      'test-machine: index.json に無い機種の記録に kept-single-source を使っている',
+    expect(run(map, map, recordsOf(kept({ 1: 295.35 })))).toEqual([
+      'test-machine: role::BIG: kept-single-source の採用値が main の値そのものでない',
     ]);
   });
 
-  it('機種ファイルから消した項目に使ったら報告する', () => {
-    expect(run(files([big(0.00338753)]), files([]))).toEqual([
-      'test-machine: role::BIG: kept-single-source の項目が機種ファイルに無い',
-    ]);
-  });
-
-  it('kept-single-source の無い記録では、main の機種ファイルを読まない（新台の記録）', () => {
+  it('main に無い項目・機種に使ったら報告する', () => {
+    const expected = ['test-machine: role::BIG: main に無い項目に kept-single-source を使っている'];
+    expect(run(files([]), files([big(0.00338753)]), recordsOf(kept()))).toEqual(expected);
     const base = { 'machines/index.json': indexJson([]) };
-    expect(run(base, files([big(0.00338753)]), recordWith('confirmed'))).toEqual([]);
+    expect(run(base, files([big(0.00338753)]), recordsOf(kept()))).toEqual(expected);
+  });
+
+  it('機種ファイルに無い項目に使ったら報告する（index.json から外した機種も）', () => {
+    const map = files([big(0.00338753)]);
+    const expected = ['test-machine: role::BIG: kept-single-source の項目が機種ファイルに無い'];
+    expect(run(map, files([]), recordsOf(kept()))).toEqual(expected);
+    expect(run(map, files([big(0.00338753)], []), recordsOf(kept()))).toEqual(expected);
+  });
+});
+
+describe('checkRulesAgainstBase: provisional-chonborista', () => {
+  it('main にある項目で、ちょんぼりすたの値が main の値と一致しないなら問題なし（規則3）', () => {
+    const map = files([big(0.00338753)]);
+    expect(run(map, map, recordsOf(provisional({ 1: 300 })))).toEqual([]);
+  });
+
+  it('main にある項目で、ちょんぼりすたの値が main の値と一致するなら報告する（規則2）', () => {
+    const map = files([big(0.00338753)]);
+    expect(run(map, map, recordsOf(provisional({ 1: 295.2 })))).toEqual([
+      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+    ]);
+  });
+
+  it('main に無い項目（新しく入れる値）は、main の値と比べない', () => {
+    const base = { 'machines/index.json': indexJson([]) };
+    expect(run(base, files([big(0.00338753)]), recordsOf(provisional({ 1: 295.2 })))).toEqual([]);
+  });
+});
+
+describe('checkRulesAgainstBase: そのほか', () => {
+  it('kept-single-source と provisional-chonborista の無い記録では、main の機種ファイルを読まない', () => {
+    const base = { 'machines/index.json': indexJson([entry]) };
+    const confirmed = { ...kept(), status: 'confirmed' };
+    expect(run(base, files([big(0.00338753)]), recordsOf(confirmed))).toEqual([]);
   });
 
   it('読めなかった記録は飛ばす（validate が報告する）', () => {
@@ -2410,84 +2478,101 @@ describe('checkKeptValues', () => {
 
   it('main の機種ファイルを読めなければ例外を投げる（CLI は終了コード 2 にする）', () => {
     const base = { 'machines/index.json': indexJson([entry]) };
-    expect(() => run(base, files([big(0.00338753)]))).toThrow('no such file');
+    expect(() => run(base, files([big(0.00338753)]), recordsOf(kept()))).toThrow('no such file');
   });
 });
 ```
 
 - [ ] **Step 6: テストが失敗することを確かめる**
 
-Run: `npx vitest run tests/kept-values.test.mjs`
-Expected: FAIL（`kept-values.mjs` が無いエラー）
+Run: `npx vitest run tests/rules-against-base.test.mjs`
+Expected: FAIL（`rules-against-base.mjs` が無いエラー）
 
-- [ ] **Step 7: 残した値の検査を実装する**
+- [ ] **Step 7: 採否ルールの検査を実装する**
 
-`scripts/lib/kept-values.mjs`:
+`scripts/lib/rules-against-base.mjs`:
 
 ```js
-import { itemKey, listMachineItems, machineValue, valuesEqual } from './provenance.mjs';
+import {
+  CHONBORISTA_KEY,
+  itemKey,
+  listMachineItems,
+  machineValue,
+  valuesAgree,
+  valuesEqual,
+} from './provenance.mjs';
+
+const KEPT = 'kept-single-source';
+const PROVISIONAL = 'provisional-chonborista';
 
 function indexById(read) {
   const index = JSON.parse(read('machines/index.json'));
   return new Map(index.machines.map((entry) => [entry.id, entry]));
 }
 
+/** 機種の項目を項目キーで引けるようにする。機種が index.json に無ければ空 */
 function itemsByKey(read, entry) {
+  if (!entry) return new Map();
   const machine = JSON.parse(read(`machines/${entry.file}`));
   return new Map(listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item]));
 }
 
 /**
- * 見直しで残した値（kept-single-source）が main から変わっていないか、
- * main に無い機種・項目に使っていないかを確かめる（仕様 5.7）。
- * 「残す」は機種ファイルの値を変えないことなので、機種ファイルの値を main と完全一致で比べる。
- * 採用値と機種ファイルの値の一致は validate（出典記録の検証器）が確かめる。
+ * 採否ルール（仕様 5.5）のうち、見直し前の値（main）が要るものを確かめる（仕様 5.7）。
+ * validate（出典記録の検証器と statusError）は main を読まないので、次をここで見る。
+ * - kept-single-source は main にある項目にだけ使う。採用値は main の値そのもの（許容差による一致は
+ *   推移しないので、完全一致で結ぶ）で、機種ファイルの値も main から変えない（「残す」は値を変えないこと）
+ * - main にある項目の provisional-chonborista は、ちょんぼりすたの値が main の値と一致しないときだけ使う
+ *   （一致するなら規則2の kept-single-source）
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   provenanceFiles: Array<{ data: object | null }> }} io
  *   readBase / readHead はリポジトリからの相対パスを受け取り、中身を返す。読めなければ例外を投げる
  * @returns {string[]} 問題の説明。空なら問題なし
  */
-export function checkKeptValues({ readBase, readHead, provenanceFiles }) {
+export function checkRulesAgainstBase({ readBase, readHead, provenanceFiles }) {
   const baseById = indexById(readBase);
   const headById = indexById(readHead);
   const problems = [];
   for (const file of provenanceFiles) {
     const record = file.data;
     if (!record) continue; // 読めなかった記録は validate が報告する
-    const kept = (record.items ?? []).filter((item) => item.status === 'kept-single-source');
-    if (kept.length === 0) continue;
+    const items = (record.items ?? []).filter(
+      (item) => item.status === KEPT || item.status === PROVISIONAL
+    );
+    if (items.length === 0) continue;
 
     const id = record.machineId;
-    const baseEntry = baseById.get(id);
-    const headEntry = headById.get(id);
-    if (!baseEntry) {
-      problems.push(`${id}: main に無い機種に kept-single-source を使っている`);
-      continue;
-    }
-    if (!headEntry) {
-      problems.push(`${id}: index.json に無い機種の記録に kept-single-source を使っている`);
-      continue;
-    }
-
-    const baseItems = itemsByKey(readBase, baseEntry);
-    const headItems = itemsByKey(readHead, headEntry);
-    for (const item of kept) {
+    const baseItems = itemsByKey(readBase, baseById.get(id));
+    const headItems = itemsByKey(readHead, headById.get(id));
+    for (const item of items) {
       const key = itemKey(item.kind, item.name);
       const baseItem = baseItems.get(key);
+      const baseValue = baseItem ? machineValue(baseItem.entry, item.unit) : null;
+
+      if (item.status === PROVISIONAL) {
+        if (baseItem && valuesAgree(item.unit, item.values?.[CHONBORISTA_KEY], baseValue)) {
+          problems.push(
+            `${id}: ${key}: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）`
+          );
+        }
+        continue;
+      }
+
       const headItem = headItems.get(key);
       if (!baseItem) {
         problems.push(`${id}: ${key}: main に無い項目に kept-single-source を使っている`);
-      } else if (!headItem) {
+        continue;
+      }
+      if (!headItem) {
         problems.push(`${id}: ${key}: kept-single-source の項目が機種ファイルに無い`);
-      } else if (
-        // unit で表せない値（null）は valuesEqual が一致しないとみなす
-        !valuesEqual(
-          item.unit,
-          machineValue(baseItem.entry, item.unit),
-          machineValue(headItem.entry, item.unit)
-        )
-      ) {
+        continue;
+      }
+      // unit で表せない値（null）は、valuesEqual が同じとみなさない
+      if (!valuesEqual(item.unit, baseValue, item.adopted)) {
+        problems.push(`${id}: ${key}: kept-single-source の採用値が main の値そのものでない`);
+      }
+      if (!valuesEqual(item.unit, baseValue, machineValue(headItem.entry, item.unit))) {
         problems.push(`${id}: ${key}: kept-single-source の値が main から変わった`);
       }
     }
@@ -2498,8 +2583,8 @@ export function checkKeptValues({ readBase, readHead, provenanceFiles }) {
 
 - [ ] **Step 8: テストが通ることを確かめる**
 
-Run: `npx vitest run tests/kept-values.test.mjs`
-Expected: PASS（9 tests）
+Run: `npx vitest run tests/rules-against-base.test.mjs`
+Expected: PASS（11 tests）
 
 - [ ] **Step 9: CLI を書く**
 
@@ -2511,7 +2596,7 @@ Expected: PASS（9 tests）
 /**
  * main（既定: origin/main）と比べて確かめる。validate は main を読まないので、こちらで見る（仕様 5.7・5.8）。
  * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか
- * - 見直しで残した値（kept-single-source）が変わっていないか、main に無い項目に使っていないか
+ * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる
@@ -2525,7 +2610,7 @@ import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { checkDerivedIds } from './lib/derived-ids.mjs';
-import { checkKeptValues } from './lib/kept-values.mjs';
+import { checkRulesAgainstBase } from './lib/rules-against-base.mjs';
 import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -2562,7 +2647,7 @@ function main() {
       readHead,
       provenanceFiles: loadProvenanceFiles(resolve(ROOT, 'provenance')),
     };
-    problems = [...checkDerivedIds(io), ...checkKeptValues(io)];
+    problems = [...checkDerivedIds(io), ...checkRulesAgainstBase(io)];
   } catch (e) {
     // 基準を読めない・JSON が壊れている・項目の名前を区別できない（createNameDisambiguator の例外）のどれか
     console.error(`比べられませんでした（基準: ${base}）: ${e.message}`);
@@ -2570,7 +2655,9 @@ function main() {
   }
 
   if (problems.length === 0) {
-    console.log('問題なし: 既存の ID と、見直しで残した値は、基準と同じです');
+    console.log(
+      '問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです'
+    );
     process.exit(0);
   }
   console.log(`問題: ${problems.length}件`);
@@ -2592,7 +2679,7 @@ main();
 - [ ] **Step 11: 実データで CLI を確かめる**
 
 Run: `git fetch origin && npm run -s check:base; echo "exit=$?"`
-Expected: `問題なし: 既存の ID と、見直しで残した値は、基準と同じです` と `exit=0`
+Expected: `問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです` と `exit=0`
 
 Run: `node scripts/check-against-base.mjs --base no-such-ref > "$TMPDIR/base.txt" 2>&1; echo "exit=$?"; head -3 "$TMPDIR/base.txt"`
 Expected: `exit=2` と `比べられませんでした（基準: no-such-ref）: Command failed: git show no-such-ref:machines/index.json`（パイプで tail に渡すと tail の終了コードを拾うので、ファイルに書いてから見る）
@@ -2615,7 +2702,7 @@ Expected: `exit=2` と `--base の後に、比べる git の参照を書いて�
 ```yaml
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # main と比べる検査（ID の安定性・残した値）のため、全履歴を取る
+          fetch-depth: 0 # main と比べる検査（ID の安定性・採否ルール）のため、全履歴を取る
 
       - uses: actions/setup-node@v4
 ```
@@ -2642,18 +2729,19 @@ Expected: `exit=2` と `--base の後に、比べる git の参照を書いて�
 
 - [ ] **Step 13: 整形と lint**
 
-Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/kept-values.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/kept-values.test.mjs && npx eslint . && npx vitest run`
+Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs && npx eslint . && npx vitest run`
 Expected: eslint が何も出力せず、vitest がすべて PASS
 
 - [ ] **Step 14: コミット**
 
 ```bash
-git add scripts/lib/derived-ids.mjs scripts/lib/kept-values.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/kept-values.test.mjs package.json .github/workflows/validate.yml
-git commit -m "feat(scripts): main と比べる検査を追加（アプリが作る ID・見直しで残した値）
+git add scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs package.json .github/workflows/validate.yml
+git commit -m "feat(scripts): main と比べる検査を追加（アプリが作る ID・採否ルール）
 
 main と比べ、既存の役・ゾーン・終了画面の ID が変わっていないか、
-記録なしに項目が消えていないか、kept-single-source の値が変わっていないか、
-main に無い項目に kept-single-source を使っていないかを確かめる。PR の CI でも実行する。
+記録なしに項目が消えていないか、見直し前の値が要る採否ルール
+（kept-single-source・provisional-chonborista の使い方）を守っているかを確かめる。
+PR の CI でも実行する。
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 ```
@@ -2826,7 +2914,7 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 |---|---|
 | `confirmed` | 2サイト以上で一致、またはメーカー公式 |
 | `provisional-chonborista` | ちょんぼりすたにしか無く、別の担当が読み直して一致した（`reread` が必須） |
-| `kept-single-source` | 既存の値で、1サイトだけが同じ値を出している。機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
+| `kept-single-source` | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
 
 `candidates` は見つけたが採用しなかった値、`removed` は見直しで外した値（前の値と理由）。
 
@@ -2859,7 +2947,7 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 ### 既存の値（見直し）
 
 1. 2サイト以上で一致した値がある → その値にする（`confirmed`）
-2. 今の値を1サイトだけが裏づける → 残す（`kept-single-source`。機種ファイルの値は変えない）
+2. 今の値を1サイトだけが裏づける → 残す（`kept-single-source`。採用値は今の値そのもので、機種ファイルの値は変えない）
 3. 裏づけが無く、ちょんぼりすたにだけ値があり、読み直しで一致 → その値にする（`provisional-chonborista`）
 4. それ以外 → 外す（`removed` に記録）
 
@@ -2874,7 +2962,8 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 `npm run check:base`（PR の CI でも実行）で、次を main と比べて確かめる。`npm run validate` は main を読まないので、こちらで見る。
 
 - アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか
-- `kept-single-source` の項目の値が main と完全に同じか、main に無い機種・項目に使っていないか
+- `kept-single-source` は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか
+- main にある項目の `provisional-chonborista` は、ちょんぼりすたの値が main の値と一致しないときだけか（一致するなら `kept-single-source`）
 ```
 
 - [ ] **Step 7: `docs/CONTRIBUTING.md` を変える**
@@ -2907,7 +2996,7 @@ npm test           # テスト実行
 ```bash
 npm run validate   # スキーマ・確率値・演出・出典記録のバリデーション
 npm test           # テスト実行
-npm run check:base # main と比べる（アプリが作る ID・見直しで残した値）
+npm run check:base # main と比べる（アプリが作る ID・採否ルール）
 ```
 
 (c) `git add machines/{dir}/{id}.json machines/index.json` を `git add machines/{dir}/{id}.json machines/index.json provenance/{id}.json` に置き換える。
@@ -2993,13 +3082,13 @@ npm run check:base # main と比べる（アプリが作る ID・見直しで残
 │   └── provenance.schema.json  # 出典記録JSONスキーマ
 ├── scripts/
 │   ├── validate.mjs            # バリデーション実行
-│   ├── check-against-base.mjs  # main と比べる検査（アプリが作るID・見直しで残した値）
+│   ├── check-against-base.mjs  # main と比べる検査（アプリが作るID・採否ルール）
 ```
 
 (b) バリデーション。`npm test                  # テスト実行（vitest）` の次の行に足す:
 
 ```bash
-npm run check:base        # main と比べる（アプリが作るID・見直しで残した値）
+npm run check:base        # main と比べる（アプリが作るID・採否ルール）
 ```
 
 (c) 品質指標。`npm run quality` を実行し、表の値をその出力に合わせる。見出しの日付を実行日に変え、`voiceCounts` の行の次に出典記録の行を足す（段階0では0台）:
@@ -3028,11 +3117,11 @@ npm run check:base        # main と比べる（アプリが作るID・見直し
 - `provenance/<機種ID>.json`（出典記録）と `schemas/provenance.schema.json`
 - `scripts/lib/provenance.mjs`: 値の比較（分母 0.1%・割合 0.1 ポイント・設定の組）、有効数字6桁への変換、採否ルール
 - `scripts/validators/provenance-validator.mjs`: `npm run validate` の6番目の検査。`--require-provenance` で全機種に必須（段階3で有効化）
-- `scripts/check-against-base.mjs` と `npm run check:base`: main と比べて、アプリが名前から作る ID（役・ゾーン・終了画面）と、見直しで残した値（`kept-single-source`）が変わっていないかを確かめる。PR の CI でも実行
+- `scripts/check-against-base.mjs` と `npm run check:base`: main と比べて、アプリが名前から作る ID（役・ゾーン・終了画面）が変わっていないか、見直し前の値が要る採否ルール（`kept-single-source`・`provisional-chonborista` の使い方）を守っているかを確かめる。PR の CI でも実行
 - 品質レポートに「provenance (出典記録)」の行
 
 ### Changed
-- CI: checkout を全履歴にし、PR で main と比べる検査（ID・残した値）を実行する
+- CI: checkout を全履歴にし、PR で main と比べる検査（ID・採否ルール）を実行する
 - 文書: data-format / quality-standards / CONTRIBUTING / README に出典記録と ID の規則を追記。出典対策の提案書（案E）を「別ファイル方式」で採用と明記
 - 2026-08-16〜17 の文書修正（README・FUTURE_ADDITIONS・品質基準・出典対策の提案書）を main へ反映
 ```
@@ -3072,7 +3161,7 @@ npm run -s quality | grep -E "provenance|Complete|Provisional|Incomplete"
 npm run -s check:base
 ```
 
-Expected: `合計: エラー 0件 / 警告 0件`、vitest がすべて PASS（件数を記録する）、`eslint OK`、`All matched files use Prettier code style!`、`provenance (出典記録)   0/149`、Complete 146 / Provisional 3 / Incomplete 0（段階0の前と同じ）、`問題なし: 既存の ID と、見直しで残した値は、基準と同じです`
+Expected: `合計: エラー 0件 / 警告 0件`、vitest がすべて PASS（件数を記録する）、`eslint OK`、`All matched files use Prettier code style!`、`provenance (出典記録)   0/149`、Complete 146 / Provisional 3 / Incomplete 0（段階0の前と同じ）、`問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです`
 
 - [ ] **Step 2: カバレッジのしきい値を確かめる**
 
@@ -3119,7 +3208,7 @@ PR の本文を `$TMPDIR/pr-body.md` に書く。Step 1〜5 の実際の出力�
 - 出典記録 `provenance/<機種ID>.json` とスキーマ
 - 値の比較（分母 0.1%・割合 0.1 ポイント・設定の組）、有効数字6桁への変換、採否ルール
 - `npm run validate` の6番目の検査（出典記録）。`--require-provenance` で全機種に必須（段階3で有効化）
-- main と比べる検査（`npm run check:base`: アプリが名前から作る ID・見直しで残した値）。この PR から CI でも実行
+- main と比べる検査（`npm run check:base`: アプリが名前から作る ID・見直し前の値が要る採否ルール）。この PR から CI でも実行
 - 品質レポートに出典記録の行
 - 文書（data-format・quality-standards・CONTRIBUTING・README・CHANGELOG）と、8月16〜17日の文書修正
 
@@ -3168,7 +3257,7 @@ Expected: origin/main がマージコミット、`3.8.0 149`（データ不変�
 - [ ] **Step 10: 記録と片付け**
 
 ```bash
-~/.harness/bin/ledger-note.sh "slot-analyzer-data 段階0 マージ（PR #<番号>）: 出典記録の仕組み・main と比べる検査（ID・残した値）。データ不変(3.8.0/149)。次: 新台の洗い出し→段階1の計画"
+~/.harness/bin/ledger-note.sh "slot-analyzer-data 段階0 マージ（PR #<番号>）: 出典記録の仕組み・main と比べる検査（ID・採否ルール）。データ不変(3.8.0/149)。次: 新台の洗い出し→段階1の計画"
 git -C ~/second-brain/pachinko-tools/slot-analyzer-data worktree remove ~/.worktrees/slot-analyzer-data/data-expansion-p0
 ```
 
