@@ -23,20 +23,39 @@ import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-/** --base の値。--base が無ければ origin/main、--base の後に値が無ければ null */
-function parseBase(argv) {
-  const index = argv.indexOf('--base');
-  if (index < 0) return 'origin/main';
-  const value = argv[index + 1];
-  return value && !value.startsWith('--') ? value : null;
+/**
+ * 引数を読む。`--base <ref>` と `--base=<ref>` を受け付け、無ければ origin/main と比べる。
+ * 知らない引数や値の無い --base は、黙って既定の基準で比べないように誤りにする。
+ * @returns {{ base: string } | { error: string }}
+ */
+function parseArgs(argv) {
+  let base = 'origin/main';
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    let value;
+    if (arg === '--base') {
+      value = argv[i + 1];
+      i += 1;
+    } else if (arg.startsWith('--base=')) {
+      value = arg.slice('--base='.length);
+    } else {
+      return { error: `知らない引数: ${arg}` };
+    }
+    if (!value || value.startsWith('--')) {
+      return { error: '--base の後に、比べる git の参照を書いてください' };
+    }
+    base = value;
+  }
+  return { base };
 }
 
 function main() {
-  const base = parseBase(process.argv.slice(2));
-  if (!base) {
-    console.error('--base の後に、比べる git の参照を書いてください');
+  const args = parseArgs(process.argv.slice(2));
+  if (args.error) {
+    console.error(args.error);
     process.exit(2);
   }
+  const { base } = args;
   const readBase = (path) =>
     execFileSync('git', ['show', `${base}:${path}`], {
       cwd: ROOT,

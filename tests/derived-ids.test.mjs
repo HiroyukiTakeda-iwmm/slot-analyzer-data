@@ -134,6 +134,43 @@ describe('checkDerivedIds', () => {
     ).toEqual([]);
   });
 
+  it('ID の変化と記録なしの削除を、機種 ID を付けて報告する', () => {
+    const head = files({ ...baseMachine, roles: [{ ...baseMachine.roles[0], displayOrder: 3 }] });
+    expect(
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles: [],
+      })
+    ).toEqual([
+      'test-machine: role::BIG: ID が変わった（big_1 → big_3）',
+      'test-machine: role::REG: 項目が消えたのに、出典記録の removed に無い',
+    ]);
+  });
+
+  it('読めなかった出典記録は飛ばす（validate が報告する）', () => {
+    const map = files(baseMachine);
+    const provenanceFiles = [{ data: null }];
+    expect(
+      checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles })
+    ).toEqual([]);
+  });
+
+  it('比べる側の機種ファイルは、比べる側の index.json の場所から読む', () => {
+    const moved = { ...index.machines[0], file: 'moved/test-machine.json' };
+    const head = {
+      'machines/index.json': JSON.stringify({ ...index, machines: [moved] }),
+      'machines/moved/test-machine.json': JSON.stringify(baseMachine),
+    };
+    expect(
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles: [],
+      })
+    ).toEqual([]);
+  });
+
   it('removed に記録した項目の削除は許す', () => {
     const head = files({ ...baseMachine, roles: [baseMachine.roles[0]] });
     const provenanceFiles = [
