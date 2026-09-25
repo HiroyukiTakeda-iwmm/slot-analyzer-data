@@ -55,9 +55,9 @@ function isStringArray(value) {
 export function shapeError(unit, value) {
   switch (unit) {
     case 'denominator':
-      return isNumberMap(value) && Object.values(value).every((v) => v > 0)
+      return isNumberMap(value) && Object.values(value).every((v) => v >= 1)
         ? null
-        : '設定ごとの正の分母が必要';
+        : '設定ごとの 1 以上の分母が必要（確率が 1 を超えないように）';
     case 'percent':
       return isNumberMap(value) && Object.values(value).every((v) => v >= 0 && v <= 100)
         ? null
@@ -118,8 +118,8 @@ export function valuesAgree(unit, a, b) {
 
 /** 分母（1/x の x）を、保存する確率（有効数字6桁）にする */
 export function toStoredProbability(denominator) {
-  if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator <= 0) {
-    throw new RangeError(`分母は正の有限数が必要: ${denominator}`);
+  if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator < 1) {
+    throw new RangeError(`分母は 1 以上の有限数が必要: ${denominator}`);
   }
   return Number((1 / denominator).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
@@ -172,15 +172,25 @@ export function machineValue(entry, unit) {
 /**
  * 同じ種類で同じ名前が2つ目以降に出たとき、名前に `#2`、`#3` を付けて区別する関数を作る。
  * 並び順で数えるので、項目を並べ替えないこと（仕様 5.8）。
+ * 区別した名前が、もともと「#数字」を含む名前と重なったときは、黙って結び付けずに例外を投げる。
  * @returns {(kind: string, name: string) => string}
  */
 export function createNameDisambiguator() {
   const counts = new Map();
+  const issued = new Set();
   return (kind, name) => {
     const key = itemKey(kind, name);
     const count = (counts.get(key) ?? 0) + 1;
     counts.set(key, count);
-    return count === 1 ? name : `${name}#${count}`;
+    const unique = count === 1 ? name : `${name}#${count}`;
+    const uniqueKey = itemKey(kind, unique);
+    if (issued.has(uniqueKey)) {
+      throw new Error(
+        `項目の名前を区別できない: ${uniqueKey}（名前に「#数字」を含む項目と重なった）`
+      );
+    }
+    issued.add(uniqueKey);
+    return unique;
   };
 }
 

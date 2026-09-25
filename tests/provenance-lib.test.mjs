@@ -26,11 +26,25 @@ describe('valuesAgree: denominator（分母）', () => {
   it('形が合わない値は不一致', () => {
     expect(valuesAgree('denominator', true, true)).toBe(false);
   });
+
+  it('差がちょうど 0.1% なら一致（境界を含む）', () => {
+    expect(valuesAgree('denominator', { 1: 8192 }, { 1: 8183.808 })).toBe(true);
+  });
+
+  it('空・NaN・1 未満を含む値は不一致', () => {
+    expect(valuesAgree('denominator', {}, {})).toBe(false);
+    expect(valuesAgree('denominator', { 1: Number.NaN }, { 1: Number.NaN })).toBe(false);
+    expect(valuesAgree('denominator', { 1: 0.5 }, { 1: 0.5 })).toBe(false);
+  });
 });
 
 describe('valuesAgree: percent（割合）', () => {
   it('差が 0.1 ポイント以内なら一致', () => {
     expect(valuesAgree('percent', { 1: 10, 6: 20 }, { 1: 10.05, 6: 20 })).toBe(true);
+  });
+
+  it('差がちょうど 0.1 ポイントなら一致（境界を含む）', () => {
+    expect(valuesAgree('percent', { 1: 20 }, { 1: 20.1 })).toBe(true);
   });
 
   it('差が 0.1 ポイントを超えると不一致', () => {
@@ -102,8 +116,11 @@ describe('toStoredProbability / toStoredRate（有効数字6桁）', () => {
   it('範囲外は RangeError', () => {
     expect(() => toStoredProbability(0)).toThrow(RangeError);
     expect(() => toStoredProbability(-1)).toThrow(RangeError);
+    expect(() => toStoredProbability(0.5)).toThrow(RangeError);
     expect(() => toStoredProbability(Number.NaN)).toThrow(RangeError);
     expect(() => toStoredRate(101)).toThrow(RangeError);
+    expect(() => toStoredRate(-1)).toThrow(RangeError);
+    expect(() => toStoredRate(Number.NaN)).toThrow(RangeError);
   });
 });
 
@@ -183,6 +200,19 @@ describe('listMachineItems', () => {
       'endScreen::仁#2',
       'endScreen::仁#3',
     ]);
+  });
+
+  it('親子の名前（ゾーン内の役）でも、同じ名前は #2 で区別する', () => {
+    const machine = { zones: [{ name: 'CZ', roles: [{ name: 'ベル' }, { name: 'ベル' }] }] };
+    expect(listMachineItems(machine).map((item) => itemKey(item.kind, item.name))).toEqual([
+      'zoneRole::CZ::ベル',
+      'zoneRole::CZ::ベル#2',
+    ]);
+  });
+
+  it('区別した名前が「#数字」を含む名前と重なったら例外を投げる', () => {
+    const machine = { endScreens: [{ name: '仁' }, { name: '仁#2' }, { name: '仁' }] };
+    expect(() => listMachineItems(machine)).toThrow('項目の名前を区別できない');
   });
 });
 
