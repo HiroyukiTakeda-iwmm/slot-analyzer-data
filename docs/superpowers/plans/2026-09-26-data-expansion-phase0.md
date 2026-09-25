@@ -2344,7 +2344,7 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 - Create: `scripts/check-against-base.mjs`
 - Modify: `package.json`（`check:base`）
 - Modify: `.github/workflows/validate.yml`
-- Test: `tests/derived-ids.test.mjs`、`tests/rules-against-base.test.mjs`
+- Test: `tests/derived-ids.test.mjs`、`tests/rules-against-base.test.mjs`、`tests/check-against-base.test.mjs`
 
 **Interfaces:**
 - Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `CHONBORISTA_KEY`・`itemKey`・`NAME_SEPARATOR`・`createNameDisambiguator`・`listMachineItems`・`machineValue`・`valuesAgree`、Task 2 の `valuesEqual`、Task 4 の `loadProvenanceFiles`
@@ -2493,6 +2493,43 @@ describe('checkDerivedIds', () => {
     );
   });
 
+  it('ID の変化と記録なしの削除を、機種 ID を付けて報告する', () => {
+    const head = files({ ...baseMachine, roles: [{ ...baseMachine.roles[0], displayOrder: 3 }] });
+    expect(
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles: [],
+      })
+    ).toEqual([
+      'test-machine: role::BIG: ID が変わった（big_1 → big_3）',
+      'test-machine: role::REG: 項目が消えたのに、出典記録の removed に無い',
+    ]);
+  });
+
+  it('読めなかった出典記録は飛ばす（validate が報告する）', () => {
+    const map = files(baseMachine);
+    const provenanceFiles = [{ data: null }];
+    expect(
+      checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles })
+    ).toEqual([]);
+  });
+
+  it('比べる側の機種ファイルは、比べる側の index.json の場所から読む', () => {
+    const moved = { ...index.machines[0], file: 'moved/test-machine.json' };
+    const head = {
+      'machines/index.json': JSON.stringify({ ...index, machines: [moved] }),
+      'machines/moved/test-machine.json': JSON.stringify(baseMachine),
+    };
+    expect(
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles: [],
+      })
+    ).toEqual([]);
+  });
+
   it('removed に記録した項目の削除は許す', () => {
     const head = files({ ...baseMachine, roles: [baseMachine.roles[0]] });
     const provenanceFiles = [
@@ -2628,7 +2665,7 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
 - [ ] **Step 4: ID のテストが通ることを確かめる**
 
 Run: `npx vitest run tests/derived-ids.test.mjs`
-Expected: PASS（10 tests）
+Expected: PASS（13 tests）
 
 - [ ] **Step 5: 採否ルールの検査の失敗するテストを書く**
 
@@ -2899,20 +2936,39 @@ import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
-/** --base の値。--base が無ければ origin/main、--base の後に値が無ければ null */
-function parseBase(argv) {
-  const index = argv.indexOf('--base');
-  if (index < 0) return 'origin/main';
-  const value = argv[index + 1];
-  return value && !value.startsWith('--') ? value : null;
+/**
+ * 引数を読む。`--base <ref>` と `--base=<ref>` を受け付け、無ければ origin/main と比べる。
+ * 知らない引数や値の無い --base は、黙って既定の基準で比べないように誤りにする。
+ * @returns {{ base: string } | { error: string }}
+ */
+function parseArgs(argv) {
+  let base = 'origin/main';
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    let value;
+    if (arg === '--base') {
+      value = argv[i + 1];
+      i += 1;
+    } else if (arg.startsWith('--base=')) {
+      value = arg.slice('--base='.length);
+    } else {
+      return { error: `知らない引数: ${arg}` };
+    }
+    if (!value || value.startsWith('--')) {
+      return { error: '--base の後に、比べる git の参照を書いてください' };
+    }
+    base = value;
+  }
+  return { base };
 }
 
 function main() {
-  const base = parseBase(process.argv.slice(2));
-  if (!base) {
-    console.error('--base の後に、比べる git の参照を書いてください');
+  const args = parseArgs(process.argv.slice(2));
+  if (args.error) {
+    console.error(args.error);
     process.exit(2);
   }
+  const { base } = args;
   const readBase = (path) =>
     execFileSync('git', ['show', `${base}:${path}`], {
       cwd: ROOT,
@@ -2951,6 +3007,46 @@ function main() {
 main();
 ```
 
+引数の読み方を確かめるテスト `tests/check-against-base.test.mjs`（git の基準が無くても動くものだけ）:
+
+```js
+import { describe, it, expect } from 'vitest';
+import { spawnSync } from 'child_process';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+
+function run(...args) {
+  return spawnSync(process.execPath, ['scripts/check-against-base.mjs', ...args], {
+    cwd: ROOT,
+    encoding: 'utf-8',
+  });
+}
+
+describe('check-against-base.mjs の引数', () => {
+  it('知らない引数は、既定の基準で比べずに終了コード 2', () => {
+    const result = run('--bse', 'main');
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('知らない引数: --bse');
+  });
+
+  it('--base の値が無ければ終了コード 2', () => {
+    expect(run('--base').status).toBe(2);
+    expect(run('--base=').status).toBe(2);
+  });
+
+  it('--base=<ref> の形も受け付ける（読めない基準は終了コード 2）', () => {
+    const result = run('--base=no-such-ref');
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('比べられませんでした（基準: no-such-ref）');
+  });
+});
+```
+
+Run: `npx vitest run tests/check-against-base.test.mjs`
+Expected: PASS（3 tests）
+
 - [ ] **Step 10: npm スクリプトを足す**
 
 `package.json` の `"quality:json": "node scripts/quality-report.mjs --json",` の次の行に足す:
@@ -2969,6 +3065,12 @@ Expected: `exit=2` と `比べられませんでした（基準: no-such-ref）:
 
 Run: `node scripts/check-against-base.mjs --base > "$TMPDIR/base.txt" 2>&1; echo "exit=$?"; head -3 "$TMPDIR/base.txt"`
 Expected: `exit=2` と `--base の後に、比べる git の参照を書いてください`
+
+Run: `node scripts/check-against-base.mjs --base=origin/main > "$TMPDIR/base.txt" 2>&1; echo "exit=$?"; tail -1 "$TMPDIR/base.txt"`
+Expected: `exit=0` と `問題なし: …`（`--base=<ref>` の形でも、指定した基準と比べる）
+
+Run: `node scripts/check-against-base.mjs --bse origin/main > "$TMPDIR/base.txt" 2>&1; echo "exit=$?"; head -1 "$TMPDIR/base.txt"`
+Expected: `exit=2` と `知らない引数: --bse`（綴りを間違えても、黙って既定の基準で比べない）
 
 - [ ] **Step 12: CI で PR のときに実行する**
 
@@ -3006,19 +3108,21 @@ Expected: `exit=2` と `--base の後に、比べる git の参照を書いて�
 
       - name: 基準（main）との比較（PR のみ）
         if: github.event_name == 'pull_request'
-        run: node scripts/check-against-base.mjs --base "origin/${{ github.base_ref }}"
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: node scripts/check-against-base.mjs --base "origin/$BASE_REF"
 
 ```
 
 - [ ] **Step 13: 整形と lint**
 
-Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs && npx eslint . && npx vitest run`
+Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/check-against-base.test.mjs && npx eslint . && npx vitest run`
 Expected: eslint が何も出力せず、vitest がすべて PASS
 
 - [ ] **Step 14: コミット**
 
 ```bash
-git add scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs package.json .github/workflows/validate.yml
+git add scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/check-against-base.test.mjs package.json .github/workflows/validate.yml
 git commit -m "feat(scripts): main と比べる検査を追加（アプリが作る ID・採否ルール）
 
 main と比べ、既存の役・ゾーン・終了画面の ID が変わっていないか、
