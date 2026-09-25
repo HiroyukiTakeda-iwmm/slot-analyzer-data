@@ -214,13 +214,33 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('外したはずの項目が機種ファイルにある');
   });
 
-  it('unit と値の形が合わなければ、形のエラーだけを出す', () => {
+  it('値の形が unit に合わなければ、形のエラーだけを出す', () => {
+    const bad = { 1: 0.5, 6: 277.7 };
     const rec = record();
-    rec.items[0] = { ...rec.items[0], unit: 'percent' };
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: bad, 'nana-press': bad },
+      adopted: bad,
+    };
+    const problem = '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
     expect(run(rec).errors.map((e) => e.message)).toEqual([
-      'role::BIG: adopted が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
-      'role::BIG: values.chonborista が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
-      'role::BIG: values.nana-press が unit=percent の形に合わない（設定ごとの 0〜100 の割合が必要）',
+      `role::BIG: adopted が unit=denominator の形に合わない（${problem}）`,
+      `role::BIG: values.chonborista が unit=denominator の形に合わない（${problem}）`,
+      `role::BIG: values.nana-press が unit=denominator の形に合わない（${problem}）`,
+    ]);
+  });
+
+  it('役は percent で記録できない（unit は形より先に確かめる）', () => {
+    const small = { 1: 0.34, 6: 0.36 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      unit: 'percent',
+      values: { chonborista: small, 'nana-press': small },
+      adopted: small,
+    };
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
     ]);
   });
 
@@ -234,7 +254,7 @@ describe('validateProvenance', () => {
     }));
     const result = messages(run(rec));
     expect(result).toContain(
-      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator か percent にする）'
+      'role::BIG: unit=presence は使えない（機種ファイルの項目に合わせて denominator にする）'
     );
     expect(result).toContain(
       'confirmationEvent::金トロフィー: unit=presence は使えない（機種ファイルの項目に合わせて settings にする）'
@@ -286,13 +306,23 @@ describe('validateProvenance', () => {
     expect(result.errors.map((e) => e.message)).toEqual(['JSON パースエラー: Unexpected token']);
   });
 
-  it('確率 0 を含む項目は分母で表せないのでエラー', () => {
+  it('確率 0 の設定は、分母の null で記録する', () => {
     const zero = {
       ...machine,
       roles: [{ ...machine.roles[0], probabilities: { 1: 0, 6: toStoredProbability(277.7) } }],
     };
     const files = [{ path: 'machines/test/test-machine.json', data: zero }];
-    expect(messages(run(record(), { files }))).toContain('で表せない');
+    const withZero = { 1: null, 6: 277.7 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: withZero, 'nana-press': withZero },
+      adopted: withZero,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+    expect(messages(run(record(), { files }))).toContain(
+      'role::BIG: 機種ファイルの値が採用値と一致しない'
+    );
   });
 
   it('機種ファイルの項目名を区別できないときは、落ちずにエラーとして報告する', () => {
@@ -302,5 +332,70 @@ describe('validateProvenance', () => {
     };
     const files = [{ path: 'machines/test/test-machine.json', data: clash }];
     expect(messages(run(record(), { files }))).toContain('項目の名前を区別できない');
+  });
+
+  it('requireAll で、ファイル名の違う記録の機種に「出典記録がない」を重ねて出さない', () => {
+    const provenanceFiles = [{ path: 'provenance/other.json', data: record() }];
+    const result = validateProvenance(machineFiles, index, provenanceFiles, { requireAll: true });
+    expect(result.errors.map((e) => e.message)).toEqual([
+      'ファイル名は provenance/test-machine.json にする',
+    ]);
+  });
+
+  it('割合は、0 でない値がすべて 10% 以上の項目だけ percent で記録できる', () => {
+    const withRates = {
+      ...machine,
+      trialSuccessRates: [
+        { name: 'CZ成功率', probabilities: { 1: 0.25, 6: 0.5 } },
+        { name: 'BB確率', probabilities: { 1: 0.003661, 6: 0.004365 } },
+      ],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withRates }];
+    const item = (name, value) => ({
+      kind: 'trialSuccessRate',
+      name,
+      status: 'confirmed',
+      unit: 'percent',
+      values: { chonborista: value, 'nana-press': value },
+      adopted: value,
+    });
+    const rec = record();
+    rec.items.push(item('CZ成功率', { 1: 25, 6: 50 }), item('BB確率', { 1: 0.3661, 6: 0.4365 }));
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'trialSuccessRate::BB確率: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
+    ]);
+  });
+
+  it('数値と設定の組の両方がある項目は、数値の側で記録する', () => {
+    const both = {
+      ...machine,
+      endScreens: [{ name: '金', probabilities: { 1: 0.05 }, confirmedSettings: ['6'] }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: both }];
+    const rec = record();
+    rec.items.push({
+      kind: 'endScreen',
+      name: '金',
+      status: 'confirmed',
+      unit: 'settings',
+      values: { chonborista: GOLD, 'nana-press': GOLD },
+      adopted: GOLD,
+    });
+    expect(messages(run(rec, { files }))).toContain(
+      'endScreen::金: unit=settings は使えない（機種ファイルの項目に合わせて denominator にする）'
+    );
+  });
+
+  it('同じサイトを2つの出典として数えない', () => {
+    const rec = record();
+    rec.sources.push({
+      key: 'chonborista-2',
+      kind: 'analysis-site',
+      url: 'https://www.chonborista.com/slot/other/',
+      retrievedAt: '2026-09-26',
+    });
+    expect(messages(run(rec))).toContain(
+      '同じサイト（chonborista.com）を2つの出典に登録している: chonborista・chonborista-2'
+    );
   });
 });

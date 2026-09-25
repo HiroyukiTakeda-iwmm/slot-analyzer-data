@@ -20,6 +20,8 @@ describe('valuesEqual（許容差なしの完全一致）', () => {
   it('denominator / percent は、許容差の中でも違えば false', () => {
     expect(valuesEqual(DEN, { 1: 295.2, 6: 277.7 }, { 6: 277.7, 1: 295.2 })).toBe(true);
     expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
+    expect(valuesEqual(DEN, { 1: null, 6: 277.7 }, { 1: null, 6: 277.7 })).toBe(true);
+    expect(valuesEqual(DEN, { 1: null }, { 1: 8192 })).toBe(false);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10 })).toBe(true);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10.05 })).toBe(false);
   });

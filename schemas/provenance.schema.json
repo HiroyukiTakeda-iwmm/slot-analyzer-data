@@ -49,7 +49,7 @@
     "settingKeyedNumbers": {
       "type": "object",
       "minProperties": 1,
-      "patternProperties": { "^[1-6LV]$": { "type": "number" } },
+      "patternProperties": { "^[1-6LV]$": { "type": ["number", "null"] } },
       "additionalProperties": false
     },
     "settingList": {

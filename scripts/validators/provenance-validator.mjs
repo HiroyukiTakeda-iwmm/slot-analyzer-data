@@ -5,6 +5,7 @@ import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
   CHONBORISTA_KEY,
+  allowedUnits,
   itemKey,
   listMachineItems,
   machineValue,
@@ -93,30 +94,37 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
   return { errors, warnings };
 }
 
+/** 出典の URL のサイト（ホスト名。先頭の www. は除く） */
+function siteOf(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
 function collectSourceKinds(path, sources, errors) {
   const sourceKinds = {};
+  const keyBySite = new Map();
   for (const source of sources) {
     if (source.key in sourceKinds) {
       errors.push(error(path, `出典キーの重複: ${source.key}`));
     }
     sourceKinds[source.key] = source.kind;
+    // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
+    const site = siteOf(source.url);
+    const other = keyBySite.get(site);
+    if (other !== undefined && other !== source.key) {
+      errors.push(
+        error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
+      );
+    }
+    keyBySite.set(site, source.key);
     if (source.key === CHONBORISTA_KEY && !source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
       errors.push(error(path, `chonborista の URL は ${CHONBORISTA_URL_PREFIX} で始める`));
     }
   }
   return sourceKinds;
-}
-
-/**
- * 機種ファイルの項目の中身から、記録に使える unit を決める（仕様 5.4）。
- * 数値（probabilities / rates）があれば denominator か percent、無くて設定の組があれば settings、
- * どちらも無ければ presence。数値と設定の組の両方がある項目は、数値の側で照合する。
- * 記録する側が unit を選べると、presence にして値の照合を外せてしまうため。
- */
-function allowedUnits(entry) {
-  if (machineValue(entry, 'percent') !== null) return ['denominator', 'percent'];
-  if (machineValue(entry, 'settings') !== null) return ['settings'];
-  return ['presence'];
 }
 
 function checkItem(path, item, sourceKinds, machineItems) {
@@ -126,6 +134,21 @@ function checkItem(path, item, sourceKinds, machineItems) {
   for (const sourceKey of Object.keys(item.values)) {
     if (!(sourceKey in sourceKinds)) {
       errors.push(error(path, `${key}: sources に無い出典キー: ${sourceKey}`));
+    }
+  }
+
+  // unit は機種ファイルの項目の種類と中身で決まる（記録する側は選べない）。形の検査より先に見る
+  const target = machineItems.get(key);
+  if (target) {
+    const allowed = allowedUnits(item.kind, target.entry);
+    if (!allowed.includes(item.unit)) {
+      errors.push(
+        error(
+          path,
+          `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
+        )
+      );
+      return errors;
     }
   }
 
@@ -145,19 +168,8 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const statusProblem = statusError(item, sourceKinds);
   if (statusProblem) errors.push(error(path, `${key}: ${statusProblem}`));
 
-  const target = machineItems.get(key);
   if (!target) {
     errors.push(error(path, `${key}: 機種ファイルに無い項目の記録`));
-    return errors;
-  }
-  const allowed = allowedUnits(target.entry);
-  if (!allowed.includes(item.unit)) {
-    errors.push(
-      error(
-        path,
-        `${key}: unit=${item.unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`
-      )
-    );
     return errors;
   }
   const actual = machineValue(target.entry, item.unit);

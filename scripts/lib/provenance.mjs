@@ -44,6 +44,19 @@ function isNumberMap(value) {
   );
 }
 
+/** 分母の値: 設定ごとの 1 以上の有限数。確率 0 の設定は null */
+function isDenominatorMap(value) {
+  return (
+    value !== null &&
+    typeof value === 'object' &&
+    !Array.isArray(value) &&
+    Object.keys(value).length > 0 &&
+    Object.values(value).every(
+      (v) => v === null || (typeof v === 'number' && Number.isFinite(v) && v >= 1)
+    )
+  );
+}
+
 function isStringArray(value) {
   return Array.isArray(value) && value.every((v) => typeof v === 'string');
 }
@@ -55,9 +68,9 @@ function isStringArray(value) {
 export function shapeError(unit, value) {
   switch (unit) {
     case 'denominator':
-      return isNumberMap(value) && Object.values(value).every((v) => v >= 1)
+      return isDenominatorMap(value)
         ? null
-        : '設定ごとの 1 以上の分母が必要（確率が 1 を超えないように）';
+        : '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
     case 'percent':
       return isNumberMap(value) && Object.values(value).every((v) => v >= 0 && v <= 100)
         ? null
@@ -88,6 +101,12 @@ function sameSet(a, b) {
   return sa.length === sb.length && sa.every((v, i) => v === sb[i]);
 }
 
+/** 分母どうしが一致するか（差が 0.1% 以内）。確率 0（null）は null とだけ一致する */
+function denominatorsAgree(x, y) {
+  if (x === null || y === null) return x === y;
+  return Math.abs(x - y) / Math.max(x, y) <= DENOMINATOR_TOLERANCE + FLOAT_EPSILON;
+}
+
 /**
  * 2つの値が一致するか（仕様 5.4）。形が unit に合わない値は一致しないとみなす。
  */
@@ -95,13 +114,7 @@ export function valuesAgree(unit, a, b) {
   if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
   switch (unit) {
     case 'denominator':
-      return (
-        sameKeys(a, b) &&
-        Object.keys(a).every(
-          (k) =>
-            Math.abs(a[k] - b[k]) / Math.max(a[k], b[k]) <= DENOMINATOR_TOLERANCE + FLOAT_EPSILON
-        )
-      );
+      return sameKeys(a, b) && Object.keys(a).every((k) => denominatorsAgree(a[k], b[k]));
     case 'percent':
       return (
         sameKeys(a, b) &&
@@ -116,10 +129,11 @@ export function valuesAgree(unit, a, b) {
   }
 }
 
-/** 分母（1/x の x）を、保存する確率（有効数字6桁）にする */
+/** 分母（1/x の x）を、保存する確率（有効数字6桁）にする。null は確率 0 */
 export function toStoredProbability(denominator) {
+  if (denominator === null) return 0;
   if (typeof denominator !== 'number' || !Number.isFinite(denominator) || denominator < 1) {
-    throw new RangeError(`分母は 1 以上の有限数が必要: ${denominator}`);
+    throw new RangeError(`分母は 1 以上の有限数か、確率 0 を表す null が必要: ${denominator}`);
   }
   return Number((1 / denominator).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
@@ -141,17 +155,18 @@ function mapValues(obj, fn) {
 }
 
 /**
- * 機種ファイルの項目の値を、出典記録と同じ unit の形にする。
+ * 機種ファイルの項目の値を、出典記録と同じ unit の形にする。denominator では、確率 0 の設定を null にする。
  * @returns {object | true | null} unit で表せないときは null
  */
 export function machineValue(entry, unit) {
   switch (unit) {
     case 'denominator': {
       const map = numericMap(entry);
-      if (!map || Object.keys(map).length === 0 || Object.values(map).some((p) => !(p > 0))) {
+      const isProbability = (p) => typeof p === 'number' && p >= 0 && p <= 1;
+      if (!map || Object.keys(map).length === 0 || !Object.values(map).every(isProbability)) {
         return null;
       }
-      return mapValues(map, (p) => 1 / p);
+      return mapValues(map, (p) => (p === 0 ? null : 1 / p));
     }
     case 'percent': {
       const map = numericMap(entry);
@@ -167,6 +182,32 @@ export function machineValue(entry, unit) {
     default:
       return null;
   }
+}
+
+/** percent で記録できるのは、0 でない確率がすべてこれ以上の項目だけ（仕様 5.4） */
+const PERCENT_MIN_PROBABILITY = 0.1;
+
+/**
+ * 機種ファイルの項目の種類と中身から、出典記録に使える unit を決める（仕様 5.4）。
+ * 記録する側が選べると、緩い比べ方にして値の照合を外せてしまうので、ここで決める。
+ * - 役（role・zoneRole）は denominator
+ * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら denominator か
+ *   percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）
+ * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
+ * 数値と設定の組の両方がある項目は、数値の側で決める。
+ * @returns {string[]}
+ */
+export function allowedUnits(kind, entry) {
+  const map = numericMap(entry);
+  if (map && Object.keys(map).length > 0) {
+    if (kind === 'role' || kind === 'zoneRole') return ['denominator'];
+    const nonZero = Object.values(map).filter((p) => p !== 0);
+    return nonZero.every((p) => p >= PERCENT_MIN_PROBABILITY)
+      ? ['denominator', 'percent']
+      : ['denominator'];
+  }
+  if (machineValue(entry, 'settings') !== null) return ['settings'];
+  return ['presence'];
 }
 
 /**

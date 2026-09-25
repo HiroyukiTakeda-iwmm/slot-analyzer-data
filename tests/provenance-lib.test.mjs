@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  allowedUnits,
   createNameDisambiguator,
   itemKey,
   listMachineItems,
@@ -13,6 +14,11 @@ import {
 describe('valuesAgree: denominator（分母）', () => {
   it('差が 0.1% 以内なら一致', () => {
     expect(valuesAgree('denominator', { 1: 295.2, 6: 277.7 }, { 1: 295.24, 6: 277.7 })).toBe(true);
+  });
+
+  it('確率 0（null）は null とだけ一致', () => {
+    expect(valuesAgree('denominator', { 1: null, 6: 8192 }, { 1: null, 6: 8192 })).toBe(true);
+    expect(valuesAgree('denominator', { 1: null }, { 1: 8192 })).toBe(false);
   });
 
   it('差が 0.1% を超えると不一致', () => {
@@ -86,6 +92,7 @@ describe('valuesAgree: settings / presence', () => {
 describe('shapeError', () => {
   it('正しい形なら null', () => {
     expect(shapeError('denominator', { 1: 295.2 })).toBeNull();
+    expect(shapeError('denominator', { 1: null, 6: 8192 })).toBeNull();
     expect(shapeError('percent', { 1: 0, 6: 100 })).toBeNull();
     expect(shapeError('settings', { confirmed: ['6'], excluded: [] })).toBeNull();
     expect(shapeError('presence', true)).toBeNull();
@@ -105,6 +112,7 @@ describe('toStoredProbability / toStoredRate（有効数字6桁）', () => {
     expect(toStoredProbability(295.2)).toBe(0.00338753);
     expect(toStoredProbability(65536)).toBe(0.0000152588);
     expect(toStoredProbability(8192)).toBe(0.00012207);
+    expect(toStoredProbability(null)).toBe(0);
   });
 
   it('割合から 0〜1 へ', () => {
@@ -131,8 +139,16 @@ describe('machineValue', () => {
     expect(value[6]).toBeCloseTo(277.7, 1);
   });
 
-  it('denominator: 確率 0 を含むと表せない（null）', () => {
-    expect(machineValue({ probabilities: { 1: 0, 6: 0.1 } }, 'denominator')).toBeNull();
+  it('denominator: 確率 0 の設定は null', () => {
+    expect(machineValue({ probabilities: { 1: 0, 6: 0.1 } }, 'denominator')).toEqual({
+      1: null,
+      6: 10,
+    });
+  });
+
+  it('denominator: 負の値や 1 を超える値があると表せない（null）', () => {
+    expect(machineValue({ probabilities: { 1: -0.1, 6: 0.1 } }, 'denominator')).toBeNull();
+    expect(machineValue({ probabilities: { 1: 1.5 } }, 'denominator')).toBeNull();
   });
 
   it('percent: probabilities と rates を割合にする', () => {
@@ -229,5 +245,33 @@ describe('machineValue: 空の probabilities', () => {
   it('分母・割合とも表せない（null）', () => {
     expect(machineValue({ probabilities: {} }, 'denominator')).toBeNull();
     expect(machineValue({ probabilities: {} }, 'percent')).toBeNull();
+  });
+});
+
+describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
+  it('役は denominator だけ', () => {
+    expect(allowedUnits('role', { probabilities: { 1: 0.5 } })).toEqual(['denominator']);
+    expect(allowedUnits('zoneRole', { probabilities: { 1: 0, 6: 0.25 } })).toEqual(['denominator']);
+  });
+
+  it('ほかの数値の項目は、0 でない値がすべて 10% 以上なら percent も使える', () => {
+    const wide = allowedUnits('trialSuccessRate', { probabilities: { 1: 0.25, 6: 0 } });
+    expect(wide).toEqual(['denominator', 'percent']);
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.003661 } })).toEqual([
+      'denominator',
+    ]);
+    expect(allowedUnits('modeTransition', { rates: { 1: 0.1, 6: 0.047 } })).toEqual([
+      'denominator',
+    ]);
+  });
+
+  it('数値が無ければ、設定の組があれば settings、無ければ presence', () => {
+    expect(allowedUnits('confirmationEvent', { confirmedSettings: ['6'] })).toEqual(['settings']);
+    expect(allowedUnits('endScreen', { hint: '示唆' })).toEqual(['presence']);
+  });
+
+  it('数値と設定の組の両方がある項目は、数値の側で決める', () => {
+    const both = { probabilities: { 1: 0.05 }, confirmedSettings: ['6'] };
+    expect(allowedUnits('endScreen', both)).toEqual(['denominator']);
   });
 });
