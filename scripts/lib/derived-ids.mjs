@@ -17,6 +17,12 @@ export const DERIVED_ID_KINDS = new Set([
 ]);
 
 /**
+ * 基準にある項目が消えたのに、出典記録の removed に無いときの文面。
+ * checkDerivedIds（ID を作る種類）と checkRemovedItems（ID を持たない種類）で同じ文面にする。
+ */
+export const UNRECORDED_REMOVAL = '項目が消えたのに、出典記録の removed に無い';
+
+/**
  * ID を作る種類の項目を、項目キーと同じ単位の名前（子は `親::子`）で並べる。
  * 元の名前に「::」があれば例外を投げる（plainName）。
  *
@@ -68,22 +74,31 @@ function hasExplicitId(entry) {
 }
 
 /**
- * ID を作る種類で同じ名前の項目のうち、明示の id が無いものを探す（仕様 5.8）。
- * 同じ名前の項目は並び順で `#2` などと区別するので、1つ目を外したとき、2つ目が1つ目の ID を黙って引き継ぐ。
+ * ID を作る種類で同じ名前の項目に、別々の明示の id があるかを確かめる（仕様 5.8）。
+ * 同じ名前の項目は並び順で `#2` などと区別するので、名前から作る ID では、1つ目を外したとき、
+ * 2つ目が1つ目の ID を黙って引き継ぐ。明示の id でも、値が重なると移行処理が並び順で `_2` を付けるので
+ * （claimSlug）、同じことが起きる。
  * 移行後はすべての項目に id があるので、機種ファイルの移行前の元の形で見る。
  *
  * @param {object} machine 機種ファイルの中身（移行前の元の形）
  * @returns {string[]} 問題の説明（1つの名前につき1つ）
  */
-function findDuplicateNamesWithoutId(machine) {
+function findDuplicateNameProblems(machine) {
   const entriesByKey = new Map();
   for (const { kind, name, entry } of listIdItems(machine)) {
     const key = itemKey(kind, name);
     entriesByKey.set(key, [...(entriesByKey.get(key) ?? []), entry]);
   }
-  return [...entriesByKey]
-    .filter(([, entries]) => entries.length >= 2 && !entries.every(hasExplicitId))
-    .map(([key]) => `${key}: 同じ名前の項目が複数あるので、明示の id を付ける`);
+  const problems = [];
+  for (const [key, entries] of entriesByKey) {
+    if (entries.length < 2) continue;
+    if (!entries.every(hasExplicitId)) {
+      problems.push(`${key}: 同じ名前の項目が複数あるので、明示の id を付ける`);
+    } else if (new Set(entries.map((entry) => entry.id)).size < entries.length) {
+      problems.push(`${key}: 同じ名前の項目の明示の id が重なっている（別々の id にする）`);
+    }
+  }
+  return problems;
 }
 
 /**
@@ -126,7 +141,7 @@ export function compareDerivedIds(baseIds, headIds, removedKeys) {
       const headId = headIds.get(key);
       if (headId !== id) problems.push(`${key}: ID が変わった（${id} → ${headId}）`);
     } else if (!removedKeys.has(key)) {
-      problems.push(`${key}: 項目が消えたのに、出典記録の removed に無い`);
+      problems.push(`${key}: ${UNRECORDED_REMOVAL}`);
     }
   }
 
@@ -148,7 +163,7 @@ export function compareDerivedIds(baseIds, headIds, removedKeys) {
 /**
  * index.json の機種について、アプリが作る ID を確かめる。
  * - 基準の index.json の機種: 基準と比べる（compareDerivedIds）。index.json から消えた機種も報告する
- * - 比べる側の index.json のすべての機種（新しく足した機種も）: 同じ名前の項目に明示の id があるか
+ * - 比べる側の index.json のすべての機種（新しく足した機種も）: 同じ名前の項目に別々の明示の id があるか
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   provenanceFiles: Array<{ data: object | null }> }} io
@@ -178,7 +193,7 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
     }
   }
   for (const [id, machine] of headMachines) {
-    for (const problem of findDuplicateNamesWithoutId(machine)) problems.push(`${id}: ${problem}`);
+    for (const problem of findDuplicateNameProblems(machine)) problems.push(`${id}: ${problem}`);
   }
   return problems;
 }

@@ -103,14 +103,14 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
  * （例: sp.chonborista.com → chonborista.com、www.example.co.jp → example.co.jp）。
  * ホスト名を小文字にし、空のラベル（末尾の「.」など）と先頭の「www.」を除いてから、
  * ラベルが3つ以上の属性型 JP ドメイン（`.co.jp` など）は末尾3ラベル、それ以外は末尾2ラベルにする。
- * URL として読めなければ、URL の文字列をそのままサイトとして扱う。
+ * @returns {string | null} URL として読めなければ null
  */
 function siteOf(url) {
   let hostname;
   try {
     hostname = new URL(url).hostname;
   } catch {
-    return url;
+    return null;
   }
   const labels = hostname
     .toLowerCase()
@@ -130,21 +130,30 @@ function collectSourceKinds(path, sources, errors) {
       errors.push(error(path, `出典キーの重複: ${source.key}`));
     }
     sourceKinds[source.key] = source.kind;
-    // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
     const site = siteOf(source.url);
-    const other = keyBySite.get(site);
-    if (other !== undefined && other !== source.key) {
-      errors.push(
-        error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
-      );
-    }
-    keyBySite.set(site, source.key);
-    // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
-    // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
-    if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
-      errors.push(
-        error(path, `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`)
-      );
+    if (site === null) {
+      // スキーマは https:// で始まることしか見ない。読めない URL はサイトが分からず、下の2つの判定を
+      // 黙って外れるので、エラーにしてサイトの判定から外す
+      errors.push(error(path, `出典の URL を読めない: ${source.url}`));
+    } else {
+      // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
+      const other = keyBySite.get(site);
+      if (other !== undefined && other !== source.key) {
+        errors.push(
+          error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
+        );
+      }
+      keyBySite.set(site, source.key);
+      // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
+      // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
+      if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
+        errors.push(
+          error(
+            path,
+            `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`
+          )
+        );
+      }
     }
     if (source.key === CHONBORISTA_KEY) {
       if (!source.url.startsWith(CHONBORISTA_URL_PREFIX)) {

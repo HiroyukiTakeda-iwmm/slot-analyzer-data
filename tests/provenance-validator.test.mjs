@@ -500,9 +500,29 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('実在しない日付はスキーマ違反', () => {
-    expect(messages(run(record({ reviewedAt: '2026-13-45' })))).toContain(
-      'スキーマ違反 /reviewedAt'
+  it('実在しない日付はスキーマ違反（月の日数まで見る）', () => {
+    for (const reviewedAt of ['2026-13-45', '2026-02-30']) {
+      expect(messages(run(record({ reviewedAt })))).toContain('スキーマ違反 /reviewedAt');
+    }
+  });
+
+  it.each(['https://chonborista.com /x', 'https://chonborista.com:99999/x'])(
+    'URL として読めない出典はエラーにする: %s',
+    (url) => {
+      const rec = record();
+      rec.sources.push({ key: 'chonbo', kind: 'analysis-site', url, retrievedAt: '2026-09-26' });
+      expect(messages(run(rec))).toContain(`出典の URL を読めない: ${url}`);
+    }
+  );
+
+  it('URL として読めない出典どうしを、同じサイトとして数えない（サイトの判定から外す）', () => {
+    const rec = record();
+    const unreadable = ['https://chonborista.com /x', 'https://chonborista.com:99999/x'];
+    unreadable.forEach((url, i) => {
+      rec.sources.push({ key: `bad-${i}`, kind: 'analysis-site', url, retrievedAt: '2026-09-26' });
+    });
+    expect(run(rec).errors.map((e) => e.message)).toEqual(
+      unreadable.map((url) => `出典の URL を読めない: ${url}`)
     );
   });
 });

@@ -163,11 +163,19 @@ describe('machineValue', () => {
     });
   });
 
-  it('denominator: distribution（アプリが probabilities に改名して読む古い形）も確率として読む', () => {
-    expect(machineValue({ distribution: { 1: 0, 6: 0.01 } }, 'denominator')).toEqual({
-      1: null,
-      6: 100,
-    });
+  it('denominator: 最上位の終了画面の distribution は、listMachineItems が確率として渡す', () => {
+    const machine = { endScreens: [{ name: '金枠', distribution: { 1: 0, 6: 0.01 } }] };
+    const [item] = listMachineItems(machine);
+    expect(machineValue(item.entry, 'denominator')).toEqual({ 1: null, 6: 100 });
+    expect(machine.endScreens[0]).not.toHaveProperty('probabilities'); // 機種ファイルは書き換えない
+  });
+
+  it('denominator: 最上位の終了画面に probabilities もあれば、distribution より先に使う（アプリと同じ）', () => {
+    const machine = {
+      endScreens: [{ name: '金枠', probabilities: { 6: 0.5 }, distribution: { 6: 0.01 } }],
+    };
+    const [item] = listMachineItems(machine);
+    expect(machineValue(item.entry, 'denominator')).toEqual({ 6: 2 });
   });
 
   it('denominator: 負の値や 1 を超える値があると表せない（null）', () => {
@@ -326,8 +334,18 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
     ]);
   });
 
-  it('distribution（古い形）も数値として扱う', () => {
-    expect(allowedUnits('endScreen', { distribution: { 1: 0, 6: 0.01 } })).toEqual(['denominator']);
+  it('最上位の終了画面の distribution（古い形）は、数値として扱う', () => {
+    const [item] = listMachineItems({
+      endScreens: [{ name: '金枠', distribution: { 1: 0, 6: 0.01 } }],
+    });
+    expect(allowedUnits('endScreen', item.entry)).toEqual(['denominator']);
+  });
+
+  it('グループの中の終了画面の distribution は、アプリが改名しないので数値として扱わない', () => {
+    const [item] = listMachineItems({
+      endScreenGroups: [{ name: 'G', endScreens: [{ name: '金', distribution: { 6: 0.01 } }] }],
+    });
+    expect(allowedUnits(item.kind, item.entry)).toEqual(['presence']);
   });
 
   it('patterns 形式の項目は、出典記録の形を決めるまで記録できない（空）', () => {

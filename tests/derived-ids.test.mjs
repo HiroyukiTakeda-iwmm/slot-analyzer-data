@@ -305,6 +305,21 @@ describe('checkDerivedIds', () => {
     ).toEqual([]);
   });
 
+  it('同じ名前の項目の明示の id が重なっていれば報告する（別々の id にする）', () => {
+    // 移行処理は重なった id に並び順で _2 を付けるので、1つ目を外すと2つ目が1つ目の ID を引き継ぐ
+    const run = (ids) => {
+      const map = files({
+        ...baseMachine,
+        endScreens: ids.map((id) => ({ name: '仁', id, hint: '' })),
+      });
+      return checkDerivedIds({ readBase: reader(map), readHead: reader(map), provenanceFiles: [] });
+    };
+    expect(run(['jin', 'jin'])).toEqual([
+      'test-machine: endScreen::仁: 同じ名前の項目の明示の id が重なっている（別々の id にする）',
+    ]);
+    expect(run(['jin_a', 'jin_b'])).toEqual([]);
+  });
+
   it('同じ名前は、ID を作る種類ごとに項目キーと同じ単位で数え、1つの名前につき1回報告する', () => {
     const role = (name, displayOrder) => ({
       name,

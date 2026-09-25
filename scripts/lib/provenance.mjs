@@ -152,12 +152,9 @@ export function toStoredRate(percent) {
   return Number((percent / 100).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
 
-/**
- * 項目の設定ごとの数値。`distribution` は終了画面の古い形で、アプリの移行処理
- * （migrate-v1-to-v2.mjs）が `probabilities` に改名して確率として使うので、確率として読む。
- */
+/** 項目の設定ごとの数値（`probabilities`、無ければ `rates`） */
 function numericMap(entry) {
-  return entry.probabilities ?? entry.rates ?? entry.distribution ?? null;
+  return entry.probabilities ?? entry.rates ?? null;
 }
 
 function mapValues(obj, fn) {
@@ -203,8 +200,9 @@ const PERCENT_MIN_PROBABILITY = 0.1;
  * - patterns 形式（アプリは終了画面の patterns を別々の終了画面に展開する）は、出典記録の形を
  *   段階1で決めるまで記録できない（空の配列を返す）
  * - 役（role・zoneRole）は denominator
- * - ほかの数値（probabilities / rates / distribution）の項目は、0 でない値がすべて 10% 以上なら
- *   denominator か percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）
+ * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら
+ *   denominator か percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）。
+ *   最上位の終了画面の distribution は、listMachineItems が probabilities として渡す
  * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
  * 数値と設定の組の両方がある項目は、数値の側で決める。
  * @returns {string[]}
@@ -283,7 +281,13 @@ export function listMachineItems(machine) {
     for (const r of z.roles ?? []) add('zoneRole', r, zone);
   }
   for (const e of machine.confirmationEvents ?? []) add('confirmationEvent', e);
-  for (const s of machine.endScreens ?? []) add('endScreen', s);
+  for (const s of machine.endScreens ?? []) {
+    // アプリの移行処理（migrate-v1-to-v2.mjs の buildEndScreenFromStandard）は、最上位の終了画面だけ
+    // distribution を probabilities に改名して使う（グループの中の終了画面は改名しない）。出典記録でも
+    // アプリが使う値を照合するので、最上位の終了画面だけ改名した形を渡す（機種ファイルは書き換えない）
+    const renamed = s.probabilities == null && s.distribution !== undefined;
+    add('endScreen', renamed ? { ...s, probabilities: s.distribution } : s);
+  }
   for (const g of machine.endScreenGroups ?? []) {
     const group = plainName('endScreenGroup', g.name);
     for (const s of g.endScreens ?? []) add('endScreenGroupItem', s, group);

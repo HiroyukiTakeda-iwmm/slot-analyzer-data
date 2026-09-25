@@ -170,22 +170,31 @@ describe('checkRemovedItems（ID を持たない種類の項目の削除）', ()
     expect(runRemoved(base, withItems({}), provenanceFiles)).toEqual([]);
   });
 
-  it('ID を持たないどの種類も、項目キー（同じ名前は #2 など）で比べる', () => {
+  it('ID を持たない7種類すべてを、項目キー（同じ名前は #2 など）で比べる', () => {
     const base = withItems({
+      confirmationEvents: [gold],
       voiceCounts: [{ name: 'ボイスA' }],
+      musicCounts: [{ name: '楽曲A' }],
+      effectCounts: [{ name: '演出A' }],
       trialSuccessRates: [
         { name: 'CZ成功率', probabilities: { 1: 0.3 } },
         { name: 'CZ成功率', probabilities: { 1: 0.4 } },
       ],
+      modeTransitions: [{ name: '高確移行', rates: { 1: 0.1 } }],
       specialSettings: { note: 'x' },
     });
     const head = withItems({
       trialSuccessRates: [{ name: 'CZ成功率', probabilities: { 1: 0.3 } }],
     });
+    const problem = (key) => `test-machine: ${key}: 項目が消えたのに、出典記録の removed に無い`;
     expect(runRemoved(base, head)).toEqual([
-      'test-machine: voiceCount::ボイスA: 項目が消えたのに、出典記録の removed に無い',
-      'test-machine: trialSuccessRate::CZ成功率#2: 項目が消えたのに、出典記録の removed に無い',
-      'test-machine: specialSettings::specialSettings: 項目が消えたのに、出典記録の removed に無い',
+      problem('confirmationEvent::金トロフィー'),
+      problem('voiceCount::ボイスA'),
+      problem('musicCount::楽曲A'),
+      problem('effectCount::演出A'),
+      problem('trialSuccessRate::CZ成功率#2'),
+      problem('modeTransition::高確移行'),
+      problem('specialSettings::specialSettings'),
     ]);
   });
 
