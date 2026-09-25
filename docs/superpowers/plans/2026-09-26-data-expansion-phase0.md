@@ -3423,14 +3423,26 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 
 ### 例
 
+BIG の1項目だけを抜き出した例。実際の記録には、機種ファイルのすべての項目（下の「項目の種類と名前」）を `items` に書く（1項目でも欠けると validate が止める）。
+
 ```json
 {
   "machineId": "galfy",
   "machineFile": "galfy/galfy.json",
   "reviewedAt": "2026-09-26",
   "sources": [
-    { "key": "chonborista", "kind": "analysis-site", "url": "https://chonborista.com/…", "retrievedAt": "2026-09-26" },
-    { "key": "nana-press", "kind": "analysis-site", "url": "https://nana-press.com/…", "retrievedAt": "2026-09-26" }
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/…",
+      "retrievedAt": "2026-09-26"
+    },
+    {
+      "key": "nana-press",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/…",
+      "retrievedAt": "2026-09-26"
+    }
   ],
   "items": [
     {
@@ -3459,7 +3471,7 @@ Expected: PASS。grep の出力は `provenance (出典記録)` の行で、`0/14
 | `settings` | `{"confirmed": [...], "excluded": [...]}` | `confirmedSettings` / `excludedSettings` |
 | `presence` | `true` | 数値は比べず、出典に載っていることだけを記録する |
 
-unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く確定・否定の設定があれば `settings`、どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
+unit は、機種ファイルの項目の種類と中身で決まる（`scripts/lib/provenance.mjs` の `allowedUnits`。検証器が確かめる）。役（`role`・`zoneRole`）は `denominator`。ほかの数値（`probabilities` / `rates`）の項目は、0 でない値がすべて 10% 以上なら `denominator` か `percent`、それ以外は `denominator`（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため。`trialSuccessRates` には BB 確率のような小さい確率も入っている）。数値が無く、確定・否定の設定の欄（`confirmedSettings` / `excludedSettings`）があれば、中身が空の配列でも `settings`。どちらも無ければ `presence`。数値と設定の組の両方がある項目（2026-09-26 時点で endScreen 2件・endScreenGroupItem 4件）は数値の側で記録し、設定の組の側は照合しない。
 
 出典に載っていない設定は書かない（キーを入れない）。分母の `null` は「確率 0」の意味で、「不明」には使わない。
 
@@ -3490,6 +3502,13 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 | `kept-single-source` | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
 
 `candidates` は見つけたが採用しなかった値、`removed` は見直しで外した値（前の値と理由）。
+
+### 記録の決まり（検証器が確かめる）
+
+- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く
+- ちょんぼりすたは出典キーを `chonborista` にし、URL は `https://chonborista.com/` で始める
+- `adopted` は、選んだ出典の値そのものにする（許容差の中の別の値にしない）。`kept-single-source` では、上の表のとおり今の機種ファイルの値そのもの
+- 2つの値が一致するには、載っている設定（キー）の組が同じである必要がある。一部の設定だけを載せる出典の扱いは段階2で決める
 
 ### 保存する数値
 
@@ -3557,7 +3576,7 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 
 ### 3-2. 出典記録を作る
 
-`provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
+`provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。記録を置く機種では、機種ファイルのすべての項目を `items` に書きます（1項目でも欠けると validate が止めます）。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
 ```
 
 (b) 置き換える前:
@@ -3588,7 +3607,7 @@ npm run check:base # main と比べる（アプリが作る ID・採否ルール
 ```markdown
 既存の機種データを修正する場合は、以下のルールに従ってください。
 
-値を変えたら `provenance/{id}.json` も直します。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
+出典記録（`provenance/{id}.json`）がある機種で値を変えたら、記録も直します（機種ファイルと記録が食い違うと validate が止めます）。記録がまだ無い機種は、段階2の見直しで記録を作るまでは、記録なしで直してかまいません（全機種で必須にするのは段階3）。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
 ```
 
 (e) 置き換える前:
@@ -3615,7 +3634,7 @@ npm run check:base # main と比べる（アプリが作る ID・採否ルール
 
 ```markdown
 - [ ] 修正理由がコミットメッセージに記述されている
-- [ ] `provenance/{id}.json` を更新し、出典記録バリデーションがエラー0件
+- [ ] 出典記録がある機種は `provenance/{id}.json` も更新し、出典記録バリデーションがエラー0件
 - [ ] `npm run check:base` が問題なし
 ```
 
