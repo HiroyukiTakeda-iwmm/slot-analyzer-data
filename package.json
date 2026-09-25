@@ -31,6 +31,7 @@
     "audit:stale": "node scripts/audit-freshness.mjs --stale 30",
     "quality": "node scripts/quality-report.mjs",
     "quality:json": "node scripts/quality-report.mjs --json",
+    "check:base": "node scripts/check-against-base.mjs --base origin/main",
     "test": "vitest run",
     "test:watch": "vitest",
     "prepare": "husky"
