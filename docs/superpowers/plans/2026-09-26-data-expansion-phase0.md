@@ -35,6 +35,7 @@
 | `scripts/lib/load-provenance.mjs` | `provenance/*.json` の読み込み | 新規 |
 | `scripts/lib/derived-ids.mjs` | アプリが作る ID の収集・比較・全機種チェック | 新規 |
 | `scripts/lib/rules-against-base.mjs` | 採否ルールのうち、見直し前の値（main）が要るものを確かめる | 新規 |
+| `scripts/lib/against-base.mjs` | main と比べる2つの検査をまとめ、終了コードと表示を決める | 新規 |
 | `scripts/validators/provenance-validator.mjs` | 出典記録の検証（スキーマと機種ファイルとの整合） | 新規 |
 | `scripts/check-against-base.mjs` | main と比べる検査（ID の安定性・採否ルール）の CLI | 新規 |
 | `schemas/provenance.schema.json` | 出典記録の JSON Schema | 新規 |
@@ -49,6 +50,7 @@
 | `tests/load-provenance.test.mjs` | Task 4 のテスト | 新規 |
 | `tests/derived-ids.test.mjs` | Task 5 のテスト（ID） | 新規 |
 | `tests/rules-against-base.test.mjs` | Task 5 のテスト（採否ルール） | 新規 |
+| `tests/against-base.test.mjs`・`tests/check-against-base.test.mjs` | Task 5 のテスト（まとめ・CLI の引数） | 新規 |
 | `tests/integration.test.mjs` | 実データでの確認を追加 | 変更 |
 | `docs/data-format.md` ほか文書 | 出典記録と ID の規則 | 変更 |
 
@@ -2341,19 +2343,21 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 **Files:**
 - Create: `scripts/lib/derived-ids.mjs`
 - Create: `scripts/lib/rules-against-base.mjs`
+- Create: `scripts/lib/against-base.mjs`
 - Create: `scripts/check-against-base.mjs`
 - Modify: `package.json`（`check:base`）
 - Modify: `.github/workflows/validate.yml`
-- Test: `tests/derived-ids.test.mjs`、`tests/rules-against-base.test.mjs`、`tests/check-against-base.test.mjs`
+- Test: `tests/derived-ids.test.mjs`、`tests/rules-against-base.test.mjs`、`tests/against-base.test.mjs`、`tests/check-against-base.test.mjs`
 
 **Interfaces:**
 - Consumes: `scripts/migrate-v1-to-v2.mjs` の `migrateV1ToV2`（iOS の `services/migrations/v1ToV2.ts` の移植。iOS 側は 2026-04-24 から変わっていないことを確認済み）、Task 1 の `CHONBORISTA_KEY`・`itemKey`・`NAME_SEPARATOR`・`createNameDisambiguator`・`listMachineItems`・`machineValue`・`valuesAgree`、Task 2 の `valuesEqual`、Task 4 の `loadProvenanceFiles`
 - Produces:
   - `collectDerivedIds(machine: object): Map<string, string>`（項目キー → ID。キーは `role::名前`、`zone::名前`、`zoneRole::ゾーン::役`、`endScreen::名前`、`endScreenGroup::名前`、`endScreenGroupItem::グループ::画面`。重なったら `#2`、`#3`）
-  - `compareDerivedIds(baseIds: Map, headIds: Map, removedKeys: Set<string>): string[]`
+  - `compareDerivedIds(baseIds: Map, headIds: Map, removedKeys: Set<string>): string[]`（ID の変化・記録なしの削除・新しい項目が基準の別の項目の ID を使っていること）
   - `checkDerivedIds({ readBase, readHead, provenanceFiles }): string[]`（`readBase` / `readHead` はリポジトリからの相対パスを受け取って中身を返す）
   - `checkRulesAgainstBase({ readBase, readHead, provenanceFiles }): string[]`（採否ルール（仕様 5.5）のうち、見直し前の値（main）が要るものを確かめる。kept-single-source は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか。main にある項目の provisional-chonborista は、ちょんぼりすたの値が main の値と一致しないときだけか（一致するなら規則2の kept-single-source）。Task 2 の `statusError` と Task 3 の検証器は見直し前の値を知らないので、ここで確かめる）
-  - `npm run check:base`（上の2つをまとめて実行。終了コード 0 = 問題なし、1 = 問題あり、2 = 比べられない）
+  - `runAgainstBase({ base, readBase, readHead, loadProvenance }): { code: 0 | 1 | 2, lines: string[] }`（上の2つをまとめて実行し、終了コードと表示する行を決める。CLI は引数・読み込み・表示・終了だけ）
+  - `npm run check:base`（終了コード 0 = 問題なし、1 = 問題あり、2 = 比べられない）
 
 - [ ] **Step 1: ID の検査の失敗するテストを書く**
 
@@ -2459,6 +2463,50 @@ describe('compareDerivedIds', () => {
     expect(compareDerivedIds(base, head, new Set())).toEqual([
       'role::REG: 項目が消えたのに、出典記録の removed に無い',
     ]);
+  });
+
+  it('外した項目の ID を、新しく足した項目が使ったら報告する', () => {
+    // 赤を外し、青の ID を固定して、漢字だけの名前の緑を足すと、緑が赤の ID（endscreen）になる
+    const head = {
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    };
+    const removed = new Set(['endScreen::赤']);
+    expect(compareDerivedIds(base, collectDerivedIds(head), removed)).toEqual([
+      'endScreen::緑: 新しい項目が、基準の endScreen::赤 の ID（endscreen）を使っている（明示の id を付ける）',
+    ]);
+  });
+
+  it('役でも、漢字だけの名前で外した項目の displayOrder を使い回すと報告する', () => {
+    const role = (name, displayOrder) => ({
+      name,
+      probabilities: { 1: 0.01 },
+      hasSettingDiff: false,
+      displayOrder,
+    });
+    const before = collectDerivedIds({ ...baseMachine, roles: [role('BIG', 1), role('強', 2)] });
+    const after = collectDerivedIds({ ...baseMachine, roles: [role('BIG', 1), role('弱', 2)] });
+    expect(compareDerivedIds(before, after, new Set(['role::強']))).toEqual([
+      'role::弱: 新しい項目が、基準の role::強 の ID（role_2）を使っている（明示の id を付ける）',
+    ]);
+  });
+
+  it('種類やゾーンが違えば、同じ ID でも問題にしない', () => {
+    const bell = {
+      name: 'Bell',
+      probabilities: { 1: 0.1 },
+      hasSettingDiff: false,
+      displayOrder: 1,
+    };
+    const head = {
+      ...baseMachine,
+      zones: [...baseMachine.zones, { name: 'AT', isDefault: false, roles: [bell] }],
+    };
+    expect(compareDerivedIds(base, collectDerivedIds(head), new Set())).toEqual([]);
   });
 });
 
@@ -2603,8 +2651,16 @@ export function collectDerivedIds(machine) {
   return ids;
 }
 
+/** ID が重なってはいけない範囲（項目の種類。ゾーン内の役とグループ内の終了画面は、親ごと） */
+function idScope(key) {
+  return key.slice(0, key.lastIndexOf(NAME_SEPARATOR));
+}
+
 /**
  * 基準の ID が、比べる側でも同じかを確かめる。
+ * 新しく足した項目が、基準の別の項目の ID（外した項目の ID など）を使っていないかも確かめる。
+ * 利用者の記録は ID でつながっているので、ID を引き継ぐと、外した項目の記録が別の項目に付く。
+ * （PR をまたいだ引き継ぎは main と比べるだけでは分からない。段階2で、外した ID を記録して確かめる）
  *
  * @param {Map<string, string>} baseIds 基準（main）の ID
  * @param {Map<string, string>} headIds 比べる側（作業ブランチ）の ID
@@ -2619,6 +2675,19 @@ export function compareDerivedIds(baseIds, headIds, removedKeys) {
       if (headId !== id) problems.push(`${key}: ID が変わった（${id} → ${headId}）`);
     } else if (!removedKeys.has(key)) {
       problems.push(`${key}: 項目が消えたのに、出典記録の removed に無い`);
+    }
+  }
+
+  const ownerByScopedId = new Map(
+    [...baseIds].map(([key, id]) => [`${idScope(key)}${NAME_SEPARATOR}${id}`, key])
+  );
+  for (const [key, id] of headIds) {
+    if (baseIds.has(key)) continue;
+    const owner = ownerByScopedId.get(`${idScope(key)}${NAME_SEPARATOR}${id}`);
+    if (owner !== undefined) {
+      problems.push(
+        `${key}: 新しい項目が、基準の ${owner} の ID（${id}）を使っている（明示の id を付ける）`
+      );
     }
   }
   return problems;
@@ -2665,7 +2734,7 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
 - [ ] **Step 4: ID のテストが通ることを確かめる**
 
 Run: `npx vitest run tests/derived-ids.test.mjs`
-Expected: PASS（13 tests）
+Expected: PASS（16 tests）
 
 - [ ] **Step 5: 採否ルールの検査の失敗するテストを書く**
 
@@ -2908,6 +2977,126 @@ Expected: PASS（11 tests）
 
 - [ ] **Step 9: CLI を書く**
 
+2つの検査をまとめて終了コードを決める部分は、テストできるように `scripts/lib/against-base.mjs` に置く。CLI は引数・読み込み・表示・終了だけを受け持つ。
+
+`tests/against-base.test.mjs`:
+
+```js
+import { describe, it, expect } from 'vitest';
+import { runAgainstBase } from '../scripts/lib/against-base.mjs';
+
+const entry = {
+  id: 'test-machine',
+  name: 'テスト機種',
+  type: 'AT',
+  author: 'コミュニティ',
+  version: '1.0',
+  file: 'test/test-machine.json',
+};
+const role = (displayOrder, probability) => ({
+  name: 'BIG',
+  probabilities: { 1: probability },
+  hasSettingDiff: false,
+  displayOrder,
+});
+const files = (roles) => ({
+  'machines/index.json': JSON.stringify({
+    version: '3.8.0',
+    updatedAt: '2026-09-26',
+    machines: [entry],
+  }),
+  'machines/test/test-machine.json': JSON.stringify({ name: 'テスト機種', type: 'AT', roles }),
+});
+const reader = (map) => (path) => {
+  if (!(path in map)) throw new Error(`no such file: ${path}`);
+  return map[path];
+};
+const run = (base, head, provenanceFiles = []) =>
+  runAgainstBase({
+    base: 'origin/main',
+    readBase: reader(base),
+    readHead: reader(head),
+    loadProvenance: () => provenanceFiles,
+  });
+
+describe('runAgainstBase', () => {
+  it('問題が無ければ終了コード 0', () => {
+    const map = files([role(1, 0.00338753)]);
+    expect(run(map, map)).toEqual({
+      code: 0,
+      lines: [
+        '問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです',
+      ],
+    });
+  });
+
+  it('ID の検査と採否ルールの検査の問題をまとめて、終了コード 1', () => {
+    const kept = {
+      kind: 'role',
+      name: 'BIG',
+      unit: 'denominator',
+      status: 'kept-single-source',
+      values: { 'nana-press': { 1: 295.2 } },
+      adopted: { 1: 1 / 0.00338753 },
+    };
+    const provenanceFiles = [{ data: { machineId: 'test-machine', items: [kept] } }];
+    const head = files([role(2, 0.00338639)]);
+    expect(run(files([role(1, 0.00338753)]), head, provenanceFiles)).toEqual({
+      code: 1,
+      lines: [
+        '問題: 2件',
+        '  ERROR test-machine: role::BIG: ID が変わった（big_1 → big_2）',
+        '  ERROR test-machine: role::BIG: kept-single-source の値が main から変わった',
+      ],
+    });
+  });
+
+  it('基準を読めなければ終了コード 2', () => {
+    expect(run({}, files([role(1, 0.00338753)]))).toEqual({
+      code: 2,
+      lines: ['比べられませんでした（基準: origin/main）: no such file: machines/index.json'],
+    });
+  });
+});
+```
+
+`scripts/lib/against-base.mjs`:
+
+```js
+import { checkDerivedIds } from './derived-ids.mjs';
+import { checkRulesAgainstBase } from './rules-against-base.mjs';
+
+/**
+ * main と比べる検査（アプリが作る ID・採否ルール）をまとめて実行し、終了コードと表示する行を決める。
+ *
+ * @param {{ base: string, readBase: (path: string) => string, readHead: (path: string) => string,
+ *   loadProvenance: () => Array<{ data: object | null }> }} io
+ * @returns {{ code: 0 | 1 | 2, lines: string[] }} 0 = 問題なし / 1 = 問題あり / 2 = 比べられない
+ */
+export function runAgainstBase({ base, readBase, readHead, loadProvenance }) {
+  let problems;
+  try {
+    const io = { readBase, readHead, provenanceFiles: loadProvenance() };
+    problems = [...checkDerivedIds(io), ...checkRulesAgainstBase(io)];
+  } catch (e) {
+    // 基準を読めない・JSON が壊れている・項目の名前を区別できない（createNameDisambiguator の例外）のどれか
+    return { code: 2, lines: [`比べられませんでした（基準: ${base}）: ${e.message}`] };
+  }
+  if (problems.length === 0) {
+    return {
+      code: 0,
+      lines: [
+        '問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです',
+      ],
+    };
+  }
+  return {
+    code: 1,
+    lines: [`問題: ${problems.length}件`, ...problems.map((problem) => `  ERROR ${problem}`)],
+  };
+}
+```
+
 `scripts/check-against-base.mjs`:
 
 ```js
@@ -2915,7 +3104,8 @@ Expected: PASS（11 tests）
 
 /**
  * main（既定: origin/main）と比べて確かめる。validate は main を読まないので、こちらで見る（仕様 5.7・5.8）。
- * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか
+ * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか、
+ *   新しい項目が基準の別の項目の ID を使っていないか
  * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
  *
  * Usage:
@@ -2929,8 +3119,7 @@ import { execFileSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { checkDerivedIds } from './lib/derived-ids.mjs';
-import { checkRulesAgainstBase } from './lib/rules-against-base.mjs';
+import { runAgainstBase } from './lib/against-base.mjs';
 import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -2979,29 +3168,15 @@ function main() {
   const readHead = (path) => readFileSync(resolve(ROOT, path), 'utf-8');
 
   console.log(`=== 基準との比較（基準: ${base}）===\n`);
-  let problems;
-  try {
-    const io = {
-      readBase,
-      readHead,
-      provenanceFiles: loadProvenanceFiles(resolve(ROOT, 'provenance')),
-    };
-    problems = [...checkDerivedIds(io), ...checkRulesAgainstBase(io)];
-  } catch (e) {
-    // 基準を読めない・JSON が壊れている・項目の名前を区別できない（createNameDisambiguator の例外）のどれか
-    console.error(`比べられませんでした（基準: ${base}）: ${e.message}`);
-    process.exit(2);
-  }
-
-  if (problems.length === 0) {
-    console.log(
-      '問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです'
-    );
-    process.exit(0);
-  }
-  console.log(`問題: ${problems.length}件`);
-  for (const problem of problems) console.log(`  ERROR ${problem}`);
-  process.exit(1);
+  const { code, lines } = runAgainstBase({
+    base,
+    readBase,
+    readHead,
+    loadProvenance: () => loadProvenanceFiles(resolve(ROOT, 'provenance')),
+  });
+  const print = code === 2 ? console.error : console.log;
+  for (const line of lines) print(line);
+  process.exit(code);
 }
 
 main();
@@ -3041,11 +3216,17 @@ describe('check-against-base.mjs の引数', () => {
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('比べられませんでした（基準: no-such-ref）');
   });
+
+  it('--base <ref> の形で渡した基準と比べる（npm スクリプトと CI の形）', () => {
+    const result = run('--base', 'no-such-ref');
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('比べられませんでした（基準: no-such-ref）');
+  });
 });
 ```
 
-Run: `npx vitest run tests/check-against-base.test.mjs`
-Expected: PASS（3 tests）
+Run: `npx vitest run tests/against-base.test.mjs tests/check-against-base.test.mjs`
+Expected: PASS（3 tests と 4 tests）
 
 - [ ] **Step 10: npm スクリプトを足す**
 
@@ -3092,37 +3273,35 @@ Expected: `exit=2` と `知らない引数: --bse`（綴りを間違えても、
       - uses: actions/setup-node@v4
 ```
 
-同じファイルの「テスト」の手順の後に足す。置き換える前:
+同じファイルの最後（「品質レポート」の手順の後）に足す。ESLint・Prettier の結果が、基準との比較の失敗に隠れないようにするため。置き換える前:
 
 ```yaml
-      - name: テスト
-        run: npm test
-
+      - name: 品質レポート
+        run: npm run quality
 ```
 
 置き換えた後:
 
 ```yaml
-      - name: テスト
-        run: npm test
+      - name: 品質レポート
+        run: npm run quality
 
       - name: 基準（main）との比較（PR のみ）
         if: github.event_name == 'pull_request'
         env:
           BASE_REF: ${{ github.base_ref }}
         run: node scripts/check-against-base.mjs --base "origin/$BASE_REF"
-
 ```
 
 - [ ] **Step 13: 整形と lint**
 
-Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/check-against-base.test.mjs && npx eslint . && npx vitest run`
+Run: `npx prettier --write scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/lib/against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/against-base.test.mjs tests/check-against-base.test.mjs && npx eslint . && npx vitest run`
 Expected: eslint が何も出力せず、vitest がすべて PASS
 
 - [ ] **Step 14: コミット**
 
 ```bash
-git add scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/check-against-base.test.mjs package.json .github/workflows/validate.yml
+git add scripts/lib/derived-ids.mjs scripts/lib/rules-against-base.mjs scripts/lib/against-base.mjs scripts/check-against-base.mjs tests/derived-ids.test.mjs tests/rules-against-base.test.mjs tests/against-base.test.mjs tests/check-against-base.test.mjs package.json .github/workflows/validate.yml
 git commit -m "feat(scripts): main と比べる検査を追加（アプリが作る ID・採否ルール）
 
 main と比べ、既存の役・ゾーン・終了画面の ID が変わっていないか、
@@ -3349,12 +3528,13 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 - 既存の項目の `name` と `displayOrder` を変えない。並べ替えない
 - 新しい項目は後ろに足す（役の `displayOrder` は今の最大値＋1）
 - 外したり足したりして `_2` などが繰り上がる場合は、残す項目に今の ID を `id` として書いて固定する
+- 外した項目の ID を、新しい項目に使わない（利用者の記録が別の項目に付くため）。名前から作る ID が外した項目と重なるとき（漢字だけの名前など）は、新しい項目に明示の `id` を付ける
 
 ### main と比べる検査
 
 `npm run check:base`（PR の CI でも実行）で、次を main と比べて確かめる。`npm run validate` は main を読まないので、こちらで見る。
 
-- アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか
+- アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか、新しい項目が main の別の項目の ID を使っていないか（先の PR で外した ID を後の PR で使う場合は、main と比べるだけでは分からない。段階2で確かめる仕組みを足す）
 - `kept-single-source` は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか
 - main にある項目の `provisional-chonborista` は、ちょんぼりすたの値が main の値と一致しないときだけか（一致するなら `kept-single-source`）
 ```
