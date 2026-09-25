@@ -29,4 +29,10 @@ describe('check-against-base.mjs の引数', () => {
     expect(result.status).toBe(2);
     expect(result.stderr).toContain('比べられませんでした（基準: no-such-ref）');
   });
+
+  it('--base <ref> の形で渡した基準と比べる（npm スクリプトと CI の形）', () => {
+    const result = run('--base', 'no-such-ref');
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain('比べられませんでした（基準: no-such-ref）');
+  });
 });

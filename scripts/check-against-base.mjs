@@ -2,7 +2,8 @@
 
 /**
  * main（既定: origin/main）と比べて確かめる。validate は main を読まないので、こちらで見る（仕様 5.7・5.8）。
- * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか
+ * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか、
+ *   新しい項目が基準の別の項目の ID を使っていないか
  * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
  *
  * Usage:
@@ -16,8 +17,7 @@ import { execFileSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { checkDerivedIds } from './lib/derived-ids.mjs';
-import { checkRulesAgainstBase } from './lib/rules-against-base.mjs';
+import { runAgainstBase } from './lib/against-base.mjs';
 import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -66,29 +66,15 @@ function main() {
   const readHead = (path) => readFileSync(resolve(ROOT, path), 'utf-8');
 
   console.log(`=== 基準との比較（基準: ${base}）===\n`);
-  let problems;
-  try {
-    const io = {
-      readBase,
-      readHead,
-      provenanceFiles: loadProvenanceFiles(resolve(ROOT, 'provenance')),
-    };
-    problems = [...checkDerivedIds(io), ...checkRulesAgainstBase(io)];
-  } catch (e) {
-    // 基準を読めない・JSON が壊れている・項目の名前を区別できない（createNameDisambiguator の例外）のどれか
-    console.error(`比べられませんでした（基準: ${base}）: ${e.message}`);
-    process.exit(2);
-  }
-
-  if (problems.length === 0) {
-    console.log(
-      '問題なし: 既存の ID は基準と同じで、出典記録は基準の値に照らして採否ルールどおりです'
-    );
-    process.exit(0);
-  }
-  console.log(`問題: ${problems.length}件`);
-  for (const problem of problems) console.log(`  ERROR ${problem}`);
-  process.exit(1);
+  const { code, lines } = runAgainstBase({
+    base,
+    readBase,
+    readHead,
+    loadProvenance: () => loadProvenanceFiles(resolve(ROOT, 'provenance')),
+  });
+  const print = code === 2 ? console.error : console.log;
+  for (const line of lines) print(line);
+  process.exit(code);
 }
 
 main();

@@ -101,6 +101,50 @@ describe('compareDerivedIds', () => {
       'role::REG: 項目が消えたのに、出典記録の removed に無い',
     ]);
   });
+
+  it('外した項目の ID を、新しく足した項目が使ったら報告する', () => {
+    // 赤を外し、青の ID を固定して、漢字だけの名前の緑を足すと、緑が赤の ID（endscreen）になる
+    const head = {
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    };
+    const removed = new Set(['endScreen::赤']);
+    expect(compareDerivedIds(base, collectDerivedIds(head), removed)).toEqual([
+      'endScreen::緑: 新しい項目が、基準の endScreen::赤 の ID（endscreen）を使っている（明示の id を付ける）',
+    ]);
+  });
+
+  it('役でも、漢字だけの名前で外した項目の displayOrder を使い回すと報告する', () => {
+    const role = (name, displayOrder) => ({
+      name,
+      probabilities: { 1: 0.01 },
+      hasSettingDiff: false,
+      displayOrder,
+    });
+    const before = collectDerivedIds({ ...baseMachine, roles: [role('BIG', 1), role('強', 2)] });
+    const after = collectDerivedIds({ ...baseMachine, roles: [role('BIG', 1), role('弱', 2)] });
+    expect(compareDerivedIds(before, after, new Set(['role::強']))).toEqual([
+      'role::弱: 新しい項目が、基準の role::強 の ID（role_2）を使っている（明示の id を付ける）',
+    ]);
+  });
+
+  it('種類やゾーンが違えば、同じ ID でも問題にしない', () => {
+    const bell = {
+      name: 'Bell',
+      probabilities: { 1: 0.1 },
+      hasSettingDiff: false,
+      displayOrder: 1,
+    };
+    const head = {
+      ...baseMachine,
+      zones: [...baseMachine.zones, { name: 'AT', isDefault: false, roles: [bell] }],
+    };
+    expect(compareDerivedIds(base, collectDerivedIds(head), new Set())).toEqual([]);
+  });
 });
 
 describe('checkDerivedIds', () => {
