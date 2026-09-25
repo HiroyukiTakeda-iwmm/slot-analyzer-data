@@ -228,7 +228,7 @@ npm run validate          # スキーマ・確率値・演出・出典記録の�
 npm run validate:schema   # スキーマチェックのみ
 npm run validate:index    # index整合性チェックのみ
 npm test                  # テスト実行（vitest）
-npm run check:base        # main と比べる（アプリが作るID・採否ルール）
+npm run check:base        # main と比べる（アプリが作るID・採否ルール）（先に git fetch origin で main を最新にする）
 npm run audit             # lastUpdated の鮮度チェック
 ```
 

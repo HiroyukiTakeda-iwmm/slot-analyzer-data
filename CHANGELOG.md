@@ -10,7 +10,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - `provenance/<機種ID>.json`（出典記録）と `schemas/provenance.schema.json`
 - `scripts/lib/provenance.mjs`: 値の比較（分母 0.1%・割合 0.1 ポイント・設定の組）、有効数字6桁への変換、採否ルール
 - `scripts/validators/provenance-validator.mjs`: `npm run validate` の6番目の検査。`--require-provenance` で全機種に必須（段階3で有効化）
-- `scripts/check-against-base.mjs` と `npm run check:base`: main と比べて、アプリが名前から作る ID（役・ゾーン・終了画面）が変わっていないか、見直し前の値が要る採否ルール（`kept-single-source`・`provisional-chonborista` の使い方）を守っているかを確かめる。PR の CI でも実行
+- `scripts/check-against-base.mjs` と `npm run check:base`: main と比べて、アプリが名前から作る ID（役・ゾーン・終了画面）が変わっていないか、見直し前の値が要る採否ルール（`kept-single-source`・`provisional-chonborista` の使い方）を守っているかを確かめる。ID を持たない項目の削除・新しい機種の出典記録・同じ名前の項目の明示の id も確かめる。PR の CI でも実行し、main への push のときも直前の main と比べる
 - 品質レポートに「provenance (出典記録)」の行
 
 ### Changed

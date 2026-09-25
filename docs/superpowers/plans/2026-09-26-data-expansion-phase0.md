@@ -3743,6 +3743,28 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"
 
 ---
 
+### Task 6b: 最終レビューの指摘への対応
+
+ブランチ全体の最終レビュー（`.superpowers/sdd/final-review.md`）の指摘をまとめて直す。指示書は `.superpowers/sdd/final-fix-brief.md`。機種データと version（3.8.0）は変えない。
+
+- A. アプリが読む古い形（I-1）
+  - `distribution` も確率として読む（`numericMap` を `probabilities ?? rates ?? distribution` にする。アプリの移行処理は終了画面の `distribution` を `probabilities` に改名して使う）
+  - `patterns` 形式の項目は、出典記録の形を段階1で決めるまで記録できない（`allowedUnits` が空を返し、検証器が専用のエラーを出す。止める向き）
+- B. main と比べる検査の穴
+  - ID を持たない種類の項目（確定演出・試行成功率・ボイスなど）を消したら、`removed` に記録が要る（`checkRemovedItems`。ID を作る種類は `checkDerivedIds` が同じ文面で報告するので見ない。ID を作る種類の集合は `DERIVED_ID_KINDS` の1か所に置く）（I-2）
+  - 新しく足した機種には出典記録が要る（`checkNewMachineRecords`。パスか `machineId` で見つけ、壊れた記録も「ある」と数える）（I-3）
+  - ID を作る種類で同じ名前の項目には、明示の `id` を求める（比べる側の index のすべての機種を、移行前の元の形で見る）（F1）
+  - 名前に `::` を含む項目を拒む（`listMachineItems`・`collectDerivedIds` が元の名前で例外を投げる。検証器はエラー、check:base は終了コード 2）（q）
+- C. 値の比べ方
+  - 割合の 0 は 0 とだけ一致させる（0 は「その設定では起きない」を表すため）（h）
+  - 出典のサイトは登録ドメインで数える（小文字・末尾の `.`・先頭の `www.` を除き、`.co.jp` などの属性型 JP ドメインは末尾3ラベル、ほかは末尾2ラベル）。chonborista.com の出典はキーを `chonborista`・kind を `analysis-site` にする（i・N1）
+  - 日付は実在する日付に限る（スキーマの `definitions.date` に `format: date`）（F5）
+- D. テスト: 名前の重なりの逆順（T1-2）、`excluded` だけが違う設定の組と整数でないキーの並び順（a・F2）、unit のエラーが形の検査より先で return すること（d）、10% ちょうどの境界（f）、実データでの `validate.mjs --require-provenance` の spawn（m）
+- E. CI: main への push のときも、直前の main（`github.event.before`）と比べる（同時に開いた PR の組み合わせは PR の比較では見えないため）（F3）
+- F. 文書: data-format（unit の表・記録の決まり）、quality-standards と仕様 5.7（main と比べる検査の3項目）、仕様 5.2（例の `unit`）・5.4（`distribution` と `patterns`）・5.8（同じ名前の項目の明示の `id`）、CONTRIBUTING（項目を外すときは全項目の記録を作る・先に `git fetch origin`）、README（先に `git fetch origin`）、CHANGELOG（check:base の行）
+
+---
+
 ### Task 7: 関門を通して PR を出し、マージする
 
 **Files:** なし（検証・PR・マージ）
