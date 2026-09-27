@@ -108,7 +108,7 @@
 
 既存の機種の見直し（仕様 5.5 の既存の値の規則）。
 
-- [ ] **Step 1: patterns の書き直し**: bakemonogatari の終了画面の `patterns`（2項目）を `node scripts/expand-patterns.mjs machines/<bakemonogatari のファイル> --write` で書き直す。アプリが読む形は変わらないので、この書き直しだけでは版を上げない
+- [ ] **Step 1: patterns の書き直し**: bakemonogatari の終了画面の `patterns`（2項目）を `node scripts/expand-patterns.mjs machines/<bakemonogatari のファイル> --write` で書き直す。アプリが読む形は変わらないので、この書き直しだけでは版を上げない（アプリは中身の違いで「更新」を知らせるが、取り込み直しても推定の結果は同じ。バッチ3 では値の見直しと同じ PR なので、値を変えた機種は版が上がる）
 - [ ] **Step 2: 抜き出し・読み直し・照合**: バッチ1 と同じ。対象は機種ファイルにあるすべての項目と、出典にあって機種ファイルに無い項目
 - [ ] **Step 3: 下書き**: `provenance-draft` が、機種ファイルにある項目は既存の値の規則（確定・残す・暫定・外す）で、無い項目は新しい値の規則で決める。外す項目は `removed`（`previous`・`values`・`appId`）に入る
 - [ ] **Step 4: 機種ファイルを直す**
