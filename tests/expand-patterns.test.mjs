@@ -312,6 +312,33 @@ describe('expandEndScreenPatterns（合成の機種）', () => {
     );
   });
 
+  it('patterns を持つ親に、書き直すと消える欄（id・name・type・hint・description・color・patterns 以外）があれば、例外を投げる', () => {
+    const machine = {
+      name: 'テスト機種',
+      endScreens: [
+        {
+          id: 'p',
+          name: '親',
+          confirmedSettings: ['6'],
+          probabilities: { 6: 0.1 },
+          patterns: [{ name: 'A' }],
+        },
+      ],
+    };
+    expect(() => expandEndScreenPatterns(machine)).toThrow(
+      'テスト機種: 終了画面「親」の confirmedSettings・probabilities は、書き直すと消える（アプリは使わないが、消す前に中身を確かめる）'
+    );
+  });
+
+  it('機種に name が無ければ、例外の文は「名前のない機種」にする', () => {
+    const machine = {
+      endScreens: [{ id: 'p', name: '親', excludedSettings: ['1'], patterns: [{ name: 'A' }] }],
+    };
+    expect(() => expandEndScreenPatterns(machine)).toThrow(
+      '名前のない機種: 終了画面「親」の excludedSettings は、書き直すと消える'
+    );
+  });
+
   it('expandEndScreenPatternsWithIds は、書き直した終了画面ごとに作った id も返す（CLI の表示用）', () => {
     const machine = {
       name: 'x',
@@ -326,7 +353,12 @@ describe('expandEndScreenPatterns（合成の機種）', () => {
       { name: '親1', patterns: 2, ids: ['p_1', 'p_2'] },
       { name: '親2', patterns: 1, ids: ['q_1'] },
     ]);
-    expect(detailed.machine).toEqual(expandEndScreenPatterns(machine).machine);
+    expect(detailed.machine.endScreens).toStrictEqual([
+      { id: 'p_1', name: 'A', type: 'other', hint: '', confirmedSettings: [] },
+      { id: 'p_2', name: 'B', type: 'other', hint: '', confirmedSettings: [] },
+      { id: 's', name: '普通' },
+      { id: 'q_1', name: 'C', type: 'other', hint: '', confirmedSettings: [] },
+    ]);
   });
 });
 
@@ -370,6 +402,74 @@ describe('rewriteMachineText（合成の機種）', () => {
         '}',
         '',
       ].join('\n')
+    );
+  });
+
+  it('CRLF のファイルでは、新しい配列も CRLF で書く', () => {
+    const text = [
+      '{',
+      '  "name": "x",',
+      '  "endScreens": [',
+      '    { "id": "p", "name": "親", "patterns": [{ "name": "A" }] }',
+      '  ],',
+      '  "rates": [0.10]',
+      '}',
+      '',
+    ].join('\r\n');
+    expect(rewriteMachineText(text).text).toBe(
+      [
+        '{',
+        '  "name": "x",',
+        '  "endScreens": [',
+        '    {',
+        '      "id": "p_1",',
+        '      "name": "A",',
+        '      "type": "other",',
+        '      "hint": "",',
+        '      "confirmedSettings": []',
+        '    }',
+        '  ],',
+        '  "rates": [0.10]',
+        '}',
+        '',
+      ].join('\r\n')
+    );
+  });
+
+  it('タブで字下げしたファイルでは、キーの行のタブに合わせる（配列の中は2スペースで整形）', () => {
+    const text = [
+      '{',
+      '\t"name": "x",',
+      '\t"endScreens": [',
+      '\t\t{ "id": "p", "name": "親", "patterns": [{ "name": "A" }] }',
+      '\t]',
+      '}',
+      '',
+    ].join('\n');
+    expect(rewriteMachineText(text).text).toBe(
+      [
+        '{',
+        '\t"name": "x",',
+        '\t"endScreens": [',
+        '\t  {',
+        '\t    "id": "p_1",',
+        '\t    "name": "A",',
+        '\t    "type": "other",',
+        '\t    "hint": "",',
+        '\t    "confirmedSettings": []',
+        '\t  }',
+        '\t]',
+        '}',
+        '',
+      ].join('\n')
+    );
+  });
+
+  it('改行に LF と CRLF が混ざったファイルは、書き直さずに例外を投げる', () => {
+    const text =
+      '{\r\n  "name": "混ざり",\n  "endScreens": [{ "id": "p", "name": "親", "patterns": [{ "name": "A" }] }]\r\n}\r\n';
+    expect(() => rewriteMachineText(text)).toThrow(
+      '混ざり: 改行に LF と CRLF が混ざっている（そろえてから書き直す）'
     );
   });
 

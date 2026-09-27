@@ -103,7 +103,7 @@ git commit -m "feat(machines): {機種名}を追加"
 
 出典記録（`provenance/{id}.json`）がある機種で値を変えたら、記録も直します（機種ファイルと記録が食い違うと validate が止めます）。記録がまだ無い機種は、段階2の見直しで記録を作るまでは、記録なしで直してかまいません（全機種で必須にするのは段階3）。項目を外すときは、記録の有無にかかわらず、その機種の出典記録（全項目）を作ってから `removed` に書きます（外した項目が `removed` に無いと `npm run check:base` が止めます）。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。
 
-終了画面に `patterns`（レガシー形式）がある機種を見直すときは、先に `node scripts/expand-patterns.mjs machines/{dir}/{id}.json --write` で普通の終了画面に書き直します（アプリが読む形は変わらないので、この書き直しだけでは `version` と `lastUpdated` を変えません。詳しくは [data-format.md](data-format.md) の「patterns 形式（レガシー）」）。
+終了画面に `patterns`（レガシー形式）がある機種を見直すときは、先に `node scripts/expand-patterns.mjs machines/{dir}/{id}.json --write` で普通の終了画面に書き直します（値もアプリが読む形も同じなので、この書き直しだけでは `version` と `lastUpdated` を変えません（版は上げない）。ただしアプリはファイルの中身の違いで「更新」を知らせます（取り込み直しても推定の結果は同じ）。詳しくは [data-format.md](data-format.md) の「patterns 形式（レガシー）」）。
 
 ### version の更新ルール
 

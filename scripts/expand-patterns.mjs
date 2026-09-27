@@ -4,9 +4,12 @@
  * 最上位の終了画面の patterns を、アプリが読む形の普通の終了画面に書き直す（本人の決定 2026-09-27・仕様 5.4）。
  * 作る終了画面は、アプリの移行処理が作る id を明示の id として持つ。書き直してもアプリが読む形は変わらない
  * （scripts/lib/expand-patterns.mjs が確かめ、変わるなら書き直さない）。endScreenGroups の中と voiceCounts の
- * patterns は書き直さない。機種の version と lastUpdated は変えない（利用者に更新を届ける必要が無い）。
+ * patterns は書き直さない。patterns を持つ親に、書き直すと消える欄（confirmedSettings など）があれば書き直さない。
+ * 機種の version と lastUpdated は変えない（版は上げない。値もアプリが読む形も同じ）。ただしアプリはファイルの
+ * 中身の違いで「更新」を知らせる（取り込み直しても推定の結果は同じ）。
  * --write は、最上位の endScreens の配列だけを差し替え、ほかの部分（数の書き方・1行の配列・キーの順・
- * 改行）は1バイトも変えない（PR の差分を、書き直した終了画面だけにするため）。
+ * 改行）は1バイトも変えない（PR の差分を、書き直した終了画面だけにするため）。新しい配列は元のファイルの
+ * 改行で書き、LF と CRLF が混ざったファイルは書き直さない。
  *
  * Usage:
  *   node scripts/expand-patterns.mjs <機種ファイル>...          # 書き直す内容を表示するだけ
@@ -14,6 +17,8 @@
  *
  * 終了コード: 0 = 表示・書き直しができた（書き直すものが無いときも）/ 2 = 読めない・書き直せない・書き込めない
  * 1つでも読めない・書き直せないファイルがあれば、どのファイルも書き直さない。
+ * 書き込みの途中で失敗したときは、それまでのファイルは書き直し済みのまま残る（一覧と終了コード 2 で知らせる。
+ * git で戻せる）。
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -81,6 +86,31 @@ function describePlan({ path, expanded }) {
   ];
 }
 
+/**
+ * 書き直すファイルを順に書き、書き直したファイルの一覧を出す。書けないファイルがあればそこで止め、
+ * 終了コードを 2 にする（それまでのファイルは書き直し済みのまま残る）
+ */
+function writePlans(targets) {
+  const written = [];
+  let writeError;
+  for (const plan of targets) {
+    try {
+      writeFileSync(plan.path, plan.text, 'utf-8');
+      written.push(plan.path);
+    } catch (e) {
+      writeError = `${plan.path}: 書き込めない（${e.message}）`;
+      break;
+    }
+  }
+  console.log('');
+  console.log(`書き直したファイル: ${written.length}`);
+  for (const path of written) console.log(`  ${path}`);
+  if (writeError) {
+    console.error(writeError);
+    process.exitCode = 2;
+  }
+}
+
 function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.error) {
@@ -109,25 +139,7 @@ function main() {
     console.log('表示だけで、ファイルは変えていません。書き直すときは --write を付けてください');
     return;
   }
-
-  const written = [];
-  let writeError;
-  for (const plan of targets) {
-    try {
-      writeFileSync(plan.path, plan.text, 'utf-8');
-      written.push(plan.path);
-    } catch (e) {
-      writeError = `${plan.path}: 書き込めない（${e.message}）`;
-      break;
-    }
-  }
-  console.log('');
-  console.log(`書き直したファイル: ${written.length}`);
-  for (const path of written) console.log(`  ${path}`);
-  if (writeError) {
-    console.error(writeError);
-    process.exitCode = 2;
-  }
+  writePlans(targets);
 }
 
 main();
