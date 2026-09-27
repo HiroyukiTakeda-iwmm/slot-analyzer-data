@@ -107,6 +107,10 @@ slot-analyzer-data で使用するJSONデータの詳細仕様です。
 
 キーとして使用できる値: `"1"`, `"2"`, `"3"`, `"4"`, `"5"`, `"6"`, `"L"`, `"V"`
 
+アプリの推定が使う確率は、機種のすべての設定（`availableSettings`。省略時は `"1"`〜`"6"`）のキーを持つ。キーが1つでも欠けていると、アプリは推定全体を止める。設定に無いキーも書かない（どちらも `npm run validate` のエラー）。対象は、役・ゾーンの役・最上位の終了画面の `probabilities`（無ければ `distribution`）・`endScreenGroups` の中の終了画面の `probabilities`・`voiceCounts`・`musicCounts`・`effectCounts`・`trialSuccessRates` の `probabilities`。
+
+`0` は「その設定では出ない」の意味（例: 設定6確定の終了画面の、設定1〜4の確率）。値が分からない設定を `0` で埋めない（`0` を不明の意味には使わない）。
+
 ## confirmationEvents（設定確定演出）
 
 特定の設定を確定または除外する演出データです。
@@ -121,6 +125,8 @@ slot-analyzer-data で使用するJSONデータの詳細仕様です。
 | `id`                | string | いいえ | 一意識別子                                   |
 | `description`       | string | いいえ | 説明                                         |
 | `color`             | string | いいえ | 表示色                                       |
+
+`confirmedSettings`・`excludedSettings` には、機種の設定番号（`availableSettings`。省略時は `"1"`〜`"6"`）だけを書く。設定番号でない値があると、アプリは演出を有効にした時点で推定全体を止める。同じ設定を両方に書かない。終了画面（最上位と `endScreenGroups` の中）と `voiceCounts` の `confirmedSettings`・`excludedSettings` も同じ（どれも `npm run validate` のエラー）。
 
 ### 使い方の例
 
@@ -159,6 +165,19 @@ slot-analyzer-data で使用するJSONデータの詳細仕様です。
 | `probabilities`     | object | いいえ | 設定別出現確率                                      |
 | `patterns`          | array  | いいえ | 設定別パターン（レガシー形式）                      |
 | `distribution`      | object | いいえ | 設定別分布（レガシー形式）                          |
+
+### patterns 形式（レガシー）
+
+最上位の終了画面の `patterns` に、パターンを並べる形式。アプリの移行処理は、パターンごとの終了画面に展開する。
+
+| フィールド    | 型     | 必須   | 説明                                                                     |
+| ------------- | ------ | ------ | ------------------------------------------------------------------------ |
+| `name`        | string | はい   | パターン名（例: `"金背景"`）                                             |
+| `setting`     | string | いいえ | 確定する設定。機種の設定番号（`availableSettings`）の1つ（例: `"6"`）    |
+| `minSetting`  | number | いいえ | この設定以上が確定（例: `4`）。`setting` もあれば `setting` が優先される |
+| `description` | string | いいえ | 説明（アプリはパターンの説明として表示する）                             |
+
+`setting` は、そのまま確定する設定になる。設定番号でない値（`"high"`・`"odd"` など）を書くと、アプリはそのパターンを数えた時点で推定全体を止める。`minSetting` が数でないと、アプリは機種を読み込めない（どちらも `npm run validate` のエラー）。示唆の強さや偶奇などの意味は `name` と `description` に書き、確定する設定が分かっているときだけ `setting` か `minSetting` を書く。
 
 ### type の種類
 

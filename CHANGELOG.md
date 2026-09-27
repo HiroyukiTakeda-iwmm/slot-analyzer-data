@@ -2,6 +2,81 @@
 
 slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性情報を含む。
 
+## [3.9.0] - 2026-09-27
+
+公開中のアプリ（SlotAnalyzer build 15）で、終了画面を数えると設定推定が止まる不具合をデータ側で直し、同じ誤りを `npm run validate` で止める。アプリのコードは変えていない。
+
+### Fixed
+- **アプリで終了画面を数えると推定が止まる不具合（13機種・41件）**。アプリと同じ推定の経路で、全機種の終了画面・確定演出・ボイス等・役・試行成功率を1つずつ有効にして確かめた（2610件）。直す前は終了画面41件で推定が止まり、直した後は0件
+  - パターン形式の終了画面38件（12機種）: `setting` が設定番号でなかった（`"high"`・`"odd"` など）。アプリの移行処理は `setting` をそのまま確定する設定にするので、推定が止まっていた。`setting` を消した（`name`・`description` などは変えていない）。アプリはこのパターンを「確定する設定なし」として扱い、示唆の意味は各パターンの `name`・`description` に残る（アプリは `description` を説明として表示する）。rezero-season2 の「設定示唆パターン3」の `"6"` のように設定番号のものは残した
+  - onihama-kyoutou の終了画面3件: 確率に一部の設定のキーが無かった。欠けていた設定に 0（その設定では出ない）を足し、キーを設定の順（1, 2, 3, 4, 6）にそろえた。どれも説明と確定・否定の設定が 0 を示している
+- 直す前の値（段階2で出典を調べ、正しい確定・否定の設定を入れるときの手がかり）:
+
+| 機種 | 終了画面 | パターン | 消した `setting` の値 / 足した 0 |
+| --- | --- | --- | --- |
+| gundam-seed | CZ/ST終了画面 | 紫枠 | `"reset"` |
+| gundam-seed | CZ/ST終了画面 | 奇数設定示唆パターン | `"odd"` |
+| gundam-seed | CZ/ST終了画面 | 偶数設定示唆パターン | `"even"` |
+| gundam-seed | CZ/ST終了画面 | 高設定示唆（弱） | `"highWeak"` |
+| gundam-seed | CZ/ST終了画面 | 高設定示唆（強） | `"highStrong"` |
+| gundam-seed | CZ/ST終了画面 | 偶数設定濃厚 | `"evenConfirm"` |
+| gundam-seed | CZ/ST終了画面 | 設定1否定 | `"not1"` |
+| gundam-seed | CZ/ST終了画面 | 設定2否定 | `"not2"` |
+| gundam-seed | CZ/ST終了画面 | 設定3否定かつ高設定示唆 | `"not3High"` |
+| rezero-season2 | 殲滅ラッシュ終了画面 | 通常パターン1 | `"default"` |
+| rezero-season2 | 殲滅ラッシュ終了画面 | 通常パターン2 | `"default"` |
+| rezero-season2 | 殲滅ラッシュ終了画面 | 通常パターン3 | `"default"` |
+| rezero-season2 | 殲滅ラッシュ終了画面 | 設定示唆パターン1 | `"high"` |
+| rezero-season2 | 殲滅ラッシュ終了画面 | 設定示唆パターン2 | `"high"` |
+| isekai-quartet-bt | ボーナス終了画面 | デフォルト | `"default"` |
+| isekai-quartet-bt | ボーナス終了画面 | 主人公&ヒロイン集合 | `"highWeak"` |
+| isekai-quartet-bt | ボーナス終了画面 | ヒロイン集合 | `"highWeak"` |
+| isekai-quartet-bt | ボーナス終了画面 | ペテルギウス | `"highStrong"` |
+| striketheblood | AT・ボーナス終了時ランプ色 | 白 | `"default"` |
+| striketheblood | AT・ボーナス終了時ランプ色 | 青 | `"highWeak"` |
+| striketheblood | AT・ボーナス終了時ランプ色 | 緑 | `"highStrong"` |
+| neoplanet | 獲得枚数表示 | 803枚 | `"hint"` |
+| neoplanet | 星座（101G/301G到達時タッチ） | リノ座 | `"hint"` |
+| neoplanet | 星座（101G/301G到達時タッチ） | ケロット＆ケロルン座 | `"hint"` |
+| iza-bancho | AT終了画面 | 朱雀 | `"526"` |
+| iza-bancho | AT終了画面 | 青龍 | `"634"` |
+| iza-bancho | AT終了画面 | 刺客襲来 | `"234+"` |
+| yoshimune | ボーナス終了画面（花札） | 青短（黒枠） | `"highWeak"` |
+| yoshimune | ボーナス終了画面（花札） | 赤短（黒枠） | `"highStrong"` |
+| shin-eva | ボーナス終了画面 | 紫枠 | `"high"` |
+| shin-eva | ボーナス終了画面 | 金枠 | `"high"` |
+| salaryman-kintaro | ボーナス終了画面 | 漁師姿の金太郎 | `"odd"` |
+| salaryman-kintaro | ボーナス終了画面 | 真顔の金太郎 | `"even"` |
+| guiltycrown2 | BB終了画面 | GC黒 | `"25"` |
+| guiltycrown2 | BB終了画面 | GC白 | `"36"` |
+| biohazard5 | 獲得枚数表示 | 256枚 | `"hint"` |
+| biohazard5 | 獲得枚数表示 | 810枚 | `"hint"` |
+| dmc5 | 終了画面枠色 | 銅枠 | `"not"` |
+| onihama-kyoutou | 土産屋（鬼浜4人）（`at_end_miyageya`） | — | `"1": 0`（説明「設定2以上確定」・否定 `["1"]`） |
+| onihama-kyoutou | リュウジ&コウヘイ&タイガ（`at_end_ryuji_kouhei_taiga`） | — | `"2": 0`（説明「設定2否定（奇数設定示唆）」） |
+| onihama-kyoutou | 翔（`at_end_sho`） | — | `"1": 0, "2": 0, "3": 0, "4": 0`（説明「設定6確定」・否定 `["1","2","3","4"]`） |
+
+### Added
+- 検証器の規則（`npm run validate` のエラー。アプリの推定が止まる書き方を止める）
+  1. 終了画面（最上位と `endScreenGroups[].endScreens`）の `confirmedSettings`・`excludedSettings`: 設定番号でない値と、両方にある値
+  2. 最上位の終了画面の `patterns[]`: 設定番号でない `setting` と、数でない `minSetting`
+  3. 確定演出（`confirmationEvents`）の設定番号でない値: 警告からエラーに（アプリは演出を有効にした時点で推定が止まる）
+  4. `voiceCounts`・`musicCounts`・`effectCounts` の `confirmedSettings`・`excludedSettings`: 設定番号でない値と、両方にある値（これまでは voiceCounts の両方にある値だけ）
+  5. 推定に使う確率が機種のすべての設定のキーを持つこと（欠け・設定に無いキー）: 役・ゾーンの役・最上位の終了画面の `probabilities`（無ければ `distribution`）・`endScreenGroups` の中の終了画面の `probabilities`・`voiceCounts`・`musicCounts`・`effectCounts`・`trialSuccessRates`（役・ゾーンの役・試行成功率のキーの食い違いは、これまで警告だった）
+- 設定番号は機種の `availableSettings`（無ければ `"1"`〜`"6"`）。メッセージは項目と値を示し、アプリでの影響を末尾に添える（例:「（アプリの推定が止まる）」）
+- テスト: 規則ごとにエラーになる例と通る例（`tests/validate.test.mjs`）
+
+### Changed
+- 直した13機種の `version`（11機種 1.2 → 1.3、isekai-quartet-bt 1.0 → 1.1、onihama-kyoutou 1.1 → 1.2）と `lastUpdated`（2026-09-27）。`machines/index.json` の同じ13機種もそろえた。アプリは version が変わった機種を「更新あり」と示し、取り込み直すと直る（取り込み済みの機種は、利用者が取り込み直すまで前のデータのまま）
+- `machines/index.json`: version 3.8.0 → 3.9.0、updatedAt 2026-09-27
+- `package.json`: version 3.9.0（`package-lock.json` は据え置き）
+- 文書: data-format（`patterns` の `setting` と確率のキーの決まり）・quality-standards（検証の規則）・README（版と品質指標の実行日）
+- `machines/FUTURE_ADDITIONS.md`: からくりサーカス2 のメーカーを「三洋物産」から「SANKYO」に（新台の洗い出しで、すべての出典が SANKYO）
+
+### iOS互換性
+- **破壊的変更: なし**。機種の名前・並び・`id`・`displayOrder` は変えていない（アプリが作る ID は同じ。`npm run check:base` で確認）
+- slot-analyzer-ios の取り込みテスト（`npm run test:data-contract`）: index と149機種の150件が合格
+
 ## [Unreleased] - 段階0: 出典記録の仕組み
 
 機種データ（`machines/` の JSON）と `index.json` の version（3.8.0）は変えていない（`machines/FUTURE_ADDITIONS.md` は文書の修正だけ）。公開中のアプリへの影響はない。
