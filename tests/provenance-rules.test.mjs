@@ -4,6 +4,7 @@ import {
   decideNewItem,
   preferenceOrder,
   statusError,
+  toStoredProbability,
   valuesEqual,
 } from '../scripts/lib/provenance.mjs';
 
@@ -16,17 +17,27 @@ const KINDS = {
   maker: 'official',
 };
 
-describe('valuesEqual（許容差なしの完全一致）', () => {
+/** 分母の表を、機種ファイルに保存する確率（有効数字6桁）の表にする */
+const storedOf = (denominators) =>
+  Object.fromEntries(Object.entries(denominators).map(([k, v]) => [k, toStoredProbability(v)]));
+
+describe('valuesEqual（丸めの幅で比べない完全一致）', () => {
   it('設定の並び順は見ない（JS が並べ直さない、整数でないキーで確かめる）', () => {
     expect(valuesEqual(DEN, { L: 300, V: 200 }, { V: 200, L: 300 })).toBe(true);
   });
 
-  it('denominator / percent は、許容差の中でも違えば false', () => {
+  it('denominator / percent は、丸めの幅が重なっても値が違えば false', () => {
     expect(valuesEqual(DEN, { 1: 295.2 }, { 1: 295.24 })).toBe(false);
     expect(valuesEqual(DEN, { 1: null, 6: 277.7 }, { 1: null, 6: 277.7 })).toBe(true);
     expect(valuesEqual(DEN, { 1: null }, { 1: 8192 })).toBe(false);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10 })).toBe(true);
     expect(valuesEqual('percent', { 1: 10 }, { 1: 10.05 })).toBe(false);
+  });
+
+  it('表示の桁を残した文字列は、同じ数の値と同じでない（"300.0" と 300）', () => {
+    expect(valuesEqual(DEN, { 1: '300.0' }, { 1: 300 })).toBe(false);
+    expect(valuesEqual(DEN, { 1: '300.0' }, { 1: '300.0' })).toBe(true);
+    expect(valuesEqual(DEN, { 1: '3.1%' }, { 1: '3.1%' })).toBe(true);
   });
 
   it('settings は組として比べる（並び順と重なりは見ない）', () => {
@@ -150,17 +161,28 @@ describe('decideNewItem（新しく入れる値）', () => {
 });
 
 describe('decideExistingItem（既存の値の見直し）', () => {
+  // 今の値（current）は機種ファイルの値を分母にしたもの、stored はその確率そのもの
+  const at300 = { current: { 1: 300 }, stored: storedOf({ 1: 300 }) };
+
   it('2サイトで一致した値が今の値と違えば、その値へ直す', () => {
     const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.24 } };
-    expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 300 } })
-    ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: { 1: 295.2 } });
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, ...at300 })).toEqual({
+      outcome: 'adopt',
+      status: 'confirmed',
+      adopted: { 1: 295.2 },
+    });
   });
 
   it('今の値を1サイトだけが裏づける → kept-single-source', () => {
     const values = { 'nana-press': { 1: 295.2 }, '1geki': { 1: 310 } };
     expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 295.2 } })
+      decideExistingItem({
+        unit: DEN,
+        values,
+        sourceKinds: KINDS,
+        current: { 1: 295.2 },
+        stored: storedOf({ 1: 295.2 }),
+      })
     ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: { 1: 295.2 } });
   });
 
@@ -171,9 +193,11 @@ describe('decideExistingItem（既存の値の見直し）', () => {
       '1geki': { 1: 400 },
       'p-town-dmm': { 1: 400 },
     };
-    expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 300 } })
-    ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: { 1: 300 } });
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, ...at300 })).toEqual({
+      outcome: 'adopt',
+      status: 'kept-single-source',
+      adopted: { 1: 300 },
+    });
   });
 
   it('裏づけが無く、ちょんぼりすただけが別の値＋読み直し一致 → provisional-chonborista', () => {
@@ -183,7 +207,7 @@ describe('decideExistingItem（既存の値の見直し）', () => {
         unit: DEN,
         values,
         sourceKinds: KINDS,
-        current: { 1: 300 },
+        ...at300,
         reread: { 1: 295.2 },
       })
     ).toEqual({ outcome: 'adopt', status: 'provisional-chonborista', adopted: { 1: 295.2 } });
@@ -191,15 +215,73 @@ describe('decideExistingItem（既存の値の見直し）', () => {
 
   it('裏づけが無く、読み直しも無い → remove', () => {
     const values = { chonborista: { 1: 295.2 } };
-    expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 300 } })
-    ).toEqual({ outcome: 'remove', reason: '今の値を裏づける出典なし' });
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, ...at300 })).toEqual({
+      outcome: 'remove',
+      reason: '今の値を裏づける出典なし',
+    });
   });
 
   it('出典なし → remove', () => {
+    expect(decideExistingItem({ unit: DEN, values: {}, sourceKinds: KINDS, ...at300 })).toEqual({
+      outcome: 'remove',
+      reason: '出典なし',
+    });
+  });
+
+  it('小数6桁で保存した小さい確率も、出典の分母が裏づける → kept-single-source（I-4）', () => {
+    const values = { nana: { 1: 13107.2 } };
+    const current = { 1: 1 / 0.000076 };
     expect(
-      decideExistingItem({ unit: DEN, values: {}, sourceKinds: KINDS, current: { 1: 300 } })
-    ).toEqual({ outcome: 'remove', reason: '出典なし' });
+      decideExistingItem({
+        unit: DEN,
+        values,
+        sourceKinds: KINDS,
+        current,
+        stored: { 1: 0.000076 },
+      })
+    ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: current });
+  });
+
+  it('一部の設定だけの出典も、載っている設定がすべて合えば「残す」の裏づけに数える', () => {
+    const stored = { 1: 0.003388, 2: 0.003418, 5: 0.00351, 6: 0.003601 };
+    const current = Object.fromEntries(Object.entries(stored).map(([k, p]) => [k, 1 / p]));
+    const values = { nana: { 1: 295.2, 6: 277.7 } };
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current, stored })).toEqual({
+      outcome: 'adopt',
+      status: 'kept-single-source',
+      adopted: current,
+    });
+  });
+
+  it('数値の unit では「残す」の裏づけを stored で数える（current は採用値にだけ使う）', () => {
+    // current と stored が食い違う入力で、どちらで数えているかを確かめる
+    const values = { nana: { 1: 300 } };
+    expect(
+      decideExistingItem({
+        unit: DEN,
+        values,
+        sourceKinds: KINDS,
+        current: { 1: 300 },
+        stored: storedOf({ 1: 400 }),
+      })
+    ).toEqual({ outcome: 'remove', reason: '今の値を裏づける出典なし' });
+  });
+
+  it('数値の unit で stored（機種ファイルの確率）を渡さなければ例外', () => {
+    const values = { nana: { 1: 300 } };
+    for (const unit of [DEN, 'percent']) {
+      expect(() =>
+        decideExistingItem({ unit, values, sourceKinds: KINDS, current: { 1: 300 } })
+      ).toThrow('数値の項目には stored（機種ファイルの確率）が必要');
+    }
+  });
+
+  it('設定の組・有無の unit では stored を見ず、今の値と一致する出典を数える', () => {
+    const gold = { confirmed: ['6'], excluded: ['1'] };
+    const values = { 'nana-press': gold, '1geki': { confirmed: ['5', '6'], excluded: [] } };
+    expect(
+      decideExistingItem({ unit: 'settings', values, sourceKinds: KINDS, current: gold })
+    ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: gold });
   });
 
   it('presence: 2サイトに載っていれば confirmed', () => {
@@ -211,9 +293,11 @@ describe('decideExistingItem（既存の値の見直し）', () => {
 
   it('公式があれば、今の値に関係なく公式の値で confirmed', () => {
     const values = { 'nana-press': { 1: 300 }, maker: { 1: 295.2 } };
-    expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 300 } })
-    ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: { 1: 295.2 } });
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, ...at300 })).toEqual({
+      outcome: 'adopt',
+      status: 'confirmed',
+      adopted: { 1: 295.2 },
+    });
   });
 
   it('ちょんぼりすただけが今の値と一致 → 暫定より先に kept-single-source', () => {
@@ -224,6 +308,7 @@ describe('decideExistingItem（既存の値の見直し）', () => {
         values,
         sourceKinds: KINDS,
         current: { 1: 295.2 },
+        stored: storedOf({ 1: 295.2 }),
         reread: { 1: 295.2 },
       })
     ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: { 1: 295.2 } });
@@ -237,7 +322,13 @@ describe('decideExistingItem（既存の値の見直し）', () => {
       'p-town-dmm': { 1: 400 },
     };
     expect(
-      decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current: { 1: 500 } })
+      decideExistingItem({
+        unit: DEN,
+        values,
+        sourceKinds: KINDS,
+        current: { 1: 500 },
+        stored: storedOf({ 1: 500 }),
+      })
     ).toEqual({ outcome: 'remove', reason: 'サイト間で食い違い、今の値を裏づける出典なし' });
   });
 });
@@ -294,10 +385,39 @@ describe('statusError（記録の status と値の関係）', () => {
   it('kept-single-source: 一致が1つ → null、0 → エラー', () => {
     const one = { '1geki': { 1: 295.2 } };
     const none = { '1geki': { 1: 310 } };
-    expect(statusError(item({ status: 'kept-single-source', values: one }), KINDS)).toBeNull();
-    expect(statusError(item({ status: 'kept-single-source', values: none }), KINDS)).toContain(
-      'kept-single-source には'
+    const stored = storedOf({ 1: 295.2 });
+    expect(
+      statusError(item({ status: 'kept-single-source', values: one }), KINDS, { stored })
+    ).toBeNull();
+    expect(
+      statusError(item({ status: 'kept-single-source', values: none }), KINDS, { stored })
+    ).toContain('kept-single-source には');
+  });
+
+  it('kept-single-source: 数値の unit では、機種ファイルの確率（stored）が無ければエラー', () => {
+    const values = { '1geki': { 1: 295.2 } };
+    expect(statusError(item({ status: 'kept-single-source', values }), KINDS)).toBe(
+      'kept-single-source の確かめには機種ファイルの確率が要る'
     );
+  });
+
+  it('kept-single-source: 裏づけは機種ファイルの確率の幅で、載っている設定だけを比べて数える', () => {
+    // 採用値（今の値を分母にしたもの）は 2 設定、出典は設定1だけ。分母の桁では 13107.2 と 13157.9… は合わない
+    const stored = { 1: 0.000076, 6: 0.0001 };
+    const adopted = { 1: 1 / 0.000076, 6: 1 / 0.0001 };
+    const values = { '1geki': { 1: 13107.2 } };
+    expect(
+      statusError(item({ status: 'kept-single-source', values, adopted }), KINDS, { stored })
+    ).toBeNull();
+  });
+
+  it('kept-single-source: 設定の組の unit では stored なしで、採用値と一致する出典を数える', () => {
+    const gold = { confirmed: ['6'], excluded: ['1'] };
+    const record = { unit: 'settings', status: 'kept-single-source', adopted: gold };
+    expect(statusError({ ...record, values: { '1geki': gold } }, KINDS)).toBeNull();
+    expect(
+      statusError({ ...record, values: { '1geki': { confirmed: ['6'], excluded: [] } } }, KINDS)
+    ).toContain('kept-single-source には');
   });
 
   it('confirmed: 別の値で2サイトが一致する組がある → エラー', () => {
@@ -326,7 +446,7 @@ describe('statusError（記録の status と値の関係）', () => {
     );
   });
 
-  it('confirmed: 採用値が選んだ出典の値そのものでない（許容差の中でも）→ エラー', () => {
+  it('confirmed: 採用値が選んだ出典の値そのものでない（丸めの幅が重なっても）→ エラー', () => {
     const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.24 } };
     expect(
       statusError(item({ status: 'confirmed', values, adopted: { 1: 294.92 } }), KINDS)
@@ -358,14 +478,28 @@ describe('採否と検査の一貫性', () => {
       unit: DEN,
       values: { 'nana-press': { 1: 295.2 }, '1geki': { 1: 310 } },
       current: { 1: 295.2 },
+      stored: storedOf({ 1: 295.2 }),
     },
     {
       unit: DEN,
       values: { chonborista: { 1: 295.2 } },
       current: { 1: 300 },
+      stored: storedOf({ 1: 300 }),
       reread: { 1: 295.2 },
     },
     { unit: 'presence', values: { chonborista: true, 'nana-press': true }, current: true },
+    {
+      unit: DEN,
+      values: { nana: { 1: 13107.2 } },
+      current: { 1: 1 / 0.000076 },
+      stored: { 1: 0.000076 },
+    },
+    {
+      unit: DEN,
+      values: { nana: { 1: 295.2, 6: 277.7 } },
+      current: { 1: 1 / 0.003388, 2: 1 / 0.003418, 5: 1 / 0.00351, 6: 1 / 0.003601 },
+      stored: { 1: 0.003388, 2: 0.003418, 5: 0.00351, 6: 0.003601 },
+    },
   ];
 
   it('decideNewItem / decideExistingItem が採用した記録は、すべて statusError を通る', () => {
@@ -381,10 +515,10 @@ describe('採否と検査の一貫性', () => {
           adopted: result.adopted,
           ...(c.reread ? { reread: { by: 'verifier', value: c.reread } } : {}),
         };
-        expect(statusError(record, KINDS)).toBeNull();
+        expect(statusError(record, KINDS, { stored: c.stored })).toBeNull();
         adopted += 1;
       }
     }
-    expect(adopted).toBe(8);
+    expect(adopted).toBe(10);
   });
 });

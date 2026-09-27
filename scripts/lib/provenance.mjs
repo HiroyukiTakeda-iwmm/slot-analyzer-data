@@ -4,10 +4,14 @@
  * 仕様: docs/superpowers/specs/2026-09-26-data-expansion-design.md の5章。
  *
  * 値の表し方（unit）:
- *   - denominator: 設定ごとの分母（1/x の x）。小役・ボーナスなどの確率
+ *   - denominator: 設定ごとの分母（1/x の x）。小役・ボーナスなどの確率。% で表示された値は "3.1%" と書ける
  *   - percent: 設定ごとの割合（0〜100）。試行成功率・移行率など
  *   - settings: 確定・否定する設定の組 { confirmed: [...], excluded: [...] }
  *   - presence: 数値を持たない項目。出典に載っていること自体を確かめる（値は true）
+ *
+ * 分母・割合の値は、出典の表示の桁のまま書く（数か、末尾の 0 を残す文字列 "300.0"）。値どうしは、表示の
+ * 最後の桁の半分の幅（丸めの幅）を確率に直し、すべての設定で幅が重なるかで比べる。機種ファイルの確率は、
+ * 小数6桁より粗くないとみなした幅で比べる（仕様 5.4）。
  *
  * 項目の種類（kind）と unit の一覧は schemas/provenance.schema.json が正本。
  */
@@ -18,14 +22,14 @@ export const CHONBORISTA_KEY = 'chonborista';
 /** zoneRole・endScreenGroupItem の名前で、親と子を区切る文字列 */
 export const NAME_SEPARATOR = '::';
 
-/** 分母の相対差の上限（0.1%）。サイトごとの丸めの違い（1/295.2 と 1/295.24 など）を許す */
-export const DENOMINATOR_TOLERANCE = 0.001;
+/** 機種ファイルの確率は、小数6桁より粗くないとみなす（末尾の 0 は JSON で消えるため、表示の桁では決めない） */
+export const STORED_MIN_DECIMALS = 6;
 
-/** 割合の差の上限（0.1 ポイント） */
-export const PERCENT_TOLERANCE = 0.1;
+/** 区間の端がちょうど接するときに、浮動小数点の誤差で落ちないための余裕（確率の絶対値） */
+const OVERLAP_EPSILON = 1e-12;
 
-/** 境界ちょうどの値が浮動小数点の誤差で落ちないための余裕 */
-const FLOAT_EPSILON = 1e-9;
+/** 出典の値として書ける文字列（表示の桁を残した数か、% 付きの割合） */
+const SHOWN_TEXT = /^(0|[1-9]\d*)(\.\d+)?%?$/;
 
 /** 保存する確率・割合の有効数字（小数6桁ではない。仕様 5.6） */
 const STORED_SIGNIFICANT_DIGITS = 6;
@@ -34,26 +38,88 @@ export function itemKey(kind, name) {
   return `${kind}${NAME_SEPARATOR}${name}`;
 }
 
-function isNumberMap(value) {
-  return (
-    value !== null &&
-    typeof value === 'object' &&
-    !Array.isArray(value) &&
-    Object.keys(value).length > 0 &&
-    Object.values(value).every((v) => typeof v === 'number' && Number.isFinite(v))
-  );
+/** 数値の unit（分母・割合）か。この unit の値は丸めの幅で比べ、機種ファイルの確率と照らす */
+export function isNumericUnit(unit) {
+  return unit === 'denominator' || unit === 'percent';
 }
 
-/** 分母の値: 設定ごとの 1 以上の有限数。確率 0 の設定は null */
-function isDenominatorMap(value) {
+// ================================================================
+// 丸めの幅（仕様 5.4）
+// ================================================================
+
+/**
+ * 数や数の文字列の、小数点より下の桁数（表示の桁）。指数表記（1.5e-7 など）にも対応する。
+ * @returns {number | null} 数として読めなければ null
+ */
+export function decimalsOf(raw) {
+  const text = typeof raw === 'number' ? String(raw) : String(raw).replace(/%$/, '');
+  const match = /^(\d+)(?:\.(\d+))?(?:e([+-]?\d+))?$/i.exec(text);
+  if (!match) return null;
+  const fraction = match[2]?.length ?? 0;
+  const exponent = Number(match[3] ?? 0);
+  return Math.max(0, fraction - exponent);
+}
+
+/**
+ * 出典に表示された値を、確率の幅にする（仕様 5.4）。表示の最後の桁の半分だけ幅を持たせる
+ * （295.2 → 分母 295.15〜295.25、"3.1%" → 3.05〜3.15%）。確率 0 は幅を持たず、0 とだけ一致する。
+ * "%" の付いた文字列は、項目の unit にかかわらず割合として読む。
+ * @param {'denominator' | 'percent'} unit
+ * @returns {{ zero: true } | { lo: number, hi: number } | null} 読めなければ null
+ */
+export function parseShown(unit, raw) {
+  if (raw === null) return unit === 'denominator' ? { zero: true } : null;
+  let form = unit;
+  let text;
+  if (typeof raw === 'number') {
+    if (!Number.isFinite(raw)) return null;
+    text = String(raw);
+  } else if (typeof raw === 'string' && SHOWN_TEXT.test(raw)) {
+    if (raw.endsWith('%')) form = 'percent';
+    text = raw.replace(/%$/, '');
+  } else {
+    return null;
+  }
+  const value = Number(text);
+  const decimals = decimalsOf(text);
+  if (decimals === null) return null;
+  const half = 0.5 * 10 ** -decimals;
+  if (form === 'percent') {
+    if (!(value >= 0 && value <= 100)) return null;
+    if (value === 0) return { zero: true };
+    return { lo: Math.max(0, value - half) / 100, hi: Math.min(100, value + half) / 100 };
+  }
+  if (!(value >= 1)) return null;
+  return { lo: 1 / (value + half), hi: Math.min(1, 1 / (value - half)) };
+}
+
+/**
+ * 機種ファイルの確率（0〜1）の幅。
+ * @returns {{ zero: true } | { lo: number, hi: number } | null} 確率として読めなければ null
+ */
+export function storedInterval(p) {
+  if (typeof p !== 'number' || !(p >= 0 && p <= 1)) return null;
+  if (p === 0) return { zero: true };
+  const decimals = Math.max(decimalsOf(p) ?? 0, STORED_MIN_DECIMALS);
+  const half = 0.5 * 10 ** -decimals;
+  return { lo: Math.max(0, p - half), hi: Math.min(1, p + half) };
+}
+
+/** 2つの幅が重なるか。確率 0 は確率 0 とだけ重なる。読めない値（null）は重ならない */
+export function intervalsOverlap(a, b) {
+  if (a === null || b === null) return false;
+  if (a.zero || b.zero) return Boolean(a.zero && b.zero);
+  return a.lo <= b.hi + OVERLAP_EPSILON && b.lo <= a.hi + OVERLAP_EPSILON;
+}
+
+/** 設定ごとの値の表で、すべての値を unit の値として読めるか（空の表・配列は読めない） */
+function isShownMap(unit, value) {
   return (
     value !== null &&
     typeof value === 'object' &&
     !Array.isArray(value) &&
     Object.keys(value).length > 0 &&
-    Object.values(value).every(
-      (v) => v === null || (typeof v === 'number' && Number.isFinite(v) && v >= 1)
-    )
+    Object.values(value).every((v) => parseShown(unit, v) !== null)
   );
 }
 
@@ -68,13 +134,13 @@ function isStringArray(value) {
 export function shapeError(unit, value) {
   switch (unit) {
     case 'denominator':
-      return isDenominatorMap(value)
+      return isShownMap('denominator', value)
         ? null
-        : '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
+        : '設定ごとに、1 以上の分母（数か、表示の桁を残した文字列）、% 付きの割合、または確率 0 を表す null が必要';
     case 'percent':
-      return isNumberMap(value) && Object.values(value).every((v) => v >= 0 && v <= 100)
+      return isShownMap('percent', value)
         ? null
-        : '設定ごとの 0〜100 の割合が必要';
+        : '設定ごとに、0〜100 の割合（数か、表示の桁を残した文字列）が必要';
     case 'settings':
       return value !== null &&
         typeof value === 'object' &&
@@ -101,31 +167,22 @@ function sameSet(a, b) {
   return sa.length === sb.length && sa.every((v, i) => v === sb[i]);
 }
 
-/** 分母どうしが一致するか（差が 0.1% 以内）。確率 0（null）は null とだけ一致する */
-function denominatorsAgree(x, y) {
-  if (x === null || y === null) return x === y;
-  return Math.abs(x - y) / Math.max(x, y) <= DENOMINATOR_TOLERANCE + FLOAT_EPSILON;
-}
-
-/**
- * 割合どうしが一致するか（差が 0.1 ポイント以内）。0 は「その設定では起きない」（設定を否定できる）を
- * 表すので、0 とだけ一致する（0.1 ポイントの許容差で 0.1% と一致させない）
- */
-function percentsAgree(x, y) {
-  if (x === 0 || y === 0) return x === y;
-  return Math.abs(x - y) <= PERCENT_TOLERANCE + FLOAT_EPSILON;
-}
-
 /**
  * 2つの値が一致するか（仕様 5.4）。形が unit に合わない値は一致しないとみなす。
+ * 分母・割合は、設定の組が同じで、すべての設定で丸めの幅が重なれば一致する。確率 0（分母の null・割合の 0）は、
+ * 「その設定では起きない」（設定を否定できる）を表すので、確率 0 とだけ一致する。
  */
 export function valuesAgree(unit, a, b) {
   if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
   switch (unit) {
     case 'denominator':
-      return sameKeys(a, b) && Object.keys(a).every((k) => denominatorsAgree(a[k], b[k]));
     case 'percent':
-      return sameKeys(a, b) && Object.keys(a).every((k) => percentsAgree(a[k], b[k]));
+      return (
+        sameKeys(a, b) &&
+        Object.keys(a).every((k) =>
+          intervalsOverlap(parseShown(unit, a[k]), parseShown(unit, b[k]))
+        )
+      );
     case 'settings':
       return sameSet(a.confirmed, b.confirmed) && sameSet(a.excluded, b.excluded);
     case 'presence':
@@ -152,9 +209,47 @@ export function toStoredRate(percent) {
   return Number((percent / 100).toPrecision(STORED_SIGNIFICANT_DIGITS));
 }
 
+/** 表示の値を、機種ファイルに保存する確率（有効数字6桁）にする */
+export function toStoredFromShown(unit, raw) {
+  if (raw === null) return 0;
+  const text = typeof raw === 'number' ? String(raw) : raw;
+  if (text.endsWith('%') || unit === 'percent') return toStoredRate(Number(text.replace(/%$/, '')));
+  return toStoredProbability(Number(text));
+}
+
 /** 項目の設定ごとの数値（`probabilities`、無ければ `rates`） */
 function numericMap(entry) {
   return entry.probabilities ?? entry.rates ?? null;
+}
+
+/** 項目の確率（listMachineItems の entry を渡す。最上位の終了画面の distribution はそこで渡し直している） */
+export function storedMap(entry) {
+  return numericMap(entry);
+}
+
+/**
+ * 出典などの値が、機種ファイルの確率と一致するか。partial では、値に載っている設定だけを比べる
+ * （既存の値の「残す」の裏づけ。本人の決定 2026-09-27）。値の設定がすべて機種ファイルにあり、1つ以上あること。
+ */
+export function agreesWithStored(unit, value, stored, { partial = false } = {}) {
+  if (shapeError(unit, value) !== null || stored === null || typeof stored !== 'object') {
+    return false;
+  }
+  const keys = Object.keys(value);
+  const keysOk = partial
+    ? keys.length > 0 && keys.every((k) => Object.hasOwn(stored, k))
+    : sameKeys(value, stored);
+  return (
+    keysOk &&
+    keys.every((k) => intervalsOverlap(parseShown(unit, value[k]), storedInterval(stored[k])))
+  );
+}
+
+/** 機種ファイルの確率を裏づける出典のキー（partial で数える） */
+export function storedSupporters(unit, values, stored) {
+  return Object.keys(values).filter((key) =>
+    agreesWithStored(unit, values[key], stored, { partial: true })
+  );
 }
 
 function mapValues(obj, fn) {
@@ -202,8 +297,8 @@ const PERCENT_MIN_PROBABILITY = 0.1;
  *   段階1で決めるまで記録できない（空の配列を返す）
  * - 役（role・zoneRole）は denominator
  * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら
- *   denominator か percent、それ以外は denominator（割合の 0.1 ポイントの許容差は、小さい値には緩すぎるため）。
- *   最上位の終了画面の distribution は、listMachineItems が probabilities として渡す
+ *   denominator か percent、それ以外は denominator（割合の丸めの幅は、小さい値には値に比べて広すぎるため。
+ *   0.4% と書くと 0.35〜0.45%）。最上位の終了画面の distribution は、listMachineItems が probabilities として渡す
  * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
  * 数値と設定の組の両方がある項目は、数値の側で決める。
  * @returns {string[]}
@@ -330,8 +425,8 @@ export function preferenceOrder(values, sourceKinds) {
 }
 
 /**
- * 2つの値が完全に同じか（許容差なし）。採用値が、選んだ出典の値そのものかを確かめるのに使う。
- * 形が unit に合わない値は同じとみなさない。
+ * 2つの値が完全に同じか（丸めの幅で比べない。表示の桁を残した "300.0" と数の 300 も同じでない）。
+ * 採用値が、選んだ出典の値そのものかを確かめるのに使う。形が unit に合わない値は同じとみなさない。
  */
 export function valuesEqual(unit, a, b) {
   if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
@@ -430,17 +525,32 @@ export function decideNewItem({ unit, values, sourceKinds, reread }) {
 }
 
 /**
- * 既存の値の採否（仕様 5.5 後半）。current は今の機種ファイルの値（unit の形）。
+ * 今の値を「残す」裏づけになる出典のキー（仕様 5.5 の既存の値の規則2）。
+ * 数値の unit では、機種ファイルの確率（stored）の幅と、出典の値に載っている設定だけを比べる（storedSupporters）。
+ * 分母に直した値（1 ÷ 確率）の桁では比べない。設定の組・有無の unit では、今の値と一致する出典を数える。
+ */
+function keptSupporters(unit, values, { current, stored }) {
+  return isNumericUnit(unit)
+    ? storedSupporters(unit, values, stored)
+    : supporters(unit, values, current);
+}
+
+/**
+ * 既存の値の採否（仕様 5.5 後半）。current は今の機種ファイルの値（unit の形。kept-single-source の採用値）。
+ * stored は今の機種ファイルの確率（storedMap の結果）で、数値の unit（denominator・percent）では必須。
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
  *   | { outcome: 'remove', reason: string }}
  */
-export function decideExistingItem({ unit, values, sourceKinds, reread, current }) {
+export function decideExistingItem({ unit, values, sourceKinds, reread, current, stored }) {
+  if (isNumericUnit(unit) && stored == null) {
+    throw new Error('数値の項目には stored（機種ファイルの確率）が必要');
+  }
   assertShapes(unit, values, reread);
   const found = findConfirmed(unit, values, sourceKinds);
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
   }
-  if (supporters(unit, values, current).length >= 1) {
+  if (keptSupporters(unit, values, { current, stored }).length >= 1) {
     return { outcome: 'adopt', status: 'kept-single-source', adopted: current };
   }
   if (!found && isChonboristaOnly(values) && rereadAgrees(unit, values, reread)) {
@@ -473,9 +583,11 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current 
  *   reread?: { by: string, value: unknown } }} item reread は記録の形（{ by, value }）。
  *   decideNewItem / decideExistingItem の reread は値そのもの
  * @param {Record<string, string>} sourceKinds
+ * @param {{ stored?: Record<string, number> | null }} [context] stored は機種ファイルの確率（storedMap の結果）。
+ *   数値の unit の kept-single-source で、裏づけを decideExistingItem と同じく機種ファイルの確率で数えるのに使う
  * @returns {string | null} 問題の説明。問題なければ null
  */
-export function statusError(item, sourceKinds) {
+export function statusError(item, sourceKinds, { stored } = {}) {
   const { unit, status, values, adopted, reread } = item;
   const found = findConfirmed(unit, values, sourceKinds);
   const confirmedValue = found && !found.conflict ? found.adopted : undefined;
@@ -499,7 +611,10 @@ export function statusError(item, sourceKinds) {
       if (confirmedValue !== undefined) {
         return 'kept-single-source は、公式の値や2サイト一致の値が無いときだけ使う（confirmed にする）';
       }
-      return supporters(unit, values, adopted).length >= 1
+      if (isNumericUnit(unit) && stored == null) {
+        return 'kept-single-source の確かめには機種ファイルの確率が要る';
+      }
+      return keptSupporters(unit, values, { current: adopted, stored }).length >= 1
         ? null
         : 'kept-single-source には、採用値と一致する出典が1つ以上必要';
     default:

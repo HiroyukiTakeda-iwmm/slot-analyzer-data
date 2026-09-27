@@ -66,16 +66,18 @@ describe('checkRulesAgainstBase: kept-single-source', () => {
   });
 
   it('機種ファイルの値が main から変わったら、一致の条件の範囲でも報告する', () => {
-    // 1/295.2 → 1/295.3 は 5.4 の一致の条件（0.1% 以内）に入るが、残す値は変えない
-    expect(run(files([big(0.00338753)]), files([big(0.00338639)]), recordsOf(kept()))).toEqual([
+    // 1/295.2 → 1/295.22（0.0033873）は、出典の 295.2（丸めの幅 295.15〜295.25）と 5.4 の条件で
+    // 一致するが、残す値は変えない
+    expect(run(files([big(0.00338753)]), files([big(0.0033873)]), recordsOf(kept()))).toEqual([
       'test-machine: role::BIG: kept-single-source の値が main から変わった',
     ]);
   });
 
   it('採用値が main の値そのものでなければ、一致の条件の範囲でも報告する', () => {
-    // 許容差による一致は推移しない。間の値を採用値に書くと、今の値を裏づけない出典でも通ってしまう
+    // 丸めの幅の重なりによる一致は推移しない。295.2 は main の確率 0.00338753 と重なるが、
+    // main の値そのもの（1 ÷ 0.00338753）ではない
     const map = files([big(0.00338753)]);
-    expect(run(map, map, recordsOf(kept({ 1: 295.35 })))).toEqual([
+    expect(run(map, map, recordsOf(kept({ 1: 295.2 })))).toEqual([
       'test-machine: role::BIG: kept-single-source の採用値が main の値そのものでない',
     ]);
   });
@@ -111,6 +113,46 @@ describe('checkRulesAgainstBase: provisional-chonborista', () => {
   it('main に無い項目（新しく入れる値）は、main の値と比べない', () => {
     const base = { 'machines/index.json': indexJson([]) };
     expect(run(base, files([big(0.00338753)]), recordsOf(provisional({ 1: 295.2 })))).toEqual([]);
+  });
+
+  it('main の確率の幅で比べる（小数6桁の 0.000076 と、ちょんぼりすたの 13107.2 は一致する）', () => {
+    const map = files([big(0.000076)]);
+    expect(run(map, map, recordsOf(provisional({ 1: 13107.2 })))).toEqual([
+      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+    ]);
+  });
+
+  it('ちょんぼりすたが一部の設定だけでも、載っている設定がすべて main と合えば報告する（「残す」と同じ数え方）', () => {
+    const map = files([{ ...big(0.00338753), probabilities: { 1: 0.00338753, 6: 0.00360101 } }]);
+    expect(run(map, map, recordsOf(provisional({ 1: 295.2 })))).toEqual([
+      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+    ]);
+    expect(run(map, map, recordsOf(provisional({ 1: 295.2, 6: 280 })))).toEqual([]);
+  });
+
+  it('設定の組の項目は、今までどおり main の値と組で比べる', () => {
+    const gold = { name: '金トロフィー', confirmedSettings: ['6'], excludedSettings: ['1'] };
+    const map = {
+      ...files([big(0.00338753)]),
+      'machines/test/test-machine.json': JSON.stringify({
+        name: 'テスト機種',
+        roles: [big(0.00338753)],
+        confirmationEvents: [gold],
+      }),
+    };
+    const settingsItem = (chonborista) => ({
+      kind: 'confirmationEvent',
+      name: '金トロフィー',
+      unit: 'settings',
+      status: 'provisional-chonborista',
+      values: { chonborista },
+      adopted: chonborista,
+      reread: { by: 'verifier', value: chonborista },
+    });
+    expect(run(map, map, recordsOf(settingsItem({ confirmed: ['6'], excluded: ['1'] })))).toEqual([
+      'test-machine: confirmationEvent::金トロフィー: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+    ]);
+    expect(run(map, map, recordsOf(settingsItem({ confirmed: ['6'], excluded: [] })))).toEqual([]);
   });
 });
 

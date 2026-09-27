@@ -156,6 +156,127 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('role::BIG: 機種ファイルの値が採用値と一致しない');
   });
 
+  it('% 表示の値（"3.1%"）を採用値にした分母の項目は、機種ファイルの確率（0.031）と一致して通る', () => {
+    const cherry = {
+      ...machine,
+      roles: [{ ...machine.roles[0], probabilities: { 1: 0.031, 6: toStoredProbability(277.7) } }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: cherry }];
+    const shown = { 1: '3.1%', 6: 277.7 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: shown, 'nana-press': shown },
+      adopted: shown,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+  });
+
+  it('採用値は機種ファイルの確率の幅で比べる（295.4 は 1/295.2 の 0.00338753 と一致しない）', () => {
+    const near = { 1: 295.4, 6: 277.7 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: near, 'nana-press': near },
+      adopted: near,
+    };
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: 機種ファイルの値が採用値と一致しない',
+    ]);
+  });
+
+  it('小数6桁で保存した小さい確率（0.000076）は、出典の分母 13107.2 と一致して通る（I-4）', () => {
+    // 1 ÷ 0.000076 = 13157.9… の桁で比べると一致しない。機種ファイルの確率の幅（0.0000755〜0.0000765）で比べる
+    const small = {
+      ...machine,
+      roles: [
+        { ...machine.roles[0], probabilities: { 1: 0.000076, 6: toStoredProbability(277.7) } },
+      ],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: small }];
+    const shown = { 1: 13107.2, 6: 277.7 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: shown, 'nana-press': shown },
+      adopted: shown,
+    };
+    expect(run(rec, { files }).errors).toEqual([]);
+  });
+
+  it('区切りのよい確率（割合 0.25）も、機種ファイルの確率の幅で比べる（25.3% は一致しない）', () => {
+    // 0.25 × 100 = 25 の桁（24.5〜25.5%）で比べると一致してしまう
+    const withRates = {
+      ...machine,
+      trialSuccessRates: [{ name: 'CZ成功率', probabilities: { 1: 0.25, 6: 0.5 } }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withRates }];
+    const item = (value) => ({
+      kind: 'trialSuccessRate',
+      name: 'CZ成功率',
+      status: 'confirmed',
+      unit: 'percent',
+      values: { chonborista: value, 'nana-press': value },
+      adopted: value,
+    });
+    const rec = record();
+    rec.items.push(item({ 1: 25, 6: 50 }));
+    expect(run(rec, { files }).errors).toEqual([]);
+    rec.items[2] = item({ 1: 25.3, 6: 50 });
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'trialSuccessRate::CZ成功率: 機種ファイルの値が採用値と一致しない',
+    ]);
+  });
+
+  it('採用値は機種ファイルのすべての設定と比べる（一部の設定だけの採用値はエラー）', () => {
+    const partial = { 1: 295.2 };
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      values: { chonborista: partial, 'nana-press': partial },
+      adopted: partial,
+    };
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: 機種ファイルの値が採用値と一致しない',
+    ]);
+  });
+
+  it('kept-single-source は、機種ファイルの確率で裏づけを数える（一部の設定だけの出典も数える）', () => {
+    // 採用値は今の機種ファイルの値を分母にしたもの（machineValue の結果）
+    const { 1: p1, 6: p6 } = machine.roles[0].probabilities;
+    const rec = record();
+    rec.items[0] = {
+      ...rec.items[0],
+      status: 'kept-single-source',
+      values: { 'nana-press': { 1: 295.2 } },
+      adopted: { 1: 1 / p1, 6: 1 / p6 },
+    };
+    expect(run(rec).errors).toEqual([]);
+    rec.items[0].values = { 'nana-press': { 1: 295.4 } };
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: kept-single-source には、採用値と一致する出典が1つ以上必要',
+    ]);
+  });
+
+  it('機種ファイルに無い項目の kept-single-source も、落ちずにエラーとして報告する', () => {
+    const rec = record();
+    rec.items.push({
+      kind: 'role',
+      name: 'REG',
+      status: 'kept-single-source',
+      unit: 'denominator',
+      values: { 'nana-press': { 1: 400 } },
+      adopted: { 1: 400 },
+    });
+    expect(messages(run(rec))).toContain('role::REG: 機種ファイルに無い項目の記録');
+  });
+
+  it('値の文字列は、表示の桁を残した数か % 付きの割合だけ（"1/300" はスキーマ違反）', () => {
+    const rec = record();
+    rec.items[0] = { ...rec.items[0], adopted: { 1: '1/300', 6: 277.7 } };
+    expect(messages(run(rec))).toContain('スキーマ違反 /items/0/adopted');
+  });
+
   it('confirmed なのに出典が1つだけならエラー', () => {
     const rec = record();
     rec.items[0] = { ...rec.items[0], values: { chonborista: BIG } };
@@ -222,7 +343,8 @@ describe('validateProvenance', () => {
       values: { chonborista: bad, 'nana-press': bad },
       adopted: bad,
     };
-    const problem = '設定ごとに、1 以上の分母か、確率 0 を表す null が必要';
+    const problem =
+      '設定ごとに、1 以上の分母（数か、表示の桁を残した文字列）、% 付きの割合、または確率 0 を表す null が必要';
     expect(run(rec).errors.map((e) => e.message)).toEqual([
       `role::BIG: adopted が unit=denominator の形に合わない（${problem}）`,
       `role::BIG: values.chonborista が unit=denominator の形に合わない（${problem}）`,
