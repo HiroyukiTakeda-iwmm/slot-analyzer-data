@@ -50,23 +50,42 @@ const PATTERN_PARENT_KEYS = new Set([
   'patterns',
 ]);
 
+/** patterns の要素の欄のうち、移行処理が読むもの（name・description と、確定する設定の setting・minSetting） */
+const PATTERN_KEYS = new Set(['name', 'setting', 'minSetting', 'description']);
+
 /** 例外の文で機種を示す名前（name が無ければ「名前のない機種」。CLI はファイル名を前に付ける） */
 function machineLabel(machine) {
   return typeof machine.name === 'string' && machine.name !== '' ? machine.name : '名前のない機種';
 }
 
+/** 例外の文でパターンを示す（名前が無ければ何番目か） */
+function patternLabel(pattern, index) {
+  return typeof pattern.name === 'string' && pattern.name !== ''
+    ? `パターン「${pattern.name}」`
+    : `${index + 1}番目のパターン`;
+}
+
 /**
- * patterns を持つ親に、ほかの欄（confirmedSettings・probabilities など）があれば例外を投げる。
- * アプリは使わないので読む形は変わらないが、書き直すと黙って消えるため、誰かが足した欄を見落とさない
+ * patterns を持つ親と、patterns の要素に、書き直すと消える欄（親の confirmedSettings・probabilities、
+ * 要素の probability など）があれば例外を投げる。アプリは使わないので読む形は変わらないが、書き直すと
+ * 黙って消えるため、誰かが足した欄を見落とさない。オブジェクトでない要素は移行処理の扱いに任せる
  */
-function assertNoUnexpectedParentKeys(machine, screens) {
+function assertNoUnexpectedKeys(machine, screens) {
+  const stop = (where, keys) => {
+    throw new Error(
+      `${machineLabel(machine)}: ${where}の ${keys.join('・')} は、書き直すと消える（アプリは使わないが、消す前に中身を確かめる）`
+    );
+  };
   for (const screen of screens.filter(hasPatterns)) {
     const unexpected = Object.keys(screen).filter((key) => !PATTERN_PARENT_KEYS.has(key));
-    if (unexpected.length > 0) {
-      throw new Error(
-        `${machineLabel(machine)}: 終了画面「${screen.name}」の ${unexpected.join('・')} は、書き直すと消える（アプリは使わないが、消す前に中身を確かめる）`
-      );
-    }
+    if (unexpected.length > 0) stop(`終了画面「${screen.name}」`, unexpected);
+    screen.patterns.forEach((pattern, index) => {
+      if (pattern === null || typeof pattern !== 'object' || Array.isArray(pattern)) return;
+      const extra = Object.keys(pattern).filter((key) => !PATTERN_KEYS.has(key));
+      if (extra.length > 0) {
+        stop(`終了画面「${screen.name}」の${patternLabel(pattern, index)}`, extra);
+      }
+    });
   }
 }
 
@@ -80,7 +99,7 @@ function assertNoUnexpectedParentKeys(machine, screens) {
 export function expandEndScreenPatternsWithIds(machine) {
   const screens = machine.endScreens ?? [];
   if (!screens.some(hasPatterns)) return { machine, expanded: [] };
-  assertNoUnexpectedParentKeys(machine, screens);
+  assertNoUnexpectedKeys(machine, screens);
 
   const migrated = migrateV1ToV2(machine).endScreens;
   const endScreens = [];
@@ -110,7 +129,8 @@ export function expandEndScreenPatternsWithIds(machine) {
  * 書き直した後も、アプリが読む形（移行処理の結果）は元と同じ。同じでなければ例外を投げる。
  * 並び順は変えない（親の位置に、パターンの順で並べる）。作った終了画面は、移行処理が作る id を明示の
  * id として持つ。endScreenGroups の中と voiceCounts の patterns は書き直さない。
- * patterns を持つ親に id・name・type・hint・description・color・patterns 以外の欄があれば、例外を投げる。
+ * patterns を持つ親に id・name・type・hint・description・color・patterns 以外の欄があるか、patterns の要素に
+ * name・setting・minSetting・description 以外の欄があれば、例外を投げる。
  * patterns を持つ終了画面が無ければ、同じオブジェクトを返す。入力は書き換えない。
  *
  * @param {object} machine 機種ファイルの中身

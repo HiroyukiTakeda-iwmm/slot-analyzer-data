@@ -330,6 +330,28 @@ describe('expandEndScreenPatterns（合成の機種）', () => {
     );
   });
 
+  it('patterns の要素に、書き直すと消える欄（name・setting・minSetting・description 以外）があれば、例外を投げる', () => {
+    const named = {
+      name: 'テスト機種',
+      endScreens: [
+        { id: 'p', name: '親', patterns: [{ name: 'A', setting: '6', probability: 0.5 }] },
+      ],
+    };
+    expect(() => expandEndScreenPatterns(named)).toThrow(
+      'テスト機種: 終了画面「親」のパターン「A」の probability は、書き直すと消える（アプリは使わないが、消す前に中身を確かめる）'
+    );
+    // パターンに名前が無ければ、何番目かで示す
+    const unnamed = {
+      name: 'テスト機種',
+      endScreens: [
+        { id: 'p', name: '親', patterns: [{ name: 'A' }, { setting: '6', note: 'x', rate: 1 }] },
+      ],
+    };
+    expect(() => expandEndScreenPatterns(unnamed)).toThrow(
+      'テスト機種: 終了画面「親」の2番目のパターンの note・rate は、書き直すと消える'
+    );
+  });
+
   it('機種に name が無ければ、例外の文は「名前のない機種」にする', () => {
     const machine = {
       endScreens: [{ id: 'p', name: '親', excludedSettings: ['1'], patterns: [{ name: 'A' }] }],

@@ -4,7 +4,8 @@
  * 最上位の終了画面の patterns を、アプリが読む形の普通の終了画面に書き直す（本人の決定 2026-09-27・仕様 5.4）。
  * 作る終了画面は、アプリの移行処理が作る id を明示の id として持つ。書き直してもアプリが読む形は変わらない
  * （scripts/lib/expand-patterns.mjs が確かめ、変わるなら書き直さない）。endScreenGroups の中と voiceCounts の
- * patterns は書き直さない。patterns を持つ親に、書き直すと消える欄（confirmedSettings など）があれば書き直さない。
+ * patterns は書き直さない。patterns を持つ親とパターンの要素に、書き直すと消える欄（親の confirmedSettings、
+ * 要素の probability など）があれば書き直さない。
  * 機種の version と lastUpdated は変えない（版は上げない。値もアプリが読む形も同じ）。ただしアプリはファイルの
  * 中身の違いで「更新」を知らせる（取り込み直しても推定の結果は同じ）。
  * --write は、最上位の endScreens の配列だけを差し替え、ほかの部分（数の書き方・1行の配列・キーの順・
