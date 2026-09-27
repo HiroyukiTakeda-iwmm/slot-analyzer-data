@@ -183,17 +183,14 @@
       "patterns": [
         {
           "name": "白",
-          "setting": "default",
           "description": "デフォルト（設定示唆なし）"
         },
         {
           "name": "青",
-          "setting": "highWeak",
           "description": "高設定弱"
         },
         {
           "name": "緑",
-          "setting": "highStrong",
           "description": "高設定強"
         }
       ],
@@ -270,8 +267,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
-  "lastUpdated": "2026-03-27",
+  "version": "1.3",
+  "lastUpdated": "2026-09-27",
   "source": "ちょんぼりすた、一撃、ナナプレス",
   "description": "スマスロAT機。エピソードポイント50pt獲得率に設定差（設定1: 0.4%、設定6: 12.5%。高設定ほど50pt振り分けが大幅優遇）。小役確率は全設定共通。エンタトロフィー紅葉柄・エンタトロフィー銀・エンタトロフィー銅・エンタトロフィー金・エンタトロフィー虹で設定示唆。",
   "voiceCounts": []

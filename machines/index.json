@@ -1,6 +1,6 @@
 {
-  "version": "3.8.0",
-  "updatedAt": "2026-05-31T00:00:00Z",
+  "version": "3.9.0",
+  "updatedAt": "2026-09-27T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -122,7 +122,7 @@
       "name": "スマスロ Re:ゼロから始める異世界生活 season2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "rezero/rezero-season2.json",
       "tags": [
         "AT",
@@ -131,7 +131,7 @@
         "2024年新台"
       ],
       "description": "死に戻り（引き戻し）発生率に設定差、小役確率は全設定共通",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "bakemonogatari",
@@ -206,7 +206,7 @@
       "name": "スマスロバイオハザード5",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "biohazard/biohazard5.json",
       "tags": [
         "AT",
@@ -216,14 +216,14 @@
         "2025年新台"
       ],
       "description": "小役確率に設定差なし、CZ確率とインフェクション突入率に設定差",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "gundam-seed",
       "name": "Lパチスロ 機動戦士ガンダムSEED",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "gundam/gundam-seed.json",
       "tags": [
         "AT",
@@ -232,14 +232,14 @@
         "2025年新台"
       ],
       "description": "小役確率は全設定共通、終了画面による豊富な設定示唆",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "yoshimune",
       "name": "スマスロ吉宗",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "yoshimune/yoshimune.json",
       "tags": [
         "AT",
@@ -249,14 +249,14 @@
         "2025年新台"
       ],
       "description": "共通俵確率に設定差、花札による豊富な設定示唆",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "guiltycrown2",
       "name": "スマスロギルティクラウン2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "guiltycrown/guiltycrown2.json",
       "tags": [
         "AT",
@@ -265,14 +265,14 @@
         "2025年新台"
       ],
       "description": "弱スイカボーナス同時当選率に大きな設定差",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "iza-bancho",
       "name": "スマスロいざ！番長",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "bancho/iza-bancho.json",
       "tags": [
         "AT",
@@ -281,14 +281,14 @@
         "2025年新台"
       ],
       "description": "共通ベルAと青7BB直撃率に大きな設定差",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "dmc5",
       "name": "スマスロ デビル メイ クライ5 スタイリッシュトライブ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "dmc/dmc5.json",
       "tags": [
         "AT",
@@ -298,14 +298,14 @@
         "2025年新台"
       ],
       "description": "スマスロAT機。上位ST中エンブレム3個点灯率に設定差。エンタトロフィーで設定示唆",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "shin-eva",
       "name": "Lパチスロ シン・エヴァンゲリオン",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "eva/shin-eva.json",
       "tags": [
         "AT",
@@ -314,7 +314,7 @@
         "2025年新台"
       ],
       "description": "150G以内AT当選率に設定差、カヲル画面は設定6のみ",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "goblinslayer2",
@@ -337,7 +337,7 @@
       "name": "スマスロ ストライク・ザ・ブラッド",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "striketheblood/striketheblood.json",
       "tags": [
         "AT",
@@ -347,7 +347,7 @@
         "2024年新台"
       ],
       "description": "小役確率に設定差なし、終了時ランプ色で設定示唆",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "watakon",
@@ -387,7 +387,7 @@
       "name": "スマスロネオプラネット",
       "type": "A-type",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "neoplanet/neoplanet.json",
       "tags": [
         "Aタイプ",
@@ -397,7 +397,7 @@
         "2025年新台"
       ],
       "description": "スマスロAタイプ。5段階設定。モードF高確移行率に非常に大きな設定差",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "shamanking",
@@ -1226,7 +1226,7 @@
       "name": "Lサラリーマン金太郎",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.2",
+      "version": "1.3",
       "file": "kintaro/kintaro.json",
       "tags": [
         "AT",
@@ -1237,7 +1237,7 @@
         "ギンちゃんトロフィー"
       ],
       "description": "AT初当たり確率に大きな設定差。ギンちゃんトロフィー・獲得枚数表示で設定示唆",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "enen-shouboutai2",
@@ -1750,7 +1750,7 @@
       "name": "S鬼浜爆走愚連隊 狂闘旅情編",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "onihama-kyoutou/onihama-kyoutou.json",
       "tags": [
         "AT",
@@ -1759,7 +1759,7 @@
         "5段階設定"
       ],
       "description": "設定1,2,3,4,6の5段階。弱レア役AT直撃率に最大約15倍の設定差",
-      "lastUpdated": "2026-03-27"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "seiya-meiou-fukkatsu",
@@ -2371,7 +2371,7 @@
       "name": "A-SLOT+ 異世界かるてっと BT",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "isekai-quartet/isekai-quartet-bt.json",
       "tags": [
         "BT",
@@ -2383,7 +2383,7 @@
         "新台"
       ],
       "description": "サミー（GINZA）製BT機。4段階設定。BB中ハズレ目が最大判別要素。サミートロフィーで設定確定",
-      "lastUpdated": "2026-04-09"
+      "lastUpdated": "2026-09-27"
     },
     {
       "id": "triple-crown-seven",

@@ -105,12 +105,10 @@
       "patterns": [
         {
           "name": "紫枠",
-          "setting": "high",
           "description": "高設定示唆"
         },
         {
           "name": "金枠",
-          "setting": "high",
           "description": "高設定示唆"
         }
       ],
@@ -191,8 +189,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
-  "lastUpdated": "2026-03-27",
+  "version": "1.3",
+  "lastUpdated": "2026-09-27",
   "source": "ちょんぼりすた、一撃",
   "description": "スマスロAT機。150G以内AT当選率に設定差（高設定ほど150G以内での初当りが多い）。小役確率は全設定共通。"
 }
