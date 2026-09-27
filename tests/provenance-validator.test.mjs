@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
-import { toStoredProbability } from '../scripts/lib/provenance.mjs';
+import { statusError, toStoredProbability } from '../scripts/lib/provenance.mjs';
 
 const machine = {
   name: 'テスト機種',
@@ -228,7 +228,7 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('採用値は機種ファイルのすべての設定と比べる（一部の設定だけの採用値はエラー）', () => {
+  it('一部の設定だけの採用値の confirmed は、statusError（valuesEqual）を通っても、機種ファイルの全設定との比較で止まる', () => {
     const partial = { 1: 295.2 };
     const rec = record();
     rec.items[0] = {
@@ -236,6 +236,9 @@ describe('validateProvenance', () => {
       values: { chonborista: partial, 'nana-press': partial },
       adopted: partial,
     };
+    const kinds = { chonborista: 'analysis-site', 'nana-press': 'analysis-site' };
+    const stored = machine.roles[0].probabilities;
+    expect(statusError(rec.items[0], kinds, { stored })).toBeNull();
     expect(run(rec).errors.map((e) => e.message)).toEqual([
       'role::BIG: 機種ファイルの値が採用値と一致しない',
     ]);

@@ -21,6 +21,10 @@ const KINDS = {
 const storedOf = (denominators) =>
   Object.fromEntries(Object.entries(denominators).map(([k, v]) => [k, toStoredProbability(v)]));
 
+/** 機種ファイルの確率の表を、今の値（unit の形。machineValue と同じ 1 ÷ 確率）にする */
+const currentOf = (stored) =>
+  Object.fromEntries(Object.entries(stored).map(([k, p]) => [k, 1 / p]));
+
 describe('valuesEqual（丸めの幅で比べない完全一致）', () => {
   it('設定の並び順は見ない（JS が並べ直さない、整数でないキーで確かめる）', () => {
     expect(valuesEqual(DEN, { L: 300, V: 200 }, { V: 200, L: 300 })).toBe(true);
@@ -521,6 +525,14 @@ describe('statusError（記録の status と値の関係）', () => {
     );
   });
 
+  it('kept-single-source: stored が無ければ、2サイト一致があっても先にそれを返す（確定値に使えるかを決められない）', () => {
+    // 機種ファイルに無い項目の記録では、検証器は stored を渡せない
+    const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.2 } };
+    expect(statusError(item({ status: 'kept-single-source', values }), KINDS)).toBe(
+      'kept-single-source の確かめには機種ファイルの確率が要る'
+    );
+  });
+
   it('kept-single-source: 裏づけは機種ファイルの確率の幅で、載っている設定だけを比べて数える', () => {
     // 採用値（今の値を分母にしたもの）は 2 設定、出典は設定1だけ。分母の桁では 13107.2 と 13157.9… は合わない
     const stored = { 1: 0.000076, 6: 0.0001 };
@@ -561,9 +573,19 @@ describe('statusError（記録の status と値の関係）', () => {
 
   it('kept-single-source: 2サイト一致の値があるなら confirmed にすべき → エラー', () => {
     const values = { chonborista: { 1: 295.2 }, 'nana-press': { 1: 295.2 } };
-    expect(statusError(item({ status: 'kept-single-source', values }), KINDS)).toContain(
-      'confirmed にする'
-    );
+    const stored = storedOf({ 1: 295.2 });
+    expect(
+      statusError(item({ status: 'kept-single-source', values }), KINDS, { stored })
+    ).toContain('confirmed にする');
+  });
+
+  it('kept-single-source: 一部の設定だけで一致する2サイトは確定に数えないので、kept-single-source でよい', () => {
+    // 機種ファイルは4設定。出典は設定1・6だけで一致し、今の値を裏づける
+    const stored = storedOf({ 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 });
+    const partial = { 1: 295.2, 6: 277.7 };
+    const values = { chonborista: partial, 'nana-press': { ...partial } };
+    const record = item({ status: 'kept-single-source', values, adopted: currentOf(stored) });
+    expect(statusError(record, KINDS, { stored })).toBeNull();
   });
 
   it('confirmed: 採用値が選んだ出典の値そのものでない（丸めの幅が重なっても）→ エラー', () => {
@@ -630,6 +652,27 @@ describe('採否と検査の一貫性', () => {
       current: { 1: 1 / 0.003388, 2: 1 / 0.003418, 5: 1 / 0.00351, 6: 1 / 0.003601 },
       stored: { 1: 0.003388, 2: 0.003418, 5: 0.00351, 6: 0.003601 },
     },
+    // 一部の設定だけで一致する2サイト: 新しい値では入れず、既存の値では確定に使わずに「残す」
+    {
+      unit: DEN,
+      values: { chonborista: { 1: 295.2, 6: 277.7 }, 'nana-press': { 1: 295.2, 6: 277.7 } },
+      settings: ['1', '2', '5', '6'],
+      current: currentOf(storedOf({ 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 })),
+      stored: storedOf({ 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 }),
+    },
+    // 全設定で一致する2サイトと、矛盾しない一部だけの2サイト: 新しい値・既存の値とも confirmed
+    {
+      unit: DEN,
+      values: {
+        chonborista: { 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 },
+        'nana-press': { 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 },
+        '1geki': { 1: 295.2, 6: 277.7 },
+        'p-town-dmm': { 1: 295.2, 6: 277.7 },
+      },
+      settings: ['1', '2', '5', '6'],
+      current: currentOf(storedOf({ 1: 300, 2: 292.6, 5: 284.9, 6: 277.7 })),
+      stored: storedOf({ 1: 300, 2: 292.6, 5: 284.9, 6: 277.7 }),
+    },
   ];
 
   it('decideNewItem / decideExistingItem が採用した記録は、すべて statusError を通る', () => {
@@ -649,6 +692,112 @@ describe('採否と検査の一貫性', () => {
         adopted += 1;
       }
     }
-    expect(adopted).toBe(10);
+    expect(adopted).toBe(13);
+  });
+});
+
+describe('一部の設定だけの出典を、食い違いにも確定にも使わない（2026-09-27）', () => {
+  const FULL = { 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 };
+  const SETTINGS = ['1', '2', '5', '6'];
+  /** 全設定の値と、載っている設定（1・6）で矛盾しない */
+  const PART = { 1: 295.2, 6: 277.7 };
+  /** 設定1で全設定の値と食い違う */
+  const CLASH = { 1: 300, 6: 277.7 };
+  const newItem = (values) =>
+    decideNewItem({ unit: DEN, values, sourceKinds: KINDS, settings: SETTINGS });
+  const existingItem = (values, denominators) => {
+    const stored = storedOf(denominators);
+    return decideExistingItem({
+      unit: DEN,
+      values,
+      sourceKinds: KINDS,
+      current: currentOf(stored),
+      stored,
+    });
+  };
+
+  describe('食い違い（別の値で2サイトが一致する組）に数えない', () => {
+    /** 全設定で一致する2サイトと、同じ一部の設定の値で互いに一致する2サイト */
+    const withPartialPair = (partial) => ({
+      chonborista: FULL,
+      'nana-press': { ...FULL },
+      '1geki': partial,
+      'p-town-dmm': { ...partial },
+    });
+
+    it('新しい値: 全設定の2サイト一致と、互いに一致して採用値と矛盾しない一部だけの2サイト → confirmed', () => {
+      expect(newItem(withPartialPair(PART))).toEqual({
+        outcome: 'adopt',
+        status: 'confirmed',
+        adopted: FULL,
+      });
+    });
+
+    it('新しい値: 一部だけの2サイトが設定1で採用値と食い違い、互いに一致すれば candidate（サイト間で食い違い）', () => {
+      expect(newItem(withPartialPair(CLASH))).toEqual({
+        outcome: 'candidate',
+        reason: 'サイト間で食い違い',
+      });
+    });
+
+    it('一部だけの出典でも、採用値に無い設定を載せていれば矛盾しないとはみなさない', () => {
+      expect(newItem(withPartialPair({ 1: 295.2, 3: 290 }))).toEqual({
+        outcome: 'candidate',
+        reason: 'サイト間で食い違い',
+      });
+    });
+
+    it('既存の値でも同じ: 矛盾しない一部だけの2サイトがあっても、全設定の2サイト一致の値へ直す', () => {
+      expect(existingItem(withPartialPair(PART), { ...FULL, 1: 300 })).toEqual({
+        outcome: 'adopt',
+        status: 'confirmed',
+        adopted: FULL,
+      });
+    });
+
+    it('既存の値でも同じ: 食い違う一部だけの2サイトは別の値の組。今の値の裏づけが無ければ食い違いとして外す', () => {
+      expect(existingItem(withPartialPair(CLASH), { ...FULL, 1: 310 })).toEqual({
+        outcome: 'remove',
+        reason: 'サイト間で食い違い、今の値を裏づける出典なし',
+      });
+    });
+  });
+
+  describe('既存の項目で、一部の設定だけの値を確定にしない', () => {
+    it('設定1・6だけで一致する2つの出典が今の値（4設定）と合う → kept-single-source（confirmed にしない）', () => {
+      const values = { chonborista: PART, 'nana-press': { ...PART } };
+      const stored = storedOf(FULL);
+      expect(existingItem(values, FULL)).toEqual({
+        outcome: 'adopt',
+        status: 'kept-single-source',
+        adopted: currentOf(stored),
+      });
+    });
+
+    it('設定1・6だけで一致する2つの出典が今の値と食い違い、ほかに裏づけが無い → remove', () => {
+      const values = { chonborista: PART, 'nana-press': { ...PART } };
+      expect(existingItem(values, { ...FULL, 1: 300 })).toEqual({
+        outcome: 'remove',
+        reason: '今の値を裏づける出典なし',
+      });
+    });
+
+    it('公式の値でも、一部の設定だけなら確定に使わない', () => {
+      const values = { maker: PART };
+      expect(existingItem(values, FULL)).toMatchObject({ status: 'kept-single-source' });
+      expect(existingItem(values, { ...FULL, 1: 300 })).toEqual({
+        outcome: 'remove',
+        reason: '今の値を裏づける出典なし',
+      });
+    });
+
+    it('全設定で2サイトが一致すれば、今までどおり confirmed', () => {
+      const values = { chonborista: FULL, 'nana-press': { ...FULL } };
+      expect(existingItem(values, { ...FULL, 1: 300 })).toEqual({
+        outcome: 'adopt',
+        status: 'confirmed',
+        adopted: FULL,
+      });
+    });
   });
 });

@@ -448,9 +448,27 @@ export function supporters(unit, values, value) {
   return Object.keys(values).filter((key) => valuesAgree(unit, values[key], value));
 }
 
-/** adopted と違う値で、2つの出典が一致しているか（＝別の値を支持する組がある） */
+/**
+ * 出典の値が、採用しようとする値と矛盾しないか（2026-09-27）。数値の unit では、出典の値の設定（キー）がすべて
+ * 採用値にあり、その設定ごとに丸めの幅が重なること（一部の設定だけの出典も、載っている設定が合えば矛盾しない。
+ * 全設定がそろった出典では valuesAgree と同じ）。設定の組・有無の unit では valuesAgree。
+ */
+function consistentWith(unit, value, adopted) {
+  if (!isNumericUnit(unit)) return valuesAgree(unit, value, adopted);
+  if (shapeError(unit, value) !== null || shapeError(unit, adopted) !== null) return false;
+  return Object.keys(value).every(
+    (k) =>
+      Object.hasOwn(adopted, k) &&
+      intervalsOverlap(parseShown(unit, value[k]), parseShown(unit, adopted[k]))
+  );
+}
+
+/**
+ * adopted と矛盾する値で、2つの出典が一致しているか（＝別の値を支持する組がある）。
+ * adopted と矛盾しない出典（載っている設定が合う、一部の設定だけの出典を含む）は、組の候補に数えない。
+ */
 function hasRivalPair(unit, values, adopted) {
-  const others = Object.keys(values).filter((key) => !valuesAgree(unit, values[key], adopted));
+  const others = Object.keys(values).filter((key) => !consistentWith(unit, values[key], adopted));
   return others.some((a, i) =>
     others.slice(i + 1).some((b) => valuesAgree(unit, values[a], values[b]))
   );
@@ -458,7 +476,9 @@ function hasRivalPair(unit, values, adopted) {
 
 /**
  * 公式の値、または2サイト以上で一致する値を探す。
- * 公式どうしが食い違うとき、または別の値で2サイトが一致する組があるときは、食い違い（conflict）とする。
+ * 公式どうしが食い違うとき、または別の値で2サイトが一致する組があるときは、食い違い（conflict）とする
+ * （見つけた値と矛盾しない出典は、別の値の組に数えない。hasRivalPair）。
+ * 見つけた値が機種のすべての設定を持つかは見ない（呼ぶ側が決める。decideNewItem・decideExistingItem）。
  * @returns {{ adopted: unknown } | { conflict: true } | null}
  */
 function findConfirmed(unit, values, sourceKinds) {
@@ -520,7 +540,8 @@ function adoptNewValue(unit, settings, status, adopted) {
  * 新しく入れる値の採否（仕様 5.5 前半）。
  * settings は機種の設定（availableSettings、無ければ "1"〜"6"）で、数値の unit（denominator・percent）では必須。
  * 一致（2サイト・公式）は今のまま同じ設定の組どうしで比べるので、一部の設定だけの出典は values に記録しても、
- * 全設定の値の一致には数えない。採用する値に全設定がそろわなければ candidate にする（adoptNewValue）。
+ * 全設定の値の一致には数えない。採用しようとする値と矛盾しない一部の設定だけの出典は、食い違いにも数えない
+ * （hasRivalPair）。採用する値に全設定がそろわなければ candidate にする（adoptNewValue）。
  * @param {{ unit: string, values: Record<string, unknown>,
  *   sourceKinds: Record<string, string>, reread?: unknown, settings?: string[] }} input
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
@@ -557,8 +578,18 @@ function keptSupporters(unit, values, { current, stored }) {
 }
 
 /**
+ * 既存の項目で、findConfirmed が見つけた値を確定に使えるか（2026-09-27）。数値の unit では、値の設定（キー）が
+ * 今の機種ファイルの確率（stored）の設定とそろうこと。機種ファイルの確率は機種のすべての設定を持つので
+ * （3.9.0 の validate）、一部の設定だけの値では確定しない。設定の組・有無の unit では常に使える。
+ */
+function confirmsExisting(unit, value, stored) {
+  return !isNumericUnit(unit) || sameKeys(value, stored);
+}
+
+/**
  * 既存の値の採否（仕様 5.5 後半）。current は今の機種ファイルの値（unit の形。kept-single-source の採用値）。
  * stored は今の機種ファイルの確率（storedMap の結果）で、数値の unit（denominator・percent）では必須。
+ * 一部の設定だけの値は、2サイトや公式で一致しても確定に使わず、見つからなかったものとして「残す」・暫定・外すを決める。
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
  *   | { outcome: 'remove', reason: string }}
  */
@@ -567,7 +598,11 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current,
     throw new Error('数値の項目には stored（機種ファイルの確率）が必要');
   }
   assertShapes(unit, values, reread);
-  const found = findConfirmed(unit, values, sourceKinds);
+  const confirmed = findConfirmed(unit, values, sourceKinds);
+  const found =
+    confirmed && !confirmed.conflict && !confirmsExisting(unit, confirmed.adopted, stored)
+      ? null
+      : confirmed;
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
   }
@@ -605,7 +640,8 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current,
  *   decideNewItem / decideExistingItem の reread は値そのもの
  * @param {Record<string, string>} sourceKinds
  * @param {{ stored?: Record<string, number> | null }} [context] stored は機種ファイルの確率（storedMap の結果）。
- *   数値の unit の kept-single-source で、裏づけを decideExistingItem と同じく機種ファイルの確率で数えるのに使う
+ *   数値の unit の kept-single-source で、decideExistingItem と同じく、確定値に使えるか（一部の設定だけの値は
+ *   使わない）と裏づけを、機種ファイルの確率で決めるのに使う
  * @returns {string | null} 問題の説明。問題なければ null
  */
 export function statusError(item, sourceKinds, { stored } = {}) {
@@ -629,11 +665,12 @@ export function statusError(item, sourceKinds, { stored } = {}) {
       }
       return null;
     case 'kept-single-source':
-      if (confirmedValue !== undefined) {
-        return 'kept-single-source は、公式の値や2サイト一致の値が無いときだけ使う（confirmed にする）';
-      }
+      // 数値の unit では、確定値に使えるか（decideExistingItem と同じ）と裏づけの両方に機種ファイルの確率が要る
       if (isNumericUnit(unit) && stored == null) {
         return 'kept-single-source の確かめには機種ファイルの確率が要る';
+      }
+      if (confirmedValue !== undefined && confirmsExisting(unit, confirmedValue, stored)) {
+        return 'kept-single-source は、公式の値や2サイト一致の値が無いときだけ使う（confirmed にする）';
       }
       return keptSupporters(unit, values, { current: adopted, stored }).length >= 1
         ? null
