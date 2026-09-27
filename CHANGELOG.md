@@ -77,7 +77,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - **破壊的変更: なし**。機種の名前・並び・`id`・`displayOrder` は変えていない（アプリが作る ID は同じ。`npm run check:base` で確認）
 - slot-analyzer-ios の取り込みテスト（`npm run test:data-contract`）: index と149機種の150件が合格
 
-## [Unreleased] - 段階0: 出典記録の仕組み
+## 段階0: 出典記録の仕組み（2026-09-26 に main へ・版は据え置き。3.9.0 に含まれる）
 
 機種データ（`machines/` の JSON）と `index.json` の version（3.8.0）は変えていない（`machines/FUTURE_ADDITIONS.md` は文書の修正だけ）。公開中のアプリへの影響はない。
 
