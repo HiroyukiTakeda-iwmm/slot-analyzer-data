@@ -1,12 +1,16 @@
 const DEFAULT_SETTINGS = ['1', '2', '3', '4', '5', '6'];
 
+// メッセージの末尾に添える、アプリ（SlotAnalyzer）での影響。
+// 推定に使う確率に機種の設定のキーが欠けていると、アプリは推定全体を止める（missing-probability）
+const STOPS_ESTIMATE = '（アプリの推定が止まる）';
+// アプリは機種の設定のキーだけを読む
+const NOT_USED = '（アプリは使わない）';
+
 function getExpectedSettings(data) {
   return data.availableSettings || DEFAULT_SETTINGS;
 }
 
-function checkProbabilities(probs, roleName, filePath, expectedSettings, results) {
-  const keys = Object.keys(probs);
-
+function checkProbabilityRange(probs, roleName, filePath, results) {
   // 確率値の範囲チェック（0-1）
   for (const [key, val] of Object.entries(probs)) {
     if (typeof val !== 'number' || val < 0 || val > 1) {
@@ -18,16 +22,37 @@ function checkProbabilities(probs, roleName, filePath, expectedSettings, results
       });
     }
   }
+}
 
-  // probキーとavailableSettingsの整合性
-  const sortedKeys = [...keys].sort();
-  const sortedExpected = [...expectedSettings].sort();
-  if (JSON.stringify(sortedKeys) !== JSON.stringify(sortedExpected)) {
-    results.warnings.push({
+/**
+ * アプリの推定が使う確率が、機種のすべての設定のキーを持つかを確かめる。
+ * 欠けたキーと、設定に無いキーはエラー。0 は「その設定では出ない」の意味で、キーがあるものとして数える。
+ * 確率を持たない項目（確率の無い終了画面・ボイスなど）は見ない。形はスキーマの検証が確かめる。
+ *
+ * @param {object | undefined} probs 設定をキー、確率を値とするオブジェクト
+ * @param {string} label メッセージで項目を示す文字列（例: `endScreens "翔"`）
+ * @param {string} field 確率の欄の名前（`probabilities` か `distribution`）
+ * @param {string[]} settings 機種の設定番号（availableSettings。無ければ 1〜6）
+ */
+function checkSettingKeys(probs, label, field, settings, filePath, results) {
+  if (probs === null || typeof probs !== 'object' || Array.isArray(probs)) return;
+  const keys = Object.keys(probs);
+  const missing = settings.filter((setting) => !keys.includes(setting));
+  const extra = keys.filter((key) => !settings.includes(key));
+  if (missing.length > 0) {
+    results.errors.push({
       file: filePath,
       type: 'probability',
-      severity: 'warning',
-      message: `"${roleName}" 設定キー不一致: 期待=${sortedExpected.join(',')} / 実際=${sortedKeys.join(',')}`,
+      severity: 'error',
+      message: `${label} ${field} に設定のキーが無い: ${missing.join(',')} (設定: ${settings.join(',')})${STOPS_ESTIMATE}`,
+    });
+  }
+  if (extra.length > 0) {
+    results.errors.push({
+      file: filePath,
+      type: 'probability',
+      severity: 'error',
+      message: `${label} ${field} に設定に無いキー: ${extra.join(',')} (設定: ${settings.join(',')})${NOT_USED}`,
     });
   }
 }
@@ -73,11 +98,14 @@ export function validateProbabilities(machineFiles) {
 
   for (const { path: filePath, data } of machineFiles) {
     const expectedSettings = getExpectedSettings(data);
+    const checkKeys = (probs, label, field = 'probabilities') =>
+      checkSettingKeys(probs, label, field, expectedSettings, filePath, results);
 
     // roles チェック
     if (data.roles) {
       for (const role of data.roles) {
-        checkProbabilities(role.probabilities, role.name, filePath, expectedSettings, results);
+        checkProbabilityRange(role.probabilities, role.name, filePath, results);
+        checkKeys(role.probabilities, `roles "${role.name}"`);
         checkSettingDiffConsistency(role, filePath, results);
       }
       checkDisplayOrder(data.roles, filePath, results);
@@ -88,13 +116,13 @@ export function validateProbabilities(machineFiles) {
       for (const zone of data.zones) {
         if (zone.roles) {
           for (const role of zone.roles) {
-            checkProbabilities(
+            checkProbabilityRange(
               role.probabilities,
               `${zone.name}/${role.name}`,
               filePath,
-              expectedSettings,
               results
             );
+            checkKeys(role.probabilities, `zones "${zone.name}" / roles "${role.name}"`);
             checkSettingDiffConsistency(role, filePath, results);
           }
         }
@@ -104,7 +132,32 @@ export function validateProbabilities(machineFiles) {
     // trialSuccessRates チェック
     if (data.trialSuccessRates) {
       for (const rate of data.trialSuccessRates) {
-        checkProbabilities(rate.probabilities, rate.name, filePath, expectedSettings, results);
+        checkProbabilityRange(rate.probabilities, rate.name, filePath, results);
+        checkKeys(rate.probabilities, `trialSuccessRates "${rate.name}"`);
+      }
+    }
+
+    // 終了画面の確率（アプリは1回でも数えると推定に使う）。最上位は probabilities、無ければ
+    // distribution（アプリの移行処理が probabilities に改名して使う）。グループの中の distribution は
+    // アプリが使わないので見ない
+    for (const screen of data.endScreens ?? []) {
+      const hasProbabilities = screen.probabilities !== undefined && screen.probabilities !== null;
+      const field = hasProbabilities ? 'probabilities' : 'distribution';
+      checkKeys(screen[field], `endScreens "${screen.name}"`, field);
+    }
+    for (const group of data.endScreenGroups ?? []) {
+      for (const screen of group.endScreens ?? []) {
+        checkKeys(
+          screen.probabilities,
+          `endScreenGroups "${group.name}" / endScreens "${screen.name}"`
+        );
+      }
+    }
+
+    // ボイス・楽曲・演出カウントの確率（アプリは終了画面と同じく推定に使う）
+    for (const field of ['voiceCounts', 'musicCounts', 'effectCounts']) {
+      for (const item of data[field] ?? []) {
+        checkKeys(item.probabilities, `${field} "${item.name}"`);
       }
     }
 

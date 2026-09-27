@@ -74,12 +74,10 @@
       "patterns": [
         {
           "name": "GC黒",
-          "setting": "25",
           "description": "設定2・5で出やすい"
         },
         {
           "name": "GC白",
-          "setting": "36",
           "description": "設定3・6で出やすい"
         }
       ],
@@ -159,8 +157,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
-  "lastUpdated": "2026-03-27",
+  "version": "1.3",
+  "lastUpdated": "2026-09-27",
   "source": "ちょんぼりすた",
   "description": "スマスロAT機。弱スイカボーナス同時当選率に設定差（設定1: 2.0%、設定6: 4.2%。1度でも確認で高設定期待）。"
 }

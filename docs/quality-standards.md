@@ -47,18 +47,28 @@ slot-analyzer-data における機種データの品質基準とバリデーシ�
 
 バリデーションエラーとして報告され、修正しない限りデータとして使用できません。
 
-| ルール                             | 説明                                                          | 検出元                 |
-| ---------------------------------- | ------------------------------------------------------------- | ---------------------- |
-| スキーマ準拠                       | `machine.schema.json` に準拠しているか                        | schema-validator       |
-| 必須フィールド                     | `name`, `type`, `roles` が存在するか                          | schema-validator       |
-| 型制約                             | `type` が有効な値（A-type, AT, ART, BT, A+RT, A+AT, A+ART）か | schema-validator       |
-| 確率範囲                           | 確率値が 0〜1 の範囲内か                                      | probability-validator  |
-| 確率一貫性                         | 同一小役の確率が設定順で論理的に一貫しているか                | probability-validator  |
-| index整合性                        | `index.json` のエントリと実ファイルが一致するか               | index-consistency      |
-| ファイル参照                       | `index.json` の `file` パスに実ファイルが存在するか           | index-consistency      |
-| ID一意性                           | `index.json` 内で `id` が重複していないか                     | index-consistency      |
-| 設定キー整合                       | `probabilities` のキーが `availableSettings` と一致するか     | probability-validator  |
-| confirmedSettings/excludedSettings | 重複や矛盾がないか                                            | confirmation-validator |
+| ルール                      | 説明                                                                               | 検出元                 |
+| --------------------------- | ---------------------------------------------------------------------------------- | ---------------------- |
+| スキーマ準拠                | `machine.schema.json` に準拠しているか                                             | schema-validator       |
+| 必須フィールド              | `name`, `type`, `roles` が存在するか                                               | schema-validator       |
+| 型制約                      | `type` が有効な値（A-type, AT, ART, BT, A+RT, A+AT, A+ART）か                      | schema-validator       |
+| 確率範囲                    | 確率値が 0〜1 の範囲内か                                                           | probability-validator  |
+| 確率一貫性                  | 同一小役の確率が設定順で論理的に一貫しているか                                     | probability-validator  |
+| index整合性                 | `index.json` のエントリと実ファイルが一致するか                                    | index-consistency      |
+| ファイル参照                | `index.json` の `file` パスに実ファイルが存在するか                                | index-consistency      |
+| ID一意性                    | `index.json` 内で `id` が重複していないか                                          | index-consistency      |
+| 終了画面の設定番号（規則1） | 終了画面（グループの中も）の確定・否定の設定が設定番号だけで、両方に同じ値が無いか | confirmation-validator |
+| 終了画面のパターン（規則2） | 最上位の終了画面の `patterns` の `setting` が設定番号か、`minSetting` が数か       | confirmation-validator |
+| 確定演出の設定番号（規則3） | 確定演出の確定・否定の設定が設定番号だけで、両方に同じ値が無いか                   | confirmation-validator |
+| ボイス等の設定番号（規則4） | ボイス・楽曲・演出カウントの確定・否定の設定が設定番号だけで、両方に同じ値が無いか | confirmation-validator |
+| 確率の設定のキー（規則5）   | 推定に使う確率が機種のすべての設定のキーを持ち、設定に無いキーが無いか             | probability-validator  |
+
+規則1〜5（3.9.0）は、公開中のアプリの推定が止まる書き方を止める。
+
+- 設定番号は機種の `availableSettings`（省略時は `"1"`〜`"6"`）。確定・否定の設定は `confirmedSettings`・`excludedSettings`
+- 規則1は最上位の `endScreens` と `endScreenGroups[].endScreens`、規則4は `voiceCounts`・`musicCounts`・`effectCounts` が対象。規則3の設定番号でない値は、3.9.0 で警告からエラーにした
+- 規則5の対象は、役・ゾーンの役・最上位の終了画面の `probabilities`（無ければ `distribution`）・`endScreenGroups` の中の終了画面の `probabilities`・`voiceCounts`・`musicCounts`・`effectCounts`・`trialSuccessRates` の `probabilities`。前は役・ゾーンの役・試行成功率のキーの食い違いを警告にしていた
+- メッセージは項目と値を示し、末尾にアプリでの影響を添える。基本は「（アプリの推定が止まる）」。形の誤りで機種ごと読めないときは「（アプリが機種を読み込めない）」、アプリが読まない欄と設定に無いキーは「（アプリは使わない）」、両方にある値は「（アプリは否定を優先し、確定する設定がすべて否定にもあると推定が止まる）」
 
 ### Level 2: 警告（修正推奨）
 
@@ -145,7 +155,7 @@ node scripts/quality-report.mjs   # フィールド充填率・品質分類
 node scripts/audit-freshness.mjs  # 鮮度（lastUpdated からの経過日数）
 ```
 
-直近の実測サマリは [README.md](../README.md) の「品質指標」節に転記されている（2026-09-26 時点で 149台）。
+直近の実測サマリは [README.md](../README.md) の「品質指標」節に転記されている（2026-09-27 時点で 149台）。
 
 ## 出典と採否の基準（2026-09-26〜）
 

@@ -2,7 +2,7 @@
 
 SlotAnalyzerアプリで使用するパチスロ機種データのコミュニティリポジトリです。
 
-**現在の登録台数: 149台** (v3.8.0, 2026-05-31更新)
+**現在の登録台数: 149台** (v3.9.0, 2026-09-27更新)
 
 | タイプ | 台数  |
 | ------ | ----- |
@@ -16,7 +16,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 
 ### 品質指標
 
-`node scripts/quality-report.mjs` の実測値（2026-09-26 実行）。数値を手で書き換えず、
+`node scripts/quality-report.mjs` の実測値（2026-09-27 実行）。数値を手で書き換えず、
 このスクリプトの出力を転記すること。
 
 | 指標               | 達成率           |
@@ -70,7 +70,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 ```
 slot-analyzer-data/
 ├── machines/
-│   ├── index.json              # 機種一覧インデックス (v3.8.0)
+│   ├── index.json              # 機種一覧インデックス (v3.9.0)
 │   ├── juggler/                # ジャグラー系
 │   ├── hokuto/                 # 北斗系
 │   ├── hanabi/                 # ハナビ系
@@ -190,18 +190,22 @@ slot-analyzer-data/
 
 ### iOS側で使用するフィールド
 
-| フィールド                   | 用途               |
-| ---------------------------- | ------------------ |
-| name, type                   | 機種情報表示       |
-| roles[].probabilities        | 小役確率カウンター |
-| confirmationEvents           | 確定演出チェッカー |
-| zones                        | ゾーン別確率       |
-| endScreenGroups              | 終了画面判別       |
-| settings / availableSettings | 設定段階の決定     |
+| フィールド                             | 用途                                                                                                            |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| name, type                             | 機種情報表示                                                                                                    |
+| roles[].probabilities                  | 小役確率カウンター・設定推測                                                                                    |
+| confirmationEvents                     | 確定演出チェッカー・設定推測                                                                                    |
+| zones                                  | ゾーン別確率・設定推測                                                                                          |
+| endScreens, endScreenGroups            | 終了画面判別・設定推測（`endScreens` の `patterns` は、パターンごとの終了画面に展開される）                     |
+| trialSuccessRates                      | 試行成功率・設定推測                                                                                            |
+| voiceCounts, musicCounts, effectCounts | 数えたときに設定推測に使う（ボイスの `patterns` は読み込み時に捨てられる。楽曲・演出の確定・否定の設定は使われない） |
+| settings / availableSettings           | 設定段階の決定                                                                                                  |
+
+推定に使う確率は、機種のすべての設定の値を持つ必要がある（1つでも欠けると、アプリの推定が止まる。`npm run validate` が確かめる）。
 
 ### iOS側で未使用（自由に変更可能）
 
-`trialSuccessRates`, `voiceCounts`, `musicCounts`, `effectCounts`, `modeTransitions`, `specialSettings`, `notes`, `source`
+`modeTransitions`, `specialSettings`, `notes`, `source`
 
 ## 貢献方法
 

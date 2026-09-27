@@ -147,47 +147,38 @@
       "patterns": [
         {
           "name": "紫枠",
-          "setting": "reset",
           "description": "設定変更濃厚かつ高設定期待度アップ"
         },
         {
           "name": "奇数設定示唆パターン",
-          "setting": "odd",
           "description": "奇数設定（1,3,5）示唆"
         },
         {
           "name": "偶数設定示唆パターン",
-          "setting": "even",
           "description": "偶数設定（2,4,6）示唆"
         },
         {
           "name": "高設定示唆（弱）",
-          "setting": "highWeak",
           "description": "高設定期待度アップ（弱）"
         },
         {
           "name": "高設定示唆（強）",
-          "setting": "highStrong",
           "description": "高設定期待度アップ（強）"
         },
         {
           "name": "偶数設定濃厚",
-          "setting": "evenConfirm",
           "description": "偶数設定（2,4,6）濃厚"
         },
         {
           "name": "設定1否定",
-          "setting": "not1",
           "description": "設定1否定"
         },
         {
           "name": "設定2否定",
-          "setting": "not2",
           "description": "設定2否定"
         },
         {
           "name": "設定3否定かつ高設定示唆",
-          "setting": "not3High",
           "description": "設定3否定かつ高設定示唆"
         },
         {
@@ -233,8 +224,8 @@
     }
   ],
   "author": "コミュニティ",
-  "version": "1.2",
-  "lastUpdated": "2026-03-27",
+  "version": "1.3",
+  "lastUpdated": "2026-09-27",
   "source": "ちょんぼりすた、一撃",
   "description": "スマスロAT機。CZ確率に設定差（設定1: 1/362.2、設定6: 1/266.9。設定2は設定1より重い（非単調））。小役確率は全設定共通。"
 }
