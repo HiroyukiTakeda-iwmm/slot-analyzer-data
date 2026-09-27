@@ -172,9 +172,18 @@ function sameKeys(a, b) {
 }
 
 /**
+ * その項目が持つべき設定のキーの Set（isComplete の required）。値のキーは文字列（{ 1: … } も "1"）なので、
+ * 設定の番号は文字列にそろえる（settings を数の [1, 6] で渡しても、数と文字列が混ざっても同じ結果にする）。
+ * @param {Iterable<string | number>} settings 新しい値は機種の設定、既存の値と記録の確かめは機種ファイルの確率のキー
+ * @returns {Set<string>}
+ */
+function requiredSettings(settings) {
+  return new Set(Array.from(settings, String));
+}
+
+/**
  * 数値の値の設定（キー）が、その項目が持つべき設定とちょうど同じか（「そろっている」。仕様 5.4）。
- * @param {Set<string>} required その項目が持つべき設定のキー（新しい値は機種の設定、既存の値と記録の確かめは
- *   機種ファイルの確率のキー）
+ * @param {Set<string>} required requiredSettings で作った、その項目が持つべき設定のキー
  */
 function isComplete(value, required) {
   const keys = Object.keys(value);
@@ -722,10 +731,11 @@ function newItemReason(unit, values, found, required) {
 /**
  * 新しく入れる値の採否（仕様 5.5 前半）。
  * settings は機種の設定（availableSettings、無ければ "1"〜"6"）で、数値の unit（denominator・percent）では必須。
+ * 設定の番号は文字列にそろえて比べる（数で渡しても同じ。requiredSettings）。
  * 数値の unit では、採用の候補を全設定がそろった値に限る（findConfirmed。アプリは設定が1つでも欠けた確率が
  * あると推定全体を止める。本人の決定 2026-09-27）。一部だけの出典は、矛盾しなければ数えない。
  * @param {{ unit: string, values: Record<string, unknown>,
- *   sourceKinds: Record<string, string>, reread?: unknown, settings?: string[] }} input
+ *   sourceKinds: Record<string, string>, reread?: unknown, settings?: Array<string | number> }} input
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
  *   | { outcome: 'candidate', reason: string }}
  */
@@ -734,7 +744,7 @@ export function decideNewItem({ unit, values, sourceKinds, reread, settings }) {
     throw new Error('数値の項目には settings（機種の設定）が必要');
   }
   assertShapes(unit, values, reread);
-  const required = isNumericUnit(unit) ? new Set(settings) : undefined;
+  const required = isNumericUnit(unit) ? requiredSettings(settings) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
@@ -769,7 +779,7 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current,
   }
   assertShapes(unit, values, reread);
   const currentValue = numeric ? machineValue({ probabilities: stored }, unit) : current;
-  const required = numeric ? new Set(Object.keys(stored)) : undefined;
+  const required = numeric ? requiredSettings(Object.keys(stored)) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
@@ -821,7 +831,7 @@ export function statusError(item, sourceKinds, { stored } = {}) {
   if (isNumericUnit(unit) && stored == null) {
     return `${status} の確かめには機種ファイルの確率が要る`;
   }
-  const required = isNumericUnit(unit) ? new Set(Object.keys(stored)) : undefined;
+  const required = isNumericUnit(unit) ? requiredSettings(Object.keys(stored)) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
   const confirmedValue = found && !found.conflict ? found.adopted : undefined;
   if (status === 'confirmed') {

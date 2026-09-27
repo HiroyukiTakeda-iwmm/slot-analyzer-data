@@ -284,6 +284,29 @@ describe('decideNewItem: 新しく入れる値は全設定がそろった項目�
     }
   });
 
+  it('設定の番号は文字列にそろえて比べる（settings を数で渡しても、数と文字列が混ざっても同じ）', () => {
+    // 値のキーは文字列（{ 1: … } も "1"）。設定を数のまま比べると、全設定で一致する2サイトが「そろわない」になっていた
+    const both = { 1: 295.2, 6: 277.7 };
+    const values = { chonborista: both, 'nana-press': { ...both } };
+    const confirmed = { outcome: 'adopt', status: 'confirmed', adopted: both };
+    for (const settings of [
+      ['1', '6'],
+      [1, 6],
+      ['1', 6],
+    ]) {
+      expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS, settings })).toEqual(confirmed);
+    }
+    // そろわない値は、数で渡しても「そろった出典が無い」のまま
+    expect(
+      decideNewItem({
+        unit: DEN,
+        values: { chonborista: { 1: 295.2 } },
+        sourceKinds: KINDS,
+        settings: [1, 6],
+      })
+    ).toEqual(MISSING);
+  });
+
   it('設定の組・有無の unit では settings を見ない', () => {
     const gold = { confirmed: ['6'], excluded: ['1'] };
     expect(
