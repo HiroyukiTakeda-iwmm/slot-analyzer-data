@@ -74,9 +74,12 @@ describe('preferenceOrder', () => {
 });
 
 describe('decideNewItem（新しく入れる値）', () => {
+  // 設定1だけの機種として比べる（全設定の値がそろうかは、下の「全設定がそろった項目だけ」で確かめる）
+  const NEW = { sourceKinds: KINDS, settings: ['1'] };
+
   it('2サイトで一致 → confirmed。採用値はちょんぼりすた', () => {
     const values = { 'nana-press': { 1: 295.24 }, chonborista: { 1: 295.2 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW })).toEqual({
       outcome: 'adopt',
       status: 'confirmed',
       adopted: { 1: 295.2 },
@@ -85,7 +88,7 @@ describe('decideNewItem（新しく入れる値）', () => {
 
   it('公式があれば、ほかと食い違っても公式の値で confirmed', () => {
     const values = { chonborista: { 1: 300 }, maker: { 1: 295.2 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW })).toEqual({
       outcome: 'adopt',
       status: 'confirmed',
       adopted: { 1: 295.2 },
@@ -94,7 +97,7 @@ describe('decideNewItem（新しく入れる値）', () => {
 
   it('ちょんぼりすただけ＋読み直しが一致 → provisional-chonborista', () => {
     const values = { chonborista: { 1: 8192 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread: { 1: 8192 } })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW, reread: { 1: 8192 } })).toEqual({
       outcome: 'adopt',
       status: 'provisional-chonborista',
       adopted: { 1: 8192 },
@@ -103,15 +106,15 @@ describe('decideNewItem（新しく入れる値）', () => {
 
   it('ちょんぼりすただけで、読み直しが無い・一致しない → candidate', () => {
     const values = { chonborista: { 1: 8192 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS }).outcome).toBe('candidate');
-    expect(
-      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread: { 1: 4096 } }).outcome
-    ).toBe('candidate');
+    expect(decideNewItem({ unit: DEN, values, ...NEW }).outcome).toBe('candidate');
+    expect(decideNewItem({ unit: DEN, values, ...NEW, reread: { 1: 4096 } }).outcome).toBe(
+      'candidate'
+    );
   });
 
   it('ちょんぼりすた以外の1サイトだけ → candidate', () => {
     const values = { 'nana-press': { 1: 8192 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW })).toEqual({
       outcome: 'candidate',
       reason: 'ちょんぼりすた以外の1サイトのみ',
     });
@@ -119,7 +122,7 @@ describe('decideNewItem（新しく入れる値）', () => {
 
   it('2サイトが食い違う → candidate', () => {
     const values = { chonborista: { 1: 300 }, 'nana-press': { 1: 400 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW })).toEqual({
       outcome: 'candidate',
       reason: 'サイト間で食い違い',
     });
@@ -132,14 +135,14 @@ describe('decideNewItem（新しく入れる値）', () => {
       '1geki': { 1: 400 },
       'p-town-dmm': { 1: 400 },
     };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW })).toEqual({
       outcome: 'candidate',
       reason: 'サイト間で食い違い',
     });
   });
 
   it('出典なし → candidate', () => {
-    expect(decideNewItem({ unit: DEN, values: {}, sourceKinds: KINDS })).toEqual({
+    expect(decideNewItem({ unit: DEN, values: {}, ...NEW })).toEqual({
       outcome: 'candidate',
       reason: '出典なし',
     });
@@ -148,7 +151,7 @@ describe('decideNewItem（新しく入れる値）', () => {
   it('公式が2つあって食い違う → candidate', () => {
     const kinds = { ...KINDS, 'maker-site': 'official' };
     const values = { maker: { 1: 295.2 }, 'maker-site': { 1: 300 } };
-    expect(decideNewItem({ unit: DEN, values, sourceKinds: kinds })).toEqual({
+    expect(decideNewItem({ unit: DEN, values, ...NEW, sourceKinds: kinds })).toEqual({
       outcome: 'candidate',
       reason: 'サイト間で食い違い',
     });
@@ -156,7 +159,124 @@ describe('decideNewItem（新しく入れる値）', () => {
 
   it('形が unit に合わない値は例外にする', () => {
     const values = { maker: { 1: 0.5 } };
-    expect(() => decideNewItem({ unit: DEN, values, sourceKinds: KINDS })).toThrow('形に合わない');
+    expect(() => decideNewItem({ unit: DEN, values, ...NEW })).toThrow('形に合わない');
+  });
+});
+
+describe('decideNewItem: 新しく入れる値は全設定がそろった項目だけ（2026-09-27）', () => {
+  const MISSING = {
+    outcome: 'candidate',
+    reason: '全設定の値がそろわない（アプリは設定が1つでも欠けた確率があると推定が止まる）',
+  };
+  const FULL = { 1: 295.2, 2: 292.6, 5: 284.9, 6: 277.7 };
+  const SETTINGS = ['1', '2', '5', '6'];
+
+  it('ちょんぼりすたが一部の設定だけ → 読み直しが一致しても candidate', () => {
+    const values = { chonborista: { 1: 295.2, 6: 277.7 } };
+    const reread = { 1: 295.2, 6: 277.7 };
+    expect(
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread, settings: SETTINGS })
+    ).toEqual(MISSING);
+  });
+
+  it('同じ値でも、機種の設定がすべてそろっていれば provisional-chonborista', () => {
+    const values = { chonborista: { 1: 295.2, 6: 277.7 } };
+    const reread = { 1: 295.2, 6: 277.7 };
+    expect(
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread, settings: ['1', '6'] })
+    ).toEqual({
+      outcome: 'adopt',
+      status: 'provisional-chonborista',
+      adopted: { 1: 295.2, 6: 277.7 },
+    });
+  });
+
+  it('2サイトが全設定で一致 → confirmed', () => {
+    const values = { chonborista: FULL, 'nana-press': { ...FULL } };
+    expect(decideNewItem({ unit: DEN, values, sourceKinds: KINDS, settings: SETTINGS })).toEqual({
+      outcome: 'adopt',
+      status: 'confirmed',
+      adopted: FULL,
+    });
+  });
+
+  it('2サイトや公式が一致しても、一部の設定だけなら candidate', () => {
+    const partial = { 1: 295.2, 6: 277.7 };
+    const run = (values) =>
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, settings: SETTINGS });
+    expect(run({ chonborista: partial, 'nana-press': { ...partial } })).toEqual(MISSING);
+    expect(run({ maker: partial })).toEqual(MISSING);
+  });
+
+  it('一部の設定だけの出典は記録してよいが、新しい値の一致には数えない', () => {
+    const run = (values) =>
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, settings: SETTINGS });
+    // 全設定の出典1つと、同じ値を一部の設定だけ載せる出典は、2サイト一致にならない
+    expect(run({ 'nana-press': FULL, '1geki': { 1: 295.2, 6: 277.7 } }).outcome).toBe('candidate');
+    // 全設定で一致する2サイトがあれば、一部の設定だけの出典があっても confirmed
+    expect(run({ chonborista: FULL, 'nana-press': { ...FULL }, '1geki': { 1: 295.2 } })).toEqual({
+      outcome: 'adopt',
+      status: 'confirmed',
+      adopted: FULL,
+    });
+  });
+
+  it('既存の値では、同じ一部の設定だけの出典を「残す」の裏づけに数える（新しく入れる値との違い）', () => {
+    const values = { chonborista: { 1: 295.2, 6: 277.7 } };
+    const stored = storedOf(FULL);
+    const current = Object.fromEntries(Object.entries(stored).map(([k, p]) => [k, 1 / p]));
+    const reread = { 1: 295.2, 6: 277.7 };
+    expect(
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread, settings: SETTINGS })
+    ).toEqual(MISSING);
+    expect(decideExistingItem({ unit: DEN, values, sourceKinds: KINDS, current, stored })).toEqual({
+      outcome: 'adopt',
+      status: 'kept-single-source',
+      adopted: current,
+    });
+  });
+
+  it('機種の設定に無いキーを持つ値も、全設定がそろったとはみなさない', () => {
+    const values = { chonborista: { 1: 295.2, 6: 277.7 } };
+    const reread = { 1: 295.2, 6: 277.7 };
+    expect(
+      decideNewItem({ unit: DEN, values, sourceKinds: KINDS, reread, settings: ['1'] })
+    ).toEqual(MISSING);
+  });
+
+  it('割合の項目にも同じ決まりを使う', () => {
+    const values = { chonborista: { 1: 25 }, 'nana-press': { 1: 25 } };
+    const run = (settings) =>
+      decideNewItem({ unit: 'percent', values, sourceKinds: KINDS, settings });
+    expect(run(['1', '6'])).toEqual(MISSING);
+    expect(run(['1'])).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: { 1: 25 } });
+  });
+
+  it('数値の unit で settings（機種の設定）を渡さなければ例外', () => {
+    for (const unit of [DEN, 'percent']) {
+      expect(() =>
+        decideNewItem({ unit, values: { chonborista: { 1: 30 } }, sourceKinds: KINDS })
+      ).toThrow('数値の項目には settings（機種の設定）が必要');
+    }
+  });
+
+  it('設定の組・有無の unit では settings を見ない', () => {
+    const gold = { confirmed: ['6'], excluded: ['1'] };
+    expect(
+      decideNewItem({
+        unit: 'settings',
+        values: { chonborista: gold, 'nana-press': gold },
+        sourceKinds: KINDS,
+      })
+    ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: gold });
+    expect(
+      decideNewItem({
+        unit: 'presence',
+        values: { chonborista: true, 'nana-press': true },
+        sourceKinds: KINDS,
+        settings: ['1', '6'],
+      })
+    ).toEqual({ outcome: 'adopt', status: 'confirmed', adopted: true });
   });
 });
 
@@ -470,19 +590,27 @@ describe('statusError（記録の status と値の関係）', () => {
 });
 
 describe('採否と検査の一貫性', () => {
+  // settings は機種の設定（decideNewItem が使う）、current / stored は今の機種ファイルの値（decideExistingItem が使う）
+  const one = ['1'];
   const cases = [
-    { unit: DEN, values: { 'nana-press': { 1: 295.24 }, chonborista: { 1: 295.2 } } },
-    { unit: DEN, values: { chonborista: { 1: 300 }, maker: { 1: 295.2 } } },
-    { unit: DEN, values: { chonborista: { 1: 8192 } }, reread: { 1: 8192 } },
+    {
+      unit: DEN,
+      values: { 'nana-press': { 1: 295.24 }, chonborista: { 1: 295.2 } },
+      settings: one,
+    },
+    { unit: DEN, values: { chonborista: { 1: 300 }, maker: { 1: 295.2 } }, settings: one },
+    { unit: DEN, values: { chonborista: { 1: 8192 } }, reread: { 1: 8192 }, settings: one },
     {
       unit: DEN,
       values: { 'nana-press': { 1: 295.2 }, '1geki': { 1: 310 } },
+      settings: one,
       current: { 1: 295.2 },
       stored: storedOf({ 1: 295.2 }),
     },
     {
       unit: DEN,
       values: { chonborista: { 1: 295.2 } },
+      settings: one,
       current: { 1: 300 },
       stored: storedOf({ 1: 300 }),
       reread: { 1: 295.2 },
@@ -491,12 +619,14 @@ describe('採否と検査の一貫性', () => {
     {
       unit: DEN,
       values: { nana: { 1: 13107.2 } },
+      settings: one,
       current: { 1: 1 / 0.000076 },
       stored: { 1: 0.000076 },
     },
     {
       unit: DEN,
       values: { nana: { 1: 295.2, 6: 277.7 } },
+      settings: ['1', '2', '5', '6'],
       current: { 1: 1 / 0.003388, 2: 1 / 0.003418, 5: 1 / 0.00351, 6: 1 / 0.003601 },
       stored: { 1: 0.003388, 2: 0.003418, 5: 0.00351, 6: 0.003601 },
     },

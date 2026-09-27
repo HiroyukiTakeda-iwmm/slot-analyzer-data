@@ -502,20 +502,41 @@ function rereadAgrees(unit, values, reread) {
 }
 
 /**
+ * 新しく入れる値を採用する。数値の unit では、採用する値が機種のすべての設定の値を持つときだけ入れる
+ * （キーの組が機種の設定と同じこと。アプリは設定が1つでも欠けた確率があると推定全体を止める。本人の決定 2026-09-27）。
+ */
+function adoptNewValue(unit, settings, status, adopted) {
+  const complete =
+    !isNumericUnit(unit) || sameKeys(adopted, Object.fromEntries(settings.map((s) => [s, true])));
+  return complete
+    ? { outcome: 'adopt', status, adopted }
+    : {
+        outcome: 'candidate',
+        reason: '全設定の値がそろわない（アプリは設定が1つでも欠けた確率があると推定が止まる）',
+      };
+}
+
+/**
  * 新しく入れる値の採否（仕様 5.5 前半）。
+ * settings は機種の設定（availableSettings、無ければ "1"〜"6"）で、数値の unit（denominator・percent）では必須。
+ * 一致（2サイト・公式）は今のまま同じ設定の組どうしで比べるので、一部の設定だけの出典は values に記録しても、
+ * 全設定の値の一致には数えない。採用する値に全設定がそろわなければ candidate にする（adoptNewValue）。
  * @param {{ unit: string, values: Record<string, unknown>,
- *   sourceKinds: Record<string, string>, reread?: unknown }} input
+ *   sourceKinds: Record<string, string>, reread?: unknown, settings?: string[] }} input
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
  *   | { outcome: 'candidate', reason: string }}
  */
-export function decideNewItem({ unit, values, sourceKinds, reread }) {
+export function decideNewItem({ unit, values, sourceKinds, reread, settings }) {
+  if (isNumericUnit(unit) && !Array.isArray(settings)) {
+    throw new Error('数値の項目には settings（機種の設定）が必要');
+  }
   assertShapes(unit, values, reread);
   const found = findConfirmed(unit, values, sourceKinds);
   if (found?.conflict) return { outcome: 'candidate', reason: 'サイト間で食い違い' };
-  if (found) return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
+  if (found) return adoptNewValue(unit, settings, 'confirmed', found.adopted);
   if (isChonboristaOnly(values)) {
     return rereadAgrees(unit, values, reread)
-      ? { outcome: 'adopt', status: 'provisional-chonborista', adopted: values[CHONBORISTA_KEY] }
+      ? adoptNewValue(unit, settings, 'provisional-chonborista', values[CHONBORISTA_KEY])
       : { outcome: 'candidate', reason: 'ちょんぼりすたのみで、読み直しが無いか一致しない' };
   }
   const count = Object.keys(values).length;
