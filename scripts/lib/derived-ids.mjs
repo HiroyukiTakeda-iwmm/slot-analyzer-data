@@ -1,10 +1,16 @@
 import { migrateV1ToV2 } from '../migrate-v1-to-v2.mjs';
-import { NAME_SEPARATOR, createNameDisambiguator, itemKey, plainName } from './provenance.mjs';
+import {
+  NAME_SEPARATOR,
+  createNameDisambiguator,
+  itemKey,
+  listMachineItems,
+  plainName,
+} from './provenance.mjs';
 
 /**
- * アプリが名前から ID を作る種類（項目キーの種類の名前）。ほかの種類（確定演出・ボイスなど）は ID を持たない。
- * main と比べる検査では、この種類の項目の削除を checkDerivedIds が、ほかの種類の項目の削除を
- * checkRemovedItems（rules-against-base.mjs）が確かめる（二重に報告しない）。
+ * アプリが名前から ID を作る種類（項目キーの種類の名前）。確定演出・ボイスなどは、明示の id があるときだけ
+ * ID を持つ（EXPLICIT_ID_KINDS・hasItemId）。main と比べる検査では、ID を持つ項目の削除を checkDerivedIds が、
+ * ID を持たない項目の削除を checkRemovedItems（rules-against-base.mjs）が確かめる（二重に報告しない）。
  * collectDerivedIds がキーを作る種類と同じであることは、テストで確かめる。
  */
 export const DERIVED_ID_KINDS = new Set([
@@ -17,8 +23,47 @@ export const DERIVED_ID_KINDS = new Set([
 ]);
 
 /**
+ * アプリがデータの `id` をそのまま使い、無いときだけ取り込むたびに乱数の ID を振る種類（項目キーの種類の名前）。
+ * slot-analyzer-ios の services/githubMachineService.ts（`x.id || generateUUID()`）。数えた記録（セッション）は
+ * この ID で項目につながるので、明示の id がある項目は、ID を作る種類と同じく ID を変えない・再利用しない。
+ */
+export const EXPLICIT_ID_KINDS = new Set([
+  'confirmationEvent',
+  'trialSuccessRate',
+  'voiceCount',
+  'musicCount',
+  'effectCount',
+  'modeTransition',
+]);
+
+/** 機種ファイルの配列の欄と、項目キーの種類の名前（EXPLICIT_ID_KINDS の種類） */
+const EXPLICIT_ID_FIELDS = [
+  ['confirmationEvents', 'confirmationEvent'],
+  ['trialSuccessRates', 'trialSuccessRate'],
+  ['voiceCounts', 'voiceCount'],
+  ['musicCounts', 'musicCount'],
+  ['effectCounts', 'effectCount'],
+  ['modeTransitions', 'modeTransition'],
+];
+
+/** 明示の id（アプリがそのまま使う id。migrate-v1-to-v2.mjs と githubMachineService.ts と同じ判定） */
+export function hasExplicitId(entry) {
+  return typeof entry.id === 'string' && entry.id.length > 0;
+}
+
+/**
+ * ID を持つ項目か: ID を作る種類（DERIVED_ID_KINDS）の項目、または EXPLICIT_ID_KINDS の種類で明示の id が
+ * ある項目。ID を持つ項目は、ID を変えない・消したら removed に書く・外した ID を再利用しない（仕様 5.8）。
+ * @param {string} kind 項目キーの種類の名前
+ * @param {object} raw 機種ファイルの項目そのもの
+ */
+export function hasItemId(kind, raw) {
+  return DERIVED_ID_KINDS.has(kind) || (EXPLICIT_ID_KINDS.has(kind) && hasExplicitId(raw));
+}
+
+/**
  * 基準にある項目が消えたのに、出典記録の removed に無いときの文面。
- * checkDerivedIds（ID を作る種類）と checkRemovedItems（ID を持たない種類）で同じ文面にする。
+ * checkDerivedIds（ID を持つ項目）と checkRemovedItems（ID を持たない項目）で同じ文面にする。
  */
 export const UNRECORDED_REMOVAL = '項目が消えたのに、出典記録の removed に無い';
 
@@ -68,9 +113,30 @@ export function collectDerivedIds(machine) {
   return ids;
 }
 
-/** 明示の id（アプリの移行処理が名前から作らず、そのまま使う id。migrate-v1-to-v2.mjs と同じ判定） */
-function hasExplicitId(entry) {
-  return typeof entry.id === 'string' && entry.id.length > 0;
+/**
+ * ID を持つ項目の ID を、項目キーごとに集める（仕様 5.8。ID の集め方はここ1か所）。
+ * ID を作る種類はアプリと同じ作り方（collectDerivedIds）、EXPLICIT_ID_KINDS の種類は明示の id そのもの
+ * （id の無い項目は含めない。アプリが取り込むたびに乱数の ID を振るため）。範囲（idScope）は、後者では種類。
+ * 同じ種類で同じ名前の項目は、出典記録と同じく並び順で `#2` などを付けて区別する（id の無い項目も数える）。
+ *
+ * @param {object} machine 機種ファイルの中身
+ * @returns {Map<string, string>} 項目キー → ID
+ */
+export function collectItemIds(machine) {
+  const ids = collectDerivedIds(machine);
+  const disambiguate = createNameDisambiguator();
+  for (const [field, kind] of EXPLICIT_ID_FIELDS) {
+    for (const entry of machine[field] ?? []) {
+      const key = itemKey(kind, disambiguate(kind, plainName(kind, entry.name)));
+      if (hasExplicitId(entry)) ids.set(key, entry.id);
+    }
+  }
+  return ids;
+}
+
+/** 機種の項目キー（出典記録の項目の単位）の Set */
+function itemKeysOf(machine) {
+  return new Set(listMachineItems(machine).map((item) => itemKey(item.kind, item.name)));
 }
 
 /**
@@ -149,7 +215,7 @@ export function retiredIdsByMachine(provenanceFiles) {
 }
 
 /**
- * 基準の ID が、比べる側でも同じかを確かめる。
+ * 基準の ID（collectItemIds）が、比べる側でも同じかを確かめる。明示の id が無くなった項目も報告する。
  * 新しく足した項目が、基準の別の項目の ID（外した項目の ID など）を使っていないかも確かめる。
  * 利用者の記録は ID でつながっているので、ID を引き継ぐと、外した項目の記録が別の項目に付く。
  * 外した項目の ID は、出典記録の retiredIds（外した ID の台帳。足すだけ）に残り、今の機種ファイルの項目が
@@ -160,14 +226,26 @@ export function retiredIdsByMachine(provenanceFiles) {
  * @param {Map<string, string>} headIds 比べる側（作業ブランチ）の ID
  * @param {Set<string>} removedKeys 出典記録の removed にある項目キー
  * @param {Set<string>} [retired] 比べる側の出典記録の retiredIds（範囲つきの ID。scopedId）
+ * @param {Set<string>} [headKeys] 比べる側の項目キー（ID の無い項目も）。ID を持たなくなった項目を、消えた
+ *   項目と分けて報告するのに使う
  * @returns {string[]} 問題の説明。空なら問題なし
  */
-export function compareDerivedIds(baseIds, headIds, removedKeys, retired = new Set()) {
+export function compareDerivedIds(
+  baseIds,
+  headIds,
+  removedKeys,
+  retired = new Set(),
+  headKeys = new Set(headIds.keys())
+) {
   const problems = [];
   for (const [key, id] of baseIds) {
     if (headIds.has(key)) {
       const headId = headIds.get(key);
       if (headId !== id) problems.push(`${key}: ID が変わった（${id} → ${headId}）`);
+    } else if (headKeys.has(key)) {
+      problems.push(
+        `${key}: 明示の id が無くなった（${id}。アプリが取り込むたびに乱数の ID になり、数えた記録が切れる）`
+      );
     } else if (!removedKeys.has(key)) {
       problems.push(`${key}: ${UNRECORDED_REMOVAL}`);
     }
@@ -187,9 +265,28 @@ export function compareDerivedIds(baseIds, headIds, removedKeys, retired = new S
 }
 
 /**
- * index.json の機種について、アプリが作る ID を確かめる。
+ * 比べる側で新しく足した項目（基準に無い項目キー。新しい機種の項目も）のうち、EXPLICIT_ID_KINDS の種類で
+ * 明示の id が無いもの（アプリが取り込むたびに乱数の ID になり、数えた記録が切れる）。基準にあった id の無い
+ * 項目はそのまま（段階1a は機種ファイルを変えない）
+ * @param {object | undefined} base 基準の機種ファイル（新しい機種なら undefined）
+ */
+function missingExplicitIdProblems(base, head) {
+  const baseKeys = base ? itemKeysOf(base) : new Set();
+  return listMachineItems(head)
+    .map((item) => ({ ...item, key: itemKey(item.kind, item.name) }))
+    .filter((item) => EXPLICIT_ID_KINDS.has(item.kind) && !baseKeys.has(item.key))
+    .filter((item) => !hasExplicitId(item.raw))
+    .map(
+      (item) =>
+        `${item.key}: 新しい項目に明示の id が無い（アプリが取り込むたびに乱数の ID になり、数えた記録が切れる）`
+    );
+}
+
+/**
+ * index.json の機種について、ID を持つ項目（collectItemIds）の ID を確かめる。
  * - 基準の index.json の機種: 基準と比べる（compareDerivedIds）。index.json から消えた機種も報告する
- * - 比べる側の index.json のすべての機種（新しく足した機種も）: 同じ名前の項目に別々の明示の id があるか
+ * - 比べる側の index.json のすべての機種（新しく足した機種も）: 同じ名前の項目に別々の明示の id があるか、
+ *   新しく足した確定演出などに明示の id があるか
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   provenanceFiles: Array<{ data: object | null }> }} io
@@ -207,21 +304,35 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
   );
 
   const problems = [];
+  const baseMachines = new Map();
   for (const entry of baseIndex.machines) {
     if (!headMachines.has(entry.id)) {
       problems.push(`${entry.id}: index.json から機種が消えた`);
       continue;
     }
-    const baseIds = collectDerivedIds(JSON.parse(readBase(`machines/${entry.file}`)));
-    const headIds = collectDerivedIds(headMachines.get(entry.id));
+    const base = JSON.parse(readBase(`machines/${entry.file}`));
+    const head = headMachines.get(entry.id);
+    baseMachines.set(entry.id, base);
     const removed = removedById.get(entry.id) ?? new Set();
     const retired = retiredById.get(entry.id) ?? new Set();
-    for (const problem of compareDerivedIds(baseIds, headIds, removed, retired)) {
+    const headIds = collectItemIds(head);
+    const headKeys = new Set([...itemKeysOf(head), ...headIds.keys()]);
+    for (const problem of compareDerivedIds(
+      collectItemIds(base),
+      headIds,
+      removed,
+      retired,
+      headKeys
+    )) {
       problems.push(`${entry.id}: ${problem}`);
     }
   }
   for (const [id, machine] of headMachines) {
-    for (const problem of findDuplicateNameProblems(machine)) problems.push(`${id}: ${problem}`);
+    const machineProblems = [
+      ...findDuplicateNameProblems(machine),
+      ...missingExplicitIdProblems(baseMachines.get(id), machine),
+    ];
+    for (const problem of machineProblems) problems.push(`${id}: ${problem}`);
   }
   return problems;
 }

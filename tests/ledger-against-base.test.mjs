@@ -142,6 +142,30 @@ describe('checkLedgerAgainstBase: 新しく外した項目（removed）を main 
   });
 });
 
+describe('checkLedgerAgainstBase: 明示の id を持つ項目', () => {
+  it('確定演出の removed の appId も、main の明示の id と比べる', () => {
+    const gold = { name: '金トロフィー', id: 'gold', confirmedSettings: ['6'] };
+    const removed = (appId) => ({
+      kind: 'confirmationEvent',
+      name: '金トロフィー',
+      unit: 'settings',
+      previous: gold,
+      values: {},
+      appId,
+      reason: '出典なし',
+    });
+    const main = machineMap([role('BIG', 1)], { confirmationEvents: [gold] });
+    const head = machineMap([role('BIG', 1)]);
+    expect(runLedger(main, head, [ledger([removed('gold')])])).toEqual([]);
+    expect(runLedger(main, head, [ledger([removed('kin')])])).toEqual([
+      problem(
+        'confirmationEvent::金トロフィー',
+        'removed の appId が main の ID と違う（main: gold）'
+      ),
+    ]);
+  });
+});
+
 describe('checkLedgerAgainstBase: main の記録（removed は消してよい・retiredIds は足すだけ）', () => {
   const withoutKyou = machineMap([role('BIG', 1)]);
   const kyou = removedRole('強', 2, 'role_2');
@@ -254,6 +278,68 @@ describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新�
       ...(againstBase.code === 0 ? [] : againstBase.lines),
     ];
   };
+
+  it('確定演出（明示の id）: 3段目で止まる', () => {
+    const gold = {
+      name: '金トロフィー',
+      id: 'gold',
+      confirmedSettings: ['6'],
+      excludedSettings: [],
+    };
+    const settingsItem = (name, confirmed) => ({
+      kind: 'confirmationEvent',
+      name,
+      status: 'confirmed',
+      unit: 'settings',
+      values: {
+        'site-a': { confirmed, excluded: [] },
+        'site-b': { confirmed, excluded: [] },
+      },
+      adopted: { confirmed, excluded: [] },
+    });
+    const main0 = repo({ name: 'テスト機種', confirmationEvents: [gold] });
+    const retired = [row('金トロフィー', 'gold', 'confirmationEvent')];
+    const goldRemoved = {
+      kind: 'confirmationEvent',
+      name: '金トロフィー',
+      unit: 'settings',
+      previous: gold,
+      values: {},
+      appId: 'gold',
+      reason: '出典なし',
+    };
+    // PR1: 金トロフィー を外す
+    const main1 = repo(
+      { name: 'テスト機種', confirmationEvents: [] },
+      recordOf([], [goldRemoved], retired)
+    );
+    expect(problemsOf(main0, main1)).toEqual([]);
+    // PR2: 別の id で足し直し、removed から消す（retiredIds は残す）
+    const regold = { ...gold, id: 'gold_v2' };
+    const main2 = repo(
+      { name: 'テスト機種', confirmationEvents: [regold] },
+      recordOf([settingsItem('金トロフィー', ['6'])], [], retired)
+    );
+    expect(problemsOf(main1, main2)).toEqual([]);
+    // PR3: 新しい 虹トロフィー に、外した id（gold）を付ける
+    const rainbow = {
+      name: '虹トロフィー',
+      id: 'gold',
+      confirmedSettings: ['5', '6'],
+      excludedSettings: [],
+    };
+    const pr3 = repo(
+      { name: 'テスト機種', confirmationEvents: [regold, rainbow] },
+      recordOf(
+        [settingsItem('金トロフィー', ['6']), settingsItem('虹トロフィー', ['5', '6'])],
+        [],
+        retired
+      )
+    );
+    expect(problemsOf(main2, pr3)).toEqual([
+      'confirmationEvent::虹トロフィー: 外した項目の ID（gold）を使っている（明示の id を付ける）',
+    ]);
+  });
 
   it('終了画面（名前から作る ID）: 3段目で止まる', () => {
     const jin = { name: '仁', hint: '' };

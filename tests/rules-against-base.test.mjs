@@ -300,6 +300,11 @@ describe('checkRemovedItems（ID を持たない種類の項目の削除）', ()
     expect(runRemoved(withItems({}), withItems({ roles: [] }))).toEqual([]);
   });
 
+  it('明示の id を持つ項目を消したときは報告しない（ID を持つ項目は checkDerivedIds が同じ文面で報告する）', () => {
+    const base = withItems({ confirmationEvents: [{ ...gold, id: 'gold' }] });
+    expect(runRemoved(base, withItems({ confirmationEvents: [] }))).toEqual([]);
+  });
+
   it('読めなかった記録は飛ばす（validate が報告する）', () => {
     const base = withItems({ confirmationEvents: [gold] });
     const provenanceFiles = [{ path: 'provenance/test-machine.json', data: null }];

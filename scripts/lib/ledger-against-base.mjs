@@ -1,4 +1,4 @@
-import { collectDerivedIds } from './derived-ids.mjs';
+import { collectItemIds } from './derived-ids.mjs';
 import { itemKey, listMachineItems } from './provenance.mjs';
 import { indexById } from './rules-against-base.mjs';
 
@@ -35,7 +35,7 @@ function machineContext(read, entry) {
   const machine = JSON.parse(read(`machines/${entry.file}`));
   return {
     items: new Map(listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])),
-    ids: collectDerivedIds(machine),
+    ids: collectItemIds(machine),
   };
 }
 

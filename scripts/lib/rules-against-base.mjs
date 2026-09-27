@@ -1,4 +1,4 @@
-import { DERIVED_ID_KINDS, UNRECORDED_REMOVAL, removedKeysByMachine } from './derived-ids.mjs';
+import { UNRECORDED_REMOVAL, hasItemId, removedKeysByMachine } from './derived-ids.mjs';
 import {
   itemKey,
   listMachineItems,
@@ -99,10 +99,10 @@ export function checkRulesAgainstBase({ readBase, readHead, provenanceFiles }) {
 }
 
 /**
- * ID を持たない種類の項目（確定演出・試行成功率・ボイスなど）が、出典記録の removed に書かれずに
+ * ID を持たない項目（明示の id の無い確定演出・試行成功率・ボイスなどと、特殊設定）が、出典記録の removed に書かれずに
  * 消えていないかを確かめる（仕様 5.5 の規則4「外す（removed に前の値と理由を残す）」を機械で守る）。
  * 基準と比べる側の両方の index.json にある機種ごとに、listMachineItems の項目キーで比べる。
- * ID を作る種類（DERIVED_ID_KINDS）の項目は checkDerivedIds が同じ文面（UNRECORDED_REMOVAL）で、
+ * ID を持つ項目（hasItemId）は checkDerivedIds が同じ文面（UNRECORDED_REMOVAL）で、
  * index.json から消えた機種も checkDerivedIds が報告するので、ここでは見ない（二重に出さない）。
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
@@ -119,7 +119,7 @@ export function checkRemovedItems({ readBase, readHead, provenanceFiles }) {
     const headItems = itemsByKey(readHead, headEntry);
     const removed = removedById.get(id) ?? new Set();
     for (const [key, item] of itemsByKey(readBase, baseEntry)) {
-      if (DERIVED_ID_KINDS.has(item.kind) || headItems.has(key) || removed.has(key)) continue;
+      if (hasItemId(item.kind, item.raw) || headItems.has(key) || removed.has(key)) continue;
       problems.push(`${id}: ${key}: ${UNRECORDED_REMOVAL}`);
     }
   }

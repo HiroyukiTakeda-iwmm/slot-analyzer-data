@@ -3,7 +3,13 @@ import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs';
 import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { DERIVED_ID_KINDS, collectDerivedIds, scopedId } from '../lib/derived-ids.mjs';
+import {
+  DERIVED_ID_KINDS,
+  EXPLICIT_ID_KINDS,
+  collectItemIds,
+  hasItemId,
+  scopedId,
+} from '../lib/derived-ids.mjs';
 import { OFFICIAL_DOMAINS_PATH } from '../lib/load-provenance.mjs';
 import {
   CHONBORISTA_KEY,
@@ -323,18 +329,18 @@ function checkItem(path, item, sourceKinds, machineItems) {
 }
 
 /**
- * appId は、アプリが ID を作る種類（DERIVED_ID_KINDS）だけに書く（仕様 5.8）。
- * 種類の一覧をスキーマに書き写さないよう、ここで確かめる。
+ * appId は、ID を持つ項目（ID を作る種類の項目と、確定演出などで previous に明示の id がある項目。hasItemId）
+ * だけに書く（仕様 5.8）。種類の一覧をスキーマに書き写さないよう、ここで確かめる。
  */
 function appIdErrors(path, key, removed) {
-  const derived = DERIVED_ID_KINDS.has(removed.kind);
-  if (derived && removed.appId === undefined) {
+  const hasId = hasItemId(removed.kind, removed.previous);
+  if (hasId && removed.appId === undefined) {
     return [
-      error(path, `${key}: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く`),
+      error(path, `${key}: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く`),
     ];
   }
-  if (!derived && removed.appId !== undefined) {
-    return [error(path, `${key}: ID を作らない種類なので、appId を書かない`)];
+  if (!hasId && removed.appId !== undefined) {
+    return [error(path, `${key}: ID を持たない項目なので、appId を書かない`)];
   }
   return [];
 }
@@ -418,7 +424,7 @@ function retiredIdErrors(path, record, machineItems, itemIds) {
   const rows = new Set();
   for (const row of record.retiredIds) {
     const key = itemKey(row.kind, row.name);
-    if (!DERIVED_ID_KINDS.has(row.kind)) {
+    if (!DERIVED_ID_KINDS.has(row.kind) && !EXPLICIT_ID_KINDS.has(row.kind)) {
       errors.push(error(path, `${key}: ID を持たない種類は retiredIds に書かない`));
     }
     if (rows.has(retiredRowKey(row))) {
@@ -428,7 +434,7 @@ function retiredIdErrors(path, record, machineItems, itemIds) {
   }
   for (const removed of record.removed) {
     // appId を書かない種類の appId は appIdErrors が報告する（1つの原因に1つのエラー）
-    if (removed.appId === undefined || !DERIVED_ID_KINDS.has(removed.kind)) continue;
+    if (removed.appId === undefined || !hasItemId(removed.kind, removed.previous)) continue;
     if (rows.has(retiredRowKey(removed))) continue;
     const key = itemKey(removed.kind, removed.name);
     errors.push(
@@ -462,7 +468,7 @@ function checkRecord(path, record, machine, officialDomains) {
     machineItems = new Map(
       listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])
     );
-    itemIds = collectDerivedIds(machine);
+    itemIds = collectItemIds(machine);
   } catch (e) {
     errors.push(error(path, e.message));
     return errors;

@@ -850,8 +850,8 @@ describe('validateProvenance: 外した項目（removed）', () => {
   it('ID を作る種類で appId が無い、ほかの種類で appId があればエラー', () => {
     const removed = [without(removedCherry(), 'appId'), removedSilver({ appId: 'gin' })];
     expect(run(record({ removed })).errors.map((e) => e.message)).toEqual([
-      'role::中段チェリー: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
-      'confirmationEvent::銀トロフィー: ID を作らない種類なので、appId を書かない',
+      'role::中段チェリー: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く',
+      'confirmationEvent::銀トロフィー: ID を持たない項目なので、appId を書かない',
     ]);
   });
 
@@ -871,9 +871,9 @@ describe('validateProvenance: 外した項目（removed）', () => {
     expect(
       errorsOf(plain('endScreen', '青'), plain('endScreenGroupItem', 'End::赤'), zoneRole)
     ).toEqual([
-      'endScreen::青: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
-      'endScreenGroupItem::End::赤: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
-      'zoneRole::CZ::中段チェリー: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
+      'endScreen::青: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く',
+      'endScreenGroupItem::End::赤: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く',
+      'zoneRole::CZ::中段チェリー: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く',
     ]);
   });
 
@@ -1050,6 +1050,45 @@ describe('validateProvenance: 外した ID の台帳（retiredIds）', () => {
     expect(
       reuses([row('zoneRole', 'AT::旧', 'bell_1'), row('endScreenGroupItem', 'Top::旧', 'red')])
     ).toEqual([]);
+  });
+
+  it('明示の id を持つ確定演出なども ID を持つ項目: removed に appId と台帳の行が要り、今の項目は台帳の id を使えない', () => {
+    const SILVER = {
+      name: '銀トロフィー',
+      id: 'silver',
+      confirmedSettings: ['6'],
+      excludedSettings: [],
+    };
+    const removedSilver = {
+      kind: 'confirmationEvent',
+      name: '銀トロフィー',
+      unit: 'settings',
+      previous: SILVER,
+      values: {},
+      appId: 'silver',
+      reason: '出典なし',
+    };
+    const SILVER_ROW = row('confirmationEvent', '銀トロフィー', 'silver');
+    expect(errorsOf({ removed: [removedSilver], retiredIds: [SILVER_ROW] })).toEqual([]);
+    const noAppId = Object.fromEntries(
+      Object.entries(removedSilver).filter(([name]) => name !== 'appId')
+    );
+    expect(errorsOf({ removed: [noAppId], retiredIds: [] })).toEqual([
+      'confirmationEvent::銀トロフィー: ID を持つ項目なので、appId（main でアプリが使っていた ID）を書く',
+    ]);
+    expect(errorsOf({ removed: [removedSilver], retiredIds: [] })).toEqual([
+      'confirmationEvent::銀トロフィー: removed の appId（silver）が retiredIds に無い（外した ID の台帳に足す）',
+    ]);
+    // 今の機種ファイルの 金トロフィー が、外した id を使う（範囲は種類ごと）
+    const withGoldId = {
+      ...machine,
+      confirmationEvents: [{ ...machine.confirmationEvents[0], id: 'silver' }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withGoldId }];
+    expect(errorsOf({ retiredIds: [SILVER_ROW] }, files)).toEqual([
+      REUSE('confirmationEvent::金トロフィー', 'silver'),
+    ]);
+    expect(errorsOf({ retiredIds: [row('trialSuccessRate', '旧', 'silver')] }, files)).toEqual([]);
   });
 
   it('外したはずの項目が機種ファイルに残っているときは、そのエラーだけを出す（自分の ID の再利用を重ねない）', () => {
