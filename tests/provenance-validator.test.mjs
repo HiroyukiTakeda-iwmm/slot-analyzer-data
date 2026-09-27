@@ -139,10 +139,12 @@ describe('validateProvenance', () => {
     expect(messages(run(rec))).toContain('confirmationEvent::金トロフィー: 出典記録がない項目');
   });
 
-  it('機種ファイルに無い項目の記録はエラー', () => {
+  it('機種ファイルに無い項目の記録は、そのエラーだけを出す（確率が無いことによる status の確かめを重ねない）', () => {
     const rec = record();
     rec.items.push({ ...rec.items[0], name: 'REG' });
-    expect(messages(run(rec))).toContain('role::REG: 機種ファイルに無い項目の記録');
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::REG: 機種ファイルに無い項目の記録',
+    ]);
   });
 
   it('機種ファイルの値が採用値と違えばエラー', () => {
@@ -228,7 +230,7 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('一部の設定だけの採用値の confirmed は、statusError（valuesEqual）を通っても、機種ファイルの全設定との比較で止まる', () => {
+  it('一部の設定だけの採用値の confirmed は、statusError（一部だけの値は採用の候補にならない）と機種ファイルの全設定との比較の両方で止まる', () => {
     const partial = { 1: 295.2 };
     const rec = record();
     rec.items[0] = {
@@ -238,10 +240,48 @@ describe('validateProvenance', () => {
     };
     const kinds = { chonborista: 'analysis-site', 'nana-press': 'analysis-site' };
     const stored = machine.roles[0].probabilities;
-    expect(statusError(rec.items[0], kinds, { stored })).toBeNull();
-    expect(run(rec).errors.map((e) => e.message)).toEqual([
-      'role::BIG: 機種ファイルの値が採用値と一致しない',
-    ]);
+    expect(statusError(rec.items[0], kinds, { stored })).toContain('confirmed には');
+    const errors = run(rec).errors.map((e) => e.message);
+    expect(errors).toHaveLength(2);
+    expect(errors[0]).toContain('role::BIG: confirmed には');
+    expect(errors[1]).toBe('role::BIG: 機種ファイルの値が採用値と一致しない');
+  });
+
+  it('一部の設定だけの出典を含む記録も、採否の判定どおりなら通る（全設定の2サイト一致・矛盾しない一部だけの出典のある暫定）', () => {
+    const site = (key, host) => ({
+      key,
+      kind: 'analysis-site',
+      url: `https://${host}/kaiseki/1/`,
+      retrievedAt: '2026-09-26',
+    });
+    const part = { 1: 295.2 };
+    const rec = record();
+    rec.sources.push(
+      site('p-town-dmm', 'p-town.dmm.com'),
+      site('slopachi', 'slopachi-quest.com'),
+      site('x-site', 'x-site.example.jp')
+    );
+    // ちょんぼりすた・なな徹・DMM は設定1だけ。スロパチと X が全設定で一致（採用値はスロパチの値）
+    rec.items[0] = {
+      ...rec.items[0],
+      values: {
+        chonborista: part,
+        'nana-press': part,
+        'p-town-dmm': part,
+        slopachi: BIG,
+        'x-site': { ...BIG },
+      },
+      adopted: BIG,
+    };
+    expect(run(rec).errors).toEqual([]);
+    // ちょんぼりすたが全設定、なな徹が矛盾しない一部だけ、読み直し一致 → 暫定
+    rec.items[0] = {
+      ...rec.items[0],
+      status: 'provisional-chonborista',
+      values: { chonborista: BIG, 'nana-press': part },
+      reread: { by: 'verifier', value: { ...BIG } },
+    };
+    expect(run(rec).errors).toEqual([]);
   });
 
   it('kept-single-source は、機種ファイルの確率で裏づけを数える（一部の設定だけの出典も数える）', () => {
@@ -261,17 +301,31 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('機種ファイルに無い項目の kept-single-source も、落ちずにエラーとして報告する', () => {
+  it('機種ファイルに無い項目の kept-single-source・provisional-chonborista も、落ちずにそのエラーだけを出す', () => {
     const rec = record();
-    rec.items.push({
-      kind: 'role',
-      name: 'REG',
-      status: 'kept-single-source',
-      unit: 'denominator',
-      values: { 'nana-press': { 1: 400 } },
-      adopted: { 1: 400 },
-    });
-    expect(messages(run(rec))).toContain('role::REG: 機種ファイルに無い項目の記録');
+    rec.items.push(
+      {
+        kind: 'role',
+        name: 'REG',
+        status: 'kept-single-source',
+        unit: 'denominator',
+        values: { 'nana-press': { 1: 400 } },
+        adopted: { 1: 400 },
+      },
+      {
+        kind: 'role',
+        name: 'CZ',
+        status: 'provisional-chonborista',
+        unit: 'denominator',
+        values: { chonborista: { 1: 50 } },
+        adopted: { 1: 50 },
+        reread: { by: 'verifier', value: { 1: 50 } },
+      }
+    );
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::REG: 機種ファイルに無い項目の記録',
+      'role::CZ: 機種ファイルに無い項目の記録',
+    ]);
   });
 
   it('値の文字列は、表示の桁を残した数か % 付きの割合だけ（"1/300" はスキーマ違反）', () => {

@@ -217,15 +217,16 @@ function checkItem(path, item, sourceKinds, machineItems) {
   }
   if (shapeProblems.length > 0) return errors;
 
-  // 機種ファイルに無い項目では確率が分からない（数値の kept-single-source は statusError がそう報告する）
-  const stored = target ? storedMap(target.entry) : null;
-  const statusProblem = statusError(item, sourceKinds, { stored });
-  if (statusProblem) errors.push(error(path, `${key}: ${statusProblem}`));
-
+  // 機種ファイルに無い項目は、そのエラーだけを出す。確率が分からないので status と値は確かめられない
+  // （1つの原因に1つのエラー）
   if (!target) {
     errors.push(error(path, `${key}: 機種ファイルに無い項目の記録`));
     return errors;
   }
+  const stored = storedMap(target.entry);
+  const statusProblem = statusError(item, sourceKinds, { stored });
+  if (statusProblem) errors.push(error(path, `${key}: ${statusProblem}`));
+
   const actual = machineValue(target.entry, item.unit);
   if (actual === null) {
     errors.push(error(path, `${key}: 機種ファイルの値を unit=${item.unit} で表せない`));
