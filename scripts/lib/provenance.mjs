@@ -11,7 +11,8 @@
  *
  * 分母・割合の値は、出典の表示の桁のまま書く（数か、末尾の 0 を残す文字列 "300.0"）。値どうしは、表示の
  * 最後の桁の半分の幅（丸めの幅）を確率に直し、すべての設定で幅が重なるかで比べる。機種ファイルの確率は、
- * 小数6桁より粗くないとみなした幅で比べる（仕様 5.4）。
+ * 小数6桁より粗くないとみなした幅で比べる（仕様 5.4）。ただし確定・暫定の値を書いた機種ファイルの確率は、
+ * 採用値を有効数字6桁にした値そのものかで比べる（仕様 5.6。machineValueProblem）。
  *
  * 項目の種類（kind）と unit の一覧は schemas/provenance.schema.json が正本。
  */
@@ -288,6 +289,38 @@ export function machineValue(entry, unit) {
     default:
       return null;
   }
+}
+
+/**
+ * 機種ファイルの項目の値が、出典記録の項目の採用値と合わないときの説明（合えば null。仕様 5.4・5.6）。
+ * - 数値の unit の confirmed・provisional-chonborista: 確定・暫定の値は、採用値を有効数字6桁にした値
+ *   （toStoredFromShown）を機種ファイルに書く。機種ファイルの確率が、すべての設定でその値そのもの（===）かを見る。
+ *   丸めの幅では比べない（小数6桁の幅は小さい確率ほど広く、1/65536 を 0.000015 と書いた約1.7%のずれも入るため）
+ * - 数値の unit の kept-single-source: 機種ファイルの確率の幅で比べる（残す値は変えない。main の値そのものかは
+ *   main と比べる検査が確かめる）
+ * - 設定の組・有無の unit: 組・有無で比べる
+ * 採用値と機種ファイルで設定（キー）の組が違えば、status によらず「一致しない」とする。
+ * @param {{ unit: string, status: string, adopted: unknown }} item 形を shapeError で確かめた、出典記録の項目
+ * @param {object} entry listMachineItems の項目の entry
+ * @returns {string | null}
+ */
+export function machineValueProblem(item, entry) {
+  const { unit, status, adopted } = item;
+  const current = machineValue(entry, unit);
+  if (current === null) return `機種ファイルの値を unit=${unit} で表せない`;
+  const mismatch = '機種ファイルの値が採用値と一致しない';
+  if (!isNumericUnit(unit)) return valuesAgree(unit, current, adopted) ? null : mismatch;
+  const stored = storedMap(entry);
+  if (status === 'kept-single-source' || !sameKeys(adopted, stored)) {
+    return agreesWithStored(unit, adopted, stored) ? null : mismatch;
+  }
+  const differences = Object.keys(stored)
+    .map((s) => [s, stored[s], toStoredFromShown(unit, adopted[s])])
+    .filter(([, actual, expected]) => actual !== expected)
+    .map(([s, actual, expected]) => `設定 ${s}: ${actual} ≠ ${expected}`);
+  return differences.length === 0
+    ? null
+    : `機種ファイルの値が、採用値を有効数字6桁にした値と違う（${differences.join('、')}）`;
 }
 
 /** percent で記録できるのは、0 でない確率がすべてこれ以上の項目だけ（仕様 5.4） */

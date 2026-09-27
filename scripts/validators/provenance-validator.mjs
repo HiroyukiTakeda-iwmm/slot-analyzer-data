@@ -5,16 +5,13 @@ import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import {
   CHONBORISTA_KEY,
-  agreesWithStored,
   allowedUnits,
-  isNumericUnit,
   itemKey,
   listMachineItems,
-  machineValue,
+  machineValueProblem,
   shapeError,
   statusError,
   storedMap,
-  valuesAgree,
 } from '../lib/provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -227,23 +224,10 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const statusProblem = statusError(item, sourceKinds, { stored });
   if (statusProblem) errors.push(error(path, `${key}: ${statusProblem}`));
 
-  const actual = machineValue(target.entry, item.unit);
-  if (actual === null) {
-    errors.push(error(path, `${key}: 機種ファイルの値を unit=${item.unit} で表せない`));
-  } else if (!adoptedMatchesMachine(item, actual, stored)) {
-    errors.push(error(path, `${key}: 機種ファイルの値が採用値と一致しない`));
-  }
+  // 確定・暫定の数値は、採用値を有効数字6桁にした値そのもの。残す値と設定の組・有無は 5.4 の一致（仕様 5.6）
+  const valueProblem = machineValueProblem(item, target.entry);
+  if (valueProblem) errors.push(error(path, `${key}: ${valueProblem}`));
   return errors;
-}
-
-/**
- * 採用値が機種ファイルの値と一致するか（仕様 5.4）。数値の unit では、機種ファイルの確率の幅と
- * すべての設定で比べる（分母に直した値 1 ÷ 確率 の桁では比べない）。設定の組・有無の unit では、組・有無で比べる。
- */
-function adoptedMatchesMachine(item, actual, stored) {
-  return isNumericUnit(item.unit)
-    ? agreesWithStored(item.unit, item.adopted, stored)
-    : valuesAgree(item.unit, actual, item.adopted);
 }
 
 function checkRecord(path, record, machine) {

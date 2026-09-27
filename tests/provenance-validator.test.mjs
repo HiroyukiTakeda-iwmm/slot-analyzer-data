@@ -37,6 +37,17 @@ const index = {
 
 const machineFiles = [{ path: 'machines/test/test-machine.json', data: machine }];
 
+/** BIG の設定1の確率だけを p1 にした機種ファイル（設定6は 1/277.7 の有効数字6桁のまま） */
+const filesWithBig1 = (p1) => [
+  {
+    path: 'machines/test/test-machine.json',
+    data: {
+      ...machine,
+      roles: [{ ...machine.roles[0], probabilities: { 1: p1, 6: toStoredProbability(277.7) } }],
+    },
+  },
+];
+
 const BIG = { 1: 295.2, 6: 277.7 };
 const GOLD = { confirmed: ['6'], excluded: ['1'] };
 
@@ -147,7 +158,7 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('機種ファイルの値が採用値と違えばエラー', () => {
+  it('機種ファイルの値が採用値と違えばエラー（confirmed は、採用値を有効数字6桁にした値と比べる）', () => {
     const other = { 1: 300, 6: 277.7 };
     const rec = record();
     rec.items[0] = {
@@ -155,7 +166,9 @@ describe('validateProvenance', () => {
       values: { chonborista: other, 'nana-press': other },
       adopted: other,
     };
-    expect(messages(run(rec))).toContain('role::BIG: 機種ファイルの値が採用値と一致しない');
+    expect(run(rec).errors.map((e) => e.message)).toEqual([
+      'role::BIG: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.00338753 ≠ 0.00333333）',
+    ]);
   });
 
   it('% 表示の値（"3.1%"）を採用値にした分母の項目は、機種ファイルの確率（0.031）と一致して通る', () => {
@@ -174,7 +187,33 @@ describe('validateProvenance', () => {
     expect(run(rec, { files }).errors).toEqual([]);
   });
 
-  it('採用値は機種ファイルの確率の幅で比べる（295.4 は 1/295.2 の 0.00338753 と一致しない）', () => {
+  it('confirmed・provisional-chonborista の数値は、採用値を有効数字6桁にした値そのものを機種ファイルに書く（65536 を小数6桁の 0.000015 と書いた約1.7%のずれを止める）', () => {
+    // 1/65536 は有効数字6桁で 0.0000152588。小数6桁の 0.000015 は、小数6桁の幅（0.0000145〜0.0000155）では
+    // 出典の 65536 と重なってしまう
+    const shown = { 1: 65536, 6: 277.7 };
+    const confirmed = record();
+    confirmed.items[0] = {
+      ...confirmed.items[0],
+      values: { chonborista: shown, 'nana-press': shown },
+      adopted: shown,
+    };
+    const provisional = record();
+    provisional.items[0] = {
+      ...provisional.items[0],
+      status: 'provisional-chonborista',
+      values: { chonborista: shown },
+      adopted: shown,
+      reread: { by: 'verifier', value: shown },
+    };
+    for (const rec of [confirmed, provisional]) {
+      expect(run(rec, { files: filesWithBig1(0.000015) }).errors.map((e) => e.message)).toEqual([
+        'role::BIG: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.000015 ≠ 0.0000152588）',
+      ]);
+      expect(run(rec, { files: filesWithBig1(0.0000152588) }).errors).toEqual([]);
+    }
+  });
+
+  it('confirmed の採用値 295.4 は、機種ファイルの 1/295.2（0.00338753）と違う（有効数字6桁にすると 0.00338524）', () => {
     const near = { 1: 295.4, 6: 277.7 };
     const rec = record();
     rec.items[0] = {
@@ -183,31 +222,39 @@ describe('validateProvenance', () => {
       adopted: near,
     };
     expect(run(rec).errors.map((e) => e.message)).toEqual([
-      'role::BIG: 機種ファイルの値が採用値と一致しない',
+      'role::BIG: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.00338753 ≠ 0.00338524）',
     ]);
   });
 
-  it('小数6桁で保存した小さい確率（0.000076）は、出典の分母 13107.2 と一致して通る（I-4）', () => {
-    // 1 ÷ 0.000076 = 13157.9… の桁で比べると一致しない。機種ファイルの確率の幅（0.0000755〜0.0000765）で比べる
-    const small = {
-      ...machine,
-      roles: [
-        { ...machine.roles[0], probabilities: { 1: 0.000076, 6: toStoredProbability(277.7) } },
-      ],
-    };
-    const files = [{ path: 'machines/test/test-machine.json', data: small }];
+  it('小数6桁で保存した小さい確率（0.000076）: kept-single-source は幅で比べて通る（I-4）が、confirmed は有効数字6桁の値でないと止める', () => {
+    // 1 ÷ 0.000076 = 13157.9… の桁で比べると、出典の 13107.2 と一致しない。「残す」は機種ファイルの確率の幅
+    // （0.0000755〜0.0000765）で比べる。確定の値は、13107.2 を有効数字6桁にした 0.0000762939 を書く
     const shown = { 1: 13107.2, 6: 277.7 };
-    const rec = record();
-    rec.items[0] = {
-      ...rec.items[0],
+    const confirmed = record();
+    confirmed.items[0] = {
+      ...confirmed.items[0],
       values: { chonborista: shown, 'nana-press': shown },
       adopted: shown,
     };
-    expect(run(rec, { files }).errors).toEqual([]);
+    const errorsWith = (rec, p1) =>
+      run(rec, { files: filesWithBig1(p1) }).errors.map((e) => e.message);
+    expect(errorsWith(confirmed, 0.000076)).toEqual([
+      'role::BIG: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.000076 ≠ 0.0000762939）',
+    ]);
+    expect(errorsWith(confirmed, 0.0000762939)).toEqual([]);
+
+    const kept = record();
+    kept.items[0] = {
+      ...kept.items[0],
+      status: 'kept-single-source',
+      values: { 'nana-press': shown },
+      adopted: { 1: 1 / 0.000076, 6: 1 / toStoredProbability(277.7) },
+    };
+    expect(errorsWith(kept, 0.000076)).toEqual([]);
   });
 
-  it('区切りのよい確率（割合 0.25）も、機種ファイルの確率の幅で比べる（25.3% は一致しない）', () => {
-    // 0.25 × 100 = 25 の桁（24.5〜25.5%）で比べると一致してしまう
+  it('割合（0.25）: confirmed は有効数字6桁にした値と比べ、kept-single-source は機種ファイルの確率の幅で比べる', () => {
+    // 0.25 × 100 = 25 の桁（24.5〜25.5%）で比べると、25.3% も一致してしまう
     const withRates = {
       ...machine,
       trialSuccessRates: [{ name: 'CZ成功率', probabilities: { 1: 0.25, 6: 0.5 } }],
@@ -225,6 +272,15 @@ describe('validateProvenance', () => {
     rec.items.push(item({ 1: 25, 6: 50 }));
     expect(run(rec, { files }).errors).toEqual([]);
     rec.items[2] = item({ 1: 25.3, 6: 50 });
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'trialSuccessRate::CZ成功率: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.25 ≠ 0.253）',
+    ]);
+    // kept-single-source の採用値が機種ファイルの確率の幅から外れていれば止める（裏づけの出典は合っている）
+    rec.items[2] = {
+      ...item({ 1: 25.3, 6: 50 }),
+      status: 'kept-single-source',
+      values: { 'nana-press': { 1: 25, 6: 50 } },
+    };
     expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
       'trialSuccessRate::CZ成功率: 機種ファイルの値が採用値と一致しない',
     ]);
@@ -499,9 +555,9 @@ describe('validateProvenance', () => {
       adopted: withZero,
     };
     expect(run(rec, { files }).errors).toEqual([]);
-    expect(messages(run(record(), { files }))).toContain(
-      'role::BIG: 機種ファイルの値が採用値と一致しない'
-    );
+    expect(run(record(), { files }).errors.map((e) => e.message)).toEqual([
+      'role::BIG: 機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0 ≠ 0.00338753）',
+    ]);
   });
 
   it('機種ファイルの項目名を区別できないときは、落ちずにエラーとして報告する', () => {

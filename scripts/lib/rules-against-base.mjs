@@ -1,13 +1,12 @@
 import { DERIVED_ID_KINDS, UNRECORDED_REMOVAL, removedKeysByMachine } from './derived-ids.mjs';
 import {
-  CHONBORISTA_KEY,
-  agreesWithStored,
   isNumericUnit,
   itemKey,
   listMachineItems,
   machineValue,
   storedMap,
-  valuesAgree,
+  storedSupporters,
+  supporters,
   valuesEqual,
 } from './provenance.mjs';
 
@@ -27,15 +26,15 @@ function itemsByKey(read, entry) {
 }
 
 /**
- * ちょんぼりすたの値が main の値と一致するか。数値の unit では、main の機種ファイルの確率の幅と、
- * ちょんぼりすたの値に載っている設定だけを比べる（「残す」の判断と同じ数え方。仕様 5.4・5.5）。
+ * main の値を裏づける出典があるか（既存の値の規則2「残す」の裏づけと同じ数え方。仕様 5.5）。
+ * 数値の unit では、main の機種ファイルの確率の幅と、出典の値に載っている設定だけを比べる（一部だけの出典も数える）。
  * 設定の組・有無の unit では、main の値と組・有無で比べる。
  */
-function chonboristaAgreesWithBase(item, baseEntry, baseValue) {
-  const chonborista = item.values?.[CHONBORISTA_KEY];
+function supportedByBase(item, baseEntry, baseValue) {
+  const values = item.values ?? {};
   return isNumericUnit(item.unit)
-    ? agreesWithStored(item.unit, chonborista, storedMap(baseEntry), { partial: true })
-    : valuesAgree(item.unit, chonborista, baseValue);
+    ? storedSupporters(item.unit, values, storedMap(baseEntry)).length >= 1
+    : supporters(item.unit, values, baseValue).length >= 1;
 }
 
 /**
@@ -43,9 +42,9 @@ function chonboristaAgreesWithBase(item, baseEntry, baseValue) {
  * validate（出典記録の検証器と statusError）は main を読まないので、次をここで見る。
  * - kept-single-source は main にある項目にだけ使う。採用値は main の値そのもの（丸めの幅の重なりによる一致は
  *   推移しないので、完全一致で結ぶ）で、機種ファイルの値も main から変えない（「残す」は値を変えないこと）
- * - main にある項目の provisional-chonborista は、ちょんぼりすたの値が main の値と一致しないときだけ使う
- *   （一致するなら規則2の kept-single-source。一致は「残す」の判断と同じく、数値の unit では main の確率の幅で、
- *   ちょんぼりすたの値に載っている設定だけを比べる）
+ * - main にある項目の provisional-chonborista は、main の値を裏づける出典（ちょんぼりすた以外・一部だけの出典も
+ *   含む）が無いときだけ使う（あれば既存の値の順「確定 → 残す → 暫定 → 外す」で規則2の kept-single-source が
+ *   先に当たる。数え方は「残す」の判断と同じ）
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   provenanceFiles: Array<{ data: object | null }> }} io
@@ -73,9 +72,9 @@ export function checkRulesAgainstBase({ readBase, readHead, provenanceFiles }) {
       const baseValue = baseItem ? machineValue(baseItem.entry, item.unit) : null;
 
       if (item.status === PROVISIONAL) {
-        if (baseItem && chonboristaAgreesWithBase(item, baseItem.entry, baseValue)) {
+        if (baseItem && supportedByBase(item, baseItem.entry, baseValue)) {
           problems.push(
-            `${id}: ${key}: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）`
+            `${id}: ${key}: main の値を裏づける出典がある（規則2の kept-single-source にする）`
           );
         }
         continue;

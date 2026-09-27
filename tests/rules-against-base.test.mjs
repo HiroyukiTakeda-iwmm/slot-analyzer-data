@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { decideExistingItem, toStoredProbability } from '../scripts/lib/provenance.mjs';
 import {
   checkNewMachineRecords,
   checkRemovedItems,
@@ -58,6 +59,9 @@ const provisional = (chonborista) => ({
 const recordsOf = (...items) => [{ data: { machineId: 'test-machine', items } }];
 const run = (base, head, provenanceFiles) =>
   checkRulesAgainstBase({ readBase: reader(base), readHead: reader(head), provenanceFiles });
+/** main にある項目の provisional-chonborista で、main の値を裏づける出典があるときの報告 */
+const supportedByBase = (key) =>
+  `test-machine: ${key}: main の値を裏づける出典がある（規則2の kept-single-source にする）`;
 
 describe('checkRulesAgainstBase: kept-single-source', () => {
   it('採用値と機種ファイルの値が main の値そのものなら問題なし', () => {
@@ -98,16 +102,61 @@ describe('checkRulesAgainstBase: kept-single-source', () => {
 });
 
 describe('checkRulesAgainstBase: provisional-chonborista', () => {
-  it('main にある項目で、ちょんぼりすたの値が main の値と一致しないなら問題なし（規則3）', () => {
+  it('main にある項目で、main の値を裏づける出典が無いなら問題なし（規則3）', () => {
     const map = files([big(0.00338753)]);
     expect(run(map, map, recordsOf(provisional({ 1: 300 })))).toEqual([]);
   });
 
-  it('main にある項目で、ちょんぼりすたの値が main の値と一致するなら報告する（規則2）', () => {
+  it('main にある項目で、ちょんぼりすたの値が main の値を裏づけるなら報告する（規則2）', () => {
     const map = files([big(0.00338753)]);
     expect(run(map, map, recordsOf(provisional({ 1: 295.2 })))).toEqual([
-      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+      supportedByBase('role::BIG'),
     ]);
+  });
+
+  it('ちょんぼりすた以外の出典（一部だけも）が main の値を裏づけるなら報告する（採否の関数は kept-single-source にする）', () => {
+    // レビュー I1 の再現例: main は設定1が 1/300。ちょんぼりすたは全設定で別の値（読み直し一致）、なな徹は
+    // 設定6だけを載せて main の値と合う。既存の値の順（確定 → 残す → 暫定 → 外す）では「残す」が先に当たる
+    const main = { 1: toStoredProbability(300), 6: toStoredProbability(277.7) };
+    const chonborista = { 1: 295.2, 6: 277.7 };
+    const values = { chonborista, 'nana-press': { 6: 277.7 } };
+    const current = { 1: 1 / main[1], 6: 1 / main[6] };
+    const sourceKinds = { chonborista: 'analysis-site', 'nana-press': 'analysis-site' };
+    expect(
+      decideExistingItem({
+        unit: 'denominator',
+        values,
+        sourceKinds,
+        reread: chonborista,
+        current,
+        stored: main,
+      })
+    ).toEqual({ outcome: 'adopt', status: 'kept-single-source', adopted: current });
+
+    const base = files([{ ...big(main[1]), probabilities: main }]);
+    const written = { 1: toStoredProbability(295.2), 6: toStoredProbability(277.7) };
+    const head = files([{ ...big(written[1]), probabilities: written }]);
+    expect(run(base, head, recordsOf({ ...provisional(chonborista), values }))).toEqual([
+      supportedByBase('role::BIG'),
+    ]);
+    // 採否の関数が作る記録（kept-single-source。値は main のまま）は通る
+    expect(run(base, base, recordsOf({ ...kept(current), values }))).toEqual([]);
+
+    // 一部だけの出典が main の値を裏づけず、ちょんぼりすたの値と合うなら、採否の関数も check:base も暫定
+    const notSupporting = { chonborista, 'nana-press': { 1: 295.2 } };
+    expect(
+      decideExistingItem({
+        unit: 'denominator',
+        values: notSupporting,
+        sourceKinds,
+        reread: chonborista,
+        current,
+        stored: main,
+      })
+    ).toEqual({ outcome: 'adopt', status: 'provisional-chonborista', adopted: chonborista });
+    expect(
+      run(base, head, recordsOf({ ...provisional(chonborista), values: notSupporting }))
+    ).toEqual([]);
   });
 
   it('main に無い項目（新しく入れる値）は、main の値と比べない', () => {
@@ -118,14 +167,14 @@ describe('checkRulesAgainstBase: provisional-chonborista', () => {
   it('main の確率の幅で比べる（小数6桁の 0.000076 と、ちょんぼりすたの 13107.2 は一致する）', () => {
     const map = files([big(0.000076)]);
     expect(run(map, map, recordsOf(provisional({ 1: 13107.2 })))).toEqual([
-      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+      supportedByBase('role::BIG'),
     ]);
   });
 
   it('ちょんぼりすたが一部の設定だけでも、載っている設定がすべて main と合えば報告する（「残す」と同じ数え方）', () => {
     const map = files([{ ...big(0.00338753), probabilities: { 1: 0.00338753, 6: 0.00360101 } }]);
     expect(run(map, map, recordsOf(provisional({ 1: 295.2 })))).toEqual([
-      'test-machine: role::BIG: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+      supportedByBase('role::BIG'),
     ]);
     expect(run(map, map, recordsOf(provisional({ 1: 295.2, 6: 280 })))).toEqual([]);
   });
@@ -150,9 +199,16 @@ describe('checkRulesAgainstBase: provisional-chonborista', () => {
       reread: { by: 'verifier', value: chonborista },
     });
     expect(run(map, map, recordsOf(settingsItem({ confirmed: ['6'], excluded: ['1'] })))).toEqual([
-      'test-machine: confirmationEvent::金トロフィー: ちょんぼりすたの値が main の値と一致する（規則2の kept-single-source にする）',
+      supportedByBase('confirmationEvent::金トロフィー'),
     ]);
     expect(run(map, map, recordsOf(settingsItem({ confirmed: ['6'], excluded: [] })))).toEqual([]);
+    // ちょんぼりすた以外の出典が main の値を裏づけるときも報告する（どの出典も数える。validate の statusError は
+    // 設定の組の暫定に「ちょんぼりすたにしか無い」を求めるが、main と比べる検査はそれに頼らない）
+    const other = settingsItem({ confirmed: ['6'], excluded: [] });
+    other.values = { ...other.values, 'nana-press': { confirmed: ['6'], excluded: ['1'] } };
+    expect(run(map, map, recordsOf(other))).toEqual([
+      supportedByBase('confirmationEvent::金トロフィー'),
+    ]);
   });
 });
 
