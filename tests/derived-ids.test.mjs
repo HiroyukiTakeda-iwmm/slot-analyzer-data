@@ -142,6 +142,20 @@ describe('compareDerivedIds', () => {
     ]);
   });
 
+  it('外した ID の台帳（retiredIds）にある ID の使い回しは validate が報告するので、重ねて報告しない', () => {
+    const head = {
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    };
+    const removed = new Set(['endScreen::赤']);
+    const retired = new Set(['endScreen::endscreen']);
+    expect(compareDerivedIds(base, collectDerivedIds(head), removed, retired)).toEqual([]);
+  });
+
   it('役でも、漢字だけの名前で外した項目の displayOrder を使い回すと報告する', () => {
     const role = (name, displayOrder) => ({
       name,
@@ -256,6 +270,36 @@ describe('checkDerivedIds', () => {
         provenanceFiles,
       })
     ).toEqual([]);
+  });
+
+  it('比べる側の出典記録の retiredIds にある ID の使い回しは報告しない（validate が報告する）', () => {
+    const head = files({
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    });
+    const record = (retiredIds) => [
+      {
+        data: {
+          machineId: 'test-machine',
+          removed: [{ kind: 'endScreen', name: '赤', previous: {}, reason: '出典なし' }],
+          retiredIds,
+        },
+      },
+    ];
+    const run = (provenanceFiles) =>
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles,
+      });
+    expect(run(record([{ kind: 'endScreen', name: '赤', appId: 'endscreen' }]))).toEqual([]);
+    expect(run(record([]))).toEqual([
+      'test-machine: endScreen::緑: 新しい項目が、基準の endScreen::赤 の ID（endscreen）を使っている（明示の id を付ける）',
+    ]);
   });
 
   it('index から機種が消えたら報告する', () => {

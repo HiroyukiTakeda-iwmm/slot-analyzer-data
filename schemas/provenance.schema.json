@@ -4,7 +4,16 @@
   "title": "Machine Data Provenance",
   "description": "機種データの出典記録（仕様: docs/superpowers/specs/2026-09-26-data-expansion-design.md 5章）",
   "type": "object",
-  "required": ["machineId", "machineFile", "reviewedAt", "sources", "items", "candidates", "removed"],
+  "required": [
+    "machineId",
+    "machineFile",
+    "reviewedAt",
+    "sources",
+    "items",
+    "candidates",
+    "removed",
+    "retiredIds"
+  ],
   "additionalProperties": false,
   "properties": {
     "machineId": { "type": "string", "minLength": 1 },
@@ -13,7 +22,8 @@
     "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/source" } },
     "items": { "type": "array", "items": { "$ref": "#/definitions/item" } },
     "candidates": { "type": "array", "items": { "$ref": "#/definitions/candidate" } },
-    "removed": { "type": "array", "items": { "$ref": "#/definitions/removed" } }
+    "removed": { "type": "array", "items": { "$ref": "#/definitions/removed" } },
+    "retiredIds": { "type": "array", "items": { "$ref": "#/definitions/retiredId" } }
   },
   "definitions": {
     "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "format": "date" },
@@ -125,7 +135,7 @@
     },
     "removed": {
       "type": "object",
-      "description": "外した項目（仕様 5.2・5.8）。previous は外す前の機種ファイルの項目そのもの、values は調べた出典の値（見つからなければ {}）、appId は main でアプリがその項目に作っていた ID。appId は ID を作る種類（DERIVED_ID_KINDS）だけに書く（検証器が確かめる）",
+      "description": "その見直しで外した項目と根拠（仕様 5.2・5.8）。previous は外す前の機種ファイルの項目そのもの、values は調べた出典の値（見つからなければ {}）、appId は main でアプリがその項目に使っていた ID。appId は ID を持つ項目だけに書き、同じ行を retiredIds に足す（検証器が確かめる）。後の PR で消してよい（ID は retiredIds に残る）",
       "required": ["kind", "name", "unit", "previous", "values", "reason"],
       "additionalProperties": false,
       "properties": {
@@ -137,6 +147,17 @@
         "appId": { "type": "string", "minLength": 1 },
         "reread": { "$ref": "#/definitions/reread" },
         "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "retiredId": {
+      "type": "object",
+      "description": "外した ID の台帳の1行（仕様 5.8）。足すだけで、消さない・書き換えない（main と比べる検査が確かめる）。今の機種ファイルの ID を持つ項目は、同じ範囲でこの appId を使えない（検証器が確かめる）",
+      "required": ["kind", "name", "appId"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "$ref": "#/definitions/kind" },
+        "name": { "type": "string", "minLength": 1 },
+        "appId": { "type": "string", "minLength": 1 }
       }
     }
   }

@@ -3,7 +3,7 @@ import addFormats from 'ajv-formats';
 import { readFileSync } from 'fs';
 import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { DERIVED_ID_KINDS } from '../lib/derived-ids.mjs';
+import { DERIVED_ID_KINDS, collectDerivedIds, scopedId } from '../lib/derived-ids.mjs';
 import { OFFICIAL_DOMAINS_PATH } from '../lib/load-provenance.mjs';
 import {
   CHONBORISTA_KEY,
@@ -398,6 +398,58 @@ function checkRemoved(path, removed, sourceKinds) {
   return errors;
 }
 
+/** retiredIds の行を見分けるキー（kind・name・appId） */
+function retiredRowKey({ kind, name, appId }) {
+  return JSON.stringify([kind, name, appId]);
+}
+
+/**
+ * 外した ID の台帳（retiredIds。足すだけ）を確かめる（仕様 5.7・5.8）。
+ * - ID を持つ種類の行だけ・同じ行を2つ書かない
+ * - appId のある removed は、同じ kind・name・appId の行が retiredIds にある
+ * - 今の機種ファイルの ID を持つ項目が、台帳の ID を同じ範囲（idScope）で使っていない。main を読まずに
+ *   止めるので、PR をまたいでも、外した項目を足し直した後でも効く。外したはずの項目が機種ファイルに残って
+ *   いるときは、そのエラー（checkRecord）だけにする（自分の ID の再利用を重ねない）
+ * @param {Map<string, object>} machineItems 今の機種ファイルの項目（項目キー → 項目）
+ * @param {Map<string, string>} itemIds 今の機種ファイルの ID（項目キー → ID）
+ */
+function retiredIdErrors(path, record, machineItems, itemIds) {
+  const errors = [];
+  const rows = new Set();
+  for (const row of record.retiredIds) {
+    const key = itemKey(row.kind, row.name);
+    if (!DERIVED_ID_KINDS.has(row.kind)) {
+      errors.push(error(path, `${key}: ID を持たない種類は retiredIds に書かない`));
+    }
+    if (rows.has(retiredRowKey(row))) {
+      errors.push(error(path, `${key}: retiredIds の重複（${row.appId}）`));
+    }
+    rows.add(retiredRowKey(row));
+  }
+  for (const removed of record.removed) {
+    // appId を書かない種類の appId は appIdErrors が報告する（1つの原因に1つのエラー）
+    if (removed.appId === undefined || !DERIVED_ID_KINDS.has(removed.kind)) continue;
+    if (rows.has(retiredRowKey(removed))) continue;
+    const key = itemKey(removed.kind, removed.name);
+    errors.push(
+      error(
+        path,
+        `${key}: removed の appId（${removed.appId}）が retiredIds に無い（外した ID の台帳に足す）`
+      )
+    );
+  }
+  const removedKeys = new Set(record.removed.map((removed) => itemKey(removed.kind, removed.name)));
+  const retired = new Set(
+    record.retiredIds.map((row) => scopedId(itemKey(row.kind, row.name), row.appId))
+  );
+  for (const [key, id] of itemIds) {
+    if (!retired.has(scopedId(key, id))) continue;
+    if (removedKeys.has(key) && machineItems.has(key)) continue;
+    errors.push(error(path, `${key}: 外した項目の ID（${id}）を使っている（明示の id を付ける）`));
+  }
+  return errors;
+}
+
 function checkRecord(path, record, machine, officialDomains) {
   const errors = [];
   const sourceKinds = collectSourceKinds(path, record.sources, errors, officialDomains);
@@ -405,10 +457,12 @@ function checkRecord(path, record, machine, officialDomains) {
   // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない。
   // 区別できない名前（「#数字」を含む名前との重なり）と「::」を含む名前は例外になるので、エラーとして報告する
   let machineItems;
+  let itemIds;
   try {
     machineItems = new Map(
       listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])
     );
+    itemIds = collectDerivedIds(machine);
   } catch (e) {
     errors.push(error(path, e.message));
     return errors;
@@ -441,5 +495,6 @@ function checkRecord(path, record, machine, officialDomains) {
     }
     errors.push(...checkRemoved(path, removed, sourceKinds));
   }
+  errors.push(...retiredIdErrors(path, record, machineItems, itemIds));
   return errors;
 }

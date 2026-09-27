@@ -101,6 +101,7 @@ function record(overrides = {}) {
     ],
     candidates: [],
     removed: [],
+    retiredIds: [],
     ...overrides,
   };
 }
@@ -818,7 +819,13 @@ describe('validateProvenance: 外した項目（removed）', () => {
     reason: '出典なし',
     ...overrides,
   });
-  const errorsOf = (...removed) => run(record({ removed })).errors.map((e) => e.message);
+  /** removed の appId を、外した ID の台帳（retiredIds）にも書いた記録で確かめる */
+  const rowsOf = (removed) =>
+    removed
+      .filter((r) => r.appId !== undefined)
+      .map(({ kind, name, appId }) => ({ kind, name, appId }));
+  const errorsOf = (...removed) =>
+    run(record({ removed, retiredIds: rowsOf(removed) })).errors.map((e) => e.message);
   /** key の欄を除いたコピー */
   const without = (object, key) =>
     Object.fromEntries(Object.entries(object).filter(([name]) => name !== key));
@@ -841,7 +848,8 @@ describe('validateProvenance: 外した項目（removed）', () => {
   });
 
   it('ID を作る種類で appId が無い、ほかの種類で appId があればエラー', () => {
-    expect(errorsOf(without(removedCherry(), 'appId'), removedSilver({ appId: 'gin' }))).toEqual([
+    const removed = [without(removedCherry(), 'appId'), removedSilver({ appId: 'gin' })];
+    expect(run(record({ removed })).errors.map((e) => e.message)).toEqual([
       'role::中段チェリー: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
       'confirmationEvent::銀トロフィー: ID を作らない種類なので、appId を書かない',
     ]);
@@ -945,6 +953,117 @@ describe('validateProvenance: 外した項目（removed）', () => {
     expect(errorsOf(removedGold({}))).toEqual([]);
     expect(errorsOf(removedGold({ 'nana-press': { 1: null, 6: 100 } }))).toEqual([
       'endScreen::金枠: 外す条件に合わない（kept-single-source にできる）',
+    ]);
+  });
+});
+
+describe('validateProvenance: 外した ID の台帳（retiredIds）', () => {
+  const CHERRY = {
+    name: '中段チェリー',
+    probabilities: { 1: 0.0001, 6: 0.0001 },
+    hasSettingDiff: false,
+    displayOrder: 7,
+  };
+  const removedCherry = {
+    kind: 'role',
+    name: '中段チェリー',
+    unit: 'denominator',
+    previous: CHERRY,
+    values: {},
+    appId: 'chuudan_cherry_7',
+    reason: '出典なし',
+  };
+  const row = (kind, name, appId) => ({ kind, name, appId });
+  const CHERRY_ROW = row('role', '中段チェリー', 'chuudan_cherry_7');
+  const errorsOf = (overrides, files) =>
+    run(record(overrides), { files }).errors.map((e) => e.message);
+  const REUSE = (key, id) => `${key}: 外した項目の ID（${id}）を使っている（明示の id を付ける）`;
+
+  it('removed の appId は、同じ kind・name・appId の行が retiredIds に要る', () => {
+    expect(errorsOf({ removed: [removedCherry], retiredIds: [CHERRY_ROW] })).toEqual([]);
+    const missing =
+      'role::中段チェリー: removed の appId（chuudan_cherry_7）が retiredIds に無い（外した ID の台帳に足す）';
+    expect(errorsOf({ removed: [removedCherry], retiredIds: [] })).toEqual([missing]);
+    expect(
+      errorsOf({ removed: [removedCherry], retiredIds: [row('role', '中段チェリー', 'other')] })
+    ).toEqual([missing]);
+    expect(
+      errorsOf({
+        removed: [removedCherry],
+        retiredIds: [row('role', '別の役', 'chuudan_cherry_7')],
+      })
+    ).toEqual([missing]);
+  });
+
+  it('retiredIds は removed が無くても残せる（removed は見直しの根拠で、消してよい）', () => {
+    expect(errorsOf({ retiredIds: [CHERRY_ROW] })).toEqual([]);
+  });
+
+  it('retiredIds に同じ行が2つあればエラー', () => {
+    expect(errorsOf({ retiredIds: [CHERRY_ROW, { ...CHERRY_ROW }] })).toEqual([
+      'role::中段チェリー: retiredIds の重複（chuudan_cherry_7）',
+    ]);
+  });
+
+  it('ID を持たない種類は retiredIds に書かない', () => {
+    expect(errorsOf({ retiredIds: [row('specialSettings', 'specialSettings', 'x')] })).toEqual([
+      'specialSettings::specialSettings: ID を持たない種類は retiredIds に書かない',
+    ]);
+  });
+
+  it('スキーマで行の欄を確かめる（retiredIds が無い・appId が空・知らない欄）', () => {
+    const rec = record();
+    delete rec.retiredIds;
+    expect(messages(run(rec))).toContain("スキーマ違反  must have required property 'retiredIds'");
+    for (const bad of [
+      { ...CHERRY_ROW, appId: '' },
+      { ...CHERRY_ROW, reason: 'x' },
+    ]) {
+      expect(messages(run(record({ retiredIds: [bad] })))).toContain('スキーマ違反 /retiredIds/0');
+    }
+  });
+
+  it('今の機種ファイルの項目が、外した項目の ID を同じ範囲で使っていればエラー（main を読まずに止める）', () => {
+    // BIG の ID は big_1
+    expect(errorsOf({ retiredIds: [row('role', '旧BIG', 'big_1')] })).toEqual([
+      REUSE('role::BIG', 'big_1'),
+    ]);
+    // 範囲（idScope）が違えば同じ ID でもよい
+    expect(errorsOf({ retiredIds: [row('zoneRole', 'CZ::旧BIG', 'big_1')] })).toEqual([]);
+  });
+
+  it('ゾーン内の役・グループ内の終了画面は、同じ親の中で外した ID を使えばエラー（別の親ならよい）', () => {
+    const withChildren = {
+      ...machine,
+      zones: [{ name: 'CZ', isDefault: false, roles: [{ ...machine.roles[0], name: 'Bell' }] }],
+      endScreenGroups: [{ name: 'End', endScreens: [{ name: 'Red', hint: '' }] }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withChildren }];
+    const reuses = (retiredIds) =>
+      errorsOf({ retiredIds }, files).filter((m) => m.includes('外した項目の ID'));
+    expect(
+      reuses([row('zoneRole', 'CZ::旧', 'bell_1'), row('endScreenGroupItem', 'End::旧', 'red')])
+    ).toEqual([
+      REUSE('zoneRole::CZ::Bell', 'bell_1'),
+      REUSE('endScreenGroupItem::End::Red', 'red'),
+    ]);
+    expect(
+      reuses([row('zoneRole', 'AT::旧', 'bell_1'), row('endScreenGroupItem', 'Top::旧', 'red')])
+    ).toEqual([]);
+  });
+
+  it('外したはずの項目が機種ファイルに残っているときは、そのエラーだけを出す（自分の ID の再利用を重ねない）', () => {
+    const removedBig = {
+      kind: 'role',
+      name: 'BIG',
+      unit: 'denominator',
+      previous: machine.roles[0],
+      values: {},
+      appId: 'big_1',
+      reason: '出典なし',
+    };
+    expect(errorsOf({ removed: [removedBig], retiredIds: [row('role', 'BIG', 'big_1')] })).toEqual([
+      'role::BIG: 外したはずの項目が機種ファイルにある',
     ]);
   });
 });
@@ -1174,6 +1293,7 @@ describe('validate.mjs と公式ドメインの一覧（読み込みのつなぎ
         items: [],
         candidates: [],
         removed: [],
+        retiredIds: [],
       })
     );
     const notListed =

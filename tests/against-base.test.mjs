@@ -116,30 +116,23 @@ describe('runAgainstBase', () => {
       ],
     });
   });
-  it('main の記録の removed（外した ID の台帳）を消せば、終了コード 1', () => {
-    const removed = {
-      kind: 'role',
-      name: '強',
-      unit: 'denominator',
-      previous: { name: '強', probabilities: { 1: 0.01 }, hasSettingDiff: false, displayOrder: 2 },
-      values: {},
-      appId: 'role_2',
-      reason: '出典なし',
-    };
+  it('main の記録の retiredIds（外した ID の台帳）を消せば、終了コード 1', () => {
     const map = files([role(1, 0.00338753)]);
+    const retired = { kind: 'role', name: '強', appId: 'role_2' };
     const base = {
       ...map,
       'provenance/test-machine.json': JSON.stringify({
         machineId: 'test-machine',
-        removed: [removed],
+        removed: [],
+        retiredIds: [retired],
       }),
     };
-    const provenanceFiles = [{ data: { machineId: 'test-machine', items: [], removed: [] } }];
+    const provenanceFiles = [{ data: { machineId: 'test-machine', removed: [], retiredIds: [] } }];
     expect(run(base, map, provenanceFiles)).toEqual({
       code: 1,
       lines: [
         '問題: 1件',
-        '  ERROR test-machine: role::強: main の記録の removed を消している（外した ID の台帳は消さない）',
+        '  ERROR test-machine: role::強（role_2）: main の記録の retiredIds を消している（外した ID の台帳は消さない）',
       ],
     });
   });

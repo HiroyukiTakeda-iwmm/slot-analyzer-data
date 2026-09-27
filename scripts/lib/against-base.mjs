@@ -1,9 +1,9 @@
 import { execFileSync } from 'child_process';
 import { checkDerivedIds } from './derived-ids.mjs';
+import { checkLedgerAgainstBase } from './ledger-against-base.mjs';
 import {
   checkNewMachineRecords,
   checkRemovedItems,
-  checkRemovedLedger,
   checkRulesAgainstBase,
 } from './rules-against-base.mjs';
 
@@ -50,7 +50,7 @@ export function runAgainstBase({ base, readBase, readHead, listBase, loadProvena
       ...checkRulesAgainstBase(io),
       ...checkRemovedItems(io),
       ...checkNewMachineRecords(io),
-      ...checkRemovedLedger(io),
+      ...checkLedgerAgainstBase(io),
     ];
   } catch (e) {
     // 基準を読めない・JSON が壊れている（main の出典記録も）・項目の名前を区別できない

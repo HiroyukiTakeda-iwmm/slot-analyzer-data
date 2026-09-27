@@ -437,7 +437,8 @@ BIG の1項目だけを抜き出した例。実際の記録には、機種ファ
     }
   ],
   "candidates": [],
-  "removed": []
+  "removed": [],
+  "retiredIds": []
 }
 ```
 
@@ -532,52 +533,65 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 | `provisional-chonborista` | ちょんぼりすたの値を、別の担当が読み直して一致した（`reread` が必須）。確定値も食い違いも無く、ちょんぼりすたの値がそろっていて、ほかの出典がその値と矛盾しないときだけ（下の「記録の決まり」）             |
 | `kept-single-source`      | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
 
-`candidates` は見つけたが採用しなかった値、`removed` は見直しで外した項目（外した ID の台帳。下の「外した項目（removed）」）。
+`candidates` は見つけたが採用しなかった値、`removed` はその見直しで外した項目と根拠、`retiredIds` は外した ID の台帳（下の「外した項目（removed）と外した ID の台帳（retiredIds）」）。
 
-### 外した項目（removed）
+### 外した項目（removed）と外した ID の台帳（retiredIds）
 
-見直しで外した項目は、`removed` に次の形で書く（すべて必須。`appId` は ID を作る種類だけに書き、ほかの種類では書かない。`reread` は任意）。
+見直しで外した項目は、`removed` に次の形で書く（すべて必須。`appId` は ID を持つ項目だけに書き、ほかでは書かない。`reread` は任意）。`appId` を書いたら、同じ `kind`・`name`・`appId` の行を `retiredIds` に足す。
 
 ```json
 {
-  "kind": "role",
-  "name": "中段チェリー",
-  "unit": "denominator",
-  "previous": {
-    "name": "中段チェリー",
-    "probabilities": { "1": 0.0001 },
-    "hasSettingDiff": false,
-    "displayOrder": 7
-  },
-  "values": { "chonborista": { "1": 12000 } },
-  "appId": "chuudan_cherry_7",
-  "reason": "今の値を裏づける出典なし"
+  "removed": [
+    {
+      "kind": "role",
+      "name": "中段チェリー",
+      "unit": "denominator",
+      "previous": {
+        "name": "中段チェリー",
+        "probabilities": { "1": 0.0001 },
+        "hasSettingDiff": false,
+        "displayOrder": 7
+      },
+      "values": { "chonborista": { "1": 12000 } },
+      "appId": "chuudan_cherry_7",
+      "reason": "今の値を裏づける出典なし"
+    }
+  ],
+  "retiredIds": [{ "kind": "role", "name": "中段チェリー", "appId": "chuudan_cherry_7" }]
 }
 ```
 
-| 欄         | 中身                                                                                                                           |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `previous` | 外す前の、機種ファイルの項目そのもの（オブジェクト。main の項目と同じ中身）                                                    |
-| `values`   | 調べた出典の値（`items` と同じ書き方。見つからなければ `{}`）                                                                  |
-| `appId`    | main でアプリがその項目に作っていた ID（`role`・`zoneRole`・`endScreen`・`endScreenGroupItem` だけ。`collectDerivedIds` の値） |
-| `reread`   | ちょんぼりすたの値の読み直し（`items` と同じ `{ "by", "value" }`）。暫定にできるかを確かめるときに要る                         |
+| 欄                   | 中身                                                                                                                                         |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `removed[].previous` | 外す前の、機種ファイルの項目そのもの（オブジェクト。main の項目と同じ中身）                                                                  |
+| `removed[].values`   | 調べた出典の値（`items` と同じ書き方。見つからなければ `{}`）                                                                                |
+| `removed[].appId`    | main でアプリがその項目に使っていた ID（ID を持つ項目だけ: `role`・`zoneRole`・`endScreen`・`endScreenGroupItem`。`collectDerivedIds` の値） |
+| `removed[].reread`   | ちょんぼりすたの値の読み直し（`items` と同じ `{ "by", "value" }`）。暫定にできるかを確かめるときに要る                                       |
+| `retiredIds[]`       | 外した ID の台帳の1行 `{ kind, name, appId }`。足すだけで、消さない・書き換えない                                                            |
+
+2つの役割は分けてある。
+
+- `removed` は、その見直しで外した根拠。後の PR で消してよい（前の値と理由は git の履歴に残る）。採否ルールや出典を後で変えて古い項目が validate を通らなくなったら、消して直す。書き換えはできない（書き換えた項目は、新しく外した項目として main と照らす）
+- `retiredIds` は、外した ID の台帳。足すだけで、外した項目を足し直しても消さない
 
 validate が確かめること:
 
-- `unit` は `previous` の種類と中身で決まる（`items` と同じ。最上位の終了画面の `distribution` は確率として読む）。`values` の出典キーは `sources` にあり、値と `reread` の形は unit に合う
+- `removed` の `unit` は `previous` の種類と中身で決まる（`items` と同じ。最上位の終了画面の `distribution` は確率として読む）。`values` の出典キーは `sources` にあり、値と `reread` の形は unit に合う
 - `previous` を今の値として、既存の値の採否ルールが「外す」を選ぶこと。確定値や今の値を裏づける出典があれば `外す条件に合わない（confirmed にできる）` などで止まる
 - 読み直しを省いて外せない: ちょんぼりすたの値だけで暫定にできる（読み直しが合えば `provisional-chonborista` になる）のに `reread` が無ければ、`外す前に、ちょんぼりすたの値の読み直しが要る` で止まる。読み直しが合わなければ外せる
-- `appId` は ID を作る種類にだけある
+- `appId` は ID を持つ項目にだけあり、`appId` のある `removed` には同じ行が `retiredIds` にある。`retiredIds` は ID を持つ種類の行だけで、同じ行を2つ書かない
+- 今の機種ファイルの ID を持つ項目が、`retiredIds` の `appId` を同じ範囲（ゾーン内の役とグループ内の終了画面は親ごと）で使っていれば、`<項目>: 外した項目の ID（<ID>）を使っている（明示の id を付ける）` で止まる。main を読まずに止めるので、PR をまたいでも、足し直した後でも効く
 
-`npm run check:base` が main と比べて確かめること（外した ID の台帳）:
+`npm run check:base` が main と比べて確かめること:
 
 - 新しく外した項目は main の機種ファイルにあり、`previous` が main の項目と JSON として同じ（キーの順は問わない）。`appId` は main の ID と同じ
-- main の記録の `removed` は、そのまま残す（消さない・書き換えない。記録のファイルごと消しても見つかる）。外した項目を機種ファイルに足し直したときだけ、記録から外せる
-- 新しく足した項目の ID が、外した項目の `appId`（比べる側と main の記録の両方）と同じ範囲で同じなら止める。PR をまたいでも、記録が main に残るので見つかる。足し直した項目も前の ID は使えないので、明示の `id` を付ける
+- main の記録の `retiredIds` の各行は、比べる側の記録に残す（消さない・書き換えない。記録のファイルごと消しても見つかる。例外なし）。main の記録の `removed` は消してよい
+
+外した項目を足し直すときは、`removed` から消し（「外したはずの項目が機種ファイルにある」で止まるため）、明示の別の `id` を付ける。`retiredIds` は残すので、前の ID は使えない。
 
 ### 記録の決まり（検証器が確かめる）
 
-- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く（`removed` の決まりは上の「外した項目（removed）」）
+- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く（`removed` と `retiredIds` の決まりは上の「外した項目（removed）と外した ID の台帳（retiredIds）」）
 - ちょんぼりすたは出典キーを `chonborista`・kind を `analysis-site` にし、URL は `https://chonborista.com/` で始める。chonborista.com（サブドメインを含む）の URL を別のキーで登録しない
 - `kind: "official"` の出典は、URL のサイトがメーカーの公式ドメインの一覧（`config/official-domains.json`）にあるものだけ
 - 同じサイトを2つの出典に登録しない。サイトは登録ドメインで数える（`sp.example.com` と `example.com`、`a.example.co.jp` と `example.co.jp` は同じサイト。ブログサービスのサブドメインにある別々のブログも、1つのサイトに数える）。URL として読めない出典は、サイトが分からないので止める

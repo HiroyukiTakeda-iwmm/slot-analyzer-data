@@ -7,8 +7,8 @@
  * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
  * - ID を持たない種類の項目（確定演出など）を消したら、出典記録の removed に書いてあるか
  * - 新しく足した機種に、出典記録があるか
- * - 外した ID の台帳（出典記録の removed）: 新しく外した項目の previous・appId が main と同じか、main の記録の
- *   removed を消していないか、新しい項目が外した項目の ID を使っていないか（main の provenance/ も読む）
+ * - 出典記録の removed と retiredIds（外した ID の台帳）: 新しく外した項目の previous・appId が main と同じか、
+ *   main の記録の retiredIds を消していないか（main の provenance/ も読む）。台帳の ID の再利用は validate が止める
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる

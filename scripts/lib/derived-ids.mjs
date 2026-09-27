@@ -123,20 +123,46 @@ export function idScope(key) {
   return key.slice(0, key.lastIndexOf(NAME_SEPARATOR));
 }
 
+/** 範囲つきの ID（項目キーの範囲と ID）。範囲が違えば同じ ID でも別のものとして比べる */
+export function scopedId(key, id) {
+  return `${idScope(key)}${NAME_SEPARATOR}${id}`;
+}
+
+/**
+ * 出典記録の retiredIds（外した ID の台帳）を、機種 ID ごとに範囲つきの ID の Set にする。
+ * 読めなかった記録（data: null）は飛ばす（validate が報告する）。
+ *
+ * @param {Array<{ data: object | null }>} provenanceFiles
+ * @returns {Map<string, Set<string>>} 機種 ID → 範囲つきの ID
+ */
+export function retiredIdsByMachine(provenanceFiles) {
+  const byId = new Map();
+  for (const file of provenanceFiles) {
+    if (!file.data) continue;
+    const rows = file.data.retiredIds ?? [];
+    byId.set(
+      file.data.machineId,
+      new Set(rows.map((row) => scopedId(itemKey(row.kind, row.name), row.appId)))
+    );
+  }
+  return byId;
+}
+
 /**
  * 基準の ID が、比べる側でも同じかを確かめる。
  * 新しく足した項目が、基準の別の項目の ID（外した項目の ID など）を使っていないかも確かめる。
  * 利用者の記録は ID でつながっているので、ID を引き継ぐと、外した項目の記録が別の項目に付く。
- * 先の PR で外した項目（基準にもう無い項目）の ID は、出典記録の removed の appId（外した ID の台帳）と
- * 比べて、checkRemovedLedger（rules-against-base.mjs）が確かめる。基準にある ID の使い回しはここで報告し、
- * そちらでは重ねて報告しない。
+ * 外した項目の ID は、出典記録の retiredIds（外した ID の台帳。足すだけ）に残り、今の機種ファイルの項目が
+ * それを使えば validate（provenance-validator.mjs）が止める（PR をまたいでも、足し直しでも）。台帳にある ID
+ * （retired）の使い回しは validate が報告するので、ここでは重ねて報告しない。
  *
  * @param {Map<string, string>} baseIds 基準（main）の ID
  * @param {Map<string, string>} headIds 比べる側（作業ブランチ）の ID
  * @param {Set<string>} removedKeys 出典記録の removed にある項目キー
+ * @param {Set<string>} [retired] 比べる側の出典記録の retiredIds（範囲つきの ID。scopedId）
  * @returns {string[]} 問題の説明。空なら問題なし
  */
-export function compareDerivedIds(baseIds, headIds, removedKeys) {
+export function compareDerivedIds(baseIds, headIds, removedKeys, retired = new Set()) {
   const problems = [];
   for (const [key, id] of baseIds) {
     if (headIds.has(key)) {
@@ -147,12 +173,10 @@ export function compareDerivedIds(baseIds, headIds, removedKeys) {
     }
   }
 
-  const ownerByScopedId = new Map(
-    [...baseIds].map(([key, id]) => [`${idScope(key)}${NAME_SEPARATOR}${id}`, key])
-  );
+  const ownerByScopedId = new Map([...baseIds].map(([key, id]) => [scopedId(key, id), key]));
   for (const [key, id] of headIds) {
-    if (baseIds.has(key)) continue;
-    const owner = ownerByScopedId.get(`${idScope(key)}${NAME_SEPARATOR}${id}`);
+    if (baseIds.has(key) || retired.has(scopedId(key, id))) continue;
+    const owner = ownerByScopedId.get(scopedId(key, id));
     if (owner !== undefined) {
       problems.push(
         `${key}: 新しい項目が、基準の ${owner} の ID（${id}）を使っている（明示の id を付ける）`
@@ -174,6 +198,7 @@ export function compareDerivedIds(baseIds, headIds, removedKeys) {
  */
 export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
   const removedById = removedKeysByMachine(provenanceFiles);
+  const retiredById = retiredIdsByMachine(provenanceFiles);
   const baseIndex = JSON.parse(readBase('machines/index.json'));
   const headIndex = JSON.parse(readHead('machines/index.json'));
   // 比べる側の機種ファイルは、比べる側の index.json の場所から読む
@@ -190,7 +215,8 @@ export function checkDerivedIds({ readBase, readHead, provenanceFiles }) {
     const baseIds = collectDerivedIds(JSON.parse(readBase(`machines/${entry.file}`)));
     const headIds = collectDerivedIds(headMachines.get(entry.id));
     const removed = removedById.get(entry.id) ?? new Set();
-    for (const problem of compareDerivedIds(baseIds, headIds, removed)) {
+    const retired = retiredById.get(entry.id) ?? new Set();
+    for (const problem of compareDerivedIds(baseIds, headIds, removed, retired)) {
       problems.push(`${entry.id}: ${problem}`);
     }
   }

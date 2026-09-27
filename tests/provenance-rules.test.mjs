@@ -1038,6 +1038,7 @@ describe('採否と検査の一貫性（逆向き）: 決定と違う status・�
     ],
     candidates: [],
     removed: [],
+    retiredIds: [],
   });
   /**
    * 記録を書いた後の機種ファイルの確率。main にある項目の kept-single-source は main のまま（残す値は変えない）。
