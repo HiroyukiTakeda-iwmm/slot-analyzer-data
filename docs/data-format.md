@@ -504,11 +504,52 @@ unit は、機種ファイルの項目の種類と中身で決まる（`scripts/
 | `provisional-chonborista` | ちょんぼりすたの値を、別の担当が読み直して一致した（`reread` が必須）。確定値も食い違いも無く、ちょんぼりすたの値がそろっていて、ほかの出典がその値と矛盾しないときだけ（下の「記録の決まり」）             |
 | `kept-single-source`      | 既存の値で、1サイトだけが同じ値を出している。`adopted` は今の機種ファイルの値を unit の形にしたもの（`machineValue` の結果）そのもので、機種ファイルの値は変えない（`npm run check:base` が main と比べる） |
 
-`candidates` は見つけたが採用しなかった値、`removed` は見直しで外した値（前の値と理由）。
+`candidates` は見つけたが採用しなかった値、`removed` は見直しで外した項目（外した ID の台帳。下の「外した項目（removed）」）。
+
+### 外した項目（removed）
+
+見直しで外した項目は、`removed` に次の形で書く（すべて必須。`appId` は ID を作る種類だけに書き、ほかの種類では書かない。`reread` は任意）。
+
+```json
+{
+  "kind": "role",
+  "name": "中段チェリー",
+  "unit": "denominator",
+  "previous": {
+    "name": "中段チェリー",
+    "probabilities": { "1": 0.0001 },
+    "hasSettingDiff": false,
+    "displayOrder": 7
+  },
+  "values": { "chonborista": { "1": 12000 } },
+  "appId": "chuudan_cherry_7",
+  "reason": "今の値を裏づける出典なし"
+}
+```
+
+| 欄         | 中身                                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `previous` | 外す前の、機種ファイルの項目そのもの（オブジェクト。main の項目と同じ中身）                                                    |
+| `values`   | 調べた出典の値（`items` と同じ書き方。見つからなければ `{}`）                                                                  |
+| `appId`    | main でアプリがその項目に作っていた ID（`role`・`zoneRole`・`endScreen`・`endScreenGroupItem` だけ。`collectDerivedIds` の値） |
+| `reread`   | ちょんぼりすたの値の読み直し（`items` と同じ `{ "by", "value" }`）。暫定にできるかを確かめるときに要る                         |
+
+validate が確かめること:
+
+- `unit` は `previous` の種類と中身で決まる（`items` と同じ。最上位の終了画面の `distribution` は確率として読む）。`values` の出典キーは `sources` にあり、値と `reread` の形は unit に合う
+- `previous` を今の値として、既存の値の採否ルールが「外す」を選ぶこと。確定値や今の値を裏づける出典があれば `外す条件に合わない（confirmed にできる）` などで止まる
+- 読み直しを省いて外せない: ちょんぼりすたの値だけで暫定にできる（読み直しが合えば `provisional-chonborista` になる）のに `reread` が無ければ、`外す前に、ちょんぼりすたの値の読み直しが要る` で止まる。読み直しが合わなければ外せる
+- `appId` は ID を作る種類にだけある
+
+`npm run check:base` が main と比べて確かめること（外した ID の台帳）:
+
+- 新しく外した項目は main の機種ファイルにあり、`previous` が main の項目と JSON として同じ（キーの順は問わない）。`appId` は main の ID と同じ
+- main の記録の `removed` は、そのまま残す（消さない・書き換えない。記録のファイルごと消しても見つかる）。外した項目を機種ファイルに足し直したときだけ、記録から外せる
+- 新しく足した項目の ID が、外した項目の `appId`（比べる側と main の記録の両方）と同じ範囲で同じなら止める。PR をまたいでも、記録が main に残るので見つかる。足し直した項目も前の ID は使えないので、明示の `id` を付ける
 
 ### 記録の決まり（検証器が確かめる）
 
-- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く
+- 記録を置く機種では、機種ファイルのすべての項目を `items` に書く。`candidates` と `removed` には、機種ファイルに無い項目だけを書く（`removed` の決まりは上の「外した項目（removed）」）
 - ちょんぼりすたは出典キーを `chonborista`・kind を `analysis-site` にし、URL は `https://chonborista.com/` で始める。chonborista.com（サブドメインを含む）の URL を別のキーで登録しない
 - 同じサイトを2つの出典に登録しない。サイトは登録ドメインで数える（`sp.example.com` と `example.com`、`a.example.co.jp` と `example.co.jp` は同じサイト。ブログサービスのサブドメインにある別々のブログも、1つのサイトに数える）。URL として読めない出典は、サイトが分からないので止める
 - `adopted` は、選んだ出典の値そのものにする（丸めの幅が重なる別の値や、書き方を変えた値にしない。`"300.0"` と `300` は別の値）。`kept-single-source` では、上の表のとおり今の機種ファイルの値そのもの（これは main と比べる検査が確かめる）

@@ -99,15 +99,16 @@
         "unit": { "$ref": "#/definitions/unit" },
         "values": { "allOf": [{ "$ref": "#/definitions/valuesBySource" }, { "minProperties": 1 }] },
         "adopted": { "$ref": "#/definitions/value" },
-        "reread": {
-          "type": "object",
-          "required": ["by", "value"],
-          "additionalProperties": false,
-          "properties": {
-            "by": { "type": "string", "minLength": 1 },
-            "value": { "$ref": "#/definitions/value" }
-          }
-        }
+        "reread": { "$ref": "#/definitions/reread" }
+      }
+    },
+    "reread": {
+      "type": "object",
+      "required": ["by", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "by": { "type": "string", "minLength": 1 },
+        "value": { "$ref": "#/definitions/value" }
       }
     },
     "candidate": {
@@ -124,12 +125,17 @@
     },
     "removed": {
       "type": "object",
-      "required": ["kind", "name", "previous", "reason"],
+      "description": "外した項目（仕様 5.2・5.8）。previous は外す前の機種ファイルの項目そのもの、values は調べた出典の値（見つからなければ {}）、appId は main でアプリがその項目に作っていた ID。appId は ID を作る種類（DERIVED_ID_KINDS）だけに書く（検証器が確かめる）",
+      "required": ["kind", "name", "unit", "previous", "values", "reason"],
       "additionalProperties": false,
       "properties": {
         "kind": { "$ref": "#/definitions/kind" },
         "name": { "type": "string", "minLength": 1 },
-        "previous": {},
+        "unit": { "$ref": "#/definitions/unit" },
+        "previous": { "type": "object" },
+        "values": { "$ref": "#/definitions/valuesBySource" },
+        "appId": { "type": "string", "minLength": 1 },
+        "reread": { "$ref": "#/definitions/reread" },
         "reason": { "type": "string", "minLength": 1 }
       }
     }

@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { runAgainstBase } from '../scripts/lib/against-base.mjs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { listGitFiles, runAgainstBase } from '../scripts/lib/against-base.mjs';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
 const entry = {
   id: 'test-machine',
@@ -27,11 +31,13 @@ const reader = (map) => (path) => {
   if (!(path in map)) throw new Error(`no such file: ${path}`);
   return map[path];
 };
+const lister = (map) => (dir) => Object.keys(map).filter((path) => path.startsWith(`${dir}/`));
 const run = (base, head, provenanceFiles = []) =>
   runAgainstBase({
     base: 'origin/main',
     readBase: reader(base),
     readHead: reader(head),
+    listBase: lister(base),
     loadProvenance: () => provenanceFiles,
   });
 
@@ -109,5 +115,59 @@ describe('runAgainstBase', () => {
         '  ERROR new-machine: 新しく足した機種に出典記録（provenance/new-machine.json）が無い',
       ],
     });
+  });
+  it('main の記録の removed（外した ID の台帳）を消せば、終了コード 1', () => {
+    const removed = {
+      kind: 'role',
+      name: '強',
+      unit: 'denominator',
+      previous: { name: '強', probabilities: { 1: 0.01 }, hasSettingDiff: false, displayOrder: 2 },
+      values: {},
+      appId: 'role_2',
+      reason: '出典なし',
+    };
+    const map = files([role(1, 0.00338753)]);
+    const base = {
+      ...map,
+      'provenance/test-machine.json': JSON.stringify({
+        machineId: 'test-machine',
+        removed: [removed],
+      }),
+    };
+    const provenanceFiles = [{ data: { machineId: 'test-machine', items: [], removed: [] } }];
+    expect(run(base, map, provenanceFiles)).toEqual({
+      code: 1,
+      lines: [
+        '問題: 1件',
+        '  ERROR test-machine: role::強: main の記録の removed を消している（外した ID の台帳は消さない）',
+      ],
+    });
+  });
+
+  it('main の記録を読めなければ終了コード 2', () => {
+    const map = files([role(1, 0.00338753)]);
+    const result = run({ ...map, 'provenance/test-machine.json': '{' }, map);
+    expect(result.code).toBe(2);
+    expect(result.lines[0]).toContain('比べられませんでした（基準: origin/main）');
+  });
+});
+
+describe('listGitFiles', () => {
+  it('git の参照で、フォルダ直下のファイルのパスを並べる（フォルダが無ければ空）', () => {
+    const paths = listGitFiles('HEAD', 'schemas', ROOT);
+    expect(paths).toContain('schemas/provenance.schema.json');
+    expect(paths).toContain('schemas/machine.schema.json');
+    expect(paths.every((path) => path.startsWith('schemas/'))).toBe(true);
+    expect(listGitFiles('HEAD', 'no-such-dir', ROOT)).toEqual([]);
+  });
+
+  it('フォルダの中のフォルダは並べない', () => {
+    const paths = listGitFiles('HEAD', 'tests', ROOT);
+    expect(paths).toContain('tests/against-base.test.mjs');
+    expect(paths).not.toContain('tests/fixtures');
+  });
+
+  it('読めない参照では例外を投げる（CLI は終了コード 2 にする）', () => {
+    expect(() => listGitFiles('no-such-ref', 'schemas', ROOT)).toThrow();
   });
 });

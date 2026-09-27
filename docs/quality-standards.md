@@ -185,7 +185,7 @@ node scripts/audit-freshness.mjs  # 鮮度（lastUpdated からの経過日数�
 1. 公式の値、または2サイト以上で一致した値（どちらも全設定がそろった値）がある → その値にする（`confirmed`）
 2. 今の値を1サイトだけが裏づける → 残す（`kept-single-source`。採用値は今の値そのもので、機種ファイルの値は変えない）。一部の設定だけを載せる出典も、載っている設定がすべて機種ファイルの確率と合えば裏づけに数える（2026-09-27〜）
 3. 裏づけが無く、ちょんぼりすたの暫定の条件（新しく入れる値の2）を満たす → その値にする（`provisional-chonborista`）
-4. それ以外 → 外す（`removed` に記録）
+4. それ以外 → 外す（`removed` に、外す前の項目・調べた出典の値・ID を作る種類なら main の ID（`appId`）・理由を記録。ちょんぼりすたの値で暫定にできるときは、読み直しをしてから判断する）
 
 ### アプリが作る ID を変えない
 
@@ -198,7 +198,8 @@ node scripts/audit-freshness.mjs  # 鮮度（lastUpdated からの経過日数�
 
 `npm run check:base`（PR の CI でも実行）で、次を main と比べて確かめる。`npm run validate` は main を読まないので、こちらで見る。
 
-- アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか、新しい項目が main の別の項目の ID を使っていないか（先の PR で外した ID を後の PR で使う場合は、main と比べるだけでは分からない。段階2で確かめる仕組みを足す）
+- アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか、新しい項目が main の別の項目の ID や外した項目の ID（出典記録の `removed` の `appId`。先の PR で外した ID も）を使っていないか
+- 外した ID の台帳: 新しく外した項目の `previous` と `appId` が main と同じか、main の記録の `removed` を消していないか（足し直した項目を除く）
 - `kept-single-source` は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか
 - main にある項目の `provisional-chonborista` は、main の値を裏づける出典（ちょんぼりすた以外・一部だけの出典も含む）が無いときだけか（あるなら `kept-single-source`。数え方は「残す」の裏づけと同じ）
 - ID を持たない種類の項目も、消したら `removed` に記録する

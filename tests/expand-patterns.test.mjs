@@ -1,6 +1,14 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { spawnSync } from 'child_process';
-import { chmodSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'fs';
+import {
+  chmodSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from 'fs';
 import { tmpdir } from 'os';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -562,6 +570,10 @@ describe.skipIf(noMachineHasPatterns)('実データ（patterns を持つ機種�
       base: '書き直す前の作業ツリー',
       readBase: readRepo,
       readHead: (path) => head.get(path) ?? readRepo(path),
+      listBase: (dir) =>
+        readdirSync(resolve(ROOT, dir), { withFileTypes: true })
+          .filter((file) => file.isFile())
+          .map((file) => `${dir}/${file.name}`),
       loadProvenance: () => loadProvenanceFiles(resolve(ROOT, 'provenance')),
     });
     expect(result).toEqual({ code: 0, lines: [expect.stringContaining('問題なし')] });

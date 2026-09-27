@@ -119,7 +119,7 @@ export function removedKeysByMachine(provenanceFiles) {
 }
 
 /** ID が重なってはいけない範囲（項目の種類。ゾーン内の役とグループ内の終了画面は、親ごと） */
-function idScope(key) {
+export function idScope(key) {
   return key.slice(0, key.lastIndexOf(NAME_SEPARATOR));
 }
 
@@ -127,7 +127,9 @@ function idScope(key) {
  * 基準の ID が、比べる側でも同じかを確かめる。
  * 新しく足した項目が、基準の別の項目の ID（外した項目の ID など）を使っていないかも確かめる。
  * 利用者の記録は ID でつながっているので、ID を引き継ぐと、外した項目の記録が別の項目に付く。
- * （PR をまたいだ引き継ぎは main と比べるだけでは分からない。段階2で、外した ID を記録して確かめる）
+ * 先の PR で外した項目（基準にもう無い項目）の ID は、出典記録の removed の appId（外した ID の台帳）と
+ * 比べて、checkRemovedLedger（rules-against-base.mjs）が確かめる。基準にある ID の使い回しはここで報告し、
+ * そちらでは重ねて報告しない。
  *
  * @param {Map<string, string>} baseIds 基準（main）の ID
  * @param {Map<string, string>} headIds 比べる側（作業ブランチ）の ID

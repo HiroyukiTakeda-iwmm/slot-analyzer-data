@@ -443,7 +443,17 @@ describe('validateProvenance', () => {
 
   it('外した項目が機種ファイルに残っていればエラー', () => {
     const rec = record({
-      removed: [{ kind: 'role', name: 'BIG', previous: BIG, reason: '出典なし' }],
+      removed: [
+        {
+          kind: 'role',
+          name: 'BIG',
+          unit: 'denominator',
+          previous: machine.roles[0],
+          values: {},
+          appId: 'big_1',
+          reason: '出典なし',
+        },
+      ],
     });
     expect(messages(run(rec))).toContain('外したはずの項目が機種ファイルにある');
   });
@@ -759,5 +769,167 @@ describe('validateProvenance', () => {
     expect(run(rec).errors.map((e) => e.message)).toEqual(
       unreadable.map((url) => `出典の URL を読めない: ${url}`)
     );
+  });
+});
+
+describe('validateProvenance: 外した項目（removed）', () => {
+  /** 外す前の役（main の機種ファイルの項目そのもの）。今の確率は 1/10000 */
+  const CHERRY = {
+    name: '中段チェリー',
+    probabilities: { 1: 0.0001, 6: 0.0001 },
+    hasSettingDiff: false,
+    displayOrder: 7,
+  };
+  const OTHER = { 1: 12000, 6: 12000 };
+  /** なな徹だけが今の値と違う値を出している（ちょんぼりすたの値は無いので暫定にもできず、外す） */
+  const removedCherry = (overrides = {}) => ({
+    kind: 'role',
+    name: '中段チェリー',
+    unit: 'denominator',
+    previous: CHERRY,
+    values: { 'nana-press': OTHER },
+    appId: 'chuudan_cherry_7',
+    reason: '今の値を裏づける出典なし',
+    ...overrides,
+  });
+  const SILVER = { name: '銀トロフィー', confirmedSettings: ['6'], excludedSettings: [] };
+  /** ID を作らない種類。出典が見つからなかった（values は {}） */
+  const removedSilver = (overrides = {}) => ({
+    kind: 'confirmationEvent',
+    name: '銀トロフィー',
+    unit: 'settings',
+    previous: SILVER,
+    values: {},
+    reason: '出典なし',
+    ...overrides,
+  });
+  const errorsOf = (...removed) => run(record({ removed })).errors.map((e) => e.message);
+  /** key の欄を除いたコピー */
+  const without = (object, key) =>
+    Object.fromEntries(Object.entries(object).filter(([name]) => name !== key));
+  const DENOMINATOR_SHAPE =
+    '設定ごとに、1 以上の分母（数か、表示の桁を残した文字列）、% 付きの割合、または確率 0 を表す null が必要';
+
+  it('外す条件に合う記録は通る（ID を作る種類は appId を書き、ほかの種類は書かない）', () => {
+    expect(errorsOf(removedCherry(), removedSilver())).toEqual([]);
+  });
+
+  it('スキーマで欄を確かめる（unit・values が無い・appId が空・previous がオブジェクトでない）', () => {
+    for (const bad of [
+      without(removedCherry(), 'unit'),
+      without(removedCherry(), 'values'),
+      removedCherry({ appId: '' }),
+      removedCherry({ previous: 1 }),
+    ]) {
+      expect(messages(run(record({ removed: [bad] })))).toContain('スキーマ違反 /removed/0');
+    }
+  });
+
+  it('ID を作る種類で appId が無い、ほかの種類で appId があればエラー', () => {
+    expect(errorsOf(without(removedCherry(), 'appId'), removedSilver({ appId: 'gin' }))).toEqual([
+      'role::中段チェリー: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
+      'confirmationEvent::銀トロフィー: ID を作らない種類なので、appId を書かない',
+    ]);
+  });
+
+  it('ゾーン内の役・終了画面・グループ内の終了画面も、ID を作る種類として appId を求める', () => {
+    const plain = (kind, name) => ({
+      kind,
+      name,
+      unit: 'presence',
+      previous: { name: name.split('::').at(-1), hint: '' },
+      values: {},
+      reason: '出典なし',
+    });
+    const zoneRole = without(
+      removedCherry({ kind: 'zoneRole', name: 'CZ::中段チェリー' }),
+      'appId'
+    );
+    expect(
+      errorsOf(plain('endScreen', '青'), plain('endScreenGroupItem', 'End::赤'), zoneRole)
+    ).toEqual([
+      'endScreen::青: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
+      'endScreenGroupItem::End::赤: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
+      'zoneRole::CZ::中段チェリー: ID を作る種類なので、appId（main でアプリが作っていた ID）を書く',
+    ]);
+  });
+
+  it('unit は外す前の項目（previous）の種類と中身で決まる（項目と同じ文面）', () => {
+    expect(errorsOf(removedCherry({ unit: 'percent', values: {} }))).toEqual([
+      'role::中段チェリー: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
+    ]);
+    expect(errorsOf(removedSilver({ unit: 'presence' }))).toEqual([
+      'confirmationEvent::銀トロフィー: unit=presence は使えない（機種ファイルの項目に合わせて settings にする）',
+    ]);
+  });
+
+  it('values の出典キーと値の形、読み直しの形を、項目と同じ文面で確かめる', () => {
+    const bad = { 1: 0.5, 6: 12000 };
+    expect(errorsOf(removedCherry({ values: { 'nana-press': bad, '1geki': OTHER } }))).toEqual([
+      'role::中段チェリー: sources に無い出典キー: 1geki',
+      `role::中段チェリー: values.nana-press が unit=denominator の形に合わない（${DENOMINATOR_SHAPE}）`,
+    ]);
+    expect(errorsOf(removedCherry({ reread: { by: 'verifier', value: bad } }))).toEqual([
+      `role::中段チェリー: reread が unit=denominator の形に合わない（${DENOMINATOR_SHAPE}）`,
+    ]);
+  });
+
+  it('今の値を裏づける出典や確定値があれば外せない（採否ルールが選ぶ status を理由にする）', () => {
+    expect(errorsOf(removedCherry({ values: { 'nana-press': { 1: 10000, 6: 10000 } } }))).toEqual([
+      'role::中段チェリー: 外す条件に合わない（kept-single-source にできる）',
+    ]);
+    // 一部の設定だけの出典も「残す」の裏づけに数える
+    expect(errorsOf(removedCherry({ values: { 'nana-press': { 6: 10000 } } }))).toEqual([
+      'role::中段チェリー: 外す条件に合わない（kept-single-source にできる）',
+    ]);
+    expect(
+      errorsOf(removedCherry({ values: { chonborista: OTHER, 'nana-press': OTHER } }))
+    ).toEqual(['role::中段チェリー: 外す条件に合わない（confirmed にできる）']);
+    const silver = { confirmed: ['6'], excluded: [] };
+    expect(errorsOf(removedSilver({ values: { 'nana-press': silver } }))).toEqual([
+      'confirmationEvent::銀トロフィー: 外す条件に合わない（kept-single-source にできる）',
+    ]);
+  });
+
+  it('読み直しを省いて外せない（ちょんぼりすたの値で暫定にできるときは、読み直しが要る）', () => {
+    const onlyChonborista = removedCherry({ values: { chonborista: OTHER } });
+    expect(errorsOf(onlyChonborista)).toEqual([
+      'role::中段チェリー: 外す前に、ちょんぼりすたの値の読み直しが要る（合えば provisional-chonborista にする）',
+    ]);
+    // 読み直しが合わなければ、暫定にできないので外せる
+    const differs = { by: 'verifier', value: { 1: 11000, 6: 12000 } };
+    expect(errorsOf({ ...onlyChonborista, reread: differs })).toEqual([]);
+    // 読み直しが合えば、暫定にできるので外せない
+    const agrees = { by: 'verifier', value: { ...OTHER } };
+    expect(errorsOf({ ...onlyChonborista, reread: agrees })).toEqual([
+      'role::中段チェリー: 外す条件に合わない（provisional-chonborista にできる）',
+    ]);
+    // 設定の組の項目も同じ（ちょんぼりすたにしか無い値）
+    const gold = { confirmed: ['5', '6'], excluded: [] };
+    expect(errorsOf(removedSilver({ values: { chonborista: gold } }))).toEqual([
+      'confirmationEvent::銀トロフィー: 外す前に、ちょんぼりすたの値の読み直しが要る（合えば provisional-chonborista にする）',
+    ]);
+  });
+
+  it('ちょんぼりすたの値で暫定にできないとき（一部の設定だけ・ほかの出典と矛盾）は、読み直しが無くても外せる', () => {
+    expect(errorsOf(removedCherry({ values: { chonborista: { 1: 12000 } } }))).toEqual([]);
+    const against = { chonborista: OTHER, 'nana-press': { 1: 15000, 6: 15000 } };
+    expect(errorsOf(removedCherry({ values: against }))).toEqual([]);
+  });
+
+  it('最上位の終了画面の previous は、distribution を確率として読む（listMachineItems と同じ改名）', () => {
+    const removedGold = (values) => ({
+      kind: 'endScreen',
+      name: '金枠',
+      unit: 'denominator',
+      previous: { name: '金枠', distribution: { 1: 0, 6: 0.01 } },
+      values,
+      appId: 'endscreen',
+      reason: '出典なし',
+    });
+    expect(errorsOf(removedGold({}))).toEqual([]);
+    expect(errorsOf(removedGold({ 'nana-press': { 1: null, 6: 100 } }))).toEqual([
+      'endScreen::金枠: 外す条件に合わない（kept-single-source にできる）',
+    ]);
   });
 });

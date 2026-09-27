@@ -7,6 +7,8 @@
  * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
  * - ID を持たない種類の項目（確定演出など）を消したら、出典記録の removed に書いてあるか
  * - 新しく足した機種に、出典記録があるか
+ * - 外した ID の台帳（出典記録の removed）: 新しく外した項目の previous・appId が main と同じか、main の記録の
+ *   removed を消していないか、新しい項目が外した項目の ID を使っていないか（main の provenance/ も読む）
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる
@@ -19,7 +21,7 @@ import { execFileSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { runAgainstBase } from './lib/against-base.mjs';
+import { listGitFiles, runAgainstBase } from './lib/against-base.mjs';
 import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -72,6 +74,7 @@ function main() {
     base,
     readBase,
     readHead,
+    listBase: (dir) => listGitFiles(base, dir, ROOT),
     loadProvenance: () => loadProvenanceFiles(resolve(ROOT, 'provenance')),
   });
   const print = code === 2 ? console.error : console.log;

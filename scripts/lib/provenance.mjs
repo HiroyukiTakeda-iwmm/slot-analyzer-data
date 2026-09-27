@@ -436,18 +436,36 @@ export function plainName(kind, name) {
 }
 
 /**
+ * 機種ファイルの生の項目を、出典記録で照合する形（listMachineItems の entry）にする。
+ * アプリの移行処理（migrate-v1-to-v2.mjs の buildEndScreenFromStandard）は、最上位の終了画面だけ
+ * distribution を probabilities に改名して使う（グループの中の終了画面は改名しない）。出典記録でも
+ * アプリが使う値を照合するので、最上位の終了画面だけ改名した形を返す（元の項目は書き換えない）。
+ * listMachineItems と、出典記録の removed の previous（外す前の生の項目）の確かめの両方から使う。
+ * @param {string} kind 項目の種類（出典記録の kind）
+ * @param {object} raw 機種ファイルの項目そのもの
+ * @returns {object}
+ */
+export function itemEntry(kind, raw) {
+  const renamed =
+    kind === 'endScreen' && raw.probabilities == null && raw.distribution !== undefined;
+  return renamed ? { ...raw, probabilities: raw.distribution } : raw;
+}
+
+/**
  * 機種ファイルの中で、出典記録の対象になる項目を並べる（仕様 5.4）。
  * 同じ種類で同じ名前の項目は、createNameDisambiguator で `#2` などを付けた名前にする。
  * 元の名前（役・ゾーン・終了画面・グループ・そのほかの項目の名前）に「::」があれば例外を投げる（plainName）。
+ * entry は照合する形（itemEntry）、raw は機種ファイルの項目そのもの（removed の previous と比べる）。
+ * @returns {Array<{ kind: string, name: string, entry: object, raw: object }>}
  */
 export function listMachineItems(machine) {
   const items = [];
   const disambiguate = createNameDisambiguator();
   // 子（ゾーン内の役・グループ内の終了画面）の名前は「親::子」にする
-  const add = (kind, entry, parent) => {
-    const name = plainName(kind, entry.name);
+  const add = (kind, raw, parent) => {
+    const name = plainName(kind, raw.name);
     const full = parent === undefined ? name : `${parent}${NAME_SEPARATOR}${name}`;
-    items.push({ kind, name: disambiguate(kind, full), entry });
+    items.push({ kind, name: disambiguate(kind, full), entry: itemEntry(kind, raw), raw });
   };
 
   for (const r of machine.roles ?? []) add('role', r);
@@ -456,13 +474,7 @@ export function listMachineItems(machine) {
     for (const r of z.roles ?? []) add('zoneRole', r, zone);
   }
   for (const e of machine.confirmationEvents ?? []) add('confirmationEvent', e);
-  for (const s of machine.endScreens ?? []) {
-    // アプリの移行処理（migrate-v1-to-v2.mjs の buildEndScreenFromStandard）は、最上位の終了画面だけ
-    // distribution を probabilities に改名して使う（グループの中の終了画面は改名しない）。出典記録でも
-    // アプリが使う値を照合するので、最上位の終了画面だけ改名した形を渡す（機種ファイルは書き換えない）
-    const renamed = s.probabilities == null && s.distribution !== undefined;
-    add('endScreen', renamed ? { ...s, probabilities: s.distribution } : s);
-  }
+  for (const s of machine.endScreens ?? []) add('endScreen', s);
   for (const g of machine.endScreenGroups ?? []) {
     const group = plainName('endScreenGroup', g.name);
     for (const s of g.endScreens ?? []) add('endScreenGroupItem', s, group);
@@ -478,6 +490,7 @@ export function listMachineItems(machine) {
       kind: 'specialSettings',
       name: 'specialSettings',
       entry: machine.specialSettings,
+      raw: machine.specialSettings,
     });
   }
   return items;
