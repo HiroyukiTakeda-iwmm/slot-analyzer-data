@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 import {
   expandEndScreenPatterns,
   expandEndScreenPatternsWithIds,
+  rewriteMachineText,
 } from '../scripts/lib/expand-patterns.mjs';
 import { migrateV1ToV2 } from '../scripts/migrate-v1-to-v2.mjs';
 import { runAgainstBase } from '../scripts/lib/against-base.mjs';
@@ -22,24 +23,117 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readRepo = (path) => readFileSync(resolve(ROOT, path), 'utf-8');
 
 const index = JSON.parse(readRepo('machines/index.json'));
+// patterns を持つ機種は、見直しで書き直すと減っていく（段階1b・段階2）。数は固定せず、毎回数えた全部を確かめる
 const withPatterns = index.machines
-  .map((entry) => ({ entry, machine: JSON.parse(readRepo(`machines/${entry.file}`)) }))
+  .map((entry) => {
+    const text = readRepo(`machines/${entry.file}`);
+    return { entry, text, machine: JSON.parse(text) };
+  })
   .filter(({ machine }) => (machine.endScreens ?? []).some((s) => (s.patterns ?? []).length > 0));
+const noMachineHasPatterns = withPatterns.length === 0;
 
-describe('expandEndScreenPatterns', () => {
-  it('実データで、patterns を持つ機種がある（17機種）', () => {
-    expect(withPatterns.length).toBe(17);
-  });
+/** JSON.stringify の2スペースの形（末尾改行）。この形でない機種ファイルもある */
+const canonical = (machine) => JSON.stringify(machine, null, 2) + '\n';
 
-  it.each(withPatterns.map(({ entry, machine }) => [entry.id, machine]))(
-    '%s: アプリが読む形が、書き直しの前後で同じ',
-    (_id, machine) => {
-      const { machine: expanded } = expandEndScreenPatterns(machine);
-      expect(migrateV1ToV2(expanded).endScreens).toEqual(migrateV1ToV2(machine).endScreens);
-      expect((expanded.endScreens ?? []).some((s) => (s.patterns ?? []).length > 0)).toBe(false);
-    }
+// 最上位の endScreens の前後に、文字列の中の ] や "endScreens"・末尾のバックスラッシュ・グループの中の
+// endScreens（最上位より前）・すぐ前に数や true・false・null の値（詰めた書き方も）・数の書き方（0.10）・
+// 1行の配列を置いた機種。前後は1バイトも変わらない
+const TRICKY_BEFORE = [
+  '{',
+  '  "name": "括弧 ] と \\"endScreens\\": [ を含む名前",',
+  '  "description": "末尾がバックスラッシュ\\\\",',
+  '  "endScreenGroups": [',
+  '    {',
+  '      "name": "グループ",',
+  '      "endScreens": [{ "name": "中", "patterns": [{ "name": "x", "setting": "6" }] }]',
+  '    }',
+  '  ],',
+  '  "availableSettings": ["1", "2", "5", "6"],',
+  '  "count": 3,',
+  '  "ratio": -0.10e1,',
+  '  "flag": true,"none":null,"off":false,',
+  '  "endScreens": ',
+].join('\n');
+const TRICKY_OLD_ARRAY = [
+  '[',
+  '    { "id": "p", "name": "親 ]", "type": "bonus_end", "color": "#78909C", "patterns": [',
+  '      { "name": "A ]", "setting": "6", "description": "\\"]\\" の説明" },',
+  '      { "name": "B", "minSetting": 5 }',
+  '    ] },',
+  '    { "id": "s", "name": "普通", "hint": "\\"endScreens\\": []" }',
+  '  ]',
+].join('\n');
+const TRICKY_NEW_ARRAY = [
+  '[',
+  '    {',
+  '      "id": "p_1",',
+  '      "name": "A ]",',
+  '      "type": "bonus_end",',
+  '      "hint": "\\"]\\" の説明",',
+  '      "confirmedSettings": [',
+  '        "6"',
+  '      ],',
+  '      "color": "#78909C"',
+  '    },',
+  '    {',
+  '      "id": "p_2",',
+  '      "name": "B",',
+  '      "type": "bonus_end",',
+  '      "hint": "",',
+  '      "confirmedSettings": [',
+  '        "5",',
+  '        "6"',
+  '      ],',
+  '      "color": "#78909C"',
+  '    },',
+  '    {',
+  '      "id": "s",',
+  '      "name": "普通",',
+  '      "hint": "\\"endScreens\\": []"',
+  '    }',
+  '  ]',
+].join('\n');
+const TRICKY_AFTER = [',', '  "rates": [0.10, 0.20],', '  "version": "1.0"', '}', ''].join('\n');
+
+// 最上位に endScreens が2つある機種（JSON.parse は後ろを使う）。最初の配列を差し替えても、読むと後ろが残る
+const DUPLICATE_TEXT = [
+  '{',
+  '  "name": "重なり",',
+  '  "endScreens": [],',
+  '  "endScreens": [{ "id": "p", "name": "親", "patterns": [{ "name": "A" }] }]',
+  '}',
+  '',
+].join('\n');
+
+/**
+ * 2スペースで字下げした機種ファイルで、最上位の "endScreens" の配列の範囲を、行で探す（テストの物差し。
+ * 道具の走査とは別のやり方）。キーの行 `  "endScreens": [` の "[" から、字下げ2の閉じる行 `  ]` の "]" まで。
+ * JSON の文字列は生の改行を含まないので、行の頭の `  ]` は括弧
+ */
+function endScreensByLines(text) {
+  const key = text.indexOf('\n  "endScreens": [');
+  if (key < 0) throw new Error('最上位の "endScreens" の行が無い');
+  const start = text.indexOf('[', key);
+  const close = /\n {2}\]/g;
+  close.lastIndex = start;
+  const found = close.exec(text);
+  return { start, end: found.index + found[0].length };
+}
+
+/** 書き直した文字列が、最上位の endScreens の配列だけを差し替えたものか（配列の外はバイト単位で同じ） */
+function expectOnlyEndScreensReplaced(before, after, expectedMachine) {
+  const b = endScreensByLines(before);
+  const a = endScreensByLines(after);
+  expect(after.slice(0, a.start)).toBe(before.slice(0, b.start));
+  expect(after.slice(a.end)).toBe(before.slice(b.end));
+  // 新しい配列は2スペースで整形し、キーの行（字下げ2）に合わせて字下げする
+  expect(after.slice(a.start, a.end)).toBe(
+    JSON.stringify(expectedMachine.endScreens, null, 2).replaceAll('\n', '\n  ')
   );
+  expect(JSON.parse(after)).toEqual(expectedMachine);
+}
 
+describe('expandEndScreenPatterns（合成の機種）', () => {
   it('patterns が無ければ、同じオブジェクトを返す', () => {
     const machine = { name: 'x', endScreens: [{ name: 'a', confirmedSettings: ['6'] }] };
     expect(expandEndScreenPatterns(machine)).toEqual({ machine, expanded: [] });
@@ -86,6 +180,31 @@ describe('expandEndScreenPatterns', () => {
         confirmedSettings: ['4', '5', '6'],
       },
     ]);
+  });
+
+  it('親に id・type・hint が無ければ、id はパターンの名前から作り、type は other、hint は description か ""', () => {
+    const machine = {
+      name: 'x',
+      endScreens: [
+        {
+          name: '親',
+          patterns: [
+            { name: 'Gold', description: '金の説明' },
+            { name: '金', minSetting: 5 },
+            { name: '銀' },
+          ],
+        },
+      ],
+    };
+    const { machine: expanded } = expandEndScreenPatterns(machine);
+    // 漢字だけの名前は ID の文字にならないので endscreen、重なれば _2（アプリの移行処理と同じ）。
+    // availableSettings が無ければ設定は 1〜6
+    expect(expanded.endScreens).toStrictEqual([
+      { id: 'gold', name: 'Gold', type: 'other', hint: '金の説明', confirmedSettings: [] },
+      { id: 'endscreen', name: '金', type: 'other', hint: '', confirmedSettings: ['5', '6'] },
+      { id: 'endscreen_2', name: '銀', type: 'other', hint: '', confirmedSettings: [] },
+    ]);
+    expect(migrateV1ToV2(expanded).endScreens).toEqual(migrateV1ToV2(machine).endScreens);
   });
 
   it('親に color があれば、展開した終了画面にも同じ color を書く', () => {
@@ -211,6 +330,56 @@ describe('expandEndScreenPatterns', () => {
   });
 });
 
+describe('rewriteMachineText（合成の機種）', () => {
+  it('patterns が無ければ、元の文字列と空の expanded を返す', () => {
+    const text =
+      '{\n  "name": "x",\n  "rates": [0.10],\n  "endScreens": [{"name": "a", "patterns": []}]\n}\n';
+    expect(rewriteMachineText(text)).toEqual({ text, expanded: [] });
+  });
+
+  it('文字列の中の ] や "endScreens"、グループの中の endScreens があっても、最上位の配列だけを差し替える', () => {
+    expect(rewriteMachineText(TRICKY_BEFORE + TRICKY_OLD_ARRAY + TRICKY_AFTER)).toEqual({
+      text: TRICKY_BEFORE + TRICKY_NEW_ARRAY + TRICKY_AFTER,
+      expanded: [{ name: '親 ]', patterns: 2, ids: ['p_1', 'p_2'] }],
+    });
+  });
+
+  it('新しい配列は、キーの行の字下げに合わせる（字下げが2スペースでないファイル）', () => {
+    const text = [
+      '{',
+      '    "name": "x",',
+      '    "endScreens": [',
+      '        { "id": "p", "name": "親", "patterns": [{ "name": "A" }] }',
+      '    ]',
+      '}',
+      '',
+    ].join('\n');
+    expect(rewriteMachineText(text).text).toBe(
+      [
+        '{',
+        '    "name": "x",',
+        '    "endScreens": [',
+        '      {',
+        '        "id": "p_1",',
+        '        "name": "A",',
+        '        "type": "other",',
+        '        "hint": "",',
+        '        "confirmedSettings": []',
+        '      }',
+        '    ]',
+        '}',
+        '',
+      ].join('\n')
+    );
+  });
+
+  it('差し替えた文字列を読んだ結果が、書き直した結果と違えば（最上位に endScreens が2つ）、例外を投げる', () => {
+    expect(() => rewriteMachineText(DUPLICATE_TEXT)).toThrow(
+      '差し替えた機種ファイルを読むと、書き直した結果と違う'
+    );
+  });
+});
+
 /** validate.mjs と同じ検査を、機種ファイルの中身を渡して行う（エラーと警告を「ファイル: 文面」で返す） */
 function runValidators(files) {
   const results = [
@@ -228,32 +397,45 @@ function runValidators(files) {
   };
 }
 
-/** 書き直した機種ファイルの中身（CLI の --write と同じ整形） */
-function rewrittenText(machine) {
-  return JSON.stringify(expandEndScreenPatterns(machine).machine, null, 2) + '\n';
-}
+describe.skipIf(noMachineHasPatterns)('実データ（patterns を持つ機種を毎回数えた全部）', () => {
+  it.each(withPatterns.map(({ entry, machine }) => [entry.id, machine]))(
+    '%s: アプリが読む形が、書き直しの前後で同じ',
+    (_id, machine) => {
+      const { machine: expanded } = expandEndScreenPatterns(machine);
+      expect(migrateV1ToV2(expanded).endScreens).toEqual(migrateV1ToV2(machine).endScreens);
+      expect((expanded.endScreens ?? []).some((s) => (s.patterns ?? []).length > 0)).toBe(false);
+    }
+  );
 
-describe('実データを書き直した結果が、今の検査を通る', () => {
-  it('機種のスキーマと validate の規則を、書き直す前と同じく通る（エラー 0・警告は元と同じ）', () => {
-    const files = index.machines.map((entry) => ({
+  it.each(withPatterns.map(({ entry, text, machine }) => [entry.id, text, machine]))(
+    '%s: rewriteMachineText は、最上位の endScreens の配列だけを差し替える（配列の外はバイト単位で同じ）',
+    (_id, text, machine) => {
+      const { text: after, expanded } = rewriteMachineText(text);
+      expect(expanded.length).toBeGreaterThan(0);
+      expectOnlyEndScreensReplaced(text, after, expandEndScreenPatterns(machine).machine);
+    }
+  );
+
+  it('書き直した機種は、スキーマと validate の規則を、書き直す前と同じく通る（エラー 0・警告は元と同じ）', () => {
+    const texts = index.machines.map((entry) => ({
       path: `machines/${entry.file}`,
-      data: JSON.parse(readRepo(`machines/${entry.file}`)),
+      text: readRepo(`machines/${entry.file}`),
     }));
-    const rewritten = files.map(({ path, data }) => ({
-      path,
-      data: JSON.parse(rewrittenText(data)),
-    }));
-    const before = runValidators(files);
-    const after = runValidators(rewritten);
+    const before = runValidators(texts.map(({ path, text }) => ({ path, data: JSON.parse(text) })));
+    const after = runValidators(
+      texts.map(({ path, text }) => ({ path, data: JSON.parse(rewriteMachineText(text).text) }))
+    );
     expect(after.errors).toEqual([]);
     expect(after.warnings).toEqual(before.warnings);
   });
 
   it('main と比べる検査（check:base）を通る（アプリが作る ID が変わらず、同じ名前の項目も増えない）', () => {
     const head = new Map(
-      withPatterns.map(({ entry, machine }) => [`machines/${entry.file}`, rewrittenText(machine)])
+      withPatterns.map(({ entry, text }) => [
+        `machines/${entry.file}`,
+        rewriteMachineText(text).text,
+      ])
     );
-    expect(head.size).toBeGreaterThan(0);
     const result = runAgainstBase({
       base: '書き直す前の作業ツリー',
       readBase: readRepo,
@@ -303,7 +485,7 @@ describe('scripts/expand-patterns.mjs（CLI）', () => {
     return path;
   }
 
-  const writeMachine = (path, machine) => writeText(path, JSON.stringify(machine, null, 2) + '\n');
+  const writeMachine = (path, machine) => writeText(path, canonical(machine));
   const copyMachine = (entry) =>
     writeText(`machines/${entry.file}`, readRepo(`machines/${entry.file}`));
   const readCopy = (path) => readFileSync(join(dir, path), 'utf-8');
@@ -326,54 +508,15 @@ describe('scripts/expand-patterns.mjs（CLI）', () => {
     expect(readCopy(path)).toBe(before);
   });
 
-  it('--write なし: 実データの写し（patterns を持つ全機種）で、機種ごとに書き直す内容を表示し、どれも変えない', () => {
-    const paths = withPatterns.map(({ entry }) => copyMachine(entry));
-    const result = run(paths);
-    expect(result.status).toBe(0);
-    for (const [i, { machine }] of withPatterns.entries()) {
-      const parents = machine.endScreens.filter((s) => (s.patterns ?? []).length > 0);
-      expect(result.stdout).toContain(`${paths[i]}: 書き直す終了画面 ${parents.length}\n`);
-      for (const parent of parents) {
-        // 実データの親はどれも明示の id を持つので、作る id は `${親の id}_${パターンの番号}`
-        const ids = parent.patterns.map((_, k) => `${parent.id}_${k + 1}`);
-        expect(result.stdout).toContain(
-          `  ${parent.name}（パターン ${parent.patterns.length}）→ ${ids.join(', ')}\n`
-        );
-      }
-      expect(readCopy(paths[i])).toBe(readRepo(paths[i]));
-    }
-  });
-
-  it('--write: 実データの写しを書き直す（2スペース・末尾改行。アプリが読む形とほかの欄は元と同じ）', () => {
-    const plain = index.machines.find(
-      (entry) => !withPatterns.some(({ entry: target }) => target.id === entry.id)
+  it('--write: 文字列の中の ] や "endScreens" がある機種でも、最上位の endScreens の配列だけを差し替える', () => {
+    const path = writeText(
+      'machines/test/tricky.json',
+      TRICKY_BEFORE + TRICKY_OLD_ARRAY + TRICKY_AFTER
     );
-    const paths = withPatterns.map(({ entry }) => copyMachine(entry));
-    const plainPath = copyMachine(plain);
-    const result = run([...paths, plainPath, '--write']);
+    const result = run([path, '--write']);
     expect(result.status).toBe(0);
-    expect(result.stderr).toBe('');
-    expect(result.stdout).toContain(`${plainPath}: 書き直す終了画面なし\n`);
-
-    const written = result.stdout.slice(result.stdout.indexOf('書き直したファイル'));
-    expect(written).toBe(
-      [`書き直したファイル: ${paths.length}`, ...paths.map((path) => `  ${path}`), ''].join('\n')
-    );
-    for (const [i, { machine }] of withPatterns.entries()) {
-      const text = readCopy(paths[i]);
-      expect(text).toBe(rewrittenText(machine));
-      const after = JSON.parse(text);
-      expect(text).toBe(JSON.stringify(after, null, 2) + '\n');
-      expect(migrateV1ToV2(after).endScreens).toEqual(migrateV1ToV2(machine).endScreens);
-      // version・lastUpdated を含め、endScreens のほかは変えない
-      expect({ ...after, endScreens: null }).toEqual({ ...machine, endScreens: null });
-    }
-    expect(readCopy(plainPath)).toBe(readRepo(plainPath));
-
-    const again = run([...paths, '--write']);
-    expect(again.status).toBe(0);
-    expect(again.stdout).not.toContain('書き直したファイル');
-    expect(again.stdout).toContain(`${paths[0]}: 書き直す終了画面なし\n`);
+    expect(result.stdout).toContain('  親 ]（パターン 2）→ p_1, p_2\n');
+    expect(readCopy(path)).toBe(TRICKY_BEFORE + TRICKY_NEW_ARRAY + TRICKY_AFTER);
   });
 
   it('書き直すものが無ければ「書き直す終了画面なし」で終了コード 0（--write でもファイルは変えない）', () => {
@@ -428,6 +571,16 @@ describe('scripts/expand-patterns.mjs（CLI）', () => {
     expect(result.stderr).toContain(`${path}: 書き直せない`);
   });
 
+  it('差し替えた結果が書き直した結果と違う機種（最上位に endScreens が2つ）は、書かずに終了コード 2', () => {
+    const path = writeText('machines/test/twice.json', DUPLICATE_TEXT);
+    const result = run([path, '--write']);
+    expect(result.status).toBe(2);
+    expect(result.stderr).toContain(
+      `${path}: 書き直せない（差し替えた機種ファイルを読むと、書き直した結果と違う`
+    );
+    expect(readCopy(path)).toBe(DUPLICATE_TEXT);
+  });
+
   it('--write で1つでも誤りのあるファイルがあれば、どのファイルも書き直さない', () => {
     const path = writeMachine('machines/test/sample.json', sample);
     const before = readCopy(path);
@@ -445,5 +598,70 @@ describe('scripts/expand-patterns.mjs（CLI）', () => {
     const result = run([path, '--write']);
     expect(result.status).toBe(2);
     expect(result.stderr).toContain(`${path}: 書き込めない`);
+  });
+
+  describe.skipIf(noMachineHasPatterns)('実データの写し（patterns を持つ全機種）', () => {
+    it('--write なし: 機種ごとに書き直す内容を表示し、どれも変えない', () => {
+      const paths = withPatterns.map(({ entry }) => copyMachine(entry));
+      const result = run(paths);
+      expect(result.status).toBe(0);
+      for (const [i, { machine }] of withPatterns.entries()) {
+        const { expanded } = expandEndScreenPatternsWithIds(machine);
+        const lines = [
+          `${paths[i]}: 書き直す終了画面 ${expanded.length}`,
+          ...expanded.map(
+            ({ name, patterns, ids }) => `  ${name}（パターン ${patterns}）→ ${ids.join(', ')}`
+          ),
+        ];
+        expect(result.stdout).toContain(lines.join('\n') + '\n');
+        expect(readCopy(paths[i])).toBe(readRepo(paths[i]));
+      }
+    });
+
+    it('--write: 最上位の endScreens の配列だけを差し替え、配列の外はバイト単位で元と同じ', () => {
+      const plain = index.machines.find(
+        (entry) => !withPatterns.some(({ entry: target }) => target.id === entry.id)
+      );
+      const paths = withPatterns.map(({ entry }) => copyMachine(entry));
+      const plainPath = copyMachine(plain);
+      const result = run([...paths, plainPath, '--write']);
+      expect(result.status).toBe(0);
+      expect(result.stderr).toBe('');
+      expect(result.stdout).toContain(`${plainPath}: 書き直す終了画面なし\n`);
+
+      const written = result.stdout.slice(result.stdout.indexOf('書き直したファイル'));
+      expect(written).toBe(
+        [`書き直したファイル: ${paths.length}`, ...paths.map((path) => `  ${path}`), ''].join('\n')
+      );
+      for (const [i, { text, machine }] of withPatterns.entries()) {
+        const after = readCopy(paths[i]);
+        expect(after).toBe(rewriteMachineText(text).text);
+        expectOnlyEndScreensReplaced(text, after, expandEndScreenPatterns(machine).machine);
+        expect(migrateV1ToV2(JSON.parse(after)).endScreens).toEqual(
+          migrateV1ToV2(machine).endScreens
+        );
+      }
+      expect(readCopy(plainPath)).toBe(readRepo(plainPath));
+
+      const again = run([...paths, '--write']);
+      expect(again.status).toBe(0);
+      expect(again.stdout).not.toContain('書き直したファイル');
+      expect(again.stdout).toContain(`${paths[0]}: 書き直す終了画面なし\n`);
+    });
+
+    // 2026-09-27 は bakemonogatari・isekai-quartet-bt・triple-crown-seven（0.10・0.015480・1行の配列）
+    const nonCanonical = withPatterns.filter(({ text, machine }) => text !== canonical(machine));
+    it.skipIf(nonCanonical.length === 0)(
+      '--write: 整形が JSON.stringify の形でない機種でも、配列の外の書き方（数・1行の配列）を変えない',
+      () => {
+        const paths = nonCanonical.map(({ entry }) => copyMachine(entry));
+        expect(run([...paths, '--write']).status).toBe(0);
+        for (const [i, { text, machine }] of nonCanonical.entries()) {
+          const after = readCopy(paths[i]);
+          expectOnlyEndScreensReplaced(text, after, expandEndScreenPatterns(machine).machine);
+          expect(after).not.toBe(canonical(JSON.parse(after)));
+        }
+      }
+    );
   });
 });

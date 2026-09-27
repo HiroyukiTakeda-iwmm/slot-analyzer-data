@@ -5,17 +5,19 @@
  * 作る終了画面は、アプリの移行処理が作る id を明示の id として持つ。書き直してもアプリが読む形は変わらない
  * （scripts/lib/expand-patterns.mjs が確かめ、変わるなら書き直さない）。endScreenGroups の中と voiceCounts の
  * patterns は書き直さない。機種の version と lastUpdated は変えない（利用者に更新を届ける必要が無い）。
+ * --write は、最上位の endScreens の配列だけを差し替え、ほかの部分（数の書き方・1行の配列・キーの順・
+ * 改行）は1バイトも変えない（PR の差分を、書き直した終了画面だけにするため）。
  *
  * Usage:
  *   node scripts/expand-patterns.mjs <機種ファイル>...          # 書き直す内容を表示するだけ
- *   node scripts/expand-patterns.mjs <機種ファイル>... --write  # 書き直す（2スペース・末尾改行）
+ *   node scripts/expand-patterns.mjs <機種ファイル>... --write  # 書き直す
  *
  * 終了コード: 0 = 表示・書き直しができた（書き直すものが無いときも）/ 2 = 読めない・書き直せない・書き込めない
  * 1つでも読めない・書き直せないファイルがあれば、どのファイルも書き直さない。
  */
 
 import { readFileSync, writeFileSync } from 'fs';
-import { expandEndScreenPatternsWithIds } from './lib/expand-patterns.mjs';
+import { rewriteMachineText } from './lib/expand-patterns.mjs';
 
 const USAGE = '使い方: node scripts/expand-patterns.mjs <機種ファイル>... [--write]';
 
@@ -40,8 +42,8 @@ function parseArgs(argv) {
 }
 
 /**
- * 1つのファイルを読み、書き直した結果を作る（ファイルには書かない）。
- * @returns {{ path: string, machine?: object,
+ * 1つのファイルを読み、書き直した中身を作る（ファイルには書かない）。
+ * @returns {{ path: string, text?: string,
  *   expanded?: Array<{ name: string, patterns: number, ids: string[] }>, error?: string }}
  *   読めない・書き直せないときは error だけを持つ
  */
@@ -62,7 +64,7 @@ function planFile(path) {
     return { path, error: '機種ファイルの形でない（JSON のオブジェクトではない）' };
   }
   try {
-    return { path, ...expandEndScreenPatternsWithIds(data) };
+    return { path, ...rewriteMachineText(text) };
   } catch (e) {
     return { path, error: `書き直せない（${e.message}）` };
   }
@@ -112,7 +114,7 @@ function main() {
   let writeError;
   for (const plan of targets) {
     try {
-      writeFileSync(plan.path, JSON.stringify(plan.machine, null, 2) + '\n', 'utf-8');
+      writeFileSync(plan.path, plan.text, 'utf-8');
       written.push(plan.path);
     } catch (e) {
       writeError = `${plan.path}: 書き込めない（${e.message}）`;

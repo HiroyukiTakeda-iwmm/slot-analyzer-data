@@ -31,6 +31,11 @@ function sortKeysDeep(value) {
   return value;
 }
 
+/** JSON として深く同じか（キーの順は問わない。値が undefined のキーは無いものとして比べる） */
+function sameJson(a, b) {
+  return JSON.stringify(sortKeysDeep(a)) === JSON.stringify(sortKeysDeep(b));
+}
+
 /**
  * expandEndScreenPatterns と同じ書き直しをし、書き直した終了画面ごとに、作った終了画面の id も返す
  * （CLI の表示用。expandEndScreenPatterns の expanded は、計画の形の name と patterns の数だけ）。
@@ -59,9 +64,7 @@ export function expandEndScreenPatternsWithIds(machine) {
     }
   }
   const result = { ...machine, endScreens };
-  const before = JSON.stringify(sortKeysDeep(migrated));
-  const after = JSON.stringify(sortKeysDeep(migrateV1ToV2(result).endScreens));
-  if (before !== after) {
+  if (!sameJson(migrated, migrateV1ToV2(result).endScreens)) {
     throw new Error(`書き直すと、アプリが読む終了画面が変わる: ${machine.name}`);
   }
   return { machine: result, expanded };
@@ -80,4 +83,99 @@ export function expandEndScreenPatternsWithIds(machine) {
 export function expandEndScreenPatterns(machine) {
   const { machine: result, expanded } = expandEndScreenPatternsWithIds(machine);
   return { machine: result, expanded: expanded.map(({ name, patterns }) => ({ name, patterns })) };
+}
+
+const JSON_WHITESPACE = ' \t\n\r';
+
+/** text[start] から JSON の空白を飛ばした位置 */
+function skipWhitespace(text, start) {
+  let i = start;
+  while (i < text.length && JSON_WHITESPACE.includes(text[i])) i += 1;
+  return i;
+}
+
+/** text[start] の '"' から始まる文字列の、閉じる '"' の次の位置（"\" の次の1文字はエスケープとして飛ばす） */
+function endOfString(text, start) {
+  let i = start + 1;
+  while (i < text.length && text[i] !== '"') i += text[i] === '\\' ? 2 : 1;
+  return i + 1;
+}
+
+/**
+ * text[start] から始まる値（オブジェクト・配列・文字列・数・true・false・null）の次の位置。
+ * オブジェクトと配列は、文字列の中を飛ばしながら括弧の深さをたどる（文字列の中の括弧は数えない）
+ */
+function endOfValue(text, start) {
+  if (text[start] === '"') return endOfString(text, start);
+  let i = start;
+  if (text[start] !== '{' && text[start] !== '[') {
+    while (i < text.length && !`,}]${JSON_WHITESPACE}`.includes(text[i])) i += 1;
+    return i;
+  }
+  let depth = 0;
+  while (i < text.length) {
+    const ch = text[i];
+    if (ch === '"') {
+      i = endOfString(text, i);
+      continue;
+    }
+    if (ch === '{' || ch === '[') depth += 1;
+    if (ch === '}' || ch === ']') {
+      depth -= 1;
+      if (depth === 0) return i + 1;
+    }
+    i += 1;
+  }
+  return i; // JSON.parse で読めた文字列では、ここには来ない（閉じ括弧で返る）
+}
+
+/**
+ * 機種ファイルの文字列で、最上位のキー "endScreens" の値の配列がある範囲を返す（最初に見つかったもの）。
+ * JSON.parse で読めた文字列（最上位がオブジェクト）だけを渡す。最上位のオブジェクトのキーと値を順に読み、
+ * 値は endOfValue で飛ばすので、グループの中の "endScreens" や、文字列の中の "]"・"endScreens" は数えない。
+ * キーはエスケープを戻して比べる。
+ *
+ * @returns {{ start: number, end: number }} text.slice(start, end) が "[" から "]" まで
+ */
+function findTopLevelEndScreens(text) {
+  let i = skipWhitespace(text, skipWhitespace(text, 0) + 1); // "{" の次
+  while (text[i] === '"') {
+    const keyEnd = endOfString(text, i);
+    const key = JSON.parse(text.slice(i, keyEnd));
+    const valueStart = skipWhitespace(text, skipWhitespace(text, keyEnd) + 1); // ":" の次
+    const valueEnd = endOfValue(text, valueStart);
+    if (key === 'endScreens' && text[valueStart] === '[') {
+      return { start: valueStart, end: valueEnd };
+    }
+    i = skipWhitespace(text, skipWhitespace(text, valueEnd) + 1); // "," の次
+  }
+  throw new Error('最上位の endScreens の配列が見つからない');
+}
+
+/**
+ * 機種ファイルの文字列の、最上位の endScreens の配列だけを、書き直した終了画面に差し替える
+ * （2026-09-27 に決定。PR の差分を書き直した終了画面だけにするため、ほかの部分（数の書き方・
+ * 1行の配列・キーの順・改行）は1バイトも変えない）。新しい配列は2スペースで整形し、元の配列が始まる行の
+ * 字下げに合わせる。差し替えた文字列を読んだ結果が、書き直した機種（expandEndScreenPatterns の結果）と
+ * JSON として深く同じでなければ（最上位に endScreens が2つあるなど）、例外を投げる。
+ * 書き直すものが無ければ、元の文字列をそのまま返す。
+ *
+ * @param {string} text 機種ファイルの中身（JSON のオブジェクト）
+ * @returns {{ text: string, expanded: Array<{ name: string, patterns: number, ids: string[] }> }}
+ */
+export function rewriteMachineText(text) {
+  const { machine, expanded } = expandEndScreenPatternsWithIds(JSON.parse(text));
+  if (expanded.length === 0) return { text, expanded };
+
+  const { start, end } = findTopLevelEndScreens(text);
+  const lineStart = text.lastIndexOf('\n', start) + 1;
+  const indent = text.slice(lineStart, start).match(/^[ \t]*/)[0];
+  const array = JSON.stringify(machine.endScreens, null, 2).replaceAll('\n', `\n${indent}`);
+  const rewritten = text.slice(0, start) + array + text.slice(end);
+  if (!sameJson(JSON.parse(rewritten), machine)) {
+    throw new Error(
+      `差し替えた機種ファイルを読むと、書き直した結果と違う（最上位に endScreens が2つあるなど）: ${machine.name}`
+    );
+  }
+  return { text: rewritten, expanded };
 }
