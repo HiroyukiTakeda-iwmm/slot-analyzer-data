@@ -190,18 +190,22 @@ slot-analyzer-data/
 
 ### iOS側で使用するフィールド
 
-| フィールド                   | 用途               |
-| ---------------------------- | ------------------ |
-| name, type                   | 機種情報表示       |
-| roles[].probabilities        | 小役確率カウンター |
-| confirmationEvents           | 確定演出チェッカー |
-| zones                        | ゾーン別確率       |
-| endScreenGroups              | 終了画面判別       |
-| settings / availableSettings | 設定段階の決定     |
+| フィールド                             | 用途                                                                                                            |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| name, type                             | 機種情報表示                                                                                                    |
+| roles[].probabilities                  | 小役確率カウンター・設定推測                                                                                    |
+| confirmationEvents                     | 確定演出チェッカー・設定推測                                                                                    |
+| zones                                  | ゾーン別確率・設定推測                                                                                          |
+| endScreens, endScreenGroups            | 終了画面判別・設定推測（`endScreens` の `patterns` は、パターンごとの終了画面に展開される）                     |
+| trialSuccessRates                      | 試行成功率・設定推測                                                                                            |
+| voiceCounts, musicCounts, effectCounts | 数えたときに設定推測に使う（ボイスの `patterns` は読み込み時に捨てられる。楽曲・演出の確定・否定の設定は使われない） |
+| settings / availableSettings           | 設定段階の決定                                                                                                  |
+
+推定に使う確率は、機種のすべての設定の値を持つ必要がある（1つでも欠けると、アプリの推定が止まる。`npm run validate` が確かめる）。
 
 ### iOS側で未使用（自由に変更可能）
 
-`trialSuccessRates`, `voiceCounts`, `musicCounts`, `effectCounts`, `modeTransitions`, `specialSettings`, `notes`, `source`
+`modeTransitions`, `specialSettings`, `notes`, `source`
 
 ## 貢献方法
 
