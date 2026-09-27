@@ -1,8 +1,4 @@
-import Ajv from 'ajv';
-import addFormats from 'ajv-formats';
-import { readFileSync } from 'fs';
-import { basename, resolve, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { basename } from 'path';
 import {
   DERIVED_ID_KINDS,
   EXPLICIT_ID_KINDS,
@@ -10,6 +6,7 @@ import {
   hasItemId,
   scopedId,
 } from '../lib/derived-ids.mjs';
+import { compileSchema } from '../lib/compile-schema.mjs';
 import { OFFICIAL_DOMAINS_PATH } from '../lib/load-provenance.mjs';
 import {
   CHONBORISTA_KEY,
@@ -24,25 +21,13 @@ import {
   statusError,
   storedMap,
 } from '../lib/provenance.mjs';
+import { siteOf } from '../lib/site.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, '../..');
 const CHONBORISTA_URL_PREFIX = 'https://chonborista.com/';
 const CHONBORISTA_SITE = 'chonborista.com';
 
-/** 属性型 JP ドメイン（example.co.jp など）の2番目のラベル。この形は末尾3ラベルを1つのサイトにする */
-const JP_SECOND_LEVEL_LABELS = new Set(['co', 'ne', 'or', 'ac', 'go', 'ed', 'gr', 'lg', 'ad']);
-
 function error(file, message) {
   return { file, type: 'provenance', severity: 'error', message };
-}
-
-/** ajv でスキーマ（schemas/ の中のファイル名）を読み、確かめる関数を作る */
-function compileSchema(name) {
-  const schema = JSON.parse(readFileSync(resolve(ROOT, 'schemas', name), 'utf-8'));
-  const ajv = new Ajv({ allErrors: true, strict: false });
-  addFormats(ajv);
-  return ajv.compile(schema);
 }
 
 /**
@@ -118,30 +103,6 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
 }
 
 /**
- * 出典の URL のサイト（登録ドメイン）。サブドメインは同じサイトにまとめる
- * （例: sp.chonborista.com → chonborista.com、www.example.co.jp → example.co.jp）。
- * ホスト名を小文字にし、空のラベル（末尾の「.」など）と先頭の「www.」を除いてから、
- * ラベルが3つ以上の属性型 JP ドメイン（`.co.jp` など）は末尾3ラベル、それ以外は末尾2ラベルにする。
- * @returns {string | null} URL として読めなければ null
- */
-function siteOf(url) {
-  let hostname;
-  try {
-    hostname = new URL(url).hostname;
-  } catch {
-    return null;
-  }
-  const labels = hostname
-    .toLowerCase()
-    .split('.')
-    .filter((label) => label !== '');
-  if (labels.length > 1 && labels[0] === 'www') labels.shift();
-  const attributeJp =
-    labels.length >= 3 && labels.at(-1) === 'jp' && JP_SECOND_LEVEL_LABELS.has(labels.at(-2));
-  return labels.slice(attributeJp ? -3 : -2).join('.');
-}
-
-/**
  * 出典の URL のサイトで確かめること（仕様 5.7）: 同じサイトを2つの出典に登録しない・chonborista.com は
  * キーを chonborista にする・公式の出典は、サイトがメーカーの公式ドメインの一覧にある。
  * @param {Map<string, string>} keyBySite これまでの出典のサイト → 出典キー（ここで足す）
@@ -206,50 +167,6 @@ function collectSourceKinds(path, sources, errors, officialDomains) {
     }
   }
   return sourceKinds;
-}
-
-function domainsError(file, message) {
-  return { file, type: 'official-domains', severity: 'error', message };
-}
-
-/**
- * メーカーの公式ドメインの一覧（config/official-domains.json）を確かめる（仕様 5.7）。
- * - 読めない・スキーマ（schemas/official-domains.schema.json）に合わないときはエラー
- * - domain は登録ドメインそのもの（siteOf と同じ計算で、www.・サブドメインを付けない）で、重複しない
- * 問題が1つでもあれば、一覧を使わない（domains は null。空の一覧として続けると、公式の出典を黙って落とす）。
- *
- * @param {{ path: string, data: object | null, readError?: string }} file loadOfficialDomainsFile の結果
- * @returns {{ errors: object[], warnings: object[], domains: Set<string> | null }}
- */
-export function validateOfficialDomains(file) {
-  const { path, data, readError } = file;
-  if (readError !== undefined || data === null) {
-    const errors = [domainsError(path, `公式ドメインの一覧を読めない: ${readError}`)];
-    return { errors, warnings: [], domains: null };
-  }
-  const validateSchema = compileSchema('official-domains.schema.json');
-  if (!validateSchema(data)) {
-    const errors = validateSchema.errors.map((e) =>
-      domainsError(path, `スキーマ違反 ${e.instancePath} ${e.message}`)
-    );
-    return { errors, warnings: [], domains: null };
-  }
-  const errors = [];
-  const domains = new Set();
-  for (const { domain } of data.domains) {
-    const site = siteOf(`https://${domain}/`);
-    if (site !== domain) {
-      errors.push(
-        domainsError(
-          path,
-          `公式ドメインの一覧の domain は登録ドメインにする（www.・サブドメインを付けない）: ${domain}（登録ドメイン: ${site}）`
-        )
-      );
-    }
-    if (domains.has(domain)) errors.push(domainsError(path, `公式ドメインの一覧で重複: ${domain}`));
-    domains.add(domain);
-  }
-  return { errors, warnings: [], domains: errors.length === 0 ? domains : null };
 }
 
 /** values の出典キーが、記録の sources にあるか（items と removed で同じ文面） */

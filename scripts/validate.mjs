@@ -19,7 +19,8 @@ import { validateProbabilities } from './validators/probability-validator.mjs';
 import { validateConfirmations } from './validators/confirmation-validator.mjs';
 import { validateCompleteness } from './validators/completeness-validator.mjs';
 import { validateItemIds } from './validators/item-id-validator.mjs';
-import { validateOfficialDomains, validateProvenance } from './validators/provenance-validator.mjs';
+import { validateOfficialDomains } from './validators/official-domains-validator.mjs';
+import { validateProvenance } from './validators/provenance-validator.mjs';
 import { loadOfficialDomainsFile, loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));

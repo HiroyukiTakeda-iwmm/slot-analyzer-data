@@ -25,10 +25,8 @@ import { validateIndexConsistency } from '../scripts/validators/index-consistenc
 import { validateProbabilities } from '../scripts/validators/probability-validator.mjs';
 import { validateConfirmations } from '../scripts/validators/confirmation-validator.mjs';
 import { validateCompleteness } from '../scripts/validators/completeness-validator.mjs';
-import {
-  validateOfficialDomains,
-  validateProvenance,
-} from '../scripts/validators/provenance-validator.mjs';
+import { validateOfficialDomains } from '../scripts/validators/official-domains-validator.mjs';
+import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readRepo = (path) => readFileSync(resolve(ROOT, path), 'utf-8');
