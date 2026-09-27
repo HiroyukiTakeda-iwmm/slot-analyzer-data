@@ -68,6 +68,9 @@ export function decimalsOf(raw) {
  * 出典に表示された値を、確率の幅にする（仕様 5.4）。表示の最後の桁の半分だけ幅を持たせる
  * （295.2 → 分母 295.15〜295.25、"3.1%" → 3.05〜3.15%）。確率 0 は幅を持たず、0 とだけ一致する。
  * "%" の付いた文字列は、項目の unit にかかわらず割合として読む。
+ * 読めない値: 有限の数にならない文字列（"1" のあとに 0 が 400 個続くなど）と、確率に直すと幅の上端まで 0 に
+ * なる値（割合の 5e-324 など。0 でない値は正の確率を表す）。桁の多い値（機種ファイルの確率から作る
+ * 1 ÷ 0.00338753 = 295.20033770918633 など。kept-single-source の採用値）は、浮動小数点で幅が消えても点として読む。
  * @param {'denominator' | 'percent'} unit
  * @returns {{ zero: true } | { lo: number, hi: number } | null} 読めなければ null
  */
@@ -86,15 +89,18 @@ export function parseShown(unit, raw) {
   }
   const value = Number(text);
   const decimals = decimalsOf(text);
-  if (decimals === null) return null;
+  if (!Number.isFinite(value) || decimals === null) return null;
   const half = 0.5 * 10 ** -decimals;
+  let interval;
   if (form === 'percent') {
     if (!(value >= 0 && value <= 100)) return null;
     if (value === 0) return { zero: true };
-    return { lo: Math.max(0, value - half) / 100, hi: Math.min(100, value + half) / 100 };
+    interval = { lo: Math.max(0, value - half) / 100, hi: Math.min(100, value + half) / 100 };
+  } else {
+    if (!(value >= 1)) return null;
+    interval = { lo: 1 / (value + half), hi: Math.min(1, 1 / (value - half)) };
   }
-  if (!(value >= 1)) return null;
-  return { lo: 1 / (value + half), hi: Math.min(1, 1 / (value - half)) };
+  return interval.hi > 0 ? interval : null;
 }
 
 /**
@@ -163,6 +169,16 @@ function sameKeys(a, b) {
   const ka = Object.keys(a).sort();
   const kb = Object.keys(b).sort();
   return ka.length === kb.length && ka.every((k, i) => k === kb[i]);
+}
+
+/**
+ * 数値の値の設定（キー）が、その項目が持つべき設定とちょうど同じか（「そろっている」。仕様 5.4）。
+ * @param {Set<string>} required その項目が持つべき設定のキー（新しい値は機種の設定、既存の値と記録の確かめは
+ *   機種ファイルの確率のキー）
+ */
+function isComplete(value, required) {
+  const keys = Object.keys(value);
+  return keys.length === required.size && keys.every((k) => required.has(k));
 }
 
 function sameSet(a, b) {
@@ -249,10 +265,26 @@ export function agreesWithStored(unit, value, stored, { partial = false } = {}) 
   );
 }
 
-/** 機種ファイルの確率を裏づける出典のキー（partial で数える） */
-export function storedSupporters(unit, values, stored) {
+/**
+ * 値が、機種ファイルの項目の値と合うか（仕様 5.4）。数値の unit では機種ファイルの確率（stored）の幅と比べ
+ * （partial では、値に載っている設定だけを比べる）、設定の組・有無の unit では機種ファイルの値（current。
+ * machineValue の結果）と valuesAgree で比べる。数値かどうかの分岐はここにまとめる。
+ * @param {{ stored?: Record<string, number> | null, current?: unknown }} machine
+ */
+export function agreesWithMachine(unit, value, { stored, current }, { partial = false } = {}) {
+  return isNumericUnit(unit)
+    ? agreesWithStored(unit, value, stored, { partial })
+    : valuesAgree(unit, value, current);
+}
+
+/**
+ * 機種ファイルの項目の値を裏づける出典のキー（既存の値の「残す」の裏づけ。仕様 5.5 の規則2）。
+ * 一部の設定だけの出典も、載っている設定がすべて合えば数える。main と比べる検査も同じ数え方で使う。
+ * @param {{ stored?: Record<string, number> | null, current?: unknown }} machine agreesWithMachine と同じ
+ */
+export function machineSupporters(unit, values, machine) {
   return Object.keys(values).filter((key) =>
-    agreesWithStored(unit, values[key], stored, { partial: true })
+    agreesWithMachine(unit, values[key], machine, { partial: true })
   );
 }
 
@@ -308,11 +340,13 @@ export function machineValueProblem(item, entry) {
   const { unit, status, adopted } = item;
   const current = machineValue(entry, unit);
   if (current === null) return `機種ファイルの値を unit=${unit} で表せない`;
-  const mismatch = '機種ファイルの値が採用値と一致しない';
-  if (!isNumericUnit(unit)) return valuesAgree(unit, current, adopted) ? null : mismatch;
   const stored = storedMap(entry);
-  if (status === 'kept-single-source' || !sameKeys(adopted, stored)) {
-    return agreesWithStored(unit, adopted, stored) ? null : mismatch;
+  const written =
+    isNumericUnit(unit) && status !== 'kept-single-source' && sameKeys(adopted, stored);
+  if (!written) {
+    return agreesWithMachine(unit, adopted, { stored, current })
+      ? null
+      : '機種ファイルの値が採用値と一致しない';
   }
   const differences = Object.keys(stored)
     .map((s) => [s, stored[s], toStoredFromShown(unit, adopted[s])])
@@ -555,7 +589,7 @@ function contradicted(unit, values, sourceKinds, adopted) {
 }
 
 /**
- * 数値の unit で、確定値を探す（採否の判定。2026-09-27）。required はその項目が持つべき設定のキーを持つ値。
+ * 数値の unit で、確定値を探す（採否の判定。2026-09-27）。required はその項目が持つべき設定のキーの Set。
  * 1. 採用の候補は、そろっている値（キーが required とちょうど同じ）だけ。一部だけの値は採用値にならない
  * 2. そろっている公式があれば、優先順（公式の中で記録順）の最初を採用値にする。ほかの公式（そろっている・
  *    一部だけ）が1つでもその値と矛盾すれば食い違い。公式以外の出典は見ない（公式が優先）
@@ -567,7 +601,7 @@ function contradicted(unit, values, sourceKinds, adopted) {
 function findConfirmedNumeric(unit, values, sourceKinds, required) {
   const order = preferenceOrder(values, sourceKinds);
   const isOfficial = (key) => sourceKinds[key] === 'official';
-  const complete = order.filter((key) => sameKeys(values[key], required));
+  const complete = order.filter((key) => isComplete(values[key], required));
   const officialKey = complete.find(isOfficial);
   if (officialKey !== undefined) {
     const adopted = values[officialKey];
@@ -586,8 +620,9 @@ function findConfirmedNumeric(unit, values, sourceKinds, required) {
 
 /**
  * 公式の値、または2サイト以上で一致する値（確定値）を探す。
- * required は数値の unit でその項目が持つべき設定のキーを持つ値（新しい値は機種の設定、既存の値と記録の確かめは
- * 機種ファイルの確率 stored）。設定の組・有無の unit では使わない。
+ * required は数値の unit でその項目が持つべき設定のキーの Set（新しい値は機種の設定、既存の値と記録の確かめは
+ * 機種ファイルの確率 stored のキー）。設定の組・有無の unit では使わない。
+ * @param {Set<string> | undefined} required
  * @returns {{ adopted: unknown } | { conflict: true } | null}
  */
 function findConfirmed(unit, values, sourceKinds, required) {
@@ -635,7 +670,7 @@ function provisionalProblem(unit, values, found, required) {
     return 'provisional-chonborista は、公式の値・2サイト一致の値・食い違いのどれも無いときだけ使う';
   }
   const chonborista = values[CHONBORISTA_KEY];
-  if (chonborista === undefined || !sameKeys(chonborista, required)) {
+  if (chonborista === undefined || !isComplete(chonborista, required)) {
     return 'provisional-chonborista は、ちょんぼりすたの値に全設定がそろっているときだけ使う';
   }
   const others = Object.keys(values).filter((key) => key !== CHONBORISTA_KEY);
@@ -646,16 +681,41 @@ function provisionalProblem(unit, values, found, required) {
 }
 
 /**
- * 新しく入れない値の理由（今の文面）。数値の unit で、そろっている出典が1つも無ければ「全設定の値がそろわない」。
+ * 新しく入れない値の理由。上から最初に当たったものにする（2026-09-27）。
+ * 1. 出典が無い
+ * 2. 全設定の値がそろった出典が無い
+ * 3. 確定値を探して食い違った（findConfirmed が conflict）
+ * 4. 全設定のちょんぼりすたの値があり、それと矛盾する出典がある
+ * 5. 全設定のちょんぼりすたの値があり、ほかの出典は矛盾しないが、読み直しが無いか合わない
+ * 6. 全設定がそろった出典が1つだけ（4・5 に当たらないので、ちょんぼりすた以外）
+ * 7. 全設定がそろった出典が2つ以上あるが、合う組が無い
+ * 設定の組・有無の項目の値は設定ごとではないので、どれも「そろっている」とみなし、矛盾は valuesAgree で見る。
+ * このため 2 は使わず、6 は段階0の文面「ちょんぼりすた以外の1サイトのみ」にする（2026-09-27 に決定）。
+ * @param {{ conflict: true } | null} found findConfirmed の結果（確定値が見つかったときは呼ばない）
+ * @param {Set<string> | undefined} required findConfirmed と同じ
  */
-function newItemReason(unit, values, required) {
+function newItemReason(unit, values, found, required) {
+  const numeric = isNumericUnit(unit);
   const keys = Object.keys(values);
   if (keys.length === 0) return '出典なし';
-  if (isNumericUnit(unit) && !keys.some((key) => sameKeys(values[key], required))) {
-    return '全設定の値がそろわない（アプリは設定が1つでも欠けた確率があると推定が止まる）';
+  const complete = numeric ? keys.filter((key) => isComplete(values[key], required)) : keys;
+  if (complete.length === 0) {
+    return '全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）';
   }
-  if (isChonboristaOnly(values)) return 'ちょんぼりすたのみで、読み直しが無いか一致しない';
-  if (keys.length === 1) return 'ちょんぼりすた以外の1サイトのみ';
+  if (found?.conflict) return 'サイト間で食い違い';
+  if (complete.includes(CHONBORISTA_KEY)) {
+    const chonborista = values[CHONBORISTA_KEY];
+    const consistent = (value) =>
+      numeric ? compatible(unit, value, chonborista) : valuesAgree(unit, value, chonborista);
+    return keys.every((key) => key === CHONBORISTA_KEY || consistent(values[key]))
+      ? 'ちょんぼりすたの値だけで、読み直しが無いか一致しない'
+      : 'ちょんぼりすたの値と矛盾する出典がある';
+  }
+  if (complete.length === 1) {
+    return numeric
+      ? '全設定がそろった出典が1つだけ（ちょんぼりすた以外）'
+      : 'ちょんぼりすた以外の1サイトのみ';
+  }
   return 'サイト間で食い違い';
 }
 
@@ -674,12 +734,11 @@ export function decideNewItem({ unit, values, sourceKinds, reread, settings }) {
     throw new Error('数値の項目には settings（機種の設定）が必要');
   }
   assertShapes(unit, values, reread);
-  const required = isNumericUnit(unit)
-    ? Object.fromEntries(settings.map((s) => [s, true]))
-    : undefined;
+  const required = isNumericUnit(unit) ? new Set(settings) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
-  if (found?.conflict) return { outcome: 'candidate', reason: 'サイト間で食い違い' };
-  if (found) return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
+  if (found && !found.conflict) {
+    return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
+  }
   if (
     provisionalProblem(unit, values, found, required) === null &&
     rereadAgrees(unit, values, reread)
@@ -690,40 +749,33 @@ export function decideNewItem({ unit, values, sourceKinds, reread, settings }) {
       adopted: values[CHONBORISTA_KEY],
     };
   }
-  return { outcome: 'candidate', reason: newItemReason(unit, values, required) };
+  return { outcome: 'candidate', reason: newItemReason(unit, values, found, required) };
 }
 
 /**
- * 今の値を「残す」裏づけになる出典のキー（仕様 5.5 の既存の値の規則2）。
- * 数値の unit では、機種ファイルの確率（stored）の幅と、出典の値に載っている設定だけを比べる（storedSupporters）。
- * 分母に直した値（1 ÷ 確率）の桁では比べない。設定の組・有無の unit では、今の値と一致する出典を数える。
- */
-function keptSupporters(unit, values, { current, stored }) {
-  return isNumericUnit(unit)
-    ? storedSupporters(unit, values, stored)
-    : supporters(unit, values, current);
-}
-
-/**
- * 既存の値の採否（仕様 5.5 後半）。current は今の機種ファイルの値（unit の形。kept-single-source の採用値）。
- * stored は今の機種ファイルの確率（storedMap の結果）で、数値の unit（denominator・percent）では必須。
+ * 既存の値の採否（仕様 5.5 後半）。stored は今の機種ファイルの確率（storedMap の結果）で、数値の unit
+ * （denominator・percent）では必須。数値の unit の今の値（kept-single-source の採用値）は stored から作り
+ * （machineValue と同じ計算。分母は 1 ÷ 確率、割合は 確率 × 100）、引数の current は使わない（同じ値の2つの
+ * 表し方を別々に受け取ると食い違いうるため）。current は、設定の組・有無の unit の今の値（machineValue の結果）。
  * 数値の unit では、stored のキー（機種のすべての設定。3.9.0 の validate）がそろった値だけを採用の候補にする。
  * 確定値が無ければ、「残す」（一部だけの出典も数える）→ ちょんぼりすたの暫定 → 外す、の順で決める。
  * @returns {{ outcome: 'adopt', status: string, adopted: unknown }
  *   | { outcome: 'remove', reason: string }}
  */
 export function decideExistingItem({ unit, values, sourceKinds, reread, current, stored }) {
-  if (isNumericUnit(unit) && stored == null) {
+  const numeric = isNumericUnit(unit);
+  if (numeric && stored == null) {
     throw new Error('数値の項目には stored（機種ファイルの確率）が必要');
   }
   assertShapes(unit, values, reread);
-  const required = isNumericUnit(unit) ? stored : undefined;
+  const currentValue = numeric ? machineValue({ probabilities: stored }, unit) : current;
+  const required = numeric ? new Set(Object.keys(stored)) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
   if (found && !found.conflict) {
     return { outcome: 'adopt', status: 'confirmed', adopted: found.adopted };
   }
-  if (keptSupporters(unit, values, { current, stored }).length >= 1) {
-    return { outcome: 'adopt', status: 'kept-single-source', adopted: current };
+  if (machineSupporters(unit, values, { stored, current: currentValue }).length >= 1) {
+    return { outcome: 'adopt', status: 'kept-single-source', adopted: currentValue };
   }
   if (
     provisionalProblem(unit, values, found, required) === null &&
@@ -769,7 +821,7 @@ export function statusError(item, sourceKinds, { stored } = {}) {
   if (isNumericUnit(unit) && stored == null) {
     return `${status} の確かめには機種ファイルの確率が要る`;
   }
-  const required = isNumericUnit(unit) ? stored : undefined;
+  const required = isNumericUnit(unit) ? new Set(Object.keys(stored)) : undefined;
   const found = findConfirmed(unit, values, sourceKinds, required);
   const confirmedValue = found && !found.conflict ? found.adopted : undefined;
   if (status === 'confirmed') {
@@ -792,7 +844,7 @@ export function statusError(item, sourceKinds, { stored } = {}) {
   if (confirmedValue !== undefined) {
     return 'kept-single-source は、公式の値や2サイト一致の値が無いときだけ使う（confirmed にする）';
   }
-  return keptSupporters(unit, values, { current: adopted, stored }).length >= 1
+  return machineSupporters(unit, values, { stored, current: adopted }).length >= 1
     ? null
     : 'kept-single-source には、採用値と一致する出典が1つ以上必要';
 }

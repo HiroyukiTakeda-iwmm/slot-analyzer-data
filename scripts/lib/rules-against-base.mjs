@@ -1,12 +1,10 @@
 import { DERIVED_ID_KINDS, UNRECORDED_REMOVAL, removedKeysByMachine } from './derived-ids.mjs';
 import {
-  isNumericUnit,
   itemKey,
   listMachineItems,
+  machineSupporters,
   machineValue,
   storedMap,
-  storedSupporters,
-  supporters,
   valuesEqual,
 } from './provenance.mjs';
 
@@ -28,13 +26,11 @@ function itemsByKey(read, entry) {
 /**
  * main の値を裏づける出典があるか（既存の値の規則2「残す」の裏づけと同じ数え方。仕様 5.5）。
  * 数値の unit では、main の機種ファイルの確率の幅と、出典の値に載っている設定だけを比べる（一部だけの出典も数える）。
- * 設定の組・有無の unit では、main の値と組・有無で比べる。
+ * 設定の組・有無の unit では、main の値と組・有無で比べる（machineSupporters）。
  */
 function supportedByBase(item, baseEntry, baseValue) {
-  const values = item.values ?? {};
-  return isNumericUnit(item.unit)
-    ? storedSupporters(item.unit, values, storedMap(baseEntry)).length >= 1
-    : supporters(item.unit, values, baseValue).length >= 1;
+  const machine = { stored: storedMap(baseEntry), current: baseValue };
+  return machineSupporters(item.unit, item.values ?? {}, machine).length >= 1;
 }
 
 /**

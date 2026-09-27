@@ -7,11 +7,11 @@ import {
   intervalsOverlap,
   itemKey,
   listMachineItems,
+  machineSupporters,
   machineValue,
   parseShown,
   shapeError,
   storedInterval,
-  storedSupporters,
   toStoredFromShown,
   toStoredProbability,
   toStoredRate,
@@ -78,10 +78,13 @@ describe('機種ファイルの確率との比較', () => {
     expect(agreesWithStored('denominator', { 3: 295.2 }, stored, { partial: true })).toBe(false);
   });
 
-  it('storedSupporters は partial で数える', () => {
+  it('machineSupporters: 数値の unit は機種ファイルの確率と partial で数え、設定の組・有無は機種ファイルの値と比べる', () => {
     const stored = { 1: 0.003388, 6: 0.003601 };
     const values = { nana: { 1: 295.2 }, other: { 1: 250 } };
-    expect(storedSupporters('denominator', values, stored)).toEqual(['nana']);
+    expect(machineSupporters('denominator', values, { stored })).toEqual(['nana']);
+    const gold = { confirmed: ['6'], excluded: ['1'] };
+    const settingsValues = { nana: gold, other: { confirmed: ['6'], excluded: [] } };
+    expect(machineSupporters('settings', settingsValues, { current: gold })).toEqual(['nana']);
   });
 
   it('全設定の比較: 設定の組が同じで、すべての設定の幅が重なれば一致', () => {
@@ -147,6 +150,40 @@ describe('区間の関数', () => {
     }
     expect(parseShown('percent', -0.1)).toBeNull();
     expect(parseShown('percent', '100.1%')).toBeNull();
+  });
+
+  it('parseShown: 有限の数にならない文字列は null（読めない数を通さない）', () => {
+    // "1" のあとに 0 が 400 個続く文字列は Number で Infinity になり、幅 0 の値（確率 0 の印も無い）になっていた
+    const huge = '1' + '0'.repeat(400);
+    expect(parseShown('denominator', huge)).toBeNull();
+    expect(parseShown('percent', huge)).toBeNull();
+    // 読めない値は形のエラーになり、同じ値どうしでも一致しない
+    expect(shapeError('denominator', { 1: huge })).not.toBeNull();
+    expect(valuesAgree('denominator', { 1: huge }, { 1: huge })).toBe(false);
+  });
+
+  it('parseShown: 確率に直すと幅の上端まで 0 になる値は null（0 でない値は正の確率を表す）', () => {
+    // 割合の 5e-324 は、確率に直すと { lo: 0, hi: 0 } に丸まる（確率 0 の印も無い）
+    expect(parseShown('percent', 5e-324)).toBeNull();
+    expect(shapeError('percent', { 1: 5e-324 })).not.toBeNull();
+    expect(valuesAgree('percent', { 1: 5e-324 }, { 1: 5e-324 })).toBe(false);
+  });
+
+  it('parseShown: 桁の多い値（kept-single-source の採用値にする 1 ÷ 確率など）は、幅が浮動小数点で消えても点として読む', () => {
+    // 1 ÷ 0.00338753 = 295.20033770918633 は、表示の桁の半分（5e-15）が倍精度で消えて lo と hi が同じになる
+    const den = parseShown('denominator', 1 / 0.00338753);
+    expect(den).not.toBeNull();
+    expect(den.lo).toBe(den.hi);
+    expect(parseShown('percent', 0.123457 * 100)).not.toBeNull(); // 12.345699999999999
+    // 機種ファイルの確率から作る今の値（machineValue）は形が合い、機種ファイルの確率と一致する
+    const stored = { 1: 0.00338753, 6: 0.00360101 };
+    const current = machineValue({ probabilities: stored }, 'denominator');
+    expect(shapeError('denominator', current)).toBeNull();
+    expect(agreesWithStored('denominator', current, stored)).toBe(true);
+    const rates = { 1: 0.123457, 6: 0.5 };
+    const percent = machineValue({ probabilities: rates }, 'percent');
+    expect(shapeError('percent', percent)).toBeNull();
+    expect(agreesWithStored('percent', percent, rates)).toBe(true);
   });
 
   it('storedInterval: 小数6桁より粗くないとみなし、細かい値は表示の桁で幅を持たせる', () => {
