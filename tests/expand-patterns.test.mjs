@@ -19,13 +19,16 @@ import {
 } from '../scripts/lib/expand-patterns.mjs';
 import { migrateV1ToV2 } from '../scripts/migrate-v1-to-v2.mjs';
 import { runAgainstBase } from '../scripts/lib/against-base.mjs';
-import { loadProvenanceFiles } from '../scripts/lib/load-provenance.mjs';
+import { loadOfficialDomainsFile, loadProvenanceFiles } from '../scripts/lib/load-provenance.mjs';
 import { validateSchemas } from '../scripts/validators/schema-validator.mjs';
 import { validateIndexConsistency } from '../scripts/validators/index-consistency.mjs';
 import { validateProbabilities } from '../scripts/validators/probability-validator.mjs';
 import { validateConfirmations } from '../scripts/validators/confirmation-validator.mjs';
 import { validateCompleteness } from '../scripts/validators/completeness-validator.mjs';
-import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
+import {
+  validateOfficialDomains,
+  validateProvenance,
+} from '../scripts/validators/provenance-validator.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const readRepo = (path) => readFileSync(resolve(ROOT, path), 'utf-8');
@@ -518,7 +521,9 @@ function runValidators(files) {
     validateProbabilities(files),
     validateConfirmations(files),
     validateCompleteness(files),
-    validateProvenance(files, index, loadProvenanceFiles(resolve(ROOT, 'provenance'))),
+    validateProvenance(files, index, loadProvenanceFiles(resolve(ROOT, 'provenance')), {
+      officialDomains: validateOfficialDomains(loadOfficialDomainsFile(ROOT)).domains,
+    }),
   ];
   const toLine = (item) => `${item.file}: ${item.message}`;
   return {

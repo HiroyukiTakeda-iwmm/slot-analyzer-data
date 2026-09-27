@@ -13,8 +13,11 @@ import { validateIndexConsistency } from '../scripts/validators/index-consistenc
 import { validateProbabilities } from '../scripts/validators/probability-validator.mjs';
 import { validateConfirmations } from '../scripts/validators/confirmation-validator.mjs';
 import { validateCompleteness } from '../scripts/validators/completeness-validator.mjs';
-import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
-import { loadProvenanceFiles } from '../scripts/lib/load-provenance.mjs';
+import {
+  validateOfficialDomains,
+  validateProvenance,
+} from '../scripts/validators/provenance-validator.mjs';
+import { loadOfficialDomainsFile, loadProvenanceFiles } from '../scripts/lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -114,7 +117,10 @@ describe('統合テスト: 実データ', () => {
 
   it('出典記録: エラーゼロ', () => {
     const provenanceFiles = loadProvenanceFiles(resolve(ROOT, 'provenance'));
-    const result = validateProvenance(machineFiles, indexData, provenanceFiles);
+    const { domains } = validateOfficialDomains(loadOfficialDomainsFile(ROOT));
+    const result = validateProvenance(machineFiles, indexData, provenanceFiles, {
+      officialDomains: domains,
+    });
     if (result.errors.length > 0) {
       console.log(
         'Provenance errors:',

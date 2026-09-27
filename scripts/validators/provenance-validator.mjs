@@ -4,6 +4,7 @@ import { readFileSync } from 'fs';
 import { basename, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { DERIVED_ID_KINDS } from '../lib/derived-ids.mjs';
+import { OFFICIAL_DOMAINS_PATH } from '../lib/load-provenance.mjs';
 import {
   CHONBORISTA_KEY,
   allowedUnits,
@@ -30,24 +31,32 @@ function error(file, message) {
   return { file, type: 'provenance', severity: 'error', message };
 }
 
+/** ajv でスキーマ（schemas/ の中のファイル名）を読み、確かめる関数を作る */
+function compileSchema(name) {
+  const schema = JSON.parse(readFileSync(resolve(ROOT, 'schemas', name), 'utf-8'));
+  const ajv = new Ajv({ allErrors: true, strict: false });
+  addFormats(ajv);
+  return ajv.compile(schema);
+}
+
 /**
  * 出典記録（provenance/*.json）を検証する（仕様 5.7）。
  *
  * @param {Array<{ path: string, data: object }>} machineFiles machines/ 配下の機種ファイル
  * @param {object} indexData machines/index.json の中身
  * @param {Array<{ path: string, data: object | null, parseError?: string }>} provenanceFiles
- * @param {{ requireAll?: boolean }} [options] requireAll: 全機種に出典記録を求める（段階3）
+ * @param {{ requireAll?: boolean, officialDomains?: Iterable<string> | null }} [options]
+ *   requireAll: 全機種に出典記録を求める（段階3）。
+ *   officialDomains: メーカーの公式ドメインの一覧（validateOfficialDomains の domains）。null（渡さない）ときは
+ *   一覧を読めなかったものとして、公式の出典を通さない（確かめられないエラーにする）
  * @returns {{ errors: object[], warnings: object[] }}
  */
 export function validateProvenance(machineFiles, indexData, provenanceFiles, options = {}) {
   const { requireAll = false } = options;
+  const officialDomains = options.officialDomains == null ? null : new Set(options.officialDomains);
   const errors = [];
   const warnings = [];
-
-  const schema = JSON.parse(readFileSync(resolve(ROOT, 'schemas/provenance.schema.json'), 'utf-8'));
-  const ajv = new Ajv({ allErrors: true, strict: false });
-  addFormats(ajv);
-  const validateSchema = ajv.compile(schema);
+  const validateSchema = compileSchema('provenance.schema.json');
 
   const entries = indexData.machines ?? [];
   const entryById = new Map(entries.map((entry) => [entry.id, entry]));
@@ -88,7 +97,7 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
       continue;
     }
     recordedIds.add(data.machineId);
-    errors.push(...checkRecord(path, data, machine));
+    errors.push(...checkRecord(path, data, machine, officialDomains));
   }
 
   if (requireAll) {
@@ -126,7 +135,46 @@ function siteOf(url) {
   return labels.slice(attributeJp ? -3 : -2).join('.');
 }
 
-function collectSourceKinds(path, sources, errors) {
+/**
+ * 出典の URL のサイトで確かめること（仕様 5.7）: 同じサイトを2つの出典に登録しない・chonborista.com は
+ * キーを chonborista にする・公式の出典は、サイトがメーカーの公式ドメインの一覧にある。
+ * @param {Map<string, string>} keyBySite これまでの出典のサイト → 出典キー（ここで足す）
+ * @param {Set<string> | null} officialDomains null は一覧を読めなかったとき
+ */
+function siteErrors(path, source, site, keyBySite, officialDomains) {
+  const errors = [];
+  // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
+  const other = keyBySite.get(site);
+  if (other !== undefined && other !== source.key) {
+    errors.push(
+      error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
+    );
+  }
+  keyBySite.set(site, source.key);
+  // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
+  // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
+  if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
+    errors.push(
+      error(path, `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`)
+    );
+  }
+  // 公式は採用で最優先になるので、記録する側の申告だけにしない（本人の決定 2026-09-27）
+  if (source.kind === 'official' && officialDomains === null) {
+    errors.push(
+      error(
+        path,
+        `公式の出典を確かめられない（公式ドメインの一覧 ${OFFICIAL_DOMAINS_PATH} を読めない）: ${site}`
+      )
+    );
+  } else if (source.kind === 'official' && !officialDomains.has(site)) {
+    errors.push(
+      error(path, `公式の出典のドメインが一覧（${OFFICIAL_DOMAINS_PATH}）に無い: ${site}`)
+    );
+  }
+  return errors;
+}
+
+function collectSourceKinds(path, sources, errors, officialDomains) {
   const sourceKinds = {};
   const keyBySite = new Map();
   for (const source of sources) {
@@ -136,28 +184,11 @@ function collectSourceKinds(path, sources, errors) {
     sourceKinds[source.key] = source.kind;
     const site = siteOf(source.url);
     if (site === null) {
-      // スキーマは https:// で始まることしか見ない。読めない URL はサイトが分からず、下の2つの判定を
+      // スキーマは https:// で始まることしか見ない。読めない URL はサイトが分からず、サイトの判定を
       // 黙って外れるので、エラーにしてサイトの判定から外す
       errors.push(error(path, `出典の URL を読めない: ${source.url}`));
     } else {
-      // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
-      const other = keyBySite.get(site);
-      if (other !== undefined && other !== source.key) {
-        errors.push(
-          error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
-        );
-      }
-      keyBySite.set(site, source.key);
-      // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
-      // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
-      if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
-        errors.push(
-          error(
-            path,
-            `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`
-          )
-        );
-      }
+      errors.push(...siteErrors(path, source, site, keyBySite, officialDomains));
     }
     if (source.key === CHONBORISTA_KEY) {
       if (!source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
@@ -169,6 +200,50 @@ function collectSourceKinds(path, sources, errors) {
     }
   }
   return sourceKinds;
+}
+
+function domainsError(file, message) {
+  return { file, type: 'official-domains', severity: 'error', message };
+}
+
+/**
+ * メーカーの公式ドメインの一覧（config/official-domains.json）を確かめる（仕様 5.7）。
+ * - 読めない・スキーマ（schemas/official-domains.schema.json）に合わないときはエラー
+ * - domain は登録ドメインそのもの（siteOf と同じ計算で、www.・サブドメインを付けない）で、重複しない
+ * 問題が1つでもあれば、一覧を使わない（domains は null。空の一覧として続けると、公式の出典を黙って落とす）。
+ *
+ * @param {{ path: string, data: object | null, readError?: string }} file loadOfficialDomainsFile の結果
+ * @returns {{ errors: object[], warnings: object[], domains: Set<string> | null }}
+ */
+export function validateOfficialDomains(file) {
+  const { path, data, readError } = file;
+  if (readError !== undefined || data === null) {
+    const errors = [domainsError(path, `公式ドメインの一覧を読めない: ${readError}`)];
+    return { errors, warnings: [], domains: null };
+  }
+  const validateSchema = compileSchema('official-domains.schema.json');
+  if (!validateSchema(data)) {
+    const errors = validateSchema.errors.map((e) =>
+      domainsError(path, `スキーマ違反 ${e.instancePath} ${e.message}`)
+    );
+    return { errors, warnings: [], domains: null };
+  }
+  const errors = [];
+  const domains = new Set();
+  for (const { domain } of data.domains) {
+    const site = siteOf(`https://${domain}/`);
+    if (site !== domain) {
+      errors.push(
+        domainsError(
+          path,
+          `公式ドメインの一覧の domain は登録ドメインにする（www.・サブドメインを付けない）: ${domain}（登録ドメイン: ${site}）`
+        )
+      );
+    }
+    if (domains.has(domain)) errors.push(domainsError(path, `公式ドメインの一覧で重複: ${domain}`));
+    domains.add(domain);
+  }
+  return { errors, warnings: [], domains: errors.length === 0 ? domains : null };
 }
 
 /** values の出典キーが、記録の sources にあるか（items と removed で同じ文面） */
@@ -323,9 +398,9 @@ function checkRemoved(path, removed, sourceKinds) {
   return errors;
 }
 
-function checkRecord(path, record, machine) {
+function checkRecord(path, record, machine, officialDomains) {
   const errors = [];
-  const sourceKinds = collectSourceKinds(path, record.sources, errors);
+  const sourceKinds = collectSourceKinds(path, record.sources, errors, officialDomains);
 
   // 同じ名前の項目は listMachineItems が #2 などを付けて区別するので、キーは重ならない。
   // 区別できない名前（「#数字」を含む名前との重なり）と「::」を含む名前は例外になるので、エラーとして報告する

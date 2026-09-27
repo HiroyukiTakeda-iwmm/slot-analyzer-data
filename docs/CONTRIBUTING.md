@@ -80,6 +80,16 @@ node scripts/generate-template.mjs \
 
 `provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。記録を置く機種では、機種ファイルのすべての項目を `items` に書きます（1項目でも欠けると validate が止めます）。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
 
+#### 公式ドメインの一覧に足す
+
+メーカー公式（`kind: "official"`）の出典は、URL のサイト（登録ドメイン）が `config/official-domains.json` にあるときだけ使えます（無ければ validate が止めます）。一覧に無いメーカーの公式ページを初めて出典にするときは、同じ PR で一覧に足します。
+
+1. メーカーの会社情報のページ（会社概要など）を開き、そのドメインがメーカーのものだと確かめる（出典のページのドメインと、会社情報のページのドメインが同じメーカーのものか）
+2. `domains` に1行足す: `domain` は登録ドメインそのもの（小文字。`www.`・サブドメインを付けない。`https://www.sammy.co.jp/...` なら `sammy.co.jp`）、`maker` はメーカー名、`evidence` は確かめた会社情報のページの URL（https）、`checkedAt` は確かめた日
+3. `npm run validate` の「公式ドメインの一覧」の節がエラー0件になることを確かめる（重複・`www.` 付き・形の誤りは止まります）
+
+足した行は PR の差分に出るので、本人がマージ前に `evidence` のページを見て確かめられます。形は [data-format.md](data-format.md) の「メーカーの公式ドメインの一覧」を見てください。
+
 ### 4. バリデーション
 
 ```bash
@@ -155,6 +165,7 @@ npm run sync   # index.json の lastUpdated を機種ファイルから同期
 - [ ] `description` が記述されている
 - [ ] 確率値を2サイト以上でクロスチェック済み
 - [ ] `provenance/{id}.json` があり、出典記録バリデーションがエラー0件
+- [ ] メーカー公式の出典を使うなら、そのドメインが `config/official-domains.json` にある（無ければ会社情報のページで確かめて足した）
 - [ ] `npm run check:base` が問題なし
 - [ ] `lastUpdated` が正しい日付になっている
 - [ ] コミットメッセージが `feat(machines): 機種名を追加` の形式

@@ -18,8 +18,8 @@ import { validateIndexConsistency } from './validators/index-consistency.mjs';
 import { validateProbabilities } from './validators/probability-validator.mjs';
 import { validateConfirmations } from './validators/confirmation-validator.mjs';
 import { validateCompleteness } from './validators/completeness-validator.mjs';
-import { validateProvenance } from './validators/provenance-validator.mjs';
-import { loadProvenanceFiles } from './lib/load-provenance.mjs';
+import { validateOfficialDomains, validateProvenance } from './validators/provenance-validator.mjs';
+import { loadOfficialDomainsFile, loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -135,12 +135,25 @@ function main() {
     console.log(`  警告: ${comp.warnings.length}件 / 情報: ${comp.info.length}件\n`);
   }
 
-  // 6. 出典記録バリデーション（段階3までは、記録がある機種だけを検証する）
+  // 6. 出典記録バリデーション（段階3までは、記録がある機種だけを検証する）。
+  // 公式の出典は、メーカーの公式ドメインの一覧と照らす。一覧を読めない・一覧に問題があるときは、
+  // 空の一覧として続けず、一覧のエラーにする（公式の出典は「確かめられない」エラーになる）
   if (!schemaOnly && !indexOnly) {
+    console.log('--- 公式ドメインの一覧 ---');
+    const official = validateOfficialDomains(loadOfficialDomainsFile(ROOT));
+    allErrors.push(...official.errors);
+    allWarnings.push(...official.warnings);
+    // 一覧を使えないときは「0件」にしない（空の一覧と区別する）
+    const domainCount = official.domains === null ? '使えない' : `${official.domains.size}件`;
+    console.log(
+      `  ドメイン: ${domainCount} / エラー: ${official.errors.length}件 / 警告: ${official.warnings.length}件\n`
+    );
+
     console.log('--- 出典記録バリデーション ---');
     const provenanceFiles = loadProvenanceFiles(PROVENANCE_DIR);
     const prov = validateProvenance(validFiles, indexData, provenanceFiles, {
       requireAll: args.includes('--require-provenance'),
+      officialDomains: official.domains,
     });
     allErrors.push(...prov.errors);
     allWarnings.push(...prov.warnings);

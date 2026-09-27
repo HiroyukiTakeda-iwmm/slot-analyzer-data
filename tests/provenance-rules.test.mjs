@@ -1055,9 +1055,13 @@ describe('採否と検査の一貫性（逆向き）: 決定と違う status・�
     const head = headOf(scene, status, adopted);
     const record = recordOf(scene, status, adopted);
     const machineFiles = [{ path: 'machines/test/test-machine.json', data: machineOf(head) }];
-    const validated = validateProvenance(machineFiles, INDEX, [
-      { path: 'provenance/test-machine.json', data: record },
-    ]);
+    // 公式の出典（maker.co.jp）は、メーカーの公式ドメインの一覧にあるものとする
+    const validated = validateProvenance(
+      machineFiles,
+      INDEX,
+      [{ path: 'provenance/test-machine.json', data: record }],
+      { officialDomains: ['maker.co.jp'] }
+    );
     const againstBase = checkRulesAgainstBase({
       readBase: readerOf(scene.main),
       readHead: readerOf(head),
