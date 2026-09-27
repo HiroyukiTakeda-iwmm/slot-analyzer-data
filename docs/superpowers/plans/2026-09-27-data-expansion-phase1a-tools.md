@@ -681,6 +681,24 @@ git commit -m "feat(scripts): 抜き出しメモから記録の下書きを作�
 
 ---
 
+### Task 6b: 3.9.0 の検証の規則の残り（PR #22 のレビューの Minor）
+
+**Files:** `scripts/validators/confirmation-validator.mjs`、`scripts/validators/probability-validator.mjs`、`tests/validate.test.mjs`（新しい共有の定数を置くなら `scripts/validators/app-impact.mjs`）
+
+- [ ] **M1**: `patterns` が空でない最上位の終了画面では、親の `confirmedSettings`・`excludedSettings`・`probabilities`・`distribution` をアプリは使わない（移行処理が親を捨てる）。規則1・5 はこの親の欄を見ないか、末尾を「（アプリは使わない）」にする。テストを1つ足す
+- [ ] **M2**: 楽曲・演出の「確定と否定の両方にある値」の末尾と、確定・否定の設定に文字列でない値を入れたときの「（アプリが機種を読み込めない）」を、テストで押さえる（`endsWith` を1行ずつ）
+- [ ] **M3**: 末尾の文言の定数（検証器2つとテストに重複）を1か所にまとめる
+- [ ] **M5（今後の規則）**: 次の3つを validate で止める。どれも今のデータには無い
+  - 最上位の終了画面の `distribution` の値が 0〜1 の数でない（アプリは確率として使う）
+  - パターンの `name` が無い・空（アプリは必須にしている。無いと機種を読み込めない）
+  - 1つの項目だけで全設定を否定する書き方（確率がすべて 0、`excludedSettings` が全設定など。数えると全設定が除かれる）
+
+```bash
+git commit -m "fix(validate): 3.9.0 の検証の規則の文言とテストを直し、推定が止まる形を3つ足す"
+```
+
+---
+
 ### Task 7: 関門を通して PR を出し、マージする
 
 **Files:** なし（検証・PR・マージ）
