@@ -80,6 +80,18 @@ node scripts/generate-template.mjs \
 
 `provenance/{id}.json` に、出典（URL と取得日）と項目ごとの値を記録します。記録を置く機種では、機種ファイルのすべての項目を `items` に書きます（1項目でも欠けると validate が止めます）。形は [data-format.md](data-format.md) の「provenance（出典記録）」、採否の基準は [quality-standards.md](quality-standards.md) の「出典と採否の基準」を見てください。
 
+#### 記録の手順（抜き出し → 読み直し → 照合 → 下書き）
+
+出典の値は、先に作業メモ（リポジトリの外。形は [data-format.md](data-format.md) の「抜き出し・読み直しのメモ」）に写し、道具で採否を決めてから記録にします。
+
+1. 抜き出し: 出典のページから、項目ごとに出典ごとの値を `<機種ID>.extract.json` に写す。既存の機種では、機種ファイルのすべての項目を書く（どの出典にも無かった項目は `values: {}`）
+2. 読み直し: 抜き出しをしていない担当が、機種名・出典の URL・項目名だけを渡されて `<機種ID>.reread.json` を書く
+3. 照合: `node scripts/reread-compare.mjs <抜き出しのメモ> <読み直しのメモ>` が終了コード 0 になるまで、食い違った項目のページを読み、どちらの読み違いかを決めてメモを直す
+4. 下書き: `node scripts/provenance-draft.mjs <抜き出しのメモ> --reread <読み直しのメモ>`。標準出力の `record` が出典記録の下書き、`machineValues` が機種ファイルに書く値。標準エラーの候補（採用しない項目）・外す項目・読めなかったページを確かめる
+5. 機種ファイルに `machineValues` の値をそのまま書き（外す項目は消し、新しく足す確定演出などには明示の `id` を付ける）、`record` を `provenance/{id}.json` に置く（`reviewedAt` は PR の日付に合わせる）
+
+終了コードの 1 と 2 の範囲は2つの道具で違います: `reread-compare` の 1 は「食い違い・抜け」なのでメモの形の誤りは 2、`provenance-draft` の 1 は「メモが形に合わない・機種ファイルと合わない（下書きを出さない）」で 2 は「読めない」だけです。
+
 #### 公式ドメインの一覧に足す
 
 メーカー公式（`kind: "official"`）の出典は、URL のサイト（登録ドメイン）が `config/official-domains.json` にあるときだけ使えます（無ければ validate が止めます）。一覧に無いメーカーの公式ページを初めて出典にするときは、同じ PR で一覧に足します。

@@ -119,6 +119,45 @@ export function extractValueProblems(extract) {
 }
 
 /**
+ * 抜き出しのメモだけで分かる、項目の誤り: 値が unit の形に合わない（extractValueProblems）・同じ項目（kind と
+ * name）の行が2つ以上ある（どちらを使うか決まらない）。照合（rereadPairingProblems）と下書き
+ * （provenance-draft.mjs）で同じ文面にする。
+ * @returns {string[]} 誤りが無ければ空の配列
+ */
+export function extractItemProblems(extract) {
+  return [
+    ...extractValueProblems(extract),
+    ...repeated(extract.items, (item) => lineKey(item.kind, item.name, null), itemLabel).map(
+      (label) => `抜き出しのメモに同じ項目の行が2つ以上ある: ${label}`
+    ),
+  ];
+}
+
+/**
+ * 抜き出しのメモの出典キーの誤り: sources に同じ出典キーが2つ以上ある（出典の種類が決まらない）・項目の values の
+ * 出典キーが sources に無い（書き違いか、sources の書き漏れ）。スキーマは出典キーの形しか見ないので、ここで確かめる。
+ * @returns {string[]} 誤りが無ければ空の配列
+ */
+export function extractSourceKeyProblems(extract) {
+  const keys = new Set(extract.sources.map((source) => source.key));
+  return [
+    ...repeated(
+      extract.sources,
+      (source) => source.key,
+      (source) => source.key
+    ).map((key) => `抜き出しのメモの sources に同じ出典キーが2つ以上ある: ${key}`),
+    ...extract.items.flatMap(({ kind, name, values }) =>
+      Object.keys(values)
+        .filter((source) => !keys.has(source))
+        .map(
+          (source) =>
+            `抜き出しの ${lineLabel({ kind, name, source })} の出典キーが sources に無い（書き違いか、sources の書き漏れ）`
+        )
+    ),
+  ];
+}
+
+/**
  * 抜き出しと読み直しのメモを照らし合わせられないわけ（compareReread の前に確かめる）。機種が違うメモどうし、
  * 抜き出しの値が unit の形に合わない（抜き出しの誤りで、読み直しとの食い違いではない）メモ、同じ項目（読み直しは
  * 同じ項目・出典）の行が2つあってどちらと比べるか決まらないメモは照合しない。
@@ -129,14 +168,7 @@ export function rereadPairingProblems(extract, reread) {
   if (extract.machineId !== reread.machineId) {
     problems.push(`機種 ID が違う（抜き出し ${extract.machineId}・読み直し ${reread.machineId}）`);
   }
-  problems.push(...extractValueProblems(extract));
-  for (const label of repeated(
-    extract.items,
-    (item) => lineKey(item.kind, item.name, null),
-    itemLabel
-  )) {
-    problems.push(`抜き出しのメモに同じ項目の行が2つ以上ある: ${label}`);
-  }
+  problems.push(...extractItemProblems(extract));
   for (const label of repeated(
     reread.items,
     (line) => lineKey(line.kind, line.name, line.source),
