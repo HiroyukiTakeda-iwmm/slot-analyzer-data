@@ -16,7 +16,7 @@ jobs:
         with:
           fetch-depth: 0 # main と比べる検査（ID の安定性・採否ルール）のため、全履歴を取る
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
