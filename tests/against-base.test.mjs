@@ -372,14 +372,16 @@ describe('PR を続けて流す（validate と check:base）', () => {
     expect(problemsOf(main0, main1())).toEqual([]);
     expect(problemsOf(main1(), pr2())).toEqual([]);
 
-    // 記録を変えずに machine-a の値だけ変えると止まる（check:base は確かめ直す）
+    // 記録を変えずに machine-a の値だけ変えると止まる（check:base は確かめ直し、原因を1件だけ出す）
     const changed = repo(
       { 'machine-a': { name: 'A', roles: [bigRole(toStoredProbability(290))] } },
       [recordOf('machine-a', [provisionalBig])]
     );
-    expect(problemsOf(main1(), changed)).toContain(
-      '  ERROR machine-a: role::BIG: main の値を裏づける出典がある（規則2の kept-single-source にする）'
+    const problems = problemsOf(main1(), changed);
+    expect(problems).toContain(
+      '  ERROR machine-a: role::BIG: 記録を変えずに機種ファイルの値を main から変えている（記録も作り直すか、値を main に戻す）'
     );
+    expect(problems.filter((line) => line.startsWith('  ERROR'))).toHaveLength(1);
   });
 
   it('比べる側が validate を通っても、main の記録だけが不正なら比べられない（マージ済みとして飛ばさない）', () => {

@@ -146,18 +146,27 @@ function recordItemsByMachine(records) {
   return byId;
 }
 
+/** mergedAdoption の結果 */
+const MERGED = 'merged';
+const VALUE_CHANGED = 'value-changed';
+const CHECK = 'check';
+
 /**
- * マージ済みの採用か。main の同じ機種の記録に、JSON として同じ項目（kind・name・unit・status・adopted・values・
- * reread のすべて）があり、機種ファイルの値（unit の形の値）も main と同じなら、main に入れたときに採否の確かめを
- * 通った採用なので、確かめ直さない。確かめ直すと、main の値が入れた暫定の値になっているので、ちょんぼりすたの値が
- * main の値を裏づけて、関係ない PR が止まる（最終レビュー C1）。
- * どちらかの機種ファイルに項目が無いか、unit で表せない値（null）なら、確かめる側に倒す
+ * main の記録と比べた項目の扱い。
+ * - MERGED（マージ済みの採用）: main の同じ機種の記録に、JSON として同じ項目（kind・name・unit・status・adopted・
+ *   values・reread のすべて）があり、機種ファイルの値（unit の形の値）も main と同じ。main に入れたときに採否の
+ *   確かめを通った採用なので、確かめ直さない。確かめ直すと、main の値が入れた暫定の値になっているので、
+ *   ちょんぼりすたの値が main の値を裏づけて、関係ない PR が止まる（最終レビュー C1）
+ * - VALUE_CHANGED: main の記録に JSON として同じ項目があるのに、機種ファイルの値だけが main から変わった
+ *   （記録を変えずに値を変えた）
+ * - CHECK: それ以外。どちらかの機種ファイルに項目が無いか、main の値を unit で表せない（null）ときも、確かめる側に倒す
  */
 function mergedAdoption(item, baseRecordItems, baseItem, headItem) {
-  if (!baseItem || !headItem) return false;
-  if (!baseRecordItems.some((recorded) => sameJson(recorded, item))) return false;
+  if (!baseItem || !headItem) return CHECK;
+  if (!baseRecordItems.some((recorded) => sameJson(recorded, item))) return CHECK;
   const baseValue = machineValue(baseItem.entry, item.unit);
-  return baseValue !== null && sameJson(baseValue, machineValue(headItem.entry, item.unit));
+  if (baseValue === null) return CHECK;
+  return sameJson(baseValue, machineValue(headItem.entry, item.unit)) ? MERGED : VALUE_CHANGED;
 }
 
 /**
@@ -179,8 +188,9 @@ function supportedByBase(item, baseEntry, baseValue) {
  *   含む）が無いときだけ使う（あれば既存の値の順「確定 → 残す → 暫定 → 外す」で規則2の kept-single-source が
  *   先に当たる。数え方は「残す」の判断と同じ）
  * 確かめるのは、記録か機種ファイルの値が main から変わった項目と、新しい項目だけ（mergedAdoption。main の記録は
- * main の provenance/ を列挙して読み、main のスキーマと index.json で確かめる。loadBaseRecords）。main の項目は、
- * 終了画面の patterns を書き直した形で比べる（baseMachineItems）。
+ * main の provenance/ を列挙して読み、main のスキーマと index.json で確かめる。loadBaseRecords）。記録を変えずに
+ * 暫定の値だけを変えた項目は、その原因を1件だけ出す。main の項目は、終了画面の patterns を書き直した形で比べる
+ * （baseMachineItems）。
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   listBase: (dir: string) => string[], provenanceFiles: Array<{ data: object | null }> }} io
@@ -212,10 +222,19 @@ export function checkRulesAgainstBase({ readBase, readHead, listBase, provenance
       const key = itemKey(item.kind, item.name);
       const baseItem = baseItems.get(key);
       const headItem = headItems.get(key);
-      if (mergedAdoption(item, recorded, baseItem, headItem)) continue;
+      const adoption = mergedAdoption(item, recorded, baseItem, headItem);
+      if (adoption === MERGED) continue;
       const baseValue = baseItem ? machineValue(baseItem.entry, item.unit) : null;
 
       if (item.status === PROVISIONAL) {
+        // 原因は「値が採用値から変わった」なので、「main の値を裏づける出典がある」を出さず、この1件だけにする
+        // （kept-single-source は下の「値が main から変わった」が同じ原因を指す）
+        if (adoption === VALUE_CHANGED) {
+          problems.push(
+            `${id}: ${key}: 記録を変えずに機種ファイルの値を main から変えている（記録も作り直すか、値を main に戻す）`
+          );
+          continue;
+        }
         if (baseItem && supportedByBase(item, baseItem.entry, baseValue)) {
           problems.push(
             `${id}: ${key}: main の値を裏づける出典がある（規則2の kept-single-source にする）`

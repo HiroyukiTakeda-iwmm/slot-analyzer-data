@@ -99,6 +99,9 @@ const run = (base, head, provenanceFiles) =>
 /** main にある項目の provisional-chonborista で、main の値を裏づける出典があるときの報告 */
 const supportedByBase = (key) =>
   `test-machine: ${key}: main の値を裏づける出典がある（規則2の kept-single-source にする）`;
+/** main の記録と JSON として同じ項目のまま、機種ファイルの値だけを main から変えたときの報告 */
+const valueChangedUnderSameRecord = (key) =>
+  `test-machine: ${key}: 記録を変えずに機種ファイルの値を main から変えている（記録も作り直すか、値を main に戻す）`;
 
 describe('checkRulesAgainstBase: kept-single-source', () => {
   it('採用値と機種ファイルの値が main の値そのものなら問題なし', () => {
@@ -264,8 +267,14 @@ describe('checkRulesAgainstBase: main の記録と同じ項目は確かめ直さ
   });
 
   it('記録を変えずに機種ファイルの値だけ変えたら確かめる', () => {
+    // 暫定の項目は、原因（記録を変えずに値を変えた）を1件だけ出す（「main の値を裏づける出典がある」にしない）
     expect(run(main, files([big(toStoredProbability(300))]), recordsOf(item))).toEqual([
-      supportedByBase('role::BIG'),
+      valueChangedUnderSameRecord('role::BIG'),
+    ]);
+    // main の値を裏づけない場合（main の値が記録の採用値と違う形）も、check:base が止める
+    const mismatched = withBaseRecord(files([big(toStoredProbability(400))]), [item]);
+    expect(run(mismatched, files([big(toStoredProbability(300))]), recordsOf(item))).toEqual([
+      valueChangedUnderSameRecord('role::BIG'),
     ]);
     // kept-single-source も同じ（値を変えないことを確かめる）
     const keptMain = withBaseRecord(files([big(0.00338753)]), [kept()]);
