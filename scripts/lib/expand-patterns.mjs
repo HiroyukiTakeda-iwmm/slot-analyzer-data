@@ -1,7 +1,10 @@
 import { migrateV1ToV2 } from '../migrate-v1-to-v2.mjs';
 
-/** 移行処理（migrate-v1-to-v2.mjs の migrateEndScreens）が patterns 形式として展開する終了画面か */
-function hasPatterns(screen) {
+/**
+ * 移行処理（migrate-v1-to-v2.mjs の migrateEndScreens）が patterns 形式として展開する終了画面か。
+ * 展開する終了画面の親の confirmedSettings・excludedSettings・probabilities・distribution は、移行処理が捨てる
+ */
+export function hasPatterns(screen) {
   return Array.isArray(screen.patterns) && screen.patterns.length > 0;
 }
 

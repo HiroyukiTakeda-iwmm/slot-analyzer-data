@@ -68,7 +68,8 @@ slot-analyzer-data における機種データの品質基準とバリデーシ�
 - 設定番号は機種の `availableSettings`（省略時は `"1"`〜`"6"`）。確定・否定の設定は `confirmedSettings`・`excludedSettings`
 - 規則1は最上位の `endScreens` と `endScreenGroups[].endScreens`、規則4は `voiceCounts`・`musicCounts`・`effectCounts` が対象。規則3の設定番号でない値は、3.9.0 で警告からエラーにした
 - 規則5の対象は、役・ゾーンの役・最上位の終了画面の `probabilities`（無ければ `distribution`）・`endScreenGroups` の中の終了画面の `probabilities`・`voiceCounts`・`musicCounts`・`effectCounts`・`trialSuccessRates` の `probabilities`。前は役・ゾーンの役・試行成功率のキーの食い違いを警告にしていた
-- メッセージは項目と値を示し、末尾にアプリでの影響を添える。基本は「（アプリの推定が止まる）」。形の誤りで機種ごと読めないときは「（アプリが機種を読み込めない）」、アプリが読まない欄と設定に無いキーは「（アプリは使わない）」、両方にある値は「（アプリは否定を優先し、確定する設定がすべて否定にもあると推定が止まる）」
+- メッセージは項目と値を示し、末尾にアプリでの影響を添える。基本は「（アプリの推定が止まる）」。形の誤りで機種ごと読めないときは「（アプリが機種を読み込めない）」、アプリが読まない欄と設定に無いキーは「（アプリは使わない）」、両方にある値は「（アプリは否定を優先し、確定する設定がすべて否定にもあると推定が止まる）」。文言は `scripts/validators/app-impact.mjs` の1か所に置く
+- `patterns` が空でない最上位の終了画面では、アプリの移行処理が親の `confirmedSettings`・`excludedSettings`・`probabilities`・`distribution` を捨てる。規則1・5 はこの親の欄の誤りもエラーにするが、末尾は「（アプリは使わない）」。ただし確定・否定の設定の文字列でない値は、捨てる前の読み込みで止まるので「（アプリが機種を読み込めない）」
 
 ### Level 2: 警告（修正推奨）
 

@@ -4,6 +4,12 @@ import { validateProbabilities } from '../scripts/validators/probability-validat
 import { validateConfirmations } from '../scripts/validators/confirmation-validator.mjs';
 import { validateIndexConsistency } from '../scripts/validators/index-consistency.mjs';
 import { validateCompleteness } from '../scripts/validators/completeness-validator.mjs';
+import {
+  CANNOT_LOAD,
+  NOT_USED,
+  OVERLAP,
+  STOPS_ESTIMATE,
+} from '../scripts/validators/app-impact.mjs';
 
 const validMachine = {
   name: 'テスト機種',
@@ -163,7 +169,6 @@ describe('confirmation-validator', () => {
 // アプリは、確定・否定の設定に機種の設定番号でない値があると推定全体を止め（invalid-settings）、
 // 推定に使う確率に機種の設定のキーが欠けていても止める（missing-probability）。
 
-const STOPS_ESTIMATE = '（アプリの推定が止まる）';
 const FOUR_SETTINGS = ['1', '2', '5', '6'];
 
 function machineWith(overrides) {
@@ -245,7 +250,7 @@ describe('confirmation-validator: 終了画面の確定・否定の設定（規�
     for (const e of errors) {
       expect(e.severity).toBe('error');
       // アプリは否定を優先する。確定する設定がすべて否定にもあるときだけ推定が止まる
-      expect(e.message).toContain('否定を優先');
+      expect(e.message.endsWith(OVERLAP)).toBe(true);
     }
   });
 
@@ -291,7 +296,7 @@ describe('confirmation-validator: 終了画面のパターン（規則2）', () 
     const { errors } = checkConfirmations(withPatterns([{ name: '虹', setting: 6 }]));
     expect(errors).toHaveLength(1);
     expect(errors[0].message).toContain('patterns "虹" setting が設定番号でない: 6');
-    expect(errors[0].message.endsWith('（アプリが機種を読み込めない）')).toBe(true);
+    expect(errors[0].message.endsWith(CANNOT_LOAD)).toBe(true);
   });
 
   it('patterns の minSetting が数でない → エラー（アプリは機種を読み込めない）', () => {
@@ -299,7 +304,7 @@ describe('confirmation-validator: 終了画面のパターン（規則2）', () 
     expect(errors).toHaveLength(1);
     expect(errors[0]).toMatchObject({ type: 'confirmation', severity: 'error' });
     expect(errors[0].message).toContain('patterns "金" minSetting が数でない: "4"');
-    expect(errors[0].message.endsWith('（アプリが機種を読み込めない）')).toBe(true);
+    expect(errors[0].message.endsWith(CANNOT_LOAD)).toBe(true);
   });
 
   it('setting が設定番号・minSetting が数・どちらも無いパターンは通る', () => {
@@ -361,10 +366,10 @@ describe('confirmation-validator: ボイス・楽曲・演出カウントの設�
     // 楽曲・演出の確定・否定の設定は、今のアプリが読まない（スキーマでも禁止）
     const music = onlyMessage(errors, 'musicCounts "専用曲"');
     expect(music).toContain('excludedSettings に設定番号でない値: "L"');
-    expect(music.endsWith('（アプリは使わない）')).toBe(true);
+    expect(music.endsWith(NOT_USED)).toBe(true);
     const effect = onlyMessage(errors, 'effectCounts "虹カットイン"');
     expect(effect).toContain('confirmedSettings に設定番号でない値: "7"');
-    expect(effect.endsWith('（アプリは使わない）')).toBe(true);
+    expect(effect.endsWith(NOT_USED)).toBe(true);
   });
 
   it('voiceCounts・musicCounts・effectCounts の confirmed と excluded の両方にある値 → エラー', () => {
@@ -379,6 +384,39 @@ describe('confirmation-validator: ボイス・楽曲・演出カウントの設�
     for (const label of ['voiceCounts "ボイスA"', 'musicCounts "楽曲A"', 'effectCounts "演出A"']) {
       expect(onlyMessage(errors, label)).toContain('confirmedとexcludedに重複: [6]');
     }
+    // ボイスはアプリが推定に使う。楽曲・演出の確定・否定の設定は、アプリが読まない
+    expect(onlyMessage(errors, 'voiceCounts "ボイスA"').endsWith(OVERLAP)).toBe(true);
+    expect(onlyMessage(errors, 'musicCounts "楽曲A"').endsWith(NOT_USED)).toBe(true);
+    expect(onlyMessage(errors, 'effectCounts "演出A"').endsWith(NOT_USED)).toBe(true);
+  });
+
+  it('確定・否定の設定に文字列でない値 → エラー（アプリが機種を読み込めない。楽曲・演出はアプリが使わない）', () => {
+    const data = machineWith({
+      endScreens: [{ name: '紫枠', confirmedSettings: [6] }],
+      endScreenGroups: [
+        { name: 'AT終了画面', endScreens: [{ name: '赤', excludedSettings: [1] }] },
+      ],
+      confirmationEvents: [{ name: '虹トロフィー', confirmedSettings: [6], excludedSettings: [] }],
+      voiceCounts: [{ name: '高設定セリフ', excludedSettings: [null] }],
+      musicCounts: [{ name: '専用曲', confirmedSettings: [6] }],
+      effectCounts: [{ name: '虹カットイン', excludedSettings: [1] }],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(6);
+    expect(errors.every((e) => e.type === 'confirmation' && e.severity === 'error')).toBe(true);
+    expect(onlyMessage(errors, 'endScreens "紫枠"')).toContain(
+      'confirmedSettings に設定番号でない値: 6 (利用可能: 1,2,3,4,5,6)'
+    );
+    // アプリは読み込み時に設定の値が文字列かを確かめ、違えば機種ファイルごと読み込まない
+    expect(onlyMessage(errors, 'endScreens "紫枠"').endsWith(CANNOT_LOAD)).toBe(true);
+    expect(onlyMessage(errors, 'endScreens "赤"').endsWith(CANNOT_LOAD)).toBe(true);
+    expect(onlyMessage(errors, 'confirmationEvents "虹トロフィー"').endsWith(CANNOT_LOAD)).toBe(
+      true
+    );
+    expect(onlyMessage(errors, 'voiceCounts "高設定セリフ"').endsWith(CANNOT_LOAD)).toBe(true);
+    // 楽曲・演出の確定・否定の設定は、アプリが読み込み時に捨てるので、文字列でなくても読み込める
+    expect(onlyMessage(errors, 'musicCounts "専用曲"').endsWith(NOT_USED)).toBe(true);
+    expect(onlyMessage(errors, 'effectCounts "虹カットイン"').endsWith(NOT_USED)).toBe(true);
   });
 
   it('設定番号だけで、両方にある値が無ければ通る', () => {
@@ -552,7 +590,7 @@ describe('probability-validator: 推定に使う確率の設定のキー（規�
       'roles "ベル" probabilities に設定に無いキー: 3 (設定: 1,2,5,6)'
     );
     // アプリは機種の設定のキーしか読まないので、推定は止まらない（書き方の誤りとして止める）
-    expect(errors[0].message.endsWith('（アプリは使わない）')).toBe(true);
+    expect(errors[0].message.endsWith(NOT_USED)).toBe(true);
   });
 
   it('L・V を含む機種は availableSettings に従う', () => {
@@ -600,6 +638,58 @@ describe('probability-validator: 推定に使う確率の設定のキー（規�
     const result = checkProbabilities(data);
     expect(result.errors).toHaveLength(0);
     expect(result.warnings).toHaveLength(0);
+  });
+});
+
+describe('patterns を持つ最上位の終了画面の親の欄（規則1・5）', () => {
+  // アプリの移行処理は、patterns が空でない終了画面をパターンごとの終了画面に展開し、親の
+  // confirmedSettings・excludedSettings・probabilities・distribution を捨てる。空の patterns は普通の終了画面
+  it('patterns が空でなければ、親の確定・否定の設定と確率の誤りの末尾は「アプリは使わない」', () => {
+    const parentFields = {
+      confirmedSettings: ['high', '6'],
+      excludedSettings: [1, '6'],
+      probabilities: { 1: 0.1 },
+    };
+    const data = machineWith({
+      endScreens: [
+        { name: 'パターンあり', ...parentFields, patterns: [{ name: '通常' }] },
+        { name: '分布とパターン', distribution: { 1: 0.5 }, patterns: [{ name: '通常' }] },
+        { name: 'パターンが空', ...parentFields, patterns: [] },
+      ],
+    });
+    const withPatterns = 'endScreens "パターンあり" ';
+    const emptyPatterns = 'endScreens "パターンが空" ';
+    const endOf = (errors, label) => {
+      const message = onlyMessage(errors, label);
+      return message.slice(message.lastIndexOf('（'));
+    };
+
+    const confirmation = checkConfirmations(data).errors;
+    expect(confirmation).toHaveLength(6);
+    expect(endOf(confirmation, `${withPatterns}confirmedSettings に設定番号でない値: "high"`)).toBe(
+      NOT_USED
+    );
+    expect(endOf(confirmation, `${withPatterns}confirmedとexcludedに重複: [6]`)).toBe(NOT_USED);
+    // 文字列でない値は、アプリが親を捨てる前の読み込み（形の確かめ）で止まる
+    expect(endOf(confirmation, `${withPatterns}excludedSettings に設定番号でない値: 1`)).toBe(
+      CANNOT_LOAD
+    );
+    expect(
+      endOf(confirmation, `${emptyPatterns}confirmedSettings に設定番号でない値: "high"`)
+    ).toBe(STOPS_ESTIMATE);
+    expect(endOf(confirmation, `${emptyPatterns}confirmedとexcludedに重複: [6]`)).toBe(OVERLAP);
+
+    const probability = checkProbabilities(data).errors;
+    expect(probability).toHaveLength(3);
+    expect(endOf(probability, `${withPatterns}probabilities に設定のキーが無い: 2,3,4,5,6`)).toBe(
+      NOT_USED
+    );
+    expect(endOf(probability, 'endScreens "分布とパターン" distribution に設定のキーが無い')).toBe(
+      NOT_USED
+    );
+    expect(endOf(probability, `${emptyPatterns}probabilities に設定のキーが無い`)).toBe(
+      STOPS_ESTIMATE
+    );
   });
 });
 
