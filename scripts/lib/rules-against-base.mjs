@@ -80,10 +80,34 @@ function compileBaseSchema(readBase, paths) {
   }
 }
 
+const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
+
+/**
+ * main の記録のうち、main と比べる検査が読む欄の形の問題（items は配列。removed・retiredIds は無いか配列で、
+ * retiredIds の行はオブジェクト）。今のスキーマに合う記録ならいつも空。main のスキーマが緩くても（{} など）、
+ * 検査が読む前に記録のパスを付けて止めるため
+ * @returns {string[]}
+ */
+function readableShapeProblems(record) {
+  const problems = [];
+  if (!Array.isArray(record.items)) problems.push('items が配列でない');
+  for (const field of ['removed', 'retiredIds']) {
+    const value = record[field];
+    if (value !== undefined && value !== null && !Array.isArray(value)) {
+      problems.push(`${field} が配列でない`);
+    }
+  }
+  if (Array.isArray(record.retiredIds) && !record.retiredIds.every(isObject)) {
+    problems.push('retiredIds の行がオブジェクトでない');
+  }
+  return problems;
+}
+
 /**
  * main の記録1つの問題。main のスキーマに合うか、パスが provenance/<machineId>.json か、machineId が main の
  * index.json にあり、machineFile が main の index.json のその機種の file と同じか（validate の出典記録の検証器
- * provenance-validator.mjs と同じ決まり）。スキーマに合わなければ、スキーマの問題だけを返す
+ * provenance-validator.mjs と同じ決まり）と、検査が読む欄の形（readableShapeProblems）。スキーマに合わなければ、
+ * スキーマの問題だけを返す
  * @param {Map<string, object>} baseIndex main の index.json の機種（indexById）
  * @returns {string[]}
  */
@@ -102,7 +126,23 @@ function baseRecordProblems(path, record, validateSchema, baseIndex) {
       `machineFile が main の index.json と違う: ${record.machineFile}（index: ${entry.file}）`
     );
   }
-  return problems;
+  return [...problems, ...readableShapeProblems(record)];
+}
+
+/**
+ * main の記録1つを確かめ、問題があれば記録のパスと理由を付けて例外を投げる。確かめの途中の例外（main のスキーマが
+ * 緩いときの null の記録など）も、同じ形の文面にする
+ */
+function assertBaseRecord(path, record, validateSchema, baseIndex) {
+  let problems;
+  try {
+    problems = baseRecordProblems(path, record, validateSchema, baseIndex);
+  } catch (e) {
+    throw new Error(`main の出典記録が不正: ${path}: ${e.message}`, { cause: e });
+  }
+  if (problems.length > 0) {
+    throw new Error(`main の出典記録が不正: ${path}: ${problems.join('; ')}`);
+  }
 }
 
 /**
@@ -110,7 +150,8 @@ function baseRecordProblems(path, record, validateSchema, baseIndex) {
  * 比べる側の記録からでなく main を列挙する。main の記録は「main に入れたときに確かめを通った」ものとして、マージ済みの
  * 採用を確かめ直さない・removed と retiredIds を照らす根拠にするので、main のスキーマ（BASE_SCHEMA）と main の
  * index.json に合わない記録は使わない（null・配列・必須欄の欠けなどを「記録が無い」「空の台帳」として扱わない）。
- * 読めない・合わない記録があれば、記録のパスと理由を付けて例外を投げる（CLI は終了コード 2 にする）。
+ * 読めない・合わない記録があれば、記録のパスと理由を付けて例外を投げる（CLI は終了コード 2 にする）。main の
+ * スキーマが緩くても、検査が読む欄の形が合わない記録は、読む前に同じ形の例外にする（assertBaseRecord）。
  * main に記録が無い機種は、確かめを飛ばす理由が無い（すべての項目を確かめる）。記録が1つも無ければスキーマを読まない
  * @param {(path: string) => string} readBase
  * @param {(dir: string) => string[]} listBase
@@ -128,12 +169,7 @@ export function loadBaseRecords(readBase, listBase) {
   });
   const validateSchema = compileBaseSchema(readBase, paths);
   const baseIndex = indexById(readBase);
-  paths.forEach((path, i) => {
-    const problems = baseRecordProblems(path, records[i], validateSchema, baseIndex);
-    if (problems.length > 0) {
-      throw new Error(`main の出典記録が不正: ${path}: ${problems.join('; ')}`);
-    }
-  });
+  paths.forEach((path, i) => assertBaseRecord(path, records[i], validateSchema, baseIndex));
   return records;
 }
 
@@ -154,9 +190,9 @@ const CHECK = 'check';
 /**
  * main の記録と比べた項目の扱い。
  * - MERGED（マージ済みの採用）: main の同じ機種の記録に、JSON として同じ項目（kind・name・unit・status・adopted・
- *   values・reread のすべて）があり、機種ファイルの値（unit の形の値）も main と同じ。main に入れたときに採否の
- *   確かめを通った採用なので、確かめ直さない。確かめ直すと、main の値が入れた暫定の値になっているので、
- *   ちょんぼりすたの値が main の値を裏づけて、関係ない PR が止まる（最終レビュー C1）
+ *   values・reread のすべて）があり、機種ファイルの値（unit の形の値）も main と同じ（sameMachineValue）。main に
+ *   入れたときに採否の確かめを通った採用なので、確かめ直さない。確かめ直すと、main の値が入れた暫定の値になって
+ *   いるので、ちょんぼりすたの値が main の値を裏づけて、関係ない PR が止まる（最終レビュー C1）
  * - VALUE_CHANGED: main の記録に JSON として同じ項目があるのに、機種ファイルの値だけが main から変わった
  *   （記録を変えずに値を変えた）
  * - CHECK: それ以外。どちらかの機種ファイルに項目が無いか、main の値を unit で表せない（null）ときも、確かめる側に倒す
@@ -166,7 +202,18 @@ function mergedAdoption(item, baseRecordItems, baseItem, headItem) {
   if (!baseRecordItems.some((recorded) => sameJson(recorded, item))) return CHECK;
   const baseValue = machineValue(baseItem.entry, item.unit);
   if (baseValue === null) return CHECK;
-  return sameJson(baseValue, machineValue(headItem.entry, item.unit)) ? MERGED : VALUE_CHANGED;
+  const headValue = machineValue(headItem.entry, item.unit);
+  return sameMachineValue(item.unit, baseValue, headValue) ? MERGED : VALUE_CHANGED;
+}
+
+/**
+ * 機種ファイルの値（unit の形。machineValue）が main と同じか。設定の組（settings）は confirmed・excluded を集合
+ * として比べる（並びは問わない。kept-single-source の valuesEqual と同じ考え）。数値の unit と有無は JSON として
+ * 同じか（数値は完全一致）
+ */
+function sameMachineValue(unit, baseValue, headValue) {
+  if (sameJson(baseValue, headValue)) return true;
+  return unit === 'settings' && valuesEqual(unit, baseValue, headValue);
 }
 
 /**

@@ -317,6 +317,37 @@ describe('checkRulesAgainstBase: main の記録と同じ項目は確かめ直さ
     ]);
   });
 
+  it('設定の組の項目は、機種ファイルの値を集合として比べる（並べ替えだけなら確かめ直さない）', () => {
+    const settings = { confirmed: ['4', '5', '6'], excluded: ['1', '2'] };
+    const bonus = {
+      kind: 'confirmationEvent',
+      name: '特定ボーナス',
+      unit: 'settings',
+      status: 'provisional-chonborista',
+      values: { chonborista: settings },
+      adopted: settings,
+      reread: { by: 'verifier', value: settings },
+    };
+    const withEvent = (confirmedSettings, excludedSettings) => ({
+      ...files([big(written)]),
+      'machines/test/test-machine.json': JSON.stringify({
+        name: 'テスト機種',
+        roles: [big(written)],
+        confirmationEvents: [{ name: '特定ボーナス', confirmedSettings, excludedSettings }],
+      }),
+    });
+    const settingsMain = withBaseRecord(withEvent(['4', '5', '6'], ['1', '2']), [bonus]);
+    // confirmed・excluded の並べ替えだけ: マージ済みの採用として確かめ直さない
+    expect(run(settingsMain, withEvent(['6', '5', '4'], ['2', '1']), recordsOf(bonus))).toEqual([]);
+    // 組を変えれば、記録を変えずに値を変えたとして止める
+    expect(run(settingsMain, withEvent(['5', '6'], ['1', '2']), recordsOf(bonus))).toEqual([
+      valueChangedUnderSameRecord('confirmationEvent::特定ボーナス'),
+    ]);
+    expect(run(settingsMain, withEvent(['4', '5', '6'], ['1']), recordsOf(bonus))).toEqual([
+      valueChangedUnderSameRecord('confirmationEvent::特定ボーナス'),
+    ]);
+  });
+
   it('main の機種ファイルに無い項目・比べる側の機種ファイルに無い項目は、記録が同じでも確かめる', () => {
     const keptMain = withBaseRecord(files([]), [kept()]);
     expect(run(keptMain, files([big(0.00338753)]), recordsOf(kept()))).toEqual([

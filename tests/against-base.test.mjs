@@ -192,6 +192,30 @@ describe('runAgainstBase: main の出典記録を、main のスキーマと main
   });
 
   it.each([
+    ['null', 'null', 'null'],
+    ['items の無い記録', JSON.stringify(omit(validRecord(), 'items')), 'items が配列でない'],
+    [
+      'removed が配列でない記録',
+      JSON.stringify(validRecord({ removed: 1 })),
+      'removed が配列でない',
+    ],
+    [
+      'retiredIds の行が null の記録',
+      JSON.stringify(validRecord({ retiredIds: [null] })),
+      'retiredIds の行がオブジェクトでない',
+    ],
+  ])(
+    'main のスキーマが緩くても、%s なら記録のパスと理由を出す（終了コード 2）',
+    (_label, text, reason) => {
+      const result = run(mainWith(RECORD, text, '{}'), map, kept());
+      expect(result.code).toBe(2);
+      expect(result.lines).toHaveLength(1);
+      expect(result.lines[0]).toContain(`main の出典記録が不正: ${RECORD}: `);
+      expect(result.lines[0]).toContain(reason);
+    }
+  );
+
+  it.each([
     ['null', RECORD, 'null', 'スキーマ違反 / must be object'],
     ['配列', RECORD, '[]', 'スキーマ違反 / must be object'],
     ['空のオブジェクト', RECORD, '{}', "スキーマ違反 / must have required property 'machineId'"],
