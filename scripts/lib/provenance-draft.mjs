@@ -8,13 +8,7 @@
 
 import { DERIVED_ID_KINDS, collectDerivedIds, hasItemId, scopedId } from './derived-ids.mjs';
 import { hasPatterns } from './expand-patterns.mjs';
-import {
-  extractItemProblems,
-  extractSourceKeyProblems,
-  itemLabel,
-  lineLabel,
-  rereadPairingProblems,
-} from './notes.mjs';
+import { extractItemProblems, itemLabel, lineLabel, rereadPairingProblems } from './notes.mjs';
 import {
   CHONBORISTA_KEY,
   NAME_SEPARATOR,
@@ -107,7 +101,6 @@ function rereadShapeProblems(extract, rereads) {
 export function memoProblems(extract, reread) {
   return [
     ...(reread ? rereadPairingProblems(extract, reread) : extractItemProblems(extract)),
-    ...extractSourceKeyProblems(extract),
     ...nameProblems(extract),
     ...rereadShapeProblems(extract, chonboristaRereads(reread)),
   ];

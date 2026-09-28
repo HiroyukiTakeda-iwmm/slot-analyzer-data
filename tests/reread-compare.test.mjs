@@ -527,6 +527,31 @@ describe('scripts/reread-compare.mjs', () => {
       expect(onlyExtract.stderr).toContain('抜き出しの role 弱チェリー [nana] の値が unit');
     });
 
+    it('抜き出しの values の出典キーが sources に無い・sources に同じ出典キーが2つある（照合する前に止める）', () => {
+      // 読み直しがその出典を読んでいても、「読み直していない」と「読み直しにしか無い」を同時に出さない
+      const extract = extractNote();
+      extract.items[0].values.dmm = { 1: 99.9, 6: 94.2 };
+      const reread = rereadNote();
+      reread.items.push({
+        kind: 'role',
+        name: '弱チェリー',
+        source: 'dmm',
+        value: { 1: 99.9, 6: 94.2 },
+      });
+      const result = compare(extract, reread);
+      expect(result.status).toBe(2);
+      expect(result.stdout).toBe('');
+      expect(result.stderr).toBe(
+        '照合できない: 抜き出しの role 弱チェリー [dmm] の出典キーが sources に無い（書き違いか、sources の書き漏れ）\n'
+      );
+
+      const twice = extractNote();
+      twice.sources.push({ ...twice.sources[1], url: 'https://nana-press.com/other/' });
+      const keys = compare(twice, rereadNote());
+      expect(keys.status).toBe(2);
+      expect(keys.stderr).toContain('抜き出しのメモの sources に同じ出典キーが2つ以上ある: nana');
+    });
+
     it('抜き出しと読み直しの機種 ID が違う', () => {
       const result = compare(extractNote(), { ...rereadNote(), machineId: 'sao2' });
       expect(result.status).toBe(2);
