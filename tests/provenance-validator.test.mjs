@@ -999,7 +999,8 @@ describe('validateProvenance: 外した ID の台帳（retiredIds）', () => {
   const CHERRY_ROW = row('role', '中段チェリー', 'chuudan_cherry_7');
   const errorsOf = (overrides, files) =>
     run(record(overrides), { files }).errors.map((e) => e.message);
-  const REUSE = (key, id) => `${key}: 外した項目の ID（${id}）を使っている（明示の id を付ける）`;
+  const REUSE = (key, id) =>
+    `${key}: 外した項目の ID（${id}）を使っている（既存の項目なら main の ID を id に書いて固定する。新しい項目なら別の明示の id を付ける）`;
 
   it('removed の appId は、同じ kind・name・appId の行が retiredIds に要る', () => {
     expect(errorsOf({ removed: [removedCherry], retiredIds: [CHERRY_ROW] })).toEqual([]);

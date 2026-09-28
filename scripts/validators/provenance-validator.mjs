@@ -296,7 +296,7 @@ function removalProblem(removed, entry, sourceKinds) {
 /**
  * 外した項目（removed）の記録を確かめる（仕様 5.7）。previous は外す前の機種ファイルの項目そのもので、
  * それを今の値として、unit・値の形・外す条件を items と同じ規則で確かめる。
- * previous が main の項目そのものかは、main と比べる検査（checkRemovedLedger）が確かめる。
+ * previous が main の項目そのものかは、main と比べる検査（ledger-against-base.mjs の checkLedgerAgainstBase）が確かめる。
  */
 function checkRemoved(path, removed, sourceKinds) {
   const key = itemKey(removed.kind, removed.name);
@@ -368,7 +368,14 @@ function retiredIdErrors(path, record, machineItems, itemIds) {
   for (const [key, id] of itemIds) {
     if (!retired.has(scopedId(key, id))) continue;
     if (removedKeys.has(key) && machineItems.has(key)) continue;
-    errors.push(error(path, `${key}: 外した項目の ID（${id}）を使っている（明示の id を付ける）`));
+    // 名前から作る ID が繰り上がって重なった既存の項目（仁・義・礼から義を外し、礼を固定し忘れる）は、main の ID を
+    // id に書いて固定するのが直し方。別の新しい id を付けると、check:base が「ID が変わった」で止める
+    errors.push(
+      error(
+        path,
+        `${key}: 外した項目の ID（${id}）を使っている（既存の項目なら main の ID を id に書いて固定する。新しい項目なら別の明示の id を付ける）`
+      )
+    );
   }
   return errors;
 }

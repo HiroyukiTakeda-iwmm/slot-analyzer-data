@@ -337,7 +337,7 @@ describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新�
       )
     );
     expect(problemsOf(main2, pr3)).toEqual([
-      'confirmationEvent::虹トロフィー: 外した項目の ID（gold）を使っている（明示の id を付ける）',
+      'confirmationEvent::虹トロフィー: 外した項目の ID（gold）を使っている（既存の項目なら main の ID を id に書いて固定する。新しい項目なら別の明示の id を付ける）',
     ]);
   });
 
@@ -377,7 +377,7 @@ describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新�
       )
     );
     expect(problemsOf(main2, pr3)).toEqual([
-      'endScreen::礼: 外した項目の ID（endscreen_2）を使っている（明示の id を付ける）',
+      'endScreen::礼: 外した項目の ID（endscreen_2）を使っている（既存の項目なら main の ID を id に書いて固定する。新しい項目なら別の明示の id を付ける）',
     ]);
     // PR2 で retiredIds も消すと、check:base が止める
     const main2Deleted = repo(
@@ -387,6 +387,45 @@ describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新�
     expect(problemsOf(main1, main2Deleted)).toEqual([
       '問題: 1件',
       `  ERROR ${RETIRED_DELETED('endScreen::義', 'endscreen_2')}`,
+    ]);
+  });
+
+  it('名前から作る ID の繰り上がり: 既存の項目は main の ID を id に書いて固定する（validate の文面が直し方を示す）', () => {
+    const jin = { name: '仁', hint: '' };
+    const gi = { name: '義', hint: '' };
+    const rei = { name: '礼', hint: '' };
+    // main の ID: 仁 = endscreen、義 = endscreen_2、礼 = endscreen_3
+    const main0 = repo({ name: 'テスト機種', endScreens: [jin, gi, rei] });
+    const giRemoved = {
+      kind: 'endScreen',
+      name: '義',
+      unit: 'presence',
+      previous: gi,
+      values: {},
+      appId: 'endscreen_2',
+      reason: '出典なし',
+    };
+    const prOf = (reiEntry) =>
+      repo(
+        { name: 'テスト機種', endScreens: [jin, reiEntry] },
+        recordOf(
+          [presence('endScreen', '仁'), presence('endScreen', '礼')],
+          [giRemoved],
+          [row('義', 'endscreen_2', 'endScreen')]
+        )
+      );
+    // 義 を外し、礼 を固定し忘れると、礼 の ID が endscreen_2（外した 義 の ID）に繰り上がる
+    expect(problemsOf(main0, prOf(rei))).toEqual([
+      'endScreen::礼: 外した項目の ID（endscreen_2）を使っている（既存の項目なら main の ID を id に書いて固定する。新しい項目なら別の明示の id を付ける）',
+      '問題: 1件',
+      '  ERROR test-machine: endScreen::礼: ID が変わった（endscreen_3 → endscreen_2）',
+    ]);
+    // main の ID で固定すれば、どちらの検査も通る
+    expect(problemsOf(main0, prOf({ ...rei, id: 'endscreen_3' }))).toEqual([]);
+    // 別の新しい id を付けると、既存の項目の ID が変わる（数えた記録が別の項目になる）
+    expect(problemsOf(main0, prOf({ ...rei, id: 'rei' }))).toEqual([
+      '問題: 1件',
+      '  ERROR test-machine: endScreen::礼: ID が変わった（endscreen_3 → rei）',
     ]);
   });
 });

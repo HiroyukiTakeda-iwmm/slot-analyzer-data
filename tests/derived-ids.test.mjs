@@ -1,12 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import {
   DERIVED_ID_KINDS,
+  EXPLICIT_ID_FIELDS,
   EXPLICIT_ID_KINDS,
   checkDerivedIds,
   collectDerivedIds,
   collectItemIds,
   compareDerivedIds,
 } from '../scripts/lib/derived-ids.mjs';
+import { listMachineItems } from '../scripts/lib/provenance.mjs';
 
 const baseMachine = {
   name: 'テスト機種',
@@ -128,6 +130,23 @@ describe('collectItemIds（ID を持つ項目）', () => {
         'modeTransition',
       ])
     );
+  });
+
+  it('EXPLICIT_ID_FIELDS（配列の欄と種類の対応）が正本で、EXPLICIT_ID_KINDS はその種類と同じ', () => {
+    expect(EXPLICIT_ID_FIELDS).toEqual([
+      ['confirmationEvents', 'confirmationEvent'],
+      ['trialSuccessRates', 'trialSuccessRate'],
+      ['voiceCounts', 'voiceCount'],
+      ['musicCounts', 'musicCount'],
+      ['effectCounts', 'effectCount'],
+      ['modeTransitions', 'modeTransition'],
+    ]);
+    expect(EXPLICIT_ID_KINDS).toEqual(new Set(EXPLICIT_ID_FIELDS.map(([, kind]) => kind)));
+    // 出典記録の項目の種類（listMachineItems）とも同じ対応であること
+    for (const [field, kind] of EXPLICIT_ID_FIELDS) {
+      const items = listMachineItems({ [field]: [{ name: 'X', id: 'x' }] });
+      expect(items.map((item) => item.kind)).toEqual([kind]);
+    }
   });
 });
 

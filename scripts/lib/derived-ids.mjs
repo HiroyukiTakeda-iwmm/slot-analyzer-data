@@ -23,21 +23,13 @@ export const DERIVED_ID_KINDS = new Set([
 ]);
 
 /**
- * アプリがデータの `id` をそのまま使い、無いときだけ取り込むたびに乱数の ID を振る種類（項目キーの種類の名前）。
+ * アプリがデータの `id` をそのまま使い、無いときだけ取り込むたびに乱数の ID を振る種類の、機種ファイルの配列の欄と
+ * 項目キーの種類の名前の対応（6種類の正本。EXPLICIT_ID_KINDS と item-id-validator.mjs はここから作る）。
  * slot-analyzer-ios の services/githubMachineService.ts（`x.id || generateUUID()`）。数えた記録（セッション）は
  * この ID で項目につながるので、明示の id がある項目は、ID を作る種類と同じく ID を変えない・再利用しない。
+ * @type {Array<[string, string]>}
  */
-export const EXPLICIT_ID_KINDS = new Set([
-  'confirmationEvent',
-  'trialSuccessRate',
-  'voiceCount',
-  'musicCount',
-  'effectCount',
-  'modeTransition',
-]);
-
-/** 機種ファイルの配列の欄と、項目キーの種類の名前（EXPLICIT_ID_KINDS の種類） */
-const EXPLICIT_ID_FIELDS = [
+export const EXPLICIT_ID_FIELDS = [
   ['confirmationEvents', 'confirmationEvent'],
   ['trialSuccessRates', 'trialSuccessRate'],
   ['voiceCounts', 'voiceCount'],
@@ -45,6 +37,9 @@ const EXPLICIT_ID_FIELDS = [
   ['effectCounts', 'effectCount'],
   ['modeTransitions', 'modeTransition'],
 ];
+
+/** 明示の id をそのまま使う種類（項目キーの種類の名前。EXPLICIT_ID_FIELDS の種類） */
+export const EXPLICIT_ID_KINDS = new Set(EXPLICIT_ID_FIELDS.map(([, kind]) => kind));
 
 /** 明示の id（アプリがそのまま使う id。migrate-v1-to-v2.mjs と githubMachineService.ts と同じ判定） */
 export function hasExplicitId(entry) {
