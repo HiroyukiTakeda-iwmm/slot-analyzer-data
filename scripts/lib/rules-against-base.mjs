@@ -313,3 +313,30 @@ export function checkNewMachineRecords({ readBase, readHead, provenanceFiles }) 
     .filter((id) => !baseById.has(id) && !hasRecord(id))
     .map((id) => `${id}: 新しく足した機種に出典記録（provenance/${id}.json）が無い`);
 }
+
+/**
+ * main に出典記録がある機種で、比べる側の記録（provenance/<機種ID>.json）を消していないかを確かめる（仕様 5.7。
+ * 記録がある機種では、値を直すときに記録も直す。記録のファイルを消すと、validate も採否ルールの検査もその機種を
+ * 見なくなり、値の見直しが採否ルールの確かめを受けない）。main の記録は loadBaseRecords で読む（main のスキーマと
+ * index.json に合わなければ例外。CLI は終了コード 2 にする）。
+ * 機種ごと比べる側の index.json から消した場合は対象外（ID の検査 checkDerivedIds が消えた項目を報告する）。
+ * 比べる側の記録の中身は validate が確かめるので、ここではパスの有無だけを見る（壊れた記録も「ある」と数える。
+ * 別のパスに置いた記録は数えない。ファイル名の誤りは validate も止める）。
+ *
+ * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
+ *   listBase: (dir: string) => string[], provenanceFiles: Array<{ path?: string, data: object | null }> }} io
+ *   checkRulesAgainstBase と同じ
+ * @returns {string[]} 問題の説明。空なら問題なし
+ */
+export function checkDeletedBaseRecords({ readBase, readHead, listBase, provenanceFiles }) {
+  const recordedIds = new Set(
+    loadBaseRecords(readBase, listBase).map((record) => record.machineId)
+  );
+  const headById = indexById(readHead);
+  const headPaths = new Set(provenanceFiles.map((file) => file.path));
+  return [...recordedIds]
+    .filter((id) => headById.has(id) && !headPaths.has(`provenance/${id}.json`))
+    .map(
+      (id) => `${id}: main に出典記録がある機種の記録を消している（記録がある機種では記録も直す）`
+    );
+}

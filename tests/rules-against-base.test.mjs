@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { decideExistingItem, toStoredProbability } from '../scripts/lib/provenance.mjs';
 import {
+  checkDeletedBaseRecords,
   checkNewMachineRecords,
   checkRemovedItems,
   checkRulesAgainstBase,
@@ -593,5 +594,53 @@ describe('checkNewMachineRecords（新しく足した機種の出典記録）', 
         provenanceFiles: [],
       })
     ).toEqual([]);
+  });
+});
+
+describe('checkDeletedBaseRecords（main に出典記録がある機種の記録を消していないか）', () => {
+  const machine = files([big(0.00338753)]);
+  const recorded = withBaseRecord(machine, [kept()]);
+  const runDeleted = (base, head, provenanceFiles) =>
+    checkDeletedBaseRecords({
+      readBase: reader(base),
+      readHead: reader(head),
+      listBase: lister(base),
+      provenanceFiles,
+    });
+  const deleted =
+    'test-machine: main に出典記録がある機種の記録を消している（記録がある機種では記録も直す）';
+
+  it('比べる側の index.json に残る機種で、provenance/<機種ID>.json を消せば報告する', () => {
+    expect(runDeleted(recorded, machine, [])).toEqual([deleted]);
+    // 別のパスに置いた同じ machineId の記録は数えない（ファイル名の誤りは validate も止める）
+    const moved = [{ path: 'provenance/other.json', data: baseRecordOf('test-machine', []) }];
+    expect(runDeleted(recorded, machine, moved)).toEqual([deleted]);
+  });
+
+  it('機種ごと index.json から消したら報告しない（ID の検査が報告する）', () => {
+    expect(runDeleted(recorded, { 'machines/index.json': indexJson([]) }, [])).toEqual([]);
+  });
+
+  it('記録を残せば報告しない（壊れた記録も「ある」と数える。中身は validate が確かめる）', () => {
+    const path = 'provenance/test-machine.json';
+    expect(
+      runDeleted(recorded, machine, [{ path, data: baseRecordOf('test-machine', []) }])
+    ).toEqual([]);
+    expect(runDeleted(recorded, machine, [{ path, data: null, parseError: 'x' }])).toEqual([]);
+  });
+
+  it('main に記録が無ければ報告しない（main のスキーマも読まない）', () => {
+    const noRecord = { ...machine, 'provenance/README.md': '# provenance' };
+    expect(runDeleted(noRecord, machine, [])).toEqual([]);
+  });
+
+  it('main の記録が不正なら例外を投げる（CLI は終了コード 2 にする）', () => {
+    const broken = {
+      ...recorded,
+      'provenance/test-machine.json': JSON.stringify({ machineId: 'test-machine' }),
+    };
+    expect(() => runDeleted(broken, machine, [])).toThrow(
+      'main の出典記録が不正: provenance/test-machine.json: '
+    );
   });
 });

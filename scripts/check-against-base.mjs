@@ -9,6 +9,7 @@
  * - ID を持たない項目（明示の id の無い確定演出など）を消したら、出典記録の removed に書いてあるか
  * - 新しく足した確定演出などに、明示の id があるか（アプリが取り込むたびに乱数の ID にならないように）
  * - 新しく足した機種に、出典記録があるか
+ * - main に出典記録がある機種（比べる側の index.json にも残る機種）の記録（provenance/<機種ID>.json）を消していないか
  * - 出典記録の removed と retiredIds（外した ID の台帳）: 新しく外した項目の previous・appId が main と同じか、
  *   main の記録の retiredIds を消していないか（main の provenance/ も読む）。台帳の ID の再利用は validate が止める
  * - main の出典記録は、main のスキーマと main の index.json に照らしてから使う。合わなければ比べられない（終了コード 2）。

@@ -2,6 +2,7 @@ import { execFileSync } from 'child_process';
 import { checkDerivedIds } from './derived-ids.mjs';
 import { checkLedgerAgainstBase } from './ledger-against-base.mjs';
 import {
+  checkDeletedBaseRecords,
   checkNewMachineRecords,
   checkRemovedItems,
   checkRulesAgainstBase,
@@ -33,7 +34,7 @@ export function listGitFiles(base, dir, cwd) {
 
 /**
  * main と比べる検査（アプリが作る ID・採否ルール・ID を持たない項目の削除・新しい機種の出典記録・
- * 外した ID の台帳）をまとめて実行し、終了コードと表示する行を決める。
+ * main に記録がある機種の記録の削除・外した ID の台帳）をまとめて実行し、終了コードと表示する行を決める。
  *
  * @param {{ base: string, readBase: (path: string) => string, readHead: (path: string) => string,
  *   listBase: (dir: string) => string[],
@@ -50,6 +51,7 @@ export function runAgainstBase({ base, readBase, readHead, listBase, loadProvena
       ...checkRulesAgainstBase(io),
       ...checkRemovedItems(io),
       ...checkNewMachineRecords(io),
+      ...checkDeletedBaseRecords(io),
       ...checkLedgerAgainstBase(io),
     ];
   } catch (e) {

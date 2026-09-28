@@ -150,7 +150,12 @@ describe('runAgainstBase', () => {
       'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
       'provenance/test-machine.json': JSON.stringify(validRecord({ retiredIds: [retired] })),
     };
-    const provenanceFiles = [{ data: { machineId: 'test-machine', removed: [], retiredIds: [] } }];
+    const provenanceFiles = [
+      {
+        path: 'provenance/test-machine.json',
+        data: { machineId: 'test-machine', removed: [], retiredIds: [] },
+      },
+    ];
     expect(run(base, map, provenanceFiles)).toEqual({
       code: 1,
       lines: [
@@ -179,8 +184,11 @@ describe('runAgainstBase: main の出典記録を、main のスキーマと main
     [path]: text,
   });
 
+  /** 比べる側にも同じ記録を残す（main に記録がある機種の記録を消すと止まるため） */
+  const kept = (record = validRecord()) => [{ path: RECORD, data: record }];
+
   it('main の記録が main のスキーマ・index と合えば比べる（終了コード 0）', () => {
-    expect(run(mainWith(RECORD, JSON.stringify(validRecord())), map).code).toBe(0);
+    expect(run(mainWith(RECORD, JSON.stringify(validRecord())), map, kept()).code).toBe(0);
   });
 
   it.each([
@@ -245,7 +253,13 @@ describe('runAgainstBase: main の出典記録を、main のスキーマと main
     // main のスキーマでは candidates が要らない: main の決まりで正しかった記録は通す
     const looser = { ...schema, required: schema.required.filter((key) => key !== 'candidates') };
     const noCandidates = JSON.stringify(omit(validRecord(), 'candidates'));
-    expect(run(mainWith(RECORD, noCandidates, JSON.stringify(looser)), map).code).toBe(0);
+    expect(
+      run(
+        mainWith(RECORD, noCandidates, JSON.stringify(looser)),
+        map,
+        kept(JSON.parse(noCandidates))
+      ).code
+    ).toBe(0);
     // main のスキーマで note が要る: 比べる側のスキーマに合う記録でも、main の決まりに合わなければ止める
     const stricter = {
       ...schema,
@@ -382,6 +396,27 @@ describe('PR を続けて流す（validate と check:base）', () => {
       '  ERROR machine-a: role::BIG: 記録を変えずに機種ファイルの値を main から変えている（記録も作り直すか、値を main に戻す）'
     );
     expect(problems.filter((line) => line.startsWith('  ERROR'))).toHaveLength(1);
+  });
+
+  it('バッチ2の後、記録を消して暫定の役の確率を変える PR は止まる（validate は通る）', () => {
+    // 最終レビュー3 の I1 の再現: 記録を消すと、validate も採否ルールの検査も machine-a を見なくなる
+    const deletedLine =
+      '  ERROR machine-a: main に出典記録がある機種の記録を消している（記録がある機種では記録も直す）';
+    const machineB = { name: 'B', roles: [bigRole(toStoredProbability(300))] };
+    const dropped = repo(
+      {
+        'machine-a': { name: 'A', roles: [bigRole(toStoredProbability(295.2 / 1.05))] },
+        'machine-b': machineB,
+      },
+      [recordOf('machine-b', [confirmedBig])]
+    );
+    expect(problemsOf(pr2(), dropped)).toEqual(['問題: 1件', deletedLine]);
+
+    // 機種ごと index.json から消すなら、この文面は出ない（ID の検査が消えた項目を報告する）
+    const machineRemoved = repo({ 'machine-b': machineB }, [recordOf('machine-b', [confirmedBig])]);
+    const problems = problemsOf(pr2(), machineRemoved);
+    expect(problems.length).toBeGreaterThan(0);
+    expect(problems).not.toContain(deletedLine);
   });
 
   it('比べる側が validate を通っても、main の記録だけが不正なら比べられない（マージ済みとして飛ばさない）', () => {
