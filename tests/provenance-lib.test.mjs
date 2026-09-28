@@ -535,29 +535,22 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
     expect(allowedUnits('zoneRole', { probabilities: { 1: 0, 6: 0.25 } })).toEqual(['denominator']);
   });
 
-  it('ほかの数値の項目は、0 でない値がすべて 10% 以上なら percent も使える', () => {
-    const wide = allowedUnits('trialSuccessRate', { probabilities: { 1: 0.25, 6: 0 } });
-    expect(wide).toEqual(['denominator', 'percent']);
-    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.003661 } })).toEqual([
-      'denominator',
-    ]);
-    expect(allowedUnits('modeTransition', { rates: { 1: 0.1, 6: 0.047 } })).toEqual([
-      'denominator',
-    ]);
-  });
-
-  it('10% ちょうどは percent も使える（境界を含む）', () => {
-    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.1, 6: 0.2 } })).toEqual([
-      'denominator',
-      'percent',
-    ]);
+  it('ほかの数値の項目は、値の大きさによらず denominator か percent を選べる（2026-09-27）', () => {
+    const both = ['denominator', 'percent'];
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.25, 6: 0 } })).toEqual(both);
+    // 10% 未満の値（出典が % でしか出していない小さい割合。1/x に換算すると出典に無い桁を作る）
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.031, 6: 0.047 } })).toEqual(
+      both
+    );
+    expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.003661 } })).toEqual(both);
+    expect(allowedUnits('modeTransition', { rates: { 1: 0.1, 6: 0.047 } })).toEqual(both);
   });
 
   it('最上位の終了画面の distribution（古い形）は、数値として扱う', () => {
     const [item] = listMachineItems({
       endScreens: [{ name: '金枠', distribution: { 1: 0, 6: 0.01 } }],
     });
-    expect(allowedUnits('endScreen', item.entry)).toEqual(['denominator']);
+    expect(allowedUnits('endScreen', item.entry)).toEqual(['denominator', 'percent']);
   });
 
   it('グループの中の終了画面の distribution は、アプリが改名しないので数値として扱わない', () => {
@@ -581,6 +574,6 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
 
   it('数値と設定の組の両方がある項目は、数値の側で決める', () => {
     const both = { probabilities: { 1: 0.05 }, confirmedSettings: ['6'] };
-    expect(allowedUnits('endScreen', both)).toEqual(['denominator']);
+    expect(allowedUnits('endScreen', both)).toEqual(['denominator', 'percent']);
   });
 });

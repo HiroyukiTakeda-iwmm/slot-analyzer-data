@@ -591,27 +591,60 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('割合は、0 でない値がすべて 10% 以上の項目だけ percent で記録できる', () => {
+  it('10% 未満の割合（3.1% など）も percent で記録でき、確定・残す・食い違いを丸めの幅で判定する（2026-09-27）', () => {
+    const site = (key, host) => ({
+      key,
+      kind: 'analysis-site',
+      url: `https://${host}/kaiseki/1/`,
+      retrievedAt: '2026-09-26',
+    });
     const withRates = {
       ...machine,
       trialSuccessRates: [
-        { name: 'CZ成功率', probabilities: { 1: 0.25, 6: 0.5 } },
-        { name: 'BB確率', probabilities: { 1: 0.003661, 6: 0.004365 } },
+        { name: '強チャンス目CZ当選率', probabilities: { 1: 0.031, 6: 0.047 } },
+        { name: '弱チャンス目CZ当選率', probabilities: { 1: 0.0312, 6: 0.0468 } },
+        { name: 'ベルCZ当選率', probabilities: { 1: 0.031, 6: 0.047 } },
       ],
     };
     const files = [{ path: 'machines/test/test-machine.json', data: withRates }];
-    const item = (name, value) => ({
+    const SHOWN = { 1: '3.1%', 6: '4.7%' };
+    // 設定1の幅（3.25〜3.35%）が SHOWN の幅（3.05〜3.15%）と重ならない
+    const RIVAL = { 1: '3.3%', 6: '4.7%' };
+    const item = (name, status, values, adopted) => ({
       kind: 'trialSuccessRate',
       name,
-      status: 'confirmed',
+      status,
       unit: 'percent',
-      values: { chonborista: value, 'nana-press': value },
-      adopted: value,
+      values,
+      adopted,
     });
     const rec = record();
-    rec.items.push(item('CZ成功率', { 1: 25, 6: 50 }), item('BB確率', { 1: 0.3661, 6: 0.4365 }));
+    rec.sources.push(site('p-town-dmm', 'p-town.dmm.com'), site('slopachi', 'slopachi-quest.com'));
+    rec.items.push(
+      // 確定: 表示の桁が違っても、丸めの幅（3.05〜3.15% と 3.135〜3.145%）が重なれば一致
+      item(
+        '強チャンス目CZ当選率',
+        'confirmed',
+        { chonborista: SHOWN, 'nana-press': { 1: 3.14, 6: 4.66 } },
+        SHOWN
+      ),
+      // 残す: 出典の幅（3.05〜3.15%）が機種ファイルの確率（0.0312）の幅と重なれば裏づけになる
+      item(
+        '弱チャンス目CZ当選率',
+        'kept-single-source',
+        { 'nana-press': SHOWN },
+        { 1: 3.12, 6: 4.68 }
+      ),
+      // 食い違い: 3.1% の2サイトと、幅の重ならない 3.3% の2サイトがあるので、確定にできない
+      item(
+        'ベルCZ当選率',
+        'confirmed',
+        { chonborista: SHOWN, 'p-town-dmm': SHOWN, 'nana-press': RIVAL, slopachi: RIVAL },
+        SHOWN
+      )
+    );
     expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
-      'trialSuccessRate::BB確率: unit=percent は使えない（機種ファイルの項目に合わせて denominator にする）',
+      'trialSuccessRate::ベルCZ当選率: confirmed には、公式の値、または別の値で一致する組の無い2サイト以上の一致が必要（採用値は選んだ出典の値そのもの。公式があれば公式の値）',
     ]);
   });
 
@@ -631,7 +664,7 @@ describe('validateProvenance', () => {
       adopted: GOLD,
     });
     expect(messages(run(rec, { files }))).toContain(
-      'endScreen::金: unit=settings は使えない（機種ファイルの項目に合わせて denominator にする）'
+      'endScreen::金: unit=settings は使えない（機種ファイルの項目に合わせて denominator か percent にする）'
     );
   });
 
@@ -648,7 +681,7 @@ describe('validateProvenance', () => {
     );
   });
 
-  it('distribution（アプリが確率として読む古い形）の項目は denominator で記録する', () => {
+  it('distribution（アプリが確率として読む古い形）の項目は、数値の unit（denominator か percent）で記録する', () => {
     const withDistribution = {
       ...machine,
       endScreens: [{ name: '金枠', distribution: { 1: 0, 6: 0.01 } }],
@@ -672,7 +705,7 @@ describe('validateProvenance', () => {
       adopted: true,
     };
     expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
-      'endScreen::金枠: unit=presence は使えない（機種ファイルの項目に合わせて denominator にする）',
+      'endScreen::金枠: unit=presence は使えない（機種ファイルの項目に合わせて denominator か percent にする）',
     ]);
   });
 

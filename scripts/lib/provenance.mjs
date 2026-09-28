@@ -366,18 +366,16 @@ export function machineValueProblem(item, entry) {
     : `機種ファイルの値が、採用値を有効数字6桁にした値と違う（${differences.join('、')}）`;
 }
 
-/** percent で記録できるのは、0 でない確率がすべてこれ以上の項目だけ（仕様 5.4） */
-const PERCENT_MIN_PROBABILITY = 0.1;
-
 /**
  * 機種ファイルの項目の種類と中身から、出典記録に使える unit を決める（仕様 5.4）。
  * 記録する側が選べると、緩い比べ方にして値の照合を外せてしまうので、ここで決める。
  * - patterns 形式（アプリは終了画面の patterns を別々の終了画面に展開する）は、出典記録の形を
  *   段階1で決めるまで記録できない（空の配列を返す）
  * - 役（role・zoneRole）は denominator
- * - ほかの数値（probabilities / rates）の項目は、0 でない値がすべて 10% 以上なら
- *   denominator か percent、それ以外は denominator（割合の丸めの幅は、小さい値には値に比べて広すぎるため。
- *   0.4% と書くと 0.35〜0.45%）。最上位の終了画面の distribution は、listMachineItems が probabilities として渡す
+ * - ほかの数値（probabilities / rates）の項目は、値の大きさによらず denominator か percent（2026-09-27 に
+ *   本人が決定）。どちらでも丸めの幅が重なるかで比べる。表示の桁が粗い出典の幅が広い（"3.1%" は 3.05〜3.15%）のは
+ *   その出典の精度そのもので、比べ方の誤りではない。% でしか出ていない小さい割合を 1/x に換算すると、出典に無い桁を
+ *   作ってしまう。最上位の終了画面の distribution は、listMachineItems が probabilities として渡す
  * - 数値が無く、確定・否定の設定があれば settings。どちらも無ければ presence
  * 数値と設定の組の両方がある項目は、数値の側で決める。
  * @returns {string[]}
@@ -387,10 +385,7 @@ export function allowedUnits(kind, entry) {
   const map = numericMap(entry);
   if (map && Object.keys(map).length > 0) {
     if (kind === 'role' || kind === 'zoneRole') return ['denominator'];
-    const nonZero = Object.values(map).filter((p) => p !== 0);
-    return nonZero.every((p) => p >= PERCENT_MIN_PROBABILITY)
-      ? ['denominator', 'percent']
-      : ['denominator'];
+    return ['denominator', 'percent'];
   }
   if (machineValue(entry, 'settings') !== null) return ['settings'];
   return ['presence'];
