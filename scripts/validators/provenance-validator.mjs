@@ -177,8 +177,8 @@ function unknownSourceErrors(path, key, values, sourceKinds) {
 }
 
 /**
- * unit が、機種ファイルの項目（entry。itemEntry の形）の種類と中身で決まるものか（allowedUnits）。
- * 記録する側は選べない。items と removed で同じ文面にする。
+ * unit が、機種ファイルの項目（entry。itemEntry の形）の種類と中身で決まる候補にあるか（allowedUnits）。
+ * 候補の中から出典の表示の形に合わせて選んだかは、確かめられない。items と removed で同じ文面にする。
  * @returns {string | null} 合わないときの説明
  */
 function unitProblem(key, kind, entry, unit) {
@@ -214,7 +214,8 @@ function checkItem(path, item, sourceKinds, machineItems) {
   const key = itemKey(item.kind, item.name);
   const errors = unknownSourceErrors(path, key, item.values, sourceKinds);
 
-  // unit は機種ファイルの項目の種類と中身で決まる（記録する側は選べない）。形の検査より先に見る
+  // unit の候補は機種ファイルの項目の種類と中身で決まる（候補の中からは出典の表示の形に合わせて選ぶ。
+  // これは確かめられない）。形の検査より先に見る
   const target = machineItems.get(key);
   if (target) {
     const problem = unitProblem(key, item.kind, target.entry, item.unit);

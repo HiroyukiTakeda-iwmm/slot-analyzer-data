@@ -538,7 +538,7 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
   it('ほかの数値の項目は、値の大きさによらず denominator か percent を選べる（2026-09-27）', () => {
     const both = ['denominator', 'percent'];
     expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.25, 6: 0 } })).toEqual(both);
-    // 10% 未満の値（出典が % でしか出していない小さい割合。1/x に換算すると出典に無い桁を作る）
+    // 10% 未満の値（2026-09-27 より前は denominator だけ。% の表示はそのときも denominator に "3.1%" と書けた）
     expect(allowedUnits('trialSuccessRate', { probabilities: { 1: 0.031, 6: 0.047 } })).toEqual(
       both
     );
