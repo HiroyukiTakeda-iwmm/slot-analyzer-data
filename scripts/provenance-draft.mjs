@@ -10,10 +10,12 @@
  *   --root の既定は、この道具のあるリポジトリ
  *
  * 出力: 標準出力に1つの JSON { "record": 出典記録の下書き, "machineValues": [{ kind, name, status, value }] }。
- * 標準エラーに、候補の数と理由・外す項目・メモの unreadable（読めなかったページ）を出す。
+ * 標準エラーに、候補の数と理由・外す項目・注意（外した ID の台帳の ID を使うことになりそうな項目）・メモの
+ * unreadable（読めなかったページ）を出す。
  *
- * 終了コード: 0 = 下書きを出した / 1 = メモが形に合わない・機種ファイルと合わない（下書きは出さない。理由は標準
- * エラー） / 2 = 読めない（メモ・index.json・機種ファイル・今の出典記録を読めない、引数の誤り、道具の誤り）
+ * 終了コード: 0 = 下書きを出した / 1 = 下書きを出さない（メモが形に合わない・機種ファイルと合わない・出典の
+ * 確かめに合わない・外す項目があるのに読み直しが要るか読めなかったページがある。理由は標準エラー） / 2 = 読めない
+ * （メモ・index.json・機種ファイル・今の出典記録・メーカーの公式ドメインの一覧を読めない、引数の誤り、道具の誤り）
  */
 
 import { existsSync, readFileSync } from 'fs';
@@ -21,9 +23,16 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { collectItemIds } from './lib/derived-ids.mjs';
 import { compileSchema } from './lib/compile-schema.mjs';
+import { loadOfficialDomainsFile } from './lib/load-provenance.mjs';
 import { itemLabel, readNote } from './lib/notes.mjs';
-import { draftRecord, machineProblems, memoProblems } from './lib/provenance-draft.mjs';
-import { itemKey, listMachineItems } from './lib/provenance.mjs';
+import {
+  draftRecord,
+  machineProblems,
+  memoProblems,
+  newItemUnitProblems,
+} from './lib/provenance-draft.mjs';
+import { listMachineItems, sourceProblems } from './lib/provenance.mjs';
+import { validateOfficialDomains } from './validators/official-domains-validator.mjs';
 
 const DEFAULT_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const USAGE =
@@ -142,8 +151,8 @@ function unreadableLines(label, note) {
   ];
 }
 
-/** 標準エラーに出す、下書きの知らせ（候補の数と理由・外す項目・読めなかったページ） */
-function formatReport({ record, needsReread }, { isNew, extract, reread }) {
+/** 標準エラーに出す、下書きの知らせ（候補の数と理由・外す項目・注意・読めなかったページ） */
+function formatReport({ record, warnings }, { isNew, extract, reread }) {
   const { items, candidates, removed } = record;
   const lines = [
     `${record.machineId}: 出典記録の下書き（${isNew ? '新台' : '既存の機種'}）: 採用 ${items.length}・候補 ${candidates.length}・外す ${removed.length}`,
@@ -165,16 +174,13 @@ function formatReport({ record, needsReread }, { isNew, extract, reread }) {
     }
   }
   if (removed.length > 0) {
-    const needs = new Set(needsReread);
     lines.push(`外す項目 ${removed.length} 件:`);
     for (const entry of removed) {
       const appId = entry.appId === undefined ? '' : `（appId: ${entry.appId}）`;
-      const reread = needs.has(itemKey(entry.kind, entry.name))
-        ? '（読み直しが無い。ちょんぼりすたの値と合う読み直しがあれば provisional-chonborista になるので、validate はこの removed を止める。読み直してから作り直す）'
-        : '';
-      lines.push(`  ${itemLabel(entry)}: ${entry.reason}${appId}${reread}`);
+      lines.push(`  ${itemLabel(entry)}: ${entry.reason}${appId}`);
     }
   }
+  lines.push(...warnings.map((warning) => `注意: ${warning}`));
   lines.push(...unreadableLines('抜き出しのメモ', extract));
   lines.push(...unreadableLines('読み直しのメモ', reread));
   return lines;
@@ -209,8 +215,18 @@ function main() {
     return 2;
   }
 
+  // 出典の確かめ（公式ドメインの一覧も）は validate と同じ規則。一覧を読めない・一覧に問題があるときは、空の一覧として
+  // 続けない（公式の出典を黙って落とさない）
+  const official = validateOfficialDomains(loadOfficialDomainsFile(args.root));
+  if (official.errors.length > 0) {
+    for (const e of official.errors) console.error(`${e.file}: ${e.message}`);
+    return 2;
+  }
+
   const problems = [
     ...memoProblems(extract, reread),
+    ...sourceProblems(extract.sources, official.domains),
+    ...newItemUnitProblems(extract, repo.machineItems ?? []),
     ...(repo.machine ? machineProblems(extract, repo.entry, repo.machine, repo.machineItems) : []),
   ];
   if (problems.length > 0) {
@@ -223,15 +239,13 @@ function main() {
     printProblems(extract.machineId, result.problems);
     return 1;
   }
-  // 出典記録のスキーマに通してから出す（メモはスキーマで確かめてあり、ここで落ちるのは道具の誤り）
+  // 出典記録のスキーマに通してから出す（メモはスキーマで確かめてあり、ここで落ちるのは道具の誤りなので 2）
   if (!validateRecord(result.record)) {
-    printProblems(
-      extract.machineId,
-      validateRecord.errors.map(
-        (e) => `下書きが出典記録の形に合わない: ${e.instancePath} ${e.message}`
-      )
-    );
-    return 1;
+    console.error(`${extract.machineId}: 下書きを作れない（道具の誤り）:`);
+    for (const e of validateRecord.errors) {
+      console.error(`  下書きが出典記録の形に合わない: ${e.instancePath} ${e.message}`);
+    }
+    return 2;
   }
 
   process.stdout.write(

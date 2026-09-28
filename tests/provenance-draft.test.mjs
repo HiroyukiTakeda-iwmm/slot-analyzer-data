@@ -134,7 +134,7 @@ function newReread() {
         source: 'chonborista',
         value: { 1: '500.0', 2: 490, 4: 480, 5: 470, 6: 460 },
       },
-      { kind: 'role', name: 'チェリー', source: 'chonborista', value: every(NEW_SETTINGS, 120) },
+      // チェリーはちょんぼりすたの値だけで、読み直していない（候補にする。読み直しが合わないメモは下書きを出さない）
       {
         kind: 'endScreen',
         name: '金',
@@ -235,10 +235,14 @@ function oldExtract() {
       },
       { kind: 'confirmationEvent', name: '虹', unit: 'settings', values: {} },
       {
+        // ちょんぼりすたと dmm が食い違い、どちらも今の値と合わない。読み直しが合っても外す
         kind: 'confirmationEvent',
         name: '金',
         unit: 'settings',
-        values: { chonborista: { confirmed: ['5', '6'], excluded: [] } },
+        values: {
+          chonborista: { confirmed: ['5', '6'], excluded: [] },
+          dmm: { confirmed: ['6'], excluded: [] },
+        },
       },
       {
         kind: 'confirmationEvent',
@@ -273,7 +277,7 @@ function oldReread() {
         kind: 'confirmationEvent',
         name: '金',
         source: 'chonborista',
-        value: { confirmed: ['6'], excluded: [] },
+        value: { confirmed: ['6', '5'], excluded: [] },
       },
       {
         kind: 'confirmationEvent',
@@ -307,14 +311,15 @@ describe('scripts/provenance-draft.mjs', () => {
     return path;
   }
 
-  /** machines/index.json と機種ファイル、出典記録を置く */
-  function setupRepo({ machines = [], records = [] } = {}) {
+  /** machines/index.json と機種ファイル、出典記録、メーカーの公式ドメインの一覧を置く */
+  function setupRepo({ machines = [], records = [], officialDomains = { domains: [] } } = {}) {
     writeJson('machines/index.json', {
       version: '3.9.0',
       machines: machines.map(({ id, file }) => ({ id, file })),
     });
     for (const { file, data } of machines) writeJson(`machines/${file}`, data);
     for (const record of records) writeJson(`provenance/${record.machineId}.json`, record);
+    writeJson('config/official-domains.json', officialDomains);
   }
 
   function setupOld({ machine = oldMachine(), records = [oldRecord()] } = {}) {
@@ -593,8 +598,11 @@ describe('scripts/provenance-draft.mjs', () => {
           name: '金',
           unit: 'settings',
           previous: machine.confirmationEvents[1],
-          values: { chonborista: { confirmed: ['5', '6'], excluded: [] } },
-          reread: { by: BY, value: { confirmed: ['6'], excluded: [] } },
+          values: {
+            chonborista: { confirmed: ['5', '6'], excluded: [] },
+            dmm: { confirmed: ['6'], excluded: [] },
+          },
+          reread: { by: BY, value: { confirmed: ['6', '5'], excluded: [] } },
           reason: '今の値を裏づける出典なし',
         },
         {
@@ -776,12 +784,24 @@ describe('scripts/provenance-draft.mjs', () => {
     });
   });
 
-  describe('外した ID の台帳（retiredIds）の ID を新しい項目が使うとき（終了コード 1）', () => {
+  describe('外した ID の台帳（retiredIds）の ID を新しい項目が使うことになりそうなとき（注意だけ・終了コード 0）', () => {
     function recordWithRetired(rows) {
       return { ...oldRecord(), removed: [], retiredIds: rows };
     }
 
-    it('引き継いだ台帳の ID を、足し直す項目が使うことになれば、明示の別の id が要ると示して止める', () => {
+    /** 下書きを出し（終了コード 0）、標準エラーの注意に項目と ID があること。標準エラーを返す */
+    function warned(result, label, id) {
+      const { record } = succeeded(result);
+      expect(record.items.map((item) => `${item.kind} ${item.name}`)).toContain(label);
+      expect(result.stderr).toContain('注意');
+      expect(result.stderr).toContain(label);
+      expect(result.stderr).toContain(`（${id}）`);
+      expect(result.stderr).toContain('明示の別の id を付ける');
+      expect(result.stderr).toContain('最後の判断は validate');
+      return result.stderr;
+    }
+
+    it('引き継いだ台帳の ID を、足し直す項目が使うことになりそうなら、明示の別の id が要ると注意する（止めない）', () => {
       setupOld({
         records: [recordWithRetired([{ kind: 'endScreen', name: 'BLUE', appId: 'blue' }])],
       });
@@ -795,13 +815,10 @@ describe('scripts/provenance-draft.mjs', () => {
           dmm: { confirmed: ['4'], excluded: [] },
         },
       });
-      const stderr = rejected(draft(extract, oldReread()));
-      expect(stderr).toContain('endScreen BLUE');
-      expect(stderr).toContain('（blue）');
-      expect(stderr).toContain('明示の');
+      warned(draft(extract, oldReread()), 'endScreen BLUE', 'blue');
     });
 
-    it('今回外した項目の ID を、新しい項目が使うことになっても止める', () => {
+    it('今回外した項目の ID を、新しい項目が使うことになりそうなときも注意する', () => {
       setupOld({ records: [] });
       const extract = oldExtract();
       extract.items.push({
@@ -813,9 +830,7 @@ describe('scripts/provenance-draft.mjs', () => {
           dmm: { confirmed: ['4'], excluded: [] },
         },
       });
-      const stderr = rejected(draft(extract, oldReread()));
-      expect(stderr).toContain('endScreen x');
-      expect(stderr).toContain('（x）');
+      warned(draft(extract, oldReread()), 'endScreen x', 'x');
     });
 
     it('ゾーンの中の役は、外す項目を除いたそのゾーンの末尾に足したときの ID で確かめる', () => {
@@ -856,12 +871,10 @@ describe('scripts/provenance-draft.mjs', () => {
           },
         ],
       };
-      const stderr = rejected(draft(extract));
-      expect(stderr).toContain('zoneRole AT::スイカ');
-      expect(stderr).toContain('（suika_2）');
+      warned(draft(extract), 'zoneRole AT::スイカ', 'suika_2');
     });
 
-    it('採用しない（候補の）項目や、台帳と違う ID になる項目は止めない', () => {
+    it('採用しない（候補の）項目や、台帳と違う ID になる項目は注意しない', () => {
       setupOld({
         records: [recordWithRetired([{ kind: 'endScreen', name: 'BLUE', appId: 'blue' }])],
       });
@@ -883,9 +896,189 @@ describe('scripts/provenance-draft.mjs', () => {
           },
         }
       );
-      const { record } = succeeded(draft(extract, oldReread()));
+      const result = draft(extract, oldReread());
+      const { record } = succeeded(result);
       expect(record.candidates.map((c) => c.name)).toContain('BLUE');
       expect(record.items.map((item) => item.name)).toContain('RED');
+      expect(result.stderr).not.toContain('注意');
+    });
+  });
+
+  describe('下書きを出さないとき（終了コード 1）: 読めなかったページ・読み直し・unit・出典', () => {
+    const PAGE = {
+      url: 'https://example.com/slot/1/',
+      route: 'WebFetch',
+      at: '2026-09-28',
+      reason: '403 で読めない',
+    };
+    const REMOVAL_WITH_UNREADABLE =
+      '読めなかったページがある機種では項目を外せない（読めてから作り直す）';
+
+    it('既存の機種で、抜き出しか読み直しのメモに読めなかったページがあり、外す項目があれば止める', () => {
+      setupOld();
+      const extract = { ...oldExtract(), unreadable: [PAGE] };
+      const fromExtract = rejected(draft(extract, oldReread()));
+      expect(fromExtract).toContain(REMOVAL_WITH_UNREADABLE);
+      expect(fromExtract).toContain('role スイカ');
+
+      const reread = { ...oldReread(), unreadable: [PAGE] };
+      expect(rejected(draft(oldExtract(), reread))).toContain(REMOVAL_WITH_UNREADABLE);
+    });
+
+    it('外す項目が無ければ、読めなかったページがあっても止めない（新台）', () => {
+      setupRepo();
+      const result = draft({ ...newExtract(), unreadable: [PAGE] }, newReread());
+      succeeded(result);
+      expect(result.stderr).not.toContain(REMOVAL_WITH_UNREADABLE);
+    });
+
+    it('読み直しの無い removed で、読み直しが合えば暫定にできる項目があれば止める（validate と同じ式）', () => {
+      setupOld();
+      const stderr = rejected(draft(oldExtract()));
+      expect(stderr).toContain(
+        'confirmationEvent 青: 外す前に、ちょんぼりすたの値の読み直しが要る（合えば provisional-chonborista にする）'
+      );
+      // 食い違う出典があって暫定にできない項目は、読み直しが無くても止めない
+      expect(stderr).not.toContain('confirmationEvent 金');
+
+      // 読み直しのメモにその項目の行が無いときも止める
+      const reread = oldReread();
+      reread.items = reread.items.filter((line) => line.name !== '青');
+      expect(rejected(draft(oldExtract(), reread))).toContain('confirmationEvent 青');
+    });
+
+    it('ちょんぼりすたの読み直しの値が、抜き出しのちょんぼりすたの値と合わなければ止める（照合の終了コード 0 を先に）', () => {
+      setupRepo();
+      const reread = newReread();
+      reread.items[2] = { ...reread.items[2], value: every(NEW_SETTINGS, 600) };
+      const stderr = rejected(draft(newExtract(), reread));
+      expect(stderr).toContain('role REG [chonborista]');
+      expect(stderr).toContain('reread-compare');
+
+      // 抜き出しにちょんぼりすたの値が無い項目の、ちょんぼりすたの読み直し
+      const extra = newReread();
+      extra.items.push({
+        kind: 'trialSuccessRate',
+        name: 'CZ成功率',
+        source: 'chonborista',
+        value: { 1: 30, 2: 31, 4: 33, 5: 35, 6: 40 },
+      });
+      expect(rejected(draft(newExtract(), extra))).toContain(
+        'trialSuccessRate CZ成功率 [chonborista]'
+      );
+    });
+
+    it('ほかの出典の読み直しが合わなくても止めない（採否に使うのはちょんぼりすたの行だけ）', () => {
+      setupRepo();
+      const reread = newReread();
+      expect(reread.items[1]).toMatchObject({ name: 'BIG', source: 'nana' });
+      succeeded(draft(newExtract(), reread));
+    });
+
+    it('新しく足す項目の unit を種類で確かめる（役・ゾーンの役は denominator だけ）', () => {
+      setupRepo();
+      const role = newExtract();
+      role.items[3] = { ...role.items[3], kind: 'role' };
+      const stderr = rejected(draft(role));
+      expect(stderr).toContain('role CZ成功率: unit=percent は使えない');
+      expect(stderr).toContain('denominator');
+
+      const zone = newExtract();
+      zone.items[6] = { ...zone.items[6], kind: 'zoneRole', name: 'AT::金' };
+      expect(rejected(draft(zone))).toContain('zoneRole AT::金: unit=settings は使えない');
+
+      // 既存の機種に新しく足す役も
+      setupOld();
+      const extract = oldExtract();
+      extract.items.push({
+        kind: 'role',
+        name: 'ベル',
+        unit: 'percent',
+        values: { nana: every(SETTINGS, 10), dmm: every(SETTINGS, '10.0') },
+      });
+      expect(rejected(draft(extract, oldReread()))).toContain('role ベル: unit=percent は使えない');
+    });
+
+    it('出典の確かめ（validate と同じ）: 同じサイトを2つの出典・chonborista のキーと URL・一覧に無い公式', () => {
+      setupRepo();
+      const sameSite = newExtract();
+      sameSite.sources = [
+        ...SOURCES,
+        { ...SOURCES[1], key: 'nana2', url: 'https://sp.nana-press.com/kaiseki/1/' },
+      ];
+      expect(rejected(draft(sameSite, newReread()))).toContain(
+        '同じサイト（nana-press.com）を2つの出典に登録している: nana・nana2'
+      );
+
+      const chonboristaKey = newExtract();
+      chonboristaKey.sources = [
+        ...SOURCES,
+        { ...SOURCES[0], key: 'chonbo', url: 'https://chonborista.com/slot/other/' },
+      ];
+      expect(rejected(draft(chonboristaKey, newReread()))).toContain(
+        'chonborista.com の出典は、キーを chonborista にする: chonbo'
+      );
+
+      const chonboristaUrl = newExtract();
+      chonboristaUrl.sources = [
+        { ...SOURCES[0], url: 'https://example.com/chonborista/' },
+        ...SOURCES.slice(1),
+      ];
+      expect(rejected(draft(chonboristaUrl, newReread()))).toContain(
+        'chonborista の URL は https://chonborista.com/ で始める'
+      );
+
+      const chonboristaKind = newExtract();
+      chonboristaKind.sources = [{ ...SOURCES[0], kind: 'official' }, ...SOURCES.slice(1)];
+      expect(rejected(draft(chonboristaKind, newReread()))).toContain(
+        'chonborista の出典は kind を analysis-site にする'
+      );
+
+      const official = newExtract();
+      official.sources = [
+        ...SOURCES,
+        {
+          key: 'maker',
+          kind: 'official',
+          url: 'https://www.maker.co.jp/product/1/',
+          retrievedAt: '2026-09-28',
+        },
+      ];
+      official.items[4].values = { maker: every(NEW_SETTINGS, 12000) };
+      expect(rejected(draft(official, newReread()))).toContain(
+        '公式の出典のドメインが一覧（config/official-domains.json）に無い: maker.co.jp'
+      );
+    });
+
+    it('公式ドメインの一覧にある公式の出典は、公式として採用する', () => {
+      setupRepo({
+        officialDomains: {
+          domains: [
+            {
+              domain: 'maker.co.jp',
+              maker: 'メーカー',
+              evidence: 'https://www.maker.co.jp/company/',
+              checkedAt: '2026-09-28',
+            },
+          ],
+        },
+      });
+      const extract = newExtract();
+      extract.sources = [
+        ...SOURCES,
+        {
+          key: 'maker',
+          kind: 'official',
+          url: 'https://www.maker.co.jp/product/1/',
+          retrievedAt: '2026-09-28',
+        },
+      ];
+      extract.items[4].values = { maker: every(NEW_SETTINGS, 12000) };
+      const { record } = succeeded(draft(extract, newReread()));
+      expect(record.items.find((item) => item.name === '中段チェリー')).toMatchObject({
+        status: 'confirmed',
+        adopted: every(NEW_SETTINGS, 12000),
+      });
     });
   });
 
@@ -965,6 +1158,21 @@ describe('scripts/provenance-draft.mjs', () => {
       expect(other.stderr).toContain('machineId');
     });
 
+    it('メーカーの公式ドメインの一覧を読めない・一覧に問題がある（空の一覧として続けない）', () => {
+      setupRepo();
+      const extract = writeJson('notes/m.extract.json', newExtract());
+      writeJson('config/official-domains.json', '{');
+      const broken = run([extract, '--root', dir]);
+      expect(broken.status).toBe(2);
+      expect(broken.stdout).toBe('');
+      expect(broken.stderr).toContain('公式ドメインの一覧を読めない');
+
+      writeJson('config/official-domains.json', { domains: [{ domain: 'www.maker.co.jp' }] });
+      const invalid = run([extract, '--root', dir]);
+      expect(invalid.status).toBe(2);
+      expect(invalid.stderr).toContain('config/official-domains.json');
+    });
+
     it('引数の誤り', () => {
       expect(run([]).status).toBe(2);
       expect(run(['a.json', 'b.json']).status).toBe(2);
@@ -994,19 +1202,33 @@ describe('scripts/provenance-draft.mjs', () => {
       );
     });
 
-    it('標準エラーに、候補の数と理由・外す項目・読めなかったページを出す', () => {
+    it('標準エラーに、候補の数と理由・外す項目を出す', () => {
       setupOld();
-      const extract = oldExtract();
-      extract.unreadable = [
-        {
-          url: 'https://example.com/slot/1/',
-          route: 'WebFetch',
-          at: '2026-09-28',
-          reason: '403 で読めない',
-        },
-      ];
+      const result = draft(oldExtract(), oldReread());
+      succeeded(result);
+      const { stderr } = result;
+      expect(stderr).toContain('候補（採用しない）1 件');
+      expect(stderr).toContain('全設定がそろった出典が1つだけ（ちょんぼりすた以外）');
+      expect(stderr).toContain('trialSuccessRate AT初当り');
+      expect(stderr).toContain('外す項目 4 件');
+      expect(stderr).toContain('role スイカ: 出典なし（appId: suika_3）');
+    });
+
+    it('標準エラーに、読めなかったページを出す（外す項目の無い機種）', () => {
+      setupRepo();
+      const extract = {
+        ...newExtract(),
+        unreadable: [
+          {
+            url: 'https://example.com/slot/1/',
+            route: 'WebFetch',
+            at: '2026-09-28',
+            reason: '403 で読めない',
+          },
+        ],
+      };
       const reread = {
-        ...oldReread(),
+        ...newReread(),
         unreadable: [
           {
             url: 'https://example.com/slot/2/',
@@ -1016,22 +1238,18 @@ describe('scripts/provenance-draft.mjs', () => {
           },
         ],
       };
-      const { stderr } = draft(extract, reread);
-      expect(stderr).toContain('候補（採用しない）1 件');
-      expect(stderr).toContain('全設定がそろった出典が1つだけ（ちょんぼりすた以外）');
-      expect(stderr).toContain('trialSuccessRate AT初当り');
-      expect(stderr).toContain('外す項目 4 件');
-      expect(stderr).toContain('role スイカ: 出典なし（appId: suika_3）');
-      expect(stderr).toContain('https://example.com/slot/1/');
-      expect(stderr).toContain('403 で読めない');
-      expect(stderr).toContain('https://example.com/slot/2/');
+      const result = draft(extract, reread);
+      succeeded(result);
+      expect(result.stderr).toContain('https://example.com/slot/1/');
+      expect(result.stderr).toContain('403 で読めない');
+      expect(result.stderr).toContain('https://example.com/slot/2/');
     });
 
-    it('読み直しの無い removed で、読み直しが合えば暫定にできるものは、標準エラーで知らせる', () => {
-      setupOld();
-      const { stderr } = draft(oldExtract());
-      expect(stderr).toContain('confirmationEvent 金: 今の値を裏づける出典なし（読み直しが無い');
-      expect(stderr).toContain('読み直しのメモを渡していない');
+    it('読み直しのメモを渡していなければ、標準エラーで知らせる', () => {
+      setupRepo();
+      const result = draft(newExtract());
+      succeeded(result);
+      expect(result.stderr).toContain('読み直しのメモを渡していない');
     });
   });
 });

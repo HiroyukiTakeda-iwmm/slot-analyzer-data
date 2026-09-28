@@ -8,16 +8,25 @@
 
 import { DERIVED_ID_KINDS, collectDerivedIds, hasItemId, scopedId } from './derived-ids.mjs';
 import { hasPatterns } from './expand-patterns.mjs';
-import { extractItemProblems, itemLabel, lineLabel, rereadPairingProblems } from './notes.mjs';
+import {
+  compareReread,
+  extractItemProblems,
+  itemLabel,
+  lineLabel,
+  rereadPairingProblems,
+} from './notes.mjs';
 import {
   CHONBORISTA_KEY,
   NAME_SEPARATOR,
+  REREAD_BEFORE_REMOVAL,
   allowedUnits,
   decideExistingItem,
   decideNewItem,
   isNumericUnit,
   itemKey,
+  kindUnits,
   machineValue,
+  rereadWouldMakeProvisional,
   shapeError,
   storedMap,
   toStoredFromShown,
@@ -92,18 +101,67 @@ function rereadShapeProblems(extract, rereads) {
 }
 
 /**
+ * ちょんぼりすたの読み直しの行のうち、抜き出しのちょんぼりすたの値と合わないもの・比べられないもの（抜き出しに
+ * その項目か、その項目のちょんぼりすたの値が無いなど）。判定は照合の道具（reread-compare）と同じ compareReread。
+ * 採否に使うのはちょんぼりすたの行だけなので、ほかの出典の行の食い違いと、読み直していない行はここでは止めない
+ * （照合の道具が出す）。照らし合わせられるメモ（rereadPairingProblems が空）で、ちょんぼりすたの読み直しの値の形が
+ * 合うときに使う。
+ * @returns {string[]}
+ */
+function chonboristaRereadProblems(extract, reread) {
+  const { mismatches, rereadOnly } = compareReread(extract, reread);
+  const next = '先に node scripts/reread-compare.mjs で照合し、終了コード 0 にしてから作り直す';
+  return [
+    ...mismatches
+      .filter((line) => line.source === CHONBORISTA_KEY)
+      .map(
+        (line) =>
+          `読み直しの ${lineLabel(line)} が抜き出しの値と合わない（${line.details.join('・')}）。${next}`
+      ),
+    ...rereadOnly
+      .filter((line) => line.source === CHONBORISTA_KEY)
+      .map(
+        (line) =>
+          `読み直しの ${lineLabel(line)} を抜き出しと比べられない（${line.reason}）。${next}`
+      ),
+  ];
+}
+
+/**
  * メモ（抜き出しと、あれば読み直し）だけで分かる誤り。スキーマに合ったメモに使う。
  * 値が unit の形に合わない・同じ項目の行が2つある・出典キーが sources に無い（sources に同じキーが2つある）・
  * 項目名の形・読み直しの機種 ID が違う・読み直しに同じ項目と出典の行が2つある・ちょんぼりすたの読み直しの値が
- * unit の形に合わない。
+ * unit の形に合わない・ちょんぼりすたの読み直しの値が抜き出しのちょんぼりすたの値と合わない（照合の終了コード 0 を
+ * 先にする）。
  * @returns {string[]} 誤りが無ければ空の配列
  */
 export function memoProblems(extract, reread) {
-  return [
-    ...(reread ? rereadPairingProblems(extract, reread) : extractItemProblems(extract)),
-    ...nameProblems(extract),
-    ...rereadShapeProblems(extract, chonboristaRereads(reread)),
-  ];
+  const pairing = reread ? rereadPairingProblems(extract, reread) : extractItemProblems(extract);
+  const shapes = rereadShapeProblems(extract, chonboristaRereads(reread));
+  // 照らし合わせられないメモ・形の合わない読み直しは、食い違いとして重ねて出さない
+  const mismatches =
+    reread && pairing.length === 0 && shapes.length === 0
+      ? chonboristaRereadProblems(extract, reread)
+      : [];
+  return [...pairing, ...nameProblems(extract), ...shapes, ...mismatches];
+}
+
+/**
+ * 機種ファイルに無い新しい項目（新台のすべての項目も）の unit が、種類だけで決まる unit（kindUnits。allowedUnits と
+ * 同じ規則で、役・ゾーンの役は denominator だけ）に合わないところ。機種ファイルにある項目は machineProblems が
+ * allowedUnits で確かめる。
+ * @param {Array<{ kind: string, name: string }>} machineItems 機種ファイルの項目（新台は空の配列）
+ * @returns {string[]}
+ */
+export function newItemUnitProblems(extract, machineItems) {
+  const existing = new Set(machineItems.map((item) => itemKey(item.kind, item.name)));
+  return extract.items.flatMap(({ kind, name, unit }) => {
+    const allowed = kindUnits(kind);
+    if (existing.has(itemKey(kind, name)) || allowed === null || allowed.includes(unit)) return [];
+    return [
+      `${itemLabel({ kind, name })}: unit=${unit} は使えない（${kind} は ${allowed.join(' か ')} にする）`,
+    ];
+  });
 }
 
 /**
@@ -219,12 +277,14 @@ function withAddedItems(machine, removedRaws, added) {
 
 /**
  * 新しく足す項目（機種ファイルに無く、採用した項目）が、外した ID の台帳（引き継いだ行と今回足した行）の ID を
- * 使うことになるところ（仕様の決まり F3。足し直しなど）。ID を作る種類（DERIVED_ID_KINDS）の項目を、
- * withAddedItems の置き方で足したときに、アプリが名前から作る ID（collectDerivedIds）で確かめる。
- * 確定演出などの ID は、機種ファイルに書く明示の id で決まり、ここでは分からない（validate が確かめる）。
- * @returns {string[]}
+ * 使うことになりそうなところ（足し直しなど）。ID を作る種類（DERIVED_ID_KINDS）の項目を、withAddedItems の置き方で
+ * 足したときに、アプリが名前から作る ID（collectDerivedIds）で確かめる。
+ * 役の displayOrder を知らない推定なので、止めずに注意にとどめる（2026-09-29 の決定）。再利用の判断は、機種ファイルの
+ * 実際の ID で確かめる validate（retiredIds の照合）に任せる。確定演出などの ID は、機種ファイルに書く明示の id で
+ * 決まり、ここでは分からない（これも validate が確かめる）。
+ * @returns {string[]} 注意の文面
  */
-function reusedRetiredIdProblems(machine, removedRaws, added, retiredIds) {
+function reusedRetiredIdWarnings(machine, removedRaws, added, retiredIds) {
   const rowByScopedId = new Map(
     retiredIds.map((row) => [scopedId(itemKey(row.kind, row.name), row.appId), row])
   );
@@ -238,9 +298,33 @@ function reusedRetiredIdProblems(machine, removedRaws, added, retiredIds) {
     return row === undefined
       ? []
       : [
-          `${itemLabel(item)}: 外した ID の台帳（retiredIds）にある ID（${id}）を使うことになる（台帳の行: ${itemLabel(row)}）。機種ファイルに足すときは、台帳に無い明示の別の id を付ける`,
+          `${itemLabel(item)}: 外した ID の台帳（retiredIds）にある ID（${id}）を使うことになりそう（台帳の行: ${itemLabel(row)}）。機種ファイルに足すときは、台帳に無い明示の別の id を付ける。最後の判断は validate（機種ファイルの実際の ID で確かめる）`,
         ];
   });
+}
+
+/** 読めなかったページがある機種では項目を外せないときの説明 */
+const REMOVAL_WITH_UNREADABLE =
+  '読めなかったページがある機種では項目を外せない（読めてから作り直す）';
+
+/**
+ * 外す項目があり、抜き出しか読み直しのメモに読めなかったページ（unreadable）があるときの説明。外す項目と、
+ * 読めなかったページを並べる。
+ * @returns {string[]} 外す項目か読めなかったページが無ければ空の配列
+ */
+function unreadableRemovalProblems(removed, extract, reread) {
+  const pages = [
+    ...(extract.unreadable ?? []).map((page) => ['抜き出しのメモ', page]),
+    ...(reread?.unreadable ?? []).map((page) => ['読み直しのメモ', page]),
+  ];
+  if (removed.length === 0 || pages.length === 0) return [];
+  return [
+    `${REMOVAL_WITH_UNREADABLE}: 外すことになる項目 ${removed.map(itemLabel).join('・')}`,
+    ...pages.map(
+      ([label, page]) =>
+        `読めなかったページ（${label}）: ${page.url}（${page.route}・${page.at}）: ${page.reason}`
+    ),
+  ];
 }
 
 /**
@@ -256,10 +340,14 @@ function reusedRetiredIdProblems(machine, removedRaws, added, retiredIds) {
  *   machine?: object, machineItems?: Array<object>, itemIds?: Map<string, string>,
  *   currentRecord?: object | null }} input
  *   machine・machineItems（listMachineItems）・itemIds（collectItemIds）は既存の機種だけ。currentRecord は今の出典記録
+ * 下書きを出さない（problems）のは、外す項目があるのに次のどちらかに当たるとき:
+ * - 読み直しが無く、ちょんぼりすたの値と合う読み直しがあれば暫定にできる（rereadWouldMakeProvisional。validate も
+ *   同じ式で止める）
+ * - 抜き出しか読み直しのメモに読めなかったページ（unreadable）がある（読めなかった出典に値があったかもしれないので、
+ *   「出典なし」「今の値を裏づける出典なし」を決められない。外した ID は台帳に入り戻せない）
  * @returns {{ problems: string[] }
- *   | { record: object, machineValues: object[], needsReread: string[] }}
- *   problems は外した ID の台帳の ID を使うことになる新しい項目。needsReread は、読み直しが無く、ちょんぼりすたの値と
- *   合う読み直しがあれば暫定にできる removed の項目（validate が止める）
+ *   | { record: object, machineValues: object[], warnings: string[] }}
+ *   warnings は、外した ID の台帳の ID を使うことになりそうな新しい項目（注意だけ。判断は validate）
  */
 export function draftRecord({
   extract,
@@ -322,14 +410,10 @@ export function draftRecord({
           retiredIds.push({ kind, name, appId });
           retiredRows.add(retiredRowKey({ kind, name, appId }));
         }
-        const chonborista = values[CHONBORISTA_KEY];
-        if (
-          rereadValue === undefined &&
-          chonborista !== undefined &&
-          decideExistingItem({ ...machineInput, reread: chonborista }).status ===
-            'provisional-chonborista'
-        ) {
-          needsReread.push(key);
+        if (rereadWouldMakeProvisional({ ...machineInput, reread: rereadValue })) {
+          needsReread.push(
+            `${itemLabel({ kind, name })}: ${REREAD_BEFORE_REMOVAL}。${reread ? '読み直しのメモに、この項目のちょんぼりすたの行を足す' : '--reread で読み直しのメモを渡す'}`
+          );
         }
         continue;
       }
@@ -351,11 +435,13 @@ export function draftRecord({
     });
   }
 
+  const problems = [...needsReread, ...unreadableRemovalProblems(removed, extract, reread)];
+  if (problems.length > 0) return { problems };
+
   const removedRaws = new Set(
     removed.map((entry) => targets.get(itemKey(entry.kind, entry.name)).raw)
   );
-  const problems = reusedRetiredIdProblems(machine, removedRaws, added, retiredIds);
-  if (problems.length > 0) return { problems };
+  const warnings = reusedRetiredIdWarnings(machine, removedRaws, added, retiredIds);
 
   const record = {
     machineId: extract.machineId,
@@ -367,5 +453,5 @@ export function draftRecord({
     removed,
     retiredIds,
   };
-  return { record, machineValues, needsReread };
+  return { record, machineValues, warnings };
 }
