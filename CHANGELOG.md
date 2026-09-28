@@ -16,7 +16,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - 出典記録の `removed`（外した項目・前の値・出典の値・アプリの ID・理由）と `retiredIds`（外した ID の台帳。足すだけ）。今の項目が台帳の ID を使えば validate が止める
 - validate の「項目の ID」の節: 同じ機種の同じ種類で、明示の `id` が重なればエラー
 - validate の規則6〜8（アプリが機種を読み込めない・推定が止まる書き方。今のデータには無い）: 最上位の終了画面の `distribution` の値が 0〜1 の数でない、パターンの `name` が無い・空、1つの項目だけで全設定を否定する
-- `npm run check:base`: 明示の `id` の変更・欠け、新しく足した確定演出・試行成功率・ボイス・楽曲・演出・モード移行の明示の `id`、新しく外した項目（`previous`・`appId`）と `retiredIds` を main と照らす
+- `npm run check:base` に足した検査: 明示の `id` の変更・欠け、新しく足した確定演出・試行成功率・ボイス・楽曲・演出・モード移行の明示の `id`、新しく外した項目（`previous`・`appId`）と `retiredIds` を main と照らす
 
 ### Changed
 
@@ -24,6 +24,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - 採否ルール: 新しく入れる値は全設定がそろった項目だけ。一部の設定だけの出典は、採用値と矛盾しなければ数えない。既存の値の「残す」の裏づけには、載っている設定がすべて合えば数える
 - 確定・暫定（`confirmed`・`provisional-chonborista`）の値は、採用値を有効数字6桁にした値そのものを機種ファイルに書く（validate が確かめる）
 - `check:base`: main の値を裏づける出典がある項目は、暫定にせず `kept-single-source` にする。main の出典記録と同じ採用で値も main と同じ項目は、マージ済みとして確かめ直さない。main の最上位の終了画面の `patterns` は、書き直した後の形で比べる（書き直しと見直しを同じ PR でできる）
+- `check:base`: main の出典記録は、main のスキーマ（main の `schemas/provenance.schema.json`）と main の `index.json` に照らしてから使う。不正な記録（`null`・配列・必須欄の欠け・パスや `machineFile` が合わないなど）があれば確かめられない（終了コード 2）。main に記録が無い機種は、すべての項目を確かめる
 - 割合（`percent`）の 10% の下限をやめ、役・ゾーンの役以外の数値の項目は、値の大きさによらず分母でも割合でも記録できる
 - `patterns` 形式の項目の validate の文面: 終了画面は「先に `expand-patterns --write` で書き直す」、ボイスは「扱いは段階2で決める」
 - 3.9.0 の検証の規則1・5: `patterns` が空でない最上位の終了画面の親の欄の誤りもエラーにし、末尾を「（アプリは使わない）」にする
