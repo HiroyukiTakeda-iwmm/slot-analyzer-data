@@ -406,8 +406,9 @@ export function machineValueProblem(item, entry) {
  * 機種ファイルの項目の種類と中身から、出典記録に使える unit の候補を決める（仕様 5.4）。
  * 記録する側が自由に選べると、緩い比べ方にして値の照合を外せてしまうので、候補はここで決める。
  * 候補が2つのときは、出典の表示の形に合わせて選ぶ（換算しない。validate はこれを確かめられない）。
- * - patterns 形式（アプリは終了画面の patterns を別々の終了画面に展開する）は、出典記録の形を
- *   段階1で決めるまで記録できない（空の配列を返す）
+ * - patterns 形式は記録できない（空の配列を返す。理由と次にすることは patternsProblem）。最上位の終了画面の
+ *   patterns はアプリが別々の終了画面に展開するので、先に expand-patterns --write で書き直す。ボイスの patterns
+ *   はアプリが読み込み時に捨てるので、扱いは段階2で決める
  * - 役（role・zoneRole）は denominator
  * - ほかの数値（probabilities / rates）の項目は、値の大きさによらず denominator か percent（2026-09-27 に
  *   本人が決定）。どちらでも丸めの幅が重なるかで比べる。表示の桁が粗い出典の幅が広い（"3.1%" は 3.05〜3.15%）のは
@@ -424,6 +425,21 @@ export function allowedUnits(kind, entry) {
   if (map && Object.keys(map).length > 0) return kindUnits(kind) ?? ['denominator', 'percent'];
   if (machineValue(entry, 'settings') !== null) return ['settings'];
   return ['presence'];
+}
+
+/**
+ * patterns 形式の項目（allowedUnits が空）を記録できない理由と、次にすること。validate と記録の下書きで同じ文面にする。
+ * - 最上位の終了画面（endScreen）: アプリはパターンごとの終了画面を使い、親を捨てる。先に expand-patterns --write で
+ *   アプリが読む形に書き直してから記録する（2026-09-27 に本人が決定）
+ * - ほか（ボイス。アプリは読み込み時に patterns を捨てる）: 扱いは段階2で決める
+ * @param {string} kind 項目の種類
+ * @param {string} machinePath 機種ファイルのパス（`machines/{dir}/{id}.json`）
+ * @returns {string}
+ */
+export function patternsProblem(kind, machinePath) {
+  return kind === 'endScreen'
+    ? `patterns 形式の終了画面は記録できない（アプリはパターンごとの終了画面を使い、親を捨てる）。先に node scripts/expand-patterns.mjs ${machinePath} --write で書き直す`
+    : 'patterns 形式の項目は記録できない（扱いは段階2で決める）';
 }
 
 /**

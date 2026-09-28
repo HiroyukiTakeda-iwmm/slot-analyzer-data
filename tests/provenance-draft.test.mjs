@@ -746,6 +746,19 @@ describe('scripts/provenance-draft.mjs', () => {
       expect(stderr).toContain('--write');
     });
 
+    it('ボイスの patterns 形式の項目は記録できない（扱いは段階2で決める）で止める', () => {
+      const machine = {
+        ...oldMachine(),
+        voiceCounts: [{ name: 'V', patterns: [{ voice: 'x', minSetting: 5 }] }],
+      };
+      setupOld({ machine });
+      const extract = oldExtract();
+      extract.items.push({ kind: 'voiceCount', name: 'V', unit: 'presence', values: {} });
+      expect(rejected(draft(extract, oldReread()))).toContain(
+        'voiceCount V: patterns 形式の項目は記録できない（扱いは段階2で決める）'
+      );
+    });
+
     it('空の patterns は止めない', () => {
       const machine = oldMachine();
       machine.endScreens[0] = { ...machine.endScreens[0], patterns: [] };

@@ -11,6 +11,7 @@ import {
   machineSupporters,
   machineValue,
   parseShown,
+  patternsProblem,
   shapeError,
   storedInterval,
   toStoredFromShown,
@@ -648,7 +649,7 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
     expect(allowedUnits(item.kind, item.entry)).toEqual(['presence']);
   });
 
-  it('patterns 形式の項目は、出典記録の形を決めるまで記録できない（空）', () => {
+  it('patterns 形式の項目は記録できない（候補が空。理由と次にすることは patternsProblem）', () => {
     expect(allowedUnits('endScreen', { patterns: [{ name: 'A', setting: 'default' }] })).toEqual(
       []
     );
@@ -663,5 +664,19 @@ describe('allowedUnits（記録に使える unit。仕様 5.4）', () => {
   it('数値と設定の組の両方がある項目は、数値の側で決める', () => {
     const both = { probabilities: { 1: 0.05 }, confirmedSettings: ['6'] };
     expect(allowedUnits('endScreen', both)).toEqual(['denominator', 'percent']);
+  });
+});
+
+describe('patternsProblem', () => {
+  it('最上位の終了画面は、先に expand-patterns --write で書き直すよう示す', () => {
+    expect(patternsProblem('endScreen', 'machines/rezero/rezero-season2.json')).toBe(
+      'patterns 形式の終了画面は記録できない（アプリはパターンごとの終了画面を使い、親を捨てる）。先に node scripts/expand-patterns.mjs machines/rezero/rezero-season2.json --write で書き直す'
+    );
+  });
+
+  it('ボイスなど、ほかの patterns は扱いを段階2で決める', () => {
+    expect(patternsProblem('voiceCount', 'machines/a/b.json')).toBe(
+      'patterns 形式の項目は記録できない（扱いは段階2で決める）'
+    );
   });
 });

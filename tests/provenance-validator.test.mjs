@@ -709,7 +709,7 @@ describe('validateProvenance', () => {
     ]);
   });
 
-  it('patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）', () => {
+  it('patterns 形式の終了画面は記録できず、先に expand-patterns --write で書き直すよう示す', () => {
     const withPatterns = {
       ...machine,
       endScreens: [{ name: '殲滅', patterns: [{ name: 'P1', setting: 'default' }] }],
@@ -725,7 +725,27 @@ describe('validateProvenance', () => {
       adopted: true,
     });
     expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
-      'endScreen::殲滅: patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）',
+      'endScreen::殲滅: patterns 形式の終了画面は記録できない（アプリはパターンごとの終了画面を使い、親を捨てる）。先に node scripts/expand-patterns.mjs machines/test/test-machine.json --write で書き直す',
+    ]);
+  });
+
+  it('ボイスの patterns 形式の項目は記録できない（扱いは段階2で決める）', () => {
+    const withPatterns = {
+      ...machine,
+      voiceCounts: [{ name: 'ボイス', patterns: [{ voice: 'x', minSetting: 5 }] }],
+    };
+    const files = [{ path: 'machines/test/test-machine.json', data: withPatterns }];
+    const rec = record();
+    rec.items.push({
+      kind: 'voiceCount',
+      name: 'ボイス',
+      status: 'confirmed',
+      unit: 'presence',
+      values: { chonborista: true, 'nana-press': true },
+      adopted: true,
+    });
+    expect(run(rec, { files }).errors.map((e) => e.message)).toEqual([
+      'voiceCount::ボイス: patterns 形式の項目は記録できない（扱いは段階2で決める）',
     ]);
   });
 
@@ -975,6 +995,21 @@ describe('validateProvenance: 外した項目（removed）', () => {
     expect(errorsOf(removedGold({}))).toEqual([]);
     expect(errorsOf(removedGold({ 'nana-press': { 1: null, 6: 100 } }))).toEqual([
       'endScreen::金枠: 外す条件に合わない（kept-single-source にできる）',
+    ]);
+  });
+
+  it('previous が patterns 形式の終了画面は外せず、items と同じく先に書き直すよう示す', () => {
+    const removedPatterns = {
+      kind: 'endScreen',
+      name: '殲滅',
+      unit: 'presence',
+      previous: { name: '殲滅', patterns: [{ name: 'P1', setting: '6' }] },
+      values: {},
+      appId: 'endscreen',
+      reason: '出典なし',
+    };
+    expect(errorsOf(removedPatterns)).toEqual([
+      'endScreen::殲滅: patterns 形式の終了画面は記録できない（アプリはパターンごとの終了画面を使い、親を捨てる）。先に node scripts/expand-patterns.mjs machines/test/test-machine.json --write で書き直す',
     ]);
   });
 });

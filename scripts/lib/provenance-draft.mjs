@@ -26,6 +26,7 @@ import {
   itemKey,
   kindUnits,
   machineValue,
+  patternsProblem,
   rereadWouldMakeProvisional,
   shapeError,
   storedMap,
@@ -210,7 +211,7 @@ export function machineProblems(extract, entry, machine, machineItems) {
     const unit = unitByKey.get(key);
     const allowed = allowedUnits(item.kind, item.entry);
     if (allowed.length === 0) {
-      problems.push(`${itemLabel(item)}: patterns 形式の項目は、出典記録に記録できない`);
+      problems.push(`${itemLabel(item)}: ${patternsProblem(item.kind, `machines/${entry.file}`)}`);
     } else if (!allowed.includes(unit)) {
       problems.push(
         `${itemLabel(item)}: unit=${unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`

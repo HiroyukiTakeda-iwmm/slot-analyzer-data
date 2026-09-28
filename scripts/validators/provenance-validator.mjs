@@ -16,6 +16,7 @@ import {
   listMachineItems,
   machineValue,
   machineValueProblem,
+  patternsProblem,
   rereadWouldMakeProvisional,
   shapeError,
   sourceProblems,
@@ -79,13 +80,14 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
         error(path, `machineFile が index.json と違う: ${data.machineFile}（index: ${entry.file}）`)
       );
     }
-    const machine = machineByPath.get(`machines/${entry.file}`);
+    const machinePath = `machines/${entry.file}`;
+    const machine = machineByPath.get(machinePath);
     if (!machine) {
-      errors.push(error(path, `機種ファイルを読めない: machines/${entry.file}`));
+      errors.push(error(path, `機種ファイルを読めない: ${machinePath}`));
       continue;
     }
     recordedIds.add(data.machineId);
-    errors.push(...checkRecord(path, data, machine, officialDomains));
+    errors.push(...checkRecord(path, data, { machine, machinePath }, officialDomains));
   }
 
   if (requireAll) {
@@ -126,13 +128,13 @@ function unknownSourceErrors(path, key, values, sourceKinds) {
 /**
  * unit が、機種ファイルの項目（entry。itemEntry の形）の種類と中身で決まる候補にあるか（allowedUnits）。
  * 候補の中から出典の表示の形に合わせて選んだかは、確かめられない。items と removed で同じ文面にする。
+ * patterns 形式の項目（候補が空）は、記録できない理由と次にすること（patternsProblem。記録の下書きと同じ文面）。
+ * @param {string} machinePath 機種ファイルのパス（patterns の書き直しのコマンドに出す）
  * @returns {string | null} 合わないときの説明
  */
-function unitProblem(key, kind, entry, unit) {
+function unitProblem(key, kind, entry, unit, machinePath) {
   const allowed = allowedUnits(kind, entry);
-  if (allowed.length === 0) {
-    return `${key}: patterns 形式の項目は、出典記録の形を決めるまで記録できない（段階1で決める）`;
-  }
+  if (allowed.length === 0) return `${key}: ${patternsProblem(kind, machinePath)}`;
   if (!allowed.includes(unit)) {
     return `${key}: unit=${unit} は使えない（機種ファイルの項目に合わせて ${allowed.join(' か ')} にする）`;
   }
@@ -157,7 +159,7 @@ function labelledValues(values, reread) {
   ];
 }
 
-function checkItem(path, item, sourceKinds, machineItems) {
+function checkItem(path, item, sourceKinds, machineItems, machinePath) {
   const key = itemKey(item.kind, item.name);
   const errors = unknownSourceErrors(path, key, item.values, sourceKinds);
 
@@ -165,7 +167,7 @@ function checkItem(path, item, sourceKinds, machineItems) {
   // これは確かめられない）。形の検査より先に見る
   const target = machineItems.get(key);
   if (target) {
-    const problem = unitProblem(key, item.kind, target.entry, item.unit);
+    const problem = unitProblem(key, item.kind, target.entry, item.unit, machinePath);
     if (problem) {
       errors.push(error(path, problem));
       return errors;
@@ -240,14 +242,14 @@ function removalProblem(removed, entry, sourceKinds) {
  * それを今の値として、unit・値の形・外す条件を items と同じ規則で確かめる。
  * previous が main の項目そのものかは、main と比べる検査（ledger-against-base.mjs の checkLedgerAgainstBase）が確かめる。
  */
-function checkRemoved(path, removed, sourceKinds) {
+function checkRemoved(path, removed, sourceKinds, machinePath) {
   const key = itemKey(removed.kind, removed.name);
   const errors = [
     ...unknownSourceErrors(path, key, removed.values, sourceKinds),
     ...appIdErrors(path, key, removed),
   ];
   const entry = itemEntry(removed.kind, removed.previous);
-  const problem = unitProblem(key, removed.kind, entry, removed.unit);
+  const problem = unitProblem(key, removed.kind, entry, removed.unit, machinePath);
   if (problem) return [...errors, error(path, problem)];
 
   const shapeProblems = shapeErrors(
@@ -322,7 +324,8 @@ function retiredIdErrors(path, record, machineItems, itemIds) {
   return errors;
 }
 
-function checkRecord(path, record, machine, officialDomains) {
+/** 1つの出典記録を、機種ファイル（machine。パスは machinePath）と照らす */
+function checkRecord(path, record, { machine, machinePath }, officialDomains) {
   const errors = [];
   const sourceKinds = collectSourceKinds(path, record.sources, errors, officialDomains);
 
@@ -348,7 +351,7 @@ function checkRecord(path, record, machine, officialDomains) {
       continue;
     }
     recorded.add(key);
-    errors.push(...checkItem(path, item, sourceKinds, machineItems));
+    errors.push(...checkItem(path, item, sourceKinds, machineItems, machinePath));
   }
 
   for (const key of machineItems.keys()) {
@@ -365,7 +368,7 @@ function checkRecord(path, record, machine, officialDomains) {
     if (machineItems.has(key)) {
       errors.push(error(path, `${key}: 外したはずの項目が機種ファイルにある`));
     }
-    errors.push(...checkRemoved(path, removed, sourceKinds));
+    errors.push(...checkRemoved(path, removed, sourceKinds, machinePath));
   }
   errors.push(...retiredIdErrors(path, record, machineItems, itemIds));
   return errors;
