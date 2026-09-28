@@ -1,4 +1,4 @@
-import { NOT_USED, STOPS_ESTIMATE } from './app-impact.mjs';
+import { CANNOT_LOAD, NOT_USED, STOPS_ESTIMATE } from './app-impact.mjs';
 import { hasPatterns } from '../lib/expand-patterns.mjs';
 
 const DEFAULT_SETTINGS = ['1', '2', '3', '4', '5', '6'];
@@ -63,6 +63,37 @@ function checkSettingKeys(
       type: 'probability',
       severity: 'error',
       message: `${label} ${field} に設定に無いキー: ${extra.join(',')} (設定: ${settings.join(',')})${NOT_USED}`,
+    });
+  }
+}
+
+/**
+ * 最上位の終了画面の distribution の値が 0〜1 の数かを確かめる（規則6）。形はスキーマが確かめない。
+ * アプリの読み込み時の形の確かめは値を数に限り（合わなければ機種ファイルごと読み込まない）、移行処理は
+ * probabilities の無い終了画面の distribution を確率として使う（0〜1 の外は、数えると推定が止まる）。
+ *
+ * @param {object} screen 最上位の終了画面
+ * @param {boolean} used アプリが distribution を確率として使うか（probabilities が無く、patterns が空）
+ * @param {string[]} settings 機種の設定番号（アプリは設定のキーの確率だけを読む）
+ */
+function checkDistributionValues(screen, used, settings, filePath, results) {
+  const { distribution } = screen;
+  if (distribution === null || typeof distribution !== 'object' || Array.isArray(distribution)) {
+    return;
+  }
+  for (const [key, value] of Object.entries(distribution)) {
+    const isNumber = typeof value === 'number';
+    if (isNumber && value >= 0 && value <= 1) continue;
+    const impact = !isNumber
+      ? CANNOT_LOAD
+      : used && settings.includes(key)
+        ? STOPS_ESTIMATE
+        : NOT_USED;
+    results.errors.push({
+      file: filePath,
+      type: 'probability',
+      severity: 'error',
+      message: `endScreens "${screen.name}" distribution 設定${key}: 0〜1 の数でない (${isNumber ? value : JSON.stringify(value)})${impact}`,
     });
   }
 }
@@ -156,6 +187,8 @@ export function validateProbabilities(machineFiles) {
       const field = hasProbabilities ? 'probabilities' : 'distribution';
       const missingImpact = hasPatterns(screen) ? NOT_USED : STOPS_ESTIMATE;
       checkKeys(screen[field], `endScreens "${screen.name}"`, field, missingImpact);
+      const distributionUsed = !hasProbabilities && !hasPatterns(screen);
+      checkDistributionValues(screen, distributionUsed, expectedSettings, filePath, results);
     }
     for (const group of data.endScreenGroups ?? []) {
       for (const screen of group.endScreens ?? []) {

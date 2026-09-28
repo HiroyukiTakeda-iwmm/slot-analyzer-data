@@ -693,6 +693,260 @@ describe('patterns を持つ最上位の終了画面の親の欄（規則1・5�
   });
 });
 
+// --- 今後の規則（規則6〜8）: 今のデータには無いが、アプリの推定が止まる・機種を読み込めない書き方 ---
+
+const SIX_SETTINGS = ['1', '2', '3', '4', '5', '6'];
+
+describe('probability-validator: 最上位の終了画面の distribution の値（規則6）', () => {
+  // アプリの読み込み時の形の確かめは distribution の値を数に限り、移行処理は probabilities の無い
+  // 最上位の終了画面の distribution を確率として使う（0〜1 の外は推定が止まる）
+  it('distribution の値が 0〜1 の外 → エラー（アプリの推定が止まる）。0 と 1 は通る', () => {
+    const data = machineWith({
+      endScreens: [{ name: '分布', distribution: { 1: 1.5, 2: -0.1, 3: 0, 4: 0.1, 5: 0.5, 6: 1 } }],
+    });
+    const { errors } = checkProbabilities(data);
+    expect(errors).toHaveLength(2);
+    expect(onlyMessage(errors, '設定1')).toContain(
+      'endScreens "分布" distribution 設定1: 0〜1 の数でない (1.5)'
+    );
+    expect(onlyMessage(errors, '設定2')).toContain('distribution 設定2: 0〜1 の数でない (-0.1)');
+    for (const e of errors) {
+      expect(e).toMatchObject({ file: 'test.json', type: 'probability', severity: 'error' });
+      expect(e.message.endsWith(STOPS_ESTIMATE)).toBe(true);
+    }
+  });
+
+  it('distribution の値が数でない → エラー（アプリが機種を読み込めない）', () => {
+    const data = machineWith({
+      endScreens: [
+        { name: '分布', distribution: { 1: '0.5', 2: null, 3: 0.1, 4: 0.1, 5: 0.1, 6: 0.1 } },
+      ],
+    });
+    const { errors } = checkProbabilities(data);
+    expect(errors).toHaveLength(2);
+    expect(onlyMessage(errors, '設定1')).toContain('distribution 設定1: 0〜1 の数でない ("0.5")');
+    expect(onlyMessage(errors, '設定2')).toContain('distribution 設定2: 0〜1 の数でない (null)');
+    for (const e of errors) expect(e.message.endsWith(CANNOT_LOAD)).toBe(true);
+  });
+
+  it('アプリが distribution を使わない終了画面・設定に無いキーでは、範囲外の末尾は「アプリは使わない」', () => {
+    const distribution = { ...probabilitiesFor(SIX_SETTINGS, 0.1), 1: 2, 2: 'x' };
+    const data = machineWith({
+      endScreens: [
+        { name: '確率あり', probabilities: probabilitiesFor(SIX_SETTINGS), distribution },
+        { name: 'パターンあり', distribution, patterns: [{ name: '通常' }] },
+        { name: '設定に無いキー', distribution: { ...probabilitiesFor(SIX_SETTINGS), 7: 2 } },
+      ],
+    });
+    const { errors } = checkProbabilities(data);
+    expect(errors).toHaveLength(6);
+    const endOf = (label) => {
+      const message = onlyMessage(errors, label);
+      return message.slice(message.lastIndexOf('（'));
+    };
+    for (const name of ['確率あり', 'パターンあり']) {
+      expect(endOf(`endScreens "${name}" distribution 設定1: 0〜1 の数でない (2)`)).toBe(NOT_USED);
+      // 数でない値は、アプリが distribution を使うかどうかの前の読み込み（形の確かめ）で止まる
+      expect(endOf(`endScreens "${name}" distribution 設定2: 0〜1 の数でない ("x")`)).toBe(
+        CANNOT_LOAD
+      );
+    }
+    expect(endOf('distribution 設定7: 0〜1 の数でない (2)')).toBe(NOT_USED);
+    expect(endOf('distribution に設定に無いキー: 7')).toBe(NOT_USED);
+  });
+});
+
+describe('confirmation-validator: パターンの name（規則7）', () => {
+  // アプリの読み込み時の形の確かめは、最上位の終了画面のパターンの name を空でない文字列に限る
+  it('パターンの name が無い・空・文字列でない → エラー（アプリが機種を読み込めない。何番目か分かる）', () => {
+    const data = machineWith({
+      endScreens: [
+        {
+          name: 'CZ終了画面',
+          patterns: [{ name: '通常' }, { setting: '6' }, { name: '' }, { name: 6 }],
+        },
+      ],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(3);
+    expect(onlyMessage(errors, 'patterns[1]')).toContain(
+      'endScreens "CZ終了画面" / patterns[1] name が無い・空・文字列でない: (無し)'
+    );
+    expect(onlyMessage(errors, 'patterns[2]')).toContain('name が無い・空・文字列でない: ""');
+    expect(onlyMessage(errors, 'patterns[3]')).toContain('name が無い・空・文字列でない: 6');
+    for (const e of errors) {
+      expect(e).toMatchObject({ file: 'test.json', type: 'confirmation', severity: 'error' });
+      expect(e.message.endsWith(CANNOT_LOAD)).toBe(true);
+    }
+  });
+
+  it('name の無いパターンの他の誤りも、何番目かで示す', () => {
+    const data = machineWith({
+      endScreens: [{ name: 'CZ終了画面', patterns: [{ setting: 'high' }] }],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(2);
+    expect(onlyMessage(errors, 'setting が設定番号でない')).toContain(
+      'endScreens "CZ終了画面" / patterns[0] setting が設定番号でない: "high"'
+    );
+    expect(errors.some((e) => e.message.includes('patterns "undefined"'))).toBe(false);
+  });
+});
+
+describe('confirmation-validator: 1つの項目だけで全設定を否定する書き方（規則8）', () => {
+  // アプリ（utils/binomial.ts）は、数えた項目の確率が 0 の設定の尤度を 0 にし、確定・否定の設定から
+  // 除く設定を決める。1つの項目で除かれない設定が残らなければ、数えた（確定演出は有効にした）時点で
+  // 推定が止まる（all-settings-excluded）
+  const DENIED = 'だけで全設定を否定している';
+
+  it('確率がすべて 0 → エラー（最上位は probabilities、無ければ distribution。グループの中・ボイス・楽曲・演出も）', () => {
+    const zero = probabilitiesFor(SIX_SETTINGS, 0);
+    const data = machineWith({
+      endScreens: [
+        { name: '確率0', probabilities: zero },
+        { name: '分布0', distribution: zero },
+      ],
+      endScreenGroups: [{ name: 'AT終了画面', endScreens: [{ name: '赤', probabilities: zero }] }],
+      voiceCounts: [{ name: 'ボイスA', probabilities: zero }],
+      musicCounts: [{ name: '楽曲A', probabilities: zero }],
+      effectCounts: [{ name: '演出A', probabilities: zero }],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(6);
+    for (const label of [
+      'endScreens "確率0"',
+      'endScreens "分布0"',
+      'endScreenGroups "AT終了画面" / endScreens "赤"',
+      'voiceCounts "ボイスA"',
+      'musicCounts "楽曲A"',
+      'effectCounts "演出A"',
+    ]) {
+      expect(onlyMessage(errors, label)).toContain(`${label} ${DENIED} (確率が 0: 1,2,3,4,5,6)`);
+    }
+    for (const e of errors) {
+      expect(e).toMatchObject({ file: 'test.json', type: 'confirmation', severity: 'error' });
+      expect(e.message.endsWith(STOPS_ESTIMATE)).toBe(true);
+    }
+  });
+
+  it('否定の設定が全設定 → エラー（確定演出・最上位とグループの中の終了画面・ボイス。4段階の機種）', () => {
+    const data = machineWith({
+      availableSettings: FOUR_SETTINGS,
+      confirmationEvents: [
+        { name: '全否定', confirmedSettings: [], excludedSettings: FOUR_SETTINGS },
+      ],
+      endScreens: [{ name: '青', excludedSettings: FOUR_SETTINGS }],
+      endScreenGroups: [
+        {
+          name: 'AT終了画面',
+          endScreens: [{ name: '赤', excludedSettings: ['6', '5', '2', '1'] }],
+        },
+      ],
+      voiceCounts: [{ name: 'ボイスA', excludedSettings: FOUR_SETTINGS }],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(4);
+    for (const label of [
+      'confirmationEvents "全否定"',
+      'endScreens "青"',
+      'endScreenGroups "AT終了画面" / endScreens "赤"',
+      'voiceCounts "ボイスA"',
+    ]) {
+      expect(onlyMessage(errors, label)).toContain(
+        `${label} ${DENIED} (確定・否定の設定で除く: 1,2,5,6)`
+      );
+    }
+    for (const e of errors) expect(e.message.endsWith(STOPS_ESTIMATE)).toBe(true);
+  });
+
+  it('1つの項目の中で、確率が 0 の設定と確定・否定の設定で除く設定を合わせて全設定 → エラー', () => {
+    const data = machineWith({
+      endScreens: [
+        {
+          name: '否定と0',
+          probabilities: { 1: 0, 2: 0, 3: 0, 4: 0.1, 5: 0.1, 6: 0.1 },
+          excludedSettings: ['4', '5', '6'],
+        },
+        {
+          name: '確定と0',
+          probabilities: { ...probabilitiesFor(SIX_SETTINGS, 0.1), 6: 0 },
+          confirmedSettings: ['6'],
+        },
+      ],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(2);
+    expect(onlyMessage(errors, 'endScreens "否定と0"')).toContain(
+      `${DENIED} (確率が 0: 1,2,3 / 確定・否定の設定で除く: 4,5,6)`
+    );
+    expect(onlyMessage(errors, 'endScreens "確定と0"')).toContain(
+      `${DENIED} (確率が 0: 6 / 確定・否定の設定で除く: 1,2,3,4,5)`
+    );
+  });
+
+  it('除かれない設定が残る・アプリが確定・否定の設定を読まない・親を捨てる項目は止めない', () => {
+    const data = machineWith({
+      confirmationEvents: [
+        {
+          name: '設定6確定',
+          confirmedSettings: ['6'],
+          excludedSettings: ['1', '2', '3', '4', '5'],
+        },
+      ],
+      endScreens: [
+        { name: '1つ残る', probabilities: { ...probabilitiesFor(SIX_SETTINGS, 0), 6: 0.1 } },
+        // patterns が空でなければ、移行処理が親の確定・否定の設定と確率を捨てる
+        { name: 'パターンあり', excludedSettings: SIX_SETTINGS, patterns: [{ name: '通常' }] },
+      ],
+      // 楽曲・演出の確定・否定の設定は、アプリが読み込み時に捨てる
+      musicCounts: [
+        {
+          name: '楽曲A',
+          excludedSettings: SIX_SETTINGS,
+          probabilities: probabilitiesFor(SIX_SETTINGS),
+        },
+      ],
+    });
+    const result = checkConfirmations(data);
+    expect(result.errors).toHaveLength(0);
+    expect(result.warnings).toHaveLength(0);
+  });
+
+  it('試行成功率・役の確率がすべて 0 や 1 でも止めない（成功・失敗の一方を数えたときだけ止まる）', () => {
+    // onihama-kyoutou の「カッ飛びゾーン レベル5」（全設定で成功率 100%）は正しいデータ。
+    // 役は設定差が無ければ（hasSettingDiff=false）推定に使わない
+    const data = machineWith({
+      roles: [
+        {
+          name: '出ない役',
+          probabilities: probabilitiesFor(SIX_SETTINGS, 0),
+          hasSettingDiff: false,
+          displayOrder: 1,
+        },
+      ],
+      trialSuccessRates: [
+        { name: 'レベル5', probabilities: probabilitiesFor(SIX_SETTINGS, 1) },
+        { name: 'レベル0', probabilities: probabilitiesFor(SIX_SETTINGS, 0) },
+      ],
+    });
+    expect(checkConfirmations(data).errors).toHaveLength(0);
+    expect(checkProbabilities(data).errors).toHaveLength(0);
+  });
+
+  it('確定する設定がすべて否定にもある・設定番号でない値がある項目は、その規則のエラーだけ（重ねない）', () => {
+    const data = machineWith({
+      endScreens: [
+        { name: '重複', confirmedSettings: ['6'], excludedSettings: ['6'] },
+        { name: '番号でない', excludedSettings: [...SIX_SETTINGS, 'high'] },
+      ],
+    });
+    const { errors } = checkConfirmations(data);
+    expect(errors).toHaveLength(2);
+    expect(onlyMessage(errors, 'endScreens "重複"')).toContain('confirmedとexcludedに重複: [6]');
+    expect(onlyMessage(errors, 'endScreens "番号でない"')).toContain('設定番号でない値: "high"');
+  });
+});
+
 // --- index-consistency テスト ---
 
 describe('index-consistency', () => {
