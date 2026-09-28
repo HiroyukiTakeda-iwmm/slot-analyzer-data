@@ -623,3 +623,91 @@ validate が確かめること:
 確率・割合は `scripts/lib/provenance.mjs` の `toStoredProbability(分母)` / `toStoredRate(割合)` で有効数字6桁にして保存する（小数6桁では 1/65536 のような小さい確率が約1.7%ずれるため）。出典の表示の値（`"300.0"`・`"3.1%"` のような文字列を含む）からは `toStoredFromShown(unit, 値)` で同じ形にする。
 
 確定・暫定（`confirmed`・`provisional-chonborista`）の値は、採用値を有効数字6桁にした値（`toStoredFromShown(unit, 採用値の各設定)`）を書く。validate が、機種ファイルの確率がすべての設定でその値そのものかを確かめる（1/65536 を小数6桁の `0.000015` と書くと、`機種ファイルの値が、採用値を有効数字6桁にした値と違う（設定 1: 0.000015 ≠ 0.0000152588）` で止まる）。残す値（`kept-single-source`）は変えない。
+
+## 抜き出し・読み直しのメモ
+
+出典記録を作る前の作業メモ。リポジトリの外（`~/.worktrees/slot-analyzer-data/notes/<バッチ>/`）に置き、git に入れない。形は `schemas/notes.schema.json` の `definitions` の `extract`（抜き出し）と `reread`（読み直し）。値・種類（kind）・unit・出典・`machineFile` の形は出典記録と同じで、スキーマは出典記録のスキーマ（`schemas/provenance.schema.json`）の定義を参照する（書き写さない）。
+
+### 抜き出しのメモ（`<機種ID>.extract.json`）
+
+```json
+{
+  "machineId": "karakuri-circus2",
+  "machineName": "Lパチスロ からくりサーカス2",
+  "machineFile": "karakuri-circus2/karakuri-circus2.json",
+  "availableSettings": ["1", "2", "3", "4", "5", "6"],
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sankyo-slot/256699/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "unit": "denominator",
+      "values": { "chonborista": { "1": 99.9, "6": 94.2 } }
+    },
+    { "kind": "role", "name": "中段チェリー", "unit": "denominator", "values": {} }
+  ],
+  "unreadable": [
+    {
+      "url": "https://example.com/slot/1/",
+      "route": "WebFetch",
+      "at": "2026-09-28T21:05:00+09:00",
+      "reason": "403 で読めない"
+    }
+  ],
+  "notes": ["表2 は値が画像だけで読めない"]
+}
+```
+
+| 欄                  | 中身                                                                                                                                                            |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `machineId`         | 機種 ID                                                                                                                                                         |
+| `machineName`       | 機種名                                                                                                                                                          |
+| `machineFile`       | 出典記録の `machineFile` と同じ形（`machines/` からの相対パス）。既存の機種では `index.json` のその機種の行と同じ。新台では決めた置き場所                       |
+| `availableSettings` | 出典のスペックの表の設定の段階（1つ以上。重ねない）                                                                                                             |
+| `sources`           | 出典記録の `sources` と同じ（1つ以上）                                                                                                                          |
+| `items[]`           | `{ kind, name, unit, values }`。`values` は出典キーごとの値（出典記録の `values` と同じ書き方）。どの出典にも無かった項目（既存の機種の項目）は `{}`            |
+| `unreadable`        | 任意。読めなかったページ `{ url, route, at, reason }`。`route` は読んだ経路（WebFetch・ブラウザなど）、`at` は日時（`2026-09-28T21:05:00+09:00`。日付だけも可） |
+| `notes`             | 任意。自分の言葉で書いた覚え書き（文字列の配列。表の場所・照合で分かった読み違いの原因など）                                                                    |
+
+### 読み直しのメモ（`<機種ID>.reread.json`）
+
+抜き出しをしていない担当が、機種名・出典の URL・項目名だけを渡されて書く。
+
+```json
+{
+  "machineId": "karakuri-circus2",
+  "by": "reread-agent-2",
+  "items": [
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "source": "chonborista",
+      "value": { "1": 99.9, "6": 94.2 }
+    }
+  ],
+  "unreadable": [],
+  "notes": ["中段チェリーは見つからない"]
+}
+```
+
+| 欄                     | 中身                                                                                                              |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `machineId`            | 抜き出しのメモと同じ機種 ID                                                                                       |
+| `by`                   | 読み直した担当                                                                                                    |
+| `items[]`              | `{ kind, name, source, value }`。1行は1つの出典の1項目。unit は書かない（抜き出しのメモの同じ項目の unit で読む） |
+| `unreadable` / `notes` | 任意。抜き出しのメモと同じ形（`notes` は見つからなかった項目など）                                                |
+
+### 読み直しの照合（`node scripts/reread-compare.mjs <抜き出しのメモ> <読み直しのメモ>`）
+
+- 読み直しの各行を、抜き出しのメモの同じ項目（`kind` と `name`）・同じ出典の値と `valuesAgree` で比べる（上の「値の書き方と比べ方」。丸めの幅が重なるか。表示の文字列どうしでは比べないので、`"99.90"` と `99.9` は一致し、`"300.0"` と `300.4` は一致しない）。unit は抜き出しのメモの同じ項目の unit
+- 載っている設定の組が違えば食い違い（一部の設定だけ読めた、は一致にしない）
+- 抜き出しで値のある項目・出典のうち、読み直しに行が無いものは「読み直していない」。抜き出しに項目かその出典の値が無い読み直しの行は「読み直しにしか無い」
+- 食い違い（どの設定がどう違うか）・読み直していない・読み直しにしか無い行を標準出力に並べる。メモは書き換えない
+- 終了コード: 0 = すべて一致 / 1 = 食い違いか抜けがある / 2 = 照合できない（ファイル・JSON として読めない、メモの形に合わない、機種 ID が違う、同じ項目（読み直しは同じ項目・出典）の行が2つある、引数の誤り。理由は標準エラーに出す）
