@@ -17,6 +17,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - validate の「項目の ID」の節: 同じ機種の同じ種類で、明示の `id` が重なればエラー
 - validate の規則6〜8（アプリが機種を読み込めない・推定が止まる書き方。今のデータには無い）: 最上位の終了画面の `distribution` の値が 0〜1 の数でない、パターンの `name` が無い・空、1つの項目だけで全設定を否定する
 - `npm run check:base` に足した検査: 明示の `id` の変更・欠け、新しく足した確定演出・試行成功率・ボイス・楽曲・演出・モード移行の明示の `id`、新しく外した項目（`previous`・`appId`）と `retiredIds` を main と照らす
+- `npm run check:base`: main に出典記録がある機種で、比べる側の記録（`provenance/<機種ID>.json`）を消すと止める（記録がある機種では記録も直す。機種ごと `index.json` から消した場合は対象外）
 
 ### Changed
 
