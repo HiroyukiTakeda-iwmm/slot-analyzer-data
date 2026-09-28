@@ -15,6 +15,7 @@ import {
   toStoredFromShown,
   toStoredProbability,
   toStoredRate,
+  valueDifferences,
   valuesAgree,
 } from '../scripts/lib/provenance.mjs';
 
@@ -311,6 +312,69 @@ describe('valuesAgree: settings / presence', () => {
 
   it('未知の unit は不一致', () => {
     expect(valuesAgree('unknown', { 1: 1 }, { 1: 1 })).toBe(false);
+  });
+});
+
+describe('valueDifferences（valuesAgree の判定の本体）', () => {
+  it('一致しない道ごとに違いを返し、違いが無いときだけ valuesAgree が一致とする', () => {
+    const cases = [
+      ['denominator', { 1: 99.9, 6: 94.2 }, { 1: '99.90', 6: 94.24 }, []],
+      [
+        'denominator',
+        { 1: 99.9 },
+        { 1: 'ほぼ 1/100' },
+        [{ type: 'shape', side: 'b', problem: shapeError('denominator', { 1: 'ほぼ 1/100' }) }],
+      ],
+      [
+        'denominator',
+        { 1: 99.9, 6: 94.2 },
+        { 1: 99.9, 2: 98 },
+        [
+          { type: 'missingSettings', side: 'b', settings: ['6'] },
+          { type: 'missingSettings', side: 'a', settings: ['2'] },
+        ],
+      ],
+      ['denominator', { 1: 94.2 }, { 1: 94.5 }, [{ type: 'noOverlap', setting: '1', zero: false }]],
+      ['denominator', { 1: null }, { 1: 99999 }, [{ type: 'noOverlap', setting: '1', zero: true }]],
+      ['percent', { 1: 0.1 }, { 1: 0 }, [{ type: 'noOverlap', setting: '1', zero: true }]],
+      ['percent', { 1: '10.0', 6: 40 }, { 1: 10.04, 6: '40%' }, []],
+      [
+        'settings',
+        { confirmed: ['5', '6'], excluded: [] },
+        { confirmed: ['6'], excluded: ['1'] },
+        [
+          { type: 'settingSet', key: 'confirmed' },
+          { type: 'settingSet', key: 'excluded' },
+        ],
+      ],
+      [
+        'settings',
+        { confirmed: ['6', '5'], excluded: [] },
+        { confirmed: ['5', '6'], excluded: [] },
+        [],
+      ],
+      ['presence', true, true, []],
+      ['presence', true, false, [{ type: 'shape', side: 'b', problem: 'true が必要' }]],
+      [
+        'unknown',
+        { 1: 1 },
+        { 1: 1 },
+        [
+          { type: 'shape', side: 'a', problem: '未知の unit: unknown' },
+          { type: 'shape', side: 'b', problem: '未知の unit: unknown' },
+        ],
+      ],
+    ];
+    for (const [unit, a, b, expected] of cases) {
+      expect(valueDifferences(unit, a, b)).toEqual(expected);
+      expect(valuesAgree(unit, a, b)).toBe(expected.length === 0);
+    }
+  });
+
+  it('形の合わない値があれば、形の違いだけを返す（設定ごとには比べない）', () => {
+    expect(valueDifferences('percent', { 1: null, 6: 40 }, { 1: 30, 2: 40 })).toEqual([
+      { type: 'shape', side: 'a', problem: shapeError('percent', { 1: null }) },
+    ]);
   });
 });
 

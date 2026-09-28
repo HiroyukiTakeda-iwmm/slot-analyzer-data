@@ -197,28 +197,56 @@ function sameSet(a, b) {
 }
 
 /**
- * 2つの値が一致するか（仕様 5.4）。形が unit に合わない値は一致しないとみなす。
- * 分母・割合は、設定の組が同じで、すべての設定で丸めの幅が重なれば一致する。確率 0（分母の null・割合の 0）は、
- * 「その設定では起きない」（設定を否定できる）を表すので、確率 0 とだけ一致する。
+ * 2つの値の違い（valuesAgree の判定の本体。違いの説明を出す道具も、判定をここだけで行う）。
+ * 形が unit に合わない値があれば、形の違いだけを返す（設定ごとには比べない）。未知の unit も形の違いになる。
+ * @returns {Array<
+ *   | { type: 'shape', side: 'a' | 'b', problem: string }
+ *   | { type: 'missingSettings', side: 'a' | 'b', settings: string[] }
+ *   | { type: 'noOverlap', setting: string, zero: boolean }
+ *   | { type: 'settingSet', key: 'confirmed' | 'excluded' }
+ * >} 違いが無ければ空の配列。missingSettings は side の値に無い設定、noOverlap は丸めの幅が重ならない設定
+ *   （zero はどちらかが確率 0）、settingSet は集合として違う配列
+ */
+export function valueDifferences(unit, a, b) {
+  const shapes = [
+    ['a', a],
+    ['b', b],
+  ]
+    .map(([side, value]) => ({ type: 'shape', side, problem: shapeError(unit, value) }))
+    .filter((difference) => difference.problem !== null);
+  if (shapes.length > 0) return shapes;
+
+  if (unit === 'presence') return [];
+  if (unit === 'settings') {
+    return ['confirmed', 'excluded']
+      .filter((key) => !sameSet(a[key], b[key]))
+      .map((key) => ({ type: 'settingSet', key }));
+  }
+
+  // 分母・割合（shapeError が null なので、unit はこの2つのどちらか）
+  const differences = [];
+  const onlyA = Object.keys(a).filter((k) => !Object.hasOwn(b, k));
+  const onlyB = Object.keys(b).filter((k) => !Object.hasOwn(a, k));
+  if (onlyA.length > 0) differences.push({ type: 'missingSettings', side: 'b', settings: onlyA });
+  if (onlyB.length > 0) differences.push({ type: 'missingSettings', side: 'a', settings: onlyB });
+  for (const setting of Object.keys(a).filter((k) => Object.hasOwn(b, k))) {
+    const x = parseShown(unit, a[setting]);
+    const y = parseShown(unit, b[setting]);
+    if (!intervalsOverlap(x, y)) {
+      differences.push({ type: 'noOverlap', setting, zero: Boolean(x?.zero || y?.zero) });
+    }
+  }
+  return differences;
+}
+
+/**
+ * 2つの値が一致するか（仕様 5.4）。判定は valueDifferences（違いが1つも無ければ一致）。
+ * 形が unit に合わない値は一致しないとみなす。分母・割合は、設定の組が同じで、すべての設定で丸めの幅が重なれば
+ * 一致する。確率 0（分母の null・割合の 0）は、「その設定では起きない」（設定を否定できる）を表すので、
+ * 確率 0 とだけ一致する。設定の組は confirmed・excluded がそれぞれ集合として同じなら一致する。有無は常に一致する。
  */
 export function valuesAgree(unit, a, b) {
-  if (shapeError(unit, a) !== null || shapeError(unit, b) !== null) return false;
-  switch (unit) {
-    case 'denominator':
-    case 'percent':
-      return (
-        sameKeys(a, b) &&
-        Object.keys(a).every((k) =>
-          intervalsOverlap(parseShown(unit, a[k]), parseShown(unit, b[k]))
-        )
-      );
-    case 'settings':
-      return sameSet(a.confirmed, b.confirmed) && sameSet(a.excluded, b.excluded);
-    case 'presence':
-      return true;
-    default:
-      return false;
-  }
+  return valueDifferences(unit, a, b).length === 0;
 }
 
 /** 分母（1/x の x）を、保存する確率（有効数字6桁）にする。null は確率 0 */

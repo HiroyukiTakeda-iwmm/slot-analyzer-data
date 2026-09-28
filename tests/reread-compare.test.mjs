@@ -209,6 +209,27 @@ describe('schemas/notes.schema.json', () => {
     expect(noteSchemaErrors('reread', { ...rereadNote(), machineName: 'x' })).not.toEqual([]);
   });
 
+  it('知らない欄は、その欄の名前を文面に出す', () => {
+    expect(noteSchemaErrors('extract', { ...extractNote(), reviewedAt: '2026-09-28' })).toContain(
+      '（最上位） must NOT have additional properties（知らない欄: reviewedAt）'
+    );
+    const item = extractNote();
+    item.items[0].status = 'confirmed';
+    expect(noteSchemaErrors('extract', item)).toContain(
+      '/items/0 must NOT have additional properties（知らない欄: status）'
+    );
+    const page = {
+      url: 'https://example.com/',
+      route: 'WebFetch',
+      at: '2026-09-28',
+      reason: '403 で読めない',
+      extra: 1,
+    };
+    expect(noteSchemaErrors('reread', { ...rereadNote(), unreadable: [page] })).toContain(
+      '/unreadable/0 must NOT have additional properties（知らない欄: extra）'
+    );
+  });
+
   it('読み直しのメモの必須の欄（machineId・by・items、行の kind・name・source・value）', () => {
     for (const key of ['machineId', 'by', 'items']) {
       const note = rereadNote();
@@ -236,6 +257,7 @@ describe('schemas/notes.schema.json', () => {
       'provenance.schema.json#/definitions/value',
       'provenance.schema.json#/definitions/sourceKey',
       'provenance.schema.json#/definitions/settingList',
+      'provenance.schema.json#/definitions/date',
     ]) {
       expect(text).toContain(`"$ref":"${ref}"`);
     }
@@ -341,13 +363,13 @@ describe('scripts/reread-compare.mjs', () => {
     expect(result.stdout).toContain('    抜き出しに無い設定: 2\n');
   });
 
-  it('設定の組・確率 0・形の合わない値の食い違い', () => {
+  it('設定の組・確率 0・読み直しの値の形が合わない食い違い', () => {
     const extract = extractNote();
     extract.items[0].values.nana = { 1: null, 6: 94.2 };
-    extract.items[1].values.chonborista = { 1: null, 6: 40 };
     const reread = rereadNote();
     reread.items[3].value = { confirmed: ['6'], excluded: ['1'] };
     reread.items[1].value = { 1: 99.9, 6: 94.2 };
+    reread.items[2].value = { 1: null, 6: 40 };
     const result = compare(extract, reread);
     expect(result.status).toBe(1);
     expect(result.stdout).toContain('食い違い 3:');
@@ -358,7 +380,33 @@ describe('scripts/reread-compare.mjs', () => {
       '    設定 1: null と 99.9 は一致しない（確率 0 は確率 0 とだけ一致する）\n'
     );
     expect(result.stdout).toContain(
-      '    抜き出しの値が unit（percent）の形に合わない: 設定ごとに、0〜100 の割合（数か、表示の桁を残した文字列）が必要\n'
+      '    読み直しの値が unit（percent）の形に合わない: 設定ごとに、0〜100 の割合（数か、表示の桁を残した文字列）が必要\n'
+    );
+  });
+
+  it('照合する行が無ければ、成功にしない（終了コード 1）', () => {
+    const extract = extractNote();
+    extract.items = extract.items.map((item) => ({ ...item, values: {} }));
+    const empty = compare(extract, { ...rereadNote(), items: [] });
+    expect(empty.status).toBe(1);
+    expect(empty.stderr).toBe('');
+    expect(empty.stdout).toBe(
+      [
+        'karakuri-circus2: 読み直しの照合（by reread-agent-2）',
+        '照合する行が無い（抜き出しと読み直しの両方に値のある項目・出典が 0 件）',
+        '',
+      ].join('\n')
+    );
+
+    const noItems = compare({ ...extractNote(), items: [] }, { ...rereadNote(), items: [] });
+    expect(noItems.status).toBe(1);
+    expect(noItems.stdout).toContain('照合する行が無い');
+
+    // 読み直しの行が1つも無いときは、読み直していない行とともに出す
+    const notReread = compare(extractNote(), { ...rereadNote(), items: [] });
+    expect(notReread.status).toBe(1);
+    expect(notReread.stdout).toContain(
+      '照合する行が無い（抜き出しと読み直しの両方に値のある項目・出典が 0 件）\n一致 0・食い違い 0・読み直していない 5・読み直しにしか無い 0\n'
     );
   });
 
@@ -379,24 +427,29 @@ describe('scripts/reread-compare.mjs', () => {
     );
   });
 
-  it('抜き出しに無い項目・抜き出しに値の無い出典の行は「読み直しにしか無い行」', () => {
+  it('「読み直しにしか無い行」は、出典キーが sources に無い・項目が無い・その出典の値が無い、を分けて出す', () => {
     const reread = rereadNote();
+    const settings = { confirmed: ['6'], excluded: [] };
     reread.items.push(
       { kind: 'role', name: '中段チェリー', source: 'chonborista', value: { 1: 12000 } },
       { kind: 'role', name: '強チェリー', source: 'chonborista', value: { 1: 300 } },
-      { kind: 'endScreen', name: '金', source: 'dmm', value: { confirmed: ['6'], excluded: [] } }
+      { kind: 'endScreen', name: '金', source: 'nana', value: settings },
+      { kind: 'endScreen', name: '金', source: 'dmm', value: settings },
+      { kind: 'role', name: '強チェリー', source: 'dmm', value: { 1: 300 } }
     );
     const result = compare(extractNote(), reread);
     expect(result.status).toBe(1);
     expect(result.stdout).toBe(
       [
         'karakuri-circus2: 読み直しの照合（by reread-agent-2）',
-        '一致 5・食い違い 0・読み直していない 0・読み直しにしか無い 3',
+        '一致 5・食い違い 0・読み直していない 0・読み直しにしか無い 5',
         '',
-        '読み直しにしか無い 3:',
+        '読み直しにしか無い 5:',
         '  role 中段チェリー [chonborista]: 抜き出しにこの出典の値が無い',
         '  role 強チェリー [chonborista]: 抜き出しにこの項目が無い',
-        '  endScreen 金 [dmm]: 抜き出しにこの出典の値が無い',
+        '  endScreen 金 [nana]: 抜き出しにこの出典の値が無い',
+        '  endScreen 金 [dmm]: 抜き出しの sources にこの出典キーが無い（書き違いか、抜き出しで読んでいない出典）',
+        '  role 強チェリー [dmm]: 抜き出しの sources にこの出典キーが無い（書き違いか、抜き出しで読んでいない出典）',
         '',
       ].join('\n')
     );
@@ -447,6 +500,31 @@ describe('scripts/reread-compare.mjs', () => {
       expect(bad.status).toBe(2);
       expect(bad.stderr).toContain('読み直しのメモの形に合わない');
       expect(bad.stderr).toContain('/items/0/source');
+    });
+
+    it('抜き出しの値が unit の形に合わない（照合する前に止める）', () => {
+      const extract = extractNote();
+      extract.items[1].values.chonborista = { 1: null, 6: 40 };
+      extract.items[3].values.chonborista = { 1: 99.9 };
+      const result = compare(extract, rereadNote());
+      expect(result.status).toBe(2);
+      expect(result.stdout).toBe('');
+      expect(result.stderr).toBe(
+        [
+          '照合できない: 抜き出しの trialSuccessRate CZ成功率 [chonborista] の値が unit（percent）の形に合わない: 設定ごとに、0〜100 の割合（数か、表示の桁を残した文字列）が必要',
+          '照合できない: 抜き出しの confirmationEvent エンディング [chonborista] の値が unit（presence）の形に合わない: true が必要',
+          '',
+        ].join('\n')
+      );
+
+      // 読み直しに行の無い出典の値も確かめる
+      const notCompared = extractNote();
+      notCompared.items[0].values.nana = { 1: 0.5 };
+      const reread = rereadNote();
+      reread.items = reread.items.filter((line) => line.source !== 'nana');
+      const onlyExtract = compare(notCompared, reread);
+      expect(onlyExtract.status).toBe(2);
+      expect(onlyExtract.stderr).toContain('抜き出しの role 弱チェリー [nana] の値が unit');
     });
 
     it('抜き出しと読み直しの機種 ID が違う', () => {
