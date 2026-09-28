@@ -6,6 +6,7 @@ import {
   decimalsOf,
   intervalsOverlap,
   itemKey,
+  kindUnits,
   listMachineItems,
   machineSupporters,
   machineValue,
@@ -590,6 +591,29 @@ describe('machineValue: 空の probabilities', () => {
   it('分母・割合とも表せない（null）', () => {
     expect(machineValue({ probabilities: {} }, 'denominator')).toBeNull();
     expect(machineValue({ probabilities: {} }, 'percent')).toBeNull();
+  });
+});
+
+describe('kindUnits（種類だけで決まる unit。機種ファイルに無い新しい項目の確かめ）', () => {
+  it('役・ゾーンの役は denominator だけ。ほかの種類は項目の中身で決まるので null', () => {
+    expect(kindUnits('role')).toEqual(['denominator']);
+    expect(kindUnits('zoneRole')).toEqual(['denominator']);
+    for (const kind of [
+      'endScreen',
+      'endScreenGroupItem',
+      'trialSuccessRate',
+      'confirmationEvent',
+    ]) {
+      expect(kindUnits(kind)).toBeNull();
+    }
+  });
+
+  it('allowedUnits の数値の項目の候補と同じ規則', () => {
+    for (const kind of ['role', 'zoneRole', 'endScreen', 'trialSuccessRate', 'modeTransition']) {
+      expect(allowedUnits(kind, { probabilities: { 1: 0.5 } })).toEqual(
+        kindUnits(kind) ?? ['denominator', 'percent']
+      );
+    }
   });
 });
 

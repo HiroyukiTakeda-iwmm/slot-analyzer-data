@@ -3,6 +3,7 @@ import {
   decideExistingItem,
   decideNewItem,
   preferenceOrder,
+  rereadWouldMakeProvisional,
   statusError,
   toStoredFromShown,
   toStoredProbability,
@@ -514,6 +515,29 @@ describe('decideExistingItem（既存の値の見直し）', () => {
         stored: storedOf({ 1: 500 }),
       })
     ).toEqual({ outcome: 'remove', reason: 'サイト間で食い違い、今の値を裏づける出典なし' });
+  });
+});
+
+describe('rereadWouldMakeProvisional（外す前に読み直しが要るか。validate と記録の下書きで同じ式）', () => {
+  const at300 = { unit: DEN, sourceKinds: KINDS, stored: storedOf({ 1: 300 }) };
+
+  it('読み直しが無く、ちょんぼりすたの値と合う読み直しがあれば暫定になる項目は true', () => {
+    const input = { ...at300, values: { chonborista: { 1: 295.2 } } };
+    expect(decideExistingItem(input).outcome).toBe('remove');
+    expect(rereadWouldMakeProvisional(input)).toBe(true);
+  });
+
+  it('読み直しがある・ちょんぼりすたの値が無い・読み直しても暫定にできない項目は false', () => {
+    const chonborista = { chonborista: { 1: 295.2 } };
+    expect(rereadWouldMakeProvisional({ ...at300, values: chonborista, reread: { 1: 250 } })).toBe(
+      false
+    );
+    expect(rereadWouldMakeProvisional({ ...at300, values: { 'nana-press': { 1: 250 } } })).toBe(
+      false
+    );
+    // ほかの出典がちょんぼりすたの値と矛盾する
+    const values = { ...chonborista, 'nana-press': { 1: 250 } };
+    expect(rereadWouldMakeProvisional({ ...at300, values })).toBe(false);
   });
 });
 

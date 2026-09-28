@@ -7,9 +7,8 @@ import {
   scopedId,
 } from '../lib/derived-ids.mjs';
 import { compileSchema } from '../lib/compile-schema.mjs';
-import { OFFICIAL_DOMAINS_PATH } from '../lib/load-provenance.mjs';
 import {
-  CHONBORISTA_KEY,
+  REREAD_BEFORE_REMOVAL,
   allowedUnits,
   decideExistingItem,
   itemEntry,
@@ -17,14 +16,12 @@ import {
   listMachineItems,
   machineValue,
   machineValueProblem,
+  rereadWouldMakeProvisional,
   shapeError,
+  sourceProblems,
   statusError,
   storedMap,
 } from '../lib/provenance.mjs';
-import { siteOf } from '../lib/site.mjs';
-
-const CHONBORISTA_URL_PREFIX = 'https://chonborista.com/';
-const CHONBORISTA_SITE = 'chonborista.com';
 
 function error(file, message) {
   return { file, type: 'provenance', severity: 'error', message };
@@ -103,69 +100,19 @@ export function validateProvenance(machineFiles, indexData, provenanceFiles, opt
 }
 
 /**
- * 出典の URL のサイトで確かめること（仕様 5.7）: 同じサイトを2つの出典に登録しない・chonborista.com は
- * キーを chonborista にする・公式の出典は、サイトがメーカーの公式ドメインの一覧にある。
- * @param {Map<string, string>} keyBySite これまでの出典のサイト → 出典キー（ここで足す）
+ * 出典キーごとの種類を集める。出典キーの重複と、出典の URL のサイトとキーの確かめ（sourceProblems。記録の下書きと
+ * 同じ規則・文面）をエラーにして errors に足す。
  * @param {Set<string> | null} officialDomains null は一覧を読めなかったとき
  */
-function siteErrors(path, source, site, keyBySite, officialDomains) {
-  const errors = [];
-  // 同じサイトを2つの出典として数えると、「2サイト以上で一致」を1サイトで満たせてしまう
-  const other = keyBySite.get(site);
-  if (other !== undefined && other !== source.key) {
-    errors.push(
-      error(path, `同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`)
-    );
-  }
-  keyBySite.set(site, source.key);
-  // 採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける。別のキーや official で
-  // 登録すると、ちょんぼりすたの値を公式や別サイトとして数えてしまう
-  if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
-    errors.push(
-      error(path, `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`)
-    );
-  }
-  // 公式は採用で最優先になるので、記録する側の申告だけにしない（本人の決定 2026-09-27）
-  if (source.kind === 'official' && officialDomains === null) {
-    errors.push(
-      error(
-        path,
-        `公式の出典を確かめられない（公式ドメインの一覧 ${OFFICIAL_DOMAINS_PATH} を読めない）: ${site}`
-      )
-    );
-  } else if (source.kind === 'official' && !officialDomains.has(site)) {
-    errors.push(
-      error(path, `公式の出典のドメインが一覧（${OFFICIAL_DOMAINS_PATH}）に無い: ${site}`)
-    );
-  }
-  return errors;
-}
-
 function collectSourceKinds(path, sources, errors, officialDomains) {
   const sourceKinds = {};
-  const keyBySite = new Map();
   for (const source of sources) {
     if (source.key in sourceKinds) {
       errors.push(error(path, `出典キーの重複: ${source.key}`));
     }
     sourceKinds[source.key] = source.kind;
-    const site = siteOf(source.url);
-    if (site === null) {
-      // スキーマは https:// で始まることしか見ない。読めない URL はサイトが分からず、サイトの判定を
-      // 黙って外れるので、エラーにしてサイトの判定から外す
-      errors.push(error(path, `出典の URL を読めない: ${source.url}`));
-    } else {
-      errors.push(...siteErrors(path, source, site, keyBySite, officialDomains));
-    }
-    if (source.key === CHONBORISTA_KEY) {
-      if (!source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
-        errors.push(error(path, `chonborista の URL は ${CHONBORISTA_URL_PREFIX} で始める`));
-      }
-      if (source.kind !== 'analysis-site') {
-        errors.push(error(path, `${CHONBORISTA_KEY} の出典は kind を analysis-site にする`));
-      }
-    }
   }
+  errors.push(...sourceProblems(sources, officialDomains).map((message) => error(path, message)));
   return sourceKinds;
 }
 
@@ -281,17 +228,11 @@ function removalProblem(removed, entry, sourceKinds) {
     sourceKinds,
     current: machineValue(entry, unit),
     stored: storedMap(entry),
+    reread: removed.reread?.value,
   };
-  const decision = decideExistingItem({ ...input, reread: removed.reread?.value });
+  const decision = decideExistingItem(input);
   if (decision.outcome !== 'remove') return `外す条件に合わない（${decision.status} にできる）`;
-  const chonborista = values[CHONBORISTA_KEY];
-  if (removed.reread === undefined && chonborista !== undefined) {
-    const ifReread = decideExistingItem({ ...input, reread: chonborista });
-    if (ifReread.status === 'provisional-chonborista') {
-      return '外す前に、ちょんぼりすたの値の読み直しが要る（合えば provisional-chonborista にする）';
-    }
-  }
-  return null;
+  return rereadWouldMakeProvisional(input) ? REREAD_BEFORE_REMOVAL : null;
 }
 
 /**

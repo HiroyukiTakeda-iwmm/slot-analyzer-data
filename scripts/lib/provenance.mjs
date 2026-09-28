@@ -17,8 +17,15 @@
  * 項目の種類（kind）と unit の一覧は schemas/provenance.schema.json が正本。
  */
 
+import { OFFICIAL_DOMAINS_PATH } from './load-provenance.mjs';
+import { siteOf } from './site.mjs';
+
 /** ちょんぼりすたの出典キー。単独の値を暫定で採用できるのはこの出典だけ（仕様 5.5） */
 export const CHONBORISTA_KEY = 'chonborista';
+
+/** ちょんぼりすたの出典の URL の始まりと、サイト（siteOf の結果） */
+const CHONBORISTA_URL_PREFIX = 'https://chonborista.com/';
+const CHONBORISTA_SITE = 'chonborista.com';
 
 /** zoneRole・endScreenGroupItem の名前で、親と子を区切る文字列 */
 export const NAME_SEPARATOR = '::';
@@ -223,7 +230,8 @@ export function valueDifferences(unit, a, b) {
       .map((key) => ({ type: 'settingSet', key }));
   }
 
-  // 分母・割合（shapeError が null なので、unit はこの2つのどちらか）
+  // 分母・割合（shapeError が null なので、unit はこの2つのどちらか）。shapeError の前提に頼らず、ここでも確かめる
+  if (!isNumericUnit(unit)) throw new Error(`値の違いを求められない unit: ${unit}`);
   const differences = [];
   const onlyA = Object.keys(a).filter((k) => !Object.hasOwn(b, k));
   const onlyB = Object.keys(b).filter((k) => !Object.hasOwn(a, k));
@@ -413,12 +421,19 @@ export function machineValueProblem(item, entry) {
 export function allowedUnits(kind, entry) {
   if (Array.isArray(entry.patterns) && entry.patterns.length > 0) return [];
   const map = numericMap(entry);
-  if (map && Object.keys(map).length > 0) {
-    if (kind === 'role' || kind === 'zoneRole') return ['denominator'];
-    return ['denominator', 'percent'];
-  }
+  if (map && Object.keys(map).length > 0) return kindUnits(kind) ?? ['denominator', 'percent'];
   if (machineValue(entry, 'settings') !== null) return ['settings'];
   return ['presence'];
+}
+
+/**
+ * 種類だけで決まる unit（allowedUnits と同じ規則）。役（role・zoneRole）は denominator だけ。ほかの種類は項目の
+ * 中身（数値・設定の組・有無）で決まるので null。機種ファイルに無い新しい項目（新台のすべての項目も）の unit を、
+ * 機種ファイルに書く前に確かめるのに使う（記録の下書き）。
+ * @returns {string[] | null}
+ */
+export function kindUnits(kind) {
+  return kind === 'role' || kind === 'zoneRole' ? ['denominator'] : null;
 }
 
 /**
@@ -840,6 +855,75 @@ export function decideExistingItem({ unit, values, sourceKinds, reread, current,
   }
   if (Object.keys(values).length === 0) return { outcome: 'remove', reason: '出典なし' };
   return { outcome: 'remove', reason: '今の値を裏づける出典なし' };
+}
+
+/** 外す前に読み直しが要るときの説明（validate と記録の下書きで同じ文面。rereadWouldMakeProvisional） */
+export const REREAD_BEFORE_REMOVAL =
+  '外す前に、ちょんぼりすたの値の読み直しが要る（合えば provisional-chonborista にする）';
+
+/**
+ * 外す前に、ちょんぼりすたの値の読み直しが要るか（仕様 5.5 の既存の値の規則3・4）。読み直しが無く、ちょんぼりすたの
+ * 値があり、その値と合う読み直しがあれば decideExistingItem が provisional-chonborista を選ぶとき true。読み直しを
+ * 省くと、暫定を素通りして外せてしまうので、validate（removed の確かめ）と記録の下書きがこの1つの式で止める。
+ * @param {object} input decideExistingItem と同じ入力（reread は読み直しの値そのもの。無ければ undefined）
+ * @returns {boolean}
+ */
+export function rereadWouldMakeProvisional(input) {
+  const chonborista = input.values[CHONBORISTA_KEY];
+  if (input.reread !== undefined || chonborista === undefined) return false;
+  return decideExistingItem({ ...input, reread: chonborista }).status === 'provisional-chonborista';
+}
+
+/**
+ * 出典の URL のサイトとキーで確かめること（仕様 5.7）。validate（provenance-validator.mjs）と記録の下書きで同じ規則・
+ * 文面にする。出典キーの重複は、それぞれの道具が確かめる。
+ * - URL として読めない出典は、サイトが分からないので問題にし、サイトの判定から外す（スキーマは https:// で始まる
+ *   ことしか見ない）
+ * - 同じサイトを2つの出典に登録しない（「2サイト以上で一致」を1サイトで満たせてしまう）
+ * - chonborista.com の出典はキーを chonborista にし、chonborista の出典は URL が https://chonborista.com/ で始まり、
+ *   kind が analysis-site（採用の優先順と provisional-chonborista は、ちょんぼりすたをキーで見分ける）
+ * - 公式の出典は、サイトがメーカーの公式ドメインの一覧にある（公式は採用で最優先になるので、記録する側の申告だけに
+ *   しない。本人の決定 2026-09-27）
+ * @param {Array<{ key: string, kind: string, url: string }>} sources
+ * @param {Set<string> | null} officialDomains 一覧の登録ドメイン。null は一覧を読めなかったとき
+ * @returns {string[]} 問題が無ければ空の配列
+ */
+export function sourceProblems(sources, officialDomains) {
+  const problems = [];
+  const keyBySite = new Map();
+  for (const source of sources) {
+    const site = siteOf(source.url);
+    if (site === null) {
+      problems.push(`出典の URL を読めない: ${source.url}`);
+    } else {
+      const other = keyBySite.get(site);
+      if (other !== undefined && other !== source.key) {
+        problems.push(`同じサイト（${site}）を2つの出典に登録している: ${other}・${source.key}`);
+      }
+      keyBySite.set(site, source.key);
+      if (site === CHONBORISTA_SITE && source.key !== CHONBORISTA_KEY) {
+        problems.push(
+          `${CHONBORISTA_SITE} の出典は、キーを ${CHONBORISTA_KEY} にする: ${source.key}`
+        );
+      }
+      if (source.kind === 'official' && officialDomains === null) {
+        problems.push(
+          `公式の出典を確かめられない（公式ドメインの一覧 ${OFFICIAL_DOMAINS_PATH} を読めない）: ${site}`
+        );
+      } else if (source.kind === 'official' && !officialDomains.has(site)) {
+        problems.push(`公式の出典のドメインが一覧（${OFFICIAL_DOMAINS_PATH}）に無い: ${site}`);
+      }
+    }
+    if (source.key === CHONBORISTA_KEY) {
+      if (!source.url.startsWith(CHONBORISTA_URL_PREFIX)) {
+        problems.push(`${CHONBORISTA_KEY} の URL は ${CHONBORISTA_URL_PREFIX} で始める`);
+      }
+      if (source.kind !== 'analysis-site') {
+        problems.push(`${CHONBORISTA_KEY} の出典は kind を analysis-site にする`);
+      }
+    }
+  }
+  return problems;
 }
 
 /**
