@@ -1066,6 +1066,7 @@ describe('採否と検査の一貫性（逆向き）: 決定と違う status・�
     const againstBase = checkRulesAgainstBase({
       readBase: readerOf(scene.main),
       readHead: readerOf(head),
+      listBase: () => [], // main に出典記録は無い（この PR で初めて記録する）
       provenanceFiles: [{ data: record }],
     });
     return [...validated.errors.map((e) => e.message), ...againstBase];

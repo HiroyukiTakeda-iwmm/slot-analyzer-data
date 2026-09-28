@@ -207,9 +207,10 @@ node scripts/audit-freshness.mjs  # 鮮度（lastUpdated からの経過日数�
 `npm run check:base`（PR の CI でも実行）で、次を main と比べて確かめる。`npm run validate` は main を読まないので、こちらで見る。
 
 - アプリが作る ID が変わっていないか、`removed` に記録せずに消えた項目がないか、新しい項目が main の別の項目の ID を使っていないか
-- 外した ID の台帳: 新しく外した項目の `previous` と `appId` が main と同じか、main の記録の `retiredIds` を消していないか（足すだけ。`removed` は消してよい）。台帳の ID を今の項目が使っていないかは `npm run validate` が確かめる（PR をまたいでも、足し直した後でも）
+- 外した ID の台帳: 新しく外した項目の `previous` と `appId` が main と同じか（main の終了画面の `patterns` は書き直した後の形で比べる）、main の記録の `retiredIds` を消していないか（足すだけ。`removed` は消してよい）。台帳の ID を今の項目が使っていないかは `npm run validate` が確かめる（PR をまたいでも、足し直した後でも）
 - `kept-single-source` は main にある項目にだけ使い、採用値と機種ファイルの値が main の値そのものか
 - main にある項目の `provisional-chonborista` は、main の値を裏づける出典（ちょんぼりすた以外・一部だけの出典も含む）が無いときだけか（あるなら `kept-single-source`。数え方は「残す」の裏づけと同じ）
+- 上の2つは、記録か機種ファイルの値が main から変わった項目と新しい項目だけを確かめる（main の出典記録に同じ項目があり、値も main と同じ項目は、マージ済みの採用として確かめ直さない）
 - ID を持たない種類の項目も、消したら `removed` に記録する
 - 新しく足した機種には出典記録が要る
 - ID を作る種類で同じ名前の項目には、別々の明示の `id` を付ける

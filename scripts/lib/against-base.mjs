@@ -54,7 +54,8 @@ export function runAgainstBase({ base, readBase, readHead, listBase, loadProvena
     ];
   } catch (e) {
     // 基準を読めない・JSON が壊れている（main の出典記録も）・項目の名前を区別できない
-    // （createNameDisambiguator の例外）・名前に「::」を含む（plainName の例外）のどれか
+    // （createNameDisambiguator の例外）・名前に「::」を含む（plainName の例外）・main の終了画面の patterns を
+    // 書き直せない（expandEndScreenPatterns の例外）のどれか
     return { code: 2, lines: [`比べられませんでした（基準: ${base}）: ${e.message}`] };
   }
   if (problems.length === 0) {

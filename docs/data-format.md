@@ -179,7 +179,7 @@ slot-analyzer-data で使用するJSONデータの詳細仕様です。
 
 `setting` は、そのまま確定する設定になる。設定番号でない値（`"high"`・`"odd"` など）を書くと、アプリはそのパターンを数えた時点で推定全体を止める。`minSetting` が数でないと、アプリは機種を読み込めない（どちらも `npm run validate` のエラー）。示唆の強さや偶奇などの意味は `name` と `description` に書き、確定する設定が分かっているときだけ `setting` か `minSetting` を書く。
 
-**`patterns` 形式は新しく使わない**（新しい終了画面は標準形式で書く）。今ある `patterns` は、その機種を見直すときに、アプリが読む形（パターンごとの普通の終了画面）に書き直す（2026-09-27 に本人が決定）。書き直すまでは出典記録を作れない（下の「記録の決まり」）。
+**`patterns` 形式は新しく使わない**（新しい終了画面は標準形式で書く）。今ある `patterns` は、その機種を見直すときに、アプリが読む形（パターンごとの普通の終了画面）に書き直す（2026-09-27 に本人が決定）。書き直すまでは出典記録を作れない（下の「記録の決まり」）。書き直しと見直しは同じ PR でよい（`npm run check:base` は main の `patterns` を同じ計算で書き直してから比べるので、書き直した終了画面を外す・残すこともできる）。
 
 ```bash
 node scripts/expand-patterns.mjs machines/{dir}/{id}.json          # 書き直す内容を表示するだけ
@@ -584,7 +584,7 @@ validate が確かめること:
 
 `npm run check:base` が main と比べて確かめること:
 
-- 新しく外した項目は main の機種ファイルにあり、`previous` が main の項目と JSON として同じ（キーの順は問わない）。`appId` は main の ID と同じ
+- 新しく外した項目は main の機種ファイルにあり、`previous` が main の項目と JSON として同じ（キーの順は問わない）。`appId` は main の ID と同じ。main の最上位の終了画面の `patterns` は、書き直した後の形（アプリが読む形。`expand-patterns` と同じ計算）で比べるので、同じ PR で書き直した終了画面も外せる（`previous` は書き直した後の項目。`patterns` の親は外せない）
 - main の記録の `retiredIds` の各行は、比べる側の記録に残す（消さない・書き換えない。記録のファイルごと消しても見つかる。例外なし）。main の記録の `removed` は消してよい
 
 外した項目を足し直すときは、`removed` から消し（「外したはずの項目が機種ファイルにある」で止まるため）、明示の別の `id` を付ける。`retiredIds` は残すので、前の ID は使えない。
@@ -723,7 +723,7 @@ validate が確かめること:
 
 - 採否: 機種が `machines/index.json` に無ければ（新台）、すべての項目を `decideNewItem`（設定はメモの `availableSettings`）で決める。ある機種なら、機種ファイルにある項目は `decideExistingItem`（今の値は機種ファイルから）、無い項目は `decideNewItem`（設定は機種の設定）
 - 読み直し: 読み直しのメモの、出典が `chonborista` で同じ `kind`・`name` の行の `value` を、ちょんぼりすたの値の読み直しとして採否に渡す（ほかの出典の行は使わない）。項目と `removed` には、status によらず `reread: { by, value }` を付ける
-- 外す項目（`removed`）: `previous` は機種ファイルの生の項目（最上位の終了画面は `distribution` のまま）、ID を持つ項目は `appId`（上の「アプリの ID」）、`reason` は採否ルールの理由。`appId` のある項目は、同じ `kind`・`name`・`appId` の行を `retiredIds` に足す
+- 外す項目（`removed`）: `previous` は機種ファイルの生の項目（最上位の終了画面は `distribution` のまま。`patterns` を書き直した機種では、書き直した後の項目）、ID を持つ項目は `appId`（上の「アプリの ID」）、`reason` は採否ルールの理由。`appId` のある項目は、同じ `kind`・`name`・`appId` の行を `retiredIds` に足す
 - `retiredIds`: その機種の出典記録がもう `provenance/` にあれば、その `retiredIds` をそのまま先頭に引き継ぐ（足すだけの台帳）。今の記録の `removed` は引き継がない（前の見直しの根拠は git の履歴に残る）
 - 標準出力: 1つの JSON `{ "record": 出典記録の下書き, "machineValues": [{ kind, name, status, value }] }`。`record` は出典記録のスキーマに通してから出す（`reviewedAt` は実行した日。PR の日付に合わせて直す）。`machineValues` の `value` は、数値の `confirmed`・`provisional-chonborista` は採用値を有効数字6桁にした確率（`toStoredFromShown`）、`kept-single-source` は機種ファイルの今の確率そのもの、設定の組・有無は採用値
 - 標準エラー: 候補（`candidates`）の数と理由、外す項目（`appId`。読み直しが無く、読み直しが合えば暫定になる項目は、validate が止めることを添える）、メモの `unreadable`（読めなかったページ）

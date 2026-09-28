@@ -56,9 +56,21 @@ const provisional = (chonborista) => ({
   adopted: chonborista,
   reread: { by: 'verifier', value: chonborista },
 });
+const lister = (map) => (dir) => Object.keys(map).filter((path) => path.startsWith(`${dir}/`));
 const recordsOf = (...items) => [{ data: { machineId: 'test-machine', items } }];
+/** main の provenance/ に記録を置く（先の PR でマージした記録） */
+const withBaseRecord = (map, items, machineId = 'test-machine') => ({
+  ...map,
+  'provenance/README.md': '# provenance',
+  [`provenance/${machineId}.json`]: JSON.stringify({ machineId, items }),
+});
 const run = (base, head, provenanceFiles) =>
-  checkRulesAgainstBase({ readBase: reader(base), readHead: reader(head), provenanceFiles });
+  checkRulesAgainstBase({
+    readBase: reader(base),
+    readHead: reader(head),
+    listBase: lister(base),
+    provenanceFiles,
+  });
 /** main にある項目の provisional-chonborista で、main の値を裏づける出典があるときの報告 */
 const supportedByBase = (key) =>
   `test-machine: ${key}: main の値を裏づける出典がある（規則2の kept-single-source にする）`;
@@ -209,6 +221,164 @@ describe('checkRulesAgainstBase: provisional-chonborista', () => {
     expect(run(map, map, recordsOf(other))).toEqual([
       supportedByBase('confirmationEvent::金トロフィー'),
     ]);
+  });
+});
+
+describe('checkRulesAgainstBase: main の記録と同じ項目は確かめ直さない（マージ済みの採用）', () => {
+  // 先の PR で暫定の値（ちょんぼりすたの 1/295.2）を入れてマージした後の main。確かめ直すと、ちょんぼりすたの値が
+  // main の値（入れた暫定の値）を裏づけるので、関係ない PR が止まる（最終レビュー C1）
+  const written = toStoredProbability(295.2);
+  const item = provisional({ 1: 295.2 });
+  const main = withBaseRecord(files([big(written)]), [item]);
+
+  it('記録（unit・status・adopted・values・reread）と機種ファイルの値が main と同じなら問題なし', () => {
+    expect(run(main, files([big(written)]), recordsOf(item))).toEqual([]);
+    // 記録の項目のキーの順は問わない
+    const reordered = Object.fromEntries(Object.entries(item).reverse());
+    expect(run(main, files([big(written)]), recordsOf(reordered))).toEqual([]);
+  });
+
+  it('記録を変えずに機種ファイルの値だけ変えたら確かめる', () => {
+    expect(run(main, files([big(toStoredProbability(300))]), recordsOf(item))).toEqual([
+      supportedByBase('role::BIG'),
+    ]);
+    // kept-single-source も同じ（値を変えないことを確かめる）
+    const keptMain = withBaseRecord(files([big(0.00338753)]), [kept()]);
+    expect(run(keptMain, files([big(0.00338753)]), recordsOf(kept()))).toEqual([]);
+    expect(run(keptMain, files([big(0.0033873)]), recordsOf(kept()))).toEqual([
+      'test-machine: role::BIG: kept-single-source の値が main から変わった',
+    ]);
+  });
+
+  it('記録が main と違えば確かめる（values・reread・adopted・unit・status のどれでも）', () => {
+    const head = files([big(written)]);
+    const mainItems = [
+      { ...item, values: { chonborista: { 1: 295.2 }, 'nana-press': { 1: 310 } } },
+      { ...item, reread: { by: 'other-verifier', value: { 1: 295.2 } } },
+      { ...item, adopted: { 1: 295.20001 } },
+      { ...item, unit: 'percent' },
+      { ...item, status: 'kept-single-source' },
+    ];
+    for (const mainItem of mainItems) {
+      const base = withBaseRecord(head, [mainItem]);
+      expect(run(base, head, recordsOf(item))).toEqual([supportedByBase('role::BIG')]);
+    }
+    // status を kept-single-source に変えたら、kept-single-source の規則で確かめる
+    const asKept = { ...item, status: 'kept-single-source' };
+    expect(run(main, head, recordsOf(asKept))).toEqual([
+      'test-machine: role::BIG: kept-single-source の採用値が main の値そのものでない',
+    ]);
+  });
+
+  it('main の別の機種の記録にある同じ項目では、確かめ直しを省かない', () => {
+    const other = withBaseRecord(files([big(written)]), [item], 'other-machine');
+    expect(run(other, files([big(written)]), recordsOf(item))).toEqual([
+      supportedByBase('role::BIG'),
+    ]);
+  });
+
+  it('main の機種ファイルに無い項目・比べる側の機種ファイルに無い項目は、記録が同じでも確かめる', () => {
+    const keptMain = withBaseRecord(files([]), [kept()]);
+    expect(run(keptMain, files([big(0.00338753)]), recordsOf(kept()))).toEqual([
+      'test-machine: role::BIG: main に無い項目に kept-single-source を使っている',
+    ]);
+    const removedHead = withBaseRecord(files([big(0.00338753)]), [kept()]);
+    expect(run(removedHead, files([]), recordsOf(kept()))).toEqual([
+      'test-machine: role::BIG: kept-single-source の項目が機種ファイルに無い',
+    ]);
+  });
+
+  it('unit で表せない値（null）なら、記録と値が main と同じでも確かめる', () => {
+    // 確定演出（設定の組）に denominator の記録。main でも比べる側でも unit の形にできない
+    const map = {
+      ...files([big(written)]),
+      'machines/test/test-machine.json': JSON.stringify({
+        name: 'テスト機種',
+        roles: [big(written)],
+        confirmationEvents: [{ name: '金トロフィー', confirmedSettings: ['6'] }],
+      }),
+    };
+    const odd = { ...kept(), kind: 'confirmationEvent', name: '金トロフィー' };
+    expect(run(withBaseRecord(map, [odd]), map, recordsOf(odd))).toEqual([
+      'test-machine: confirmationEvent::金トロフィー: kept-single-source の採用値が main の値そのものでない',
+      'test-machine: confirmationEvent::金トロフィー: kept-single-source の値が main から変わった',
+    ]);
+  });
+
+  it('main の出典記録を読めなければ例外を投げる（CLI は終了コード 2 にする）', () => {
+    const broken = { ...files([big(written)]), 'provenance/test-machine.json': '{' };
+    expect(() => run(broken, files([big(written)]), recordsOf(item))).toThrow(
+      'main の出典記録を読めない'
+    );
+  });
+});
+
+describe('checkRulesAgainstBase: main の終了画面の patterns は、書き直した形で比べる', () => {
+  // bakemonogatari の AT終了画面 と同じ形。同じ PR で書き直して（expand-patterns --write）、値を見直す
+  const parent = {
+    name: 'AT終了画面',
+    patterns: [
+      { name: '初代パネル（暦・忍・忍野）', minSetting: 4, description: '設定4以上濃厚' },
+      { name: 'ヒロイン集合（初代パネル）', minSetting: 5, description: '設定5以上濃厚' },
+    ],
+    id: 'AT終了画面',
+    type: 'at_end',
+    hint: '設定示唆',
+    color: '#78909C',
+  };
+  /** 書き直した後の終了画面（expand-patterns --write が書く形） */
+  const heroine = {
+    id: 'AT終了画面_2',
+    name: 'ヒロイン集合（初代パネル）',
+    type: 'at_end',
+    hint: '設定5以上濃厚',
+    confirmedSettings: ['5', '6'],
+    color: '#78909C',
+  };
+  const shodai = {
+    id: 'AT終了画面_1',
+    name: '初代パネル（暦・忍・忍野）',
+    type: 'at_end',
+    hint: '設定4以上濃厚',
+    confirmedSettings: ['4', '5', '6'],
+    color: '#78909C',
+  };
+  const withScreens = (endScreens) => ({
+    'machines/index.json': indexJson([entry]),
+    'machines/test/test-machine.json': JSON.stringify({
+      name: 'テスト機種',
+      roles: [],
+      endScreens,
+    }),
+  });
+  const settings = { confirmed: ['5', '6'], excluded: [] };
+  const keptHeroine = {
+    kind: 'endScreen',
+    name: 'ヒロイン集合（初代パネル）',
+    unit: 'settings',
+    status: 'kept-single-source',
+    values: { 'nana-press': settings },
+    adopted: settings,
+  };
+
+  it('同じ PR で書き直した終了画面に kept-single-source を使える', () => {
+    expect(
+      run(withScreens([parent]), withScreens([shodai, heroine]), recordsOf(keptHeroine))
+    ).toEqual([]);
+  });
+
+  it('書き直した終了画面でも、採用値が main の値（書き直した形）でなければ報告する', () => {
+    const wrong = { ...keptHeroine, adopted: { confirmed: ['6'], excluded: [] } };
+    expect(run(withScreens([parent]), withScreens([shodai, heroine]), recordsOf(wrong))).toEqual([
+      'test-machine: endScreen::ヒロイン集合（初代パネル）: kept-single-source の採用値が main の値そのものでない',
+    ]);
+  });
+
+  it('main が書き直せない形なら例外を投げる（CLI は終了コード 2 にする）', () => {
+    const odd = { ...parent, confirmedSettings: ['6'] };
+    expect(() =>
+      run(withScreens([odd]), withScreens([shodai, heroine]), recordsOf(keptHeroine))
+    ).toThrow('書き直すと消える');
   });
 });
 

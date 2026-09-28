@@ -142,6 +142,86 @@ describe('checkLedgerAgainstBase: 新しく外した項目（removed）を main 
   });
 });
 
+describe('checkLedgerAgainstBase: main の終了画面の patterns は、書き直した形で比べる', () => {
+  // bakemonogatari の AT終了画面 と同じ形。同じ PR で書き直して（expand-patterns --write）、書き直した画面を外す
+  const parent = {
+    name: 'AT終了画面',
+    patterns: [
+      { name: '初代パネル（暦・忍・忍野）', minSetting: 4, description: '設定4以上濃厚' },
+      { name: 'ヒロイン集合（初代パネル）', minSetting: 5, description: '設定5以上濃厚' },
+    ],
+    id: 'AT終了画面',
+    type: 'at_end',
+    hint: '設定示唆',
+    color: '#78909C',
+  };
+  /** 書き直した後の終了画面（expand-patterns --write が書く形。アプリが読む形） */
+  const shodai = {
+    id: 'AT終了画面_1',
+    name: '初代パネル（暦・忍・忍野）',
+    type: 'at_end',
+    hint: '設定4以上濃厚',
+    confirmedSettings: ['4', '5', '6'],
+    color: '#78909C',
+  };
+  const heroine = {
+    id: 'AT終了画面_2',
+    name: 'ヒロイン集合（初代パネル）',
+    type: 'at_end',
+    hint: '設定5以上濃厚',
+    confirmedSettings: ['5', '6'],
+    color: '#78909C',
+  };
+  const main = machineMap([], { endScreens: [parent] });
+  const removedScreen = (name, previous, appId) => ({
+    kind: 'endScreen',
+    name,
+    unit: 'settings',
+    previous,
+    values: {},
+    appId,
+    reason: '出典なし',
+  });
+
+  it('同じ PR で書き直した終了画面を外せる（previous は書き直した後の形、appId は main の ID）', () => {
+    const head = machineMap([], { endScreens: [heroine] });
+    const removed = removedScreen('初代パネル（暦・忍・忍野）', shodai, 'AT終了画面_1');
+    expect(runLedger(main, head, [ledger([removed])])).toEqual([]);
+  });
+
+  it('previous が書き直した後の形と違えば報告する（パターンの形のままも）', () => {
+    const head = machineMap([], { endScreens: [heroine] });
+    const key = 'endScreen::初代パネル（暦・忍・忍野）';
+    const forged = { ...shodai, confirmedSettings: ['6'] };
+    const asPattern = parent.patterns[0];
+    for (const previous of [forged, asPattern]) {
+      const removed = removedScreen('初代パネル（暦・忍・忍野）', previous, 'AT終了画面_1');
+      expect(runLedger(main, head, [ledger([removed])])).toEqual([
+        problem(key, 'removed の previous が main の項目と違う'),
+      ]);
+    }
+    const wrongId = removedScreen('初代パネル（暦・忍・忍野）', shodai, 'AT終了画面');
+    expect(runLedger(main, head, [ledger([wrongId])])).toEqual([
+      problem(key, 'removed の appId が main の ID と違う（main: AT終了画面_1）'),
+    ]);
+  });
+
+  it('書き直さずに親ごと外すと、親は main の項目に無い（アプリは親を読まない）', () => {
+    const removed = removedScreen('AT終了画面', parent, 'AT終了画面');
+    expect(runLedger(main, machineMap([]), [ledger([removed])])).toEqual([
+      problem('endScreen::AT終了画面', 'removed の項目が main の機種ファイルに無い'),
+    ]);
+  });
+
+  it('main が書き直せない形なら例外を投げる（CLI は終了コード 2 にする）', () => {
+    const odd = machineMap([], { endScreens: [{ ...parent, confirmedSettings: ['6'] }] });
+    const removed = removedScreen('初代パネル（暦・忍・忍野）', shodai, 'AT終了画面_1');
+    expect(() =>
+      runLedger(odd, machineMap([], { endScreens: [heroine] }), [ledger([removed])])
+    ).toThrow('書き直すと消える');
+  });
+});
+
 describe('checkLedgerAgainstBase: 明示の id を持つ項目', () => {
   it('確定演出の removed の appId も、main の明示の id と比べる', () => {
     const gold = { name: '金トロフィー', id: 'gold', confirmedSettings: ['6'] };

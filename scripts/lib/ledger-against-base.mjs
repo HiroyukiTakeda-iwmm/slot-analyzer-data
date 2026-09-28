@@ -1,6 +1,6 @@
 import { collectItemIds } from './derived-ids.mjs';
-import { itemKey, listMachineItems } from './provenance.mjs';
-import { indexById } from './rules-against-base.mjs';
+import { itemKey } from './provenance.mjs';
+import { baseMachineItems, indexById, loadBaseRecords, sameJson } from './rules-against-base.mjs';
 
 /**
  * 出典記録の removed（その見直しで外した根拠）と retiredIds（外した ID の台帳）を、main と比べて確かめる
@@ -8,35 +8,14 @@ import { indexById } from './rules-against-base.mjs';
  * 台帳の ID の再利用は、main を読まずに validate（provenance-validator.mjs）が止める。
  */
 
-/** オブジェクトのキーを並べ替えた形（JSON として同じかを、キーの順によらず比べるため）。配列の順は変えない */
-function canonical(value) {
-  if (Array.isArray(value)) return value.map(canonical);
-  if (value !== null && typeof value === 'object') {
-    return Object.fromEntries(
-      Object.keys(value)
-        .sort()
-        .map((key) => [key, canonical(value[key])])
-    );
-  }
-  return value;
-}
-
-/** JSON として同じか（オブジェクトのキーの順は問わない） */
-function sameJson(a, b) {
-  return JSON.stringify(canonical(a)) === JSON.stringify(canonical(b));
-}
-
 /**
- * 機種の項目（項目キー → listMachineItems の項目。raw は機種ファイルの項目そのもの）と、アプリの ID
- * （項目キー → ID）。機種が index.json に無ければ、どちらも空
+ * main の機種の項目（項目キー → 項目。終了画面の patterns を書き直した後の形。raw は書き直した後の機種ファイルの
+ * 項目そのもの。baseMachineItems）と、アプリの ID（項目キー → ID）。機種が index.json に無ければ、どちらも空
  */
 function machineContext(read, entry) {
   if (!entry) return { items: new Map(), ids: new Map() };
   const machine = JSON.parse(read(`machines/${entry.file}`));
-  return {
-    items: new Map(listMachineItems(machine).map((item) => [itemKey(item.kind, item.name), item])),
-    ids: collectItemIds(machine),
-  };
+  return { items: baseMachineItems(machine), ids: collectItemIds(machine) };
 }
 
 /**
@@ -53,28 +32,14 @@ function fieldByMachine(records, field) {
 }
 
 /**
- * main の provenance/ にある出典記録を読む。比べる側で記録のファイルごと消した場合も見つけるため、
- * 比べる側の記録からでなく main を列挙する。読めなければ例外を投げる（CLI は終了コード 2 にする）
- */
-function loadBaseRecords(readBase, listBase) {
-  return listBase('provenance')
-    .filter((path) => path.endsWith('.json'))
-    .map((path) => {
-      try {
-        return JSON.parse(readBase(path));
-      } catch (e) {
-        throw new Error(`main の出典記録を読めない: ${path}: ${e.message}`, { cause: e });
-      }
-    });
-}
-
-/**
  * 比べる側の記録の removed を main と照らす。main の記録の removed は消してよいが、書き換えた項目は
  * 新しい removed として照らす。
  * - 新しく外した項目（main の同じ機種の記録に、JSON として同じ項目が無いもの）は、main の機種ファイルにあり、
- *   previous が main の生の項目と JSON として同じこと（外す条件の確かめを、作った値で通せないように）
- * - main にその項目の ID があれば、appId が main の ID と同じこと（patterns 形式の終了画面は、アプリが
- *   別々の終了画面に展開するので項目キーの ID が無い。記録は validate が止める）
+ *   previous が main の機種ファイルの項目と JSON として同じこと（外す条件の確かめを、作った値で通せないように）。
+ *   main の終了画面の patterns は書き直した後の形（アプリが読む形）で比べるので、同じ PR で書き直した終了画面も
+ *   外せる。patterns の親は main の項目に無い（アプリは親を読まない）
+ * - main にその項目の ID があれば、appId が main の ID と同じこと（ID はアプリの移行処理を通して作るので、
+ *   書き直した終了画面の ID は、main の patterns から作る ID と同じ）
  */
 function removalAgainstBaseProblems(id, headRemoved, baseRemoved, base) {
   const problems = [];
@@ -111,8 +76,8 @@ function deletedRetiredProblems(id, baseRows, headRows) {
 
 /**
  * removed と retiredIds を main と比べて確かめる（仕様 5.7・5.8）。
- * 1. 新しく外した項目は main の機種ファイルにあり、previous が main の生の項目と同じ。appId は main の ID と
- *    同じ（removalAgainstBaseProblems）
+ * 1. 新しく外した項目は main の機種ファイルにあり、previous が main の項目（終了画面の patterns は書き直した後の形）
+ *    と同じ。appId は main の ID と同じ（removalAgainstBaseProblems）
  * 2. main の記録の retiredIds を消さない・書き換えない（deletedRetiredProblems）。main の記録の removed は
  *    消してよい（その見直しの根拠。前の値と理由は git の履歴に残る）
  *
