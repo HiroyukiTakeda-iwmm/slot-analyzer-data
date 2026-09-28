@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { listGitFiles, runAgainstBase } from '../scripts/lib/against-base.mjs';
@@ -6,6 +7,29 @@ import { toStoredProbability } from '../scripts/lib/provenance.mjs';
 import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+/** main のスキーマ（main の記録は main のスキーマで確かめる。ここでは今のスキーマを main に置く） */
+const PROVENANCE_SCHEMA = readFileSync(resolve(ROOT, 'schemas/provenance.schema.json'), 'utf-8');
+/** main のスキーマと main の index.json（test-machine だけ）に合う出典記録 */
+const validRecord = (overrides = {}) => ({
+  machineId: 'test-machine',
+  machineFile: 'test/test-machine.json',
+  reviewedAt: '2026-09-27',
+  sources: [
+    {
+      key: 'site-a',
+      kind: 'analysis-site',
+      url: 'https://site-a.com/1',
+      retrievedAt: '2026-09-27',
+    },
+  ],
+  items: [],
+  candidates: [],
+  removed: [],
+  retiredIds: [],
+  ...overrides,
+});
+/** オブジェクトから欄を1つ除く */
+const omit = (object, key) => Object.fromEntries(Object.entries(object).filter(([k]) => k !== key));
 
 const entry = {
   id: 'test-machine',
@@ -123,11 +147,8 @@ describe('runAgainstBase', () => {
     const retired = { kind: 'role', name: '強', appId: 'role_2' };
     const base = {
       ...map,
-      'provenance/test-machine.json': JSON.stringify({
-        machineId: 'test-machine',
-        removed: [],
-        retiredIds: [retired],
-      }),
+      'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
+      'provenance/test-machine.json': JSON.stringify(validRecord({ retiredIds: [retired] })),
     };
     const provenanceFiles = [{ data: { machineId: 'test-machine', removed: [], retiredIds: [] } }];
     expect(run(base, map, provenanceFiles)).toEqual({
@@ -147,6 +168,99 @@ describe('runAgainstBase', () => {
   });
 });
 
+describe('runAgainstBase: main の出典記録を、main のスキーマと main の index.json で確かめる', () => {
+  const map = files([role(1, 0.00338753)]);
+  const RECORD = 'provenance/test-machine.json';
+  /** main に記録を1つ置く（schema が null なら main にスキーマを置かない） */
+  const mainWith = (path, text, schema = PROVENANCE_SCHEMA) => ({
+    ...map,
+    ...(schema === null ? {} : { 'schemas/provenance.schema.json': schema }),
+    'provenance/README.md': '# provenance',
+    [path]: text,
+  });
+
+  it('main の記録が main のスキーマ・index と合えば比べる（終了コード 0）', () => {
+    expect(run(mainWith(RECORD, JSON.stringify(validRecord())), map).code).toBe(0);
+  });
+
+  it.each([
+    ['null', RECORD, 'null', 'スキーマ違反 / must be object'],
+    ['配列', RECORD, '[]', 'スキーマ違反 / must be object'],
+    ['空のオブジェクト', RECORD, '{}', "スキーマ違反 / must have required property 'machineId'"],
+    ['false', RECORD, 'false', 'スキーマ違反 / must be object'],
+    [
+      'machineId だけ',
+      RECORD,
+      '{"machineId":"x"}',
+      "スキーマ違反 / must have required property 'machineFile'",
+    ],
+    [
+      '必須欄の欠け',
+      RECORD,
+      JSON.stringify(omit(validRecord(), 'sources')),
+      "スキーマ違反 / must have required property 'sources'",
+    ],
+    [
+      '欄の中身の誤り',
+      RECORD,
+      JSON.stringify(validRecord({ retiredIds: [{ kind: 'role', name: '強' }] })),
+      "スキーマ違反 /retiredIds/0 must have required property 'appId'",
+    ],
+    [
+      'machineFile が main の index と違う',
+      RECORD,
+      JSON.stringify(validRecord({ machineFile: 'test/other.json' })),
+      'machineFile が main の index.json と違う: test/other.json（index: test/test-machine.json）',
+    ],
+    [
+      'machineId が main の index に無い',
+      'provenance/ghost.json',
+      JSON.stringify(validRecord({ machineId: 'ghost' })),
+      'main の index.json に無い機種ID: ghost',
+    ],
+    [
+      'ファイル名と machineId が違う',
+      'provenance/other-name.json',
+      JSON.stringify(validRecord()),
+      'ファイル名は provenance/test-machine.json にする',
+    ],
+  ])('%s なら、終了コード 2（記録のパスと理由を出す）', (_label, path, text, reason) => {
+    const result = run(mainWith(path, text), map);
+    expect(result.code).toBe(2);
+    expect(result.lines).toHaveLength(1);
+    expect(result.lines[0]).toContain(`main の出典記録が不正: ${path}: `);
+    expect(result.lines[0]).toContain(reason);
+  });
+
+  it('main に記録があるのに main のスキーマが無ければ、終了コード 2', () => {
+    const result = run(mainWith(RECORD, JSON.stringify(validRecord()), null), map);
+    expect(result.code).toBe(2);
+    expect(result.lines[0]).toContain(
+      `main のスキーマ（schemas/provenance.schema.json）を読めない（記録: ${RECORD}）`
+    );
+  });
+
+  it('main の記録は main のスキーマで確かめる（比べる側のスキーマではない）', () => {
+    const schema = JSON.parse(PROVENANCE_SCHEMA);
+    // main のスキーマでは candidates が要らない: main の決まりで正しかった記録は通す
+    const looser = { ...schema, required: schema.required.filter((key) => key !== 'candidates') };
+    const noCandidates = JSON.stringify(omit(validRecord(), 'candidates'));
+    expect(run(mainWith(RECORD, noCandidates, JSON.stringify(looser)), map).code).toBe(0);
+    // main のスキーマで note が要る: 比べる側のスキーマに合う記録でも、main の決まりに合わなければ止める
+    const stricter = {
+      ...schema,
+      required: [...schema.required, 'note'],
+      properties: { ...schema.properties, note: { type: 'string' } },
+    };
+    const result = run(
+      mainWith(RECORD, JSON.stringify(validRecord()), JSON.stringify(stricter)),
+      map
+    );
+    expect(result.code).toBe(2);
+    expect(result.lines[0]).toContain("must have required property 'note'");
+  });
+});
+
 describe('PR を続けて流す（validate と check:base）', () => {
   const machineEntry = (id) => ({
     id,
@@ -158,6 +272,7 @@ describe('PR を続けて流す（validate と check:base）', () => {
   });
   /** 機種（機種 ID → 機種ファイルの中身）と出典記録からリポジトリを作る */
   const repo = (machines, records = []) => ({
+    'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
     'machines/index.json': JSON.stringify({
       version: '3.8.0',
       updatedAt: '2026-09-26',
@@ -221,49 +336,68 @@ describe('PR を続けて流す（validate と check:base）', () => {
     displayOrder: 1,
   });
 
-  it('暫定の値を入れた PR（バッチ1）をマージした後、関係ない PR（バッチ2）が止まらない', () => {
-    // バッチ1: main の 1/300 を、裏づける出典が無いので、ちょんぼりすたの 1/295.2 で暫定にする（規則3）
-    const main0 = repo({ 'machine-a': { name: 'A', roles: [bigRole(toStoredProbability(300))] } });
-    const chonborista = { 1: 295.2 };
-    const provisionalBig = {
-      kind: 'role',
-      name: 'BIG',
-      status: 'provisional-chonborista',
-      unit: 'denominator',
-      values: { chonborista },
-      adopted: chonborista,
-      reread: { by: 'verifier', value: chonborista },
-    };
-    const machineA = { name: 'A', roles: [bigRole(toStoredProbability(295.2))] };
-    const main1 = repo({ 'machine-a': machineA }, [recordOf('machine-a', [provisionalBig])]);
-    expect(problemsOf(main0, main1)).toEqual([]);
-
-    // バッチ2: 別の機種を足す（machine-a の記録と値は変えない）
-    const confirmedBig = {
-      kind: 'role',
-      name: 'BIG',
-      status: 'confirmed',
-      unit: 'denominator',
-      values: { 'site-a': { 1: 300 }, 'site-b': { 1: 300 } },
-      adopted: { 1: 300 },
-    };
-    const pr2 = repo(
+  // バッチ1: main の 1/300 を、裏づける出典が無いので、ちょんぼりすたの 1/295.2 で暫定にする（規則3）
+  const chonborista = { 1: 295.2 };
+  const provisionalBig = {
+    kind: 'role',
+    name: 'BIG',
+    status: 'provisional-chonborista',
+    unit: 'denominator',
+    values: { chonborista },
+    adopted: chonborista,
+    reread: { by: 'verifier', value: chonborista },
+  };
+  const machineA = { name: 'A', roles: [bigRole(toStoredProbability(295.2))] };
+  const main1 = () => repo({ 'machine-a': machineA }, [recordOf('machine-a', [provisionalBig])]);
+  // バッチ2: 別の機種を足す（machine-a の記録と値は変えない）
+  const confirmedBig = {
+    kind: 'role',
+    name: 'BIG',
+    status: 'confirmed',
+    unit: 'denominator',
+    values: { 'site-a': { 1: 300 }, 'site-b': { 1: 300 } },
+    adopted: { 1: 300 },
+  };
+  const pr2 = () =>
+    repo(
       {
         'machine-a': machineA,
         'machine-b': { name: 'B', roles: [bigRole(toStoredProbability(300))] },
       },
       [recordOf('machine-a', [provisionalBig]), recordOf('machine-b', [confirmedBig])]
     );
-    expect(problemsOf(main1, pr2)).toEqual([]);
+
+  it('暫定の値を入れた PR（バッチ1）をマージした後、関係ない PR（バッチ2）が止まらない', () => {
+    const main0 = repo({ 'machine-a': { name: 'A', roles: [bigRole(toStoredProbability(300))] } });
+    expect(problemsOf(main0, main1())).toEqual([]);
+    expect(problemsOf(main1(), pr2())).toEqual([]);
 
     // 記録を変えずに machine-a の値だけ変えると止まる（check:base は確かめ直す）
     const changed = repo(
       { 'machine-a': { name: 'A', roles: [bigRole(toStoredProbability(290))] } },
       [recordOf('machine-a', [provisionalBig])]
     );
-    expect(problemsOf(main1, changed)).toContain(
+    expect(problemsOf(main1(), changed)).toContain(
       '  ERROR machine-a: role::BIG: main の値を裏づける出典がある（規則2の kept-single-source にする）'
     );
+  });
+
+  it('比べる側が validate を通っても、main の記録だけが不正なら比べられない（マージ済みとして飛ばさない）', () => {
+    const path = 'provenance/machine-a.json';
+    // 必須欄を欠いた記録（項目は比べる側と同じ）・machineFile が main の index.json と違う記録
+    const lacking = { machineId: 'machine-a', items: [provisionalBig] };
+    const wrongFile = {
+      ...recordOf('machine-a', [provisionalBig]),
+      machineFile: 'test/machine-b.json',
+    };
+    for (const record of [lacking, wrongFile]) {
+      const problems = problemsOf({ ...main1(), [path]: JSON.stringify(record) }, pr2());
+      // validate のエラーは無く、check:base の「比べられない」1行だけ
+      expect(problems).toHaveLength(1);
+      expect(problems[0]).toContain(
+        `比べられませんでした（基準: main）: main の出典記録が不正: ${path}: `
+      );
+    }
   });
 
   describe('patterns を書き直した PR で、書き直した終了画面を見直す（bakemonogatari の形）', () => {

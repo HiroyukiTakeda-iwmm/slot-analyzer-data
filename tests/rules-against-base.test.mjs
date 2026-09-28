@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'fs';
 import { decideExistingItem, toStoredProbability } from '../scripts/lib/provenance.mjs';
 import {
   checkNewMachineRecords,
@@ -58,11 +59,35 @@ const provisional = (chonborista) => ({
 });
 const lister = (map) => (dir) => Object.keys(map).filter((path) => path.startsWith(`${dir}/`));
 const recordsOf = (...items) => [{ data: { machineId: 'test-machine', items } }];
+/** main のスキーマ（main の記録は main のスキーマで確かめる。ここでは今のスキーマを main に置く） */
+const PROVENANCE_SCHEMA = readFileSync(
+  new URL('../schemas/provenance.schema.json', import.meta.url),
+  'utf-8'
+);
+/** main の出典記録（main のスキーマと main の index.json に合う形） */
+const baseRecordOf = (machineId, items) => ({
+  machineId,
+  machineFile: `test/${machineId}.json`,
+  reviewedAt: '2026-09-27',
+  sources: [
+    {
+      key: 'nana-press',
+      kind: 'analysis-site',
+      url: 'https://nana-press.com/1',
+      retrievedAt: '2026-09-27',
+    },
+  ],
+  items,
+  candidates: [],
+  removed: [],
+  retiredIds: [],
+});
 /** main の provenance/ に記録を置く（先の PR でマージした記録） */
 const withBaseRecord = (map, items, machineId = 'test-machine') => ({
   ...map,
+  'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
   'provenance/README.md': '# provenance',
-  [`provenance/${machineId}.json`]: JSON.stringify({ machineId, items }),
+  [`provenance/${machineId}.json`]: JSON.stringify(baseRecordOf(machineId, items)),
 });
 const run = (base, head, provenanceFiles) =>
   checkRulesAgainstBase({
@@ -271,7 +296,12 @@ describe('checkRulesAgainstBase: main の記録と同じ項目は確かめ直さ
   });
 
   it('main の別の機種の記録にある同じ項目では、確かめ直しを省かない', () => {
-    const other = withBaseRecord(files([big(written)]), [item], 'other-machine');
+    const otherEntry = { ...entry, id: 'other-machine', file: 'test/other-machine.json' };
+    const other = withBaseRecord(
+      files([big(written)], [entry, otherEntry]),
+      [item],
+      'other-machine'
+    );
     expect(run(other, files([big(written)]), recordsOf(item))).toEqual([
       supportedByBase('role::BIG'),
     ]);
@@ -310,6 +340,34 @@ describe('checkRulesAgainstBase: main の記録と同じ項目は確かめ直さ
     expect(() => run(broken, files([big(written)]), recordsOf(item))).toThrow(
       'main の出典記録を読めない'
     );
+  });
+
+  it('main の記録が main のスキーマ・index と合わなければ、同じ項目でも飛ばさずに例外を投げる', () => {
+    const head = files([big(written)]);
+    const record = 'provenance/test-machine.json';
+    // 必須欄を欠いた記録（項目は同じ）
+    const lacking = {
+      ...main,
+      [record]: JSON.stringify({ machineId: 'test-machine', items: [item] }),
+    };
+    expect(() => run(lacking, head, recordsOf(item))).toThrow(
+      `main の出典記録が不正: ${record}: スキーマ違反 / must have required property 'machineFile'`
+    );
+    // machineFile が main の index.json と違う記録
+    const wrongFile = {
+      ...main,
+      [record]: JSON.stringify({ ...baseRecordOf('test-machine', [item]), machineFile: 'x.json' }),
+    };
+    expect(() => run(wrongFile, head, recordsOf(item))).toThrow(
+      `main の出典記録が不正: ${record}: machineFile が main の index.json と違う: x.json（index: test/test-machine.json）`
+    );
+  });
+
+  it('main に記録の無い機種は、すべての項目を確かめる（main のスキーマが無くても）', () => {
+    const noRecord = { ...files([big(written)]), 'provenance/README.md': '# provenance' };
+    expect(run(noRecord, files([big(written)]), recordsOf(item))).toEqual([
+      supportedByBase('role::BIG'),
+    ]);
   });
 });
 

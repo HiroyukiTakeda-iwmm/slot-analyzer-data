@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'fs';
 import { checkLedgerAgainstBase } from '../scripts/lib/ledger-against-base.mjs';
 import { runAgainstBase } from '../scripts/lib/against-base.mjs';
 import { validateProvenance } from '../scripts/validators/provenance-validator.mjs';
@@ -46,14 +47,33 @@ const removedRole = (name, displayOrder, appId, overrides = {}) => ({
   ...overrides,
 });
 const row = (name, appId, kind = 'role') => ({ kind, name, appId });
+/** 出典記録（main に置く記録は、main のスキーマと main の index.json に合う形にする） */
 const ledger = (removed = [], retiredIds = []) => ({
   machineId: 'test-machine',
+  machineFile: 'test/test-machine.json',
+  reviewedAt: '2026-09-27',
+  sources: [
+    {
+      key: 'site-a',
+      kind: 'analysis-site',
+      url: 'https://site-a.com/1',
+      retrievedAt: '2026-09-27',
+    },
+  ],
+  items: [],
+  candidates: [],
   removed,
   retiredIds,
 });
+/** main のスキーマ（main の記録は main のスキーマで確かめる。ここでは今のスキーマを main に置く） */
+const PROVENANCE_SCHEMA = readFileSync(
+  new URL('../schemas/provenance.schema.json', import.meta.url),
+  'utf-8'
+);
 /** main の provenance/ に記録を置く */
 const withBaseRecords = (map, ...records) => ({
   ...map,
+  'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
   'provenance/README.md': '# provenance',
   ...Object.fromEntries(records.map((r) => [`provenance/${r.machineId}.json`, JSON.stringify(r)])),
 });
@@ -293,6 +313,23 @@ describe('checkLedgerAgainstBase: main の記録（removed は消してよい・
     expect(() => runLedger(broken, withoutKyou)).toThrow('main の出典記録を読めない');
     expect(runLedger(withBaseRecords(withoutKyou), withoutKyou)).toEqual([]);
   });
+
+  it('main の記録が main のスキーマ・index と合わなければ、removed・retiredIds を読まずに例外を投げる', () => {
+    const record = 'provenance/test-machine.json';
+    const invalid = [
+      'null',
+      // 必須欄を欠いた記録（retiredIds だけ）
+      JSON.stringify({ machineId: 'test-machine', retiredIds: [row('強', 'role_2')] }),
+      // machineFile が main の index.json と違う記録
+      JSON.stringify({ ...ledger([kyou], [row('強', 'role_2')]), machineFile: 'x.json' }),
+    ];
+    for (const text of invalid) {
+      const base = { ...withBaseRecords(withoutKyou), [record]: text };
+      expect(() => runLedger(base, withoutKyou, [ledger([kyou], [])])).toThrow(
+        `main の出典記録が不正: ${record}: `
+      );
+    }
+  });
 });
 
 describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新しい項目が前の ID を使う）', () => {
@@ -320,6 +357,7 @@ describe('外した ID の台帳: 3段の PR（外す → 足し直す → 新�
     adopted: true,
   });
   const repo = (machine, record) => ({
+    'schemas/provenance.schema.json': PROVENANCE_SCHEMA,
     'machines/index.json': indexJson([entry]),
     'machines/test/test-machine.json': JSON.stringify(machine),
     ...(record ? { 'provenance/test-machine.json': JSON.stringify(record) } : {}),

@@ -1,3 +1,4 @@
+import { compileSchemaObject } from './compile-schema.mjs';
 import { UNRECORDED_REMOVAL, hasItemId, removedKeysByMachine } from './derived-ids.mjs';
 import { expandEndScreenPatterns } from './expand-patterns.mjs';
 import {
@@ -11,6 +12,8 @@ import {
 
 const KEPT = 'kept-single-source';
 const PROVISIONAL = 'provisional-chonborista';
+/** main の出典記録を確かめるスキーマ（main から読む。比べる側のスキーマではない） */
+const BASE_SCHEMA = 'schemas/provenance.schema.json';
 
 /** オブジェクトのキーを並べ替えた形（JSON として同じかを、キーの順によらず比べるため）。配列の順は変えない */
 function canonical(value) {
@@ -60,30 +63,85 @@ export function baseMachineItems(machine) {
 }
 
 /**
- * main の provenance/ にある出典記録を読む。比べる側で記録のファイルごと消した場合も見つけるため、
- * 比べる側の記録からでなく main を列挙する。読めなければ例外を投げる（CLI は終了コード 2 にする）
- * @param {(path: string) => string} readBase
- * @param {(dir: string) => string[]} listBase
- * @returns {Array<object | null>}
+ * main のスキーマ（main の schemas/provenance.schema.json）で確かめる関数を作る。main の記録は、main に入れたときの
+ * 決まり（main のスキーマ）で確かめる（比べる側のスキーマで確かめると、スキーマを厳しくする PR で、main の決まりで
+ * 正しかった記録まで通らなくなる）。main に記録があるのにスキーマを読めない・使えなければ例外を投げる
+ * @param {string[]} paths main の記録のパス（例外の文面に出す）
  */
-export function loadBaseRecords(readBase, listBase) {
-  return listBase('provenance')
-    .filter((path) => path.endsWith('.json'))
-    .map((path) => {
-      try {
-        return JSON.parse(readBase(path));
-      } catch (e) {
-        throw new Error(`main の出典記録を読めない: ${path}: ${e.message}`, { cause: e });
-      }
-    });
+function compileBaseSchema(readBase, paths) {
+  try {
+    return compileSchemaObject(JSON.parse(readBase(BASE_SCHEMA)));
+  } catch (e) {
+    const others = paths.length > 1 ? ` ほか${paths.length - 1}件` : '';
+    throw new Error(
+      `main の出典記録を確かめられない: main のスキーマ（${BASE_SCHEMA}）を読めない（記録: ${paths[0]}${others}）: ${e.message}`,
+      { cause: e }
+    );
+  }
 }
 
-/** main の出典記録の項目を、機種 ID ごとにまとめる（同じ機種の記録が複数あれば合わせる） */
+/**
+ * main の記録1つの問題。main のスキーマに合うか、パスが provenance/<machineId>.json か、machineId が main の
+ * index.json にあり、machineFile が main の index.json のその機種の file と同じか（validate の出典記録の検証器
+ * provenance-validator.mjs と同じ決まり）。スキーマに合わなければ、スキーマの問題だけを返す
+ * @param {Map<string, object>} baseIndex main の index.json の機種（indexById）
+ * @returns {string[]}
+ */
+function baseRecordProblems(path, record, validateSchema, baseIndex) {
+  if (!validateSchema(record)) {
+    return validateSchema.errors.map((e) => `スキーマ違反 ${e.instancePath || '/'} ${e.message}`);
+  }
+  const problems = [];
+  const expectedPath = `provenance/${record.machineId}.json`;
+  if (path !== expectedPath) problems.push(`ファイル名は ${expectedPath} にする`);
+  const entry = baseIndex.get(record.machineId);
+  if (!entry) {
+    problems.push(`main の index.json に無い機種ID: ${record.machineId}`);
+  } else if (entry.file !== record.machineFile) {
+    problems.push(
+      `machineFile が main の index.json と違う: ${record.machineFile}（index: ${entry.file}）`
+    );
+  }
+  return problems;
+}
+
+/**
+ * main の provenance/ にある出典記録を読み、1つずつ確かめる。比べる側で記録のファイルごと消した場合も見つけるため、
+ * 比べる側の記録からでなく main を列挙する。main の記録は「main に入れたときに確かめを通った」ものとして、マージ済みの
+ * 採用を確かめ直さない・removed と retiredIds を照らす根拠にするので、main のスキーマ（BASE_SCHEMA）と main の
+ * index.json に合わない記録は使わない（null・配列・必須欄の欠けなどを「記録が無い」「空の台帳」として扱わない）。
+ * 読めない・合わない記録があれば、記録のパスと理由を付けて例外を投げる（CLI は終了コード 2 にする）。
+ * main に記録が無い機種は、確かめを飛ばす理由が無い（すべての項目を確かめる）。記録が1つも無ければスキーマを読まない
+ * @param {(path: string) => string} readBase
+ * @param {(dir: string) => string[]} listBase
+ * @returns {object[]} main のスキーマと index.json に合う記録
+ */
+export function loadBaseRecords(readBase, listBase) {
+  const paths = listBase('provenance').filter((path) => path.endsWith('.json'));
+  if (paths.length === 0) return [];
+  const records = paths.map((path) => {
+    try {
+      return JSON.parse(readBase(path));
+    } catch (e) {
+      throw new Error(`main の出典記録を読めない: ${path}: ${e.message}`, { cause: e });
+    }
+  });
+  const validateSchema = compileBaseSchema(readBase, paths);
+  const baseIndex = indexById(readBase);
+  paths.forEach((path, i) => {
+    const problems = baseRecordProblems(path, records[i], validateSchema, baseIndex);
+    if (problems.length > 0) {
+      throw new Error(`main の出典記録が不正: ${path}: ${problems.join('; ')}`);
+    }
+  });
+  return records;
+}
+
+/** main の出典記録（loadBaseRecords で確かめたもの）の項目を、機種 ID ごとにまとめる */
 function recordItemsByMachine(records) {
   const byId = new Map();
   for (const record of records) {
-    if (!record) continue;
-    byId.set(record.machineId, [...(byId.get(record.machineId) ?? []), ...(record.items ?? [])]);
+    byId.set(record.machineId, [...(byId.get(record.machineId) ?? []), ...record.items]);
   }
   return byId;
 }
@@ -121,7 +179,8 @@ function supportedByBase(item, baseEntry, baseValue) {
  *   含む）が無いときだけ使う（あれば既存の値の順「確定 → 残す → 暫定 → 外す」で規則2の kept-single-source が
  *   先に当たる。数え方は「残す」の判断と同じ）
  * 確かめるのは、記録か機種ファイルの値が main から変わった項目と、新しい項目だけ（mergedAdoption。main の記録は
- * main の provenance/ を列挙して読む）。main の項目は、終了画面の patterns を書き直した形で比べる（baseMachineItems）。
+ * main の provenance/ を列挙して読み、main のスキーマと index.json で確かめる。loadBaseRecords）。main の項目は、
+ * 終了画面の patterns を書き直した形で比べる（baseMachineItems）。
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   listBase: (dir: string) => string[], provenanceFiles: Array<{ data: object | null }> }} io

@@ -20,7 +20,8 @@ function machineContext(read, entry) {
 
 /**
  * 出典記録の配列の欄（removed・retiredIds）を、機種 ID ごとにまとめる（同じ機種の記録が複数あれば合わせる）。
- * 読めなかった記録（null）は飛ばす（validate が報告する）
+ * 比べる側の読めなかった記録（null）は飛ばす（validate が報告する）。main の記録は loadBaseRecords で main の
+ * スキーマと index.json に照らしてあり、合わなければその前に例外になる（null や欄の欠けを空の台帳として扱わない）
  */
 function fieldByMachine(records, field) {
   const byId = new Map();
@@ -80,6 +81,8 @@ function deletedRetiredProblems(id, baseRows, headRows) {
  *    と同じ。appId は main の ID と同じ（removalAgainstBaseProblems）
  * 2. main の記録の retiredIds を消さない・書き換えない（deletedRetiredProblems）。main の記録の removed は
  *    消してよい（その見直しの根拠。前の値と理由は git の履歴に残る）
+ * main の記録は loadBaseRecords で読む（採否ルールの検査と同じ読み方。main のスキーマと index.json に合わない記録が
+ * あれば例外を投げる。CLI は終了コード 2 にする）
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
  *   listBase: (dir: string) => string[], provenanceFiles: Array<{ data: object | null }> }} io

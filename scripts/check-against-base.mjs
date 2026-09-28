@@ -11,6 +11,8 @@
  * - 新しく足した機種に、出典記録があるか
  * - 出典記録の removed と retiredIds（外した ID の台帳）: 新しく外した項目の previous・appId が main と同じか、
  *   main の記録の retiredIds を消していないか（main の provenance/ も読む）。台帳の ID の再利用は validate が止める
+ * - main の出典記録は、main のスキーマと main の index.json に照らしてから使う。合わなければ比べられない（終了コード 2）。
+ *   main に記録が無い機種は、すべての項目を確かめる
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる

@@ -53,9 +53,10 @@ export function runAgainstBase({ base, readBase, readHead, listBase, loadProvena
       ...checkLedgerAgainstBase(io),
     ];
   } catch (e) {
-    // 基準を読めない・JSON が壊れている（main の出典記録も）・項目の名前を区別できない
-    // （createNameDisambiguator の例外）・名前に「::」を含む（plainName の例外）・main の終了画面の patterns を
-    // 書き直せない（expandEndScreenPatterns の例外）のどれか
+    // 基準を読めない・JSON が壊れている（main の出典記録も）・main の出典記録が main のスキーマか main の
+    // index.json と合わない、または記録があるのに main のスキーマを読めない（loadBaseRecords の例外。記録のパスと
+    // 理由を出す）・項目の名前を区別できない（createNameDisambiguator の例外）・名前に「::」を含む（plainName の
+    // 例外）・main の終了画面の patterns を書き直せない（expandEndScreenPatterns の例外）のどれか
     return { code: 2, lines: [`比べられませんでした（基準: ${base}）: ${e.message}`] };
   }
   if (problems.length === 0) {

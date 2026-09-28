@@ -16,9 +16,17 @@ function createAjv() {
   return ajv;
 }
 
+/**
+ * ajv でスキーマ（中身のオブジェクト）から確かめる関数を作る。schemas/ のファイルでないスキーマ
+ * （main と比べる検査が読む main のスキーマなど）に使う。スキーマとして使えなければ例外を投げる
+ */
+export function compileSchemaObject(schema) {
+  return createAjv().compile(schema);
+}
+
 /** ajv でスキーマ（schemas/ の中のファイル名）を読み、確かめる関数を作る */
 export function compileSchema(name) {
-  return createAjv().compile(readSchema(name));
+  return compileSchemaObject(readSchema(name));
 }
 
 /**
