@@ -18,8 +18,10 @@ import { validateIndexConsistency } from './validators/index-consistency.mjs';
 import { validateProbabilities } from './validators/probability-validator.mjs';
 import { validateConfirmations } from './validators/confirmation-validator.mjs';
 import { validateCompleteness } from './validators/completeness-validator.mjs';
+import { validateItemIds } from './validators/item-id-validator.mjs';
+import { validateOfficialDomains } from './validators/official-domains-validator.mjs';
 import { validateProvenance } from './validators/provenance-validator.mjs';
-import { loadProvenanceFiles } from './lib/load-provenance.mjs';
+import { loadOfficialDomainsFile, loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -123,7 +125,16 @@ function main() {
     console.log(`  エラー: ${conf.errors.length}件 / 警告: ${conf.warnings.length}件\n`);
   }
 
-  // 5. 完全性チェック（情報レベル — exit codeに影響しない）
+  // 5. 項目の ID（確定演出などの明示の id の重なり。アプリはこの種類では _2 を付けない）
+  if (!schemaOnly && !indexOnly) {
+    console.log('--- 項目の ID（明示の id の重なり）---');
+    const itemIds = validateItemIds(validFiles);
+    allErrors.push(...itemIds.errors);
+    allWarnings.push(...itemIds.warnings);
+    console.log(`  エラー: ${itemIds.errors.length}件 / 警告: ${itemIds.warnings.length}件\n`);
+  }
+
+  // 6. 完全性チェック（情報レベル — exit codeに影響しない）
   if (!schemaOnly && !indexOnly) {
     console.log('--- 完全性チェック ---');
     const comp = validateCompleteness(validFiles);
@@ -135,12 +146,25 @@ function main() {
     console.log(`  警告: ${comp.warnings.length}件 / 情報: ${comp.info.length}件\n`);
   }
 
-  // 6. 出典記録バリデーション（段階3までは、記録がある機種だけを検証する）
+  // 7. 出典記録バリデーション（段階3までは、記録がある機種だけを検証する）。
+  // 公式の出典は、メーカーの公式ドメインの一覧と照らす。一覧を読めない・一覧に問題があるときは、
+  // 空の一覧として続けず、一覧のエラーにする（公式の出典は「確かめられない」エラーになる）
   if (!schemaOnly && !indexOnly) {
+    console.log('--- 公式ドメインの一覧 ---');
+    const official = validateOfficialDomains(loadOfficialDomainsFile(ROOT));
+    allErrors.push(...official.errors);
+    allWarnings.push(...official.warnings);
+    // 一覧を使えないときは「0件」にしない（空の一覧と区別する）
+    const domainCount = official.domains === null ? '使えない' : `${official.domains.size}件`;
+    console.log(
+      `  ドメイン: ${domainCount} / エラー: ${official.errors.length}件 / 警告: ${official.warnings.length}件\n`
+    );
+
     console.log('--- 出典記録バリデーション ---');
     const provenanceFiles = loadProvenanceFiles(PROVENANCE_DIR);
     const prov = validateProvenance(validFiles, indexData, provenanceFiles, {
       requireAll: args.includes('--require-provenance'),
+      officialDomains: official.domains,
     });
     allErrors.push(...prov.errors);
     allWarnings.push(...prov.warnings);

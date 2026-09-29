@@ -1,10 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import {
   DERIVED_ID_KINDS,
+  EXPLICIT_ID_FIELDS,
+  EXPLICIT_ID_KINDS,
   checkDerivedIds,
   collectDerivedIds,
+  collectItemIds,
   compareDerivedIds,
 } from '../scripts/lib/derived-ids.mjs';
+import { listMachineItems } from '../scripts/lib/provenance.mjs';
 
 const baseMachine = {
   name: 'テスト機種',
@@ -83,6 +87,69 @@ describe('collectDerivedIds', () => {
   });
 });
 
+describe('collectItemIds（ID を持つ項目）', () => {
+  it('ID を作る種類の ID と、ほかの種類で明示の id がある項目の id をまとめる（id の無い項目は含めない）', () => {
+    const machine = {
+      ...baseMachine,
+      confirmationEvents: [
+        { name: '金', id: 'gold', confirmedSettings: ['6'] },
+        { name: '銀', confirmedSettings: ['5'] },
+        { name: '金', id: 'gold_second', confirmedSettings: ['4'] },
+      ],
+      trialSuccessRates: [{ name: 'CZ', id: 'cz_rate', probabilities: { 1: 0.3 } }],
+      voiceCounts: [
+        { name: 'ボイスA', id: 'voice_a' },
+        { name: 'ボイスB', id: '' },
+      ],
+      musicCounts: [{ name: '楽曲A', id: 'music_a' }],
+      effectCounts: [{ name: '演出A', id: 'effect_a' }],
+      modeTransitions: [{ name: '高確移行', id: 'mode_a', rates: { 1: 0.1 } }],
+      specialSettings: { id: 'special', note: 'x' },
+    };
+    const ids = collectItemIds(machine);
+    expect(Object.fromEntries(ids)).toEqual({
+      ...Object.fromEntries(collectDerivedIds(machine)),
+      'confirmationEvent::金': 'gold',
+      'confirmationEvent::金#2': 'gold_second',
+      'trialSuccessRate::CZ': 'cz_rate',
+      'voiceCount::ボイスA': 'voice_a',
+      'musicCount::楽曲A': 'music_a',
+      'effectCount::演出A': 'effect_a',
+      'modeTransition::高確移行': 'mode_a',
+    });
+  });
+
+  it('EXPLICIT_ID_KINDS は、アプリがデータの id をそのまま使う6種類', () => {
+    expect(EXPLICIT_ID_KINDS).toEqual(
+      new Set([
+        'confirmationEvent',
+        'trialSuccessRate',
+        'voiceCount',
+        'musicCount',
+        'effectCount',
+        'modeTransition',
+      ])
+    );
+  });
+
+  it('EXPLICIT_ID_FIELDS（配列の欄と種類の対応）が正本で、EXPLICIT_ID_KINDS はその種類と同じ', () => {
+    expect(EXPLICIT_ID_FIELDS).toEqual([
+      ['confirmationEvents', 'confirmationEvent'],
+      ['trialSuccessRates', 'trialSuccessRate'],
+      ['voiceCounts', 'voiceCount'],
+      ['musicCounts', 'musicCount'],
+      ['effectCounts', 'effectCount'],
+      ['modeTransitions', 'modeTransition'],
+    ]);
+    expect(EXPLICIT_ID_KINDS).toEqual(new Set(EXPLICIT_ID_FIELDS.map(([, kind]) => kind)));
+    // 出典記録の項目の種類（listMachineItems）とも同じ対応であること
+    for (const [field, kind] of EXPLICIT_ID_FIELDS) {
+      const items = listMachineItems({ [field]: [{ name: 'X', id: 'x' }] });
+      expect(items.map((item) => item.kind)).toEqual([kind]);
+    }
+  });
+});
+
 describe('compareDerivedIds', () => {
   const base = collectDerivedIds(baseMachine);
 
@@ -140,6 +207,20 @@ describe('compareDerivedIds', () => {
     expect(compareDerivedIds(base, collectDerivedIds(head), removed)).toEqual([
       'endScreen::緑: 新しい項目が、基準の endScreen::赤 の ID（endscreen）を使っている（明示の id を付ける）',
     ]);
+  });
+
+  it('外した ID の台帳（retiredIds）にある ID の使い回しは validate が報告するので、重ねて報告しない', () => {
+    const head = {
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    };
+    const removed = new Set(['endScreen::赤']);
+    const retired = new Set(['endScreen::endscreen']);
+    expect(compareDerivedIds(base, collectDerivedIds(head), removed, retired)).toEqual([]);
   });
 
   it('役でも、漢字だけの名前で外した項目の displayOrder を使い回すと報告する', () => {
@@ -256,6 +337,114 @@ describe('checkDerivedIds', () => {
         provenanceFiles,
       })
     ).toEqual([]);
+  });
+
+  it('比べる側の出典記録の retiredIds にある ID の使い回しは報告しない（validate が報告する）', () => {
+    const head = files({
+      ...baseMachine,
+      endScreens: [
+        baseMachine.endScreens[0],
+        { ...baseMachine.endScreens[2], id: 'endscreen_2' },
+        { name: '緑', hint: '' },
+      ],
+    });
+    const record = (retiredIds) => [
+      {
+        data: {
+          machineId: 'test-machine',
+          removed: [{ kind: 'endScreen', name: '赤', previous: {}, reason: '出典なし' }],
+          retiredIds,
+        },
+      },
+    ];
+    const run = (provenanceFiles) =>
+      checkDerivedIds({
+        readBase: reader(files(baseMachine)),
+        readHead: reader(head),
+        provenanceFiles,
+      });
+    expect(run(record([{ kind: 'endScreen', name: '赤', appId: 'endscreen' }]))).toEqual([]);
+    expect(run(record([]))).toEqual([
+      'test-machine: endScreen::緑: 新しい項目が、基準の endScreen::赤 の ID（endscreen）を使っている（明示の id を付ける）',
+    ]);
+  });
+
+  describe('明示の id を持つ項目（確定演出など）', () => {
+    const gold = { name: '金トロフィー', id: 'gold', confirmedSettings: ['6'] };
+    const withEvents = (confirmationEvents, fields = {}) =>
+      files({ ...baseMachine, confirmationEvents, ...fields });
+    const run = (base, head, provenanceFiles = []) =>
+      checkDerivedIds({ readBase: reader(base), readHead: reader(head), provenanceFiles });
+
+    it('main の明示の id が変わる・無くなると報告する', () => {
+      const base = withEvents([gold]);
+      expect(run(base, withEvents([{ ...gold, id: 'gold2' }]))).toEqual([
+        'test-machine: confirmationEvent::金トロフィー: ID が変わった（gold → gold2）',
+      ]);
+      const noId = { name: gold.name, confirmedSettings: gold.confirmedSettings };
+      expect(run(base, withEvents([noId]))).toEqual([
+        'test-machine: confirmationEvent::金トロフィー: 明示の id が無くなった（gold。アプリが取り込むたびに乱数の ID になり、数えた記録が切れる）',
+      ]);
+      expect(run(base, withEvents([gold]))).toEqual([]);
+    });
+
+    it('明示の id を持つ項目を消したら removed に要る（checkRemovedItems と二重に出さない）', () => {
+      expect(run(withEvents([gold]), withEvents([]))).toEqual([
+        'test-machine: confirmationEvent::金トロフィー: 項目が消えたのに、出典記録の removed に無い',
+      ]);
+      const provenanceFiles = [
+        {
+          data: {
+            machineId: 'test-machine',
+            removed: [{ kind: 'confirmationEvent', name: '金トロフィー', previous: gold }],
+          },
+        },
+      ];
+      expect(run(withEvents([gold]), withEvents([]), provenanceFiles)).toEqual([]);
+    });
+
+    it('新しく足した確定演出などには、明示の id が要る（新しい機種の項目も）', () => {
+      const newEvent = { name: '虹トロフィー', confirmedSettings: ['6'] };
+      const problem = (key) =>
+        `test-machine: ${key}: 新しい項目に明示の id が無い（アプリが取り込むたびに乱数の ID になり、数えた記録が切れる）`;
+      const kinds = [
+        ['confirmationEvents', 'confirmationEvent'],
+        ['trialSuccessRates', 'trialSuccessRate'],
+        ['voiceCounts', 'voiceCount'],
+        ['musicCounts', 'musicCount'],
+        ['effectCounts', 'effectCount'],
+        ['modeTransitions', 'modeTransition'],
+      ];
+      for (const [field, kind] of kinds) {
+        const head = files({ ...baseMachine, [field]: [newEvent] });
+        expect(run(files(baseMachine), head)).toEqual([problem(`${kind}::虹トロフィー`)]);
+        const withId = files({ ...baseMachine, [field]: [{ ...newEvent, id: 'rainbow' }] });
+        expect(run(files(baseMachine), withId)).toEqual([]);
+      }
+      // 新しい機種（main の index.json に無い）の項目も
+      const noMachine = files(baseMachine, { ...index, machines: [] });
+      expect(run(noMachine, withEvents([newEvent]))).toEqual([
+        problem('confirmationEvent::虹トロフィー'),
+      ]);
+    });
+
+    it('main にあった id の無い項目はそのままでよい（段階1a は機種ファイルを変えない）', () => {
+      const legacy = { name: 'ボイスA' };
+      const map = files({ ...baseMachine, voiceCounts: [legacy] });
+      expect(run(map, map)).toEqual([]);
+    });
+
+    it('新しい項目が、main の別の項目の明示の id を使えば報告する（範囲は種類ごと）', () => {
+      const base = withEvents([gold]);
+      const head = withEvents([gold, { name: '虹', id: 'gold', confirmedSettings: ['6'] }]);
+      expect(run(base, head)).toEqual([
+        'test-machine: confirmationEvent::虹: 新しい項目が、基準の confirmationEvent::金トロフィー の ID（gold）を使っている（明示の id を付ける）',
+      ]);
+      const otherKind = withEvents([gold], {
+        trialSuccessRates: [{ name: 'CZ', id: 'gold', probabilities: { 1: 0.3 } }],
+      });
+      expect(run(base, otherKind)).toEqual([]);
+    });
   });
 
   it('index から機種が消えたら報告する', () => {

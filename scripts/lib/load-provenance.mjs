@@ -22,3 +22,24 @@ export function loadProvenanceFiles(dir) {
     }
   });
 }
+
+/** メーカーの公式ドメインの一覧の場所（リポジトリからの相対パス） */
+export const OFFICIAL_DOMAINS_PATH = 'config/official-domains.json';
+
+/**
+ * メーカーの公式ドメインの一覧（config/official-domains.json）を読む。無い・JSON として読めないときは、
+ * 空の一覧にせず readError を付ける（validateOfficialDomains がエラーにする）。
+ *
+ * @param {string} root リポジトリのルートの絶対パス
+ * @returns {{ path: string, data: object | null, readError?: string }}
+ */
+export function loadOfficialDomainsFile(root) {
+  try {
+    return {
+      path: OFFICIAL_DOMAINS_PATH,
+      data: JSON.parse(readFileSync(resolve(root, OFFICIAL_DOMAINS_PATH), 'utf-8')),
+    };
+  } catch (e) {
+    return { path: OFFICIAL_DOMAINS_PATH, data: null, readError: e.message };
+  }
+}

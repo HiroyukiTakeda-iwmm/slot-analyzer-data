@@ -77,13 +77,20 @@ slot-analyzer-data/
 │   └── {category}/{machine-id}.json # 各機種データ
 ├── provenance/
 │   └── {machine-id}.json       # 出典記録（項目ごとの出典・取得日・値）
+├── config/
+│   └── official-domains.json   # メーカーの公式ドメインの一覧（公式の出典の照合）
 ├── schemas/
 │   ├── machine.schema.json     # 機種データJSONスキーマ
 │   ├── index.schema.json       # インデックスJSONスキーマ
-│   └── provenance.schema.json  # 出典記録JSONスキーマ
+│   ├── provenance.schema.json  # 出典記録JSONスキーマ
+│   ├── notes.schema.json       # 抜き出し・読み直しのメモのJSONスキーマ
+│   └── official-domains.schema.json # 公式ドメインの一覧のJSONスキーマ
 ├── scripts/
 │   ├── validate.mjs            # バリデーション実行
 │   ├── check-against-base.mjs  # main と比べる検査（アプリが作るID・採否ルール）
+│   ├── expand-patterns.mjs     # 終了画面の patterns をアプリが読む形に書き直す
+│   ├── reread-compare.mjs      # 抜き出しと読み直しのメモの照合
+│   ├── provenance-draft.mjs    # メモから出典記録の下書きと機種ファイルに書く値を作る
 │   ├── generate-template.mjs   # 新機種テンプレート生成
 │   ├── sync-last-updated.mjs   # lastUpdated同期
 │   └── audit-freshness.mjs     # 鮮度チェック
@@ -232,7 +239,7 @@ npm run validate          # スキーマ・確率値・演出・出典記録の�
 npm run validate:schema   # スキーマチェックのみ
 npm run validate:index    # index整合性チェックのみ
 npm test                  # テスト実行（vitest）
-npm run check:base        # main と比べる（アプリが作るID・採否ルール）（先に git fetch origin で main を最新にする）
+npm run check:base        # main と比べる（アプリが作るID・採否ルール）（先に git fetch origin し、作業ブランチに origin/main を取り込む。取り込まないと、main に後から入った機種や記録を消したと報告する）
 npm run audit             # lastUpdated の鮮度チェック
 ```
 

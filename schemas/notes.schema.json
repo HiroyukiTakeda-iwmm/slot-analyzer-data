@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "notes.schema.json",
+  "title": "Extract and Reread Notes",
+  "description": "抜き出しのメモ（<機種ID>.extract.json）と読み直しのメモ（<機種ID>.reread.json）の形。リポジトリの外（notes/<バッチ>/）に置く作業メモで、scripts/reread-compare.mjs と scripts/provenance-draft.mjs が definitions の extract・reread で確かめる。値の形は出典記録（provenance.schema.json）の定義を参照する（docs/data-format.md の「抜き出し・読み直しのメモ」）",
+  "definitions": {
+    "extract": {
+      "type": "object",
+      "description": "抜き出しのメモ。出典のページから、機種の項目ごとに出典ごとの値を写したもの",
+      "required": ["machineId", "machineName", "machineFile", "availableSettings", "sources", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "machineId": { "$ref": "provenance.schema.json#/properties/machineId" },
+        "machineName": { "type": "string", "minLength": 1 },
+        "machineFile": {
+          "description": "出典記録の machineFile と同じ形（machines/ からの相対パス）。既存の機種では index.json のその機種の行と同じ",
+          "$ref": "provenance.schema.json#/properties/machineFile"
+        },
+        "availableSettings": {
+          "allOf": [{ "$ref": "provenance.schema.json#/definitions/settingList" }, { "minItems": 1 }]
+        },
+        "sources": { "$ref": "provenance.schema.json#/properties/sources" },
+        "items": { "type": "array", "items": { "$ref": "#/definitions/extractItem" } },
+        "unreadable": { "$ref": "#/definitions/unreadableList" },
+        "notes": { "$ref": "#/definitions/noteList" }
+      }
+    },
+    "extractItem": {
+      "type": "object",
+      "description": "1項目の出典ごとの値。values はどの出典にも無かった項目なら {}（既存の機種の項目）",
+      "required": ["kind", "name", "unit", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "$ref": "provenance.schema.json#/definitions/kind" },
+        "name": { "type": "string", "minLength": 1 },
+        "unit": { "$ref": "provenance.schema.json#/definitions/unit" },
+        "values": { "$ref": "provenance.schema.json#/definitions/valuesBySource" }
+      }
+    },
+    "reread": {
+      "type": "object",
+      "description": "読み直しのメモ。抜き出しをしていない担当が、機種名・出典の URL・項目名だけから書いたもの",
+      "required": ["machineId", "by", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "machineId": { "$ref": "provenance.schema.json#/properties/machineId" },
+        "by": { "type": "string", "minLength": 1 },
+        "items": { "type": "array", "items": { "$ref": "#/definitions/rereadItem" } },
+        "unreadable": { "$ref": "#/definitions/unreadableList" },
+        "notes": { "$ref": "#/definitions/noteList" }
+      }
+    },
+    "rereadItem": {
+      "type": "object",
+      "description": "1つの出典の1項目の値。unit は抜き出しのメモの同じ項目の unit を使う",
+      "required": ["kind", "name", "source", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "$ref": "provenance.schema.json#/definitions/kind" },
+        "name": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "provenance.schema.json#/definitions/sourceKey" },
+        "value": { "$ref": "provenance.schema.json#/definitions/value" }
+      }
+    },
+    "unreadableList": {
+      "type": "array",
+      "description": "読めなかったページ。値を別のサイトで埋めない",
+      "items": {
+        "type": "object",
+        "required": ["url", "route", "at", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "url": { "type": "string", "pattern": "^https?://" },
+          "route": {
+            "description": "読んだ経路（WebFetch・ブラウザなど）",
+            "type": "string",
+            "minLength": 1
+          },
+          "at": {
+            "description": "読もうとした日時。時差付きの日時（2026-09-28T21:05:00+09:00 の形。時差の無い 2026-09-28T21:05:00 は通さない）か、日付（2026-09-28）",
+            "anyOf": [
+              { "type": "string", "format": "date-time" },
+              { "$ref": "provenance.schema.json#/definitions/date" }
+            ]
+          },
+          "reason": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "noteList": {
+      "type": "array",
+      "description": "自分の言葉で書いた覚え書き（照合で分かった読み違いの原因・見つからなかった項目など）",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

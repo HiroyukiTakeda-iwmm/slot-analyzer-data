@@ -2,11 +2,18 @@
 
 /**
  * main（既定: origin/main）と比べて確かめる。validate は main を読まないので、こちらで見る（仕様 5.7・5.8）。
- * - アプリが名前から作る ID が変わっていないか、記録なしに項目が消えていないか、
+ * - アプリの ID（名前から作る ID と、確定演出などの明示の id）が変わっていないか、記録なしに項目が消えていないか、
  *   新しい項目が基準の別の項目の ID を使っていないか、同じ名前の項目に別々の明示の id があるか
- * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）
- * - ID を持たない種類の項目（確定演出など）を消したら、出典記録の removed に書いてあるか
+ * - 採否ルールのうち、見直し前の値が要るもの（kept-single-source・provisional-chonborista の使い方）。main の記録と
+ *   同じ項目で値も main と同じもの（マージ済みの採用）は確かめ直さない。main の終了画面の patterns は書き直した形で比べる
+ * - ID を持たない項目（明示の id の無い確定演出など）を消したら、出典記録の removed に書いてあるか
+ * - 新しく足した確定演出などに、明示の id があるか（アプリが取り込むたびに乱数の ID にならないように）
  * - 新しく足した機種に、出典記録があるか
+ * - main に出典記録がある機種（比べる側の index.json にも残る機種）の記録（provenance/<機種ID>.json）を消していないか
+ * - 出典記録の removed と retiredIds（外した ID の台帳）: 新しく外した項目の previous・appId が main と同じか、
+ *   main の記録の retiredIds を消していないか（main の provenance/ も読む）。台帳の ID の再利用は validate が止める
+ * - main の出典記録は、main のスキーマと main の index.json に照らしてから使う。合わなければ比べられない（終了コード 2）。
+ *   main に記録が無い機種は、すべての項目を確かめる
  *
  * Usage:
  *   node scripts/check-against-base.mjs                   # origin/main と比べる
@@ -19,7 +26,7 @@ import { execFileSync } from 'child_process';
 import { readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { runAgainstBase } from './lib/against-base.mjs';
+import { listGitFiles, runAgainstBase } from './lib/against-base.mjs';
 import { loadProvenanceFiles } from './lib/load-provenance.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -72,6 +79,7 @@ function main() {
     base,
     readBase,
     readHead,
+    listBase: (dir) => listGitFiles(base, dir, ROOT),
     loadProvenance: () => loadProvenanceFiles(resolve(ROOT, 'provenance')),
   });
   const print = code === 2 ? console.error : console.log;
