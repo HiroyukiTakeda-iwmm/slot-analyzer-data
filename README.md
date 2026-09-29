@@ -239,7 +239,7 @@ npm run validate          # スキーマ・確率値・演出・出典記録の�
 npm run validate:schema   # スキーマチェックのみ
 npm run validate:index    # index整合性チェックのみ
 npm test                  # テスト実行（vitest）
-npm run check:base        # main と比べる（アプリが作るID・採否ルール）（先に git fetch origin で main を最新にする）
+npm run check:base        # main と比べる（アプリが作るID・採否ルール）（先に git fetch origin し、作業ブランチに origin/main を取り込む。取り込まないと、main に後から入った機種や記録を消したと報告する）
 npm run audit             # lastUpdated の鮮度チェック
 ```
 

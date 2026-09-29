@@ -371,8 +371,8 @@ export function checkNewMachineRecords({ readBase, readHead, provenanceFiles }) 
  * 別のパスに置いた記録は数えない。ファイル名の誤りは validate も止める）。
  *
  * @param {{ readBase: (path: string) => string, readHead: (path: string) => string,
- *   listBase: (dir: string) => string[], provenanceFiles: Array<{ path?: string, data: object | null }> }} io
- *   checkRulesAgainstBase と同じ
+ *   listBase: (dir: string) => string[], provenanceFiles: Array<{ path: string, data: object | null }> }} io
+ *   checkRulesAgainstBase と同じ（ただし path は必須。パスだけで数えるので、path の無いファイルは「記録が無い」と数える）
  * @returns {string[]} 問題の説明。空なら問題なし
  */
 export function checkDeletedBaseRecords({ readBase, readHead, listBase, provenanceFiles }) {

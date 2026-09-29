@@ -38,7 +38,7 @@ export function listGitFiles(base, dir, cwd) {
  *
  * @param {{ base: string, readBase: (path: string) => string, readHead: (path: string) => string,
  *   listBase: (dir: string) => string[],
- *   loadProvenance: () => Array<{ path?: string, data: object | null }> }} io
+ *   loadProvenance: () => Array<{ path: string, data: object | null }> }} io
  *   listBase は main のフォルダ直下のファイルのパスを返す（listGitFiles）
  * @returns {{ code: 0 | 1 | 2, lines: string[] }} 0 = 問題なし / 1 = 問題あり / 2 = 比べられない
  */

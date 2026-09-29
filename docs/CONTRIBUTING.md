@@ -119,7 +119,7 @@ node scripts/generate-template.mjs \
 ```bash
 npm run validate   # スキーマ・確率値・演出・出典記録のバリデーション
 npm test           # テスト実行
-npm run check:base # main と比べる（アプリが作る ID・採否ルール）（先に git fetch origin で main を最新にする）
+npm run check:base # main と比べる（アプリが作る ID・採否ルール）（先に git fetch origin し、作業ブランチに origin/main を取り込む。取り込まないと、main に後から入った機種や記録を消したと報告する）
 ```
 
 エラー0件、テスト全通過を確認してください。
@@ -135,7 +135,7 @@ git commit -m "feat(machines): {機種名}を追加"
 
 既存の機種データを修正する場合は、以下のルールに従ってください。
 
-出典記録（`provenance/{id}.json`）がある機種で値を変えたら、記録も直します（機種ファイルと記録が食い違うと validate が止めます）。記録がまだ無い機種は、段階2の見直しで記録を作るまでは、記録なしで直してかまいません（全機種で必須にするのは段階3）。項目を外すときは、記録の有無にかかわらず、その機種の出典記録（全項目）を作ってから `removed` に書きます（外した項目が `removed` に無いと `npm run check:base` が止めます）。ID を持つ項目（[data-format.md](data-format.md) の「外した項目（removed）と外した ID の台帳（retiredIds）」）を外すときは、`removed` の `appId` と同じ行を `retiredIds` に足します。`retiredIds` は消しません（外した項目を足し直すときも残し、足し直す項目には明示の別の `id` を付けます。`removed` からは消します）。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。確定演出・試行成功率・ボイス・楽曲・演出・モード移行を足すときは明示の `id` を付け、今ある `id` は変えないでください（アプリはこの `id` で利用者の記録を結びます。詳しくは [data-format.md](data-format.md) の「アプリの ID（ID を持つ項目）」）。
+出典記録（`provenance/{id}.json`）がある機種で値を変えたら、記録も直します（機種ファイルと記録が食い違うと validate が止めます）。記録がまだ無い機種は、段階2の見直しで記録を作るまでは、記録なしで直してかまいません（全機種で必須にするのは段階3）。項目を外すときは、記録の有無にかかわらず、その機種の出典記録（全項目）を作ってから `removed` に書きます（外した項目が `removed` に無いと `npm run check:base` が止めます）。ID を持つ項目（[data-format.md](data-format.md) の「外した項目（removed）と外した ID の台帳（retiredIds）」）を外すときは、`removed` の `appId` と同じ行を `retiredIds` に足します。`retiredIds` は消しません（外した項目を足し直すときも残し、足し直す項目には明示の別の `id` を付けます。`removed` からは消します）。マージ済みのデータの PR を `git revert` で戻すと、`npm run check:base` が止めます（記録のファイルや台帳の ID を消す・機種を `index.json` から消すことになるため）。戻すときは、記録ごと直す PR（前に進める直し。外す項目は `removed` と `retiredIds` に書く）で戻してください。既存の項目の名前と `displayOrder` は変えないでください（アプリが作る ID が変わり、利用者の記録とのつながりが切れます）。確定演出・試行成功率・ボイス・楽曲・演出・モード移行を足すときは明示の `id` を付け、今ある `id` は変えないでください（アプリはこの `id` で利用者の記録を結びます。詳しくは [data-format.md](data-format.md) の「アプリの ID（ID を持つ項目）」）。
 
 終了画面に `patterns`（レガシー形式）がある機種を見直すときは、先に `node scripts/expand-patterns.mjs machines/{dir}/{id}.json --write` で普通の終了画面に書き直します（値もアプリが読む形も同じなので、この書き直しだけでは `version` と `lastUpdated` を変えません（版は上げない）。ただしアプリはファイルの中身の違いで「更新」を知らせます（取り込み直しても推定の結果は同じ）。詳しくは [data-format.md](data-format.md) の「patterns 形式（レガシー）」）。書き直しと値の見直しは同じ PR でかまいません（`npm run check:base` は main の `patterns` を同じ計算で書き直してから比べるので、書き直した終了画面を外す・残すこともできます。`patterns` の親をそのまま外すことはできません）。ボイスの `patterns` は記録できません（扱いは段階2で決めます）。
 
@@ -170,7 +170,7 @@ npm run sync   # index.json の lastUpdated を機種ファイルから同期
 
 main のブランチ保護は、最新の main に追いついたブランチだけをマージできる設定（strict）です。PR の CI で確かめた中身がそのまま main になるので、古いブランチのまま続けてマージされて不正な記録ができる（先に入ったスキーマや `index.json` の変更と、あとから入る記録が合わない）ことは起きにくいです。ただし管理者はブランチ保護の対象外なので、管理者の権限でマージしたときは起こりえます。
 
-**症状:** その記録に関係ない PR も含めて、`npm run check:base` と CI の「基準（main）との比較（PR のみ）」の段が `main の出典記録が不正: <パス>: <理由>` を出し、終了コード 2 で止まります（JSON として読めない記録なら `main の出典記録を読めない: <パス>: <理由>`）。
+**症状:** main を不正にしたマージの push の CI と、そのあとのどの PR の CI でも、「バリデーション」の段が、その PR で触っていない出典記録のエラー（`ERROR [provenance] provenance/<機種ID>.json: <理由>` など）で落ち、後の段は飛ばされます（CI は main を取り込んだ形を確かめるので、main の不正な記録もそのまま入るため）。手元の `npm run check:base` は `main の出典記録が不正: <パス>: <理由>` を出して終了コード 2 で止まります（JSON として読めない記録なら `main の出典記録を読めない: <パス>: <理由>`、main のスキーマを読めないなら `main の出典記録を確かめられない: …`）。
 
 **直し方:**
 
