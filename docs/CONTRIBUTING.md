@@ -164,6 +164,25 @@ git commit -m "feat(machines): {機種名}を追加"
 npm run sync   # index.json の lastUpdated を機種ファイルから同期
 ```
 
+## main に不正な出典記録が入ったとき
+
+`npm run check:base` は、main の出典記録を main のスキーマと main の `index.json` に照らしてから使い、合わない記録があれば確かめられない（終了コード 2）として止まります（[quality-standards.md](quality-standards.md) の「main と比べる検査」）。main に不正な記録が入ると、直すまでどの PR もこの検査を通りません。
+
+main のブランチ保護は、最新の main に追いついたブランチだけをマージできる設定（strict）です。PR の CI で確かめた中身がそのまま main になるので、古いブランチのまま続けてマージされて不正な記録ができる（先に入ったスキーマや `index.json` の変更と、あとから入る記録が合わない）ことは起きにくいです。ただし管理者はブランチ保護の対象外なので、管理者の権限でマージしたときは起こりえます。
+
+**症状:** その記録に関係ない PR も含めて、`npm run check:base` と CI の「基準（main）との比較（PR のみ）」の段が `main の出典記録が不正: <パス>: <理由>` を出し、終了コード 2 で止まります（JSON として読めない記録なら `main の出典記録を読めない: <パス>: <理由>`）。
+
+**直し方:**
+
+1. 不正な記録を直すだけの PR を作る（その PR の CI では main と比べる検査が働かないので、ほかの変更を混ぜない）
+2. その PR の CI の「基準（main）との比較（PR のみ）」の段は、main が不正なので終了コード 2 で落ちる（仕様どおり）。ほかの段（バリデーション・テスト・ESLint・Prettier・品質レポート）が通ることを確かめる
+3. その PR のブランチで `node scripts/check-against-base.mjs --base <最後の正しい main のコミット>` を実行し、終了コード 0 になることを確かめる（最後の正しい main のコミットは、main を不正にしたマージの1つ前。`git log --first-parent origin/main` でたどれる）
+4. 2 と 3 を確かめてから、管理者の権限でその PR だけをマージする（`gh pr merge <番号> --merge --admin`）。管理者のマージはブランチ保護を飛ばすので、ブランチが最新の main に追いついていることも先に確かめる
+5. マージの push の CI の「直前の main との比較（main への push のみ）」の段も、比べる相手（`github.event.before`）が直す前の main なので、同じ理由で終了コード 2 になる
+6. 止まっていたほかの PR は、直した main を取り込んでから CI をやり直す。次に main へ入る push（どの変更でもよい）の CI で、すべての段が通ることを確かめる
+
+この手順を、ほかの失敗を通す理由に使わないでください。管理者の権限でマージするのは、この節の状況で、ほかの段がすべて通り、手元の比べが終了コード 0 のときだけです。
+
 ## コミットメッセージ規約
 
 [Conventional Commits](https://www.conventionalcommits.org/) に従い、日本語で記述します。

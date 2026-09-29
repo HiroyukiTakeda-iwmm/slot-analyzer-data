@@ -29,7 +29,7 @@ slot-analyzer-data の変更履歴。iOS SlotAnalyzer アプリとの互換性�
 - 割合（`percent`）の 10% の下限をやめ、役・ゾーンの役以外の数値の項目は、値の大きさによらず分母でも割合でも記録できる
 - `patterns` 形式の項目の validate の文面: 終了画面は「先に `expand-patterns --write` で書き直す」、ボイスは「扱いは段階2で決める」
 - 3.9.0 の検証の規則1・5: `patterns` が空でない最上位の終了画面の親の欄の誤りもエラーにし、末尾を「（アプリは使わない）」にする
-- 文書: 仕様（5.2〜5.8・6.2・6.3）・data-format（値の書き方と比べ方・`patterns` の書き直し・`removed` と `retiredIds`・アプリの ID・公式ドメインの一覧・メモ・照合と下書きの道具）・quality-standards（検証の規則と check:base）・CONTRIBUTING（記録の手順・公式ドメインの一覧に足す手順・`patterns` の書き直し）・README（ファイル構造）
+- 文書: 仕様（5.2〜5.8・6.2・6.3）・data-format（値の書き方と比べ方・`patterns` の書き直し・`removed` と `retiredIds`・アプリの ID・公式ドメインの一覧・メモ・照合と下書きの道具）・quality-standards（検証の規則と check:base）・CONTRIBUTING（記録の手順・公式ドメインの一覧に足す手順・`patterns` の書き直し・main に不正な出典記録が入ったときの後始末）・README（ファイル構造）
 
 ### iOS互換性
 
