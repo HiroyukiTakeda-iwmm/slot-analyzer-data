@@ -1,0 +1,433 @@
+{
+  "name": "スマスロ BIRDIE WING ‐Golf Girls' Story‐",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "通常時初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/266.7、設定6: 1/255.9。",
+      "probabilities": {
+        "1": 0.00374953,
+        "2": 0.00378644,
+        "3": 0.00388651,
+        "4": 0.00390625,
+        "5": 0.00390778,
+        "6": 0.00390778
+      }
+    },
+    {
+      "name": "ST初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/421.2、設定6: 1/377.3。 ST中のゲーム数は分母に含めない。",
+      "probabilities": {
+        "1": 0.00237417,
+        "2": 0.00243605,
+        "3": 0.00261849,
+        "4": 0.0026455,
+        "5": 0.00264831,
+        "6": 0.00265041
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "獲得枚数表示 246枚OVER",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 456枚OVER",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 555枚OVER",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚OVER",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 ユーハ出現",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 ユーハが最初に出現",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 全て青背景で逆順",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期④ イヴ→エレーヌ→イチナ→敷島→ユーハ",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑤ イヴ→エレーヌ→レオ→亜室→ユーハ",
+      "id": "event_009",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑥ イヴ→葵→レオ→亜室→ユーハ",
+      "id": "event_010",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑦ ユーハ→雨音→イチナ→葵→イヴ",
+      "id": "event_011",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑧ ユーハ→亜室→レオ→イヴ→葵",
+      "id": "event_012",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑨ 葵→アイシャ→雨音→飯島→姫川",
+      "id": "event_013",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期④ 葵→アイシャ→雨音→飯島→ユーハ",
+      "id": "event_014",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑤ 葵→アイシャ→レオ→亜室→ユーハ",
+      "id": "event_015",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑥ 葵→イヴ→レオ→亜室→ユーハ",
+      "id": "event_016",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑦ ユーハ→雨音→イチナ→葵→イヴ",
+      "id": "event_017",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑧ ユーハ→亜室→レオ→イヴ→葵",
+      "id": "event_018",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑨ イヴ→エレーヌ→イチナ→敷島→クリス",
+      "id": "event_019",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・紫 裂帛のブルーバレット",
+      "id": "screen_001",
+      "type": "bonus_end",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "3"
+      ]
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・紫 曲撃のパープルバレット",
+      "id": "screen_002",
+      "type": "bonus_end",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 確信のオレンジバレット",
+      "id": "screen_003",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 脱出のイエローバレット",
+      "id": "screen_004",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 強欲のグリーンバレット",
+      "id": "screen_005",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "3",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 SR・金 レインボー・ショット",
+      "id": "screen_006",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 SSR・金 オーバー・ザ・レインボー",
+      "id": "screen_007",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 SSSR・金 シャイニングレインボーバースト",
+      "id": "screen_008",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 R・赤 お父様…",
+      "id": "screen_009",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 R・赤 あ、葵じゃないですよ…",
+      "id": "screen_010",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 SR・金 ゴルフはやっぱり楽しい！",
+      "id": "screen_011",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 SSR・金 葵(幼少期)",
+      "id": "screen_012",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 SSSR・金 無邪気な暴君",
+      "id": "screen_013",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・白 直撃のブルーバレット",
+      "id": "screen_014",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・白 連撃のブルーバレット",
+      "id": "screen_015",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・青 天空のレッドバレット",
+      "id": "screen_016",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "バーディーボーナス終了時カード イヴ周期 N・青 水流のインディゴバレット",
+      "id": "screen_017",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 N・紫 百合の花が咲きました",
+      "id": "screen_018",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 N・紫 ちょろい葵",
+      "id": "screen_019",
+      "type": "bonus_end",
+      "hint": "高設定示唆（中）"
+    },
+    {
+      "name": "バーディーボーナス終了時カード 葵周期 R・紫 イヴ大好き！",
+      "id": "screen_020",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/universal-slot/256009/)、DMMぱちタウン(https://p-town.dmm.com/machines/4996)、なな徹(https://nana-press.com/kaiseki/machine/1157/)",
+  "description": "ユニバーサルブロスのスマスロAT機（2026-06-08導入、6段階設定）。通常時初当り・ST初当りと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: ユニバプレート 銅、ユニバプレート 銀、ユニバプレート 金、ユニバプレート 花火柄、ユニバプレート 虹。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

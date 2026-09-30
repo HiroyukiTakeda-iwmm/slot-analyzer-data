@@ -1,0 +1,44 @@
+{
+  "name": "LBトリプルクラウンX-300",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "BIG確率",
+      "probabilities": {
+        "1": 0.00329587,
+        "2": 0.00344851,
+        "3": 0.00361637,
+        "4": 0.00381476,
+        "5": 0.004013,
+        "6": 0.00419622
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "通常時のBIG確率。BT中のボーナスと合算して数えない。BIG・REGの個別カウンターを使用。"
+    },
+    {
+      "name": "REG確率",
+      "probabilities": {
+        "1": 0.00207521,
+        "2": 0.00222777,
+        "3": 0.00236513,
+        "4": 0.00257805,
+        "5": 0.00280765,
+        "6": 0.00303647
+      },
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "通常時のREG確率。BT中のボーナスと合算して数えない。BIG・REGの個別カウンターを使用。"
+    }
+  ],
+  "confirmationEvents": [],
+  "endScreens": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "source": "DMMぱちタウン(https://p-town.dmm.com/machines/5089)、遊技日本(https://yugi-nippon.com/pachinko-new-machine/post-78699)",
+  "description": "清龍ゲームジャパンのBT機。2026年8月3日導入。全6設定のBIG・REG確率を2媒体で照合。",
+  "notes": "岡崎産業のLBトリプルクラウン/セブンとは別スペック。ボーナス合算は個別カウンターと重ねないため登録していない。小役の設定別解析は未公表。"
+}

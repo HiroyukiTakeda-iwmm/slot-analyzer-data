@@ -1,0 +1,306 @@
+{
+  "name": "モグモグ風林火山 大海戦の巻",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/324.0、設定6: 1/287.0。",
+      "probabilities": {
+        "1": 0.00308642,
+        "2": 0.00315457,
+        "3": 0.00322581,
+        "4": 0.00334448,
+        "5": 0.00342466,
+        "6": 0.00348432
+      }
+    },
+    {
+      "name": "AT初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/431.0、設定6: 1/358.0。",
+      "probabilities": {
+        "1": 0.00232019,
+        "2": 0.00241546,
+        "3": 0.00250627,
+        "4": 0.0026455,
+        "5": 0.00274725,
+        "6": 0.0027933
+      }
+    },
+    {
+      "name": "押し順ベル合算",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FFCA28",
+      "description": "設定1: 1/1.6、設定6: 1/1.6。",
+      "probabilities": {
+        "1": 0.625,
+        "2": 0.625,
+        "3": 0.625,
+        "4": 0.625,
+        "5": 0.625,
+        "6": 0.625
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#2196F3",
+      "description": "設定1: 1/7.3、設定6: 1/7.3。",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "3": 0.136986,
+        "4": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      }
+    },
+    {
+      "name": "1枚役",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "設定1: 1/7.6、設定6: 1/7.6。",
+      "probabilities": {
+        "1": 0.131579,
+        "2": 0.131579,
+        "3": 0.131579,
+        "4": 0.131579,
+        "5": 0.131579,
+        "6": 0.131579
+      }
+    },
+    {
+      "name": "共通ベル（右下がり・1枚）",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FFCA28",
+      "description": "設定1: 1/232.4、設定6: 1/232.4。",
+      "probabilities": {
+        "1": 0.00430293,
+        "2": 0.00430293,
+        "3": 0.00430293,
+        "4": 0.00430293,
+        "5": 0.00430293,
+        "6": 0.00430293
+      }
+    },
+    {
+      "name": "共通ベル（平行・3枚）",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FFCA28",
+      "description": "設定1: 1/18.2、設定6: 1/18.2。",
+      "probabilities": {
+        "1": 0.0549451,
+        "2": 0.0549451,
+        "3": 0.0549451,
+        "4": 0.0549451,
+        "5": 0.0549451,
+        "6": 0.0549451
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#E91E63",
+      "description": "設定1: 1/83.0、設定6: 1/83.0。",
+      "probabilities": {
+        "1": 0.0120482,
+        "2": 0.0120482,
+        "3": 0.0120482,
+        "4": 0.0120482,
+        "5": 0.0120482,
+        "6": 0.0120482
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#4CAF50",
+      "description": "設定1: 1/72.8、設定6: 1/72.8。",
+      "probabilities": {
+        "1": 0.0137363,
+        "2": 0.0137363,
+        "3": 0.0137363,
+        "4": 0.0137363,
+        "5": 0.0137363,
+        "6": 0.0137363
+      }
+    },
+    {
+      "name": "弱チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/292.6、設定6: 1/292.6。",
+      "probabilities": {
+        "1": 0.00341763,
+        "2": 0.00341763,
+        "3": 0.00341763,
+        "4": 0.00341763,
+        "5": 0.00341763,
+        "6": 0.00341763
+      }
+    },
+    {
+      "name": "強チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#9C27B0",
+      "description": "設定1: 1/383.3、設定6: 1/383.3。",
+      "probabilities": {
+        "1": 0.00260892,
+        "2": 0.00260892,
+        "3": 0.00260892,
+        "4": 0.00260892,
+        "5": 0.00260892,
+        "6": 0.00260892
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 12,
+      "color": "#E91E63",
+      "description": "設定1: 1/428.3、設定6: 1/428.3。",
+      "probabilities": {
+        "1": 0.00233481,
+        "2": 0.00233481,
+        "3": 0.00233481,
+        "4": 0.00233481,
+        "5": 0.00233481,
+        "6": 0.00233481
+      }
+    }
+  ],
+  "confirmationEvents": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 家来",
+      "id": "screen_001",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 大砲家来",
+      "id": "screen_002",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 忍モグ＆くモ一",
+      "id": "screen_003",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "AT終了画面 モグ姫",
+      "id": "screen_004",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "AT終了画面 モグ玄",
+      "id": "screen_005",
+      "type": "at_end",
+      "hint": "SPモード1つ以上または設定2以上を示唆。設定確定には使わない。"
+    },
+    {
+      "name": "AT終了画面 騎乗モグ玄",
+      "id": "screen_006",
+      "type": "at_end",
+      "hint": "SPモード1つ以上または設定2以上を示唆。設定確定には使わない。"
+    },
+    {
+      "name": "AT終了画面 モグー提督",
+      "id": "screen_007",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 全員集合",
+      "id": "screen_008",
+      "type": "at_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "くまトロフィー 銅",
+      "id": "screen_009",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "くまトロフィー 銀",
+      "id": "screen_010",
+      "type": "other",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "くまトロフィー 金",
+      "id": "screen_011",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "くまトロフィー 熊柄",
+      "id": "screen_012",
+      "type": "other",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "くまトロフィー 虹",
+      "id": "screen_013",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/net-slot/263515/)、DMMぱちタウン(https://p-town.dmm.com/machines/5059)、なな徹(https://nana-press.com/kaiseki/machine/1226/)",
+  "description": "ネットのスマスロAT機（2026-09-07導入、6段階設定）。CZ確率・AT初当り・押し順ベル合算・リプレイと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: CZ or AT直撃、AT直撃、弱チェリーのモグラ叩き当選率、弱チャンス目のモグラ叩き当選率、強チェリーのモグラ叩き当選率、強チャンス目のモグラ叩き当選率、制覇ロードの引き戻し期待度。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

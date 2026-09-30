@@ -1,0 +1,93 @@
+{
+  "name": "スマート沖スロ ダークハイビ",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/275.9、設定6: 1/228.3。 32G以内のボーナス連チャンは初当りに含めない。",
+      "probabilities": {
+        "1": 0.0036245,
+        "2": 0.00377644,
+        "4": 0.00402414,
+        "5": 0.00426439,
+        "6": 0.0043802
+      }
+    },
+    {
+      "name": "BB",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/243.0、設定6: 1/187.1。 連チャン中のBBも含める。初当り回数とは区別する。",
+      "probabilities": {
+        "1": 0.00411523,
+        "2": 0.00429,
+        "4": 0.00458505,
+        "5": 0.00501253,
+        "6": 0.00534474
+      }
+    },
+    {
+      "name": "RB",
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/320.4、設定6: 1/259.1。 連チャン中のRBも含める。初当り回数とは区別する。",
+      "probabilities": {
+        "1": 0.0031211,
+        "2": 0.00324781,
+        "4": 0.00345185,
+        "5": 0.0037037,
+        "6": 0.00385951
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ボーナス終了時のフェザーランプ 紫",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了時のフェザーランプ 虹",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "楽曲変化「蛍の光」",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/pionia-slot/257827/)、DMMぱちタウン(https://p-town.dmm.com/machines/5016)、なな徹(https://nana-press.com/kaiseki/machine/1167/)",
+  "description": "パイオニアのスマスロAT機（2026-06-22導入、5段階設定）。初当り・BB・RBと、出典で採用できた設定判別項目を収録。",
+  "notes": " 未採用の主な項目: ベルリプレイ、チェリー、スイカ、ダーク目。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

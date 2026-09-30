@@ -1,0 +1,810 @@
+{
+  "machineId": "super-binmusume",
+  "machineFile": "super-binmusume/super-binmusume.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/belko-slot/260918/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5038",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1191/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "AT確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "498.7",
+          "2": "477.8",
+          "4": "447.0",
+          "5": "423.4",
+          "6": "392.8"
+        },
+        "nana": {
+          "1": "498.7",
+          "2": "477.8",
+          "4": "447.0",
+          "5": "423.4",
+          "6": "392.8"
+        }
+      },
+      "adopted": {
+        "1": "498.7",
+        "2": "477.8",
+        "4": "447.0",
+        "5": "423.4",
+        "6": "392.8"
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "1": "498.7",
+          "2": "477.8",
+          "4": "447.0",
+          "5": "423.4",
+          "6": "392.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "CZ合算確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "395.7",
+          "2": "394.8",
+          "4": "394.1",
+          "5": "392.8",
+          "6": "391.5"
+        },
+        "dmm": {
+          "1": "395.7",
+          "2": "394.8",
+          "4": "394.1",
+          "5": "392.8",
+          "6": "391.5"
+        },
+        "nana": {
+          "1": "395.7",
+          "2": "394.8",
+          "4": "394.1",
+          "5": "392.8",
+          "6": "391.5"
+        }
+      },
+      "adopted": {
+        "1": "395.7",
+        "2": "394.8",
+        "4": "394.1",
+        "5": "392.8",
+        "6": "391.5"
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "1": "395.7",
+          "2": "394.8",
+          "4": "394.1",
+          "5": "392.8",
+          "6": "391.5"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 夢娘3人水着",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 びん娘通常衣装",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 夢娘3人ライブ衣装",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ちゃぶ台返し",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 すぱ娘ライブ衣装",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 しす娘ライブ衣装",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 びん娘大富豪",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "びん娘トロフィー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "びん娘トロフィー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "びん娘トロフィー ファイヤー柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "びん娘トロフィー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 青メダル・フリー君",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 赤メダル・びん娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 赤メダル・すぱ娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 赤メダル・しす娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 金メダル・びん娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 金メダル・すぱ娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル 金メダル・しす娘",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の夢娘メダル ？？？",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-super-binmusume",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "9.5",
+          "2": "9.5",
+          "4": "9.5",
+          "5": "9.5",
+          "6": "9.5"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "リリス",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "12.4",
+          "2": "12.4",
+          "4": "12.4",
+          "5": "12.4",
+          "6": "12.4"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "3枚ベル",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "17.9",
+          "2": "17.9",
+          "4": "17.9",
+          "5": "17.9",
+          "6": "17.9"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "85.3",
+          "2": "85.3",
+          "4": "85.3",
+          "5": "85.3",
+          "6": "85.3"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "弱スイカ",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "102.4",
+          "2": "102.4",
+          "4": "102.4",
+          "5": "102.4",
+          "6": "102.4"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "弱チャンス目",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "128.0",
+          "2": "128.0",
+          "4": "128.0",
+          "5": "128.0",
+          "6": "128.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "1024.0",
+          "2": "1024.0",
+          "4": "1024.0",
+          "5": "1024.0",
+          "6": "1024.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "強スイカ",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "1024.0",
+          "2": "1024.0",
+          "4": "1024.0",
+          "5": "1024.0",
+          "6": "1024.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "1024.0",
+          "2": "1024.0",
+          "4": "1024.0",
+          "5": "1024.0",
+          "6": "1024.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "レア役合算",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "31",
+          "2": "31",
+          "4": "31",
+          "5": "31",
+          "6": "31"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

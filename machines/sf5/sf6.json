@@ -1,0 +1,381 @@
+{
+  "name": "スマスロ ストリートファイター6",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ST初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/278.6、設定6: 1/252.6。",
+      "probabilities": {
+        "1": 0.00358938,
+        "2": 0.00367512,
+        "3": 0.00377929,
+        "4": 0.0038625,
+        "5": 0.00391696,
+        "6": 0.00395883
+      }
+    },
+    {
+      "name": "ボーナス初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/487.6、設定6: 1/389.9。",
+      "probabilities": {
+        "1": 0.00205086,
+        "2": 0.00211282,
+        "3": 0.00223614,
+        "4": 0.00234962,
+        "5": 0.00246366,
+        "6": 0.00256476
+      }
+    },
+    {
+      "name": "押し順ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#FFCA28",
+      "description": "設定1: 1/2.4、設定6: 1/2.4。",
+      "probabilities": {
+        "1": 0.416667,
+        "2": 0.416667,
+        "3": 0.416667,
+        "4": 0.416667,
+        "5": 0.416667,
+        "6": 0.416667
+      }
+    },
+    {
+      "name": "目押しベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFCA28",
+      "description": "設定1: 1/3.6、設定6: 1/3.6。",
+      "probabilities": {
+        "1": 0.277778,
+        "2": 0.277778,
+        "3": 0.277778,
+        "4": 0.277778,
+        "5": 0.277778,
+        "6": 0.277778
+      }
+    },
+    {
+      "name": "共通ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFCA28",
+      "description": "設定1: 1/17.8、設定6: 1/17.8。",
+      "probabilities": {
+        "1": 0.0561798,
+        "2": 0.0561798,
+        "3": 0.0561798,
+        "4": 0.0561798,
+        "5": 0.0561798,
+        "6": 0.0561798
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#4CAF50",
+      "description": "設定1: 1/72.8、設定6: 1/72.8。",
+      "probabilities": {
+        "1": 0.0137363,
+        "2": 0.0137363,
+        "3": 0.0137363,
+        "4": 0.0137363,
+        "5": 0.0137363,
+        "6": 0.0137363
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#E91E63",
+      "description": "設定1: 1/81.9、設定6: 1/81.9。",
+      "probabilities": {
+        "1": 0.01221,
+        "2": 0.01221,
+        "3": 0.01221,
+        "4": 0.01221,
+        "5": 0.01221,
+        "6": 0.01221
+      }
+    },
+    {
+      "name": "チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#9C27B0",
+      "description": "設定1: 1/163.8、設定6: 1/163.8。",
+      "probabilities": {
+        "1": 0.00610501,
+        "2": 0.00610501,
+        "3": 0.00610501,
+        "4": 0.00610501,
+        "5": 0.00610501,
+        "6": 0.00610501
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/655.4、設定6: 1/655.4。",
+      "probabilities": {
+        "1": 0.00152579,
+        "2": 0.00152579,
+        "3": 0.00152579,
+        "4": 0.00152579,
+        "5": 0.00152579,
+        "6": 0.00152579
+      }
+    },
+    {
+      "name": "ドライブチャンス突入率",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/97.3、設定6: 1/97.3。",
+      "probabilities": {
+        "1": 0.0102775,
+        "2": 0.0102775,
+        "3": 0.0102775,
+        "4": 0.0102775,
+        "5": 0.0102775,
+        "6": 0.0102775
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "獲得枚数表示 456OVER",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 555OVER",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666OVER",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のボイス 456（シゴロー）",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "ボーナス終了画面 ルーク＆ジェイミー",
+      "id": "screen_001",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了画面 全員集合",
+      "id": "screen_002",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了画面 エンタライオン",
+      "id": "screen_003",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンタトロフィー 銅",
+      "id": "screen_004",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンタトロフィー 銀",
+      "id": "screen_005",
+      "type": "other",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンタトロフィー 金",
+      "id": "screen_006",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンタトロフィー 紅葉柄",
+      "id": "screen_007",
+      "type": "other",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンタトロフィー 虹",
+      "id": "screen_008",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了画面 男性ファイター集合",
+      "id": "screen_009",
+      "type": "bonus_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "ボーナス終了画面 女性ファイター集合",
+      "id": "screen_010",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "ボーナス終了画面 ケン＆JP",
+      "id": "screen_011",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "ボーナス終了画面 リュウ",
+      "id": "screen_012",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "コンティニューチャンス成功率（ベル・リプレイ）",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0.031,
+        "2": 0.031,
+        "3": 0.094,
+        "4": 0.094,
+        "5": 0.125,
+        "6": 0.125
+      }
+    },
+    {
+      "name": "初期ランク振り分け（前回のFBがレジェンド以外で終了） ルーキー",
+      "id": "trial_002",
+      "probabilities": {
+        "1": 0.969,
+        "2": 0.969,
+        "3": 0.969,
+        "4": 0.969,
+        "5": 0.969,
+        "6": 0.969
+      }
+    },
+    {
+      "name": "初期ランク振り分け（前回のFBがレジェンド以外で終了） ブロンズ",
+      "id": "trial_003",
+      "probabilities": {
+        "1": 0.02,
+        "2": 0.02,
+        "3": 0.02,
+        "4": 0.02,
+        "5": 0.02,
+        "6": 0.02
+      }
+    },
+    {
+      "name": "初期ランク振り分け（前回のFBがレジェンド以外で終了） シルバー",
+      "id": "trial_004",
+      "probabilities": {
+        "1": 0.008,
+        "2": 0.008,
+        "3": 0.008,
+        "4": 0.008,
+        "5": 0.008,
+        "6": 0.008
+      }
+    },
+    {
+      "name": "初期ランク振り分け（前回のFBがレジェンド以外で終了） ゴールド",
+      "id": "trial_005",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.004,
+        "3": 0.004,
+        "4": 0.004,
+        "5": 0.004,
+        "6": 0.004
+      }
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/enta-slot/260280/)、DMMぱちタウン(https://p-town.dmm.com/machines/5068)、なな徹(https://nana-press.com/kaiseki/machine/1194/)",
+  "description": "レオスターのスマスロAT機（2026-08-03導入、6段階設定）。ST初当り・ボーナス初当り・押し順ベル・目押しベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: コンティニューチャンス突入率（駆け抜け時）、コンティニューチャンス成功率（レア役）、コンティニューチャンス成功率（狙え成功）、初期ランク振り分け（前回のFBがレジェンドで終了） ルーキー、初期ランク振り分け（前回のFBがレジェンドで終了） ブロンズ、初期ランク振り分け（前回のFBがレジェンドで終了） シルバー、初期ランク振り分け（前回のFBがレジェンドで終了） ゴールド。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

@@ -1,0 +1,912 @@
+{
+  "machineId": "ultraman-saishu-kessen",
+  "machineFile": "ultraman/ultraman-saishu-kessen.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/kyoraku-slot/260318/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5048",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1195/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ初当り確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "272.8",
+          "2": "267.7",
+          "3": "262.7",
+          "4": "257.0",
+          "5": "256.6",
+          "6": "256.2"
+        },
+        "dmm": {
+          "1": "272.8",
+          "2": "267.7",
+          "3": "262.7",
+          "4": "257.0",
+          "5": "256.6",
+          "6": "256.2"
+        },
+        "nana": {
+          "1": "272.8",
+          "2": "267.7",
+          "3": "262.7",
+          "4": "257.0",
+          "5": "256.6",
+          "6": "256.2"
+        }
+      },
+      "adopted": {
+        "1": "272.8",
+        "2": "267.7",
+        "3": "262.7",
+        "4": "257.0",
+        "5": "256.6",
+        "6": "256.2"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "272.8",
+          "2": "267.7",
+          "3": "262.7",
+          "4": "257.0",
+          "5": "256.6",
+          "6": "256.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT初当り確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "445.4",
+          "2": "438.4",
+          "3": "431.3",
+          "4": "423.8",
+          "5": "423.1",
+          "6": "422.4"
+        },
+        "dmm": {
+          "1": "445"
+        },
+        "nana": {
+          "1": "445.4",
+          "2": "438.4",
+          "3": "431.3",
+          "4": "423.8",
+          "5": "423.1",
+          "6": "422.4"
+        }
+      },
+      "adopted": {
+        "1": "445.4",
+        "2": "438.4",
+        "3": "431.3",
+        "4": "423.8",
+        "5": "423.1",
+        "6": "422.4"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "445.4",
+          "2": "438.4",
+          "3": "431.3",
+          "4": "423.8",
+          "5": "423.1",
+          "6": "422.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "アクティベーションモード移行率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "163.0",
+          "2": "158.8",
+          "3": "157.0",
+          "4": "154.7",
+          "5": "154.3",
+          "6": "154.1"
+        },
+        "dmm": {
+          "1": "163.0"
+        },
+        "nana": {
+          "1": "163.0",
+          "2": "158.8",
+          "3": "157.0",
+          "4": "154.7",
+          "5": "154.3",
+          "6": "154.1"
+        }
+      },
+      "adopted": {
+        "1": "163.0",
+        "2": "158.8",
+        "3": "157.0",
+        "4": "154.7",
+        "5": "154.3",
+        "6": "154.1"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "163.0",
+          "2": "158.8",
+          "3": "157.0",
+          "4": "154.7",
+          "5": "154.3",
+          "6": "154.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "押し順ベル",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1.6",
+          "2": "1.6",
+          "3": "1.6",
+          "4": "1.6",
+          "5": "1.6",
+          "6": "1.6"
+        }
+      },
+      "adopted": {
+        "1": "1.6",
+        "2": "1.6",
+        "3": "1.6",
+        "4": "1.6",
+        "5": "1.6",
+        "6": "1.6"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "1.6",
+          "2": "1.6",
+          "3": "1.6",
+          "4": "1.6",
+          "5": "1.6",
+          "6": "1.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "8.4",
+          "2": "8.4",
+          "3": "8.4",
+          "4": "8.4",
+          "5": "8.4",
+          "6": "8.4"
+        }
+      },
+      "adopted": {
+        "1": "8.4",
+        "2": "8.4",
+        "3": "8.4",
+        "4": "8.4",
+        "5": "8.4",
+        "6": "8.4"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "8.4",
+          "2": "8.4",
+          "3": "8.4",
+          "4": "8.4",
+          "5": "8.4",
+          "6": "8.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "共通ベル",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "20.0",
+          "2": "20.0",
+          "3": "20.0",
+          "4": "20.0",
+          "5": "20.0",
+          "6": "20.0"
+        }
+      },
+      "adopted": {
+        "1": "20.0",
+        "2": "20.0",
+        "3": "20.0",
+        "4": "20.0",
+        "5": "20.0",
+        "6": "20.0"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "20.0",
+          "2": "20.0",
+          "3": "20.0",
+          "4": "20.0",
+          "5": "20.0",
+          "6": "20.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "63.9",
+          "2": "63.9",
+          "3": "63.9",
+          "4": "63.9",
+          "5": "63.9",
+          "6": "63.9"
+        }
+      },
+      "adopted": {
+        "1": "63.9",
+        "2": "63.9",
+        "3": "63.9",
+        "4": "63.9",
+        "5": "63.9",
+        "6": "63.9"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "63.9",
+          "2": "63.9",
+          "3": "63.9",
+          "4": "63.9",
+          "5": "63.9",
+          "6": "63.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "95.5",
+          "2": "95.5",
+          "3": "95.5",
+          "4": "95.5",
+          "5": "95.5",
+          "6": "95.5"
+        }
+      },
+      "adopted": {
+        "1": "95.5",
+        "2": "95.5",
+        "3": "95.5",
+        "4": "95.5",
+        "5": "95.5",
+        "6": "95.5"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "95.5",
+          "2": "95.5",
+          "3": "95.5",
+          "4": "95.5",
+          "5": "95.5",
+          "6": "95.5"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "655.4",
+          "2": "655.4",
+          "3": "655.4",
+          "4": "655.4",
+          "5": "655.4",
+          "6": "655.4"
+        }
+      },
+      "adopted": {
+        "1": "655.4",
+        "2": "655.4",
+        "3": "655.4",
+        "4": "655.4",
+        "5": "655.4",
+        "6": "655.4"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "655.4",
+          "2": "655.4",
+          "3": "655.4",
+          "4": "655.4",
+          "5": "655.4",
+          "6": "655.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スペシウム目1個",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1170.3",
+          "2": "1170.3",
+          "3": "1170.3",
+          "4": "1170.3",
+          "5": "1170.3",
+          "6": "1170.3"
+        }
+      },
+      "adopted": {
+        "1": "1170.3",
+        "2": "1170.3",
+        "3": "1170.3",
+        "4": "1170.3",
+        "5": "1170.3",
+        "6": "1170.3"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "1170.3",
+          "2": "1170.3",
+          "3": "1170.3",
+          "4": "1170.3",
+          "5": "1170.3",
+          "6": "1170.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スペシウム目2個",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "2730.7",
+          "2": "2730.7",
+          "3": "2730.7",
+          "4": "2730.7",
+          "5": "2730.7",
+          "6": "2730.7"
+        }
+      },
+      "adopted": {
+        "1": "2730.7",
+        "2": "2730.7",
+        "3": "2730.7",
+        "4": "2730.7",
+        "5": "2730.7",
+        "6": "2730.7"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "2730.7",
+          "2": "2730.7",
+          "3": "2730.7",
+          "4": "2730.7",
+          "5": "2730.7",
+          "6": "2730.7"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "中段チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "8192.0",
+          "2": "8192.0",
+          "3": "8192.0",
+          "4": "8192.0",
+          "5": "8192.0",
+          "6": "8192.0"
+        }
+      },
+      "adopted": {
+        "1": "8192.0",
+        "2": "8192.0",
+        "3": "8192.0",
+        "4": "8192.0",
+        "5": "8192.0",
+        "6": "8192.0"
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "1": "8192.0",
+          "2": "8192.0",
+          "3": "8192.0",
+          "4": "8192.0",
+          "5": "8192.0",
+          "6": "8192.0"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ウルトラマン集合",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ウルトラマン（廃墟）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ベムラー",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 味方3人①（ゾフィー＆ウルトラマン＆セブン）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 味方3人②（エース/タロウ/ジャック）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 進次郎＆進",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 エド＆ゼットン",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表記 246枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表記 456枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表記 666枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-ultraman-saishu-kessen",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード最終ゲームのスペシウム目高確移行率 押し順ベル",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "13.3%"
+        },
+        "nana": {
+          "1": "13.3%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード最終ゲームのスペシウム目高確移行率 リプレイ",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "25.0%"
+        },
+        "nana": {
+          "1": "25.0%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード最終ゲームのスペシウム目高確移行率 共通ベル",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "30.1%"
+        },
+        "nana": {
+          "1": "30.1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード最終ゲームのスペシウム目高確移行率 レア小役",
+      "unit": "percent",
+      "values": {
+        "nana": {
+          "1": "100%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード最終ゲームのスペシウム目高確移行率 スペシウム目",
+      "unit": "percent",
+      "values": {
+        "nana": {
+          "1": "100%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード終了時のスペシウム目高確移行率 押し順ベル",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "13%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード終了時のスペシウム目高確移行率 共通ベル",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "30%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ブレイクモード終了時のスペシウム目高確移行率 リプレイ",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "25%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ウルトラ六傑",
+      "unit": "settings",
+      "values": {
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 初代ウルトラマン",
+      "unit": "settings",
+      "values": {
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉ちゃんトロフィー（銅）",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉ちゃんトロフィー（銀）",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉ちゃんトロフィー（金）",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉ちゃんトロフィー（ゼブラ柄）",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉ちゃんトロフィー（虹）",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

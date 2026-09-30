@@ -1,0 +1,1585 @@
+{
+  "machineId": "sengoku-collection6",
+  "machineFile": "sengoku-collection6/sengoku-collection6.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/konami-slot/257820/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5010",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1156/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "AT初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "363.6",
+          "2": "350.4",
+          "3": "329.8",
+          "4": "289.4",
+          "5": "268.5",
+          "6": "252.2"
+        },
+        "nana": {
+          "1": "363.6",
+          "2": "350.4",
+          "3": "329.8",
+          "4": "289.4",
+          "5": "268.5",
+          "6": "252.2"
+        }
+      },
+      "adopted": {
+        "1": "363.6",
+        "2": "350.4",
+        "3": "329.8",
+        "4": "289.4",
+        "5": "268.5",
+        "6": "252.2"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "363.6",
+          "2": "350.4",
+          "3": "329.8",
+          "4": "289.4",
+          "5": "268.5",
+          "6": "252.2"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::ロボニャンドライブ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "3532.4",
+          "2": "3518.6",
+          "3": "3561.1",
+          "4": "3622.8",
+          "5": "3686.2",
+          "6": "3781.6"
+        },
+        "dmm": {
+          "1": "3532.4",
+          "2": "3518.6",
+          "3": "3561.1",
+          "4": "3622.8",
+          "5": "3686.2",
+          "6": "3781.6"
+        },
+        "nana": {
+          "1": "3532.4",
+          "2": "3518.6",
+          "3": "3561.1",
+          "4": "3622.8",
+          "5": "3686.2",
+          "6": "3781.6"
+        }
+      },
+      "adopted": {
+        "1": "3532.4",
+        "2": "3518.6",
+        "3": "3561.1",
+        "4": "3622.8",
+        "5": "3686.2",
+        "6": "3781.6"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "3532.4",
+          "2": "3518.6",
+          "3": "3561.1",
+          "4": "3622.8",
+          "5": "3686.2",
+          "6": "3781.6"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::夢幻斬りWONDER",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "9415.7",
+          "2": "9361.9",
+          "3": "9352.4",
+          "4": "9071.5",
+          "5": "8623.7",
+          "6": "8195.5"
+        },
+        "dmm": {
+          "1": "9415.7",
+          "2": "9361.9",
+          "3": "9352.4",
+          "4": "9071.5",
+          "5": "8623.7",
+          "6": "8195.5"
+        },
+        "nana": {
+          "1": "9415.7",
+          "2": "9361.9",
+          "3": "9352.4",
+          "4": "9071.5",
+          "5": "8623.7",
+          "6": "8195.5"
+        }
+      },
+      "adopted": {
+        "1": "9415.7",
+        "2": "9361.9",
+        "3": "9352.4",
+        "4": "9071.5",
+        "5": "8623.7",
+        "6": "8195.5"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "9415.7",
+          "2": "9361.9",
+          "3": "9352.4",
+          "4": "9071.5",
+          "5": "8623.7",
+          "6": "8195.5"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::3人のコレクション",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "24067.4",
+          "2": "24325.4",
+          "3": "24105.9",
+          "4": "24616.2",
+          "5": "24457.2",
+          "6": "24309.9"
+        },
+        "dmm": {
+          "1": "24067.4",
+          "2": "24325.4",
+          "3": "24105.9",
+          "4": "24616.2",
+          "5": "24457.2",
+          "6": "24309.9"
+        },
+        "nana": {
+          "1": "24067.4",
+          "2": "24325.4",
+          "3": "24105.9",
+          "4": "24616.2",
+          "5": "24457.2",
+          "6": "24309.9"
+        }
+      },
+      "adopted": {
+        "1": "24067.4",
+        "2": "24325.4",
+        "3": "24105.9",
+        "4": "24616.2",
+        "5": "24457.2",
+        "6": "24309.9"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "24067.4",
+          "2": "24325.4",
+          "3": "24105.9",
+          "4": "24616.2",
+          "5": "24457.2",
+          "6": "24309.9"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "天魔一閃の上乗せ振り分け 300枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "40.2%",
+          "2": "39.5%",
+          "3": "37.8%",
+          "4": "29.5%",
+          "5": "24.7%",
+          "6": "20.2%"
+        },
+        "dmm": {
+          "1": "40.2%",
+          "2": "39.5%",
+          "3": "37.8%",
+          "4": "29.5%",
+          "5": "24.7%",
+          "6": "20.2%"
+        }
+      },
+      "adopted": {
+        "1": "40.2%",
+        "2": "39.5%",
+        "3": "37.8%",
+        "4": "29.5%",
+        "5": "24.7%",
+        "6": "20.2%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "40.2%",
+          "2": "39.5%",
+          "3": "37.8%",
+          "4": "29.5%",
+          "5": "24.7%",
+          "6": "20.2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "天魔一閃の上乗せ振り分け 550枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "14.8%",
+          "2": "13.7%",
+          "3": "12.8%",
+          "4": "9.5%",
+          "5": "7.9%",
+          "6": "6.5%"
+        },
+        "dmm": {
+          "1": "14.8%",
+          "2": "13.7%",
+          "3": "12.8%",
+          "4": "9.5%",
+          "5": "7.9%",
+          "6": "6.5%"
+        }
+      },
+      "adopted": {
+        "1": "14.8%",
+        "2": "13.7%",
+        "3": "12.8%",
+        "4": "9.5%",
+        "5": "7.9%",
+        "6": "6.5%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "14.8%",
+          "2": "13.7%",
+          "3": "12.8%",
+          "4": "9.5%",
+          "5": "7.9%",
+          "6": "6.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "天魔一閃の上乗せ振り分け 800枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "9.8%",
+          "2": "9.9%",
+          "3": "9.2%",
+          "4": "7.3%",
+          "5": "6.2%",
+          "6": "5.1%"
+        },
+        "dmm": {
+          "1": "9.8%",
+          "2": "9.9%",
+          "3": "9.2%",
+          "4": "7.3%",
+          "5": "6.2%",
+          "6": "5.1%"
+        }
+      },
+      "adopted": {
+        "1": "9.8%",
+        "2": "9.9%",
+        "3": "9.2%",
+        "4": "7.3%",
+        "5": "6.2%",
+        "6": "5.1%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "9.8%",
+          "2": "9.9%",
+          "3": "9.2%",
+          "4": "7.3%",
+          "5": "6.2%",
+          "6": "5.1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "天魔一閃の上乗せ振り分け 1050枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "35.2%",
+          "2": "36.9%",
+          "3": "40.2%",
+          "4": "53.7%",
+          "5": "61.2%",
+          "6": "68.2%"
+        },
+        "dmm": {
+          "1": "35.2%",
+          "2": "36.9%",
+          "3": "40.2%",
+          "4": "53.7%",
+          "5": "61.2%",
+          "6": "68.2%"
+        }
+      },
+      "adopted": {
+        "1": "35.2%",
+        "2": "36.9%",
+        "3": "40.2%",
+        "4": "53.7%",
+        "5": "61.2%",
+        "6": "68.2%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "35.2%",
+          "2": "36.9%",
+          "3": "40.2%",
+          "4": "53.7%",
+          "5": "61.2%",
+          "6": "68.2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "時幻城ミッションの対戦相手 楊貴妃",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "57.8%",
+          "2": "57.8%",
+          "3": "57.8%",
+          "4": "57.8%",
+          "5": "57.8%",
+          "6": "57.8%"
+        },
+        "nana": {
+          "1": "57.8%",
+          "2": "57.8%",
+          "3": "57.8%",
+          "4": "57.8%",
+          "5": "57.8%",
+          "6": "57.8%"
+        }
+      },
+      "adopted": {
+        "1": "57.8%",
+        "2": "57.8%",
+        "3": "57.8%",
+        "4": "57.8%",
+        "5": "57.8%",
+        "6": "57.8%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "57.8%",
+          "2": "57.8%",
+          "3": "57.8%",
+          "4": "57.8%",
+          "5": "57.8%",
+          "6": "57.8%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "時幻城ミッションの対戦相手 クレオパトラ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "39.8%",
+          "2": "39.8%",
+          "3": "39.8%",
+          "4": "39.8%",
+          "5": "39.8%",
+          "6": "39.8%"
+        },
+        "nana": {
+          "1": "39.8%",
+          "2": "39.8%",
+          "3": "39.8%",
+          "4": "39.8%",
+          "5": "39.8%",
+          "6": "39.8%"
+        }
+      },
+      "adopted": {
+        "1": "39.8%",
+        "2": "39.8%",
+        "3": "39.8%",
+        "4": "39.8%",
+        "5": "39.8%",
+        "6": "39.8%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "39.8%",
+          "2": "39.8%",
+          "3": "39.8%",
+          "4": "39.8%",
+          "5": "39.8%",
+          "6": "39.8%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "時幻城ミッションの対戦相手 小野小町",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "2.4%",
+          "2": "2.4%",
+          "3": "2.4%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        },
+        "nana": {
+          "1": "2.4%",
+          "2": "2.4%",
+          "3": "2.4%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        }
+      },
+      "adopted": {
+        "1": "2.4%",
+        "2": "2.4%",
+        "3": "2.4%",
+        "4": "2.4%",
+        "5": "2.4%",
+        "6": "2.4%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "2.4%",
+          "2": "2.4%",
+          "3": "2.4%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT中のSR役成立時の特化ゾーン振り分け ロボニャンドライブ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "50%",
+          "2": "50%",
+          "3": "50%",
+          "4": "50%",
+          "5": "50%",
+          "6": "50%"
+        },
+        "nana": {
+          "1": "50%",
+          "2": "50%",
+          "3": "50%",
+          "4": "50%",
+          "5": "50%",
+          "6": "50%"
+        }
+      },
+      "adopted": {
+        "1": "50%",
+        "2": "50%",
+        "3": "50%",
+        "4": "50%",
+        "5": "50%",
+        "6": "50%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "50%",
+          "2": "50%",
+          "3": "50%",
+          "4": "50%",
+          "5": "50%",
+          "6": "50%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT中のSR役成立時の特化ゾーン振り分け 夢幻斬りWONDER",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        },
+        "nana": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        }
+      },
+      "adopted": {
+        "1": "25%",
+        "2": "25%",
+        "3": "25%",
+        "4": "25%",
+        "5": "25%",
+        "6": "25%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT中のSR役成立時の特化ゾーン振り分け 3人のコレクション",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        },
+        "nana": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        }
+      },
+      "adopted": {
+        "1": "25%",
+        "2": "25%",
+        "3": "25%",
+        "4": "25%",
+        "5": "25%",
+        "6": "25%"
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "1": "25%",
+          "2": "25%",
+          "3": "25%",
+          "4": "25%",
+          "5": "25%",
+          "6": "25%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 敵武将3人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 信長・光秀・利休・有楽",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 しずもん絵",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 織田信長",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 小野小町",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 水着①",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 水着②",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "アリストロフィー 銅",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "アリストロフィー 銀",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "アリストロフィー 金",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "アリストロフィー クローバー柄",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "アリストロフィー 虹",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 青",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 緑",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 赤",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "セット開始時の扉絵 上杉謙信",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "セット開始時の扉絵 信長＋光秀（水着）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "セット開始時の扉絵 味方キャラ6人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "セット開始時の扉絵 デフォルメキャラ集合",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 222枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 246枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 573枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sengoku-collection6",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中レア役時のPUSHボイス 楊貴妃",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中レア役時のPUSHボイス クレオパトラ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中レア役時のPUSHボイス 小野小町",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "鬼ヶ島チャレンジ・振り向かせたいむ合算",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "71"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "9.6",
+          "2": "9.6",
+          "3": "9.6",
+          "4": "9.6",
+          "5": "9.6",
+          "6": "9.6"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "69.6",
+          "2": "69.6",
+          "3": "69.6",
+          "4": "69.6",
+          "5": "69.6",
+          "6": "69.6"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "89.9",
+          "2": "89.9",
+          "3": "89.9",
+          "4": "89.9",
+          "5": "89.9",
+          "6": "89.9"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "弱チャンス目",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "297.9",
+          "2": "297.9",
+          "3": "297.9",
+          "4": "297.9",
+          "5": "297.9",
+          "6": "297.9"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "448.9",
+          "2": "448.9",
+          "3": "448.9",
+          "4": "448.9",
+          "5": "448.9",
+          "6": "448.9"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "569.9",
+          "2": "569.9",
+          "3": "569.9",
+          "4": "569.9",
+          "5": "569.9",
+          "6": "569.9"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "SR役",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "レア小役合算",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "30",
+          "2": "30",
+          "3": "30",
+          "4": "30",
+          "5": "30",
+          "6": "30"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ変換込み合算",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "25",
+          "2": "25",
+          "3": "25",
+          "4": "25",
+          "5": "25",
+          "6": "25"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "リプレイ変換の変換先 弱チェリー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "48%"
+        },
+        "dmm": {
+          "1": "48%"
+        },
+        "nana": {
+          "1": "48%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "リプレイ変換の変換先 スイカ",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "40%"
+        },
+        "dmm": {
+          "1": "40%"
+        },
+        "nana": {
+          "1": "40%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "リプレイ変換の変換先 弱チャンス目",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "10%"
+        },
+        "dmm": {
+          "1": "10%"
+        },
+        "nana": {
+          "1": "10%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "リプレイ変換の変換先 強チャンス目",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1%"
+        },
+        "dmm": {
+          "1": "1%"
+        },
+        "nana": {
+          "1": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "リプレイ変換の変換先 強チェリー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1%"
+        },
+        "dmm": {
+          "1": "1%"
+        },
+        "nana": {
+          "1": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "7揃いの形 4の形",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "7揃いの形 7の形",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

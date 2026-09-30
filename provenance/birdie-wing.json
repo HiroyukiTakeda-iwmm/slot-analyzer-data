@@ -1,0 +1,1110 @@
+{
+  "machineId": "birdie-wing",
+  "machineFile": "birdie-wing/birdie-wing.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/universal-slot/256009/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/4996",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1157/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "通常時初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "266.7",
+          "2": "264.1",
+          "3": "257.3",
+          "4": "256.0",
+          "5": "255.9",
+          "6": "255.9"
+        },
+        "nana": {
+          "1": "266.7",
+          "2": "264.1",
+          "3": "257.3",
+          "4": "256.0",
+          "5": "255.9",
+          "6": "255.9"
+        }
+      },
+      "adopted": {
+        "1": "266.7",
+        "2": "264.1",
+        "3": "257.3",
+        "4": "256.0",
+        "5": "255.9",
+        "6": "255.9"
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "1": "266.7",
+          "2": "264.1",
+          "3": "257.3",
+          "4": "256.0",
+          "5": "255.9",
+          "6": "255.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ST初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "421.2",
+          "2": "410.5",
+          "3": "381.9",
+          "4": "378.0",
+          "5": "377.6",
+          "6": "377.3"
+        },
+        "nana": {
+          "1": "421.2",
+          "2": "410.5",
+          "3": "381.9",
+          "4": "378.0",
+          "5": "377.6",
+          "6": "377.3"
+        }
+      },
+      "adopted": {
+        "1": "421.2",
+        "2": "410.5",
+        "3": "381.9",
+        "4": "378.0",
+        "5": "377.6",
+        "6": "377.3"
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "1": "421.2",
+          "2": "410.5",
+          "3": "381.9",
+          "4": "378.0",
+          "5": "377.6",
+          "6": "377.3"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・紫 裂帛のブルーバレット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["3"]
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・紫 曲撃のパープルバレット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 確信のオレンジバレット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 脱出のイエローバレット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["3", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 R・赤 強欲のグリーンバレット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 SR・金 レインボー・ショット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 SSR・金 オーバー・ザ・レインボー",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 SSSR・金 シャイニングレインボーバースト",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 R・赤 お父様…",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 R・赤 あ、葵じゃないですよ…",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 SR・金 ゴルフはやっぱり楽しい！",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 SSR・金 葵(幼少期)",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 SSSR・金 無邪気な暴君",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・白 直撃のブルーバレット",
+      "status": "provisional-chonborista",
+      "unit": "presence",
+      "values": {
+        "chonborista": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・白 連撃のブルーバレット",
+      "status": "provisional-chonborista",
+      "unit": "presence",
+      "values": {
+        "chonborista": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・青 天空のレッドバレット",
+      "status": "provisional-chonborista",
+      "unit": "presence",
+      "values": {
+        "chonborista": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード イヴ周期 N・青 水流のインディゴバレット",
+      "status": "provisional-chonborista",
+      "unit": "presence",
+      "values": {
+        "chonborista": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 N・紫 百合の花が咲きました",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 N・紫 ちょろい葵",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "バーディーボーナス終了時カード 葵周期 R・紫 イヴ大好き！",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 246枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 555枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 ユーハ出現",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 ユーハが最初に出現",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 全て青背景で逆順",
+      "status": "provisional-chonborista",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-birdie-wing",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期④ イヴ→エレーヌ→イチナ→敷島→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑤ イヴ→エレーヌ→レオ→亜室→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑥ イヴ→葵→レオ→亜室→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑦ ユーハ→雨音→イチナ→葵→イヴ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑧ ユーハ→亜室→レオ→イヴ→葵",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 イヴ周期⑨ 葵→アイシャ→雨音→飯島→姫川",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期④ 葵→アイシャ→雨音→飯島→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑤ 葵→アイシャ→レオ→亜室→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑥ 葵→イヴ→レオ→亜室→ユーハ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑦ ユーハ→雨音→イチナ→葵→イヴ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑧ ユーハ→亜室→レオ→イヴ→葵",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ウイングボーナス中キャラ紹介 葵周期⑨ イヴ→エレーヌ→イチナ→敷島→クリス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "endScreen",
+      "name": "ユニバプレート 銅",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "ユニバプレート 銀",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "ユニバプレート 金",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "ユニバプレート 花火柄",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "endScreen",
+      "name": "ユニバプレート 虹",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}
