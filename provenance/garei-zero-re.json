@@ -1,0 +1,1281 @@
+{
+  "machineId": "garei-zero-re",
+  "machineFile": "garei-zero-re/garei-zero-re.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/oizumi-slot/259743/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5028",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1171/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "BIG",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "385.5",
+          "2": "385.5",
+          "3": "378.8",
+          "4": "372.4",
+          "5": "368.2",
+          "6": "364.1"
+        },
+        "nana": {
+          "1": "385.5",
+          "2": "385.5",
+          "3": "378.8",
+          "4": "372.4",
+          "5": "368.2",
+          "6": "364.1"
+        }
+      },
+      "adopted": {
+        "1": "385.5",
+        "2": "385.5",
+        "3": "378.8",
+        "4": "372.4",
+        "5": "368.2",
+        "6": "364.1"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "385.5",
+          "2": "385.5",
+          "3": "378.8",
+          "4": "372.4",
+          "5": "368.2",
+          "6": "364.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "REG",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "414.8",
+          "2": "409.6",
+          "3": "402.1",
+          "4": "385.5",
+          "5": "376.6",
+          "6": "364.1"
+        },
+        "nana": {
+          "1": "414.8",
+          "2": "409.6",
+          "3": "402.1",
+          "4": "385.5",
+          "5": "376.6",
+          "6": "364.1"
+        }
+      },
+      "adopted": {
+        "1": "414.8",
+        "2": "409.6",
+        "3": "402.1",
+        "4": "385.5",
+        "5": "376.6",
+        "6": "364.1"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "414.8",
+          "2": "409.6",
+          "3": "402.1",
+          "4": "385.5",
+          "5": "376.6",
+          "6": "364.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "CZ 超自然災害モード",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "287.2",
+          "2": "277.6",
+          "3": "255.6",
+          "4": "230.3",
+          "5": "212.6",
+          "6": "197.8"
+        },
+        "dmm": {
+          "1": "287.2",
+          "2": "277.6",
+          "3": "255.6",
+          "4": "230.3",
+          "5": "212.6",
+          "6": "197.8"
+        },
+        "nana": {
+          "1": "287.2",
+          "2": "277.6",
+          "3": "255.6",
+          "4": "230.3",
+          "5": "212.6",
+          "6": "197.8"
+        }
+      },
+      "adopted": {
+        "1": "287.2",
+        "2": "277.6",
+        "3": "255.6",
+        "4": "230.3",
+        "5": "212.6",
+        "6": "197.8"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "287.2",
+          "2": "277.6",
+          "3": "255.6",
+          "4": "230.3",
+          "5": "212.6",
+          "6": "197.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "CZ 解放の刻",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1200.0",
+          "2": "1200.0",
+          "3": "1200.0",
+          "4": "1200.0",
+          "5": "1200.0",
+          "6": "1200.0"
+        },
+        "nana": {
+          "1": "1200.0",
+          "2": "1200.0",
+          "3": "1200.0",
+          "4": "1200.0",
+          "5": "1200.0",
+          "6": "1200.0"
+        }
+      },
+      "adopted": {
+        "1": "1200.0",
+        "2": "1200.0",
+        "3": "1200.0",
+        "4": "1200.0",
+        "5": "1200.0",
+        "6": "1200.0"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "1200.0",
+          "2": "1200.0",
+          "3": "1200.0",
+          "4": "1200.0",
+          "5": "1200.0",
+          "6": "1200.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ART確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "468.6",
+          "2": "451.2",
+          "3": "408.8",
+          "4": "351.5",
+          "5": "314.2",
+          "6": "279.8"
+        },
+        "dmm": {
+          "1": "468.6"
+        },
+        "nana": {
+          "1": "468.6",
+          "2": "451.2",
+          "3": "408.8",
+          "4": "351.5",
+          "5": "314.2",
+          "6": "279.8"
+        }
+      },
+      "adopted": {
+        "1": "468.6",
+        "2": "451.2",
+        "3": "408.8",
+        "4": "351.5",
+        "5": "314.2",
+        "6": "279.8"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "468.6",
+          "2": "451.2",
+          "3": "408.8",
+          "4": "351.5",
+          "5": "314.2",
+          "6": "279.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "81.9",
+          "2": "79.9",
+          "3": "77.8",
+          "4": "75.6",
+          "5": "73.8",
+          "6": "72.1"
+        },
+        "dmm": {
+          "1": "81.9",
+          "2": "79.9",
+          "3": "77.8",
+          "4": "75.6",
+          "5": "73.8",
+          "6": "72.1"
+        },
+        "nana": {
+          "1": "81.9",
+          "2": "79.9",
+          "3": "77.8",
+          "4": "75.6",
+          "5": "73.8",
+          "6": "72.1"
+        }
+      },
+      "adopted": {
+        "1": "81.9",
+        "2": "79.9",
+        "3": "77.8",
+        "4": "75.6",
+        "5": "73.8",
+        "6": "72.1"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "81.9",
+          "2": "79.9",
+          "3": "77.8",
+          "4": "75.6",
+          "5": "73.8",
+          "6": "72.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "99.0",
+          "2": "95.3",
+          "3": "91.0",
+          "4": "85.1",
+          "5": "80.5",
+          "6": "78.2"
+        },
+        "dmm": {
+          "1": "99.0",
+          "2": "95.3",
+          "3": "91.0",
+          "4": "85.1",
+          "5": "80.5",
+          "6": "78.2"
+        },
+        "nana": {
+          "1": "99.0",
+          "2": "95.3",
+          "3": "91.0",
+          "4": "85.1",
+          "5": "80.5",
+          "6": "78.2"
+        }
+      },
+      "adopted": {
+        "1": "99.0",
+        "2": "95.3",
+        "3": "91.0",
+        "4": "85.1",
+        "5": "80.5",
+        "6": "78.2"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "99.0",
+          "2": "95.3",
+          "3": "91.0",
+          "4": "85.1",
+          "5": "80.5",
+          "6": "78.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "481.9",
+          "2": "481.9",
+          "3": "481.9",
+          "4": "468.1",
+          "5": "468.1",
+          "6": "455.1"
+        },
+        "dmm": {
+          "1": "481.9",
+          "2": "481.9",
+          "3": "481.9",
+          "4": "468.1",
+          "5": "468.1",
+          "6": "455.1"
+        },
+        "nana": {
+          "1": "481.9",
+          "2": "481.9",
+          "3": "481.9",
+          "4": "468.1",
+          "5": "468.1",
+          "6": "455.1"
+        }
+      },
+      "adopted": {
+        "1": "481.9",
+        "2": "481.9",
+        "3": "481.9",
+        "4": "468.1",
+        "5": "468.1",
+        "6": "455.1"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "481.9",
+          "2": "481.9",
+          "3": "481.9",
+          "4": "468.1",
+          "5": "468.1",
+          "6": "455.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "136.5",
+          "2": "136.5",
+          "3": "136.0",
+          "4": "136.0",
+          "5": "135.4",
+          "6": "134.8"
+        },
+        "dmm": {
+          "1": "136.5",
+          "2": "136.5",
+          "3": "136.0",
+          "4": "136.0",
+          "5": "135.4",
+          "6": "134.8"
+        },
+        "nana": {
+          "1": "136.5",
+          "2": "136.5",
+          "3": "136.0",
+          "4": "136.0",
+          "5": "135.4",
+          "6": "134.8"
+        }
+      },
+      "adopted": {
+        "1": "136.5",
+        "2": "136.5",
+        "3": "136.0",
+        "4": "136.0",
+        "5": "135.4",
+        "6": "134.8"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "136.5",
+          "2": "136.5",
+          "3": "136.0",
+          "4": "136.0",
+          "5": "135.4",
+          "6": "134.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "546.1",
+          "2": "546.1",
+          "3": "546.1",
+          "4": "546.1",
+          "5": "546.1",
+          "6": "546.1"
+        },
+        "dmm": {
+          "1": "546.1",
+          "2": "546.1",
+          "3": "546.1",
+          "4": "546.1",
+          "5": "546.1",
+          "6": "546.1"
+        },
+        "nana": {
+          "1": "546.1",
+          "2": "546.1",
+          "3": "546.1",
+          "4": "546.1",
+          "5": "546.1",
+          "6": "546.1"
+        }
+      },
+      "adopted": {
+        "1": "546.1",
+        "2": "546.1",
+        "3": "546.1",
+        "4": "546.1",
+        "5": "546.1",
+        "6": "546.1"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "546.1",
+          "2": "546.1",
+          "3": "546.1",
+          "4": "546.1",
+          "5": "546.1",
+          "6": "546.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "3枚ベル",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "26.2",
+          "2": "26.2",
+          "3": "26.2",
+          "4": "26.2",
+          "5": "26.2",
+          "6": "26.2"
+        },
+        "dmm": {
+          "1": "26.2",
+          "2": "26.2",
+          "3": "26.2",
+          "4": "26.2",
+          "5": "26.2",
+          "6": "26.2"
+        },
+        "nana": {
+          "1": "26.2",
+          "2": "26.2",
+          "3": "26.2",
+          "4": "26.2",
+          "5": "26.2",
+          "6": "26.2"
+        }
+      },
+      "adopted": {
+        "1": "26.2",
+        "2": "26.2",
+        "3": "26.2",
+        "4": "26.2",
+        "5": "26.2",
+        "6": "26.2"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "26.2",
+          "2": "26.2",
+          "3": "26.2",
+          "4": "26.2",
+          "5": "26.2",
+          "6": "26.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        },
+        "dmm": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        },
+        "nana": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      },
+      "adopted": {
+        "1": "7.3",
+        "2": "7.3",
+        "3": "7.3",
+        "4": "7.3",
+        "5": "7.3",
+        "6": "7.3"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リーチ目リプレイ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "4096.0",
+          "2": "4096.0",
+          "3": "4096.0",
+          "4": "4096.0",
+          "5": "4096.0",
+          "6": "4096.0"
+        },
+        "dmm": {
+          "1": "4096.0",
+          "2": "4096.0",
+          "3": "4096.0",
+          "4": "4096.0",
+          "5": "4096.0",
+          "6": "4096.0"
+        },
+        "nana": {
+          "1": "4096",
+          "2": "4096",
+          "3": "4096",
+          "4": "4096",
+          "5": "4096",
+          "6": "4096"
+        }
+      },
+      "adopted": {
+        "1": "4096.0",
+        "2": "4096.0",
+        "3": "4096.0",
+        "4": "4096.0",
+        "5": "4096.0",
+        "6": "4096.0"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "4096.0",
+          "2": "4096.0",
+          "3": "4096.0",
+          "4": "4096.0",
+          "5": "4096.0",
+          "6": "4096.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "特戦四課リプレイ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "10922.7",
+          "2": "10922.7",
+          "3": "10922.7",
+          "4": "10922.7",
+          "5": "10922.7",
+          "6": "10922.7"
+        },
+        "dmm": {
+          "1": "10922.7",
+          "2": "10922.7",
+          "3": "10922.7",
+          "4": "10922.7",
+          "5": "10922.7",
+          "6": "10922.7"
+        },
+        "nana": {
+          "1": "10922.7",
+          "2": "10922.7",
+          "3": "10922.7",
+          "4": "10922.7",
+          "5": "10922.7",
+          "6": "10922.7"
+        }
+      },
+      "adopted": {
+        "1": "10922.7",
+        "2": "10922.7",
+        "3": "10922.7",
+        "4": "10922.7",
+        "5": "10922.7",
+        "6": "10922.7"
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "1": "10922.7",
+          "2": "10922.7",
+          "3": "10922.7",
+          "4": "10922.7",
+          "5": "10922.7",
+          "6": "10922.7"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 幼少期",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 私服",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 水着",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ART終了画面 神楽と黄泉①",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ART終了画面 黄泉と冥",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "RB中のキャラ紹介 三途河(金)",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "RB中のキャラ紹介 1000ちゃん",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "RB中のキャラ紹介 黄泉悪霊化(紫)と冥(紫)の両方",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 222枚突破",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 444枚突破",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456枚突破",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚突破",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 0123枚突破",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の殺生石ランプ 紫",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の殺生石ランプ 三途河カラー",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の殺生石ランプ カラフル",
+      "status": "provisional-chonborista",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "特定ボーナス 強チェリー＋RB",
+      "status": "provisional-chonborista",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-garei-zero-re",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "共通ベル",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "26.9"
+        },
+        "dmm": {
+          "1": "26.9"
+        },
+        "nana": {
+          "1": "26.9"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "特戦四課モード",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "10922.7",
+          "2": "10922.7",
+          "3": "10922.7",
+          "4": "10922.7",
+          "5": "10922.7",
+          "6": "10922.7"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "乱撃突入率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.6%"
+        },
+        "dmm": {
+          "1": "1.56%"
+        },
+        "nana": {
+          "1": "1.56%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の殺生石ランプ 虹",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

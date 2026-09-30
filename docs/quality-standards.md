@@ -15,7 +15,7 @@ slot-analyzer-data における機種データの品質基準とバリデーシ�
 - `name`, `type`, `roles` が存在する
 - `roles` が空でない（小役データが1つ以上ある）
 - `description` が記述されている
-- `trialSuccessRates` が記述されている
+- 公表された利用可能な解析項目がある（役・確定演出・終了画面・試行成功率など）。`trialSuccessRates` は公表値がある機種だけに記述し、未公開値を充填のために作らない
 - `endScreens` または `endScreenGroups` が記述されている（A-type/ジャグラー系は除外）
 
 ### Provisional（暫定）
@@ -85,7 +85,7 @@ slot-analyzer-data における機種データの品質基準とバリデーシ�
 | ----------------------- | --------------------------------------------- | ---------------------- |
 | roles空                 | `roles` 配列が空（小役データなし）            | completeness-validator |
 | endScreens未設定        | 終了画面データがない（A-type/ジャグラー除く） | completeness-validator |
-| trialSuccessRates未設定 | 試行/成功率データがない                       | completeness-validator |
+| trialSuccessRates未設定 | 公表値がなければ省略可。充填率は情報として記録 | completeness-validator |
 | description未記入       | 機種説明がない                                | completeness-validator |
 | source未記入            | データソースが記載されていない                | completeness-validator |
 | バージョン古い          | `version` が `0.x` のまま                     | completeness-validator |

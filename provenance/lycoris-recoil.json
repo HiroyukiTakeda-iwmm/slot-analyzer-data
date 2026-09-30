@@ -1,0 +1,574 @@
+{
+  "machineId": "lycoris-recoil",
+  "machineFile": "lycoris-recoil/lycoris-recoil.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sammy-slot/261631/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5033",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1166/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "198.7",
+          "2": "196.9",
+          "3": "191.3",
+          "4": "183.3",
+          "5": "175.9",
+          "6": "169.4"
+        },
+        "dmm": {
+          "1": "198.7",
+          "2": "196.9",
+          "3": "191.3",
+          "4": "183.3",
+          "5": "175.9",
+          "6": "169.4"
+        },
+        "nana": {
+          "1": "198.7",
+          "2": "196.9",
+          "3": "191.3",
+          "4": "183.3",
+          "5": "175.9",
+          "6": "169.4"
+        }
+      },
+      "adopted": {
+        "1": "198.7",
+        "2": "196.9",
+        "3": "191.3",
+        "4": "183.3",
+        "5": "175.9",
+        "6": "169.4"
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "1": "198.7",
+          "2": "196.9",
+          "3": "191.3",
+          "4": "183.3",
+          "5": "175.9",
+          "6": "169.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ST初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "328.8",
+          "2": "323.4",
+          "3": "312.1",
+          "4": "288.3",
+          "5": "271.6",
+          "6": "256.7"
+        },
+        "nana": {
+          "1": "328.8",
+          "2": "323.4",
+          "3": "312.1",
+          "4": "288.3",
+          "5": "271.6",
+          "6": "256.7"
+        }
+      },
+      "adopted": {
+        "1": "328.8",
+        "2": "323.4",
+        "3": "312.1",
+        "4": "288.3",
+        "5": "271.6",
+        "6": "256.7"
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "1": "328.8",
+          "2": "323.4",
+          "3": "312.1",
+          "4": "288.3",
+          "5": "271.6",
+          "6": "256.7"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "共通ベル",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "95.8",
+          "2": "95.8",
+          "3": "95.8",
+          "4": "87.6",
+          "5": "83.2",
+          "6": "79.1"
+        },
+        "dmm": {
+          "1": "95.8",
+          "2": "95.8",
+          "3": "95.8",
+          "4": "87.6",
+          "5": "83.2",
+          "6": "79.1"
+        },
+        "nana": {
+          "1": "95.8",
+          "2": "95.8",
+          "3": "95.8",
+          "4": "87.6",
+          "5": "83.2",
+          "6": "79.1"
+        }
+      },
+      "adopted": {
+        "1": "95.8",
+        "2": "95.8",
+        "3": "95.8",
+        "4": "87.6",
+        "5": "83.2",
+        "6": "79.1"
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "1": "95.8",
+          "2": "95.8",
+          "3": "95.8",
+          "4": "87.6",
+          "5": "83.2",
+          "6": "79.1"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 押上の風景",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 ロボ太",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 ハワイ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 たきな(私服)（千束ラッシュ終了時）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 千束(私服)（たきなラッシュ終了時）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー 銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー キリン柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 千束&たきな(ドレスコード)",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 たきな(私服)",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 千束(私服)",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-lycoris-recoil",
+        "value": true
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "ラッシュ直撃確率",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "22429.5",
+          "6": "6263.7"
+        },
+        "dmm": {
+          "1": "22429.5",
+          "6": "6263.7"
+        },
+        "nana": {
+          "1": "22429.5",
+          "6": "6263.7"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "幼少期CZ突入率",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "3965.0",
+          "6": "2084.8"
+        },
+        "dmm": {
+          "1": "3965.0",
+          "6": "2084.8"
+        },
+        "nana": {
+          "1": "3965.0",
+          "6": "2084.8"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

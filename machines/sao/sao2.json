@@ -1,0 +1,345 @@
+{
+  "name": "スロット ソードアート・オンラインII",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/238.4、設定6: 1/191.7。",
+      "probabilities": {
+        "1": 0.00419463,
+        "2": 0.00430478,
+        "3": 0.00429738,
+        "4": 0.0045683,
+        "5": 0.0044405,
+        "6": 0.00521648
+      }
+    },
+    {
+      "name": "AT確率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/386.2、設定6: 1/269.6。",
+      "probabilities": {
+        "1": 0.00258933,
+        "2": 0.00274499,
+        "3": 0.00271665,
+        "4": 0.00305998,
+        "5": 0.002936,
+        "6": 0.0037092
+      }
+    },
+    {
+      "name": "強チャンス目B",
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#9C27B0",
+      "description": "設定1: 1/1057.0、設定6: 1/799.2。",
+      "probabilities": {
+        "1": 0.000946074,
+        "2": 0.00100705,
+        "3": 0.00106815,
+        "4": 0.00112918,
+        "5": 0.00119019,
+        "6": 0.00125125
+      }
+    },
+    {
+      "name": "確定CZ",
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/20177.5、設定6: 1/7077.2。",
+      "probabilities": {
+        "1": 4.95602e-05,
+        "2": 5.68857e-05,
+        "3": 5.68624e-05,
+        "4": 7.25453e-05,
+        "5": 8.72676e-05,
+        "6": 0.000141299
+      }
+    },
+    {
+      "name": "GGOモード詩乃のAT直撃",
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF9800",
+      "description": "設定1: 1/18091.8、設定6: 1/3415.7。",
+      "probabilities": {
+        "1": 5.52737e-05,
+        "2": 7.0619e-05,
+        "3": 6.94888e-05,
+        "4": 0.000117675,
+        "5": 0.000211716,
+        "6": 0.000292766
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#E91E63",
+      "description": "設定1: 1/79.9、設定6: 1/79.9。",
+      "probabilities": {
+        "1": 0.0125156,
+        "2": 0.0125156,
+        "3": 0.0125156,
+        "4": 0.0125156,
+        "5": 0.0125156,
+        "6": 0.0125156
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#4CAF50",
+      "description": "設定1: 1/82.6、設定6: 1/82.6。",
+      "probabilities": {
+        "1": 0.0121065,
+        "2": 0.0121065,
+        "3": 0.0121065,
+        "4": 0.0121065,
+        "5": 0.0121065,
+        "6": 0.0121065
+      }
+    },
+    {
+      "name": "弱チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#9C27B0",
+      "description": "設定1: 1/163.8、設定6: 1/163.8。",
+      "probabilities": {
+        "1": 0.00610501,
+        "2": 0.00610501,
+        "3": 0.00610501,
+        "4": 0.00610501,
+        "5": 0.00610501,
+        "6": 0.00610501
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/327.7、設定6: 1/327.7。",
+      "probabilities": {
+        "1": 0.00305157,
+        "2": 0.00305157,
+        "3": 0.00305157,
+        "4": 0.00305157,
+        "5": 0.00305157,
+        "6": 0.00305157
+      }
+    },
+    {
+      "name": "強チャンス目A",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/1057.0、設定6: 1/1057.0。",
+      "probabilities": {
+        "1": 0.000946074,
+        "2": 0.000946074,
+        "3": 0.000946074,
+        "4": 0.000946074,
+        "5": 0.000946074,
+        "6": 0.000946074
+      }
+    },
+    {
+      "name": "ウルティマチェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "3": 6.10352e-05,
+        "4": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "エンディング中のミニキャラ 詩乃/ユイ",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のミニキャラ 虹",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 制服",
+      "id": "screen_001",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 ソファー",
+      "id": "screen_002",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "AT終了画面 木漏れ日",
+      "id": "screen_003",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    },
+    {
+      "name": "AT終了画面 夏祭り",
+      "id": "screen_004",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "name": "AT終了画面 幼少期",
+      "id": "screen_005",
+      "type": "at_end",
+      "hint": "設定5示唆（設定6より出やすい）"
+    },
+    {
+      "name": "AT終了画面 Yシャツ",
+      "id": "screen_006",
+      "type": "at_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 お風呂",
+      "id": "screen_007",
+      "type": "at_end",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 水着",
+      "id": "screen_008",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 パジャマ",
+      "id": "screen_009",
+      "type": "at_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "コパンダトロフィー 銅",
+      "id": "screen_010",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "コパンダトロフィー 銀",
+      "id": "screen_011",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "コパンダトロフィー 金",
+      "id": "screen_012",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "コパンダトロフィー イナズマ",
+      "id": "screen_013",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "コパンダトロフィー 虹",
+      "id": "screen_014",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "強チャンス目の確定CZ当選率",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0.004,
+        "2": 0.008,
+        "3": 0.008,
+        "4": 0.016,
+        "5": 0.023,
+        "6": 0.051
+      }
+    },
+    {
+      "name": "CZ失敗時のアイテム獲得率",
+      "id": "trial_002",
+      "probabilities": {
+        "1": 0.203,
+        "2": 0.211,
+        "3": 0.219,
+        "4": 0.227,
+        "5": 0.25,
+        "6": 0.301
+      }
+    },
+    {
+      "name": "AT開始時のステージ（荒野）",
+      "id": "trial_003",
+      "probabilities": {
+        "1": 0.6,
+        "2": 0.4,
+        "3": 0.6,
+        "4": 0.4,
+        "5": 0.6,
+        "6": 0.4
+      },
+      "description": "高確率モードからATが始まった場合は、試行・成功のどちらにも数えない。"
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/daito-slot/256112/)、DMMぱちタウン(https://p-town.dmm.com/machines/5025)、なな徹(https://nana-press.com/kaiseki/machine/1158/)",
+  "description": "パオン・ディーピーのスマスロAT機（2026-06-08導入、6段階設定）。CZ確率・AT確率・強チャンス目B・確定CZと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: AT中::スナイパーチャンス、CZ失敗時の「曠野の決闘」突入率、スナイパーチャンス勝利期待度。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。"
+}

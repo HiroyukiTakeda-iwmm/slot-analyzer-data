@@ -1,0 +1,384 @@
+{
+  "name": "スマスロ タコスロ",
+  "type": "BT",
+  "roles": [
+    {
+      "name": "BB",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/324.4、設定6: 1/297.9。",
+      "probabilities": {
+        "1": 0.00308261,
+        "2": 0.00314367,
+        "5": 0.0032352,
+        "6": 0.00335683
+      }
+    },
+    {
+      "name": "RB",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/352.3、設定6: 1/300.6。",
+      "probabilities": {
+        "1": 0.00283849,
+        "2": 0.0029753,
+        "5": 0.0032041,
+        "6": 0.00332668
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/7.3、設定6: 1/7.3。",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      }
+    },
+    {
+      "name": "プラム",
+      "hasSettingDiff": true,
+      "displayOrder": 4,
+      "color": "#FF9800",
+      "description": "設定1: 1/9.8、設定6: 1/9.0。",
+      "probabilities": {
+        "1": 0.102041,
+        "2": 0.103093,
+        "5": 0.106383,
+        "6": 0.111111
+      }
+    },
+    {
+      "name": "チェリー合算",
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "設定1: 1/22.9、設定6: 1/20.1。 チェリーA・Bの成立回数とチェリーCの入賞回数を合わせる。こぼしたチェリーCは数えない。",
+      "probabilities": {
+        "1": 0.0436681,
+        "2": 0.0456621,
+        "5": 0.047619,
+        "6": 0.0497512
+      }
+    },
+    {
+      "name": "スイカ合成",
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#4CAF50",
+      "description": "設定1: 1/60.0、設定6: 1/50.0。",
+      "probabilities": {
+        "1": 0.0166667,
+        "2": 0.0177936,
+        "5": 0.0188679,
+        "6": 0.02
+      }
+    },
+    {
+      "name": "白7BB 単独",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#E91E63",
+      "description": "設定1: 1/10922.7、設定6: 1/10922.7。",
+      "probabilities": {
+        "1": 9.15525e-05,
+        "2": 9.15525e-05,
+        "5": 9.15525e-05,
+        "6": 9.15525e-05
+      }
+    },
+    {
+      "name": "白7BB+プラム",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#E91E63",
+      "description": "設定1: 1/5461.3、設定6: 1/5461.3。",
+      "probabilities": {
+        "1": 0.000183107,
+        "2": 0.000183107,
+        "5": 0.000183107,
+        "6": 0.000183107
+      }
+    },
+    {
+      "name": "白7BB+チェリーB",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/10922.7、設定6: 1/10922.7。",
+      "probabilities": {
+        "1": 9.15525e-05,
+        "2": 9.15525e-05,
+        "5": 9.15525e-05,
+        "6": 9.15525e-05
+      }
+    },
+    {
+      "name": "白7BB+リーチ目役A",
+      "hasSettingDiff": true,
+      "displayOrder": 10,
+      "color": "#E91E63",
+      "description": "設定1: 1/2621.4、設定6: 1/2340.6。",
+      "probabilities": {
+        "1": 0.000381476,
+        "2": 0.00041198,
+        "5": 0.00041198,
+        "6": 0.000427241
+      }
+    },
+    {
+      "name": "白7BB+リーチ目役B",
+      "hasSettingDiff": true,
+      "displayOrder": 11,
+      "color": "#E91E63",
+      "description": "設定1: 1/3276.8、設定6: 1/2978.9。",
+      "probabilities": {
+        "1": 0.000305176,
+        "2": 0.000305176,
+        "5": 0.000320431,
+        "6": 0.000335694
+      }
+    },
+    {
+      "name": "白7BB+リーチ目役C",
+      "hasSettingDiff": true,
+      "displayOrder": 12,
+      "color": "#E91E63",
+      "description": "設定1: 1/4096.0、設定6: 1/3640.9。",
+      "probabilities": {
+        "1": 0.000244141,
+        "2": 0.000244141,
+        "5": 0.000259397,
+        "6": 0.000274657
+      }
+    },
+    {
+      "name": "白7BB+リーチ目役D",
+      "hasSettingDiff": true,
+      "displayOrder": 13,
+      "color": "#E91E63",
+      "description": "設定1: 1/4096.0、設定6: 1/3640.9。",
+      "probabilities": {
+        "1": 0.000244141,
+        "2": 0.000244141,
+        "5": 0.000259397,
+        "6": 0.000274657
+      }
+    },
+    {
+      "name": "タコBB 単独",
+      "hasSettingDiff": false,
+      "displayOrder": 14,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    },
+    {
+      "name": "タコBB+プラム",
+      "hasSettingDiff": false,
+      "displayOrder": 15,
+      "color": "#E91E63",
+      "description": "設定1: 1/5461.3、設定6: 1/5461.3。",
+      "probabilities": {
+        "1": 0.000183107,
+        "2": 0.000183107,
+        "5": 0.000183107,
+        "6": 0.000183107
+      }
+    },
+    {
+      "name": "タコBB+チェリーB",
+      "hasSettingDiff": false,
+      "displayOrder": 16,
+      "color": "#E91E63",
+      "description": "設定1: 1/10922.7、設定6: 1/10922.7。",
+      "probabilities": {
+        "1": 9.15525e-05,
+        "2": 9.15525e-05,
+        "5": 9.15525e-05,
+        "6": 9.15525e-05
+      }
+    },
+    {
+      "name": "タコBB+リーチ目役A",
+      "hasSettingDiff": false,
+      "displayOrder": 17,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    },
+    {
+      "name": "タコBB+リーチ目役B",
+      "hasSettingDiff": true,
+      "displayOrder": 18,
+      "color": "#E91E63",
+      "description": "設定1: 1/2621.4、設定6: 1/2259.9。",
+      "probabilities": {
+        "1": 0.000381476,
+        "2": 0.000396731,
+        "5": 0.00041198,
+        "6": 0.000442497
+      }
+    },
+    {
+      "name": "タコBB+リーチ目役C",
+      "hasSettingDiff": true,
+      "displayOrder": 19,
+      "color": "#E91E63",
+      "description": "設定1: 1/2621.4、設定6: 1/2520.6。",
+      "probabilities": {
+        "1": 0.000381476,
+        "2": 0.000381476,
+        "5": 0.000396731,
+        "6": 0.000396731
+      }
+    },
+    {
+      "name": "タコBB+リーチ目役D",
+      "hasSettingDiff": true,
+      "displayOrder": 20,
+      "color": "#E91E63",
+      "description": "設定1: 1/2621.4、設定6: 1/2259.9。",
+      "probabilities": {
+        "1": 0.000381476,
+        "2": 0.000396731,
+        "5": 0.00041198,
+        "6": 0.000442497
+      }
+    },
+    {
+      "name": "RB 単独",
+      "hasSettingDiff": true,
+      "displayOrder": 21,
+      "color": "#2196F3",
+      "description": "設定1: 1/4681.1、設定6: 1/4096.0。",
+      "probabilities": {
+        "1": 0.000213625,
+        "2": 0.00022888,
+        "5": 0.000244141,
+        "6": 0.000244141
+      }
+    },
+    {
+      "name": "RB+プラム",
+      "hasSettingDiff": true,
+      "displayOrder": 22,
+      "color": "#2196F3",
+      "description": "設定1: 1/2730.7、設定6: 1/1820.4。",
+      "probabilities": {
+        "1": 0.000366206,
+        "2": 0.000427241,
+        "5": 0.000488281,
+        "6": 0.00054933
+      }
+    },
+    {
+      "name": "RB+チェリーB",
+      "hasSettingDiff": true,
+      "displayOrder": 23,
+      "color": "#E91E63",
+      "description": "設定1: 1/5461.3、設定6: 1/3640.9。",
+      "probabilities": {
+        "1": 0.000183107,
+        "2": 0.000213625,
+        "5": 0.000244141,
+        "6": 0.000274657
+      }
+    },
+    {
+      "name": "RB+リーチ目役A",
+      "hasSettingDiff": true,
+      "displayOrder": 24,
+      "color": "#2196F3",
+      "description": "設定1: 1/963.8、設定6: 1/885.6。",
+      "probabilities": {
+        "1": 0.00103756,
+        "2": 0.00105285,
+        "5": 0.00111383,
+        "6": 0.00112918
+      }
+    },
+    {
+      "name": "RB+リーチ目役C",
+      "hasSettingDiff": true,
+      "displayOrder": 25,
+      "color": "#2196F3",
+      "description": "設定1: 1/963.8、設定6: 1/885.6。",
+      "probabilities": {
+        "1": 0.00103756,
+        "2": 0.00105285,
+        "5": 0.00111383,
+        "6": 0.00112918
+      }
+    }
+  ],
+  "confirmationEvents": [],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "BB終了画面 レアパターン（夜）",
+      "id": "screen_001",
+      "type": "big_end",
+      "hint": "設定示唆。設定ごとの出現率は未公表。"
+    },
+    {
+      "name": "BB終了画面 レアパターン（夜） タコゲーム0回",
+      "id": "screen_002",
+      "type": "big_end",
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "availableSettings": [
+    "1",
+    "2",
+    "5",
+    "6"
+  ],
+  "zones": [
+    {
+      "name": "ボーナスゲーム中",
+      "isDefault": false,
+      "roles": [
+        {
+          "name": "リプレイ+タコゲーム",
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#2196F3",
+          "description": "設定1: 1/728.2、設定6: 1/242.7。 ボーナスゲーム中のゲーム数を分母にし、通常時とは分ける。",
+          "probabilities": {
+            "1": 0.00137325,
+            "2": 0.00137325,
+            "5": 0.00273149,
+            "6": 0.00412031
+          }
+        }
+      ]
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/universal-slot/262349/)、DMMぱちタウン(https://p-town.dmm.com/machines/5049)、なな徹(https://nana-press.com/kaiseki/machine/1219/)",
+  "description": "ユニバーサルブロスのスマスロBT機（2026-09-07導入、4段階設定）。BB・RB・リプレイ・プラムと、出典で採用できた設定判別項目を収録。",
+  "notes": " 未採用の主な項目: 白7BB 合算、タコBB 合算。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

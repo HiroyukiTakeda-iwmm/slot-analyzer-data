@@ -1,0 +1,199 @@
+{
+  "name": "パチスロ見える子ちゃん",
+  "type": "AT",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/pionia-slot/261153/)、DMMぱちタウン(https://p-town.dmm.com/machines/5042)、なな徹(https://nana-press.com/kaiseki/machine/1192/)",
+  "description": "パイオニアのスマスロAT機（2026-09-07導入、6段階設定）。BB合算・RB・CZトータル出現率と、出典で採用できた設定判別項目を収録。",
+  "notes": "入れていないもの: 弱レア役のCZ当選率・弱レア役契機のCZ実質出現率（通常中とCZ高確中という、遊技者に見えない状態で分けた値）。レア役契機のCZ高確移行率（移った先のCZ高確が見えない内部状態で、遊技者が数えられない）と、規定ゲーム数のテーブル別のCZ高確移行率（同じ理由に加え、テーブルも見えず、設定ごとの値も無い）。なな徹の機種ページのボーナス初当たり（ページが実践値とする値）。小役確率・ヤバMODE中のレア役確率・CZ高確中のハズレ連続回数別のCZ当選率など（設定ごとの値が無い）。RB中のキャラ紹介シナリオ、ボーナス終了画面のデフォルトと設定以外（次回のボーナス・天井など）を示唆する絵、エンディング中の1枚絵のうち設定番号の無い示唆の絵（どれも確定・否定の設定が無い）。ボーナス中の獲得枚数表示（予想とされる値）。出玉率は項目にしていない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。",
+  "roles": [
+    {
+      "name": "BB合算",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/266.5、設定6: 1/227.1。超BIGとBIGを分けずに合わせて数える。初当りだけでなく、CZ高確ループ中（連チャン中）のボーナスも含めて数える。上位ボーナス「神判ノ刻」がこの値に含まれるかは、出典に書かれていない。BB合算とRBを別々に数える",
+      "probabilities": {
+        "1": 0.00375235,
+        "2": 0.00381825,
+        "3": 0.00394633,
+        "4": 0.00411353,
+        "5": 0.00426985,
+        "6": 0.00440335
+      }
+    },
+    {
+      "name": "RB",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/275.1、設定6: 1/233.6。REGを数える。初当りだけでなく、CZ高確ループ中（連チャン中）のREGも含めて数える。BB合算とRBを別々に数える",
+      "probabilities": {
+        "1": 0.00363504,
+        "2": 0.00369549,
+        "3": 0.00382995,
+        "4": 0.004,
+        "5": 0.00415973,
+        "6": 0.00428082
+      }
+    },
+    {
+      "name": "CZトータル出現率",
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/166.6、設定6: 1/136.1。CZ「恐怖トノ遭遇」の初当りを、契機を分けずに合わせて数える。ボーナスのあとのCZ高確ループ中のCZ（ボーナス後に保障される1回や、CZストックによるボーナス終了後すぐのCZ）は初当りではないので数えない。恐怖トノ遭遇の前半から見える子ちゃんすに進んでも1回と数える。上位CZ「祈願チャレンジ」は数えない。分母は通常時のゲーム数",
+      "probabilities": {
+        "1": 0.0060024,
+        "2": 0.00614628,
+        "3": 0.00639795,
+        "4": 0.00668449,
+        "5": 0.0070373,
+        "6": 0.00734754
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "ed_pic_family",
+      "name": "エンディング中の1枚絵 家族",
+      "description": "エンディング中のレア役で出る1枚絵が家族（白枠）なら設定2以上濃厚。ボーナス終了画面の家族と同じ意味",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ed_pic_way_home",
+      "name": "エンディング中の1枚絵 帰り道",
+      "description": "エンディング中のレア役で出る1枚絵が帰り道（紫枠）なら設定4以上濃厚。ボーナス終了画面の帰り道と同じ意味",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ed_pic_trio_monster",
+      "name": "エンディング中の1枚絵 3人と化け物",
+      "description": "エンディング中のレア役で出る1枚絵が3人と化け物（紫枠）なら設定5以上濃厚。ボーナス終了画面の3人と化け物と同じ意味",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ed_pic_photo",
+      "name": "エンディング中の1枚絵 写真撮影",
+      "description": "エンディング中のレア役で出る1枚絵が写真撮影（虹枠）なら設定6濃厚。ボーナス終了画面の写真撮影と同じ意味",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "bonus_end_classroom",
+      "name": "ボーナス終了画面 みこ教室",
+      "type": "bonus_end",
+      "hint": "偶数設定示唆",
+      "description": "白枠。窓から光が差す教室で、ほほえむみこの胸から上の絵",
+      "color": "#78909C"
+    },
+    {
+      "id": "bonus_end_miko_up",
+      "name": "ボーナス終了画面 みこアップ",
+      "type": "bonus_end",
+      "hint": "高設定示唆（弱）",
+      "description": "白枠。顔の上半分に影がかかり、目を見開いたみこの顔のアップ",
+      "color": "#78909C"
+    },
+    {
+      "id": "bonus_end_eye_up",
+      "name": "ボーナス終了画面 目のアップ",
+      "type": "bonus_end",
+      "hint": "高設定示唆（強）",
+      "description": "白枠。黒目に化け物が映る、みこの片目のアップ",
+      "color": "#78909C"
+    },
+    {
+      "id": "bonus_end_family",
+      "name": "ボーナス終了画面 家族",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "description": "白枠。みこの家族（四谷家）の3人の絵",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_way_home",
+      "name": "ボーナス終了画面 帰り道",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "description": "紫枠。夕日の街の歩道で振り返る、みことハナの後ろ姿",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_trio_monster",
+      "name": "ボーナス終了画面 3人と化け物",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚",
+      "description": "紫枠。化け物を背に見上げる、ハナ・みこ・ユリアの絵",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_photo",
+      "name": "ボーナス終了画面 写真撮影",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "description": "虹枠。みこ・ユリア・ハナの自撮りの絵",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_shikun_hanahana",
+      "name": "ボーナス終了画面 シーくん＆マスクド・ハナハナ",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "description": "虹枠。夕日の海辺のシーくんとマスクド・ハナハナの絵",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ]
+}
