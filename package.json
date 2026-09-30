@@ -1,6 +1,6 @@
 {
   "name": "slot-analyzer-data",
-  "version": "3.11.0",
+  "version": "3.12.0",
   "description": "パチスロ機種設定推測データリポジトリ",
   "type": "module",
   "author": "Hiroyuki Takeda (iWMM Works)",
@@ -34,7 +34,8 @@
     "check:base": "node scripts/check-against-base.mjs --base origin/main",
     "test": "vitest run",
     "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check:year-catalog": "node scripts/verify-year-catalog.mjs"
   },
   "dependencies": {
     "ajv": "^8.17.1",

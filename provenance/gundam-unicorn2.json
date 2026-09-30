@@ -1,0 +1,1282 @@
+{
+  "machineId": "gundam-unicorn2",
+  "machineFile": "gundam-unicorn2/gundam-unicorn2.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sankyo-slot/252081/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5002",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1123/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ当選確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        },
+        "nana": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        }
+      },
+      "adopted": {
+        "1": "298.5",
+        "2": "287.0",
+        "3": "265.1",
+        "4": "247.7",
+        "5": "243.9",
+        "6": "239.8"
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT初当たり",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        },
+        "nana": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        }
+      },
+      "adopted": {
+        "1": "471.9",
+        "2": "456.6",
+        "3": "427.8",
+        "4": "403.9",
+        "5": "398.3",
+        "6": "392.3"
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT初当たり確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        },
+        "nana": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        }
+      },
+      "adopted": {
+        "1": "471.9",
+        "2": "456.6",
+        "3": "427.8",
+        "4": "403.9",
+        "5": "398.3",
+        "6": "392.3"
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "1": "471.9",
+          "2": "456.6",
+          "3": "427.8",
+          "4": "403.9",
+          "5": "398.3",
+          "6": "392.3"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "CZ当選確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        },
+        "nana": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        }
+      },
+      "adopted": {
+        "1": "298.5",
+        "2": "287.0",
+        "3": "265.1",
+        "4": "247.7",
+        "5": "243.9",
+        "6": "239.8"
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "1": "298.5",
+          "2": "287.0",
+          "3": "265.1",
+          "4": "247.7",
+          "5": "243.9",
+          "6": "239.8"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 枠無し①",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 枠無し②",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 バナージ＆ミネバ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 マリーダ＆ジンネマン",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 フル・フロンタル",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 女性キャラ3人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 マリーダ4段アイス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ミネバ海老ドッグ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 女性キャラ6人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "エンディング終了画面 ミネバ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ中の裏ボタン 2回",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ中の裏ボタン 4回",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ中の裏ボタン 6回",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "MSジャッジ成功時の裏ボタン 赤で100枚",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "MSジャッジ成功時の裏ボタン 虹で500枚",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 246OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中のランプ 紫",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中のランプ 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "STAND BY移行時のキャラ 男性",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        },
+        "dmm": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        },
+        "nana": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        }
+      },
+      "adopted": {
+        "1": "60.0%",
+        "2": "40.0%",
+        "3": "60.0%",
+        "4": "40.0%",
+        "5": "60.0%",
+        "6": "40.0%"
+      },
+      "reread": {
+        "by": "reread-gundam-unicorn2",
+        "value": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "破壊役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "66.3"
+        },
+        "dmm": {
+          "1": "66.3"
+        },
+        "nana": {
+          "1": "66.3"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "覚醒役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "227.0"
+        },
+        "dmm": {
+          "1": "227.0"
+        },
+        "nana": {
+          "1": "227.0"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "ユニコーン役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "3232.3"
+        },
+        "dmm": {
+          "1": "3232.3"
+        },
+        "nana": {
+          "1": "3232.3"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "レア役合算",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "50.5"
+        },
+        "nana": {
+          "1": "50.5"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "ベル揃い",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "33.1"
+        },
+        "nana": {
+          "1": "33.1"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::可能性役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "41.2"
+        },
+        "dmm": {
+          "1": "41.2"
+        },
+        "nana": {
+          "1": "41.2"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::可能性役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "35.1"
+        },
+        "dmm": {
+          "1": "35.1"
+        },
+        "nana": {
+          "1": "35.1"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::可能性役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "31.8"
+        },
+        "dmm": {
+          "1": "31.8"
+        },
+        "nana": {
+          "1": "31.8"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::可能性役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "29.1"
+        },
+        "dmm": {
+          "1": "29.1"
+        },
+        "nana": {
+          "1": "29.1"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "強AT中::可能性役",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "31.8"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::破壊役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "25.0"
+        },
+        "dmm": {
+          "1": "25.0"
+        },
+        "nana": {
+          "1": "25.0"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::破壊役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "17.5"
+        },
+        "dmm": {
+          "1": "17.5"
+        },
+        "nana": {
+          "1": "17.5"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::破壊役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "13.3"
+        },
+        "dmm": {
+          "1": "13.3"
+        },
+        "nana": {
+          "1": "13.3"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::破壊役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "11.6"
+        },
+        "dmm": {
+          "1": "11.6"
+        },
+        "nana": {
+          "1": "11.6"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::覚醒役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "201.2"
+        },
+        "dmm": {
+          "1": "201.2"
+        },
+        "nana": {
+          "1": "201.2"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::覚醒役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "113.0"
+        },
+        "dmm": {
+          "1": "113.0"
+        },
+        "nana": {
+          "1": "113.0"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::覚醒役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "80.5"
+        },
+        "dmm": {
+          "1": "80.5"
+        },
+        "nana": {
+          "1": "80.5"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::覚醒役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "57.6"
+        },
+        "dmm": {
+          "1": "57.6"
+        },
+        "nana": {
+          "1": "57.6"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::ユニコーン役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "5909.9"
+        },
+        "dmm": {
+          "1": "5909.9"
+        },
+        "nana": {
+          "1": "5909.9"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::ユニコーン役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "6509.8"
+        },
+        "dmm": {
+          "1": "6509.8"
+        },
+        "nana": {
+          "1": "6509.8"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::ユニコーン役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "6591.7"
+        },
+        "dmm": {
+          "1": "6591.7"
+        },
+        "nana": {
+          "1": "6591.7"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::ユニコーン役",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "554.3"
+        },
+        "dmm": {
+          "1": "554.3"
+        },
+        "nana": {
+          "1": "554.3"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::レア役合算",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "22.2"
+        },
+        "dmm": {
+          "1": "22.2"
+        },
+        "nana": {
+          "1": "22.2"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::レア役合算",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "15.1"
+        },
+        "dmm": {
+          "1": "15.1"
+        },
+        "nana": {
+          "1": "15.1"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::レア役合算",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "11.4"
+        },
+        "dmm": {
+          "1": "11.4"
+        },
+        "nana": {
+          "1": "11.4"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::レア役合算",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "9.5"
+        },
+        "dmm": {
+          "1": "9.5"
+        },
+        "nana": {
+          "1": "9.5"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "ユニコーンモード中::ユニコーンチャンス",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "20.7"
+        },
+        "nana": {
+          "1": null
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "デストロイモード中::ユニコーンチャンス",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "22.3"
+        },
+        "nana": {
+          "1": "20.7"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "覚醒モード中::ユニコーンチャンス",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "51.2"
+        },
+        "nana": {
+          "1": "22.3"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "zoneRole",
+      "name": "上位AT中::ユニコーンチャンス",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "51.2"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

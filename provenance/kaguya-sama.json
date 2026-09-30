@@ -1,0 +1,1945 @@
+{
+  "machineId": "kaguya-sama",
+  "machineFile": "kaguya/kaguya-sama.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sankyo-slot/216319/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/4618",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/804/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "confirmationEvent",
+      "name": "銀枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "金枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "紫枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "246枚OVER表示",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "456枚OVER表示",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "666枚OVER表示",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中 早坂愛シナリオ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中 白銀パパシナリオ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中 虹背景",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ミニ藤原 体操服→LOVE探偵",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ミニ藤原 体操服→制服",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "銀枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "金枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "紫枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": true
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ボーナス初当たり確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "362",
+          "2": "360",
+          "3": "357",
+          "4": "349",
+          "5": "343",
+          "6": "335"
+        },
+        "nana": {
+          "1": "362",
+          "2": "360",
+          "3": "357",
+          "4": "349",
+          "5": "343",
+          "6": "335"
+        }
+      },
+      "adopted": {
+        "1": "362",
+        "2": "360",
+        "3": "357",
+        "4": "349",
+        "5": "343",
+        "6": "335"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "362",
+          "2": "360",
+          "3": "357",
+          "4": "349",
+          "5": "343",
+          "6": "335"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "赤枠（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "銀枠（生徒会）（ボーナス終了画面）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "白銀＆かぐや（ボーナス終了画面・1G連と引き戻し否定時）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面の出現率 赤枠",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1%",
+          "2": "2%",
+          "3": "2%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        },
+        "dmm": {
+          "1": "1%",
+          "2": "2%",
+          "3": "2%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        },
+        "nana": {
+          "1": "1%",
+          "2": "2%",
+          "3": "2%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        }
+      },
+      "adopted": {
+        "1": "1%",
+        "2": "2%",
+        "3": "2%",
+        "4": "2%",
+        "5": "2%",
+        "6": "2%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "1%",
+          "2": "2%",
+          "3": "2%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面の出現率 紫枠",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "3%",
+        "3": "3%",
+        "4": "3%",
+        "5": "3%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面の出現率 銀枠",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "1%",
+        "5": "1%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面の出現率 金枠",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ミニ藤原 探偵→制服",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG中のキャラ紹介 シナリオ振り分け 生徒会A",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "30%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        },
+        "dmm": {
+          "1": "30%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        }
+      },
+      "adopted": {
+        "1": "30%",
+        "2": "28%",
+        "3": "28%",
+        "4": "23%",
+        "5": "23%",
+        "6": "23%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "30%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG中のキャラ紹介 シナリオ振り分け 生徒会B",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "31%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        },
+        "dmm": {
+          "1": "31%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        }
+      },
+      "adopted": {
+        "1": "31%",
+        "2": "28%",
+        "3": "28%",
+        "4": "23%",
+        "5": "23%",
+        "6": "23%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "31%",
+          "2": "28%",
+          "3": "28%",
+          "4": "23%",
+          "5": "23%",
+          "6": "23%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG中のキャラ紹介 シナリオ振り分け 白銀圭",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "10%",
+          "2": "10%",
+          "3": "10%",
+          "4": "15%",
+          "5": "15%",
+          "6": "15%"
+        },
+        "dmm": {
+          "1": "10%",
+          "2": "10%",
+          "3": "10%",
+          "4": "15%",
+          "5": "15%",
+          "6": "15%"
+        }
+      },
+      "adopted": {
+        "1": "10%",
+        "2": "10%",
+        "3": "10%",
+        "4": "15%",
+        "5": "15%",
+        "6": "15%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "10%",
+          "2": "10%",
+          "3": "10%",
+          "4": "15%",
+          "5": "15%",
+          "6": "15%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG中のキャラ紹介 シナリオ振り分け 早坂愛",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "5%",
+        "3": "5%",
+        "4": "5%",
+        "5": "5%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG中のキャラ紹介 シナリオ振り分け 白銀パパ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "5%",
+        "5": "5%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（1〜1000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "5": "0%",
+          "6": "2%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "6": "2%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "1%",
+        "3": "0%",
+        "4": "1%",
+        "5": "0%",
+        "6": "2%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "5": "0%",
+          "6": "2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（1001〜2000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "2%",
+          "3": "0%",
+          "4": "2%",
+          "5": "0%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "2%",
+          "3": "0%",
+          "4": "2%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "2%",
+        "3": "0%",
+        "4": "2%",
+        "5": "0%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "2%",
+          "3": "0%",
+          "4": "2%",
+          "5": "0%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（2001〜4000G・5001〜6000G・7001〜8000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "1%",
+        "3": "0%",
+        "4": "1%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（4001〜5000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "5": "0%",
+          "6": "4%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "6": "4%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "3%",
+        "3": "0%",
+        "4": "3%",
+        "5": "0%",
+        "6": "4%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "5": "0%",
+          "6": "4%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（6001〜7000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "5": "0%",
+          "6": "4%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "6": "4%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "3%",
+        "3": "0%",
+        "4": "3%",
+        "5": "0%",
+        "6": "4%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "3%",
+          "5": "0%",
+          "6": "4%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（8001G以降）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "5%",
+          "3": "0%",
+          "4": "5%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "5%",
+          "3": "0%",
+          "4": "5%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "5%",
+        "3": "0%",
+        "4": "5%",
+        "5": "0%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "5%",
+          "3": "0%",
+          "4": "5%",
+          "5": "0%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（1〜1000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "1%",
+        "5": "1%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（1001〜2000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "1%",
+        "5": "1%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（2001〜4000G・5001〜6000G・7001〜8000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "1%",
+        "5": "1%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（4001〜5000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "1%",
+        "5": "1%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（6001〜7000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2%",
+        "5": "3%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（8001G以降）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2%",
+        "5": "3%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "3%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（1〜1000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（1001〜2000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（2001〜4000G・5001〜6000G・7001〜8000G）",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（4001〜5000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（6001〜7000G）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（8001G以降）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-kaguya-sama",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面の出現率 銀枠（生徒会）",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エクストラBB昇格率 BIG",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1%"
+        },
+        "dmm": {
+          "1": "1%"
+        },
+        "nana": {
+          "1": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エクストラBB昇格率 スーパーBIG",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "2%"
+        },
+        "dmm": {
+          "1": "2%"
+        },
+        "nana": {
+          "1": "2%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（2001〜3000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（3001〜4000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（5001〜6000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚（7001〜8000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "1%",
+          "3": "0%",
+          "4": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（2001〜3000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（3001〜4000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（5001〜6000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚（7001〜8000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "1%",
+          "5": "1%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（2001〜3000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（3001〜4000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（5001〜6000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚（7001〜8000G）",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1%"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

@@ -4,101 +4,204 @@
   "roles": [
     {
       "name": "弱チェリー",
-      "probabilities": { "1": 0.01397, "2": 0.01397, "3": 0.01397, "4": 0.01397, "5": 0.01397, "6": 0.01397 },
       "hasSettingDiff": false,
       "displayOrder": 1,
       "color": "#F44336",
-      "description": "全設定共通想定: 約1/71.6。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+      "description": "設定1: 1/71.6、設定6: 1/71.6",
+      "probabilities": {
+        "1": 0.0139665,
+        "2": 0.0139665,
+        "3": 0.0139665,
+        "4": 0.0139665,
+        "5": 0.0139665,
+        "6": 0.0139665
+      }
     },
     {
       "name": "スイカ",
-      "probabilities": { "1": 0.01189, "2": 0.01189, "3": 0.01189, "4": 0.01189, "5": 0.01189, "6": 0.01189 },
       "hasSettingDiff": false,
       "displayOrder": 2,
       "color": "#4CAF50",
-      "description": "全設定共通想定: 約1/84.1。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+      "description": "設定1: 1/84.1、設定6: 1/84.1",
+      "probabilities": {
+        "1": 0.0118906,
+        "2": 0.0118906,
+        "3": 0.0118906,
+        "4": 0.0118906,
+        "5": 0.0118906,
+        "6": 0.0118906
+      }
     },
     {
       "name": "チャンスリプレイ",
-      "probabilities": { "1": 0.004026, "2": 0.004026, "3": 0.004026, "4": 0.004026, "5": 0.004026, "6": 0.004026 },
       "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#2196F3",
-      "description": "全設定共通想定: 約1/248.4。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+      "description": "設定1: 1/248.4、設定6: 1/248.4",
+      "probabilities": {
+        "1": 0.00402576,
+        "2": 0.00402576,
+        "3": 0.00402576,
+        "4": 0.00402576,
+        "5": 0.00402576,
+        "6": 0.00402576
+      }
     },
     {
       "name": "チャンス目",
-      "probabilities": { "1": 0.001845, "2": 0.001845, "3": 0.001845, "4": 0.001845, "5": 0.001845, "6": 0.001845 },
       "hasSettingDiff": false,
       "displayOrder": 4,
       "color": "#FF9800",
-      "description": "全設定共通想定: 約1/542.1。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+      "description": "設定1: 1/542.1、設定6: 1/542.1",
+      "probabilities": {
+        "1": 0.00184468,
+        "2": 0.00184468,
+        "3": 0.00184468,
+        "4": 0.00184468,
+        "5": 0.00184468,
+        "6": 0.00184468
+      }
     },
     {
       "name": "強チェリー",
-      "probabilities": { "1": 0.001438, "2": 0.001438, "3": 0.001438, "4": 0.001438, "5": 0.001438, "6": 0.001438 },
       "hasSettingDiff": false,
       "displayOrder": 5,
       "color": "#E91E63",
-      "description": "全設定共通想定: 約1/695.6。情報源: 一撃/ちょんぼりすた/なな徹 確度2（全設定共通・3ソース確定、2026-05検証）"
+      "description": "設定1: 1/695.6、設定6: 1/695.6",
+      "probabilities": {
+        "1": 0.00143761,
+        "2": 0.00143761,
+        "3": 0.00143761,
+        "4": 0.00143761,
+        "5": 0.00143761,
+        "6": 0.00143761
+      }
+    },
+    {
+      "name": "ボーナス直撃確率",
+      "probabilities": {
+        "1": 0.0000185509,
+        "2": 0.0000371405,
+        "3": 0.0000730919,
+        "4": 0.000159936,
+        "5": 0.000192012,
+        "6": 0.000231123
+      },
+      "description": "設定1: 1/53905.7、設定6: 1/4326.7",
+      "hasSettingDiff": true,
+      "color": "#FF9800",
+      "displayOrder": 6
+    },
+    {
+      "name": "ノワールルーム突入率",
+      "probabilities": {
+        "1": 0.0075815,
+        "2": 0.00766871,
+        "3": 0.00783699,
+        "4": 0.00825083,
+        "5": 0.00839631,
+        "6": 0.00860585
+      },
+      "description": "設定1: 1/131.9、設定6: 1/116.2",
+      "hasSettingDiff": true,
+      "color": "#FF9800",
+      "displayOrder": 7
     }
   ],
   "confirmationEvents": [
     {
       "id": "kerot_trophy_copper",
       "name": "ケロットトロフィー 銅",
-      "description": "銅のケロットトロフィー出現で設定2以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
-      "color": "#B87333"
+      "description": "設定2・3・4・5・6を示す。",
+      "color": "#B87333",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "kerot_trophy_silver",
       "name": "ケロットトロフィー 銀",
-      "description": "銀のケロットトロフィー出現で設定3以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
-      "color": "#C0C0C0"
+      "description": "設定3・4・5・6を示す。",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "kerot_trophy_gold",
       "name": "ケロットトロフィー 金",
-      "description": "金のケロットトロフィー出現で設定4以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "description": "設定4・5・6を示す。",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "kerot_trophy_pattern",
       "name": "ケロットトロフィー ケロット柄",
-      "description": "ケロット柄のケロットトロフィー出現で設定5以上濃厚（定性示唆。情報源: 一撃/ちょんぼりすた 確度2、出現率未判明）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#E0A800"
+      "description": "設定5・6を示す。",
+      "color": "#E0A800",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "kerot_trophy_rainbow",
       "name": "ケロットトロフィー 虹",
-      "description": "獲得時に虹のケロットトロフィー出現で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "ending_push_rainbow",
       "name": "エンディングPUSH 虹「激ヤバじゃん」",
-      "description": "エンディングPUSHで虹「激ヤバじゃん」表示で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#9C27B0"
+      "description": "設定4・5・6を示す。",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
-      "id": "big_sign_rina",
-      "name": "BIG中サイン演出「リナ」",
-      "description": "BIG中のサイン演出で「リナ」表示は高設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": [],
+      "name": "獲得枚数表示 246枚OVER",
+      "id": "ce_a9c98e2ab4",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
       "excludedSettings": [],
-      "color": "#FFD700"
+      "description": "設定2・4・6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 456枚OVER",
+      "id": "ce_406c6b9c2c",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
     }
   ],
   "endScreens": [
@@ -106,45 +209,166 @@
       "id": "coin_666_over",
       "name": "獲得枚数 666枚OVER",
       "type": "at_end",
-      "hint": "設定6濃厚",
-      "description": "AT終了時の獲得枚数表示が666枚OVERで設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "coin_803_over",
       "name": "獲得枚数 803枚OVER",
       "type": "at_end",
-      "hint": "設定5以上濃厚",
-      "description": "AT終了時の獲得枚数表示が803枚OVERで設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#9C27B0"
+      "description": "設定5・6を示す。",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "リナサインの出現率",
+      "id": "es_ff07d60a53",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.02,
+        "3": 0.03,
+        "4": 0.04,
+        "5": 0.045,
+        "6": 0.05
+      },
+      "description": "設定1: 1%、設定2: 2%、設定3: 3%、設定4: 4%、設定5: 4.5%、設定6: 5%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面のサイン リオ",
+      "id": "es_b68b0d41c5",
+      "hint": "奇数設定示唆",
+      "description": "奇数設定示唆。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "other"
+    },
+    {
+      "name": "終了画面のサイン ミント",
+      "id": "es_22db3180a0",
+      "hint": "偶数設定示唆",
+      "description": "偶数設定示唆。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "other"
+    },
+    {
+      "name": "終了画面のサイン リナ",
+      "id": "es_06a4953c6a",
+      "hint": "高設定示唆（強）",
+      "description": "高設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "other"
     }
   ],
   "trialSuccessRates": [
     {
       "id": "first_hit",
       "name": "初当たり確率",
-      "description": "設定1: 1/289.8、設定2: 1/281.9、設定3: 1/268.0、設定4: 1/238.9、設定5: 1/230.0、設定6: 1/219.2。全設定とも実解析値（一撃/ちょんぼりすた/なな徹で独立一致、2026-05検証、線形補間は破棄済）",
-      "probabilities": {
-        "1": 0.003451,
-        "2": 0.003547,
-        "3": 0.003731,
-        "4": 0.004186,
-        "5": 0.004348,
-        "6": 0.004562
-      },
+      "description": "設定1: 1/289.8、設定6: 1/219.2",
       "displayOrder": 1,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "probabilities": {
+        "1": 0.00345066,
+        "2": 0.00354736,
+        "3": 0.00373134,
+        "4": 0.00418585,
+        "5": 0.00434783,
+        "6": 0.00456204
+      }
+    },
+    {
+      "name": "規定リプレイ回数のハワードゲーム当選率",
+      "id": "ts_07f496303c",
+      "probabilities": {
+        "1": 0.203,
+        "2": 0.211,
+        "3": 0.227,
+        "4": 0.262,
+        "5": 0.277,
+        "6": 0.301
+      },
+      "description": "設定1: 20.3%、設定2: 21.1%、設定3: 22.7%、設定4: 26.2%、設定5: 27.7%、設定6: 30.1%リプレイ50回ごとのCHANCE表示が対象。設定変更後の初回は数えない。",
+      "displayOrder": 2
+    },
+    {
+      "name": "エンディング中PUSHボタン ボイス振り分け 青「お客様がお望みなら」",
+      "id": "ts_f2880f2084",
+      "probabilities": {
+        "1": 0.59,
+        "2": 0.55,
+        "3": 0.54,
+        "4": 0.49,
+        "5": 0.48,
+        "6": 0.45
+      },
+      "description": "設定1: 59%、設定2: 55%、設定3: 54%、設定4: 49%、設定5: 48%、設定6: 45%",
+      "displayOrder": 3
+    },
+    {
+      "name": "エンディング中PUSHボタン ボイス振り分け 黄「ちゅうもーく」",
+      "id": "ts_19b7f6a99b",
+      "probabilities": {
+        "1": 0.3,
+        "2": 0.31,
+        "3": 0.32,
+        "4": 0.33,
+        "5": 0.34,
+        "6": 0.35
+      },
+      "description": "設定1: 30%、設定2: 31%、設定3: 32%、設定4: 33%、設定5: 34%、設定6: 35%",
+      "displayOrder": 4
+    },
+    {
+      "name": "エンディング中PUSHボタン ボイス振り分け 緑「良い予感がするわ」",
+      "id": "ts_a974c3d7d9",
+      "probabilities": {
+        "1": 0.1,
+        "2": 0.12,
+        "3": 0.12,
+        "4": 0.14,
+        "5": 0.14,
+        "6": 0.16
+      },
+      "description": "設定1: 10%、設定2: 12%、設定3: 12%、設定4: 14%、設定5: 14%、設定6: 16%",
+      "displayOrder": 5
+    },
+    {
+      "name": "エンディング中PUSHボタン ボイス振り分け 赤「承認します」",
+      "id": "ts_d7229b9edc",
+      "probabilities": {
+        "1": 0.01,
+        "2": 0.02,
+        "3": 0.02,
+        "4": 0.03,
+        "5": 0.03,
+        "6": 0.03
+      },
+      "description": "設定1: 1%、設定2: 2%、設定3: 2%、設定4: 3%、設定5: 3%、設定6: 3%",
+      "displayOrder": 6
+    },
+    {
+      "name": "エンディング中PUSHボタン ボイス振り分け 虹「激ヤバじゃん」",
+      "id": "ts_a11e00bd6c",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.01,
+        "5": 0.01,
+        "6": 0.01
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 1%、設定5: 1%、設定6: 1%",
+      "displayOrder": 7
     }
   ],
-  "voiceCounts": [],
-  "notes": "2026年5月11日導入。導入から実解析値判明済み（一撃/ちょんぼりすた/なな徹で独立一致、2026-05検証、線形補間は破棄）。山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり設定1=1/289.8〜設定6=1/219.2（設定2-5も実解析値）、機械割設定1=97.7%〜設定6=112.1%。設置約8000台。小役は全設定共通（情報源: 一撃/ちょんぼりすた/なな徹 確度2、3ソース確定）。ケロットトロフィー5段階（銅/銀/金/ケロット柄/虹）/エンディングPUSH/BIG中サイン演出/獲得枚数を定性示唆として追加（情報源: nana-press/chonborista 確度2、出現率未判明）。ボーナス直撃は特大設定差（設定1=1/53905.6→設定6=1/4326.7、設定2-5の実値未公開・Provisional）。情報源URL: https://yamasa-next.co.jp/slot/ac2ro/ , https://www.p-world.co.jp/machine/database/10449 , https://nana-press.com/kaiseki/machine/1143/ , https://chonborista.com/slot/yamasa-slot/255067/",
+  "notes": "全設定の値がそろわない項目・単一出典で採用条件を満たさない項目は登録していない。",
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-05-17",
-  "source": "メーカー公式（山佐ネクスト）、P-WORLD、ちょんぼりすた、なな徹、nana-press（確度2）、chonborista（確度2）",
-  "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差（設定1: 1/289.8→設定6: 1/219.2、確度2解析公表値・Provisional、線形補間は破棄済）。機械割: 設定1=97.7%〜設定6=112.1%。設置約8000台。2026-05-11導入済。設定2-6まで実解析値判明（独立3ソース一致）。小役は全設定共通（3ソース確定）。ボーナス直撃に特大設定差（設定1: 約1/53905.6→設定6: 約1/4326.7、一撃/ちょんぼりすた独立一致・2026-05検証。設定2-5は未公開のためProvisional・数値未登録）。"
+  "version": "1.2",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/yamasa-slot/255067/)、DMMぱちタウン(https://p-town.dmm.com/machines/4984)、なな徹(https://nana-press.com/kaiseki/machine/1143/)",
+  "description": "スマスロ スーパーリオエース2の解析データ。7個の役、8個の確定演出、6個の終了画面、7個の試行成功率を出典付きで登録。"
 }

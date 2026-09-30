@@ -1,6 +1,14 @@
 import { describe, it, expect, beforeAll, beforeEach, afterAll } from 'vitest';
 import { spawnSync } from 'child_process';
-import { cpSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'fs';
+import {
+  cpSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from 'fs';
 import { tmpdir } from 'os';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
@@ -138,12 +146,12 @@ describe('validate.mjs と公式ドメインの一覧（読み込みのつなぎ
     symlinkSync(join(ROOT, 'node_modules'), join(dir, 'node_modules'));
   });
 
-  // it ごとに、一覧を本物の中身に、provenance/ を本物（記録の無い状態）に置き直す（順に依存しない）
+  // 本番の公式出典が増えても、各ケースで作る出典だけを検査して順序依存を避ける。
   beforeEach(() => {
-    for (const name of ['config', 'provenance']) {
-      rmSync(join(dir, name), { recursive: true, force: true });
-      cpSync(join(ROOT, name), join(dir, name), { recursive: true });
-    }
+    rmSync(join(dir, 'config'), { recursive: true, force: true });
+    cpSync(join(ROOT, 'config'), join(dir, 'config'), { recursive: true });
+    rmSync(join(dir, 'provenance'), { recursive: true, force: true });
+    mkdirSync(join(dir, 'provenance'));
   });
 
   afterAll(() => {

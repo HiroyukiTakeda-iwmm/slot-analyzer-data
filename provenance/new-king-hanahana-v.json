@@ -1,0 +1,211 @@
+{
+  "machineId": "new-king-hanahana-v",
+  "machineFile": "hanahana/new-king-hanahana-v.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "pioneer",
+      "kind": "official",
+      "url": "https://www.slot-pioneer.co.jp/product/new_king_hanahana_v/pop/pop_pdf.pdf",
+      "retrievedAt": "2026-09-30"
+    },
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/pionia-slot/247330/",
+      "retrievedAt": "2026-09-30"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1075/34235/",
+      "retrievedAt": "2026-09-30"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "BIG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "pioneer": {
+          "1": 299,
+          "2": 291,
+          "3": 281,
+          "4": 268,
+          "V": 253
+        },
+        "chonborista": {
+          "1": 299,
+          "2": 291,
+          "3": 281,
+          "4": 268,
+          "V": 253
+        },
+        "nana": {
+          "1": 299,
+          "2": 291,
+          "3": 281,
+          "4": 268,
+          "V": 253
+        }
+      },
+      "adopted": {
+        "1": 299,
+        "2": 291,
+        "3": 281,
+        "4": 268,
+        "V": 253
+      }
+    },
+    {
+      "kind": "role",
+      "name": "REG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "pioneer": {
+          "1": 496,
+          "2": 471,
+          "3": 442,
+          "4": 409,
+          "V": 372
+        },
+        "chonborista": {
+          "1": 496,
+          "2": 471,
+          "3": 442,
+          "4": 409,
+          "V": 372
+        },
+        "nana": {
+          "1": 496,
+          "2": 471,
+          "3": 442,
+          "4": 409,
+          "V": 372
+        }
+      },
+      "adopted": {
+        "1": 496,
+        "2": 471,
+        "3": 442,
+        "4": 409,
+        "V": 372
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ボーナス合算",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "pioneer": {
+          "1": 186,
+          "2": 180,
+          "3": 172,
+          "4": 162,
+          "V": 150
+        },
+        "chonborista": {
+          "1": 186,
+          "2": 180,
+          "3": 172,
+          "4": 162,
+          "V": 150
+        },
+        "nana": {
+          "1": 186,
+          "2": 180,
+          "3": 172,
+          "4": 162,
+          "V": 150
+        }
+      },
+      "adopted": {
+        "1": 186,
+        "2": 180,
+        "3": 172,
+        "4": 162,
+        "V": 150
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ハイビスカスランプ特殊色",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ハイビスカスランプ特殊色",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "specialSettings",
+      "name": "specialSettings",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "pioneer": true,
+        "chonborista": true,
+        "nana": true
+      },
+      "adopted": true
+    }
+  ],
+  "candidates": [],
+  "removed": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "BIG中スイカ確率",
+      "unit": "denominator",
+      "previous": {
+        "name": "BIG中スイカ確率",
+        "description": "高設定ほど高確率。1.5回に1回以上確認で高設定期待",
+        "id": "big中スイカ確率",
+        "probabilities": {
+          "1": 0.05,
+          "2": 0.055,
+          "3": 0.06,
+          "4": 0.065,
+          "5": 0.07,
+          "V": 0.075
+        },
+        "color": "#E91E63",
+        "displayOrder": 1
+      },
+      "values": {},
+      "appId": "big中スイカ確率",
+      "reason": "設定別の解析数値は公表されておらず、既存の0.05〜0.075を裏づける出典なし。実戦・予測の数値は採用しない。"
+    }
+  ],
+  "retiredIds": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "BIG中スイカ確率",
+      "appId": "big中スイカ確率"
+    }
+  ]
+}

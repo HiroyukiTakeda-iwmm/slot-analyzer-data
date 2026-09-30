@@ -4,85 +4,86 @@
   "roles": [
     {
       "name": "AT初当たり",
-      "probabilities": {
-        "1": 0.00377,
-        "2": 0.00384,
-        "3": 0.00397,
-        "4": 0.00419,
-        "5": 0.00433,
-        "6": 0.00455
-      },
       "hasSettingDiff": true,
       "displayOrder": 1,
       "color": "#2196F3",
-      "description": "設定1: 1/265.1、設定6: 1/219.6"
+      "description": "設定1: 1/265.1、設定6: 1/219.6",
+      "probabilities": {
+        "1": 0.00377216,
+        "2": 0.00383583,
+        "3": 0.00396668,
+        "4": 0.0041876,
+        "5": 0.00433276,
+        "6": 0.00455373
+      }
     },
     {
       "name": "スイカ",
-      "probabilities": {
-        "1": 0.01144,
-        "2": 0.01166,
-        "3": 0.01178,
-        "4": 0.01255,
-        "5": 0.01337,
-        "6": 0.01431
-      },
       "hasSettingDiff": true,
       "displayOrder": 2,
       "color": "#4CAF50",
-      "description": "設定1: 1/87.4、設定6: 1/69.9"
+      "description": "設定1: 1/87.4、設定6: 1/69.9",
+      "probabilities": {
+        "1": 0.0114416,
+        "2": 0.011655,
+        "3": 0.0117786,
+        "4": 0.0125471,
+        "5": 0.013369,
+        "6": 0.0143062
+      }
     },
     {
       "name": "弱チェリー",
-      "probabilities": {
-        "1": 0.007627,
-        "2": 0.007627,
-        "3": 0.007627,
-        "4": 0.007627,
-        "5": 0.007627,
-        "6": 0.007627
-      },
       "hasSettingDiff": false,
       "displayOrder": 3,
       "color": "#F44336",
-      "description": "全設定共通: 約1/131.1"
+      "description": "設定1: 1/131.1、設定6: 1/131.1",
+      "probabilities": {
+        "1": 0.00762777,
+        "2": 0.00762777,
+        "3": 0.00762777,
+        "4": 0.00762777,
+        "5": 0.00762777,
+        "6": 0.00762777
+      }
     },
     {
       "name": "チャンス目",
-      "probabilities": {
-        "1": 0.010373,
-        "2": 0.010373,
-        "3": 0.010373,
-        "4": 0.010373,
-        "5": 0.010373,
-        "6": 0.010373
-      },
       "hasSettingDiff": false,
       "displayOrder": 4,
       "color": "#FF9800",
-      "description": "全設定共通: 約1/96.4"
+      "description": "設定1: 1/96.4、設定6: 1/96.4",
+      "probabilities": {
+        "1": 0.0103734,
+        "2": 0.0103734,
+        "3": 0.0103734,
+        "4": 0.0103734,
+        "5": 0.0103734,
+        "6": 0.0103734
+      }
     },
     {
       "name": "強チェリー",
-      "probabilities": {
-        "1": 0.003906,
-        "2": 0.003906,
-        "3": 0.003906,
-        "4": 0.003906,
-        "5": 0.003906,
-        "6": 0.003906
-      },
       "hasSettingDiff": false,
       "displayOrder": 5,
       "color": "#E91E63",
-      "description": "全設定共通: 約1/256.0"
+      "description": "設定1: 1/256.0、設定6: 1/256.0",
+      "probabilities": {
+        "1": 0.00390625,
+        "2": 0.00390625,
+        "3": 0.00390625,
+        "4": 0.00390625,
+        "5": 0.00390625,
+        "6": 0.00390625
+      }
     }
   ],
   "confirmationEvents": [
     {
       "id": "サミートロフィー銅",
       "name": "サミートロフィー銅",
-      "description": "設定2以上濃厚",
+      "description": "設定2・3・4・5・6を示す。",
+      "color": "#CD7F32",
       "confirmedSettings": [
         "2",
         "3",
@@ -90,190 +91,258 @@
         "5",
         "6"
       ],
-      "excludedSettings": [
-        "1"
-      ],
-      "color": "#CD7F32"
+      "excludedSettings": []
     },
     {
       "id": "サミートロフィー銀",
       "name": "サミートロフィー銀",
-      "description": "設定3以上濃厚",
+      "description": "設定3・4・5・6を示す。",
+      "color": "#C0C0C0",
       "confirmedSettings": [
         "3",
         "4",
         "5",
         "6"
       ],
-      "excludedSettings": [
-        "1",
-        "2"
-      ],
-      "color": "#C0C0C0"
+      "excludedSettings": []
     },
     {
       "id": "サミートロフィー金",
       "name": "サミートロフィー金",
-      "description": "設定4以上濃厚",
+      "description": "設定4・5・6を示す。",
+      "color": "#FFD700",
       "confirmedSettings": [
         "4",
         "5",
         "6"
       ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3"
-      ],
-      "color": "#FFD700"
+      "excludedSettings": []
     },
     {
       "id": "サミートロフィーキリン柄",
       "name": "サミートロフィーキリン柄",
-      "description": "設定5以上濃厚",
+      "description": "設定5・6を示す。",
+      "color": "#FFEB3B",
       "confirmedSettings": [
         "5",
         "6"
       ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "color": "#FFEB3B"
+      "excludedSettings": []
     },
     {
       "id": "サミートロフィー虹",
       "name": "サミートロフィー虹",
-      "description": "設定6濃厚",
+      "description": "設定6を示す。",
+      "color": "#00BCD4",
       "confirmedSettings": [
         "6"
       ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "color": "#00BCD4"
+      "excludedSettings": []
     },
     {
       "id": "ボーナス確定画面忍赤7成立",
       "name": "ボーナス確定画面忍＋赤7成立",
-      "description": "忍出現時に赤7成立で設定5以上濃厚",
+      "description": "設定5・6を示す。",
+      "color": "#FF5722",
       "confirmedSettings": [
         "5",
         "6"
       ],
-      "excludedSettings": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "color": "#FF5722"
+      "excludedSettings": []
     }
   ],
   "endScreens": [
     {
-      "name": "AT終了画面",
-      "patterns": [
-        {
-          "name": "初代パネル（暦・忍・忍野）",
-          "minSetting": 4,
-          "description": "設定4以上濃厚"
-        },
-        {
-          "name": "ヒロイン集合（初代パネル）",
-          "minSetting": 5,
-          "description": "設定5以上濃厚"
-        },
-        {
-          "name": "I LOVE YOU",
-          "minSetting": 6,
-          "description": "設定6濃厚"
-        }
-      ],
-      "id": "AT終了画面",
+      "id": "AT終了画面_1",
+      "name": "初代パネル（暦・忍・忍野）",
       "type": "at_end",
-      "hint": "設定示唆",
-      "color": "#78909C"
+      "color": "#78909C",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
     },
     {
-      "name": "獲得枚数表示",
-      "patterns": [
-        {
-          "name": "174枚（いちなし）",
-          "minSetting": 2,
-          "description": "設定2以上濃厚"
-        },
-        {
-          "name": "543枚",
-          "minSetting": 3,
-          "description": "設定3以上濃厚"
-        },
-        {
-          "name": "331枚（サミー）",
-          "minSetting": 6,
-          "description": "設定6濃厚"
-        }
-      ],
-      "id": "獲得枚数表示",
+      "id": "AT終了画面_2",
+      "name": "ヒロイン集合（初代パネル）",
       "type": "at_end",
-      "hint": "設定示唆",
-      "color": "#78909C"
+      "color": "#78909C",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。"
+    },
+    {
+      "id": "AT終了画面_3",
+      "name": "I LOVE YOU",
+      "type": "at_end",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。"
+    },
+    {
+      "id": "獲得枚数表示_1",
+      "name": "174枚（いちなし）",
+      "type": "at_end",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。"
+    },
+    {
+      "id": "獲得枚数表示_2",
+      "name": "543枚",
+      "type": "at_end",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・4・5・6を示す。"
+    },
+    {
+      "id": "獲得枚数表示_3",
+      "name": "331枚（サミー）",
+      "type": "at_end",
+      "color": "#78909C",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。"
     },
     {
       "id": "サミートロフィー銅",
       "name": "サミートロフィー銅",
       "type": "at_end",
+      "color": "#CD7F32",
       "hint": "設定2以上濃厚",
-      "color": "#CD7F32"
+      "description": "設定2以上濃厚"
     },
     {
       "id": "サミートロフィー銀",
       "name": "サミートロフィー銀",
       "type": "at_end",
+      "color": "#C0C0C0",
       "hint": "設定3以上濃厚",
-      "color": "#C0C0C0"
+      "description": "設定3以上濃厚"
     },
     {
       "id": "サミートロフィー金",
       "name": "サミートロフィー金",
       "type": "at_end",
+      "color": "#FFD700",
       "hint": "設定4以上濃厚",
-      "color": "#FFD700"
+      "description": "設定4以上濃厚"
     },
     {
       "id": "サミートロフィーキリン柄",
       "name": "サミートロフィーキリン柄",
       "type": "at_end",
+      "color": "#FF5722",
       "hint": "設定5以上濃厚",
-      "color": "#FF5722"
+      "description": "設定5以上濃厚"
     },
     {
       "id": "サミートロフィー虹",
       "name": "サミートロフィー虹",
       "type": "at_end",
+      "color": "#00BCD4",
       "hint": "設定6濃厚",
-      "color": "#00BCD4"
+      "description": "設定6濃厚"
     },
     {
       "id": "ボーナス確定画面忍赤7成立",
       "name": "ボーナス確定画面忍＋赤7成立",
       "type": "at_end",
+      "color": "#FF5722",
       "hint": "忍出現時に赤7成立で設定5以上濃厚",
-      "color": "#FF5722"
+      "description": "忍出現時に赤7成立で設定5以上濃厚"
+    },
+    {
+      "name": "AT終了画面 忍",
+      "id": "es_3c6994b75d",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・4・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 忍野",
+      "id": "es_0bdf8f2d91",
+      "confirmedSettings": [
+        "3",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 ひたぎ",
+      "id": "es_ea4cf20197",
+      "hint": "高設定示唆（強）",
+      "description": "高設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 真宵",
+      "id": "es_a803b75664",
+      "hint": "偶数設定示唆（弱）",
+      "description": "偶数設定示唆（弱）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 駿河",
+      "id": "es_653ed9d99c",
+      "hint": "奇数かつ高設定示唆",
+      "description": "奇数かつ高設定示唆。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 撫子",
+      "id": "es_6ca69ef772",
+      "hint": "高設定示唆（弱）",
+      "description": "高設定示唆（弱）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 翼",
+      "id": "es_129db86eed",
+      "hint": "偶数設定示唆（強）",
+      "description": "偶数設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "at_end"
     }
   ],
-  "voiceCounts": [],
   "trialSuccessRates": [
     {
       "name": "弱チェリーAT直撃率",
-      "description": "設定1: 0.4%、設定6: 3.8%。1度でも確認できれば高設定期待",
+      "description": "設定1: 0.4%、設定2: 0.8%、設定3: 1.3%、設定4: 2.1%、設定5: 2.9%、設定6: 3.8%",
       "id": "弱チェリーat直撃率",
+      "color": "#E91E63",
+      "displayOrder": 1,
       "probabilities": {
         "1": 0.004,
         "2": 0.008,
@@ -281,29 +350,66 @@
         "4": 0.021,
         "5": 0.029,
         "6": 0.038
-      },
-      "color": "#E91E63",
-      "displayOrder": 1
+      }
     },
     {
       "name": "解呪ノ儀200G到達時CZ当選率",
-      "description": "解呪ノ儀200G到達時CZ当選率。設定1:10%→設定6:20%（Provisional。nana-press 確度1 / altema 独立系列 / 1geki で2026-05-17再確認。設定別 1:10/2:10/3:10.4/4:15/5:17.5/6:20%。300G値は単独ソースのため未採用）",
+      "description": "設定1: 10%、設定2: 10%、設定3: 10.4%、設定4: 15%、設定5: 17.5%、設定6: 20%",
       "id": "解呪ノ儀200g到達時cz当選率",
+      "color": "#FF9800",
+      "displayOrder": 2,
       "probabilities": {
-        "1": 0.10,
-        "2": 0.10,
+        "1": 0.1,
+        "2": 0.1,
         "3": 0.104,
         "4": 0.15,
         "5": 0.175,
-        "6": 0.20
+        "6": 0.2
+      }
+    },
+    {
+      "name": "解呪ノ儀300G到達時CZ当選率",
+      "id": "ts_a3f33fc998",
+      "probabilities": {
+        "1": 0.4,
+        "2": 0.4,
+        "3": 0.404,
+        "4": 0.45,
+        "5": 0.475,
+        "6": 0.5
       },
-      "color": "#FF9800",
-      "displayOrder": 2
+      "description": "設定1: 40%、設定2: 40%、設定3: 40.4%、設定4: 45%、設定5: 47.5%、設定6: 50%",
+      "displayOrder": 3
     }
   ],
   "author": "コミュニティ",
-  "version": "1.3",
-  "lastUpdated": "2026-05-17",
-  "source": "ちょんぼりすた、一撃(1geki.jp)、ななプレス(nana-press.com)",
-  "description": "スマスロAT機。弱チェリーAT直撃率に設定差（設定1: 0.4%、設定6: 3.8%。1度でも確認できれば高設定期待）。解呪ノ儀200G到達時CZ当選率に設定差（設定別 1:10/2:10/3:10.4/4:15/5:17.5/6:20%、Provisional。nana-press 確度1 / altema 独立系列 / 1geki で2026-05-17再確認）。小役確率は全設定共通。サミートロフィー銅・サミートロフィー虹・サミートロフィー金・サミートロフィーキリン柄・サミートロフィー銀で設定示唆。"
+  "version": "1.4",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/sammy-slot/246074/)、DMMぱちタウン(https://p-town.dmm.com/machines/4898)、なな徹(https://nana-press.com/kaiseki/machine/1055/)",
+  "description": "スマスロ化物語の解析データ。5個の役、6個の確定演出、19個の終了画面、3個の試行成功率を出典付きで登録。",
+  "zones": [
+    {
+      "name": "倖時間中",
+      "isDefault": false,
+      "roles": [
+        {
+          "name": "ボーナス",
+          "probabilities": {
+            "1": 0.000365537,
+            "2": 0.000383833,
+            "3": 0.000417258,
+            "4": 0.000419903,
+            "5": 0.000459284,
+            "6": 0.000515783
+          },
+          "description": "設定1: 1/2735.7、設定6: 1/1938.8AT中の1ゲームあたり。通常時フリーズと後日談ボーナスを除く。",
+          "hasSettingDiff": true,
+          "color": "#FF9800",
+          "displayOrder": 1
+        }
+      ],
+      "description": "倖時間中のゲーム数を分母にして数える。"
+    }
+  ],
+  "notes": "全設定の値がそろわない項目・単一出典で採用条件を満たさない項目は登録していない。"
 }

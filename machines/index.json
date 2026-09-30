@@ -1,5 +1,5 @@
 {
-  "version": "3.11.0",
+  "version": "3.12.0",
   "updatedAt": "2026-09-30T00:00:00Z",
   "machines": [
     {
@@ -104,18 +104,20 @@
     {
       "id": "new-king-hanahana-v",
       "name": "ニューキングハナハナV",
-      "type": "A-type",
+      "type": "BT",
       "author": "コミュニティ",
-      "version": "1.3",
+      "version": "1.4",
       "file": "hanahana/new-king-hanahana-v.json",
       "tags": [
-        "Aタイプ",
+        "BT",
         "ハナハナ",
+        "パイオニア",
         "5段階設定",
-        "2025年新台"
+        "2026年1月",
+        "新台"
       ],
-      "description": "V含む5段階設定、BIG中スイカ確率に設定差",
-      "lastUpdated": "2026-03-27"
+      "description": "パイオニアのBT機。2026年1月5日導入。設定1・2・3・4・Vの5段階。メーカー公式のBIG・REG確率を使用。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "rezero-season2",
@@ -138,7 +140,7 @@
       "name": "スマスロ化物語",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.3",
+      "version": "1.4",
       "file": "monogatari/bakemonogatari.json",
       "tags": [
         "AT",
@@ -147,8 +149,8 @@
         "トロフィー",
         "2025年新台"
       ],
-      "description": "スイカ確率と弱チェリーAT直撃率に設定差",
-      "lastUpdated": "2026-05-17"
+      "description": "スマスロ化物語の解析データ。5個の役、6個の確定演出、19個の終了画面、3個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "tokyo-revengers",
@@ -763,7 +765,7 @@
       "name": "Lパチスロ かぐや様は告らせたい",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.3",
+      "version": "1.4",
       "file": "kaguya/kaguya-sama.json",
       "tags": [
         "AT",
@@ -772,8 +774,8 @@
         "SANKYO",
         "2024年新台"
       ],
-      "description": "ボーナス終了画面枠色とREG中キャラ紹介で設定示唆、ミニ藤原衣装チェンジで確定演出",
-      "lastUpdated": "2026-04-30"
+      "description": "Lパチスロ かぐや様は告らせたいの解析データ。0個の役、12個の確定演出、10個の終了画面、24個の試行成功率を出典付きで登録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "hihouden",
@@ -1989,16 +1991,16 @@
       "name": "Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVE",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "gundam-unicorn2/gundam-unicorn2.json",
       "tags": [
         "AT",
         "スマスロ",
-        "サミー",
+        "ビスティ",
         "6段階設定"
       ],
-      "description": "SANKYOのスマスロAT機。2026年4月導入予定。純増約2.0枚/6.0枚。約1/16の可能性役で自力感を演出。AT中ボーナスで覚醒HYPER→上位ATへ段階的にアップ。最強特化「覚醒DRIVE」は1000枚×約50%ループ。",
-      "lastUpdated": "2026-03-27"
+      "description": "ビスティのスマスロAT機（2026年4月導入）。Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVEの解析データ。2個の役、10個の確定演出、10個の終了画面、3個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "bofuri",
@@ -2426,7 +2428,7 @@
       "name": "Lアニマルスロットドッチ",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "animalslot-docchi/animalslot-docchi.json",
       "tags": [
         "AT",
@@ -2436,15 +2438,15 @@
         "2026年4月",
         "新台"
       ],
-      "description": "北電子製スマスロAT機（SSAT第2弾）。ボーナス合算確率に設定差。STループ率約82%",
-      "lastUpdated": "2026-04-30"
+      "description": "Lアニマルスロットドッチの解析データ。3個の役、5個の確定演出、21個の終了画面、3個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "biohazard-re3",
       "name": "Lパチスロ バイオハザードRE:3",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "biohazard-re3/biohazard-re3.json",
       "tags": [
         "AT",
@@ -2454,15 +2456,15 @@
         "2026年5月",
         "新台"
       ],
-      "description": "エンターライズ製スマスロAT機。純増約4.5枚/G。AT初当たり確率に設定差（設定1: 1/399.0→設定6: 1/311.2）。設定2-5は確度2解析公表値・サンプル僅少のため Provisional（線形補間は破棄済）",
-      "lastUpdated": "2026-05-17"
+      "description": "Lパチスロ バイオハザードRE:3の解析データ。8個の役、5個の確定演出、20個の終了画面、1個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "big-dream-golden-pusher",
       "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "big-dream-golden-pusher/big-dream-golden-pusher.json",
       "tags": [
         "AT",
@@ -2473,15 +2475,15 @@
         "2026年5月",
         "新台"
       ],
-      "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差。コイン単価5.7円",
-      "lastUpdated": "2026-05-17"
+      "description": "スマスロ ビッグドリーム THE GOLDEN PUSHERの解析データ。0個の役、11個の確定演出、16個の終了画面、20個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "super-rio-ace2",
       "name": "スマスロ スーパーリオエース2",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "super-rio-ace2/super-rio-ace2.json",
       "tags": [
         "AT",
@@ -2491,15 +2493,15 @@
         "2026年5月",
         "新台"
       ],
-      "description": "山佐ネクスト製スマスロAT機（擬似ボーナス→AT）。純増約2.5枚/G。初当たり確率に設定差",
-      "lastUpdated": "2026-05-17"
+      "description": "スマスロ スーパーリオエース2の解析データ。7個の役、8個の確定演出、6個の終了画面、7個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "takt-opus-destiny",
       "name": "Lタクトオーパス デスティニー",
       "type": "AT",
       "author": "コミュニティ",
-      "version": "1.1",
+      "version": "1.2",
       "file": "takt-opus-destiny/takt-opus-destiny.json",
       "tags": [
         "AT",
@@ -2510,15 +2512,15 @@
         "2026年5月",
         "新台"
       ],
-      "description": "アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり設定6突出型（設定4-6近接）",
-      "lastUpdated": "2026-05-16"
+      "description": "Lタクトオーパス デスティニーの解析データ。4個の役、15個の確定演出、10個の終了画面、4個の試行成功率を出典付きで登録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "galfy",
       "name": "LBスロット GALFY",
       "type": "BT",
       "author": "コミュニティ",
-      "version": "1.0",
+      "version": "1.1",
       "file": "galfy/galfy.json",
       "tags": [
         "BT",
@@ -2529,8 +2531,8 @@
         "2026年5月",
         "新台"
       ],
-      "description": "オーイズミのスマスロBT機（2026-05-25導入）。設定1・2・5・6の4段階。BIG/REG/BAR揃いA/ホネ揃い/GCチェリーに設定差。2026-05-31時点の実戦解析値ベースの暫定データ。",
-      "lastUpdated": "2026-05-31"
+      "description": "LBスロット GALFYの解析データ。49個の役、1個の確定演出、0個の終了画面、1個の試行成功率を出典付きで登録。",
+      "lastUpdated": "2026-09-30"
     },
     {
       "id": "aobuta",

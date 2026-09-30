@@ -2,17 +2,17 @@
 
 SlotAnalyzerアプリが参照するパチスロ機種データです。
 
-**現在の登録台数: 175台** (v3.11.0, 2026-09-30更新)
+**現在の登録台数: 175台** (v3.12.0, 2026-09-30更新)
 
 | タイプ | 台数 |
 | --- | ---: |
-| A-type | 14台 |
+| A-type | 13台 |
 | AT | 134台 |
 | A+RT | 2台 |
+| BT | 16台 |
 | A+AT | 4台 |
 | ART | 4台 |
 | A+ART | 2台 |
-| BT | 15台 |
 
 ### 品質指標
 
@@ -20,20 +20,22 @@ SlotAnalyzerアプリが参照するパチスロ機種データです。
 
 | 指標 | 件数 |
 | --- | ---: |
-| roles（非空） | 172/175 |
+| roles（非空） | 173/175 |
 | confirmationEvents（キー） | 175/175 |
-| endScreens（非空） | 150/175 |
-| trialSuccessRates（非空） | 158/175 |
+| endScreens（非空） | 153/175 |
+| trialSuccessRates（非空） | 157/175 |
 | description | 175/175 |
 | source | 175/175 |
 | voiceCounts（非空） | 37/175 |
-| provenance（出典記録） | 26/175 |
+| provenance（出典記録） | 36/175 |
 
-構造上の分類: Complete 172台 / Provisional 3台 / Incomplete 0台。
+構造上の分類: Complete 173台 / Provisional 2台 / Incomplete 0台。
 
 この自動分類はフィールドの充填状況を測ります。値の確度や鮮度を保証するものではありません。今回追加・見直しした機種は `provenance/` に項目ごとのURL・取得日・採用根拠を保存しています。既存全機種の出典整備は別工程です。
 
 出典の採否規則は `docs/data-format.md`、全件見直しの設計は `docs/superpowers/specs/2026-09-26-data-expansion-design.md` を参照してください。
+
+2026年1〜9月の導入済み全機種の照合結果は `docs/catalog-2026.json`。`node scripts/verify-year-catalog.mjs` で登録漏れを検査できます。
 
 ## 使い方
 

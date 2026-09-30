@@ -6,74 +6,129 @@
     {
       "id": "trophy_copper",
       "name": "サミートロフィー 銅",
-      "description": "銅トロフィー出現で設定2以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
-      "color": "#B87333"
+      "description": "設定2・3・4・5・6を示す。",
+      "color": "#B87333",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "trophy_silver",
       "name": "サミートロフィー 銀",
-      "description": "銀トロフィー出現で設定3以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["3", "4", "5", "6"],
-      "excludedSettings": ["1", "2"],
-      "color": "#C0C0C0"
+      "description": "設定3・4・5・6を示す。",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "trophy_gold",
       "name": "サミートロフィー 金",
-      "description": "金トロフィー出現で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "description": "設定4・5・6を示す。",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "trophy_kirin",
       "name": "サミートロフィー キリン柄",
-      "description": "キリン柄トロフィー出現で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#E0A800"
+      "description": "設定5・6を示す。",
+      "color": "#E0A800",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "trophy_rainbow",
       "name": "サミートロフィー 虹",
-      "description": "虹トロフィー出現で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "coin_456_4560",
       "name": "獲得枚数 456枚・4560枚",
-      "description": "獲得枚数表示456枚または4560枚で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "description": "設定4・5・6を示す。",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "coin_666_6666",
       "name": "獲得枚数 666枚・6666枚",
-      "description": "獲得枚数表示666枚または6666枚で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "voice_kami_itadaki",
       "name": "エンディングボイス「お前は神の頂きに〜」",
-      "description": "エンディングボイス「お前は神の頂きに〜」で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#9C27B0"
+      "description": "設定5・6を示す。",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "voice_ougon",
       "name": "エンディングボイス「その力で更なる黄金を〜」",
-      "description": "エンディングボイス「その力で更なる黄金を〜」で設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディングボイス「お前は神の領域に〜」",
+      "id": "ce_67f0a71b9d",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。"
+    },
+    {
+      "name": "エンディングボイス「さあ、伝説の始まりだ」",
+      "id": "ce_0921b9bac6",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
     }
   ],
   "endScreens": [
@@ -81,94 +136,489 @@
       "id": "end_hat",
       "name": "帽子",
       "type": "at_end",
-      "hint": "デフォルト",
-      "description": "AT終了画面が帽子（デフォルト・示唆なし）。情報源: nana-press/chonborista 確度2、出現率未判明",
-      "color": "#9E9E9E"
+      "description": "デフォルト",
+      "color": "#9E9E9E",
+      "hint": "デフォルト"
     },
     {
       "id": "end_gun_ball",
       "name": "銃&玉",
       "type": "at_end",
-      "hint": "偶数設定示唆",
-      "description": "AT終了画面が銃&玉で偶数設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "color": "#2196F3"
+      "description": "偶数設定示唆",
+      "color": "#2196F3",
+      "hint": "偶数設定示唆"
     },
     {
       "id": "end_sword",
       "name": "剣",
       "type": "at_end",
-      "hint": "高設定示唆",
-      "description": "AT終了画面が剣で高設定示唆（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "color": "#673AB7"
+      "description": "高設定示唆",
+      "color": "#673AB7",
+      "hint": "高設定示唆"
     },
     {
       "id": "end_treasure",
       "name": "宝の山",
       "type": "at_end",
-      "hint": "設定4以上濃厚",
-      "description": "AT終了画面が宝の山で設定4以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
-      "color": "#FFD700"
+      "description": "設定4・5・6を示す。",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "end_throne",
       "name": "玉座",
       "type": "at_end",
-      "hint": "設定5以上濃厚",
-      "description": "AT終了画面が玉座で設定5以上濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
-      "color": "#9C27B0"
+      "description": "設定5・6を示す。",
+      "color": "#9C27B0",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "end_gilgamesh",
       "name": "覚醒ギルガメッシュ",
       "type": "at_end",
-      "hint": "設定6濃厚",
-      "description": "AT終了画面が覚醒ギルガメッシュで設定6濃厚（定性示唆。情報源: nana-press/chonborista 確度2、出現率未判明）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
-      "color": "#FF4081"
+      "description": "設定6を示す。",
+      "color": "#FF4081",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "立ち絵",
+      "id": "es_fc82c3da5f",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "見返り",
+      "id": "es_25f2e9c430",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "終了画面の出現率 帽子",
+      "id": "es_803ccf78be",
+      "probabilities": {
+        "1": 0.775,
+        "2": 0.7154,
+        "3": 0.7533,
+        "4": 0.6717,
+        "5": 0.6636,
+        "6": 0.6
+      },
+      "description": "設定1: 77.5%、設定2: 71.54%、設定3: 75.33%、設定4: 67.17%、設定5: 66.36%、設定6: 60%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 銃&玉",
+      "id": "es_7a3611ca55",
+      "probabilities": {
+        "1": 0.15,
+        "2": 0.2,
+        "3": 0.155,
+        "4": 0.2,
+        "5": 0.16,
+        "6": 0.2
+      },
+      "description": "設定1: 15%、設定2: 20%、設定3: 15.5%、設定4: 20%、設定5: 16%、設定6: 20%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 剣",
+      "id": "es_c079edcb92",
+      "probabilities": {
+        "1": 0.075,
+        "2": 0.075,
+        "3": 0.08,
+        "4": 0.1,
+        "5": 0.1375,
+        "6": 0.15
+      },
+      "description": "設定1: 7.5%、設定2: 7.5%、設定3: 8%、設定4: 10%、設定5: 13.75%、設定6: 15%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 宝の山",
+      "id": "es_129eca7729",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.005,
+        "5": 0.005,
+        "6": 0.005
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0.5%、設定5: 0.5%、設定6: 0.5%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 立ち絵",
+      "id": "es_2a65af7a5b",
+      "probabilities": {
+        "1": 0,
+        "2": 0.0095,
+        "3": 0.0117,
+        "4": 0.0134,
+        "5": 0.0138,
+        "6": 0.0141
+      },
+      "description": "設定1: 0%、設定2: 0.95%、設定3: 1.17%、設定4: 1.34%、設定5: 1.38%、設定6: 1.41%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 見返り",
+      "id": "es_1b11a90bc3",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.0098,
+        "5": 0.0101,
+        "6": 0.0103
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0.98%、設定5: 1.01%、設定6: 1.03%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 玉座",
+      "id": "es_d7ab91bab3",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0.0101,
+        "6": 0.0103
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 1.01%、設定6: 1.03%",
+      "type": "other"
+    },
+    {
+      "name": "終了画面の出現率 覚醒ギルガメッシュ",
+      "id": "es_a0052eafe2",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0.0103
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 0%、設定6: 1.03%",
+      "type": "at_end"
     }
   ],
   "trialSuccessRates": [
     {
       "id": "cz_rate",
       "name": "CZ突入確率",
-      "description": "設定1: 1/337.7、設定2: 1/333.3、設定3: 1/326.6、設定4: 1/316.4、設定5: 1/311.4、設定6: 1/303.4。全設定とも実解析値（一撃/ちょんぼりすた/p-town独立一致、2026-05検証、線形補間は破棄済）",
-      "probabilities": {
-        "1": 0.002961,
-        "2": 0.003000,
-        "3": 0.003062,
-        "4": 0.003161,
-        "5": 0.003212,
-        "6": 0.003296
-      },
+      "description": "設定1: 1/337.7、設定6: 1/303.4",
       "displayOrder": 1,
-      "color": "#FF9800"
+      "color": "#FF9800",
+      "probabilities": {
+        "1": 0.00296121,
+        "2": 0.0030003,
+        "3": 0.00306185,
+        "4": 0.00316056,
+        "5": 0.0032113,
+        "6": 0.00329598
+      }
     },
     {
       "id": "at_first_hit",
       "name": "AT初当たり確率",
-      "description": "設定1: 1/629.3、設定2: 1/615.3、設定3: 1/599.1、設定4: 1/562.6、設定5: 1/551.1、設定6: 1/536.2。全設定とも実解析値（一撃/ちょんぼりすた独立一致、2026-05検証、線形補間は破棄済）",
-      "probabilities": {
-        "1": 0.001589,
-        "2": 0.001625,
-        "3": 0.001669,
-        "4": 0.001777,
-        "5": 0.001815,
-        "6": 0.001865
-      },
+      "description": "設定1: 1/629.3、設定6: 1/536.2",
       "displayOrder": 2,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "probabilities": {
+        "1": 0.00158907,
+        "2": 0.00162522,
+        "3": 0.00166917,
+        "4": 0.00177746,
+        "5": 0.00181455,
+        "6": 0.00186498
+      }
+    },
+    {
+      "name": "獲得枚数表示の出現率 456枚",
+      "id": "ts_ec27918f95",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.02,
+        "5": 0.02,
+        "6": 0.02
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 2%、設定5: 2%、設定6: 2%",
+      "displayOrder": 3
+    },
+    {
+      "name": "獲得枚数表示の出現率 4560枚",
+      "id": "ts_07101fd695",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.05,
+        "5": 0.05,
+        "6": 0.05
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 5%、設定5: 5%、設定6: 5%",
+      "displayOrder": 4
+    },
+    {
+      "name": "獲得枚数表示の出現率 666枚",
+      "id": "ts_48e06a5bae",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0.02
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 0%、設定6: 2%",
+      "displayOrder": 5
+    },
+    {
+      "name": "獲得枚数表示の出現率 6666枚",
+      "id": "ts_ec231b5ffb",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0.05
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 0%、設定6: 5%",
+      "displayOrder": 6
+    },
+    {
+      "name": "エンディングボイスの出現率「ほう、中々〜」",
+      "id": "ts_609f0e953e",
+      "probabilities": {
+        "1": 0.558,
+        "2": 0.585,
+        "3": 0.557,
+        "4": 0.52,
+        "5": 0.455,
+        "6": 0.455
+      },
+      "description": "設定1: 55.8%、設定2: 58.5%、設定3: 55.7%、設定4: 52%、設定5: 45.5%、設定6: 45.5%",
+      "displayOrder": 7
+    },
+    {
+      "name": "エンディングボイスの出現率「うはははは〜」",
+      "id": "ts_eec76a3030",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.1,
+        "3": 0.125,
+        "4": 0.1,
+        "5": 0.15,
+        "6": 0.1
+      },
+      "description": "設定1: 12.5%、設定2: 10%、設定3: 12.5%、設定4: 10%、設定5: 15%、設定6: 10%",
+      "displayOrder": 8
+    },
+    {
+      "name": "エンディングボイスの出現率「まだまだ突き進むか〜」",
+      "id": "ts_69d3f4de03",
+      "probabilities": {
+        "1": 0.1,
+        "2": 0.12,
+        "3": 0.1,
+        "4": 0.14,
+        "5": 0.1,
+        "6": 0.16
+      },
+      "description": "設定1: 10%、設定2: 12%、設定3: 10%、設定4: 14%、設定5: 10%、設定6: 16%",
+      "displayOrder": 9
+    },
+    {
+      "name": "エンディングボイスの出現率「己を信じ〜」",
+      "id": "ts_0e19dbac8e",
+      "probabilities": {
+        "1": 0.113,
+        "2": 0.075,
+        "3": 0.113,
+        "4": 0.075,
+        "5": 0.15,
+        "6": 0.075
+      },
+      "description": "設定1: 11.3%、設定2: 7.5%、設定3: 11.3%、設定4: 7.5%、設定5: 15%、設定6: 7.5%",
+      "displayOrder": 10
+    },
+    {
+      "name": "エンディングボイスの出現率「ここまで来たか〜」",
+      "id": "ts_dc9f3b4b4c",
+      "probabilities": {
+        "1": 0.075,
+        "2": 0.1,
+        "3": 0.075,
+        "4": 0.13,
+        "5": 0.075,
+        "6": 0.16
+      },
+      "description": "設定1: 7.5%、設定2: 10%、設定3: 7.5%、設定4: 13%、設定5: 7.5%、設定6: 16%",
+      "displayOrder": 11
+    },
+    {
+      "name": "エンディングボイスの出現率「もはや人の領域を〜」",
+      "id": "ts_a0a2f77ff4",
+      "probabilities": {
+        "1": 0.03,
+        "2": 0.02,
+        "3": 0.03,
+        "4": 0.02,
+        "5": 0.05,
+        "6": 0.02
+      },
+      "description": "設定1: 3%、設定2: 2%、設定3: 3%、設定4: 2%、設定5: 5%、設定6: 2%",
+      "displayOrder": 12
+    },
+    {
+      "name": "エンディングボイスの出現率「お前は神の領域に〜」",
+      "id": "ts_f9b9d558d4",
+      "probabilities": {
+        "1": 0,
+        "2": 0.0005,
+        "3": 0.0005,
+        "4": 0.01,
+        "5": 0.01,
+        "6": 0.01
+      },
+      "description": "設定1: 0%、設定2: 0.05%、設定3: 0.05%、設定4: 1%、設定5: 1%、設定6: 1%",
+      "displayOrder": 13
+    },
+    {
+      "name": "エンディングボイスの出現率「さあ、伝説の始まりだ」",
+      "id": "ts_61cb832ac0",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0.005,
+        "5": 0.005,
+        "6": 0.005
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0.5%、設定5: 0.5%、設定6: 0.5%",
+      "displayOrder": 14
+    },
+    {
+      "name": "エンディングボイスの出現率「お前は神の頂きに〜」",
+      "id": "ts_5097df994a",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0.005,
+        "6": 0.005
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 0.5%、設定6: 0.5%",
+      "displayOrder": 15
+    },
+    {
+      "name": "エンディングボイスの出現率「その力で更なる黄金を〜」",
+      "id": "ts_5d62cb83da",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0,
+        "6": 0.01
+      },
+      "description": "設定1: 0%、設定2: 0%、設定3: 0%、設定4: 0%、設定5: 0%、設定6: 1%",
+      "displayOrder": 16
+    },
+    {
+      "name": "初期ボールの数 2個",
+      "id": "ts_5c3de4dd97",
+      "probabilities": {
+        "1": 0.281,
+        "2": 0.281,
+        "3": 0.281,
+        "4": 0.281,
+        "5": 0.281,
+        "6": 0.281
+      },
+      "description": "設定1: 28.1%、設定2: 28.1%、設定3: 28.1%、設定4: 28.1%、設定5: 28.1%、設定6: 28.1%",
+      "displayOrder": 17
+    },
+    {
+      "name": "初期ボールの数 3個",
+      "id": "ts_8838e7123c",
+      "probabilities": {
+        "1": 0.563,
+        "2": 0.555,
+        "3": 0.551,
+        "4": 0.539,
+        "5": 0.527,
+        "6": 0.52
+      },
+      "description": "設定1: 56.3%、設定2: 55.5%、設定3: 55.1%、設定4: 53.9%、設定5: 52.7%、設定6: 52%",
+      "displayOrder": 18
+    },
+    {
+      "name": "初期ボールの数 4個",
+      "id": "ts_092986401f",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.129,
+        "3": 0.129,
+        "4": 0.133,
+        "5": 0.133,
+        "6": 0.137
+      },
+      "description": "設定1: 12.5%、設定2: 12.9%、設定3: 12.9%、設定4: 13.3%、設定5: 13.3%、設定6: 13.7%",
+      "displayOrder": 19
+    },
+    {
+      "name": "初期ボールの数 5個",
+      "id": "ts_e0eeab02d8",
+      "probabilities": {
+        "1": 0.031,
+        "2": 0.035,
+        "3": 0.039,
+        "4": 0.047,
+        "5": 0.059,
+        "6": 0.063
+      },
+      "description": "設定1: 3.1%、設定2: 3.5%、設定3: 3.9%、設定4: 4.7%、設定5: 5.9%、設定6: 6.3%",
+      "displayOrder": 20
     }
   ],
-  "voiceCounts": [],
-  "notes": "2026年5月11日導入。導入から実解析値判明済み（一撃/ちょんぼりすた/p-town で独立一致、2026-05検証、線形補間は破棄）。サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ確率設定1=1/337.7〜設定6=1/303.4、AT確率設定1=1/629.3〜設定6=1/536.2（CZ/AT初当たりとも設定1-6実解析値）、機械割設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。小役設定差は未公開のためroles未登録。終了画面6種/サミートロフィー5段階/獲得枚数/エンディングボイスを定性示唆として追加（情報源: nana-press/chonborista 確度2、出現率未判明）。情報源URL: https://www.p-world.co.jp/machine/database/10446 , https://web-greenbelt.jp/post-109819/ , https://nana-press.com/kaiseki/machine/1151/ , https://chonborista.com/slot/sammy-slot/254356/",
+  "notes": "全設定の値がそろわない項目・単一出典で採用条件を満たさない項目は登録していない。ドリームジャックポットボーナス突入確率: 全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる） 小役の設定別解析は未公開のためrolesは空。公表された試行成功率・設定示唆だけを利用する。",
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-05-17",
-  "source": "メーカー公式（サミー/銀座）、P-WORLD、ちょんぼりすた、なな徹、nana-press（確度2）、chonborista（確度2）",
-  "description": "サミー（銀座）製スマスロAT機。純増約8.2枚/G。CZ・AT初当たりに設定差（確度2解析公表値・Provisional、線形補間は破棄済）。機械割: 設定1=97.4%〜設定6=111.3%。コイン単価5.7円（スマスロ歴代1位）。プレミアムAT「DREAM JP BONUS」約1/8445。2026-05-11導入済。CZ/AT初当たり設定1-6実解析値判明（独立3ソース一致）。終了画面/トロフィー/ボイスは定性示唆判明。小役設定差は未公開のためroles未登録。"
+  "version": "1.2",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/sammy-slot/254356/)、DMMぱちタウン(https://p-town.dmm.com/machines/4981)、なな徹(https://nana-press.com/kaiseki/machine/1151/)",
+  "description": "スマスロ ビッグドリーム THE GOLDEN PUSHERの解析データ。0個の役、11個の確定演出、16個の終了画面、20個の試行成功率を出典付きで登録。"
 }
