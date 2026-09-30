@@ -1,0 +1,338 @@
+{
+  "name": "Lパチスロ 彼女、お借りします",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/172.0、設定6: 1/149.0。 引き戻しゾーンの66Gは通常時の分母から除く。",
+      "probabilities": {
+        "1": 0.00581395,
+        "2": 0.00591716,
+        "3": 0.00609756,
+        "4": 0.00649351,
+        "5": 0.00662252,
+        "6": 0.00671141
+      }
+    },
+    {
+      "name": "初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/269.0、設定6: 1/226.0。 引き戻しゾーンの66Gとそこで当選した引き戻しボーナスを除き、通常時の初当りを数える。",
+      "probabilities": {
+        "1": 0.00371747,
+        "2": 0.00380228,
+        "3": 0.00393701,
+        "4": 0.00425532,
+        "5": 0.004329,
+        "6": 0.00442478
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "RB中のキャラ紹介シナリオ⑥ 麻美から水着（水着4人）",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑦ 1人目が肺魚",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑧ 2人目が肺魚",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑨ 3人目が肺魚",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "3"
+      ]
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑩ 4人目が肺魚",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "4"
+      ]
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑪ 5人目が肺魚",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "5"
+      ]
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑫ 麻美だけ水着（水着1人）",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑬ 瑠夏だけ水着（水着1人）",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑭ 墨だけ水着（水着1人）",
+      "id": "event_009",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "RB中のキャラ紹介シナリオ⑮ 千鶴だけ水着（水着1人）",
+      "id": "event_010",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "攻略キャラのシナリオ 同シナリオが連続",
+      "id": "event_011",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "センチメートルの数値 44cm（紫）",
+      "id": "event_012",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "センチメートルの数値 55cm（赤）",
+      "id": "event_013",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "センチメートルの数値 66cm（金）",
+      "id": "event_014",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 246枚OVER",
+      "id": "event_015",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 456枚OVER",
+      "id": "event_016",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚OVER",
+      "id": "event_017",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 394枚OVER",
+      "id": "event_018",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のボイス 麻美「もう恋なんてしないって決めてるんだから」",
+      "id": "event_019",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のボイス 瑠夏「なんだか少しお酒の味」",
+      "id": "event_020",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のボイス 墨「今日は私がおもてなし」",
+      "id": "event_021",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のボイス 千鶴「私どんな顔してたかな」",
+      "id": "event_022",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "終了画面 赤枠",
+      "id": "screen_001",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "終了画面 紫枠",
+      "id": "screen_002",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "終了画面 銀枠",
+      "id": "screen_003",
+      "type": "other",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "終了画面 金枠",
+      "id": "screen_004",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "終了画面 白枠BBQ",
+      "id": "screen_005",
+      "type": "other",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "終了画面 白枠浜辺",
+      "id": "screen_006",
+      "type": "other",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "引き戻し期待度 非ユメカノモード",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0.247,
+        "2": 0.247,
+        "3": 0.247,
+        "4": 0.247,
+        "5": 0.247,
+        "6": 0.247
+      }
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/sankyo-slot/263079/)、DMMぱちタウン(https://p-town.dmm.com/machines/5065)、なな徹(https://nana-press.com/kaiseki/machine/1221/)",
+  "description": "SANKYOのスマスロAT機（2026-09-07導入、6段階設定）。CZ確率・初当りと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: 引き戻し期待度 ユメカノモード。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。"
+}

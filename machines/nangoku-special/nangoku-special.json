@@ -1,0 +1,96 @@
+{
+  "name": "L南国育ち SPECIAL",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "ボーナス初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/299.7、設定6: 1/262.4。 32G以内の連チャン・引き戻しは初当りに含めない。",
+      "probabilities": {
+        "1": 0.00333667,
+        "2": 0.0033761,
+        "4": 0.00361925,
+        "5": 0.00371609,
+        "6": 0.00381098
+      }
+    },
+    {
+      "name": "チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 2,
+      "color": "#E91E63",
+      "description": "設定1: 1/44.9、設定6: 1/44.9。",
+      "probabilities": {
+        "1": 0.0222717,
+        "2": 0.0222717,
+        "4": 0.0222717,
+        "5": 0.0222717,
+        "6": 0.0222717
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#4CAF50",
+      "description": "設定1: 1/99.9、設定6: 1/99.9。",
+      "probabilities": {
+        "1": 0.01001,
+        "2": 0.01001,
+        "4": 0.01001,
+        "5": 0.01001,
+        "6": 0.01001
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ボーナス終了時のボイス 今日の運勢は…可!",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了時のボイス 今日の運勢は…良!",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了時のボイス 今日の運勢は…極み!",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/amute/259472/)、DMMぱちタウン(https://p-town.dmm.com/machines/5031)、なな徹(https://nana-press.com/kaiseki/machine/1173/)",
+  "description": "アムテックスのスマスロAT機（2026-07-06導入、5段階設定）。ボーナス初当り・チェリー・スイカと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": ""
+}

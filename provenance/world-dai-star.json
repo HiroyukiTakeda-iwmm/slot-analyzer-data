@@ -1,0 +1,1124 @@
+{
+  "machineId": "world-dai-star",
+  "machineFile": "world-dai-star/world-dai-star.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/daito-slot/261144/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5055",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1177/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "180.6",
+          "2": "173.8",
+          "3": "168.3",
+          "4": "164.9",
+          "5": "163.0",
+          "6": "156.0"
+        },
+        "dmm": {
+          "1": "180.6",
+          "2": "173.8",
+          "3": "168.3",
+          "4": "164.9",
+          "5": "163.0",
+          "6": "156.0"
+        },
+        "nana": {
+          "1": "180.6",
+          "2": "173.8",
+          "3": "168.3",
+          "4": "164.9",
+          "5": "163.0",
+          "6": "156.0"
+        }
+      },
+      "adopted": {
+        "1": "180.6",
+        "2": "173.8",
+        "3": "168.3",
+        "4": "164.9",
+        "5": "163.0",
+        "6": "156.0"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "180.6",
+          "2": "173.8",
+          "3": "168.3",
+          "4": "164.9",
+          "5": "163.0",
+          "6": "156.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "306.5",
+          "2": "297.1",
+          "3": "284.1",
+          "4": "262.1",
+          "5": "257.1",
+          "6": "246.6"
+        },
+        "nana": {
+          "1": "306.5",
+          "2": "297.1",
+          "3": "284.1",
+          "4": "262.1",
+          "5": "257.1",
+          "6": "246.6"
+        }
+      },
+      "adopted": {
+        "1": "306.5",
+        "2": "297.1",
+        "3": "284.1",
+        "4": "262.1",
+        "5": "257.1",
+        "6": "246.6"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "306.5",
+          "2": "297.1",
+          "3": "284.1",
+          "4": "262.1",
+          "5": "257.1",
+          "6": "246.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "8.5",
+          "2": "8.5",
+          "3": "8.5",
+          "4": "8.5",
+          "5": "8.5",
+          "6": "8.5"
+        },
+        "nana": {
+          "1": "8.5",
+          "2": "8.5",
+          "3": "8.5",
+          "4": "8.5",
+          "5": "8.5",
+          "6": "8.5"
+        }
+      },
+      "adopted": {
+        "1": "8.5",
+        "2": "8.5",
+        "3": "8.5",
+        "4": "8.5",
+        "5": "8.5",
+        "6": "8.5"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "8.5",
+          "2": "8.5",
+          "3": "8.5",
+          "4": "8.5",
+          "5": "8.5",
+          "6": "8.5"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "共通ベル",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "9.9",
+          "2": "9.9",
+          "3": "9.9",
+          "4": "9.9",
+          "5": "9.9",
+          "6": "9.9"
+        },
+        "nana": {
+          "1": "9.9",
+          "2": "9.9",
+          "3": "9.9",
+          "4": "9.9",
+          "5": "9.9",
+          "6": "9.9"
+        }
+      },
+      "adopted": {
+        "1": "9.9",
+        "2": "9.9",
+        "3": "9.9",
+        "4": "9.9",
+        "5": "9.9",
+        "6": "9.9"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "9.9",
+          "2": "9.9",
+          "3": "9.9",
+          "4": "9.9",
+          "5": "9.9",
+          "6": "9.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "赤チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "31.4",
+          "2": "31.4",
+          "3": "31.4",
+          "4": "31.4",
+          "5": "31.4",
+          "6": "31.4"
+        },
+        "nana": {
+          "1": "31.4",
+          "2": "31.4",
+          "3": "31.4",
+          "4": "31.4",
+          "5": "31.4",
+          "6": "31.4"
+        }
+      },
+      "adopted": {
+        "1": "31.4",
+        "2": "31.4",
+        "3": "31.4",
+        "4": "31.4",
+        "5": "31.4",
+        "6": "31.4"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "31.4",
+          "2": "31.4",
+          "3": "31.4",
+          "4": "31.4",
+          "5": "31.4",
+          "6": "31.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "緑チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "38.9",
+          "2": "38.9",
+          "3": "38.9",
+          "4": "38.9",
+          "5": "38.9",
+          "6": "38.9"
+        },
+        "nana": {
+          "1": "38.9",
+          "2": "38.9",
+          "3": "38.9",
+          "4": "38.9",
+          "5": "38.9",
+          "6": "38.9"
+        }
+      },
+      "adopted": {
+        "1": "38.9",
+        "2": "38.9",
+        "3": "38.9",
+        "4": "38.9",
+        "5": "38.9",
+        "6": "38.9"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "38.9",
+          "2": "38.9",
+          "3": "38.9",
+          "4": "38.9",
+          "5": "38.9",
+          "6": "38.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "紫チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "59.3",
+          "2": "59.3",
+          "3": "59.3",
+          "4": "59.3",
+          "5": "59.3",
+          "6": "59.3"
+        },
+        "nana": {
+          "1": "59.3",
+          "2": "59.3",
+          "3": "59.3",
+          "4": "59.3",
+          "5": "59.3",
+          "6": "59.3"
+        }
+      },
+      "adopted": {
+        "1": "59.3",
+        "2": "59.3",
+        "3": "59.3",
+        "4": "59.3",
+        "5": "59.3",
+        "6": "59.3"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "59.3",
+          "2": "59.3",
+          "3": "59.3",
+          "4": "59.3",
+          "5": "59.3",
+          "6": "59.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "複合チャンス目（赤・緑）",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        },
+        "nana": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      },
+      "adopted": {
+        "1": "565.0",
+        "2": "565.0",
+        "3": "565.0",
+        "4": "565.0",
+        "5": "565.0",
+        "6": "565.0"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "複合チャンス目（赤・紫）",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        },
+        "nana": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      },
+      "adopted": {
+        "1": "565.0",
+        "2": "565.0",
+        "3": "565.0",
+        "4": "565.0",
+        "5": "565.0",
+        "6": "565.0"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "複合チャンス目（緑・紫）",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        },
+        "nana": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      },
+      "adopted": {
+        "1": "565.0",
+        "2": "565.0",
+        "3": "565.0",
+        "4": "565.0",
+        "5": "565.0",
+        "6": "565.0"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "565.0",
+          "2": "565.0",
+          "3": "565.0",
+          "4": "565.0",
+          "5": "565.0",
+          "6": "565.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ワールドダイスター目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        },
+        "nana": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        }
+      },
+      "adopted": {
+        "1": "16384.0",
+        "2": "16384.0",
+        "3": "16384.0",
+        "4": "16384.0",
+        "5": "16384.0",
+        "6": "16384.0"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "上位ST後の引き戻しゾーン移行率（オペラ座の怪人後以外）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "12.5%",
+          "2": "12.5%",
+          "3": "16.0%",
+          "4": "16.0%",
+          "5": "22.5%",
+          "6": "25.5%"
+        },
+        "dmm": {
+          "1": "12.5%",
+          "2": "12.5%",
+          "3": "16.0%",
+          "4": "16.0%",
+          "5": "22.5%",
+          "6": "25.5%"
+        },
+        "nana": {
+          "1": "12.5%",
+          "2": "12.5%",
+          "3": "16.0%",
+          "4": "16.0%",
+          "5": "22.5%",
+          "6": "25.5%"
+        }
+      },
+      "adopted": {
+        "1": "12.5%",
+        "2": "12.5%",
+        "3": "16.0%",
+        "4": "16.0%",
+        "5": "22.5%",
+        "6": "25.5%"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "12.5%",
+          "2": "12.5%",
+          "3": "16.0%",
+          "4": "16.0%",
+          "5": "22.5%",
+          "6": "25.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "上位ST後の引き戻しゾーン移行率（オペラ座の怪人後）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "100%",
+          "2": "100%",
+          "3": "100%",
+          "4": "100%",
+          "5": "100%",
+          "6": "100%"
+        },
+        "dmm": {
+          "1": "100%",
+          "2": "100%",
+          "3": "100%",
+          "4": "100%",
+          "5": "100%",
+          "6": "100%"
+        },
+        "nana": {
+          "1": "100%",
+          "2": "100%",
+          "3": "100%",
+          "4": "100%",
+          "5": "100%",
+          "6": "100%"
+        }
+      },
+      "adopted": {
+        "1": "100%",
+        "2": "100%",
+        "3": "100%",
+        "4": "100%",
+        "5": "100%",
+        "6": "100%"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "100%",
+          "2": "100%",
+          "3": "100%",
+          "4": "100%",
+          "5": "100%",
+          "6": "100%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ST中ボーナス当選時のセンス覚醒チャレンジ突入率",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "65%",
+          "2": "65%",
+          "3": "65%",
+          "4": "65%",
+          "5": "65%",
+          "6": "65%"
+        }
+      },
+      "adopted": {
+        "1": "65%",
+        "2": "65%",
+        "3": "65%",
+        "4": "65%",
+        "5": "65%",
+        "6": "65%"
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "1": "65%",
+          "2": "65%",
+          "3": "65%",
+          "4": "65%",
+          "5": "65%",
+          "6": "65%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー イナズマ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 浴衣2人",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 浴衣3人",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 222枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 444枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 557枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のサイン 白",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のサイン 紫",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のサイン 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のサイン 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-world-dai-star",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 紫",
+      "unit": "settings",
+      "values": {
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "最上位STのボーナス消化中のサイン 白",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "最上位STのボーナス消化中のサイン 紫",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "最上位STのボーナス消化中のサイン 金",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "最上位STのボーナス消化中のサイン 虹",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

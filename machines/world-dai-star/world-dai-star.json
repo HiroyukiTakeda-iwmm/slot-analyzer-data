@@ -1,0 +1,374 @@
+{
+  "name": "スロット ワールドダイスター",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/180.6、設定6: 1/156.0。",
+      "probabilities": {
+        "1": 0.0055371,
+        "2": 0.00575374,
+        "3": 0.00594177,
+        "4": 0.00606428,
+        "5": 0.00613497,
+        "6": 0.00641026
+      }
+    },
+    {
+      "name": "初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/306.5、設定6: 1/246.6。",
+      "probabilities": {
+        "1": 0.00326264,
+        "2": 0.00336587,
+        "3": 0.00351989,
+        "4": 0.00381534,
+        "5": 0.00388954,
+        "6": 0.00405515
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/8.5、設定6: 1/8.5。",
+      "probabilities": {
+        "1": 0.117647,
+        "2": 0.117647,
+        "3": 0.117647,
+        "4": 0.117647,
+        "5": 0.117647,
+        "6": 0.117647
+      }
+    },
+    {
+      "name": "共通ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFCA28",
+      "description": "設定1: 1/9.9、設定6: 1/9.9。",
+      "probabilities": {
+        "1": 0.10101,
+        "2": 0.10101,
+        "3": 0.10101,
+        "4": 0.10101,
+        "5": 0.10101,
+        "6": 0.10101
+      }
+    },
+    {
+      "name": "赤チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#9C27B0",
+      "description": "設定1: 1/31.4、設定6: 1/31.4。",
+      "probabilities": {
+        "1": 0.0318471,
+        "2": 0.0318471,
+        "3": 0.0318471,
+        "4": 0.0318471,
+        "5": 0.0318471,
+        "6": 0.0318471
+      }
+    },
+    {
+      "name": "緑チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#9C27B0",
+      "description": "設定1: 1/38.9、設定6: 1/38.9。",
+      "probabilities": {
+        "1": 0.0257069,
+        "2": 0.0257069,
+        "3": 0.0257069,
+        "4": 0.0257069,
+        "5": 0.0257069,
+        "6": 0.0257069
+      }
+    },
+    {
+      "name": "紫チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#9C27B0",
+      "description": "設定1: 1/59.3、設定6: 1/59.3。",
+      "probabilities": {
+        "1": 0.0168634,
+        "2": 0.0168634,
+        "3": 0.0168634,
+        "4": 0.0168634,
+        "5": 0.0168634,
+        "6": 0.0168634
+      }
+    },
+    {
+      "name": "複合チャンス目（赤・緑）",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#9C27B0",
+      "description": "設定1: 1/565.0、設定6: 1/565.0。",
+      "probabilities": {
+        "1": 0.00176991,
+        "2": 0.00176991,
+        "3": 0.00176991,
+        "4": 0.00176991,
+        "5": 0.00176991,
+        "6": 0.00176991
+      }
+    },
+    {
+      "name": "複合チャンス目（赤・紫）",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#9C27B0",
+      "description": "設定1: 1/565.0、設定6: 1/565.0。",
+      "probabilities": {
+        "1": 0.00176991,
+        "2": 0.00176991,
+        "3": 0.00176991,
+        "4": 0.00176991,
+        "5": 0.00176991,
+        "6": 0.00176991
+      }
+    },
+    {
+      "name": "複合チャンス目（緑・紫）",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/565.0、設定6: 1/565.0。",
+      "probabilities": {
+        "1": 0.00176991,
+        "2": 0.00176991,
+        "3": 0.00176991,
+        "4": 0.00176991,
+        "5": 0.00176991,
+        "6": 0.00176991
+      }
+    },
+    {
+      "name": "ワールドダイスター目",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#FF9800",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "3": 6.10352e-05,
+        "4": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "獲得枚数表示 222枚OVER",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 444枚OVER",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 557枚OVER",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚OVER",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のサイン 白",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のサイン 紫",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のサイン 金",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中のサイン 虹",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "コパンダトロフィー 銅",
+      "id": "screen_001",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "コパンダトロフィー 銀",
+      "id": "screen_002",
+      "type": "other",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "コパンダトロフィー 金",
+      "id": "screen_003",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "コパンダトロフィー イナズマ",
+      "id": "screen_004",
+      "type": "other",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "コパンダトロフィー 虹",
+      "id": "screen_005",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ST終了画面 浴衣2人",
+      "id": "screen_006",
+      "type": "st_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "ST終了画面 浴衣3人",
+      "id": "screen_007",
+      "type": "st_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "上位ST後の引き戻しゾーン移行率（オペラ座の怪人後以外）",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0.125,
+        "2": 0.125,
+        "3": 0.16,
+        "4": 0.16,
+        "5": 0.225,
+        "6": 0.255
+      },
+      "description": "上位ST終了時に結果が告知される機会を数える。ST中にボーナスを引き告知されなかった機会は判別できないため数えない。演目を区別し、オペラ座の怪人失敗後は通常の演目側のサンプルから除く。"
+    },
+    {
+      "name": "上位ST後の引き戻しゾーン移行率（オペラ座の怪人後）",
+      "id": "trial_002",
+      "probabilities": {
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
+      "description": "上位ST終了時に結果が告知される機会を数える。ST中にボーナスを引き告知されなかった機会は判別できないため数えない。演目を区別し、オペラ座の怪人失敗後は通常の演目側のサンプルから除く。"
+    },
+    {
+      "name": "ST中ボーナス当選時のセンス覚醒チャレンジ突入率",
+      "id": "trial_003",
+      "probabilities": {
+        "1": 0.65,
+        "2": 0.65,
+        "3": 0.65,
+        "4": 0.65,
+        "5": 0.65,
+        "6": 0.65
+      }
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/daito-slot/261144/)、DMMぱちタウン(https://p-town.dmm.com/machines/5055)、なな徹(https://nana-press.com/kaiseki/machine/1177/)",
+  "description": "パオン・ディーピーのスマスロAT機（2026-08-03導入、6段階設定）。CZ・初当り・リプレイ・共通ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: コパンダトロフィー 紫、最上位STのボーナス消化中のサイン 白、最上位STのボーナス消化中のサイン 紫、最上位STのボーナス消化中のサイン 金、最上位STのボーナス消化中のサイン 虹。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

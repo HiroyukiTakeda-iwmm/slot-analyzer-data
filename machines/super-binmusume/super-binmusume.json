@@ -1,0 +1,240 @@
+{
+  "name": "Lすーぱぁびん娘",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/498.7、設定6: 1/392.8。",
+      "probabilities": {
+        "1": 0.00200521,
+        "2": 0.00209293,
+        "4": 0.00223714,
+        "5": 0.00236183,
+        "6": 0.00254582
+      }
+    },
+    {
+      "name": "CZ合算確率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/395.7、設定6: 1/391.5。",
+      "probabilities": {
+        "1": 0.00252717,
+        "2": 0.00253293,
+        "4": 0.00253743,
+        "5": 0.00254582,
+        "6": 0.00255428
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "エンディング中の夢娘メダル 青メダル・フリー君",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "name": "エンディング中の夢娘メダル 赤メダル・びん娘",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル 赤メダル・すぱ娘",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル 赤メダル・しす娘",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル 金メダル・びん娘",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル 金メダル・すぱ娘",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル 金メダル・しす娘",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中の夢娘メダル ？？？",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 夢娘3人水着",
+      "id": "screen_001",
+      "type": "at_end",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 びん娘通常衣装",
+      "id": "screen_002",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 夢娘3人ライブ衣装",
+      "id": "screen_003",
+      "type": "at_end",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 ちゃぶ台返し",
+      "id": "screen_004",
+      "type": "at_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 すぱ娘ライブ衣装",
+      "id": "screen_005",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 しす娘ライブ衣装",
+      "id": "screen_006",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "AT終了画面 びん娘大富豪",
+      "id": "screen_007",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    },
+    {
+      "name": "びん娘トロフィー 銅",
+      "id": "screen_008",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "びん娘トロフィー 金",
+      "id": "screen_009",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "びん娘トロフィー ファイヤー柄",
+      "id": "screen_010",
+      "type": "other",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "びん娘トロフィー 虹",
+      "id": "screen_011",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/belko-slot/260918/)、DMMぱちタウン(https://p-town.dmm.com/machines/5038)、なな徹(https://nana-press.com/kaiseki/machine/1191/)",
+  "description": "ベルコのスマスロAT機（2026-08-03導入、5段階設定）。AT確率・CZ合算確率と、出典で採用できた設定判別項目を収録。",
+  "notes": " 未採用の主な項目: リプレイ、リリス、3枚ベル、弱チェリー、弱スイカ、弱チャンス目、強チェリー。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。"
+}

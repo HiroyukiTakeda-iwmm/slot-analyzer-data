@@ -2,17 +2,17 @@
 
 SlotAnalyzerアプリが参照するパチスロ機種データです。
 
-**現在の登録台数: 161台** (v3.10.0, 2026-09-30更新)
+**現在の登録台数: 175台** (v3.11.0, 2026-09-30更新)
 
 | タイプ | 台数 |
 | --- | ---: |
 | A-type | 14台 |
-| AT | 121台 |
+| AT | 134台 |
 | A+RT | 2台 |
 | A+AT | 4台 |
 | ART | 4台 |
 | A+ART | 2台 |
-| BT | 14台 |
+| BT | 15台 |
 
 ### 品質指標
 
@@ -20,16 +20,16 @@ SlotAnalyzerアプリが参照するパチスロ機種データです。
 
 | 指標 | 件数 |
 | --- | ---: |
-| roles（非空） | 158/161 |
-| confirmationEvents（キー） | 161/161 |
-| endScreens（非空） | 140/161 |
-| trialSuccessRates（非空） | 154/161 |
-| description | 161/161 |
-| source | 161/161 |
-| voiceCounts（非空） | 37/161 |
-| provenance（出典記録） | 12/161 |
+| roles（非空） | 172/175 |
+| confirmationEvents（キー） | 175/175 |
+| endScreens（非空） | 150/175 |
+| trialSuccessRates（非空） | 158/175 |
+| description | 175/175 |
+| source | 175/175 |
+| voiceCounts（非空） | 37/175 |
+| provenance（出典記録） | 26/175 |
 
-構造上の分類: Complete 158台 / Provisional 3台 / Incomplete 0台。
+構造上の分類: Complete 172台 / Provisional 3台 / Incomplete 0台。
 
 この自動分類はフィールドの充填状況を測ります。値の確度や鮮度を保証するものではありません。今回追加・見直しした機種は `provenance/` に項目ごとのURL・取得日・採用根拠を保存しています。既存全機種の出典整備は別工程です。
 

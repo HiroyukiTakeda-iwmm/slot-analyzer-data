@@ -1,0 +1,462 @@
+{
+  "name": "戦国コレクション6",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/363.6、設定6: 1/252.2。",
+      "probabilities": {
+        "1": 0.00275028,
+        "2": 0.00285388,
+        "3": 0.00303214,
+        "4": 0.00345543,
+        "5": 0.00372439,
+        "6": 0.00396511
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "セット開始時の扉絵 上杉謙信",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "セット開始時の扉絵 信長＋光秀（水着）",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "セット開始時の扉絵 味方キャラ6人",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "セット開始時の扉絵 デフォルメキャラ集合",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 222枚OVER",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 246枚OVER",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 456枚OVER",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 573枚OVER",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚OVER",
+      "id": "event_009",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中レア役時のPUSHボイス 楊貴妃",
+      "id": "event_010",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中レア役時のPUSHボイス クレオパトラ",
+      "id": "event_011",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "エンディング中レア役時のPUSHボイス 小野小町",
+      "id": "event_012",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 敵武将3人",
+      "id": "screen_001",
+      "type": "at_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 信長・光秀・利休・有楽",
+      "id": "screen_002",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 しずもん絵",
+      "id": "screen_003",
+      "type": "at_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 織田信長",
+      "id": "screen_004",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 小野小町",
+      "id": "screen_005",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "AT終了画面 水着①",
+      "id": "screen_006",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "AT終了画面 水着②",
+      "id": "screen_007",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    },
+    {
+      "name": "アリストロフィー 銅",
+      "id": "screen_008",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "アリストロフィー 銀",
+      "id": "screen_009",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "アリストロフィー 金",
+      "id": "screen_010",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "アリストロフィー クローバー柄",
+      "id": "screen_011",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "アリストロフィー 虹",
+      "id": "screen_012",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 青",
+      "id": "screen_013",
+      "type": "other",
+      "hint": "デフォルト"
+    },
+    {
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 緑",
+      "id": "screen_014",
+      "type": "other",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 赤",
+      "id": "screen_015",
+      "type": "other",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "夢幻斬りWONDERのリザルト画面 ランプ 虹",
+      "id": "screen_016",
+      "type": "other",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "天魔一閃の上乗せ振り分け 300枚",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0.402,
+        "2": 0.395,
+        "3": 0.378,
+        "4": 0.295,
+        "5": 0.247,
+        "6": 0.202
+      },
+      "description": "レア役以外で天魔一閃に当選したときだけを試行とする。"
+    },
+    {
+      "name": "天魔一閃の上乗せ振り分け 550枚",
+      "id": "trial_002",
+      "probabilities": {
+        "1": 0.148,
+        "2": 0.137,
+        "3": 0.128,
+        "4": 0.095,
+        "5": 0.079,
+        "6": 0.065
+      },
+      "description": "レア役以外で天魔一閃に当選したときだけを試行とする。"
+    },
+    {
+      "name": "天魔一閃の上乗せ振り分け 800枚",
+      "id": "trial_003",
+      "probabilities": {
+        "1": 0.098,
+        "2": 0.099,
+        "3": 0.092,
+        "4": 0.073,
+        "5": 0.062,
+        "6": 0.051
+      },
+      "description": "レア役以外で天魔一閃に当選したときだけを試行とする。"
+    },
+    {
+      "name": "天魔一閃の上乗せ振り分け 1050枚",
+      "id": "trial_004",
+      "probabilities": {
+        "1": 0.352,
+        "2": 0.369,
+        "3": 0.402,
+        "4": 0.537,
+        "5": 0.612,
+        "6": 0.682
+      },
+      "description": "レア役以外で天魔一閃に当選したときだけを試行とする。"
+    },
+    {
+      "name": "時幻城ミッションの対戦相手 楊貴妃",
+      "id": "trial_005",
+      "probabilities": {
+        "1": 0.578,
+        "2": 0.578,
+        "3": 0.578,
+        "4": 0.578,
+        "5": 0.578,
+        "6": 0.578
+      }
+    },
+    {
+      "name": "時幻城ミッションの対戦相手 クレオパトラ",
+      "id": "trial_006",
+      "probabilities": {
+        "1": 0.398,
+        "2": 0.398,
+        "3": 0.398,
+        "4": 0.398,
+        "5": 0.398,
+        "6": 0.398
+      }
+    },
+    {
+      "name": "時幻城ミッションの対戦相手 小野小町",
+      "id": "trial_007",
+      "probabilities": {
+        "1": 0.024,
+        "2": 0.024,
+        "3": 0.024,
+        "4": 0.024,
+        "5": 0.024,
+        "6": 0.024
+      }
+    },
+    {
+      "name": "AT中のSR役成立時の特化ゾーン振り分け ロボニャンドライブ",
+      "id": "trial_008",
+      "probabilities": {
+        "1": 0.5,
+        "2": 0.5,
+        "3": 0.5,
+        "4": 0.5,
+        "5": 0.5,
+        "6": 0.5
+      }
+    },
+    {
+      "name": "AT中のSR役成立時の特化ゾーン振り分け 夢幻斬りWONDER",
+      "id": "trial_009",
+      "probabilities": {
+        "1": 0.25,
+        "2": 0.25,
+        "3": 0.25,
+        "4": 0.25,
+        "5": 0.25,
+        "6": 0.25
+      }
+    },
+    {
+      "name": "AT中のSR役成立時の特化ゾーン振り分け 3人のコレクション",
+      "id": "trial_010",
+      "probabilities": {
+        "1": 0.25,
+        "2": 0.25,
+        "3": 0.25,
+        "4": 0.25,
+        "5": 0.25,
+        "6": 0.25
+      }
+    }
+  ],
+  "zones": [
+    {
+      "name": "AT中",
+      "isDefault": false,
+      "roles": [
+        {
+          "name": "ロボニャンドライブ",
+          "hasSettingDiff": true,
+          "displayOrder": 1,
+          "color": "#FF9800",
+          "description": "設定1: 1/3532.4、設定6: 1/3781.6。",
+          "probabilities": {
+            "1": 0.000283094,
+            "2": 0.000284204,
+            "3": 0.000280812,
+            "4": 0.00027603,
+            "5": 0.000271282,
+            "6": 0.000264438
+          }
+        },
+        {
+          "name": "夢幻斬りWONDER",
+          "hasSettingDiff": true,
+          "displayOrder": 2,
+          "color": "#FF9800",
+          "description": "設定1: 1/9415.7、設定6: 1/8195.5。",
+          "probabilities": {
+            "1": 0.000106206,
+            "2": 0.000106816,
+            "3": 0.000106924,
+            "4": 0.000110235,
+            "5": 0.00011596,
+            "6": 0.000122018
+          }
+        },
+        {
+          "name": "3人のコレクション",
+          "hasSettingDiff": true,
+          "displayOrder": 3,
+          "color": "#FF9800",
+          "description": "設定1: 1/24067.4、設定6: 1/24309.9。",
+          "probabilities": {
+            "1": 4.155e-05,
+            "2": 4.11093e-05,
+            "3": 4.14836e-05,
+            "4": 4.06237e-05,
+            "5": 4.08878e-05,
+            "6": 4.11355e-05
+          }
+        }
+      ]
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/konami-slot/257820/)、DMMぱちタウン(https://p-town.dmm.com/machines/5010)、なな徹(https://nana-press.com/kaiseki/machine/1156/)",
+  "description": "コナミアミューズメントのスマスロAT機（2026-07-06導入、6段階設定）。AT初当りと、出典で採用できた設定判別項目を収録。",
+  "notes": " 未採用の主な項目: 鬼ヶ島チャレンジ・振り向かせたいむ合算、リプレイ、弱チェリー、スイカ、弱チャンス目、強チャンス目、強チェリー。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

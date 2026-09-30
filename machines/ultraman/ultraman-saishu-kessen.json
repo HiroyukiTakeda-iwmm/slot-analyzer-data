@@ -1,0 +1,281 @@
+{
+  "name": "L ULTRAMAN 最終決戦",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "CZ初当り確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/272.8、設定6: 1/256.2。",
+      "probabilities": {
+        "1": 0.00366569,
+        "2": 0.00373552,
+        "3": 0.00380662,
+        "4": 0.00389105,
+        "5": 0.00389712,
+        "6": 0.0039032
+      }
+    },
+    {
+      "name": "AT初当り確率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/445.4、設定6: 1/422.4。",
+      "probabilities": {
+        "1": 0.00224517,
+        "2": 0.00228102,
+        "3": 0.00231857,
+        "4": 0.0023596,
+        "5": 0.00236351,
+        "6": 0.00236742
+      }
+    },
+    {
+      "name": "アクティベーションモード移行率",
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#FF9800",
+      "description": "設定1: 1/163.0、設定6: 1/154.1。",
+      "probabilities": {
+        "1": 0.00613497,
+        "2": 0.00629723,
+        "3": 0.00636943,
+        "4": 0.00646412,
+        "5": 0.00648088,
+        "6": 0.00648929
+      }
+    },
+    {
+      "name": "押し順ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFCA28",
+      "description": "設定1: 1/1.6、設定6: 1/1.6。",
+      "probabilities": {
+        "1": 0.625,
+        "2": 0.625,
+        "3": 0.625,
+        "4": 0.625,
+        "5": 0.625,
+        "6": 0.625
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#2196F3",
+      "description": "設定1: 1/8.4、設定6: 1/8.4。",
+      "probabilities": {
+        "1": 0.119048,
+        "2": 0.119048,
+        "3": 0.119048,
+        "4": 0.119048,
+        "5": 0.119048,
+        "6": 0.119048
+      }
+    },
+    {
+      "name": "共通ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FFCA28",
+      "description": "設定1: 1/20.0、設定6: 1/20.0。",
+      "probabilities": {
+        "1": 0.05,
+        "2": 0.05,
+        "3": 0.05,
+        "4": 0.05,
+        "5": 0.05,
+        "6": 0.05
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#E91E63",
+      "description": "設定1: 1/63.9、設定6: 1/63.9。",
+      "probabilities": {
+        "1": 0.0156495,
+        "2": 0.0156495,
+        "3": 0.0156495,
+        "4": 0.0156495,
+        "5": 0.0156495,
+        "6": 0.0156495
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#4CAF50",
+      "description": "設定1: 1/95.5、設定6: 1/95.5。",
+      "probabilities": {
+        "1": 0.0104712,
+        "2": 0.0104712,
+        "3": 0.0104712,
+        "4": 0.0104712,
+        "5": 0.0104712,
+        "6": 0.0104712
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/655.4、設定6: 1/655.4。",
+      "probabilities": {
+        "1": 0.00152579,
+        "2": 0.00152579,
+        "3": 0.00152579,
+        "4": 0.00152579,
+        "5": 0.00152579,
+        "6": 0.00152579
+      }
+    },
+    {
+      "name": "スペシウム目1個",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#FF9800",
+      "description": "設定1: 1/1170.3、設定6: 1/1170.3。",
+      "probabilities": {
+        "1": 0.000854482,
+        "2": 0.000854482,
+        "3": 0.000854482,
+        "4": 0.000854482,
+        "5": 0.000854482,
+        "6": 0.000854482
+      }
+    },
+    {
+      "name": "スペシウム目2個",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#FF9800",
+      "description": "設定1: 1/2730.7、設定6: 1/2730.7。",
+      "probabilities": {
+        "1": 0.000366206,
+        "2": 0.000366206,
+        "3": 0.000366206,
+        "4": 0.000366206,
+        "5": 0.000366206,
+        "6": 0.000366206
+      }
+    },
+    {
+      "name": "中段チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 12,
+      "color": "#E91E63",
+      "description": "設定1: 1/8192.0、設定6: 1/8192.0。",
+      "probabilities": {
+        "1": 0.00012207,
+        "2": 0.00012207,
+        "3": 0.00012207,
+        "4": 0.00012207,
+        "5": 0.00012207,
+        "6": 0.00012207
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "獲得枚数表記 246枚OVER",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表記 456枚OVER",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表記 666枚OVER",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 ウルトラマン集合",
+      "id": "screen_001",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 ウルトラマン（廃墟）",
+      "id": "screen_002",
+      "type": "at_end",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 ベムラー",
+      "id": "screen_003",
+      "type": "at_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "AT終了画面 味方3人①（ゾフィー＆ウルトラマン＆セブン）",
+      "id": "screen_004",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "AT終了画面 味方3人②（エース/タロウ/ジャック）",
+      "id": "screen_005",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 進次郎＆進",
+      "id": "screen_006",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）"
+    },
+    {
+      "name": "AT終了画面 エド＆ゼットン",
+      "id": "screen_007",
+      "type": "at_end",
+      "hint": "高設定示唆（強）"
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/kyoraku-slot/260318/)、DMMぱちタウン(https://p-town.dmm.com/machines/5048)、なな徹(https://nana-press.com/kaiseki/machine/1195/)",
+  "description": "オッケー.のスマスロAT機（2026-07-06導入、6段階設定）。CZ初当り確率・AT初当り確率・アクティベーションモード移行率・押し順ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: ブレイクモード最終ゲームのスペシウム目高確移行率 押し順ベル、ブレイクモード最終ゲームのスペシウム目高確移行率 リプレイ、ブレイクモード最終ゲームのスペシウム目高確移行率 共通ベル、ブレイクモード最終ゲームのスペシウム目高確移行率 レア小役、ブレイクモード最終ゲームのスペシウム目高確移行率 スペシウム目、ブレイクモード終了時のスペシウム目高確移行率 押し順ベル、ブレイクモード終了時のスペシウム目高確移行率 共通ベル。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。"
+}

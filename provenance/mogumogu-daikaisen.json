@@ -1,0 +1,908 @@
+{
+  "machineId": "mogumogu-daikaisen",
+  "machineFile": "mogumogu-daikaisen/mogumogu-daikaisen.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/net-slot/263515/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5059",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1226/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "324",
+          "2": "317",
+          "3": "310",
+          "4": "299",
+          "5": "292",
+          "6": "287"
+        },
+        "dmm": {
+          "1": "324",
+          "2": "317",
+          "3": "310",
+          "4": "299",
+          "5": "292",
+          "6": "287"
+        },
+        "nana": {
+          "1": "324",
+          "2": "317",
+          "3": "310",
+          "4": "299",
+          "5": "292",
+          "6": "287"
+        }
+      },
+      "adopted": {
+        "1": "324",
+        "2": "317",
+        "3": "310",
+        "4": "299",
+        "5": "292",
+        "6": "287"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "324",
+          "2": "317",
+          "3": "310",
+          "4": "299",
+          "5": "292",
+          "6": "287"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "431",
+          "2": "414",
+          "3": "399",
+          "4": "378",
+          "5": "364",
+          "6": "358"
+        },
+        "nana": {
+          "1": "431",
+          "2": "414",
+          "3": "399",
+          "4": "378",
+          "5": "364",
+          "6": "358"
+        }
+      },
+      "adopted": {
+        "1": "431",
+        "2": "414",
+        "3": "399",
+        "4": "378",
+        "5": "364",
+        "6": "358"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "431",
+          "2": "414",
+          "3": "399",
+          "4": "378",
+          "5": "364",
+          "6": "358"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "押し順ベル合算",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1.6",
+          "2": "1.6",
+          "3": "1.6",
+          "4": "1.6",
+          "5": "1.6",
+          "6": "1.6"
+        }
+      },
+      "adopted": {
+        "1": "1.6",
+        "2": "1.6",
+        "3": "1.6",
+        "4": "1.6",
+        "5": "1.6",
+        "6": "1.6"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "1.6",
+          "2": "1.6",
+          "3": "1.6",
+          "4": "1.6",
+          "5": "1.6",
+          "6": "1.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      },
+      "adopted": {
+        "1": "7.3",
+        "2": "7.3",
+        "3": "7.3",
+        "4": "7.3",
+        "5": "7.3",
+        "6": "7.3"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "1枚役",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7.6",
+          "2": "7.6",
+          "3": "7.6",
+          "4": "7.6",
+          "5": "7.6",
+          "6": "7.6"
+        }
+      },
+      "adopted": {
+        "1": "7.6",
+        "2": "7.6",
+        "3": "7.6",
+        "4": "7.6",
+        "5": "7.6",
+        "6": "7.6"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "7.6",
+          "2": "7.6",
+          "3": "7.6",
+          "4": "7.6",
+          "5": "7.6",
+          "6": "7.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "共通ベル（右下がり・1枚）",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "232.4",
+          "2": "232.4",
+          "3": "232.4",
+          "4": "232.4",
+          "5": "232.4",
+          "6": "232.4"
+        }
+      },
+      "adopted": {
+        "1": "232.4",
+        "2": "232.4",
+        "3": "232.4",
+        "4": "232.4",
+        "5": "232.4",
+        "6": "232.4"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "232.4",
+          "2": "232.4",
+          "3": "232.4",
+          "4": "232.4",
+          "5": "232.4",
+          "6": "232.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "共通ベル（平行・3枚）",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "18.2",
+          "2": "18.2",
+          "3": "18.2",
+          "4": "18.2",
+          "5": "18.2",
+          "6": "18.2"
+        }
+      },
+      "adopted": {
+        "1": "18.2",
+        "2": "18.2",
+        "3": "18.2",
+        "4": "18.2",
+        "5": "18.2",
+        "6": "18.2"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "18.2",
+          "2": "18.2",
+          "3": "18.2",
+          "4": "18.2",
+          "5": "18.2",
+          "6": "18.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "83.0",
+          "2": "83.0",
+          "3": "83.0",
+          "4": "83.0",
+          "5": "83.0",
+          "6": "83.0"
+        }
+      },
+      "adopted": {
+        "1": "83.0",
+        "2": "83.0",
+        "3": "83.0",
+        "4": "83.0",
+        "5": "83.0",
+        "6": "83.0"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "83.0",
+          "2": "83.0",
+          "3": "83.0",
+          "4": "83.0",
+          "5": "83.0",
+          "6": "83.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "72.8",
+          "2": "72.8",
+          "3": "72.8",
+          "4": "72.8",
+          "5": "72.8",
+          "6": "72.8"
+        }
+      },
+      "adopted": {
+        "1": "72.8",
+        "2": "72.8",
+        "3": "72.8",
+        "4": "72.8",
+        "5": "72.8",
+        "6": "72.8"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "72.8",
+          "2": "72.8",
+          "3": "72.8",
+          "4": "72.8",
+          "5": "72.8",
+          "6": "72.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チャンス目",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "292.6",
+          "2": "292.6",
+          "3": "292.6",
+          "4": "292.6",
+          "5": "292.6",
+          "6": "292.6"
+        }
+      },
+      "adopted": {
+        "1": "292.6",
+        "2": "292.6",
+        "3": "292.6",
+        "4": "292.6",
+        "5": "292.6",
+        "6": "292.6"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "292.6",
+          "2": "292.6",
+          "3": "292.6",
+          "4": "292.6",
+          "5": "292.6",
+          "6": "292.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "383.3",
+          "2": "383.3",
+          "3": "383.3",
+          "4": "383.3",
+          "5": "383.3",
+          "6": "383.3"
+        }
+      },
+      "adopted": {
+        "1": "383.3",
+        "2": "383.3",
+        "3": "383.3",
+        "4": "383.3",
+        "5": "383.3",
+        "6": "383.3"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "383.3",
+          "2": "383.3",
+          "3": "383.3",
+          "4": "383.3",
+          "5": "383.3",
+          "6": "383.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "428.3",
+          "2": "428.3",
+          "3": "428.3",
+          "4": "428.3",
+          "5": "428.3",
+          "6": "428.3"
+        }
+      },
+      "adopted": {
+        "1": "428.3",
+        "2": "428.3",
+        "3": "428.3",
+        "4": "428.3",
+        "5": "428.3",
+        "6": "428.3"
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "1": "428.3",
+          "2": "428.3",
+          "3": "428.3",
+          "4": "428.3",
+          "5": "428.3",
+          "6": "428.3"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 家来",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 大砲家来",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 忍モグ＆くモ一",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 モグ姫",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 モグ玄",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 騎乗モグ玄",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 モグー提督",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 全員集合",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "くまトロフィー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "くまトロフィー 銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "くまトロフィー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "くまトロフィー 熊柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "くまトロフィー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-mogumogu-daikaisen",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "CZ or AT直撃",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "32252.6"
+        },
+        "dmm": {
+          "1": "32252.6"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "role",
+      "name": "AT直撃",
+      "unit": "denominator",
+      "values": {
+        "nana": {
+          "1": "32252.6"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "弱チェリーのモグラ叩き当選率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.2%"
+        },
+        "dmm": {
+          "1": "0.2%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "弱チャンス目のモグラ叩き当選率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.6%"
+        },
+        "dmm": {
+          "1": "1.6%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "強チェリーのモグラ叩き当選率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4.7%"
+        },
+        "dmm": {
+          "1": "4.7%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "強チャンス目のモグラ叩き当選率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4.7%"
+        },
+        "dmm": {
+          "1": "4.7%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "制覇ロードの引き戻し期待度",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "31%"
+        },
+        "dmm": {
+          "1": "31%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "上位AT開始時のモグモグ超海戦突入率",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "33%"
+        },
+        "dmm": {
+          "1": "33%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "黒船襲来バトル成功時の移行先 モグモグ超海戦",
+      "unit": "percent",
+      "values": {
+        "nana": {
+          "1": "33%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

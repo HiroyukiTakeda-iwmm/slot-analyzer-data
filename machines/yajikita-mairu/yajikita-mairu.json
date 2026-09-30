@@ -1,0 +1,481 @@
+{
+  "name": "スマスロ やじきた道中記参る!",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "関所チャレンジ（CZ）初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/231.1、設定6: 1/157.5。",
+      "probabilities": {
+        "1": 0.00432713,
+        "2": 0.00449035,
+        "3": 0.00477327,
+        "4": 0.00522193,
+        "5": 0.00577701,
+        "6": 0.00634921
+      }
+    },
+    {
+      "name": "やじきた祭（AT）初当り",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/473.9、設定6: 1/318.3。",
+      "probabilities": {
+        "1": 0.00211015,
+        "2": 0.00218579,
+        "3": 0.00231696,
+        "4": 0.00257666,
+        "5": 0.0028401,
+        "6": 0.00314169
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/8.8、設定6: 1/8.8。",
+      "probabilities": {
+        "1": 0.113636,
+        "2": 0.113636,
+        "3": 0.113636,
+        "4": 0.113636,
+        "5": 0.113636,
+        "6": 0.113636
+      }
+    },
+    {
+      "name": "15枚ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFCA28",
+      "description": "設定1: 1/4.8、設定6: 1/4.8。",
+      "probabilities": {
+        "1": 0.208333,
+        "2": 0.208333,
+        "3": 0.208333,
+        "4": 0.208333,
+        "5": 0.208333,
+        "6": 0.208333
+      }
+    },
+    {
+      "name": "11枚ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#FFCA28",
+      "description": "設定1: 1/2.7、設定6: 1/2.7。",
+      "probabilities": {
+        "1": 0.37037,
+        "2": 0.37037,
+        "3": 0.37037,
+        "4": 0.37037,
+        "5": 0.37037,
+        "6": 0.37037
+      }
+    },
+    {
+      "name": "わっしょい1枚",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#FF9800",
+      "description": "設定1: 1/5.4、設定6: 1/5.4。",
+      "probabilities": {
+        "1": 0.185185,
+        "2": 0.185185,
+        "3": 0.185185,
+        "4": 0.185185,
+        "5": 0.185185,
+        "6": 0.185185
+      }
+    },
+    {
+      "name": "共通ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#FFCA28",
+      "description": "設定1: 1/27.8、設定6: 1/27.8。",
+      "probabilities": {
+        "1": 0.0359712,
+        "2": 0.0359712,
+        "3": 0.0359712,
+        "4": 0.0359712,
+        "5": 0.0359712,
+        "6": 0.0359712
+      }
+    },
+    {
+      "name": "祭目",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#FF9800",
+      "description": "設定1: 1/19.8、設定6: 1/19.8。",
+      "probabilities": {
+        "1": 0.0505051,
+        "2": 0.0505051,
+        "3": 0.0505051,
+        "4": 0.0505051,
+        "5": 0.0505051,
+        "6": 0.0505051
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/75.0、設定6: 1/75.0。",
+      "probabilities": {
+        "1": 0.0133333,
+        "2": 0.0133333,
+        "3": 0.0133333,
+        "4": 0.0133333,
+        "5": 0.0133333,
+        "6": 0.0133333
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#4CAF50",
+      "description": "設定1: 1/100.8、設定6: 1/100.8。",
+      "probabilities": {
+        "1": 0.00992063,
+        "2": 0.00992063,
+        "3": 0.00992063,
+        "4": 0.00992063,
+        "5": 0.00992063,
+        "6": 0.00992063
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#E91E63",
+      "description": "設定1: 1/364.1、設定6: 1/364.1。",
+      "probabilities": {
+        "1": 0.0027465,
+        "2": 0.0027465,
+        "3": 0.0027465,
+        "4": 0.0027465,
+        "5": 0.0027465,
+        "6": 0.0027465
+      }
+    },
+    {
+      "name": "チャンス目A",
+      "hasSettingDiff": false,
+      "displayOrder": 12,
+      "color": "#9C27B0",
+      "description": "設定1: 1/360.1、設定6: 1/360.1。",
+      "probabilities": {
+        "1": 0.00277701,
+        "2": 0.00277701,
+        "3": 0.00277701,
+        "4": 0.00277701,
+        "5": 0.00277701,
+        "6": 0.00277701
+      }
+    },
+    {
+      "name": "チャンス目B",
+      "hasSettingDiff": false,
+      "displayOrder": 13,
+      "color": "#9C27B0",
+      "description": "設定1: 1/360.1、設定6: 1/360.1。",
+      "probabilities": {
+        "1": 0.00277701,
+        "2": 0.00277701,
+        "3": 0.00277701,
+        "4": 0.00277701,
+        "5": 0.00277701,
+        "6": 0.00277701
+      }
+    },
+    {
+      "name": "チャンス目C",
+      "hasSettingDiff": false,
+      "displayOrder": 14,
+      "color": "#9C27B0",
+      "description": "設定1: 1/1024.0、設定6: 1/1024.0。",
+      "probabilities": {
+        "1": 0.000976563,
+        "2": 0.000976563,
+        "3": 0.000976563,
+        "4": 0.000976563,
+        "5": 0.000976563,
+        "6": 0.000976563
+      }
+    },
+    {
+      "name": "強チャンスリプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 15,
+      "color": "#2196F3",
+      "description": "設定1: 1/565.0、設定6: 1/565.0。",
+      "probabilities": {
+        "1": 0.00176991,
+        "2": 0.00176991,
+        "3": 0.00176991,
+        "4": 0.00176991,
+        "5": 0.00176991,
+        "6": 0.00176991
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "茜ちゃんの特殊枚数 コメント青色＋2",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "茜ちゃんの特殊枚数 コメント黄色＋7",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "茜ちゃんの特殊枚数 コメント白色＋10",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "茜ちゃんの特殊枚数 コメント赤色＋66",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中の手形 舞坂（紫）",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "1",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中の手形 亀山（紫）",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中の手形 鞠子（青）",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "name": "ED中の手形 吉田（緑）",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中の手形 熱田（赤）",
+      "id": "event_009",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中の手形 伊勢（金）",
+      "id": "event_010",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 555枚おーばー",
+      "id": "event_011",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚おーばー",
+      "id": "event_012",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 1111枚おーばー",
+      "id": "event_013",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 2222枚おーばー",
+      "id": "event_014",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 3333枚おーばー",
+      "id": "event_015",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 4444枚おーばー",
+      "id": "event_016",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 5555枚おーばー",
+      "id": "event_017",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 6666枚おーばー",
+      "id": "event_018",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "AT終了画面 街道",
+      "id": "screen_001",
+      "type": "at_end",
+      "hint": "奇数設定示唆"
+    },
+    {
+      "name": "AT終了画面 茶屋",
+      "id": "screen_002",
+      "type": "at_end",
+      "hint": "偶数設定示唆"
+    },
+    {
+      "name": "AT終了画面 茜ちゃん",
+      "id": "screen_003",
+      "type": "at_end",
+      "hint": "高設定示唆"
+    },
+    {
+      "name": "AT終了画面 やじさんきたさん",
+      "id": "screen_004",
+      "type": "at_end",
+      "hint": "高設定示唆（設定の確定には使わない）"
+    },
+    {
+      "name": "ユニバプレート 銅",
+      "id": "screen_005",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "ユニバプレート 銀",
+      "id": "screen_006",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "ユニバプレート 金",
+      "id": "screen_007",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "ユニバプレート 花火柄",
+      "id": "screen_008",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    },
+    {
+      "name": "ユニバプレート 虹",
+      "id": "screen_009",
+      "type": "other",
+      "hint": "設定との対応は未確定。確定演出としては扱わない。"
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/universal-slot/259841/)、DMMぱちタウン(https://p-town.dmm.com/machines/5027)、なな徹(https://nana-press.com/kaiseki/machine/1186/)",
+  "description": "ユニバーサルブロスのスマスロAT機（2026-08-03導入、6段階設定）。関所チャレンジ（CZ）初当り・やじきた祭（AT）初当り・リプレイ・15枚ベルと、出典で採用できた設定判別項目を収録。",
+  "notes": " 未採用の主な項目: AT直撃、関所チャレンジ中::ボーナス合算、AT中::ボーナス合算。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。"
+}

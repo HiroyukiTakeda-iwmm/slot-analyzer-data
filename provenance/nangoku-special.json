@@ -1,0 +1,193 @@
+{
+  "machineId": "nangoku-special",
+  "machineFile": "nangoku-special/nangoku-special.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/amute/259472/",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5031",
+      "retrievedAt": "2026-09-28"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1173/",
+      "retrievedAt": "2026-09-28"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "ボーナス初当り",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "299.7",
+          "2": "296.2",
+          "4": "276.3",
+          "5": "269.1",
+          "6": "262.4"
+        },
+        "nana": {
+          "1": "299.7",
+          "2": "296.2",
+          "4": "276.3",
+          "5": "269.1",
+          "6": "262.4"
+        }
+      },
+      "adopted": {
+        "1": "299.7",
+        "2": "296.2",
+        "4": "276.3",
+        "5": "269.1",
+        "6": "262.4"
+      },
+      "reread": {
+        "by": "reread-nangoku-special",
+        "value": {
+          "1": "299.7",
+          "2": "296.2",
+          "4": "276.3",
+          "5": "269.1",
+          "6": "262.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "44.9",
+          "2": "44.9",
+          "4": "44.9",
+          "5": "44.9",
+          "6": "44.9"
+        }
+      },
+      "adopted": {
+        "1": "44.9",
+        "2": "44.9",
+        "4": "44.9",
+        "5": "44.9",
+        "6": "44.9"
+      },
+      "reread": {
+        "by": "reread-nangoku-special",
+        "value": {
+          "1": "44.9",
+          "2": "44.9",
+          "4": "44.9",
+          "5": "44.9",
+          "6": "44.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "99.9",
+          "2": "99.9",
+          "4": "99.9",
+          "5": "99.9",
+          "6": "99.9"
+        }
+      },
+      "adopted": {
+        "1": "99.9",
+        "2": "99.9",
+        "4": "99.9",
+        "5": "99.9",
+        "6": "99.9"
+      },
+      "reread": {
+        "by": "reread-nangoku-special",
+        "value": {
+          "1": "99.9",
+          "2": "99.9",
+          "4": "99.9",
+          "5": "99.9",
+          "6": "99.9"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ボーナス終了時のボイス 今日の運勢は…可!",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ボーナス終了時のボイス 今日の運勢は…良!",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ボーナス終了時のボイス 今日の運勢は…極み!",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    }
+  ],
+  "candidates": [],
+  "removed": [],
+  "retiredIds": []
+}

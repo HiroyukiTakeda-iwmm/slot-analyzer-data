@@ -1,0 +1,88 @@
+{
+  "machineId": "triple-crown-x300",
+  "machineFile": "triple-crown/triple-crown-x300.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5089",
+      "retrievedAt": "2026-09-30"
+    },
+    {
+      "key": "yugi-nippon",
+      "kind": "analysis-site",
+      "url": "https://yugi-nippon.com/pachinko-new-machine/post-78699",
+      "retrievedAt": "2026-09-30"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "BIG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "303.41",
+          "2": "289.98",
+          "3": "276.52",
+          "4": "262.14",
+          "5": "249.19",
+          "6": "238.31"
+        },
+        "yugi-nippon": {
+          "1": "303.41",
+          "2": "289.98",
+          "3": "276.52",
+          "4": "262.14",
+          "5": "249.19",
+          "6": "238.31"
+        }
+      },
+      "adopted": {
+        "1": "303.41",
+        "2": "289.98",
+        "3": "276.52",
+        "4": "262.14",
+        "5": "249.19",
+        "6": "238.31"
+      }
+    },
+    {
+      "kind": "role",
+      "name": "REG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "481.88",
+          "2": "448.88",
+          "3": "422.81",
+          "4": "387.89",
+          "5": "356.17",
+          "6": "329.33"
+        },
+        "yugi-nippon": {
+          "1": "481.88",
+          "2": "448.88",
+          "3": "422.81",
+          "4": "387.89",
+          "5": "356.17",
+          "6": "329.33"
+        }
+      },
+      "adopted": {
+        "1": "481.88",
+        "2": "448.88",
+        "3": "422.81",
+        "4": "387.89",
+        "5": "356.17",
+        "6": "329.33"
+      }
+    }
+  ],
+  "candidates": [],
+  "removed": [],
+  "retiredIds": []
+}

@@ -1,5 +1,5 @@
 {
-  "version": "3.10.0",
+  "version": "3.11.0",
   "updatedAt": "2026-09-30T00:00:00Z",
   "machines": [
     {
@@ -2746,6 +2746,258 @@
         "新台"
       ],
       "description": "コナミアミューズメントのスマスロAT機（2026-08-03導入、6段階設定）。CZ・ボーナス初当りと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "birdie-wing",
+      "name": "スマスロ BIRDIE WING ‐Golf Girls' Story‐",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "birdie-wing/birdie-wing.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ユニバーサルブロス",
+        "6段階設定",
+        "2026年6月",
+        "新台"
+      ],
+      "description": "ユニバーサルブロスのスマスロAT機（2026-06-08導入、6段階設定）。通常時初当り・ST初当りと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "dark-haibi",
+      "name": "スマート沖スロ ダークハイビ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "dark-haibi/dark-haibi.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "パイオニア",
+        "5段階設定",
+        "2026年6月",
+        "新台"
+      ],
+      "description": "パイオニアのスマスロAT機（2026-06-22導入、5段階設定）。初当り・BB・RBと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "kanokari",
+      "name": "Lパチスロ 彼女、お借りします",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kanokari/kanokari.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "SANKYO",
+        "6段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "SANKYOのスマスロAT機（2026-09-07導入、6段階設定）。CZ確率・初当りと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "mogumogu-daikaisen",
+      "name": "モグモグ風林火山 大海戦の巻",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "mogumogu-daikaisen/mogumogu-daikaisen.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ネット",
+        "6段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "ネットのスマスロAT機（2026-09-07導入、6段階設定）。CZ確率・AT初当り・押し順ベル合算・リプレイと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "nangoku-special",
+      "name": "L南国育ち SPECIAL",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "nangoku-special/nangoku-special.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "アムテックス",
+        "5段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "アムテックスのスマスロAT機（2026-07-06導入、5段階設定）。ボーナス初当り・チェリー・スイカと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "sengoku-collection6",
+      "name": "戦国コレクション6",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sengoku-collection6/sengoku-collection6.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "コナミアミューズメント",
+        "6段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "コナミアミューズメントのスマスロAT機（2026-07-06導入、6段階設定）。AT初当りと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "sengokuotome5",
+      "name": "L戦国乙女5 業火を穿つ宿焔の双刃",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sengokuotome/sengokuotome5.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "オリンピア",
+        "6段階設定",
+        "2026年6月",
+        "新台"
+      ],
+      "description": "オリンピアのスマスロAT機（2026-06-08導入、6段階設定）。AT確率・戦国乙女ボーナス出現率・リプレイ・共通ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "sf6",
+      "name": "スマスロ ストリートファイター6",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sf5/sf6.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "レオスター",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "レオスターのスマスロAT機（2026-08-03導入、6段階設定）。ST初当り・ボーナス初当り・押し順ベル・目押しベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "super-binmusume",
+      "name": "Lすーぱぁびん娘",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "super-binmusume/super-binmusume.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ベルコ",
+        "5段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "ベルコのスマスロAT機（2026-08-03導入、5段階設定）。AT確率・CZ合算確率と、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "ultraman-saishu-kessen",
+      "name": "L ULTRAMAN 最終決戦",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "ultraman/ultraman-saishu-kessen.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "オッケー.",
+        "6段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "オッケー.のスマスロAT機（2026-07-06導入、6段階設定）。CZ初当り確率・AT初当り確率・アクティベーションモード移行率・押し順ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "world-dai-star",
+      "name": "スロット ワールドダイスター",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "world-dai-star/world-dai-star.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "パオン・ディーピー",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "パオン・ディーピーのスマスロAT機（2026-08-03導入、6段階設定）。CZ・初当り・リプレイ・共通ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "yabachiba",
+      "name": "ヤバチバ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "yabachiba/yabachiba.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ネット",
+        "5段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "ネットのスマスロAT機（2026-07-06導入、5段階設定）。初当り・虹7初当り・ベル集中確率と、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "yajikita-mairu",
+      "name": "スマスロ やじきた道中記参る!",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "yajikita-mairu/yajikita-mairu.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "ユニバーサルブロス",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "ユニバーサルブロスのスマスロAT機（2026-08-03導入、6段階設定）。関所チャレンジ（CZ）初当り・やじきた祭（AT）初当り・リプレイ・15枚ベルと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "triple-crown-x300",
+      "name": "LBトリプルクラウンX-300",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "triple-crown/triple-crown-x300.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "清龍ゲームジャパン",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "清龍ゲームジャパンのBT機。2026年8月3日導入。全6設定のBIG・REG確率を2媒体で照合。",
       "lastUpdated": "2026-09-30"
     }
   ]

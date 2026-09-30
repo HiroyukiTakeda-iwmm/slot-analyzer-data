@@ -1,0 +1,377 @@
+{
+  "name": "L戦国乙女5 業火を穿つ宿焔の双刃",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "AT確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#FF9800",
+      "description": "設定1: 1/359.5、設定6: 1/262.9。",
+      "probabilities": {
+        "1": 0.00278164,
+        "2": 0.00285063,
+        "3": 0.00300752,
+        "4": 0.00330251,
+        "5": 0.00355872,
+        "6": 0.00380373
+      }
+    },
+    {
+      "name": "戦国乙女ボーナス出現率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF9800",
+      "description": "設定1: 1/21206.7、設定6: 1/5502.7。",
+      "probabilities": {
+        "1": 4.71549e-05,
+        "2": 6.39023e-05,
+        "3": 7.60832e-05,
+        "4": 0.000122799,
+        "5": 0.000155579,
+        "6": 0.000181729
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#2196F3",
+      "description": "設定1: 1/9.4、設定6: 1/9.4。",
+      "probabilities": {
+        "1": 0.106383,
+        "2": 0.106383,
+        "3": 0.106383,
+        "4": 0.106383,
+        "5": 0.106383,
+        "6": 0.106383
+      }
+    },
+    {
+      "name": "共通ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFCA28",
+      "description": "設定1: 1/17.5、設定6: 1/17.5。",
+      "probabilities": {
+        "1": 0.0571429,
+        "2": 0.0571429,
+        "3": 0.0571429,
+        "4": 0.0571429,
+        "5": 0.0571429,
+        "6": 0.0571429
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "設定1: 1/69.4、設定6: 1/69.4。",
+      "probabilities": {
+        "1": 0.0144092,
+        "2": 0.0144092,
+        "3": 0.0144092,
+        "4": 0.0144092,
+        "5": 0.0144092,
+        "6": 0.0144092
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#E91E63",
+      "description": "設定1: 1/88.2、設定6: 1/88.2。",
+      "probabilities": {
+        "1": 0.0113379,
+        "2": 0.0113379,
+        "3": 0.0113379,
+        "4": 0.0113379,
+        "5": 0.0113379,
+        "6": 0.0113379
+      }
+    },
+    {
+      "name": "チャンス目A",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#9C27B0",
+      "description": "設定1: 1/392.4、設定6: 1/392.4。",
+      "probabilities": {
+        "1": 0.00254842,
+        "2": 0.00254842,
+        "3": 0.00254842,
+        "4": 0.00254842,
+        "5": 0.00254842,
+        "6": 0.00254842
+      }
+    },
+    {
+      "name": "チャンス目B",
+      "hasSettingDiff": false,
+      "displayOrder": 8,
+      "color": "#9C27B0",
+      "description": "設定1: 1/392.4、設定6: 1/392.4。",
+      "probabilities": {
+        "1": 0.00254842,
+        "2": 0.00254842,
+        "3": 0.00254842,
+        "4": 0.00254842,
+        "5": 0.00254842,
+        "6": 0.00254842
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 9,
+      "color": "#E91E63",
+      "description": "設定1: 1/397.2、設定6: 1/397.2。",
+      "probabilities": {
+        "1": 0.00251762,
+        "2": 0.00251762,
+        "3": 0.00251762,
+        "4": 0.00251762,
+        "5": 0.00251762,
+        "6": 0.00251762
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "獲得枚数表示 222枚 OVER",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 333枚 OVER",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 444枚 OVER",
+      "id": "event_003",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 555枚 OVER",
+      "id": "event_004",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "獲得枚数表示 666枚 OVER",
+      "id": "event_005",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス さんきゅ〜！",
+      "id": "event_006",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス ご機嫌っしょ！",
+      "id": "event_007",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス 攻めどきっしょ！",
+      "id": "event_008",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス 気分アゲアゲだし！",
+      "id": "event_009",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス 戦乱に忍ぶ深紅の影、石川ゴエモン！",
+      "id": "event_010",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ED中のゴエモンボイス なになに、気になるー？",
+      "id": "event_011",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "name": "ED中のゴエモンボイス ちょ〜っとホンキ出しちゃおっかな？",
+      "id": "event_012",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "3"
+      ]
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [
+    {
+      "name": "ボーナス終了画面 可スタンプ",
+      "id": "screen_001",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。 ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。"
+    },
+    {
+      "name": "ボーナス終了画面 吉スタンプ",
+      "id": "screen_002",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。"
+    },
+    {
+      "name": "ボーナス終了画面 良スタンプ",
+      "id": "screen_003",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。"
+    },
+    {
+      "name": "ボーナス終了画面 優スタンプ",
+      "id": "screen_004",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。"
+    },
+    {
+      "name": "ボーナス終了画面 極スタンプ",
+      "id": "screen_005",
+      "type": "bonus_end",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "ホールが出る時刻と種類を設定できるため、頻度から推定せず設定の組だけを使う。"
+    },
+    {
+      "name": "AT終了画面 乙女集合B",
+      "id": "screen_006",
+      "type": "at_end",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "金背景の画面。"
+    },
+    {
+      "name": "AT終了画面 乙女4人（イエヤス＆シンゲン＆カンスケ＆ヨシモト）テーブルAのとき",
+      "id": "screen_007",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "テーブルAであったことを確認できる場合だけ記録する。"
+    },
+    {
+      "name": "AT終了画面 乙女集合A（天国否定のとき）",
+      "id": "screen_008",
+      "type": "at_end",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "赤背景の画面。天国否定を確認してから記録する。"
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/orinpia-slot/256147/)、DMMぱちタウン(https://p-town.dmm.com/machines/5009)、なな徹(https://nana-press.com/kaiseki/machine/1160/)",
+  "description": "オリンピアのスマスロAT機（2026-06-08導入、6段階設定）。AT確率・戦国乙女ボーナス出現率・リプレイ・共通ベルと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "notes": " 未採用の主な項目: 強カワチャンス出現率、リールロック1段階、リールロック2段階、リールロック3段階、AT中::本能寺の変、本能寺の変 期待度、決戦ノ刻成功期待度。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}
