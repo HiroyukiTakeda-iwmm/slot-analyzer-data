@@ -1,0 +1,1341 @@
+{
+  "machineId": "takt-opus-destiny",
+  "machineFile": "takt-opus-destiny/takt-opus-destiny.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/amute/254099/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5000",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1142/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT初当たり確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "358.5",
+          "2": "350.3",
+          "3": "330.5",
+          "4": "299.3",
+          "5": "297.8",
+          "6": "297.4"
+        },
+        "nana": {
+          "1": "358.5",
+          "2": "350.3",
+          "3": "330.5",
+          "4": "299.3",
+          "5": "297.8",
+          "6": "297.4"
+        }
+      },
+      "adopted": {
+        "1": "358.5",
+        "2": "350.3",
+        "3": "330.5",
+        "4": "299.3",
+        "5": "297.8",
+        "6": "297.4"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "358.5",
+          "2": "350.3",
+          "3": "330.5",
+          "4": "299.3",
+          "5": "297.8",
+          "6": "297.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "デスティニーボーナス",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "770",
+          "2": "770",
+          "3": "770",
+          "4": "770",
+          "5": "770",
+          "6": "770"
+        }
+      },
+      "adopted": {
+        "1": "770",
+        "2": "770",
+        "3": "770",
+        "4": "770",
+        "5": "770",
+        "6": "770"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "770",
+          "2": "770",
+          "3": "770",
+          "4": "770",
+          "5": "770",
+          "6": "770"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ムジカートチャンス 巨人",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "452.5",
+          "2": "460.8",
+          "3": "479.4",
+          "4": "520.7",
+          "5": "524.6",
+          "6": "525.9"
+        },
+        "dmm": {
+          "1": "452.5",
+          "2": "460.8",
+          "3": "479.4",
+          "4": "520.7",
+          "5": "524.6",
+          "6": "525.9"
+        },
+        "nana": {
+          "1": "452.5",
+          "2": "460.8",
+          "3": "479.4",
+          "4": "520.7",
+          "5": "524.6",
+          "6": "525.9"
+        }
+      },
+      "adopted": {
+        "1": "452.5",
+        "2": "460.8",
+        "3": "479.4",
+        "4": "520.7",
+        "5": "524.6",
+        "6": "525.9"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "452.5",
+          "2": "460.8",
+          "3": "479.4",
+          "4": "520.7",
+          "5": "524.6",
+          "6": "525.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ムジカートチャンス 運命",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1311.1",
+          "2": "1255.6",
+          "3": "1128.1",
+          "4": "960.1",
+          "5": "961.2",
+          "6": "961.5"
+        },
+        "dmm": {
+          "1": "1311.1",
+          "2": "1255.6",
+          "3": "1128.1",
+          "4": "960.1",
+          "5": "961.2",
+          "6": "961.5"
+        },
+        "nana": {
+          "1": "1311.1",
+          "2": "1255.6",
+          "3": "1128.1",
+          "4": "960.1",
+          "5": "961.2",
+          "6": "961.5"
+        }
+      },
+      "adopted": {
+        "1": "1311.1",
+        "2": "1255.6",
+        "3": "1128.1",
+        "4": "960.1",
+        "5": "961.2",
+        "6": "961.5"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "1311.1",
+          "2": "1255.6",
+          "3": "1128.1",
+          "4": "960.1",
+          "5": "961.2",
+          "6": "961.5"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ムジカートチャンス シカゴ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "42972.5",
+          "2": "42359.6",
+          "3": "42574.3",
+          "4": "41959.7",
+          "5": "42118.7",
+          "6": "42191.4"
+        },
+        "dmm": {
+          "1": "42972.5",
+          "2": "42359.6",
+          "3": "42574.3",
+          "4": "41959.7",
+          "5": "42118.7",
+          "6": "42191.4"
+        },
+        "nana": {
+          "1": "42972.5",
+          "2": "42359.6",
+          "3": "42574.3",
+          "4": "41959.7",
+          "5": "42118.7",
+          "6": "42191.4"
+        }
+      },
+      "adopted": {
+        "1": "42972.5",
+        "2": "42359.6",
+        "3": "42574.3",
+        "4": "41959.7",
+        "5": "42118.7",
+        "6": "42191.4"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "42972.5",
+          "2": "42359.6",
+          "3": "42574.3",
+          "4": "41959.7",
+          "5": "42118.7",
+          "6": "42191.4"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::ムジカートバトル 地獄",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "145.5",
+          "2": "146.0",
+          "3": "147.0",
+          "4": "153.1",
+          "5": "167.1",
+          "6": "170.9"
+        },
+        "dmm": {
+          "1": "145.5",
+          "2": "146.0",
+          "3": "147.0",
+          "4": "153.1",
+          "5": "167.1",
+          "6": "170.9"
+        },
+        "nana": {
+          "1": "145.5",
+          "2": "146.0",
+          "3": "147.0",
+          "4": "153.1",
+          "5": "167.1",
+          "6": "170.9"
+        }
+      },
+      "adopted": {
+        "1": "145.5",
+        "2": "146.0",
+        "3": "147.0",
+        "4": "153.1",
+        "5": "167.1",
+        "6": "170.9"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "145.5",
+          "2": "146.0",
+          "3": "147.0",
+          "4": "153.1",
+          "5": "167.1",
+          "6": "170.9"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::ムジカートバトル 天国",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "337.3",
+          "2": "339.3",
+          "3": "342.9",
+          "4": "359.7",
+          "5": "392.4",
+          "6": "401.7"
+        },
+        "dmm": {
+          "1": "337.3",
+          "2": "339.3",
+          "3": "342.9",
+          "4": "359.7",
+          "5": "392.4",
+          "6": "401.7"
+        },
+        "nana": {
+          "1": "337.3",
+          "2": "339.3",
+          "3": "342.9",
+          "4": "359.7",
+          "5": "392.4",
+          "6": "401.7"
+        }
+      },
+      "adopted": {
+        "1": "337.3",
+        "2": "339.3",
+        "3": "342.9",
+        "4": "359.7",
+        "5": "392.4",
+        "6": "401.7"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "337.3",
+          "2": "339.3",
+          "3": "342.9",
+          "4": "359.7",
+          "5": "392.4",
+          "6": "401.7"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "AT中::ムジカートバトル オルフェ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "943.4",
+          "2": "900.2",
+          "3": "839.7",
+          "4": "593.9",
+          "5": "372.4",
+          "6": "340.2"
+        },
+        "dmm": {
+          "1": "943.4",
+          "2": "900.2",
+          "3": "839.7",
+          "4": "593.9",
+          "5": "372.4",
+          "6": "340.2"
+        },
+        "nana": {
+          "1": "943.4",
+          "2": "900.2",
+          "3": "839.7",
+          "4": "593.9",
+          "5": "372.4",
+          "6": "340.2"
+        }
+      },
+      "adopted": {
+        "1": "943.4",
+        "2": "900.2",
+        "3": "839.7",
+        "4": "593.9",
+        "5": "372.4",
+        "6": "340.2"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "943.4",
+          "2": "900.2",
+          "3": "839.7",
+          "4": "593.9",
+          "5": "372.4",
+          "6": "340.2"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT直撃（CZ→AT昇格率）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.4%",
+          "2": "2.4%",
+          "3": "4.7%",
+          "4": "8.7%",
+          "5": "8.8%",
+          "6": "8.9%"
+        },
+        "dmm": {
+          "1": "1.4%",
+          "2": "2.4%",
+          "3": "4.7%",
+          "4": "8.7%",
+          "5": "8.8%",
+          "6": "8.9%"
+        },
+        "nana": {
+          "1": "1.4%",
+          "2": "2.4%",
+          "3": "4.7%",
+          "4": "8.7%",
+          "5": "8.8%",
+          "6": "8.9%"
+        }
+      },
+      "adopted": {
+        "1": "1.4%",
+        "2": "2.4%",
+        "3": "4.7%",
+        "4": "8.7%",
+        "5": "8.8%",
+        "6": "8.9%"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "1.4%",
+          "2": "2.4%",
+          "3": "4.7%",
+          "4": "8.7%",
+          "5": "8.8%",
+          "6": "8.9%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "報酬チャンス当選率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "27.2%",
+          "2": "27.8%",
+          "3": "29.0%",
+          "4": "31.2%",
+          "5": "31.2%",
+          "6": "31.2%"
+        },
+        "dmm": {
+          "1": "27.2%",
+          "2": "27.8%",
+          "3": "29.0%",
+          "4": "31.2%",
+          "5": "31.2%",
+          "6": "31.2%"
+        },
+        "nana": {
+          "1": "27.2%",
+          "2": "27.8%",
+          "3": "29.0%",
+          "4": "31.2%",
+          "5": "31.2%",
+          "6": "31.2%"
+        }
+      },
+      "adopted": {
+        "1": "27.2%",
+        "2": "27.8%",
+        "3": "29.0%",
+        "4": "31.2%",
+        "5": "31.2%",
+        "6": "31.2%"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "27.2%",
+          "2": "27.8%",
+          "3": "29.0%",
+          "4": "31.2%",
+          "5": "31.2%",
+          "6": "31.2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "上位ATのループ率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "69.9%",
+          "2": "72.3%",
+          "3": "74.2%",
+          "4": "80.1%",
+          "5": "92.2%",
+          "6": "94.1%"
+        },
+        "dmm": {
+          "1": "69.9%",
+          "2": "72.3%",
+          "3": "74.2%",
+          "4": "80.1%",
+          "5": "92.2%",
+          "6": "94.1%"
+        },
+        "nana": {
+          "1": "69.9%",
+          "2": "72.3%",
+          "3": "74.2%",
+          "4": "80.1%",
+          "5": "92.2%",
+          "6": "94.1%"
+        }
+      },
+      "adopted": {
+        "1": "69.9%",
+        "2": "72.3%",
+        "3": "74.2%",
+        "4": "80.1%",
+        "5": "92.2%",
+        "6": "94.1%"
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "1": "69.9%",
+          "2": "72.3%",
+          "3": "74.2%",
+          "4": "80.1%",
+          "5": "92.2%",
+          "6": "94.1%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 可スタンプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 吉スタンプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 良スタンプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 優スタンプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 極スタンプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 運命＆巨人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 タクト＆コゼット",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 タクト＆運命",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 流れ星",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス終了画面 レニー＆巨人",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の画面 緑・タクト",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の画面 緑・巨人",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の画面 赤・アンナ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の画面 金・レニー",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中の画面 虹・運命",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "凪のセリフ 青・一味違いますね",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "凪のセリフ 緑・何やら不思議な気配です",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "凪のセリフ 赤・良い予感がします",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "凪のセリフ 銀・遊び尽くしちゃいましょう",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "凪のセリフ 金・お肉〜お肉〜",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 222枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 333枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 444枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 555枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-takt-opus-destiny",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "ムジカートチャンスのAT期待度 巨人",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "44%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ムジカートチャンスのAT期待度 運命",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "56%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ムジカートチャンスのAT期待度 シカゴ",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "76%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

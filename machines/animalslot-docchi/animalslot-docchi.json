@@ -4,44 +4,101 @@
   "roles": [
     {
       "name": "ボーナス初当たり",
-      "probabilities": {
-        "1": 0.005903,
-        "2": 0.006239,
-        "3": 0.006575,
-        "4": 0.006910,
-        "5": 0.007246,
-        "6": 0.007582
-      },
       "hasSettingDiff": true,
       "displayOrder": 1,
       "color": "#FF9800",
-      "description": "設定1: 1/169.4、設定6: 1/131.9。設定2-5は暫定補間値（Tier3メディア「ちょんぼりすた・一撃」で一致確認済み）"
+      "description": "設定1: 1/169.4、設定6: 1/131.9分母はSTとCZ「アニマルチャンス」を除いた通常時のゲーム数。同じボーナスを合算とBIG・REGの両方へ数えない。",
+      "probabilities": {
+        "1": 0.00590319,
+        "2": 0.00610501,
+        "3": 0.00633714,
+        "4": 0.00669792,
+        "5": 0.00713267,
+        "6": 0.0075815
+      }
+    },
+    {
+      "name": "チェリー",
+      "probabilities": {
+        "1": 0.0265252,
+        "2": 0.0271739,
+        "3": 0.0278552,
+        "4": 0.0285714,
+        "5": 0.0293255,
+        "6": 0.0301205
+      },
+      "description": "設定1: 1/37.7、設定6: 1/33.2",
+      "hasSettingDiff": true,
+      "color": "#F44336",
+      "displayOrder": 2
+    },
+    {
+      "name": "スイカ",
+      "probabilities": {
+        "1": 0.0184843,
+        "2": 0.018622,
+        "3": 0.018797,
+        "4": 0.0189753,
+        "5": 0.0191205,
+        "6": 0.0193424
+      },
+      "description": "設定1: 1/54.1、設定6: 1/51.7",
+      "hasSettingDiff": true,
+      "color": "#4CAF50",
+      "displayOrder": 3
     }
   ],
   "confirmationEvents": [
     {
       "name": "REG中ライオン登場",
-      "description": "REGボーナス中のキャラ紹介でライオン登場で設定4以上濃厚（出典: ちょんぼりすた・一撃、Tier3単独、サンプル蓄積中）",
-      "confirmedSettings": ["4", "5", "6"],
-      "excludedSettings": ["1", "2", "3"],
+      "description": "設定4・5・6を示す。REG中に実写の写真が登場したときが対象。通常のイラストは対象外。",
       "color": "#FB8C00",
-      "id": "reg_lion"
+      "id": "reg_lion",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "name": "REG中ブルドッグ登場",
-      "description": "REGボーナス中のキャラ紹介でブルドッグ登場で設定5以上濃厚（出典: ちょんぼりすた・一撃、Tier3単独、サンプル蓄積中）",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
+      "description": "設定5・6を示す。REG中に実写の写真が登場したときが対象。通常のイラストは対象外。",
       "color": "#90CAF9",
-      "id": "reg_bulldog"
+      "id": "reg_bulldog",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "name": "REG中ジャグラー登場",
-      "description": "REGボーナス中のキャラ紹介でジャグラー登場で設定6濃厚（出典: ちょんぼりすた・一撃、Tier3単独、サンプル蓄積中）",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
+      "description": "設定6を示す。REG中に実写の写真が登場したときが対象。通常のイラストは対象外。",
       "color": "#FFD700",
-      "id": "reg_juggler"
+      "id": "reg_juggler",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "REG中ペンギン登場",
+      "id": "ce_7ac26ccb9c",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ],
+      "description": "設定1を否定。REG中に実写の写真が登場したときが対象。通常のイラストは対象外。"
+    },
+    {
+      "name": "REG中ウサギ登場",
+      "id": "ce_1aac6847cc",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ],
+      "description": "設定2を否定。REG中に実写の写真が登場したときが対象。通常のイラストは対象外。"
     }
   ],
   "endScreens": [
@@ -49,85 +106,260 @@
       "id": "st_no_174",
       "name": "ST終了画面 No.174",
       "type": "st_end",
-      "hint": "ST終了画面の左下カード番号「174」表示",
-      "confirmedSettings": ["2", "3", "4", "5", "6"],
-      "excludedSettings": ["1"],
       "color": "#FFA000",
-      "description": "ST終了画面の左下カード番号174で設定1否定示唆。Tier3 3媒体（ちょんぼりすた・一撃・DMMぱちタウン）一致掲載だが独立検証未確立のため、設定推測には参考値として扱う（FS-5: 媒体間の循環参照リスクあり）"
+      "description": "設定1を否定。",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
     },
     {
       "id": "st_no_555",
       "name": "ST終了画面 No.555",
       "type": "st_end",
-      "hint": "ST終了画面の左下カード番号「555」表示",
-      "confirmedSettings": ["5", "6"],
-      "excludedSettings": ["1", "2", "3", "4"],
       "color": "#7B1FA2",
-      "description": "ST終了画面の左下カード番号555で設定5以上濃厚示唆。Tier3 3媒体（ちょんぼりすた・一撃・DMMぱちタウン）一致掲載だが独立検証未確立のため、設定推測には参考値として扱う（FS-5: 媒体間の循環参照リスクあり）"
+      "description": "設定5・6を示す。",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
     },
     {
       "id": "st_no_666",
       "name": "ST終了画面 No.666",
       "type": "st_end",
-      "hint": "ST終了画面の左下カード番号「666」表示",
-      "confirmedSettings": ["6"],
-      "excludedSettings": ["1", "2", "3", "4", "5"],
       "color": "#FFD700",
-      "description": "ST終了画面の左下カード番号666で設定6濃厚示唆。Tier3 3媒体（ちょんぼりすた・一撃・DMMぱちタウン）一致掲載だが独立検証未確立のため、設定推測には参考値として扱う（FS-5: 媒体間の循環参照リスクあり）"
+      "description": "設定6を示す。",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ST終了画面 老忍",
+      "id": "es_27691d0ba6",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ],
+      "description": "設定2を否定。",
+      "type": "st_end"
+    },
+    {
+      "name": "ST終了画面 トップスター",
+      "id": "es_13279c1dbd",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・4・6を示す。",
+      "type": "st_end"
+    },
+    {
+      "name": "ST終了画面 格闘ペンギン",
+      "id": "es_24b59be868",
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・5・6を示す。",
+      "type": "st_end"
+    },
+    {
+      "name": "ST終了画面 巫女ウサギ",
+      "id": "es_fbda90f27d",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。",
+      "type": "st_end"
+    },
+    {
+      "name": "ST終了画面 赤チップのみ",
+      "id": "es_f739d2f389",
+      "hint": "高設定示唆",
+      "description": "高設定示唆。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "st_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 13～25の奇数マスにチップ3枚ずつ",
+      "id": "es_8a27619e5d",
+      "hint": "奇数設定示唆（弱）",
+      "description": "奇数設定示唆（弱）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 14～24の偶数マスにチップ3枚ずつ",
+      "id": "es_bb544764a9",
+      "hint": "偶数設定示唆（弱）",
+      "description": "偶数設定示唆（弱）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 13～25の奇数マスにチップ5枚ずつ",
+      "id": "es_c2366f7033",
+      "hint": "奇数設定示唆（強）",
+      "description": "奇数設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 14～24の偶数マスにチップ5枚ずつ",
+      "id": "es_2d0edc031e",
+      "hint": "偶数設定示唆（強）",
+      "description": "偶数設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 2nd 12と♦赤マス",
+      "id": "es_52f0f703b6",
+      "hint": "高設定示唆（弱）",
+      "description": "高設定示唆（弱）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 2nd 12と♦黒マス",
+      "id": "es_7e88524a46",
+      "hint": "高設定示唆（強）",
+      "description": "高設定示唆（強）。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 1・4・7マス",
+      "id": "es_33dc5eb605",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ],
+      "description": "設定1を否定。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 2・4・7マス",
+      "id": "es_10c130c407",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ],
+      "description": "設定2を否定。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 2・4・6マス",
+      "id": "es_3371d9d0bf",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・4・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 2・5・6マス",
+      "id": "es_57e2eff011",
+      "confirmedSettings": [
+        "2",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 4・5・6マス",
+      "id": "es_70b3ddb7ff",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 5・6マス",
+      "id": "es_5fbed5d61a",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ジャングルボーナス終了画面 6マス",
+      "id": "es_e74cf0047c",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。",
+      "type": "bonus_end"
     }
   ],
   "trialSuccessRates": [
     {
       "id": "big_rate",
       "name": "BIG確率",
-      "description": "設定1: 1/329.7、設定6: 1/227.4。設定2-5は暫定補間値（Tier3メディア一致確認済み）",
-      "probabilities": {
-        "1": 0.003033,
-        "2": 0.003306,
-        "3": 0.003579,
-        "4": 0.003852,
-        "5": 0.004125,
-        "6": 0.004398
-      },
+      "description": "設定1: 1/329.7、設定6: 1/227.4分母はSTとCZ「アニマルチャンス」を除いた通常時のゲーム数。同じボーナスを合算とBIG・REGの両方へ数えない。",
       "displayOrder": 1,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "probabilities": {
+        "1": 0.00303306,
+        "2": 0.00317763,
+        "3": 0.00338295,
+        "4": 0.00364564,
+        "5": 0.00401445,
+        "6": 0.00439754
+      }
     },
     {
       "id": "reg_rate",
       "name": "REG確率",
-      "description": "設定1: 1/349.5、設定6: 1/314.3。設定2-5は暫定補間値（Tier3メディア一致確認済み）",
-      "probabilities": {
-        "1": 0.002861,
-        "2": 0.002925,
-        "3": 0.002989,
-        "4": 0.003053,
-        "5": 0.003117,
-        "6": 0.003182
-      },
+      "description": "設定1: 1/349.5、設定6: 1/314.3分母はSTとCZ「アニマルチャンス」を除いた通常時のゲーム数。同じボーナスを合算とBIG・REGの両方へ数えない。",
       "displayOrder": 2,
-      "color": "#2196F3"
+      "color": "#2196F3",
+      "probabilities": {
+        "1": 0.00286123,
+        "2": 0.00291715,
+        "3": 0.00294638,
+        "4": 0.00304785,
+        "5": 0.00311042,
+        "6": 0.00318167
+      }
     },
     {
       "id": "bonus_total",
       "name": "ボーナス合算確率",
-      "description": "設定1: 1/169.4、設定6: 1/131.9。設定2-5は暫定補間値（Tier3メディア一致確認済み）",
-      "probabilities": {
-        "1": 0.005903,
-        "2": 0.006239,
-        "3": 0.006575,
-        "4": 0.006910,
-        "5": 0.007246,
-        "6": 0.007582
-      },
+      "description": "設定1: 1/169.4、設定6: 1/131.9分母はSTとCZ「アニマルチャンス」を除いた通常時のゲーム数。同じボーナスを合算とBIG・REGの両方へ数えない。",
       "displayOrder": 3,
-      "color": "#9C27B0"
+      "color": "#9C27B0",
+      "probabilities": {
+        "1": 0.00590319,
+        "2": 0.00610501,
+        "3": 0.00633714,
+        "4": 0.00669792,
+        "5": 0.00713267,
+        "6": 0.0075815
+      }
     }
   ],
-  "voiceCounts": [],
-  "notes": "2026年4月20日導入。導入後10日経過時点で設定2-5の値はTier3メディア（ちょんぼりすた・一撃）で一致確認済み（独立検証は継続中）。SSAT（Simple Smart AT）第2弾。通常ボーナス純増約2.5枚/G、ジャングルボーナス純増約5.5枚/G。STループ率: 初回約40%、2回目以降約82%。機械割: 設定1=97.6%〜設定6=108.2%。\n\n【小役設定別テーブル（Tier3 2媒体一致・参考値）】出典: ちょんぼりすた・一撃の2サイトが同一テーブルを掲載（独立検証は未確立。同一元ソースからの孫引きの可能性あり、設定推測には参考値として低い重みで扱うこと）。\n- チェリー: 設定1=1/37.69、設定2=1/36.78、設定3=1/35.89、設定4=1/34.99、設定5=1/34.10、設定6=1/33.22（高設定ほど優遇）\n- スイカ: 設定1=1/54.12、設定2=1/53.67、設定3=1/53.15、設定4=1/52.72、設定5=1/52.26、設定6=1/51.73（高設定ほど優遇）\nホール実測30日経過後（2026-05-20以降）に再評価し、独立検証成立した時点で正式な roles として昇格を検討。\n\n【ST終了画面 No.555/No.666】endScreens に正式登録済み（formalize済→endScreens 参照）。\n\n【未解明残課題】ジャングルボーナス終了画面の個別チップ配置パターン（「2・5・6」「5・6」「6」等）の正確な命名・対応は1サイトのみ言及で命名規則不明確のため見送り。次回再調査時にホール実測データから収集予定。",
+  "notes": "全設定の値がそろわない項目・単一出典で採用条件を満たさない項目は登録していない。チェリー・スイカ合算: 全設定がそろった出典が1つだけ（ちょんぼりすた以外）",
   "author": "コミュニティ",
-  "version": "1.0",
-  "lastUpdated": "2026-04-30",
-  "source": "ちょんぼりすた、DMMぱちタウン、P-WORLD",
-  "description": "北電子製スマスロAT機（SSAT第2弾）。ボーナス合算確率に設定差（設定1: 1/169.4→設定6: 1/131.9）。STループ率初回約40%・2回目以降約82%。導入前のため終了画面・確定演出等は暫定データ。"
+  "version": "1.1",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/kitadenshi/252447/)、DMMぱちタウン(https://p-town.dmm.com/machines/4964)、なな徹(https://nana-press.com/kaiseki/machine/1126/)",
+  "description": "Lアニマルスロットドッチの解析データ。3個の役、5個の確定演出、21個の終了画面、3個の試行成功率を出典付きで登録。"
 }

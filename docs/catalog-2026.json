@@ -1,0 +1,1620 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "from": "2026-01-01",
+    "through": "2026-09-30",
+    "region": "Japan",
+    "kind": "pachislot"
+  },
+  "retrievedAt": "2026-09-30",
+  "summary": {
+    "total": 52,
+    "existing": 26,
+    "added": 26,
+    "uniqueDataIds": 51,
+    "unresolved": 0
+  },
+  "monthlyCoverage": [
+    {
+      "month": "2026-01",
+      "total": 4,
+      "existing": 4,
+      "added": 0
+    },
+    {
+      "month": "2026-02",
+      "total": 6,
+      "existing": 6,
+      "added": 0
+    },
+    {
+      "month": "2026-03",
+      "total": 2,
+      "existing": 2,
+      "added": 0
+    },
+    {
+      "month": "2026-04",
+      "total": 9,
+      "existing": 9,
+      "added": 0
+    },
+    {
+      "month": "2026-05",
+      "total": 5,
+      "existing": 5,
+      "added": 0
+    },
+    {
+      "month": "2026-06",
+      "total": 4,
+      "existing": 0,
+      "added": 4
+    },
+    {
+      "month": "2026-07",
+      "total": 7,
+      "existing": 0,
+      "added": 7
+    },
+    {
+      "month": "2026-08",
+      "total": 9,
+      "existing": 0,
+      "added": 9
+    },
+    {
+      "month": "2026-09",
+      "total": 6,
+      "existing": 0,
+      "added": 6
+    }
+  ],
+  "sourceInterpretation": "P-WORLD月別9本と一撃月別9本を照合し、一撃にない8月1機種はDMMの月別一覧で補完。メーカー主欄はP-WORLD表記。販売元・製造元などの媒体によるメーカー名の差はsourcesの原表記で保持する。",
+  "machines": [
+    {
+      "calendarKey": "l_hokuto_tensei2",
+      "name": "スマスロ 北斗の拳 転生の章2",
+      "maker": "サミー",
+      "introducedAt": "2026-01-05",
+      "dataId": "hokuto-tensei2",
+      "catalogName": "スマスロ北斗の拳 転生の章2",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-01",
+          "name": "スマスロ 北斗の拳 転生の章2",
+          "maker": "サミー",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202601/",
+          "machineUrl": "https://1geki.jp/slot/l_hokuto_tensei2/",
+          "name": "スマスロ 北斗の拳 転生の章2",
+          "maker": "GINZA（銀座）",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_tekken6",
+      "name": "スマスロ鉄拳6",
+      "maker": "山佐",
+      "introducedAt": "2026-01-05",
+      "dataId": "tekken6",
+      "catalogName": "スマスロ鉄拳6",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-01",
+          "name": "スマスロ鉄拳6",
+          "maker": "山佐",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202601/",
+          "machineUrl": "https://1geki.jp/slot/l_tekken6/",
+          "name": "スマスロ鉄拳6",
+          "maker": "YAMASA（山佐）",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_new_king_hanahana_v",
+      "name": "スマート沖スロ ニューキングハナハナV",
+      "maker": "パイオニア",
+      "introducedAt": "2026-01-05",
+      "dataId": "new-king-hanahana-v",
+      "catalogName": "ニューキングハナハナV",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-01",
+          "name": "スマート沖スロ ニューキングハナハナV",
+          "maker": "パイオニア",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202601/",
+          "machineUrl": "https://1geki.jp/slot/l_new_king_hanahana_v/",
+          "name": "スマート沖スロ　ニューキングハナハナV",
+          "maker": "PIONEER（パイオニア）",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "30パイとスマスロは別型式。メーカー公式の共通設定表と既存の両対応記録により同じデータIDを参照する。",
+      "variant": {
+        "groupId": "new-king-hanahana-v",
+        "kind": "smart_slot",
+        "modelNumber": "LBニューキングハナハナVPF",
+        "sharedCatalogId": "new-king-hanahana-v",
+        "basisUrl": "https://www.slot-pioneer.co.jp/information/pdf/new_king_hanahana_v.pdf",
+        "sharedSpecUrl": "https://www.slot-pioneer.co.jp/product/new_king_hanahana_v/pop/pop_pdf.pdf"
+      }
+    },
+    {
+      "calendarKey": "s_new_king_hanahana_v30",
+      "name": "ニューキングハナハナV‐30",
+      "maker": "パイオニア",
+      "introducedAt": "2026-01-05",
+      "dataId": "new-king-hanahana-v",
+      "catalogName": "ニューキングハナハナV",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-01",
+          "name": "ニューキングハナハナV‐30",
+          "maker": "パイオニア",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202601/",
+          "machineUrl": "https://1geki.jp/slot/s_new_king_hanahana_v30/",
+          "name": "ニューキングハナハナV-30",
+          "maker": "PIONEER（パイオニア）",
+          "introducedAt": "2026-01-05",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "30パイとスマスロは別型式。メーカー公式の共通設定表と既存の両対応記録により同じデータIDを参照する。",
+      "variant": {
+        "groupId": "new-king-hanahana-v",
+        "kind": "30mm_coin",
+        "modelNumber": "SBニューキングハナハナVPA-30",
+        "sharedCatalogId": "new-king-hanahana-v",
+        "basisUrl": "https://www.slot-pioneer.co.jp/information/pdf/new_king_hanahana_v.pdf",
+        "sharedSpecUrl": "https://www.slot-pioneer.co.jp/product/new_king_hanahana_v/pop/pop_pdf.pdf"
+      }
+    },
+    {
+      "calendarKey": "l_ennenn2",
+      "name": "Lパチスロ 炎炎ノ消防隊2",
+      "maker": "SANKYO",
+      "introducedAt": "2026-02-02",
+      "dataId": "enen-shouboutai2",
+      "catalogName": "Lパチスロ炎炎ノ消防隊2",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "Lパチスロ 炎炎ノ消防隊2",
+          "maker": "SANKYO",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_ennenn2/",
+          "name": "Lパチスロ 炎炎ノ消防隊2",
+          "maker": "SANKYO（三共）",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_umineko2",
+      "name": "Lパチスロうみねこのなく頃に2",
+      "maker": "オーイズミ",
+      "introducedAt": "2026-02-02",
+      "dataId": "umineko2",
+      "catalogName": "Lパチスロうみねこのなく頃に2",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "Lパチスロうみねこのなく頃に2",
+          "maker": "オーイズミ",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_umineko2/",
+          "name": "Lパチスロうみねこのなく頃に2",
+          "maker": "OIZUMI AMUZIO(オーイズミアミュージオ)",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_baki2",
+      "name": "L範馬刃牙",
+      "maker": "オリンピア",
+      "introducedAt": "2026-02-02",
+      "dataId": "hanma-baki",
+      "catalogName": "L範馬刃牙",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "L範馬刃牙",
+          "maker": "オリンピア",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_baki2/",
+          "name": "Ｌ範馬刃牙",
+          "maker": "OLYMPIA（オリンピア）",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_goblinslayer2",
+      "name": "スマスロ ゴブリンスレイヤーII",
+      "maker": "JFJ",
+      "introducedAt": "2026-02-02",
+      "dataId": "goblinslayer2",
+      "catalogName": "スマスロ ゴブリンスレイヤーII",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "スマスロ ゴブリンスレイヤーII",
+          "maker": "JFJ",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_goblinslayer2/",
+          "name": "スマスロ ゴブリンスレイヤーⅡ",
+          "maker": "JFJ（ジェイエフジェイ）",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_hanabi",
+      "name": "スマスロ ハナビ",
+      "maker": "アクロス",
+      "introducedAt": "2026-02-02",
+      "dataId": "sumaslo-hanabi",
+      "catalogName": "スマスロ ハナビ",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "スマスロ ハナビ",
+          "maker": "アクロス",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_hanabi/",
+          "name": "スマスロ ハナビ",
+          "maker": "ACROSS（アクロス）",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_kokaku",
+      "name": "スマスロ 攻殻機動隊",
+      "maker": "サミー",
+      "introducedAt": "2026-02-02",
+      "dataId": "koukaku-kidoutai",
+      "catalogName": "スマスロ攻殻機動隊",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-02",
+          "name": "スマスロ 攻殻機動隊",
+          "maker": "サミー",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202602/",
+          "machineUrl": "https://1geki.jp/slot/l_kokaku/",
+          "name": "スマスロ 攻殻機動隊",
+          "maker": "Sammy（サミー）",
+          "introducedAt": "2026-02-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "公開一覧のスマスロ攻殻機動隊には既存の代表ID koukaku-kidoutai を使用。同名既存IDの統合や削除は行わない。"
+    },
+    {
+      "calendarKey": "l_thunder_v",
+      "name": "スマスロ サンダーV",
+      "maker": "エレコ",
+      "introducedAt": "2026-03-02",
+      "dataId": "smaslo-thunderv",
+      "catalogName": "スマスロ サンダーV",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-03",
+          "name": "スマスロ サンダーV",
+          "maker": "エレコ",
+          "introducedAt": "2026-03-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202603/",
+          "machineUrl": "https://1geki.jp/slot/l_thunder_v/",
+          "name": "スマスロ サンダーV",
+          "maker": "ELECO（エレコ）",
+          "introducedAt": "2026-03-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_kabaneri2",
+      "name": "スマスロ 甲鉄城のカバネリ 海門(うなと)決戦",
+      "maker": "サミー",
+      "introducedAt": "2026-03-02",
+      "dataId": "kabaneri-unato",
+      "catalogName": "スマスロ 甲鉄城のカバネリ 海門決戦",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-03",
+          "name": "スマスロ 甲鉄城のカバネリ 海門(うなと)決戦",
+          "maker": "サミー",
+          "introducedAt": "2026-03-02",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202603/",
+          "machineUrl": "https://1geki.jp/slot/l_kabaneri2/",
+          "name": "スマスロ 甲鉄城のカバネリ 海門（うなと）決戦",
+          "maker": "TAIYO ELEC（タイヨーエレック）",
+          "introducedAt": "2026-03-02",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_isekai_quartet",
+      "name": "A‐SLOT+ 異世界かるてっとBT",
+      "maker": "サミー",
+      "introducedAt": "2026-04-06",
+      "dataId": "isekai-quartet-bt",
+      "catalogName": "A-SLOT+ 異世界かるてっと BT",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "A‐SLOT+ 異世界かるてっとBT",
+          "maker": "サミー",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_isekai_quartet/",
+          "name": "A-SLOT+ 異世界かるてっと BT",
+          "maker": "GINZA（銀座）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "lb_triplecrown_seven",
+      "name": "LBトリプルクラウンセブン",
+      "maker": "岡崎産業",
+      "introducedAt": "2026-04-06",
+      "dataId": "triple-crown-seven",
+      "catalogName": "LBトリプルクラウンセブン",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "LBトリプルクラウンセブン",
+          "maker": "岡崎産業",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/lb_triplecrown_seven/",
+          "name": "LBトリプルクラウンセブン",
+          "maker": "OKAZAKI（岡崎産業）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_akudama_drive",
+      "name": "Lアクダマドライブ",
+      "maker": "サンスリー",
+      "introducedAt": "2026-04-06",
+      "dataId": "akudama-drive",
+      "catalogName": "スマスロ アクダマドライブ",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "Lアクダマドライブ",
+          "maker": "サンスリー",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_akudama_drive/",
+          "name": "Lアクダマドライブ",
+          "maker": "SanThree（サンスリー）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_kyokousuiri",
+      "name": "L虚構推理",
+      "maker": "D-light",
+      "introducedAt": "2026-04-06",
+      "dataId": "kyoko-suiri",
+      "catalogName": "スマスロ虚構推理",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "L虚構推理",
+          "maker": "D-light",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_kyokousuiri/",
+          "name": "L虚構推理",
+          "maker": "Idol（アイドル）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_jormungand",
+      "name": "スマスロヨルムンガンド",
+      "maker": "山佐ネクスト",
+      "introducedAt": "2026-04-06",
+      "dataId": "yormungandr",
+      "catalogName": "スマスロヨルムンガンド",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "スマスロヨルムンガンド",
+          "maker": "山佐ネクスト",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_jormungand/",
+          "name": "スマスロヨルムンガンド",
+          "maker": "YAMASA NEXT（山佐ネクスト）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_shinuchi_yoshimune",
+      "name": "真打 吉宗",
+      "maker": "大都技研",
+      "introducedAt": "2026-04-06",
+      "dataId": "shinuchi-yoshimune",
+      "catalogName": "L真打吉宗",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "真打 吉宗",
+          "maker": "大都技研",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_shinuchi_yoshimune/",
+          "name": "真打 吉宗",
+          "maker": "Daito（大都技研）",
+          "introducedAt": "2026-04-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_gundam_uc2",
+      "name": "Lパチスロ 機動戦士ガンダムユニコーン 覚醒DRIVE",
+      "maker": "ビスティ",
+      "introducedAt": "2026-04-20",
+      "dataId": "gundam-unicorn2",
+      "catalogName": "Ｌパチスロ機動戦士ガンダムユニコーン 覚醒DRIVE",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "Lパチスロ 機動戦士ガンダムユニコーン 覚醒DRIVE",
+          "maker": "ビスティ",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_gundam_uc2/",
+          "name": "Ｌパチスロ 機動戦士ガンダムユニコーン 覚醒DRIVE",
+          "maker": "Bisty（ビスティ）",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_asd",
+      "name": "アニマルスロットドッチ",
+      "maker": "北電子",
+      "introducedAt": "2026-04-20",
+      "dataId": "animalslot-docchi",
+      "catalogName": "Lアニマルスロットドッチ",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "アニマルスロットドッチ",
+          "maker": "北電子",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_asd/",
+          "name": "アニマルスロット ドッチ",
+          "maker": "KITA DENSHI（北電子）",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_milliongod_kiseki",
+      "name": "スマスロ ミリオンゴッド‐神々の軌跡‐",
+      "maker": "ミズホ",
+      "introducedAt": "2026-04-20",
+      "dataId": "milliongod-kiseki",
+      "catalogName": "スマスロ ミリオンゴッド-神々の軌跡-",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-04",
+          "name": "スマスロ ミリオンゴッド‐神々の軌跡‐",
+          "maker": "ミズホ",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202604/",
+          "machineUrl": "https://1geki.jp/slot/l_milliongod_kiseki/",
+          "name": "スマスロ ミリオンゴッド-神々の軌跡-",
+          "maker": "MIZUHO（ミズホ）",
+          "introducedAt": "2026-04-20",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_takt_op_destiny",
+      "name": "Lタクトオーパス デスティニー",
+      "maker": "アムテックス",
+      "introducedAt": "2026-05-11",
+      "dataId": "takt-opus-destiny",
+      "catalogName": "Lタクトオーパス デスティニー",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-05",
+          "name": "Lタクトオーパス デスティニー",
+          "maker": "アムテックス",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202605/",
+          "machineUrl": "https://1geki.jp/slot/l_takt_op_destiny/",
+          "name": "Ｌタクトオーパス デスティニー",
+          "maker": "AMTEX（アムテックス）",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_bhr2",
+      "name": "スマスロ バイオハザードRE:3",
+      "maker": "エンターライズ",
+      "introducedAt": "2026-05-11",
+      "dataId": "biohazard-re3",
+      "catalogName": "Lパチスロ バイオハザードRE:3",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-05",
+          "name": "スマスロ バイオハザードRE:3",
+          "maker": "エンターライズ",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202605/",
+          "machineUrl": "https://1geki.jp/slot/l_bhr2/",
+          "name": "スマスロ バイオハザードRE:3",
+          "maker": "Enterrise（エンターライズ）",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        }
+      ],
+      "identityNote": "先頭の機種区分表記・空白・読み仮名の違い。前作や別スペックへの対応付けではない。"
+    },
+    {
+      "calendarKey": "l_bigdream",
+      "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
+      "maker": "サミー",
+      "introducedAt": "2026-05-11",
+      "dataId": "big-dream-golden-pusher",
+      "catalogName": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-05",
+          "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
+          "maker": "サミー",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202605/",
+          "machineUrl": "https://1geki.jp/slot/l_bigdream/",
+          "name": "スマスロ ビッグドリーム THE GOLDEN PUSHER",
+          "maker": "GINZA（銀座）",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_sp_rioace2",
+      "name": "スマスロスーパーリオエース2",
+      "maker": "山佐ネクスト",
+      "introducedAt": "2026-05-11",
+      "dataId": "super-rio-ace2",
+      "catalogName": "スマスロ スーパーリオエース2",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-05",
+          "name": "スマスロスーパーリオエース2",
+          "maker": "山佐ネクスト",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202605/",
+          "machineUrl": "https://1geki.jp/slot/l_sp_rioace2/",
+          "name": "スマスロスーパーリオエース2",
+          "maker": "YAMASA NEXT（山佐ネクスト）",
+          "introducedAt": "2026-05-11",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "lb_galfy",
+      "name": "LBスロットGALFY",
+      "maker": "オーイズミ",
+      "introducedAt": "2026-05-25",
+      "dataId": "galfy",
+      "catalogName": "LBスロット GALFY",
+      "status": "existing",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-05",
+          "name": "LBスロットGALFY",
+          "maker": "オーイズミ",
+          "introducedAt": "2026-05-25",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202605/",
+          "machineUrl": "https://1geki.jp/slot/lb_galfy/",
+          "name": "LB スロット GALFY",
+          "maker": "OIZUMI AMUZIO(オーイズミアミュージオ)",
+          "introducedAt": "2026-05-25",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_otome5",
+      "name": "L戦国乙女5 業火を穿つ宿焔の双刃",
+      "maker": "オリンピア",
+      "introducedAt": "2026-06-08",
+      "dataId": "sengokuotome5",
+      "catalogName": "L戦国乙女5 業火を穿つ宿焔の双刃",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-06",
+          "name": "L戦国乙女5 業火を穿つ宿焔の双刃",
+          "maker": "オリンピア",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202606/",
+          "machineUrl": "https://1geki.jp/slot/l_otome5/",
+          "name": "L戦国乙女5 業火を穿つ宿焔の双刃",
+          "maker": "OLYMPIA（オリンピア）",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_birdie",
+      "name": "スマスロ BIRDIE WING ‐Golf Girls' Story‐",
+      "maker": "ユニバーサルブロス",
+      "introducedAt": "2026-06-08",
+      "dataId": "birdie-wing",
+      "catalogName": "スマスロ BIRDIE WING ‐Golf Girls' Story‐",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-06",
+          "name": "スマスロ BIRDIE WING ‐Golf Girls' Story‐",
+          "maker": "ユニバーサルブロス",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202606/",
+          "machineUrl": "https://1geki.jp/slot/l_birdie/",
+          "name": "スマスロ BIRDIE WING -Golf Girls' Story-",
+          "maker": "UNIVERSAL BROS.（ユニバーサルブロス）",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_sao2",
+      "name": "スロット ソードアート・オンラインII",
+      "maker": "パオン・ディーピー",
+      "introducedAt": "2026-06-08",
+      "dataId": "sao2",
+      "catalogName": "スロット ソードアート・オンラインII",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-06",
+          "name": "スロット ソードアート・オンラインII",
+          "maker": "パオン・ディーピー",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202606/",
+          "machineUrl": "https://1geki.jp/slot/l_sao2/",
+          "name": "スロット ソードアート・オンラインⅡ",
+          "maker": "パオン・ディーピー",
+          "introducedAt": "2026-06-08",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_dark_haibi",
+      "name": "スマート沖スロ ダークハイビ",
+      "maker": "パイオニア",
+      "introducedAt": "2026-06-22",
+      "dataId": "dark-haibi",
+      "catalogName": "スマート沖スロ ダークハイビ",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-06",
+          "name": "スマート沖スロ ダークハイビ",
+          "maker": "パイオニア",
+          "introducedAt": "2026-06-22",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202606/",
+          "machineUrl": "https://1geki.jp/slot/l_dark_haibi/",
+          "name": "スマート沖スロ ダークハイビ",
+          "maker": "PIONEER（パイオニア）",
+          "introducedAt": "2026-06-22",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_ultraman_sai",
+      "name": "L ULTRAMAN 最終決戦",
+      "maker": "オッケー.",
+      "introducedAt": "2026-07-06",
+      "dataId": "ultraman-saishu-kessen",
+      "catalogName": "L ULTRAMAN 最終決戦",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "L ULTRAMAN 最終決戦",
+          "maker": "オッケー.",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_ultraman_sai/",
+          "name": "Ｌ ULTRAMAN 最終決戦",
+          "maker": "OK!!（オッケー）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_karakuri2",
+      "name": "Lパチスロ からくりサーカス2",
+      "maker": "SANKYO",
+      "introducedAt": "2026-07-06",
+      "dataId": "karakuri-circus2",
+      "catalogName": "Lパチスロ からくりサーカス2",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "Lパチスロ からくりサーカス2",
+          "maker": "SANKYO",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_karakuri2/",
+          "name": "Lパチスロ からくりサーカス2",
+          "maker": "SANKYO（三共）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_nangoku_sp",
+      "name": "L南国育ち SPECIAL",
+      "maker": "アムテックス",
+      "introducedAt": "2026-07-06",
+      "dataId": "nangoku-special",
+      "catalogName": "L南国育ち SPECIAL",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "L南国育ち SPECIAL",
+          "maker": "アムテックス",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_nangoku_sp/",
+          "name": "L南国育ち SPECIAL",
+          "maker": "AMTEX（アムテックス）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "lb_kelot5",
+      "name": "スマスロケロット5BT",
+      "maker": "山佐ネクスト",
+      "introducedAt": "2026-07-06",
+      "dataId": "kerotto5-bt",
+      "catalogName": "スマスロケロット5BT",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "スマスロケロット5BT",
+          "maker": "山佐ネクスト",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/lb_kelot5/",
+          "name": "スマスロケロット5BT",
+          "maker": "YAMASA NEXT（山佐ネクスト）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_yabachiba",
+      "name": "ヤバチバ",
+      "maker": "ネット",
+      "introducedAt": "2026-07-06",
+      "dataId": "yabachiba",
+      "catalogName": "ヤバチバ",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "ヤバチバ",
+          "maker": "ネット",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_yabachiba/",
+          "name": "ヤバチバ",
+          "maker": "NET（ネット）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_lotis",
+      "name": "ローティス",
+      "maker": "北電子",
+      "introducedAt": "2026-07-06",
+      "dataId": "rotisu",
+      "catalogName": "ローティス",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "ローティス",
+          "maker": "北電子",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_lotis/",
+          "name": "ローティス",
+          "maker": "KITA DENSHI（北電子）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_sencolle6",
+      "name": "戦国コレクション6",
+      "maker": "コナミアミューズメント",
+      "introducedAt": "2026-07-06",
+      "dataId": "sengoku-collection6",
+      "catalogName": "戦国コレクション6",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-07",
+          "name": "戦国コレクション6",
+          "maker": "コナミアミューズメント",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202607/",
+          "machineUrl": "https://1geki.jp/slot/l_sencolle6/",
+          "name": "戦国コレクション６",
+          "maker": "Konami Amusement（コナミアミューズメント）",
+          "introducedAt": "2026-07-06",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "lb_triplecrown_x300",
+      "name": "LBトリプルクラウンX‐300",
+      "maker": "清龍ゲームジャパン",
+      "introducedAt": "2026-08-03",
+      "dataId": "triple-crown-x300",
+      "catalogName": "LBトリプルクラウンX-300",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "LBトリプルクラウンX‐300",
+          "maker": "清龍ゲームジャパン",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5089",
+          "name": "LBトリプルクラウンX-300",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_binko",
+      "name": "Lすーぱぁびん娘",
+      "maker": "ベルコ",
+      "introducedAt": "2026-08-03",
+      "dataId": "super-binmusume",
+      "catalogName": "Lすーぱぁびん娘",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "Lすーぱぁびん娘",
+          "maker": "ベルコ",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_binko/",
+          "name": "Ｌすーぱぁびん娘",
+          "maker": "yama（ヤーマ）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5038",
+          "name": "Ｌすーぱぁびん娘",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_jashinchan",
+      "name": "L邪神ちゃんドロップキック",
+      "maker": "サンスリー",
+      "introducedAt": "2026-08-03",
+      "dataId": "jashin-chan",
+      "catalogName": "L邪神ちゃんドロップキック",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "L邪神ちゃんドロップキック",
+          "maker": "サンスリー",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_jashinchan/",
+          "name": "L邪神ちゃんドロップキック",
+          "maker": "SanThree（サンスリー）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5020",
+          "name": "L邪神ちゃんドロップキック",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_toaru_index2",
+      "name": "スマスロ とある魔術の禁書目録2",
+      "maker": "藤商事",
+      "introducedAt": "2026-08-03",
+      "dataId": "toaru-index2",
+      "catalogName": "スマスロ とある魔術の禁書目録2",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "スマスロ とある魔術の禁書目録2",
+          "maker": "藤商事",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_toaru_index2/",
+          "name": "スマスロ とある魔術の禁書目録２",
+          "maker": "FUJI（藤商事）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5053",
+          "name": "スマスロ とある魔術の禁書目録2",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_tonsuki",
+      "name": "スマスロ とんでもスキルで異世界放浪メシ",
+      "maker": "コナミアミューズメント",
+      "introducedAt": "2026-08-03",
+      "dataId": "tonsuki",
+      "catalogName": "スマスロ とんでもスキルで異世界放浪メシ",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "スマスロ とんでもスキルで異世界放浪メシ",
+          "maker": "コナミアミューズメント",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_tonsuki/",
+          "name": "スマスロ とんでもスキルで異世界放浪メシ",
+          "maker": "Konami Amusement（コナミアミューズメント）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5030",
+          "name": "スマスロ とんでもスキルで異世界放浪メシ",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_yajikita",
+      "name": "スマスロ やじきた道中記参る!",
+      "maker": "ユニバーサルブロス",
+      "introducedAt": "2026-08-03",
+      "dataId": "yajikita-mairu",
+      "catalogName": "スマスロ やじきた道中記参る!",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "スマスロ やじきた道中記参る!",
+          "maker": "ユニバーサルブロス",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_yajikita/",
+          "name": "スマスロ やじきた道中記参る！",
+          "maker": "UNIVERSAL BROS.（ユニバーサルブロス）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5027",
+          "name": "スマスロ やじきた道中記参る！",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_streetfighter6",
+      "name": "スマスロ ストリートファイター6",
+      "maker": "レオスター",
+      "introducedAt": "2026-08-03",
+      "dataId": "sf6",
+      "catalogName": "スマスロ ストリートファイター6",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "スマスロ ストリートファイター6",
+          "maker": "レオスター",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_streetfighter6/",
+          "name": "スマスロ ストリートファイター6",
+          "maker": "LEOSTAR（レオスター）",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5068",
+          "name": "スマスロ ストリートファイター6",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_wds",
+      "name": "スロット ワールドダイスター",
+      "maker": "パオン・ディーピー",
+      "introducedAt": "2026-08-03",
+      "dataId": "world-dai-star",
+      "catalogName": "スロット ワールドダイスター",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "スロット ワールドダイスター",
+          "maker": "パオン・ディーピー",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_wds/",
+          "name": "スロット ワールドダイスター",
+          "maker": "パオン・ディーピー",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5055",
+          "name": "スロット ワールドダイスター",
+          "introducedAt": "2026-08-03",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_garei0_re",
+      "name": "Lパチスロ 喰霊‐零‐Re",
+      "maker": "オーイズミ",
+      "introducedAt": "2026-08-17",
+      "dataId": "garei-zero-re",
+      "catalogName": "Lパチスロ 喰霊‐零‐Re",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-08",
+          "name": "Lパチスロ 喰霊‐零‐Re",
+          "maker": "オーイズミ",
+          "introducedAt": "2026-08-17",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202608/",
+          "machineUrl": "https://1geki.jp/slot/l_garei0_re/",
+          "name": "Lパチスロ 喰霊-零-Re",
+          "maker": "OIZUMI（オーイズミ）",
+          "introducedAt": "2026-08-17",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "DMMぱちタウン",
+          "url": "https://p-town.dmm.com/machines/new_calendar?year=2026&month=8",
+          "machineUrl": "https://p-town.dmm.com/machines/5028",
+          "name": "Lパチスロ 喰霊-零-Re",
+          "introducedAt": "2026-08-17",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_kanokari",
+      "name": "Lパチスロ 彼女、お借りします",
+      "maker": "SANKYO",
+      "introducedAt": "2026-09-07",
+      "dataId": "kanokari",
+      "catalogName": "Lパチスロ 彼女、お借りします",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "Lパチスロ 彼女、お借りします",
+          "maker": "SANKYO",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_kanokari/",
+          "name": "Lパチスロ 彼女、お借りします",
+          "maker": "SANKYO（三共）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_ao_buta",
+      "name": "L青春ブタ野郎はバニーガール先輩の夢を見ない",
+      "maker": "オリンピア",
+      "introducedAt": "2026-09-07",
+      "dataId": "aobuta",
+      "catalogName": "L青春ブタ野郎はバニーガール先輩の夢を見ない",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "L青春ブタ野郎はバニーガール先輩の夢を見ない",
+          "maker": "オリンピア",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_ao_buta/",
+          "name": "Ｌ青春ブタ野郎はバニーガール先輩の夢を見ない",
+          "maker": "OLYMPIA（オリンピア）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_taco",
+      "name": "スマスロ タコスロ",
+      "maker": "ユニバーサルブロス",
+      "introducedAt": "2026-09-07",
+      "dataId": "takosuro",
+      "catalogName": "スマスロ タコスロ",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "スマスロ タコスロ",
+          "maker": "ユニバーサルブロス",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_taco/",
+          "name": "スマスロ タコスロ",
+          "maker": "UNIVERSAL BROS.（ユニバーサルブロス）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_lycoreco",
+      "name": "スマスロ リコリス・リコイル",
+      "maker": "サミー",
+      "introducedAt": "2026-09-07",
+      "dataId": "lycoris-recoil",
+      "catalogName": "スマスロ リコリス・リコイル",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "スマスロ リコリス・リコイル",
+          "maker": "サミー",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_lycoreco/",
+          "name": "スマスロ リコリス・リコイル",
+          "maker": "GINZA（銀座）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_mierukochan",
+      "name": "パチスロ見える子ちゃん",
+      "maker": "パイオニア",
+      "introducedAt": "2026-09-07",
+      "dataId": "mieruko-chan",
+      "catalogName": "パチスロ見える子ちゃん",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "パチスロ見える子ちゃん",
+          "maker": "パイオニア",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_mierukochan/",
+          "name": "パチスロ見える子ちゃん",
+          "maker": "PIONEER（パイオニア）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    },
+    {
+      "calendarKey": "l_mogdai",
+      "name": "モグモグ風林火山 大海戦の巻",
+      "maker": "ネット",
+      "introducedAt": "2026-09-07",
+      "dataId": "mogumogu-daikaisen",
+      "catalogName": "モグモグ風林火山 大海戦の巻",
+      "status": "added",
+      "sources": [
+        {
+          "publisher": "P-WORLD",
+          "url": "https://www.p-world.co.jp/database/machine/introduce_calendar.cgi?year_month=2026-09",
+          "name": "モグモグ風林火山 大海戦の巻",
+          "maker": "ネット",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        },
+        {
+          "publisher": "一撃",
+          "url": "https://1geki.jp/newmachinecalender/202609/",
+          "machineUrl": "https://1geki.jp/slot/l_mogdai/",
+          "name": "モグモグ風林火山 大海戦の巻",
+          "maker": "NET（ネット）",
+          "introducedAt": "2026-09-07",
+          "retrievedAt": "2026-09-30"
+        }
+      ]
+    }
+  ]
+}

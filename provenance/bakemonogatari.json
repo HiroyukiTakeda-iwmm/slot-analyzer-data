@@ -1,0 +1,987 @@
+{
+  "machineId": "bakemonogatari",
+  "machineFile": "monogatari/bakemonogatari.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sammy-slot/246074/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/4898",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1055/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "AT初当たり",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "265.1",
+          "2": "260.7",
+          "3": "252.1",
+          "4": "238.8",
+          "5": "230.8",
+          "6": "219.6"
+        },
+        "nana": {
+          "1": "265.1",
+          "2": "260.7",
+          "3": "252.1",
+          "4": "238.8",
+          "5": "230.8",
+          "6": "219.6"
+        }
+      },
+      "adopted": {
+        "1": "265.1",
+        "2": "260.7",
+        "3": "252.1",
+        "4": "238.8",
+        "5": "230.8",
+        "6": "219.6"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "265.1",
+          "2": "260.7",
+          "3": "252.1",
+          "4": "238.8",
+          "5": "230.8",
+          "6": "219.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "87.4",
+          "2": "85.8",
+          "3": "84.9",
+          "4": "79.7",
+          "5": "74.8",
+          "6": "69.9"
+        },
+        "dmm": {
+          "1": "87.4",
+          "2": "85.8",
+          "3": "84.9",
+          "4": "79.7",
+          "5": "74.8",
+          "6": "69.9"
+        },
+        "nana": {
+          "1": "87.4",
+          "2": "85.8",
+          "3": "84.9",
+          "4": "79.7",
+          "5": "74.8",
+          "6": "69.9"
+        }
+      },
+      "adopted": {
+        "1": "87.4",
+        "2": "85.8",
+        "3": "84.9",
+        "4": "79.7",
+        "5": "74.8",
+        "6": "69.9"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "87.4",
+          "2": "85.8",
+          "3": "84.9",
+          "4": "79.7",
+          "5": "74.8",
+          "6": "69.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "131.1",
+          "2": "131.1",
+          "3": "131.1",
+          "4": "131.1",
+          "5": "131.1",
+          "6": "131.1"
+        },
+        "dmm": {
+          "1": "131.1",
+          "2": "131.1",
+          "3": "131.1",
+          "4": "131.1",
+          "5": "131.1",
+          "6": "131.1"
+        },
+        "nana": {
+          "1": "131.1",
+          "2": "131.1",
+          "3": "131.1",
+          "4": "131.1",
+          "5": "131.1",
+          "6": "131.1"
+        }
+      },
+      "adopted": {
+        "1": "131.1",
+        "2": "131.1",
+        "3": "131.1",
+        "4": "131.1",
+        "5": "131.1",
+        "6": "131.1"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "131.1",
+          "2": "131.1",
+          "3": "131.1",
+          "4": "131.1",
+          "5": "131.1",
+          "6": "131.1"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "チャンス目",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "96.4",
+          "2": "96.4",
+          "3": "96.4",
+          "4": "96.4",
+          "5": "96.4",
+          "6": "96.4"
+        },
+        "dmm": {
+          "1": "96.4",
+          "2": "96.4",
+          "3": "96.4",
+          "4": "96.4",
+          "5": "96.4",
+          "6": "96.4"
+        },
+        "nana": {
+          "1": "96.4",
+          "2": "96.4",
+          "3": "96.4",
+          "4": "96.4",
+          "5": "96.4",
+          "6": "96.4"
+        }
+      },
+      "adopted": {
+        "1": "96.4",
+        "2": "96.4",
+        "3": "96.4",
+        "4": "96.4",
+        "5": "96.4",
+        "6": "96.4"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "96.4",
+          "2": "96.4",
+          "3": "96.4",
+          "4": "96.4",
+          "5": "96.4",
+          "6": "96.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "256.0",
+          "2": "256.0",
+          "3": "256.0",
+          "4": "256.0",
+          "5": "256.0",
+          "6": "256.0"
+        },
+        "dmm": {
+          "1": "256.0",
+          "2": "256.0",
+          "3": "256.0",
+          "4": "256.0",
+          "5": "256.0",
+          "6": "256.0"
+        },
+        "nana": {
+          "1": "256.0",
+          "2": "256.0",
+          "3": "256.0",
+          "4": "256.0",
+          "5": "256.0",
+          "6": "256.0"
+        }
+      },
+      "adopted": {
+        "1": "256.0",
+        "2": "256.0",
+        "3": "256.0",
+        "4": "256.0",
+        "5": "256.0",
+        "6": "256.0"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "256.0",
+          "2": "256.0",
+          "3": "256.0",
+          "4": "256.0",
+          "5": "256.0",
+          "6": "256.0"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィーキリン柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ボーナス確定画面忍＋赤7成立",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "初代パネル（暦・忍・忍野）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ヒロイン集合（初代パネル）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "I LOVE YOU",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "174枚（いちなし）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "543枚",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "331枚（サミー）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー銅",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー銀",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー金",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィーキリン柄",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "サミートロフィー虹",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ボーナス確定画面忍＋赤7成立",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "弱チェリーAT直撃率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "1.3%",
+          "4": "2.1%",
+          "5": "2.9%",
+          "6": "3.8%"
+        },
+        "dmm": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "1.3%",
+          "4": "2.1%",
+          "5": "2.9%",
+          "6": "3.8%"
+        },
+        "nana": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "1.3%",
+          "4": "2.1%",
+          "5": "2.9%",
+          "6": "3.8%"
+        }
+      },
+      "adopted": {
+        "1": "0.4%",
+        "2": "0.8%",
+        "3": "1.3%",
+        "4": "2.1%",
+        "5": "2.9%",
+        "6": "3.8%"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "1.3%",
+          "4": "2.1%",
+          "5": "2.9%",
+          "6": "3.8%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "解呪ノ儀200G到達時CZ当選率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "10.4%",
+          "4": "15.0%",
+          "5": "17.5%",
+          "6": "20.0%"
+        },
+        "dmm": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "10.4%",
+          "4": "15.0%",
+          "5": "17.5%",
+          "6": "20.0%"
+        },
+        "nana": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "10.4%",
+          "4": "15.0%",
+          "5": "17.5%",
+          "6": "20.0%"
+        }
+      },
+      "adopted": {
+        "1": "10.0%",
+        "2": "10.0%",
+        "3": "10.4%",
+        "4": "15.0%",
+        "5": "17.5%",
+        "6": "20.0%"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "10.4%",
+          "4": "15.0%",
+          "5": "17.5%",
+          "6": "20.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "解呪ノ儀300G到達時CZ当選率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "40.0%",
+          "2": "40.0%",
+          "3": "40.4%",
+          "4": "45.0%",
+          "5": "47.5%",
+          "6": "50.0%"
+        },
+        "dmm": {
+          "1": "40.0%",
+          "2": "40.0%",
+          "3": "40.4%",
+          "4": "45.0%",
+          "5": "47.5%",
+          "6": "50.0%"
+        },
+        "nana": {
+          "1": "40.0%",
+          "2": "40.0%",
+          "3": "40.4%",
+          "4": "45.0%",
+          "5": "47.5%",
+          "6": "50.0%"
+        }
+      },
+      "adopted": {
+        "1": "40.0%",
+        "2": "40.0%",
+        "3": "40.4%",
+        "4": "45.0%",
+        "5": "47.5%",
+        "6": "50.0%"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "40.0%",
+          "2": "40.0%",
+          "3": "40.4%",
+          "4": "45.0%",
+          "5": "47.5%",
+          "6": "50.0%"
+        }
+      }
+    },
+    {
+      "kind": "zoneRole",
+      "name": "倖時間中::ボーナス",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "2735.7",
+          "2": "2605.3",
+          "3": "2396.6",
+          "4": "2381.5",
+          "5": "2177.3",
+          "6": "1938.8"
+        },
+        "dmm": {
+          "1": "2735.7",
+          "2": "2605.3",
+          "3": "2396.6",
+          "4": "2381.5",
+          "5": "2177.3",
+          "6": "1938.8"
+        },
+        "nana": {
+          "1": "2735.7",
+          "2": "2605.3",
+          "3": "2396.6",
+          "4": "2381.5",
+          "5": "2177.3",
+          "6": "1938.8"
+        }
+      },
+      "adopted": {
+        "1": "2735.7",
+        "2": "2605.3",
+        "3": "2396.6",
+        "4": "2381.5",
+        "5": "2177.3",
+        "6": "1938.8"
+      },
+      "reread": {
+        "by": "reread-bakemonogatari",
+        "value": {
+          "1": "2735.7",
+          "2": "2605.3",
+          "3": "2396.6",
+          "4": "2381.5",
+          "5": "2177.3",
+          "6": "1938.8"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 忍",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 忍野",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ひたぎ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 真宵",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 駿河",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 撫子",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 翼",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    }
+  ],
+  "candidates": [],
+  "removed": [],
+  "retiredIds": []
+}

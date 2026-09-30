@@ -1,31 +1,468 @@
 {
   "name": "Lタクトオーパス デスティニー",
   "type": "AT",
-  "roles": [],
-  "confirmationEvents": [],
-  "endScreens": [],
+  "roles": [
+    {
+      "name": "デスティニーボーナス",
+      "probabilities": {
+        "1": 0.0012987,
+        "2": 0.0012987,
+        "3": 0.0012987,
+        "4": 0.0012987,
+        "5": 0.0012987,
+        "6": 0.0012987
+      },
+      "description": "設定1: 1/770.0、設定6: 1/770.0ちょんぼりすた単独の値（独立読み直し済み・暫定）。",
+      "hasSettingDiff": false,
+      "color": "#FF9800",
+      "displayOrder": 1
+    },
+    {
+      "name": "ムジカートチャンス 巨人",
+      "probabilities": {
+        "1": 0.00220994,
+        "2": 0.00217014,
+        "3": 0.00208594,
+        "4": 0.00192049,
+        "5": 0.00190621,
+        "6": 0.0019015
+      },
+      "description": "設定1: 1/452.5、設定6: 1/525.9CZからATに書き換えられた分（見た目はAT直撃）を分母が含むかは非公表。同じCZを合算と種類別の両方へ数えない。",
+      "hasSettingDiff": true,
+      "color": "#FF9800",
+      "displayOrder": 2
+    },
+    {
+      "name": "ムジカートチャンス 運命",
+      "probabilities": {
+        "1": 0.000762718,
+        "2": 0.000796432,
+        "3": 0.000886446,
+        "4": 0.00104156,
+        "5": 0.00104037,
+        "6": 0.00104004
+      },
+      "description": "設定1: 1/1311.1、設定6: 1/961.5CZからATに書き換えられた分（見た目はAT直撃）を分母が含むかは非公表。同じCZを合算と種類別の両方へ数えない。",
+      "hasSettingDiff": true,
+      "color": "#FF9800",
+      "displayOrder": 3
+    },
+    {
+      "name": "ムジカートチャンス シカゴ",
+      "probabilities": {
+        "1": 0.0000232707,
+        "2": 0.0000236074,
+        "3": 0.0000234883,
+        "4": 0.0000238324,
+        "5": 0.0000237424,
+        "6": 0.0000237015
+      },
+      "description": "設定1: 1/42972.5、設定6: 1/42191.4CZからATに書き換えられた分（見た目はAT直撃）を分母が含むかは非公表。同じCZを合算と種類別の両方へ数えない。",
+      "hasSettingDiff": true,
+      "color": "#FF9800",
+      "displayOrder": 4
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "エンディング中の画面 緑・タクト",
+      "id": "ce_a278df0c73",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。"
+    },
+    {
+      "name": "エンディング中の画面 緑・巨人",
+      "id": "ce_fa67b70fa2",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・4・5・6を示す。"
+    },
+    {
+      "name": "エンディング中の画面 赤・アンナ",
+      "id": "ce_b99bef535f",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
+    },
+    {
+      "name": "エンディング中の画面 金・レニー",
+      "id": "ce_954e221525",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。"
+    },
+    {
+      "name": "エンディング中の画面 虹・運命",
+      "id": "ce_4fcc2e53ad",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。"
+    },
+    {
+      "name": "凪のセリフ 青・一味違いますね",
+      "id": "ce_3c3d610497",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。"
+    },
+    {
+      "name": "凪のセリフ 緑・何やら不思議な気配です",
+      "id": "ce_acc0b010e7",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・4・5・6を示す。"
+    },
+    {
+      "name": "凪のセリフ 赤・良い予感がします",
+      "id": "ce_2db2b03858",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
+    },
+    {
+      "name": "凪のセリフ 銀・遊び尽くしちゃいましょう",
+      "id": "ce_20e156c527",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。"
+    },
+    {
+      "name": "凪のセリフ 金・お肉〜お肉〜",
+      "id": "ce_9cb56bcdd3",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 222枚OVER",
+      "id": "ce_e3bd43606f",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 333枚OVER",
+      "id": "ce_9d11c307c3",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・4・5・6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 444枚OVER",
+      "id": "ce_d1b39baca2",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 555枚OVER",
+      "id": "ce_4d10539b6b",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。"
+    },
+    {
+      "name": "獲得枚数表示 666枚OVER",
+      "id": "ce_d88aa1d355",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。"
+    }
+  ],
+  "endScreens": [
+    {
+      "name": "AT終了画面 可スタンプ",
+      "id": "es_28553810e2",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 吉スタンプ",
+      "id": "es_b80cb4b7b3",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定3・4・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 良スタンプ",
+      "id": "es_02705f32cb",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 優スタンプ",
+      "id": "es_3fb30decbd",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "AT終了画面 極スタンプ",
+      "id": "es_b14a79e7a1",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。",
+      "type": "at_end"
+    },
+    {
+      "name": "ボーナス終了画面 運命＆巨人",
+      "id": "es_c909bf9172",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定2・3・4・5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ボーナス終了画面 タクト＆コゼット",
+      "id": "es_1ba555324d",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定4・5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ボーナス終了画面 タクト＆運命",
+      "id": "es_45d9e172b9",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定5・6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ボーナス終了画面 流れ星",
+      "id": "es_44086f18eb",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": [],
+      "description": "設定6を示す。",
+      "type": "bonus_end"
+    },
+    {
+      "name": "ボーナス終了画面 レニー＆巨人",
+      "id": "es_2b94d7a085",
+      "hint": "高設定示唆",
+      "description": "高設定示唆。確定・否定の設定や数値の出現率は登録していない。",
+      "type": "bonus_end"
+    }
+  ],
   "trialSuccessRates": [
     {
       "id": "at_first_hit",
       "name": "AT初当たり確率",
-      "description": "設定1: 1/358.5、設定6: 1/297.4。設定2-5は確度2解析メディア(nana-press/chonborista)公表値で線形補間を破棄。導入5日でホール検証僅少のため Provisional（情報源: nana-press 確度2, chonborista 確度2）。非線形カーブ（設定4-6が近接）を確認",
-      "probabilities": {
-        "1": 0.002789,
-        "2": 0.002855,
-        "3": 0.003026,
-        "4": 0.003341,
-        "5": 0.003358,
-        "6": 0.003362
-      },
+      "description": "設定1: 1/358.5、設定6: 1/297.4",
       "displayOrder": 1,
-      "color": "#E91E63"
+      "color": "#E91E63",
+      "probabilities": {
+        "1": 0.0027894,
+        "2": 0.0028547,
+        "3": 0.00302572,
+        "4": 0.00334113,
+        "5": 0.00335796,
+        "6": 0.00336247
+      }
+    },
+    {
+      "name": "AT直撃（CZ→AT昇格率）",
+      "id": "ts_515f37393e",
+      "probabilities": {
+        "1": 0.014,
+        "2": 0.024,
+        "3": 0.047,
+        "4": 0.087,
+        "5": 0.088,
+        "6": 0.089
+      },
+      "description": "設定1: 1.4%、設定2: 2.4%、設定3: 4.7%、設定4: 8.7%、設定5: 8.8%、設定6: 8.9%",
+      "displayOrder": 2
+    },
+    {
+      "name": "報酬チャンス当選率",
+      "id": "ts_b605f7ed53",
+      "probabilities": {
+        "1": 0.272,
+        "2": 0.278,
+        "3": 0.29,
+        "4": 0.312,
+        "5": 0.312,
+        "6": 0.312
+      },
+      "description": "設定1: 27.2%、設定2: 27.8%、設定3: 29%、設定4: 31.2%、設定5: 31.2%、設定6: 31.2%",
+      "displayOrder": 3
+    },
+    {
+      "name": "上位ATのループ率",
+      "id": "ts_8d1178f0f3",
+      "probabilities": {
+        "1": 0.699,
+        "2": 0.723,
+        "3": 0.742,
+        "4": 0.801,
+        "5": 0.922,
+        "6": 0.941
+      },
+      "description": "設定1: 69.9%、設定2: 72.3%、設定3: 74.2%、設定4: 80.1%、設定5: 92.2%、設定6: 94.1%",
+      "displayOrder": 4
     }
   ],
-  "voiceCounts": [],
-  "notes": "2026年5月11日導入。アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり設定1=1/358.5〜設定6=1/297.4。設定2-5は確度2解析メディア(nana-press/chonborista)公表値へ差替え、線形補間を破棄。導入5日でホール検証僅少のため Provisional（メーカー公式確定ではない）。非線形カーブ（設定4-6が近接）を確認。機械割設定1=97.6%〜設定6=113.5%。小役設定差・終了画面はサンプル不足のため未追加。情報源URL: https://nana-press.com/kaiseki/machine/1142/36796/ (確度2) , https://chonborista.com/slot/amute/254099/ (確度2) , https://heiwa-takt-op-destiny.jp/",
+  "notes": "全設定の値がそろわない項目・単一出典で採用条件を満たさない項目は登録していない。ムジカートチャンスのAT期待度 巨人: 全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）。ムジカートチャンスのAT期待度 運命: 全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）。ムジカートチャンスのAT期待度 シカゴ: 全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）",
   "author": "コミュニティ",
-  "version": "1.1",
-  "lastUpdated": "2026-05-16",
-  "source": "メーカー公式（アムテックス／平和）、P-WORLD、ちょんぼりすた、なな徹",
-  "description": "アムテックス／平和製スマスロAT機。純増約2.6枚/G。AT初当たり確率に設定差（設定1: 1/358.5→設定6: 1/297.4、設定6突出型・設定4-6が近接）。設定2-5は確度2解析メディア公表値・サンプル僅少のため Provisional（線形補間を破棄）。機械割: 設定1=97.6%〜設定6=113.5%。roles・終了画面・確定演出は未公開。"
+  "version": "1.2",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/amute/254099/)、DMMぱちタウン(https://p-town.dmm.com/machines/5000)、なな徹(https://nana-press.com/kaiseki/machine/1142/)",
+  "description": "Lタクトオーパス デスティニーの解析データ。4個の役、15個の確定演出、10個の終了画面、4個の試行成功率を出典付きで登録。一部の値はちょんぼりすたの値（暫定）。",
+  "zones": [
+    {
+      "name": "AT中",
+      "isDefault": false,
+      "roles": [
+        {
+          "name": "ムジカートバトル 地獄",
+          "probabilities": {
+            "1": 0.00687285,
+            "2": 0.00684932,
+            "3": 0.00680272,
+            "4": 0.00653168,
+            "5": 0.00598444,
+            "6": 0.00585138
+          },
+          "description": "設定1: 1/145.5、設定6: 1/170.9AT中の1ゲームあたり。同じバトルを合算と種類別の両方へ数えない。",
+          "hasSettingDiff": true,
+          "color": "#FF9800",
+          "displayOrder": 1
+        },
+        {
+          "name": "ムジカートバトル 天国",
+          "probabilities": {
+            "1": 0.00296472,
+            "2": 0.00294724,
+            "3": 0.0029163,
+            "4": 0.00278009,
+            "5": 0.00254842,
+            "6": 0.00248942
+          },
+          "description": "設定1: 1/337.3、設定6: 1/401.7AT中の1ゲームあたり。同じバトルを合算と種類別の両方へ数えない。",
+          "hasSettingDiff": true,
+          "color": "#FF9800",
+          "displayOrder": 2
+        },
+        {
+          "name": "ムジカートバトル オルフェ",
+          "probabilities": {
+            "1": 0.00106,
+            "2": 0.00111086,
+            "3": 0.0011909,
+            "4": 0.00168379,
+            "5": 0.00268528,
+            "6": 0.00293945
+          },
+          "description": "設定1: 1/943.4、設定6: 1/340.2AT中の1ゲームあたり。同じバトルを合算と種類別の両方へ数えない。",
+          "hasSettingDiff": true,
+          "color": "#FF9800",
+          "displayOrder": 3
+        }
+      ],
+      "description": "AT中のゲーム数を分母にして数える。"
+    }
+  ]
 }

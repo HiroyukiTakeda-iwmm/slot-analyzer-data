@@ -1,0 +1,770 @@
+{
+  "machineId": "animalslot-docchi",
+  "machineFile": "animalslot-docchi/animalslot-docchi.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/kitadenshi/252447/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/4964",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1126/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "ボーナス初当たり",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        },
+        "nana": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        }
+      },
+      "adopted": {
+        "1": "169.4",
+        "2": "163.8",
+        "3": "157.8",
+        "4": "149.3",
+        "5": "140.2",
+        "6": "131.9"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中ライオン登場",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中ブルドッグ登場",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中ジャグラー登場",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 No.174",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 No.555",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 No.666",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "BIG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "329.7",
+          "2": "314.7",
+          "3": "295.6",
+          "4": "274.3",
+          "5": "249.1",
+          "6": "227.4"
+        },
+        "nana": {
+          "1": "329.7",
+          "2": "314.7",
+          "3": "295.6",
+          "4": "274.3",
+          "5": "249.1",
+          "6": "227.4"
+        }
+      },
+      "adopted": {
+        "1": "329.7",
+        "2": "314.7",
+        "3": "295.6",
+        "4": "274.3",
+        "5": "249.1",
+        "6": "227.4"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "329.7",
+          "2": "314.7",
+          "3": "295.6",
+          "4": "274.3",
+          "5": "249.1",
+          "6": "227.4"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "REG確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "349.5",
+          "2": "342.8",
+          "3": "339.4",
+          "4": "328.1",
+          "5": "321.5",
+          "6": "314.3"
+        },
+        "nana": {
+          "1": "349.5",
+          "2": "342.8",
+          "3": "339.4",
+          "4": "328.1",
+          "5": "321.5",
+          "6": "314.3"
+        }
+      },
+      "adopted": {
+        "1": "349.5",
+        "2": "342.8",
+        "3": "339.4",
+        "4": "328.1",
+        "5": "321.5",
+        "6": "314.3"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "349.5",
+          "2": "342.8",
+          "3": "339.4",
+          "4": "328.1",
+          "5": "321.5",
+          "6": "314.3"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ボーナス合算確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        },
+        "nana": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        }
+      },
+      "adopted": {
+        "1": "169.4",
+        "2": "163.8",
+        "3": "157.8",
+        "4": "149.3",
+        "5": "140.2",
+        "6": "131.9"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "169.4",
+          "2": "163.8",
+          "3": "157.8",
+          "4": "149.3",
+          "5": "140.2",
+          "6": "131.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "チェリー",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "37.7",
+          "2": "36.8",
+          "3": "35.9",
+          "4": "35.0",
+          "5": "34.1",
+          "6": "33.2"
+        },
+        "dmm": {
+          "1": "37.69",
+          "2": "36.78",
+          "3": "35.89",
+          "4": "34.99",
+          "5": "34.10",
+          "6": "33.22"
+        },
+        "nana": {
+          "1": "37.69",
+          "2": "36.78",
+          "3": "35.89",
+          "4": "34.99",
+          "5": "34.10",
+          "6": "33.22"
+        }
+      },
+      "adopted": {
+        "1": "37.7",
+        "2": "36.8",
+        "3": "35.9",
+        "4": "35.0",
+        "5": "34.1",
+        "6": "33.2"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "37.7",
+          "2": "36.8",
+          "3": "35.9",
+          "4": "35.0",
+          "5": "34.1",
+          "6": "33.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "54.1",
+          "2": "53.7",
+          "3": "53.2",
+          "4": "52.7",
+          "5": "52.3",
+          "6": "51.7"
+        },
+        "dmm": {
+          "1": "54.12",
+          "2": "53.67",
+          "3": "53.15",
+          "4": "52.72",
+          "5": "52.26",
+          "6": "51.73"
+        }
+      },
+      "adopted": {
+        "1": "54.1",
+        "2": "53.7",
+        "3": "53.2",
+        "4": "52.7",
+        "5": "52.3",
+        "6": "51.7"
+      },
+      "reread": {
+        "by": "reread-animalslot-docchi",
+        "value": {
+          "1": "54.1",
+          "2": "53.7",
+          "3": "53.2",
+          "4": "52.7",
+          "5": "52.3",
+          "6": "51.7"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中ペンギン登場",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "REG中ウサギ登場",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 老忍",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 トップスター",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 格闘ペンギン",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 巫女ウサギ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ST終了画面 赤チップのみ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 13～25の奇数マスにチップ3枚ずつ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 14～24の偶数マスにチップ3枚ずつ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 13～25の奇数マスにチップ5枚ずつ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 14～24の偶数マスにチップ5枚ずつ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 2nd 12と♦赤マス",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 2nd 12と♦黒マス",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 1・4・7マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 2・4・7マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 2・4・6マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 2・5・6マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 4・5・6マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 5・6マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "ジャングルボーナス終了画面 6マス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "チェリー・スイカ合算",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "22.2",
+          "2": "21.8",
+          "3": "21.4",
+          "4": "21.0",
+          "5": "20.6",
+          "6": "20.2"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

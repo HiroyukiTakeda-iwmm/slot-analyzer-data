@@ -1,0 +1,1742 @@
+{
+  "machineId": "big-dream-golden-pusher",
+  "machineFile": "big-dream-golden-pusher/big-dream-golden-pusher.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sammy-slot/254356/",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/4981",
+      "retrievedAt": "2026-09-29"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1151/",
+      "retrievedAt": "2026-09-29"
+    }
+  ],
+  "items": [
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー 銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー キリン柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "サミートロフィー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数 456枚・4560枚",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数 666枚・6666枚",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディングボイス「お前は神の頂きに〜」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディングボイス「その力で更なる黄金を〜」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "帽子",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "銃&玉",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "剣",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "宝の山",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "玉座",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "覚醒ギルガメッシュ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "CZ突入確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "337.7",
+          "2": "333.3",
+          "3": "326.6",
+          "4": "316.4",
+          "5": "311.4",
+          "6": "303.4"
+        },
+        "dmm": {
+          "1": "337.7",
+          "2": "333.3",
+          "3": "326.6",
+          "4": "316.4",
+          "5": "311.4",
+          "6": "303.4"
+        },
+        "nana": {
+          "1": "337.7",
+          "2": "333.3",
+          "3": "326.6",
+          "4": "316.4",
+          "5": "311.4",
+          "6": "303.4"
+        }
+      },
+      "adopted": {
+        "1": "337.7",
+        "2": "333.3",
+        "3": "326.6",
+        "4": "316.4",
+        "5": "311.4",
+        "6": "303.4"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "337.7",
+          "2": "333.3",
+          "3": "326.6",
+          "4": "316.4",
+          "5": "311.4",
+          "6": "303.4"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT初当たり確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "629.3",
+          "2": "615.3",
+          "3": "599.1",
+          "4": "562.6",
+          "5": "551.1",
+          "6": "536.2"
+        },
+        "nana": {
+          "1": "629.3",
+          "2": "615.3",
+          "3": "599.1",
+          "4": "562.6",
+          "5": "551.1",
+          "6": "536.2"
+        }
+      },
+      "adopted": {
+        "1": "629.3",
+        "2": "615.3",
+        "3": "599.1",
+        "4": "562.6",
+        "5": "551.1",
+        "6": "536.2"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "629.3",
+          "2": "615.3",
+          "3": "599.1",
+          "4": "562.6",
+          "5": "551.1",
+          "6": "536.2"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディングボイス「お前は神の領域に〜」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディングボイス「さあ、伝説の始まりだ」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "立ち絵",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "見返り",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 帽子",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "77.50%",
+          "2": "71.54%",
+          "3": "75.33%",
+          "4": "67.17%",
+          "5": "66.36%",
+          "6": "60.00%"
+        },
+        "nana": {
+          "1": "77.50%",
+          "2": "71.54%",
+          "3": "75.33%",
+          "4": "67.17%",
+          "5": "66.36%",
+          "6": "60.00%"
+        }
+      },
+      "adopted": {
+        "1": "77.50%",
+        "2": "71.54%",
+        "3": "75.33%",
+        "4": "67.17%",
+        "5": "66.36%",
+        "6": "60.00%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 銃&玉",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "15.00%",
+          "2": "20.00%",
+          "3": "15.50%",
+          "4": "20.00%",
+          "5": "16.00%",
+          "6": "20.00%"
+        },
+        "nana": {
+          "1": "15.00%",
+          "2": "20.00%",
+          "3": "15.50%",
+          "4": "20.00%",
+          "5": "16.00%",
+          "6": "20.00%"
+        }
+      },
+      "adopted": {
+        "1": "15.00%",
+        "2": "20.00%",
+        "3": "15.50%",
+        "4": "20.00%",
+        "5": "16.00%",
+        "6": "20.00%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 剣",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "7.50%",
+          "2": "7.50%",
+          "3": "8.00%",
+          "4": "10.00%",
+          "5": "13.75%",
+          "6": "15.00%"
+        },
+        "nana": {
+          "1": "7.50%",
+          "2": "7.50%",
+          "3": "8.00%",
+          "4": "10.00%",
+          "5": "13.75%",
+          "6": "15.00%"
+        }
+      },
+      "adopted": {
+        "1": "7.50%",
+        "2": "7.50%",
+        "3": "8.00%",
+        "4": "10.00%",
+        "5": "13.75%",
+        "6": "15.00%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 宝の山",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.50%",
+          "5": "0.50%",
+          "6": "0.50%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.50%",
+          "5": "0.50%",
+          "6": "0.50%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0.50%",
+        "5": "0.50%",
+        "6": "0.50%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 立ち絵",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0.95%",
+          "3": "1.17%",
+          "4": "1.34%",
+          "5": "1.38%",
+          "6": "1.41%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0.95%",
+          "3": "1.17%",
+          "4": "1.34%",
+          "5": "1.38%",
+          "6": "1.41%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0.95%",
+        "3": "1.17%",
+        "4": "1.34%",
+        "5": "1.38%",
+        "6": "1.41%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 見返り",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.98%",
+          "5": "1.01%",
+          "6": "1.03%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.98%",
+          "5": "1.01%",
+          "6": "1.03%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0.98%",
+        "5": "1.01%",
+        "6": "1.03%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 玉座",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "1.01%",
+          "6": "1.03%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "1.01%",
+          "6": "1.03%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "1.01%",
+        "6": "1.03%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "終了画面の出現率 覚醒ギルガメッシュ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.03%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.03%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1.03%"
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.0%",
+          "5": "2.0%",
+          "6": "2.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.0%",
+          "5": "2.0%",
+          "6": "2.0%"
+        },
+        "nana": {
+          "4": "2.0%",
+          "5": "2.0%",
+          "6": "2.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2.0%",
+        "5": "2.0%",
+        "6": "2.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.0%",
+          "5": "2.0%",
+          "6": "2.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 4560枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5.0%",
+          "5": "5.0%",
+          "6": "5.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5.0%",
+          "5": "5.0%",
+          "6": "5.0%"
+        },
+        "nana": {
+          "4": "5.0%",
+          "5": "5.0%",
+          "6": "5.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "5.0%",
+        "5": "5.0%",
+        "6": "5.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5.0%",
+          "5": "5.0%",
+          "6": "5.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.0%"
+        },
+        "nana": {
+          "4": "0%",
+          "5": "0%",
+          "6": "2.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "2.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 6666枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5.0%"
+        },
+        "nana": {
+          "4": "0%",
+          "5": "0%",
+          "6": "5.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "5.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「ほう、中々〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "55.8%",
+          "2": "58.5%",
+          "3": "55.7%",
+          "4": "52.0%",
+          "5": "45.5%",
+          "6": "45.5%"
+        },
+        "dmm": {
+          "1": "55.75%",
+          "2": "58.45%",
+          "3": "55.70%",
+          "4": "51.99%",
+          "5": "45.49%",
+          "6": "45.49%"
+        }
+      },
+      "adopted": {
+        "1": "55.8%",
+        "2": "58.5%",
+        "3": "55.7%",
+        "4": "52.0%",
+        "5": "45.5%",
+        "6": "45.5%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "55.8%",
+          "2": "58.5%",
+          "3": "55.7%",
+          "4": "52.0%",
+          "5": "45.5%",
+          "6": "45.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「うはははは〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "12.5%",
+          "2": "10.0%",
+          "3": "12.5%",
+          "4": "10.0%",
+          "5": "15.0%",
+          "6": "10.0%"
+        },
+        "dmm": {
+          "1": "12.50%",
+          "2": "10.00%",
+          "3": "12.50%",
+          "4": "10.00%",
+          "5": "15.00%",
+          "6": "10.00%"
+        }
+      },
+      "adopted": {
+        "1": "12.5%",
+        "2": "10.0%",
+        "3": "12.5%",
+        "4": "10.0%",
+        "5": "15.0%",
+        "6": "10.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "12.5%",
+          "2": "10.0%",
+          "3": "12.5%",
+          "4": "10.0%",
+          "5": "15.0%",
+          "6": "10.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「まだまだ突き進むか〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "10.0%",
+          "2": "12.0%",
+          "3": "10.0%",
+          "4": "14.0%",
+          "5": "10.0%",
+          "6": "16.0%"
+        },
+        "dmm": {
+          "1": "10.00%",
+          "2": "12.00%",
+          "3": "10.00%",
+          "4": "14.00%",
+          "5": "10.00%",
+          "6": "16.00%"
+        }
+      },
+      "adopted": {
+        "1": "10.0%",
+        "2": "12.0%",
+        "3": "10.0%",
+        "4": "14.0%",
+        "5": "10.0%",
+        "6": "16.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "10.0%",
+          "2": "12.0%",
+          "3": "10.0%",
+          "4": "14.0%",
+          "5": "10.0%",
+          "6": "16.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「己を信じ〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "11.3%",
+          "2": "7.5%",
+          "3": "11.3%",
+          "4": "7.5%",
+          "5": "15.0%",
+          "6": "7.5%"
+        },
+        "dmm": {
+          "1": "11.25%",
+          "2": "7.50%",
+          "3": "11.25%",
+          "4": "7.50%",
+          "5": "15.00%",
+          "6": "7.50%"
+        }
+      },
+      "adopted": {
+        "1": "11.3%",
+        "2": "7.5%",
+        "3": "11.3%",
+        "4": "7.5%",
+        "5": "15.0%",
+        "6": "7.5%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "11.3%",
+          "2": "7.5%",
+          "3": "11.3%",
+          "4": "7.5%",
+          "5": "15.0%",
+          "6": "7.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「ここまで来たか〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "7.5%",
+          "2": "10.0%",
+          "3": "7.5%",
+          "4": "13.0%",
+          "5": "7.5%",
+          "6": "16.0%"
+        },
+        "dmm": {
+          "1": "7.50%",
+          "2": "10.00%",
+          "3": "7.50%",
+          "4": "13.00%",
+          "5": "7.50%",
+          "6": "16.00%"
+        }
+      },
+      "adopted": {
+        "1": "7.5%",
+        "2": "10.0%",
+        "3": "7.5%",
+        "4": "13.0%",
+        "5": "7.5%",
+        "6": "16.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "7.5%",
+          "2": "10.0%",
+          "3": "7.5%",
+          "4": "13.0%",
+          "5": "7.5%",
+          "6": "16.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「もはや人の領域を〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "3.0%",
+          "2": "2.0%",
+          "3": "3.0%",
+          "4": "2.0%",
+          "5": "5.0%",
+          "6": "2.0%"
+        },
+        "dmm": {
+          "1": "3.00%",
+          "2": "2.00%",
+          "3": "3.00%",
+          "4": "2.00%",
+          "5": "5.00%",
+          "6": "2.00%"
+        }
+      },
+      "adopted": {
+        "1": "3.0%",
+        "2": "2.0%",
+        "3": "3.0%",
+        "4": "2.0%",
+        "5": "5.0%",
+        "6": "2.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "3.0%",
+          "2": "2.0%",
+          "3": "3.0%",
+          "4": "2.0%",
+          "5": "5.0%",
+          "6": "2.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「お前は神の領域に〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0.05%",
+          "3": "0.05%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0.05%",
+          "3": "0.05%",
+          "4": "1.00%",
+          "5": "1.00%",
+          "6": "1.00%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0.05%",
+        "3": "0.05%",
+        "4": "1.0%",
+        "5": "1.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0.05%",
+          "3": "0.05%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「さあ、伝説の始まりだ」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.5%",
+          "5": "0.5%",
+          "6": "0.5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.50%",
+          "5": "0.50%",
+          "6": "0.50%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0.5%",
+        "5": "0.5%",
+        "6": "0.5%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0.5%",
+          "5": "0.5%",
+          "6": "0.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「お前は神の頂きに〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0.5%",
+          "6": "0.5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0.50%",
+          "6": "0.50%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0.5%",
+        "6": "0.5%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0.5%",
+          "6": "0.5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "エンディングボイスの出現率「その力で更なる黄金を〜」",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.0%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.00%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "初期ボールの数 2個",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "28.1%",
+          "2": "28.1%",
+          "3": "28.1%",
+          "4": "28.1%",
+          "5": "28.1%",
+          "6": "28.1%"
+        },
+        "dmm": {
+          "1": "28.1%",
+          "2": "28.1%",
+          "3": "28.1%",
+          "4": "28.1%",
+          "5": "28.1%",
+          "6": "28.1%"
+        },
+        "nana": {
+          "1": "28.1%",
+          "2": "28.1%",
+          "3": "28.1%",
+          "4": "28.1%",
+          "5": "28.1%",
+          "6": "28.1%"
+        }
+      },
+      "adopted": {
+        "1": "28.1%",
+        "2": "28.1%",
+        "3": "28.1%",
+        "4": "28.1%",
+        "5": "28.1%",
+        "6": "28.1%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "28.1%",
+          "2": "28.1%",
+          "3": "28.1%",
+          "4": "28.1%",
+          "5": "28.1%",
+          "6": "28.1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "初期ボールの数 3個",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "56.3%",
+          "2": "55.5%",
+          "3": "55.1%",
+          "4": "53.9%",
+          "5": "52.7%",
+          "6": "52.0%"
+        },
+        "dmm": {
+          "1": "56.3%",
+          "2": "55.5%",
+          "3": "55.1%",
+          "4": "53.9%",
+          "5": "52.7%",
+          "6": "52.0%"
+        },
+        "nana": {
+          "1": "56.3%",
+          "2": "55.5%",
+          "3": "55.1%",
+          "4": "53.9%",
+          "5": "52.7%",
+          "6": "52.0%"
+        }
+      },
+      "adopted": {
+        "1": "56.3%",
+        "2": "55.5%",
+        "3": "55.1%",
+        "4": "53.9%",
+        "5": "52.7%",
+        "6": "52.0%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "56.3%",
+          "2": "55.5%",
+          "3": "55.1%",
+          "4": "53.9%",
+          "5": "52.7%",
+          "6": "52.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "初期ボールの数 4個",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "12.5%",
+          "2": "12.9%",
+          "3": "12.9%",
+          "4": "13.3%",
+          "5": "13.3%",
+          "6": "13.7%"
+        },
+        "dmm": {
+          "1": "12.5%",
+          "2": "12.9%",
+          "3": "12.9%",
+          "4": "13.3%",
+          "5": "13.3%",
+          "6": "13.7%"
+        },
+        "nana": {
+          "1": "12.5%",
+          "2": "12.9%",
+          "3": "12.9%",
+          "4": "13.3%",
+          "5": "13.3%",
+          "6": "13.7%"
+        }
+      },
+      "adopted": {
+        "1": "12.5%",
+        "2": "12.9%",
+        "3": "12.9%",
+        "4": "13.3%",
+        "5": "13.3%",
+        "6": "13.7%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "12.5%",
+          "2": "12.9%",
+          "3": "12.9%",
+          "4": "13.3%",
+          "5": "13.3%",
+          "6": "13.7%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "初期ボールの数 5個",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "3.1%",
+          "2": "3.5%",
+          "3": "3.9%",
+          "4": "4.7%",
+          "5": "5.9%",
+          "6": "6.3%"
+        },
+        "dmm": {
+          "1": "3.1%",
+          "2": "3.5%",
+          "3": "3.9%",
+          "4": "4.7%",
+          "5": "5.9%",
+          "6": "6.3%"
+        },
+        "nana": {
+          "1": "3.1%",
+          "2": "3.5%",
+          "3": "3.9%",
+          "4": "4.7%",
+          "5": "5.9%",
+          "6": "6.3%"
+        }
+      },
+      "adopted": {
+        "1": "3.1%",
+        "2": "3.5%",
+        "3": "3.9%",
+        "4": "4.7%",
+        "5": "5.9%",
+        "6": "6.3%"
+      },
+      "reread": {
+        "by": "reread-big-dream-golden-pusher",
+        "value": {
+          "1": "3.1%",
+          "2": "3.5%",
+          "3": "3.9%",
+          "4": "4.7%",
+          "5": "5.9%",
+          "6": "6.3%"
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "ドリームジャックポットボーナス突入確率",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "8445"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

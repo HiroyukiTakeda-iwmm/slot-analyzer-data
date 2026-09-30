@@ -1,3 +1,10 @@
 {
-  "domains": []
+  "domains": [
+    {
+      "domain": "slot-pioneer.co.jp",
+      "maker": "パイオニア",
+      "evidence": "https://www.slot-pioneer.co.jp/company.html",
+      "checkedAt": "2026-09-30"
+    }
+  ]
 }
