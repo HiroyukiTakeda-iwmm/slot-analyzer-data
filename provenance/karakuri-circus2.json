@@ -1,0 +1,1967 @@
+{
+  "machineId": "karakuri-circus2",
+  "machineFile": "karakuri/karakuri-circus2.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sankyo-slot/256699/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5019",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1144/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "342",
+          "2": "341",
+          "3": "339",
+          "4": "339",
+          "5": "327",
+          "6": "318"
+        },
+        "dmm": {
+          "1": "342",
+          "2": "341",
+          "3": "339",
+          "4": "339",
+          "5": "327",
+          "6": "318"
+        },
+        "nana": {
+          "1": "342",
+          "2": "341",
+          "3": "339",
+          "4": "339",
+          "5": "327",
+          "6": "318"
+        }
+      },
+      "adopted": {
+        "1": "342",
+        "2": "341",
+        "3": "339",
+        "4": "339",
+        "5": "327",
+        "6": "318"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "342",
+          "2": "341",
+          "3": "339",
+          "4": "339",
+          "5": "327",
+          "6": "318"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "519",
+          "2": "504",
+          "3": "474",
+          "4": "458",
+          "5": "430",
+          "6": "410"
+        },
+        "nana": {
+          "1": "519",
+          "2": "504",
+          "3": "474",
+          "4": "458",
+          "5": "430",
+          "6": "410"
+        }
+      },
+      "adopted": {
+        "1": "519",
+        "2": "504",
+        "3": "474",
+        "4": "458",
+        "5": "430",
+        "6": "410"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "519",
+          "2": "504",
+          "3": "474",
+          "4": "458",
+          "5": "430",
+          "6": "410"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT開始ステージ 勝ステージ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "40%",
+          "2": "60%",
+          "3": "40%",
+          "4": "60%",
+          "5": "40%",
+          "6": "50%"
+        },
+        "dmm": {
+          "1": "40%",
+          "2": "60%",
+          "3": "40%",
+          "4": "60%",
+          "5": "40%",
+          "6": "50%"
+        },
+        "nana": {
+          "1": "40%",
+          "2": "60%",
+          "3": "40%",
+          "4": "60%",
+          "5": "40%",
+          "6": "50%"
+        }
+      },
+      "adopted": {
+        "1": "40%",
+        "2": "60%",
+        "3": "40%",
+        "4": "60%",
+        "5": "40%",
+        "6": "50%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "40%",
+          "2": "60%",
+          "3": "40%",
+          "4": "60%",
+          "5": "40%",
+          "6": "50%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "激情ジャッジのキャラシナリオ シナリオ1（1キャラ目ミンシア）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "56%",
+          "2": "37%",
+          "3": "54%",
+          "4": "36%",
+          "5": "51%",
+          "6": "42%"
+        },
+        "dmm": {
+          "1": "56%",
+          "2": "37%",
+          "3": "54%",
+          "4": "36%",
+          "5": "51%",
+          "6": "42%"
+        },
+        "nana": {
+          "1": "56%",
+          "2": "37%",
+          "3": "54%",
+          "4": "36%",
+          "5": "51%",
+          "6": "42%"
+        }
+      },
+      "adopted": {
+        "1": "56%",
+        "2": "37%",
+        "3": "54%",
+        "4": "36%",
+        "5": "51%",
+        "6": "42%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "56%",
+          "2": "37%",
+          "3": "54%",
+          "4": "36%",
+          "5": "51%",
+          "6": "42%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "激情ジャッジのキャラシナリオ シナリオ2（1キャラ目リーゼロッテ）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "38%",
+          "2": "54%",
+          "3": "37%",
+          "4": "52%",
+          "5": "35%",
+          "6": "42%"
+        },
+        "dmm": {
+          "1": "38%",
+          "2": "54%",
+          "3": "37%",
+          "4": "52%",
+          "5": "35%",
+          "6": "42%"
+        },
+        "nana": {
+          "1": "38%",
+          "2": "54%",
+          "3": "37%",
+          "4": "52%",
+          "5": "35%",
+          "6": "42%"
+        }
+      },
+      "adopted": {
+        "1": "38%",
+        "2": "54%",
+        "3": "37%",
+        "4": "52%",
+        "5": "35%",
+        "6": "42%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "38%",
+          "2": "54%",
+          "3": "37%",
+          "4": "52%",
+          "5": "35%",
+          "6": "42%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "激情ジャッジのキャラシナリオ シナリオ3（1キャラ目ヴィルマ）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "2%",
+          "2": "6%",
+          "3": "3%",
+          "4": "8%",
+          "5": "5%",
+          "6": "8%"
+        },
+        "dmm": {
+          "1": "2%",
+          "2": "6%",
+          "3": "3%",
+          "4": "8%",
+          "5": "5%",
+          "6": "8%"
+        },
+        "nana": {
+          "1": "2%",
+          "2": "6%",
+          "3": "3%",
+          "4": "8%",
+          "5": "5%",
+          "6": "8%"
+        }
+      },
+      "adopted": {
+        "1": "2%",
+        "2": "6%",
+        "3": "3%",
+        "4": "8%",
+        "5": "5%",
+        "6": "8%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "2%",
+          "2": "6%",
+          "3": "3%",
+          "4": "8%",
+          "5": "5%",
+          "6": "8%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "激情ジャッジのキャラシナリオ シナリオ4（1キャラ目ジョージ）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4%",
+          "2": "3%",
+          "3": "6%",
+          "4": "4%",
+          "5": "9%",
+          "6": "8%"
+        },
+        "dmm": {
+          "1": "4%",
+          "2": "3%",
+          "3": "6%",
+          "4": "4%",
+          "5": "9%",
+          "6": "8%"
+        },
+        "nana": {
+          "1": "4%",
+          "2": "3%",
+          "3": "6%",
+          "4": "4%",
+          "5": "9%",
+          "6": "8%"
+        }
+      },
+      "adopted": {
+        "1": "4%",
+        "2": "3%",
+        "3": "6%",
+        "4": "4%",
+        "5": "9%",
+        "6": "8%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "4%",
+          "2": "3%",
+          "3": "6%",
+          "4": "4%",
+          "5": "9%",
+          "6": "8%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 白（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "49%",
+          "2": "45%",
+          "3": "44%",
+          "4": "40%",
+          "5": "38%",
+          "6": "35%"
+        },
+        "dmm": {
+          "1": "49%",
+          "2": "45%",
+          "3": "44%",
+          "4": "40%",
+          "5": "38%",
+          "6": "35%"
+        },
+        "nana": {
+          "1": "49%",
+          "2": "45%",
+          "3": "44%",
+          "4": "40%",
+          "5": "38%",
+          "6": "35%"
+        }
+      },
+      "adopted": {
+        "1": "49%",
+        "2": "45%",
+        "3": "44%",
+        "4": "40%",
+        "5": "38%",
+        "6": "35%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "49%",
+          "2": "45%",
+          "3": "44%",
+          "4": "40%",
+          "5": "38%",
+          "6": "35%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 青（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        },
+        "dmm": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        },
+        "nana": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        }
+      },
+      "adopted": {
+        "1": "22%",
+        "2": "15%",
+        "3": "22%",
+        "4": "15%",
+        "5": "22%",
+        "6": "18%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 黄（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        },
+        "dmm": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        },
+        "nana": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        }
+      },
+      "adopted": {
+        "1": "15%",
+        "2": "22%",
+        "3": "15%",
+        "4": "22%",
+        "5": "15%",
+        "6": "18%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 緑（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "13%",
+          "2": "15%",
+          "3": "16%",
+          "4": "18%",
+          "5": "20%",
+          "6": "22%"
+        },
+        "dmm": {
+          "1": "13%",
+          "2": "15%",
+          "3": "16%",
+          "4": "18%",
+          "5": "20%",
+          "6": "22%"
+        },
+        "nana": {
+          "1": "13%",
+          "2": "15%",
+          "3": "16%",
+          "4": "18%",
+          "5": "20%",
+          "6": "22%"
+        }
+      },
+      "adopted": {
+        "1": "13%",
+        "2": "15%",
+        "3": "16%",
+        "4": "18%",
+        "5": "20%",
+        "6": "22%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "13%",
+          "2": "15%",
+          "3": "16%",
+          "4": "18%",
+          "5": "20%",
+          "6": "22%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 紫（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2%",
+        "5": "2%",
+        "6": "2%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2%",
+          "5": "2%",
+          "6": "2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 虹（弱レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "2%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 白（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "49%",
+          "2": "43%",
+          "3": "40%",
+          "4": "33%",
+          "5": "30%",
+          "6": "26%"
+        },
+        "dmm": {
+          "1": "49%",
+          "2": "43%",
+          "3": "40%",
+          "4": "33%",
+          "5": "30%",
+          "6": "26%"
+        },
+        "nana": {
+          "1": "49%",
+          "2": "43%",
+          "3": "40%",
+          "4": "33%",
+          "5": "30%",
+          "6": "26%"
+        }
+      },
+      "adopted": {
+        "1": "49%",
+        "2": "43%",
+        "3": "40%",
+        "4": "33%",
+        "5": "30%",
+        "6": "26%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "49%",
+          "2": "43%",
+          "3": "40%",
+          "4": "33%",
+          "5": "30%",
+          "6": "26%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 青（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        },
+        "dmm": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        },
+        "nana": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        }
+      },
+      "adopted": {
+        "1": "22%",
+        "2": "15%",
+        "3": "22%",
+        "4": "15%",
+        "5": "22%",
+        "6": "18%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "22%",
+          "2": "15%",
+          "3": "22%",
+          "4": "15%",
+          "5": "22%",
+          "6": "18%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 黄（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        },
+        "dmm": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        },
+        "nana": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        }
+      },
+      "adopted": {
+        "1": "15%",
+        "2": "22%",
+        "3": "15%",
+        "4": "22%",
+        "5": "15%",
+        "6": "18%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "15%",
+          "2": "22%",
+          "3": "15%",
+          "4": "22%",
+          "5": "15%",
+          "6": "18%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 緑（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "13%",
+          "2": "15%",
+          "3": "18%",
+          "4": "20%",
+          "5": "23%",
+          "6": "25%"
+        },
+        "dmm": {
+          "1": "13%",
+          "2": "15%",
+          "3": "18%",
+          "4": "20%",
+          "5": "23%",
+          "6": "25%"
+        },
+        "nana": {
+          "1": "13%",
+          "2": "15%",
+          "3": "18%",
+          "4": "20%",
+          "5": "23%",
+          "6": "25%"
+        }
+      },
+      "adopted": {
+        "1": "13%",
+        "2": "15%",
+        "3": "18%",
+        "4": "20%",
+        "5": "23%",
+        "6": "25%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "13%",
+          "2": "15%",
+          "3": "18%",
+          "4": "20%",
+          "5": "23%",
+          "6": "25%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 紫（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "5%",
+        "5": "5%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 虹（強レア役時）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "3%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 222枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "5%",
+        "3": "5%",
+        "4": "5%",
+        "5": "5%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 246枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "4%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "4%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "4%",
+          "5": "0%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "3%",
+        "3": "0%",
+        "4": "4%",
+        "5": "0%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "3%",
+          "3": "0%",
+          "4": "4%",
+          "5": "0%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 456枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "3%",
+          "5": "4%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "3%",
+          "5": "4%",
+          "6": "5%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "3%",
+          "5": "4%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "3%",
+        "5": "4%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "3%",
+          "5": "4%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "獲得枚数表示の出現率 666枚",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "2%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "踊れ！オリンピアの枚数表示の出現率 ＋20",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "5%",
+        "3": "5%",
+        "4": "3%",
+        "5": "3%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "5%",
+          "3": "5%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "踊れ！オリンピアの枚数表示の出現率 ＋4",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "3%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "3%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "3%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "5%",
+        "5": "5%",
+        "6": "3%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "5%",
+          "5": "5%",
+          "6": "3%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "踊れ！オリンピアの枚数表示の出現率 ＋6",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "dmm": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "5%"
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "5%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "踊れ！オリンピアの枚数表示の出現率 その他",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "dmm": {
+          "1": "100%",
+          "2": "95%",
+          "3": "95%",
+          "4": "92%",
+          "5": "92%",
+          "6": "89%"
+        },
+        "nana": {
+          "1": "100%",
+          "2": "95%",
+          "3": "95%",
+          "4": "92%",
+          "5": "92%",
+          "6": "89%"
+        }
+      },
+      "adopted": {
+        "1": "100%",
+        "2": "95%",
+        "3": "95%",
+        "4": "92%",
+        "5": "92%",
+        "6": "89%"
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 歯車",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 鳴海＆勝",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 エレオノール（笑顔）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 最古の四人",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ルシール＆アンジェリーナ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "AT終了画面のボイス 人生はそういうものだよ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "AT終了画面のボイス 何を恐れることがある",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["3"]
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "AT終了画面のボイス 俺をしろがねと呼びな",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["4"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["4"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["4"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["4"]
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": [],
+          "excluded": ["4"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "AT終了画面のボイス 僕は僕さ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["5"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["5"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["5"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["5"]
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": [],
+          "excluded": ["5"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 222枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 246枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "踊れ！オリンピアの枚数表示 ＋20",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "踊れ！オリンピアの枚数表示 ＋4",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "踊れ！オリンピアの枚数表示 ＋6",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中のレア役 紫",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中のレア役 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-karakuri-circus2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 赤（弱レア役時）",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "dmm": {
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        },
+        "nana": {
+          "2": "3%",
+          "3": "3%",
+          "4": "3%",
+          "5": "3%",
+          "6": "3%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中のレア役 赤（強レア役時）",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "dmm": {
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        },
+        "nana": {
+          "2": "5%",
+          "3": "5%",
+          "4": "5%",
+          "5": "5%",
+          "6": "5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

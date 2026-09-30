@@ -1,0 +1,434 @@
+{
+  "name": "Lパチスロ 喰霊‐零‐Re",
+  "type": "A+ART",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "description": "オーイズミのスマスロA+ART機（2026-08-17導入、6段階設定）。BIG・REG・CZ 超自然災害モード・CZ 解放の刻と、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/oizumi-slot/259743/)、DMMぱちタウン(https://p-town.dmm.com/machines/5028)、なな徹(https://nana-press.com/kaiseki/machine/1171/)",
+  "notes": "入れていない主な項目: 共通ベル・乱撃突入率（設定1の値しか公開されていない）。特戦四課モード（全設定共通の値がDMMぱちタウンだけ。特戦四課リプレイの一部から入るので重ねて入れない）。エンディング中の殺生石ランプ 虹（DMMぱちタウンだけ。カラフルと同じ色かを画像で確かめられない）。弱チェリー・強チェリーのCZ当選率（通常滞在時・高確滞在時に分けた値だけで、滞在状態が遊技者に見えない）。特定ボーナス 強チェリー＋RB のDMMぱちタウン・なな徹の組（同じサイトの中で書き方の強さが割れる）と、スイカ・弱チェリー・弱チャンス目とボーナスの組み合わせ（示唆だけ）。デフォルトの終了画面、エンディング後の神楽と黄泉②（踏切）、キャラ紹介・殺生石ランプの奇数・偶数・高設定の示唆だけのもの（確定・否定の設定が無い）。高確移行率・ステージ・期待度など。 未採用の主な項目: 共通ベル、特戦四課モード、乱撃突入率、エンディング中の殺生石ランプ 虹。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。 この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。",
+  "roles": [
+    {
+      "name": "BIG",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/385.5、設定6: 1/364.1",
+      "probabilities": {
+        "1": 0.00259403,
+        "2": 0.00259403,
+        "3": 0.00263992,
+        "4": 0.00268528,
+        "5": 0.00271592,
+        "6": 0.0027465
+      }
+    },
+    {
+      "name": "REG",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/414.8、設定6: 1/364.1",
+      "probabilities": {
+        "1": 0.0024108,
+        "2": 0.00244141,
+        "3": 0.00248694,
+        "4": 0.00259403,
+        "5": 0.00265534,
+        "6": 0.0027465
+      }
+    },
+    {
+      "name": "CZ 超自然災害モード",
+      "hasSettingDiff": true,
+      "displayOrder": 3,
+      "color": "#00BCD4",
+      "description": "設定1: 1/287.2、設定6: 1/197.8。CZ「超自然災害モード」の確率",
+      "probabilities": {
+        "1": 0.00348189,
+        "2": 0.00360231,
+        "3": 0.00391236,
+        "4": 0.00434216,
+        "5": 0.00470367,
+        "6": 0.00505561
+      }
+    },
+    {
+      "name": "CZ 解放の刻",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#00BCD4",
+      "description": "設定1: 1/1200.0、設定6: 1/1200.0。CZ「解放の刻」の確率。全設定共通",
+      "probabilities": {
+        "1": 0.000833333,
+        "2": 0.000833333,
+        "3": 0.000833333,
+        "4": 0.000833333,
+        "5": 0.000833333,
+        "6": 0.000833333
+      }
+    },
+    {
+      "name": "ART確率",
+      "hasSettingDiff": true,
+      "displayOrder": 5,
+      "color": "#FF5722",
+      "description": "設定1: 1/468.6、設定6: 1/279.8。ARTの初当り確率",
+      "probabilities": {
+        "1": 0.00213402,
+        "2": 0.00221631,
+        "3": 0.00244618,
+        "4": 0.00284495,
+        "5": 0.00318269,
+        "6": 0.00357398
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#4CAF50",
+      "description": "設定1: 1/81.9、設定6: 1/72.1",
+      "probabilities": {
+        "1": 0.01221,
+        "2": 0.0125156,
+        "3": 0.0128535,
+        "4": 0.0132275,
+        "5": 0.0135501,
+        "6": 0.0138696
+      }
+    },
+    {
+      "name": "弱チェリー",
+      "hasSettingDiff": true,
+      "displayOrder": 7,
+      "color": "#F44336",
+      "description": "設定1: 1/99.0、設定6: 1/78.2",
+      "probabilities": {
+        "1": 0.010101,
+        "2": 0.0104932,
+        "3": 0.010989,
+        "4": 0.0117509,
+        "5": 0.0124224,
+        "6": 0.0127877
+      }
+    },
+    {
+      "name": "強チェリー",
+      "hasSettingDiff": true,
+      "displayOrder": 8,
+      "color": "#F44336",
+      "description": "設定1: 1/481.9、設定6: 1/455.1",
+      "probabilities": {
+        "1": 0.00207512,
+        "2": 0.00207512,
+        "3": 0.00207512,
+        "4": 0.0021363,
+        "5": 0.0021363,
+        "6": 0.00219732
+      }
+    },
+    {
+      "name": "弱チャンス目",
+      "hasSettingDiff": true,
+      "displayOrder": 9,
+      "color": "#9C27B0",
+      "description": "設定1: 1/136.5、設定6: 1/134.8",
+      "probabilities": {
+        "1": 0.00732601,
+        "2": 0.00732601,
+        "3": 0.00735294,
+        "4": 0.00735294,
+        "5": 0.00738552,
+        "6": 0.0074184
+      }
+    },
+    {
+      "name": "強チャンス目",
+      "hasSettingDiff": false,
+      "displayOrder": 10,
+      "color": "#9C27B0",
+      "description": "設定1: 1/546.1、設定6: 1/546.1。全設定共通",
+      "probabilities": {
+        "1": 0.00183117,
+        "2": 0.00183117,
+        "3": 0.00183117,
+        "4": 0.00183117,
+        "5": 0.00183117,
+        "6": 0.00183117
+      }
+    },
+    {
+      "name": "3枚ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 11,
+      "color": "#FFC107",
+      "description": "設定1: 1/26.2、設定6: 1/26.2。全設定共通",
+      "probabilities": {
+        "1": 0.0381679,
+        "2": 0.0381679,
+        "3": 0.0381679,
+        "4": 0.0381679,
+        "5": 0.0381679,
+        "6": 0.0381679
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 12,
+      "color": "#607D8B",
+      "description": "設定1: 1/7.3、設定6: 1/7.3。全設定共通。RT状態によって確率が変わるが、出典は状態を分けない1つの値だけを載せている（設定の推測には効かない）",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "3": 0.136986,
+        "4": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      }
+    },
+    {
+      "name": "リーチ目リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 13,
+      "color": "#607D8B",
+      "description": "設定1: 1/4096.0、設定6: 1/4096.0。全設定共通",
+      "probabilities": {
+        "1": 0.000244141,
+        "2": 0.000244141,
+        "3": 0.000244141,
+        "4": 0.000244141,
+        "5": 0.000244141,
+        "6": 0.000244141
+      }
+    },
+    {
+      "name": "特戦四課リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 14,
+      "color": "#607D8B",
+      "description": "設定1: 1/10922.7、設定6: 1/10922.7。全設定共通。DMMぱちタウンでは中段チェリーとも書く役。特戦四課モードはこの役の一部から入るので、モードに入った回数は別に数えない",
+      "probabilities": {
+        "1": 9.15525e-05,
+        "2": 9.15525e-05,
+        "3": 9.15525e-05,
+        "4": 9.15525e-05,
+        "5": 9.15525e-05,
+        "6": 9.15525e-05
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "rb_chara_sanzuka_gold",
+      "name": "RB中のキャラ紹介 三途河(金)",
+      "description": "RB中のキャラ紹介に三途河（金）が出たら設定5以上濃厚",
+      "color": "#FF9800",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "rb_chara_1000chan",
+      "name": "RB中のキャラ紹介 1000ちゃん",
+      "description": "RB中のキャラ紹介に1000ちゃんが出たら設定6濃厚",
+      "color": "#F44336",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "rb_chara_yomi_mei_purple",
+      "name": "RB中のキャラ紹介 黄泉悪霊化(紫)と冥(紫)の両方",
+      "description": "1回のRBのキャラ紹介に、悪霊化した黄泉（紫）と冥（紫）の2人がそろって出たときだけ設定4以上濃厚。どちらか1人だけのときは示唆にとどまるので数えない",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "payout_222",
+      "name": "獲得枚数表示 222枚突破",
+      "description": "獲得枚数の表示に222枚突破が出たら設定2以上濃厚（なな徹の表記は222枚OVER）",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "payout_444",
+      "name": "獲得枚数表示 444枚突破",
+      "description": "獲得枚数の表示に444枚突破が出たら設定4以上濃厚。456枚突破とは別の表示",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "payout_456",
+      "name": "獲得枚数表示 456枚突破",
+      "description": "獲得枚数の表示に456枚突破が出たら設定4以上濃厚。444枚突破とは別の表示",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "payout_666",
+      "name": "獲得枚数表示 666枚突破",
+      "description": "獲得枚数の表示に666枚突破が出たら設定6濃厚。0123枚突破とは別の表示",
+      "color": "#F44336",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "payout_0123",
+      "name": "獲得枚数表示 0123枚突破",
+      "description": "獲得枚数の表示に0123枚突破が出たら設定6濃厚。666枚突破とは別の表示",
+      "color": "#F44336",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ending_lamp_purple",
+      "name": "エンディング中の殺生石ランプ 紫",
+      "description": "エンディング中に殺生石ランプが紫で点灯したら設定4以上濃厚（青・黄・緑・赤は示唆にとどまるので入れていない）",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ending_lamp_sanzuka",
+      "name": "エンディング中の殺生石ランプ 三途河カラー",
+      "description": "エンディング中に殺生石ランプが三途河カラーで点灯したら設定5以上濃厚",
+      "color": "#FF9800",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "ending_lamp_colorful",
+      "name": "エンディング中の殺生石ランプ カラフル",
+      "description": "エンディング中に殺生石ランプがカラフルに点灯したら設定6濃厚（ちょんぼりすたの値・暫定）。DMMぱちタウンが「虹」と書く色と同じかは確かめられていない",
+      "color": "#F44336",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "strong_cherry_rb",
+      "name": "特定ボーナス 強チェリー＋RB",
+      "description": "強チェリーと同時にRBに当選したら設定4以上濃厚（ちょんぼりすたの値・暫定）。スイカ・弱チェリー・弱チャンス目とボーナスの組み合わせは示唆にとどまるので数えない",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "bonus_end_childhood",
+      "name": "ボーナス終了画面 幼少期",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "description": "BB・RBのどちらでも、ボーナスの終了時に幼少期の画面が出たら設定2以上濃厚",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_casual",
+      "name": "ボーナス終了画面 私服",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "description": "BB・RBのどちらでも、ボーナスの終了時に私服の画面が出たら設定4以上濃厚",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "bonus_end_swimsuit",
+      "name": "ボーナス終了画面 水着",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "description": "BB・RBのどちらでも、ボーナスの終了時に水着の画面が出たら設定6濃厚",
+      "color": "#F44336",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "art_end_kagura_yomi1",
+      "name": "ART終了画面 神楽と黄泉①",
+      "type": "at_end",
+      "hint": "設定2以上濃厚（エンディング後の神楽と黄泉②は対象外）",
+      "description": "ARTの終了時に神楽と黄泉①の画面が出たら設定2以上濃厚（DMMぱちタウンの「神楽と黄泉」と同じ画面）。エンディングの後に出る神楽と黄泉②（踏切の前を2人が歩く画面）は設定の示唆が無いので、ここには数えない",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "art_end_yomi_mei",
+      "name": "ART終了画面 黄泉と冥",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "description": "ARTの終了時に黄泉と冥の画面が出たら設定4以上濃厚（DMMぱちタウンの表記は「冥と黄泉」）",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ]
+}

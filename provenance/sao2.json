@@ -1,0 +1,1022 @@
+{
+  "machineId": "sao2",
+  "machineFile": "sao/sao2.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/daito-slot/256112/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5025",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1158/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "238.4",
+          "2": "232.3",
+          "3": "232.7",
+          "4": "218.9",
+          "5": "225.2",
+          "6": "191.7"
+        },
+        "dmm": {
+          "1": "238.4",
+          "2": "232.3",
+          "3": "232.7",
+          "4": "218.9",
+          "5": "225.2",
+          "6": "191.7"
+        },
+        "nana": {
+          "1": "238.4",
+          "2": "232.3",
+          "3": "232.7",
+          "4": "218.9",
+          "5": "225.2",
+          "6": "191.7"
+        }
+      },
+      "adopted": {
+        "1": "238.4",
+        "2": "232.3",
+        "3": "232.7",
+        "4": "218.9",
+        "5": "225.2",
+        "6": "191.7"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "238.4",
+          "2": "232.3",
+          "3": "232.7",
+          "4": "218.9",
+          "5": "225.2",
+          "6": "191.7"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "386.2",
+          "2": "364.3",
+          "3": "368.1",
+          "4": "326.8",
+          "5": "340.6",
+          "6": "269.6"
+        },
+        "nana": {
+          "1": "386.2",
+          "2": "364.3",
+          "3": "368.1",
+          "4": "326.8",
+          "5": "340.6",
+          "6": "269.6"
+        }
+      },
+      "adopted": {
+        "1": "386.2",
+        "2": "364.3",
+        "3": "368.1",
+        "4": "326.8",
+        "5": "340.6",
+        "6": "269.6"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "386.2",
+          "2": "364.3",
+          "3": "368.1",
+          "4": "326.8",
+          "5": "340.6",
+          "6": "269.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目B",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "1057.0",
+          "2": "993.0",
+          "3": "936.2",
+          "4": "885.6",
+          "5": "840.2",
+          "6": "799.2"
+        },
+        "nana": {
+          "1": "1057.0",
+          "2": "993.0",
+          "3": "936.2",
+          "4": "885.6",
+          "5": "840.2",
+          "6": "799.2"
+        }
+      },
+      "adopted": {
+        "1": "1057.0",
+        "2": "993.0",
+        "3": "936.2",
+        "4": "885.6",
+        "5": "840.2",
+        "6": "799.2"
+      }
+    },
+    {
+      "kind": "role",
+      "name": "確定CZ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "20177.5",
+          "2": "17579.1",
+          "3": "17586.3",
+          "4": "13784.5",
+          "5": "11459.0",
+          "6": "7077.2"
+        },
+        "dmm": {
+          "1": "20177.5",
+          "2": "17579.1",
+          "3": "17586.3",
+          "4": "13784.5",
+          "5": "11459.0",
+          "6": "7077.2"
+        },
+        "nana": {
+          "1": "20177.5",
+          "2": "17579.1",
+          "3": "17586.3",
+          "4": "13784.5",
+          "5": "11459.0",
+          "6": "7077.2"
+        }
+      },
+      "adopted": {
+        "1": "20177.5",
+        "2": "17579.1",
+        "3": "17586.3",
+        "4": "13784.5",
+        "5": "11459.0",
+        "6": "7077.2"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "20177.5",
+          "2": "17579.1",
+          "3": "17586.3",
+          "4": "13784.5",
+          "5": "11459.0",
+          "6": "7077.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "GGOモード詩乃のAT直撃",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "18091.8",
+          "2": "14160.5",
+          "3": "14390.8",
+          "4": "8498.0",
+          "5": "4723.3",
+          "6": "3415.7"
+        },
+        "dmm": {
+          "1": "18091.8",
+          "2": "14160.5",
+          "3": "14390.8",
+          "4": "8498.0",
+          "5": "4723.3",
+          "6": "3415.7"
+        },
+        "nana": {
+          "1": "18091.8",
+          "2": "14160.5",
+          "3": "14390.8",
+          "4": "8498.0",
+          "5": "4723.3",
+          "6": "3415.7"
+        }
+      },
+      "adopted": {
+        "1": "18091.8",
+        "2": "14160.5",
+        "3": "14390.8",
+        "4": "8498.0",
+        "5": "4723.3",
+        "6": "3415.7"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "18091.8",
+          "2": "14160.5",
+          "3": "14390.8",
+          "4": "8498.0",
+          "5": "4723.3",
+          "6": "3415.7"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "79.9",
+          "2": "79.9",
+          "3": "79.9",
+          "4": "79.9",
+          "5": "79.9",
+          "6": "79.9"
+        }
+      },
+      "adopted": {
+        "1": "79.9",
+        "2": "79.9",
+        "3": "79.9",
+        "4": "79.9",
+        "5": "79.9",
+        "6": "79.9"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "79.9",
+          "2": "79.9",
+          "3": "79.9",
+          "4": "79.9",
+          "5": "79.9",
+          "6": "79.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "82.6",
+          "2": "82.6",
+          "3": "82.6",
+          "4": "82.6",
+          "5": "82.6",
+          "6": "82.6"
+        }
+      },
+      "adopted": {
+        "1": "82.6",
+        "2": "82.6",
+        "3": "82.6",
+        "4": "82.6",
+        "5": "82.6",
+        "6": "82.6"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "82.6",
+          "2": "82.6",
+          "3": "82.6",
+          "4": "82.6",
+          "5": "82.6",
+          "6": "82.6"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "弱チャンス目",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "163.8",
+          "2": "163.8",
+          "3": "163.8",
+          "4": "163.8",
+          "5": "163.8",
+          "6": "163.8"
+        }
+      },
+      "adopted": {
+        "1": "163.8",
+        "2": "163.8",
+        "3": "163.8",
+        "4": "163.8",
+        "5": "163.8",
+        "6": "163.8"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "163.8",
+          "2": "163.8",
+          "3": "163.8",
+          "4": "163.8",
+          "5": "163.8",
+          "6": "163.8"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "327.7",
+          "2": "327.7",
+          "3": "327.7",
+          "4": "327.7",
+          "5": "327.7",
+          "6": "327.7"
+        }
+      },
+      "adopted": {
+        "1": "327.7",
+        "2": "327.7",
+        "3": "327.7",
+        "4": "327.7",
+        "5": "327.7",
+        "6": "327.7"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "327.7",
+          "2": "327.7",
+          "3": "327.7",
+          "4": "327.7",
+          "5": "327.7",
+          "6": "327.7"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "強チャンス目A",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "1057.0",
+          "2": "1057.0",
+          "3": "1057.0",
+          "4": "1057.0",
+          "5": "1057.0",
+          "6": "1057.0"
+        }
+      },
+      "adopted": {
+        "1": "1057.0",
+        "2": "1057.0",
+        "3": "1057.0",
+        "4": "1057.0",
+        "5": "1057.0",
+        "6": "1057.0"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "1057.0",
+          "2": "1057.0",
+          "3": "1057.0",
+          "4": "1057.0",
+          "5": "1057.0",
+          "6": "1057.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ウルティマチェリー",
+      "status": "provisional-chonborista",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        }
+      },
+      "adopted": {
+        "1": "16384.0",
+        "2": "16384.0",
+        "3": "16384.0",
+        "4": "16384.0",
+        "5": "16384.0",
+        "6": "16384.0"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "16384.0",
+          "2": "16384.0",
+          "3": "16384.0",
+          "4": "16384.0",
+          "5": "16384.0",
+          "6": "16384.0"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "強チャンス目の確定CZ当選率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "0.8%",
+          "4": "1.6%",
+          "5": "2.3%",
+          "6": "5.1%"
+        },
+        "dmm": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "0.8%",
+          "4": "1.6%",
+          "5": "2.3%",
+          "6": "5.1%"
+        },
+        "nana": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "0.8%",
+          "4": "1.6%",
+          "5": "2.3%",
+          "6": "5.1%"
+        }
+      },
+      "adopted": {
+        "1": "0.4%",
+        "2": "0.8%",
+        "3": "0.8%",
+        "4": "1.6%",
+        "5": "2.3%",
+        "6": "5.1%"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "0.4%",
+          "2": "0.8%",
+          "3": "0.8%",
+          "4": "1.6%",
+          "5": "2.3%",
+          "6": "5.1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "CZ失敗時のアイテム獲得率",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "20.3%",
+          "2": "21.1%",
+          "3": "21.9%",
+          "4": "22.7%",
+          "5": "25.0%",
+          "6": "30.1%"
+        },
+        "dmm": {
+          "1": "20.3%",
+          "2": "21.1%",
+          "3": "21.9%",
+          "4": "22.7%",
+          "5": "25.0%",
+          "6": "30.1%"
+        },
+        "nana": {
+          "1": "20.3%",
+          "2": "21.1%",
+          "3": "21.9%",
+          "4": "22.7%",
+          "5": "25.0%",
+          "6": "30.1%"
+        }
+      },
+      "adopted": {
+        "1": "20.3%",
+        "2": "21.1%",
+        "3": "21.9%",
+        "4": "22.7%",
+        "5": "25.0%",
+        "6": "30.1%"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "20.3%",
+          "2": "21.1%",
+          "3": "21.9%",
+          "4": "22.7%",
+          "5": "25.0%",
+          "6": "30.1%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "AT開始時のステージ（荒野）",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        },
+        "dmm": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        },
+        "nana": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        }
+      },
+      "adopted": {
+        "1": "60.0%",
+        "2": "40.0%",
+        "3": "60.0%",
+        "4": "40.0%",
+        "5": "60.0%",
+        "6": "40.0%"
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "1": "60.0%",
+          "2": "40.0%",
+          "3": "60.0%",
+          "4": "40.0%",
+          "5": "60.0%",
+          "6": "40.0%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 制服",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ソファー",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 木漏れ日",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 夏祭り",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 幼少期",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 Yシャツ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 お風呂",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 水着",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 パジャマ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 銅",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 銀",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 金",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー イナズマ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "コパンダトロフィー 虹",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-sao2",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のミニキャラ 詩乃/ユイ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "エンディング中のミニキャラ 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-sao2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "zoneRole",
+      "name": "AT中::スナイパーチャンス",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "54"
+        },
+        "dmm": {
+          "1": "54"
+        },
+        "nana": {
+          "1": "54"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "CZ失敗時の「曠野の決闘」突入率",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "128.0",
+          "6": "64.0"
+        },
+        "dmm": {
+          "1": "128.0",
+          "6": "64.0"
+        },
+        "nana": {
+          "1": "128.0",
+          "6": "64.0"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "スナイパーチャンス勝利期待度",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "50%"
+        },
+        "dmm": {
+          "1": "50%"
+        },
+        "nana": {
+          "1": "50%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

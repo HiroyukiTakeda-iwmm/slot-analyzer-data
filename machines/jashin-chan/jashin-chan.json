@@ -1,0 +1,431 @@
+{
+  "name": "L邪神ちゃんドロップキック",
+  "type": "AT",
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "source": "ちょんぼりすた(https://chonborista.com/slot/sanyo-slot/260992/)、DMMぱちタウン(https://p-town.dmm.com/machines/5020)、なな徹(https://nana-press.com/kaiseki/machine/1181/)",
+  "description": "サンスリーのスマスロAT機（2026-08-03導入、6段階設定）。ボーナス確率・AT確率・リプレイ・ベルと、出典で採用できた設定判別項目を収録。",
+  "notes": "入れていない主な項目: エピソードボーナス直撃確率（全設定の値がそろった出典が DMM だけ）、とつぜんうれしいちゃんすのアイテム・当選の割合（通常時11・AT中12。設定1 の値しか公開されていない）、邪神ちゃん揃い（通常・高確中。高確率の続くゲーム数が分からず数え分けられない。全設定共通で推定には効かない）、AT直撃・AT引き戻し・落雷の出現率（設定差があるという記述だけで数値が無い）、小役のライン別の内訳・ボーナス中のAT突入抽選・ロングフリーズなど（設定の記載が無い）、確定・否定の無い示唆（AT終了画面のデフォルト、キャラ紹介とシールの期待度アップだけのもの、キャラ紹介の2回・3回出現）、ボーナス終了時のPUSH などモード・前兆の示唆。DMM のボーナス・AT の初当り確率は画像だけで、値にしていない。 未採用の主な項目: エピソードボーナス直撃確率、とつぜんうれしいちゃんす（通常時） 遊技延長チケット、とつぜんうれしいちゃんす（通常時） ヘビ肉のスライス、とつぜんうれしいちゃんす（通常時） CZ優遇チケット、とつぜんうれしいちゃんす（通常時） 7狙いやり直しチケット、とつぜんうれしいちゃんす（通常時） 天界チケット、とつぜんうれしいちゃんす（通常時） カレー。設定別の値が不足、出典が一致しない、または採用条件を満たさない項目は推測で補わない。",
+  "roles": [
+    {
+      "name": "ボーナス確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#9C27B0",
+      "description": "設定1: 1/253.1、設定6: 1/210.0。ボーナスの初当り確率（スペックの表の値）。通常時に当たったボーナスだけを数える（CZ を経た当選も含む。AT中に当たったボーナスは数えない）。AT確率とともに設定差がある",
+      "probabilities": {
+        "1": 0.00395101,
+        "2": 0.00403063,
+        "3": 0.00413907,
+        "4": 0.00449438,
+        "5": 0.00472144,
+        "6": 0.0047619
+      }
+    },
+    {
+      "name": "AT確率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#FF5722",
+      "description": "設定1: 1/758.2、設定6: 1/606.2。ATの初当り確率（スペックの表の値）。通常時からATに入った回数を数える（ボーナスや CZ を経て入った回も1回）。AT終了時の引き戻し（当選すると通常時を経て AT の告知が出る）で入った回を含めるかは、ページに書かれていない",
+      "probabilities": {
+        "1": 0.00131891,
+        "2": 0.00133994,
+        "3": 0.00138351,
+        "4": 0.00152462,
+        "5": 0.00162364,
+        "6": 0.00164962
+      }
+    },
+    {
+      "name": "リプレイ",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#607D8B",
+      "description": "設定1: 1/7.3、設定6: 1/7.3。全設定共通。ゆりね揃いリプレイとゆりねフェイクリプレイの各ラインを合わせたリプレイ全体の値なので、種類やラインを分けずにまとめて数える",
+      "probabilities": {
+        "1": 0.136986,
+        "2": 0.136986,
+        "3": 0.136986,
+        "4": 0.136986,
+        "5": 0.136986,
+        "6": 0.136986
+      }
+    },
+    {
+      "name": "ベル",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#FFC107",
+      "description": "設定1: 1/7.0、設定6: 1/7.0。全設定共通",
+      "probabilities": {
+        "1": 0.142857,
+        "2": 0.142857,
+        "3": 0.142857,
+        "4": 0.142857,
+        "5": 0.142857,
+        "6": 0.142857
+      }
+    },
+    {
+      "name": "スイカ合算",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#4CAF50",
+      "description": "設定1: 1/40.2、設定6: 1/40.2。全設定共通。5つのラインのスイカを合わせた値なので、どのラインにそろっても1回と数える",
+      "probabilities": {
+        "1": 0.0248756,
+        "2": 0.0248756,
+        "3": 0.0248756,
+        "4": 0.0248756,
+        "5": 0.0248756,
+        "6": 0.0248756
+      }
+    },
+    {
+      "name": "純ハズレ",
+      "hasSettingDiff": false,
+      "displayOrder": 6,
+      "color": "#9E9E9E",
+      "description": "設定1: 1/528.6、設定6: 1/528.6。全設定共通",
+      "probabilities": {
+        "1": 0.00189179,
+        "2": 0.00189179,
+        "3": 0.00189179,
+        "4": 0.00189179,
+        "5": 0.00189179,
+        "6": 0.00189179
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "id": "chara_justice",
+      "name": "キャラ紹介 邪神ちゃん ジャスティス",
+      "description": "小悪魔ボーナス中のキャラ紹介に邪神ちゃん ジャスティスが出れば設定1否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "chara_fighter",
+      "name": "キャラ紹介 邪神ちゃん ファイター",
+      "description": "小悪魔ボーナス中のキャラ紹介に邪神ちゃん ファイターが出れば設定2否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "2"
+      ]
+    },
+    {
+      "id": "chara_commander",
+      "name": "キャラ紹介 邪神ちゃん コマンダー",
+      "description": "小悪魔ボーナス中のキャラ紹介に邪神ちゃん コマンダーが出れば設定3否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "3"
+      ]
+    },
+    {
+      "id": "chara_esp",
+      "name": "キャラ紹介 邪神ちゃん エスプ",
+      "description": "小悪魔ボーナス中のキャラ紹介に邪神ちゃん エスプが出れば設定1・2否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "chara_genius",
+      "name": "キャラ紹介 邪神ちゃん ジーニアス",
+      "description": "小悪魔ボーナス中のキャラ紹介に邪神ちゃん ジーニアスが出れば設定1・3否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1",
+        "3"
+      ]
+    },
+    {
+      "id": "chara_perfect",
+      "name": "キャラ紹介 邪神ちゃん パーフェクト",
+      "description": "小悪魔ボーナス中のキャラ紹介にパーフェクト邪神ちゃんが出れば設定4以上濃厚",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "chara_akuma_yurine",
+      "name": "キャラ紹介 悪魔コス ゆりね",
+      "description": "小悪魔ボーナス中のキャラ紹介に悪魔コスのゆりねが出れば設定6濃厚",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "chara_high_x4",
+      "name": "キャラ紹介 高設定期待度UPキャラが4回出現（1回の小悪魔ボーナス中）",
+      "description": "1回の小悪魔ボーナスのキャラ紹介で、高設定示唆のキャラ（芽依・リエール・ペルセポネ1世・エキュート・アトレ。弱・強は問わない）が合わせて4回出れば設定4以上濃厚。回数はボーナスごとに数え直し、別のボーナスの回数を足さない。2回・3回は期待度が上がるだけなので、この項目には当たらない",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "chara_ecute_atre",
+      "name": "キャラ紹介 エキュートとアトレが両方出現（1回の小悪魔ボーナス中）",
+      "description": "1回の小悪魔ボーナスのキャラ紹介で、エキュートとアトレの両方が出れば設定2以上濃厚。別々のボーナスで1回ずつ出たときは当たらない",
+      "color": "#CD7F32",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "seal_riel_persephone1",
+      "name": "うれしいちゃんすのシール リエール＆ペルセポネ1世",
+      "description": "とつぜんうれしいちゃんすで出ることがある設定示唆のシール（全7種）。エンディング中のレア役で出るシールも同じ7種なので、ここで数える。ただし、エンディングで押し順を無視して延命したときのシールは数えない（示唆の精度が下がるとされ、そのときも確定のままかはページに書かれていない）。リエール＆ペルセポネ1世のシールなら設定4以上濃厚",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "seal_ecute_atre",
+      "name": "うれしいちゃんすのシール エキュート＆アトレ",
+      "description": "とつぜんうれしいちゃんすで出ることがある設定示唆のシール（全7種）。エンディング中のレア役で出るシールも同じ7種なので、ここで数える。ただし、エンディングで押し順を無視して延命したときのシールは数えない（示唆の精度が下がるとされ、そのときも確定のままかはページに書かれていない）。エキュート＆アトレのシールなら設定6濃厚",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "cz_item_tawashi",
+      "name": "CZ前半のアイテム タワシがミノスにHIT",
+      "description": "CZ「ちゃんすだヨ！全員集合」の前半で、ハズレ（純ハズレ）のときに背景のモニターに出るアイテム。タワシがミノスに当たれば設定1否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "cz_item_tarai",
+      "name": "CZ前半のアイテム タライがゆりね・メデューサにHIT",
+      "description": "CZ「ちゃんすだヨ！全員集合」の前半で、ハズレ（純ハズレ）のときに背景のモニターに出るアイテム。タライがゆりね・メデューサに当たれば設定1否定",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
+    },
+    {
+      "id": "cz_item_rakurai",
+      "name": "CZ前半のアイテム 落雷がミノス・ゆりね・メデューサにHIT",
+      "description": "CZ「ちゃんすだヨ！全員集合」の前半で、ハズレ（純ハズレ）のときに背景のモニターに出るアイテム。落雷がミノス・ゆりね・メデューサに当たれば設定1否定。落雷そのものは高設定ほど出やすいとされるが、出現率の数値は公開されていない",
+      "color": "#607D8B",
+      "confirmedSettings": [],
+      "excludedSettings": [
+        "1"
+      ]
+    }
+  ],
+  "endScreens": [
+    {
+      "id": "at_end_warudakumi",
+      "name": "AT終了画面 悪だくみ",
+      "type": "at_end",
+      "hint": "設定2以上濃厚",
+      "description": "AT終了画面。悪だくみが出れば設定2以上濃厚",
+      "color": "#CD7F32",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "at_end_mizugi",
+      "name": "AT終了画面 水着",
+      "type": "at_end",
+      "hint": "設定4以上濃厚",
+      "description": "AT終了画面。水着が出れば設定4以上濃厚",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "at_end_pajama",
+      "name": "AT終了画面 パジャマ",
+      "type": "at_end",
+      "hint": "設定5以上濃厚",
+      "description": "AT終了画面。パジャマが出れば設定5以上濃厚",
+      "color": "#FF5722",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "at_end_zenin",
+      "name": "AT終了画面 全員集合",
+      "type": "at_end",
+      "hint": "設定6濃厚",
+      "description": "AT終了画面。全員集合が出れば設定6濃厚",
+      "color": "#E91E63",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "trophy_copper",
+      "name": "クジラッキー 銅",
+      "type": "bonus_end",
+      "hint": "設定2以上濃厚",
+      "description": "初当りの小悪魔ボーナスを除く、ボーナスの終了画面に出るクジラッキー（トロフィー）。出る頻度はホールのカスタムで変わることがある。銅は設定2以上濃厚",
+      "color": "#CD7F32",
+      "confirmedSettings": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "trophy_silver",
+      "name": "クジラッキー 銀",
+      "type": "bonus_end",
+      "hint": "設定3以上濃厚",
+      "description": "初当りの小悪魔ボーナスを除く、ボーナスの終了画面に出るクジラッキー（トロフィー）。出る頻度はホールのカスタムで変わることがある。銀は設定3以上濃厚",
+      "color": "#C0C0C0",
+      "confirmedSettings": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "trophy_gold",
+      "name": "クジラッキー 金",
+      "type": "bonus_end",
+      "hint": "設定4以上濃厚",
+      "description": "初当りの小悪魔ボーナスを除く、ボーナスの終了画面に出るクジラッキー（トロフィー）。出る頻度はホールのカスタムで変わることがある。金は設定4以上濃厚",
+      "color": "#FFD700",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "trophy_kumanomi",
+      "name": "クジラッキー クマノミ柄",
+      "type": "bonus_end",
+      "hint": "設定5以上濃厚",
+      "description": "初当りの小悪魔ボーナスを除く、ボーナスの終了画面に出るクジラッキー（トロフィー）。出る頻度はホールのカスタムで変わることがある。クマノミ柄は設定5以上濃厚",
+      "color": "#FF5722",
+      "confirmedSettings": [
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "trophy_rainbow",
+      "name": "クジラッキー 虹",
+      "type": "bonus_end",
+      "hint": "設定6濃厚",
+      "description": "初当りの小悪魔ボーナスを除く、ボーナスの終了画面に出るクジラッキー（トロフィー）。出る頻度はホールのカスタムで変わることがある。虹は設定6濃厚",
+      "color": "#00BCD4",
+      "confirmedSettings": [
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "id": "at_end_minos",
+      "name": "AT終了画面 ミノス",
+      "type": "at_end",
+      "hint": "奇数設定示唆（弱）",
+      "description": "AT終了画面。奇数設定の弱い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "at_end_medusa",
+      "name": "AT終了画面 メデューサ",
+      "type": "at_end",
+      "hint": "奇数設定示唆（強）",
+      "description": "AT終了画面。奇数設定の強い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#9C27B0"
+    },
+    {
+      "id": "at_end_pekora",
+      "name": "AT終了画面 ぺこら",
+      "type": "at_end",
+      "hint": "偶数設定示唆（弱）",
+      "description": "AT終了画面。偶数設定の弱い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#2196F3"
+    },
+    {
+      "id": "at_end_poporon",
+      "name": "AT終了画面 ぽぽろん",
+      "type": "at_end",
+      "hint": "偶数設定示唆（強）",
+      "description": "AT終了画面。偶数設定の強い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#2196F3"
+    },
+    {
+      "id": "at_end_yurine_a",
+      "name": "AT終了画面 ゆりねA",
+      "type": "at_end",
+      "hint": "高設定示唆（弱）",
+      "description": "AT終了画面。高設定の弱い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#FF9800"
+    },
+    {
+      "id": "at_end_yurine_b",
+      "name": "AT終了画面 ゆりねB",
+      "type": "at_end",
+      "hint": "高設定示唆（強）",
+      "description": "AT終了画面。高設定の強い示唆（設定の確定・否定は無く、期待度が上がるだけ）",
+      "color": "#FF9800"
+    }
+  ]
+}

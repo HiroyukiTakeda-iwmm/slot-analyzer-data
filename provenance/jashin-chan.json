@@ -1,0 +1,1428 @@
+{
+  "machineId": "jashin-chan",
+  "machineFile": "jashin-chan/jashin-chan.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/sanyo-slot/260992/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5020",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1181/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "ボーナス確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "253.1",
+          "2": "248.1",
+          "3": "241.6",
+          "4": "222.5",
+          "5": "211.8",
+          "6": "210.0"
+        },
+        "nana": {
+          "1": "253.1",
+          "2": "248.1",
+          "3": "241.6",
+          "4": "222.5",
+          "5": "211.8",
+          "6": "210.0"
+        }
+      },
+      "adopted": {
+        "1": "253.1",
+        "2": "248.1",
+        "3": "241.6",
+        "4": "222.5",
+        "5": "211.8",
+        "6": "210.0"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "253.1",
+          "2": "248.1",
+          "3": "241.6",
+          "4": "222.5",
+          "5": "211.8",
+          "6": "210.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "758.2",
+          "2": "746.3",
+          "3": "722.8",
+          "4": "655.9",
+          "5": "615.9",
+          "6": "606.2"
+        },
+        "nana": {
+          "1": "758.2",
+          "2": "746.3",
+          "3": "722.8",
+          "4": "655.9",
+          "5": "615.9",
+          "6": "606.2"
+        }
+      },
+      "adopted": {
+        "1": "758.2",
+        "2": "746.3",
+        "3": "722.8",
+        "4": "655.9",
+        "5": "615.9",
+        "6": "606.2"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "758.2",
+          "2": "746.3",
+          "3": "722.8",
+          "4": "655.9",
+          "5": "615.9",
+          "6": "606.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "リプレイ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        },
+        "dmm": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        },
+        "nana": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      },
+      "adopted": {
+        "1": "7.3",
+        "2": "7.3",
+        "3": "7.3",
+        "4": "7.3",
+        "5": "7.3",
+        "6": "7.3"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "7.3",
+          "2": "7.3",
+          "3": "7.3",
+          "4": "7.3",
+          "5": "7.3",
+          "6": "7.3"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "ベル",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7.0",
+          "2": "7.0",
+          "3": "7.0",
+          "4": "7.0",
+          "5": "7.0",
+          "6": "7.0"
+        },
+        "dmm": {
+          "1": "7.0",
+          "2": "7.0",
+          "3": "7.0",
+          "4": "7.0",
+          "5": "7.0",
+          "6": "7.0"
+        },
+        "nana": {
+          "1": "7.0",
+          "2": "7.0",
+          "3": "7.0",
+          "4": "7.0",
+          "5": "7.0",
+          "6": "7.0"
+        }
+      },
+      "adopted": {
+        "1": "7.0",
+        "2": "7.0",
+        "3": "7.0",
+        "4": "7.0",
+        "5": "7.0",
+        "6": "7.0"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "7.0",
+          "2": "7.0",
+          "3": "7.0",
+          "4": "7.0",
+          "5": "7.0",
+          "6": "7.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "スイカ合算",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "40.2",
+          "2": "40.2",
+          "3": "40.2",
+          "4": "40.2",
+          "5": "40.2",
+          "6": "40.2"
+        },
+        "dmm": {
+          "1": "40.2",
+          "2": "40.2",
+          "3": "40.2",
+          "4": "40.2",
+          "5": "40.2",
+          "6": "40.2"
+        },
+        "nana": {
+          "1": "40.2",
+          "2": "40.2",
+          "3": "40.2",
+          "4": "40.2",
+          "5": "40.2",
+          "6": "40.2"
+        }
+      },
+      "adopted": {
+        "1": "40.2",
+        "2": "40.2",
+        "3": "40.2",
+        "4": "40.2",
+        "5": "40.2",
+        "6": "40.2"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "40.2",
+          "2": "40.2",
+          "3": "40.2",
+          "4": "40.2",
+          "5": "40.2",
+          "6": "40.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "純ハズレ",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "528.6",
+          "2": "528.6",
+          "3": "528.6",
+          "4": "528.6",
+          "5": "528.6",
+          "6": "528.6"
+        },
+        "dmm": {
+          "1": "528.6",
+          "2": "528.6",
+          "3": "528.6",
+          "4": "528.6",
+          "5": "528.6",
+          "6": "528.6"
+        },
+        "nana": {
+          "1": "528.6",
+          "2": "528.6",
+          "3": "528.6",
+          "4": "528.6",
+          "5": "528.6",
+          "6": "528.6"
+        }
+      },
+      "adopted": {
+        "1": "528.6",
+        "2": "528.6",
+        "3": "528.6",
+        "4": "528.6",
+        "5": "528.6",
+        "6": "528.6"
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "1": "528.6",
+          "2": "528.6",
+          "3": "528.6",
+          "4": "528.6",
+          "5": "528.6",
+          "6": "528.6"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 悪だくみ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 水着",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 パジャマ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 全員集合",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "クジラッキー 銅",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "クジラッキー 銀",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "クジラッキー 金",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "クジラッキー クマノミ柄",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "クジラッキー 虹",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ミノス",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 メデューサ",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ぺこら",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ぽぽろん",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ゆりねA",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 ゆりねB",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": true
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん ジャスティス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん ファイター",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["2"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["2"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん コマンダー",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["3"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["3"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["3"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん エスプ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1", "2"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1", "2"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1", "2"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1", "2"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1", "2"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん ジーニアス",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1", "3"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1", "3"]
+        },
+        "nana": {
+          "confirmed": [],
+          "excluded": ["1", "3"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1", "3"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1", "3"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 邪神ちゃん パーフェクト",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 悪魔コス ゆりね",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 高設定期待度UPキャラが4回出現（1回の小悪魔ボーナス中）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "キャラ紹介 エキュートとアトレが両方出現（1回の小悪魔ボーナス中）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "うれしいちゃんすのシール リエール＆ペルセポネ1世",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "うれしいちゃんすのシール エキュート＆アトレ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ前半のアイテム タワシがミノスにHIT",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ前半のアイテム タライがゆりね・メデューサにHIT",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "CZ前半のアイテム 落雷がミノス・ゆりね・メデューサにHIT",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": [],
+          "excluded": ["1"]
+        },
+        "dmm": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      },
+      "adopted": {
+        "confirmed": [],
+        "excluded": ["1"]
+      },
+      "reread": {
+        "by": "reread-jashin-chan",
+        "value": {
+          "confirmed": [],
+          "excluded": ["1"]
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "role",
+      "name": "エピソードボーナス直撃確率",
+      "unit": "denominator",
+      "values": {
+        "dmm": {
+          "1": "19840.0",
+          "2": "19840.0",
+          "3": "19840.0",
+          "4": "19840.0",
+          "5": "19840.0",
+          "6": "19840.0"
+        }
+      },
+      "reason": "全設定がそろった出典が1つだけ（ちょんぼりすた以外）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） 遊技延長チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.9%"
+        },
+        "dmm": {
+          "1": "0.9%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） ヘビ肉のスライス",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.0%"
+        },
+        "dmm": {
+          "1": "1.0%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） CZ優遇チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "18.5%"
+        },
+        "dmm": {
+          "1": "18.5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） 7狙いやり直しチケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "3.5%"
+        },
+        "dmm": {
+          "1": "3.5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） 天界チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.8%"
+        },
+        "dmm": {
+          "1": "1.8%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） カレー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.7%"
+        },
+        "dmm": {
+          "1": "0.7%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） ゆりねのマチェット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "15.0%"
+        },
+        "dmm": {
+          "1": "15.0%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） ゆりねのチェーンソー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4.9%"
+        },
+        "dmm": {
+          "1": "4.9%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） CZ当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "20.5%"
+        },
+        "dmm": {
+          "1": "20.5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） 3戦突破ゆりねバトル当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.5%"
+        },
+        "dmm": {
+          "1": "0.5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（通常時） ボーナス当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.3%"
+        },
+        "dmm": {
+          "1": "1.3%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） 遊技延長チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.3%"
+        },
+        "dmm": {
+          "1": "1.3%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） ヘビ肉のスライス",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.2%"
+        },
+        "dmm": {
+          "1": "1.2%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） CZ優遇チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.8%"
+        },
+        "dmm": {
+          "1": "0.8%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） 7狙いやり直しチケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "2.1%"
+        },
+        "dmm": {
+          "1": "2.1%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） 天界チケット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.8%"
+        },
+        "dmm": {
+          "1": "1.8%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） カレー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.7%"
+        },
+        "dmm": {
+          "1": "0.7%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） ゆりねのマチェット",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "15.0%"
+        },
+        "dmm": {
+          "1": "15.0%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） ゆりねのチェーンソー",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4.9%"
+        },
+        "dmm": {
+          "1": "4.9%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） ボーナス当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.3%"
+        },
+        "dmm": {
+          "1": "1.3%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） 邪神ちゃんす当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "21.8%"
+        },
+        "dmm": {
+          "1": "21.8%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） ゆりねバトル当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.5%"
+        },
+        "dmm": {
+          "1": "0.5%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "とつぜんうれしいちゃんす（AT中） 上位AT当選",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0.4%"
+        },
+        "dmm": {
+          "1": "0.4%"
+        }
+      },
+      "reason": "全設定の値がそろった出典が無い（アプリは設定が1つでも欠けた確率があると推定が止まる）"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

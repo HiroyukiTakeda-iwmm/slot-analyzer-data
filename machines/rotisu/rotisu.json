@@ -1,0 +1,167 @@
+{
+  "name": "ローティス",
+  "type": "AT",
+  "roles": [
+    {
+      "name": "BB確率",
+      "hasSettingDiff": true,
+      "displayOrder": 1,
+      "color": "#E91E63",
+      "description": "設定1: 1/677.7、設定6: 1/627.1。",
+      "probabilities": {
+        "1": 0.00147558,
+        "2": 0.0015006,
+        "4": 0.00154154,
+        "5": 0.00157505,
+        "6": 0.00159464
+      }
+    },
+    {
+      "name": "RB確率",
+      "hasSettingDiff": true,
+      "displayOrder": 2,
+      "color": "#2196F3",
+      "description": "設定1: 1/514.1、設定6: 1/457.4。",
+      "probabilities": {
+        "1": 0.00194515,
+        "2": 0.00199481,
+        "4": 0.00207598,
+        "5": 0.00213995,
+        "6": 0.00218627
+      }
+    },
+    {
+      "name": "SBB確率",
+      "hasSettingDiff": false,
+      "displayOrder": 3,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "4": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    },
+    {
+      "name": "スイカ",
+      "hasSettingDiff": false,
+      "displayOrder": 4,
+      "color": "#4CAF50",
+      "description": "設定1: 1/100.1、設定6: 1/100.1。",
+      "probabilities": {
+        "1": 0.00999001,
+        "2": 0.00999001,
+        "4": 0.00999001,
+        "5": 0.00999001,
+        "6": 0.00999001
+      }
+    },
+    {
+      "name": "リアルチェリーA（斜め揃い）",
+      "hasSettingDiff": false,
+      "displayOrder": 5,
+      "color": "#E91E63",
+      "description": "設定1: 1/425.6、設定6: 1/425.6。 前兆を示す疑似チェリーは数えず、リアルチェリーの停止形だけを数える。",
+      "probabilities": {
+        "1": 0.00234962,
+        "2": 0.00234962,
+        "4": 0.00234962,
+        "5": 0.00234962,
+        "6": 0.00234962
+      }
+    },
+    {
+      "name": "リアルチェリーB（並行揃い）",
+      "hasSettingDiff": true,
+      "displayOrder": 6,
+      "color": "#E91E63",
+      "description": "設定1: 1/993.0、設定6: 1/668.7。 前兆を示す疑似チェリーは数えず、リアルチェリーの停止形だけを数える。",
+      "probabilities": {
+        "1": 0.00100705,
+        "2": 0.00112918,
+        "4": 0.00125125,
+        "5": 0.00137325,
+        "6": 0.00149544
+      }
+    },
+    {
+      "name": "中段チェリー",
+      "hasSettingDiff": false,
+      "displayOrder": 7,
+      "color": "#E91E63",
+      "description": "設定1: 1/16384.0、設定6: 1/16384.0。",
+      "probabilities": {
+        "1": 6.10352e-05,
+        "2": 6.10352e-05,
+        "4": 6.10352e-05,
+        "5": 6.10352e-05,
+        "6": 6.10352e-05
+      }
+    }
+  ],
+  "confirmationEvents": [
+    {
+      "name": "ボーナス終了時の下パネル点滅 通常点滅",
+      "id": "event_001",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    },
+    {
+      "name": "ボーナス終了時の下パネル点滅 高速点滅",
+      "id": "event_002",
+      "description": "出典で確認した設定の確定・否定条件を使用する。",
+      "confirmedSettings": [
+        "4",
+        "5",
+        "6"
+      ],
+      "excludedSettings": []
+    }
+  ],
+  "author": "コミュニティ",
+  "version": "1.0",
+  "lastUpdated": "2026-09-30",
+  "endScreens": [],
+  "availableSettings": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6"
+  ],
+  "trialSuccessRates": [
+    {
+      "name": "ボーナス終了時の下パネル点滅発生率 通常点滅",
+      "id": "trial_001",
+      "probabilities": {
+        "1": 0,
+        "2": 0.031,
+        "4": 0.023,
+        "5": 0.027,
+        "6": 0.031
+      }
+    },
+    {
+      "name": "ボーナス終了時の下パネル点滅発生率 高速点滅",
+      "id": "trial_002",
+      "probabilities": {
+        "1": 0,
+        "2": 0,
+        "4": 0.012,
+        "5": 0.016,
+        "6": 0.02
+      }
+    }
+  ],
+  "source": "ちょんぼりすた(https://chonborista.com/slot/kitadenshi/260109/)、DMMぱちタウン(https://p-town.dmm.com/machines/5029)、なな徹(https://nana-press.com/kaiseki/machine/1182/)",
+  "description": "北電子のスマスロAT機（2026-07-06導入、5段階設定）。BB確率・RB確率・SBB確率・スイカと、出典で採用できた設定判別項目を収録。",
+  "notes": " この新規登録では、個別項目と同じ出来事を重ねて数える合算項目は収録していない。"
+}

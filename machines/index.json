@@ -1,6 +1,6 @@
 {
-  "version": "3.9.0",
-  "updatedAt": "2026-09-27T00:00:00Z",
+  "version": "3.10.0",
+  "updatedAt": "2026-09-30T00:00:00Z",
   "machines": [
     {
       "id": "juggler-my-v",
@@ -2531,6 +2531,222 @@
       ],
       "description": "オーイズミのスマスロBT機（2026-05-25導入）。設定1・2・5・6の4段階。BIG/REG/BAR揃いA/ホネ揃い/GCチェリーに設定差。2026-05-31時点の実戦解析値ベースの暫定データ。",
       "lastUpdated": "2026-05-31"
+    },
+    {
+      "id": "aobuta",
+      "name": "L青春ブタ野郎はバニーガール先輩の夢を見ない",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "aobuta/aobuta.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "オリンピア",
+        "5段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "オリンピアのスマスロAT機（2026-09-07導入、5段階設定）。初当り・アオハルCHANCE出現率・咲太ポイント解放出現率・咲太クエスト出現率 ベルと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "garei-zero-re",
+      "name": "Lパチスロ 喰霊‐零‐Re",
+      "type": "A+ART",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "garei-zero-re/garei-zero-re.json",
+      "tags": [
+        "A+ART",
+        "スマスロ",
+        "オーイズミ",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "オーイズミのスマスロA+ART機（2026-08-17導入、6段階設定）。BIG・REG・CZ 超自然災害モード・CZ 解放の刻と、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "jashin-chan",
+      "name": "L邪神ちゃんドロップキック",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "jashin-chan/jashin-chan.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "サンスリー",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "サンスリーのスマスロAT機（2026-08-03導入、6段階設定）。ボーナス確率・AT確率・リプレイ・ベルと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "karakuri-circus2",
+      "name": "Lパチスロ からくりサーカス2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "karakuri/karakuri-circus2.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "SANKYO",
+        "6段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "SANKYOのスマスロAT機（2026-07-06導入、6段階設定）。CZ確率・AT確率と、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "kerotto5-bt",
+      "name": "スマスロケロット5BT",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "kerotto5-bt/kerotto5-bt.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "山佐ネクスト",
+        "6段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "山佐ネクストのスマスロBT機（2026-07-06導入、6段階設定）。SBB・BB・RB・ベル・チェリーと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "lycoris-recoil",
+      "name": "スマスロ リコリス・リコイル",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "lycoris-recoil/lycoris-recoil.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "サミー",
+        "6段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "サミーのスマスロAT機（2026-09-07導入、6段階設定）。CZ確率・ST初当り・共通ベルと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "mieruko-chan",
+      "name": "パチスロ見える子ちゃん",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "mieruko-chan/mieruko-chan.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "パイオニア",
+        "6段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "パイオニアのスマスロAT機（2026-09-07導入、6段階設定）。BB合算・RB・CZトータル出現率と、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "rotisu",
+      "name": "ローティス",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "rotisu/rotisu.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "北電子",
+        "5段階設定",
+        "2026年7月",
+        "新台"
+      ],
+      "description": "北電子のスマスロAT機（2026-07-06導入、5段階設定）。BB確率・RB確率・SBB確率・スイカと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "sao2",
+      "name": "スロット ソードアート・オンラインII",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "sao/sao2.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "パオン・ディーピー",
+        "6段階設定",
+        "2026年6月",
+        "新台"
+      ],
+      "description": "パオン・ディーピーのスマスロAT機（2026-06-08導入、6段階設定）。CZ確率・AT確率・強チャンス目B・確定CZと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "takosuro",
+      "name": "スマスロ タコスロ",
+      "type": "BT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "takosuro/takosuro.json",
+      "tags": [
+        "BT",
+        "スマスロ",
+        "ユニバーサルブロス",
+        "4段階設定",
+        "2026年9月",
+        "新台"
+      ],
+      "description": "ユニバーサルブロスのスマスロBT機（2026-09-07導入、4段階設定）。BB・RB・リプレイ・プラムと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "toaru-index2",
+      "name": "スマスロ とある魔術の禁書目録2",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "toaru-index/toaru-index2.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "藤商事",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "藤商事のスマスロAT機（2026-08-03導入、6段階設定）。CZ初当り確率・AT初当り確率・超電磁砲CHANCE・一方通行CHANCEと、出典で採用できた設定判別項目を収録。一部の値はちょんぼりすたの値（暫定）。",
+      "lastUpdated": "2026-09-30"
+    },
+    {
+      "id": "tonsuki",
+      "name": "スマスロ とんでもスキルで異世界放浪メシ",
+      "type": "AT",
+      "author": "コミュニティ",
+      "version": "1.0",
+      "file": "tonsuki/tonsuki.json",
+      "tags": [
+        "AT",
+        "スマスロ",
+        "コナミアミューズメント",
+        "6段階設定",
+        "2026年8月",
+        "新台"
+      ],
+      "description": "コナミアミューズメントのスマスロAT機（2026-08-03導入、6段階設定）。CZ・ボーナス初当りと、出典で採用できた設定判別項目を収録。",
+      "lastUpdated": "2026-09-30"
     }
   ]
 }

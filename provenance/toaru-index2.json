@@ -1,0 +1,1967 @@
+{
+  "machineId": "toaru-index2",
+  "machineFile": "toaru-index/toaru-index2.json",
+  "reviewedAt": "2026-09-30",
+  "sources": [
+    {
+      "key": "chonborista",
+      "kind": "analysis-site",
+      "url": "https://chonborista.com/slot/fuji-slot/260325/",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "dmm",
+      "kind": "analysis-site",
+      "url": "https://p-town.dmm.com/machines/5053",
+      "retrievedAt": "2026-09-27"
+    },
+    {
+      "key": "nana",
+      "kind": "analysis-site",
+      "url": "https://nana-press.com/kaiseki/machine/1154/",
+      "retrievedAt": "2026-09-27"
+    }
+  ],
+  "items": [
+    {
+      "kind": "role",
+      "name": "CZ初当り確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "235.6",
+          "2": "233.4",
+          "3": "230.8",
+          "4": "222.3",
+          "5": "215.8",
+          "6": "207.2"
+        },
+        "dmm": {
+          "1": "235.6",
+          "2": "233.4",
+          "3": "230.8",
+          "4": "222.3",
+          "5": "215.8",
+          "6": "207.2"
+        },
+        "nana": {
+          "1": "235.6",
+          "2": "233.4",
+          "3": "230.8",
+          "4": "222.3",
+          "5": "215.8",
+          "6": "207.2"
+        }
+      },
+      "adopted": {
+        "1": "235.6",
+        "2": "233.4",
+        "3": "230.8",
+        "4": "222.3",
+        "5": "215.8",
+        "6": "207.2"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "235.6",
+          "2": "233.4",
+          "3": "230.8",
+          "4": "222.3",
+          "5": "215.8",
+          "6": "207.2"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT初当り確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "398.8",
+          "2": "394.5",
+          "3": "389.6",
+          "4": "369.5",
+          "5": "358.0",
+          "6": "338.4"
+        },
+        "nana": {
+          "1": "398.8",
+          "2": "394.5",
+          "3": "389.6",
+          "4": "369.5",
+          "5": "358.0",
+          "6": "338.4"
+        }
+      },
+      "adopted": {
+        "1": "398.8",
+        "2": "394.5",
+        "3": "389.6",
+        "4": "369.5",
+        "5": "358.0",
+        "6": "338.4"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "398.8",
+          "2": "394.5",
+          "3": "389.6",
+          "4": "369.5",
+          "5": "358.0",
+          "6": "338.4"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "超電磁砲CHANCE",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "258.5",
+          "2": "256.0",
+          "3": "253.3",
+          "4": "244.1",
+          "5": "237.4",
+          "6": "227.9"
+        },
+        "dmm": {
+          "1": "258.5",
+          "2": "256.0",
+          "3": "253.3",
+          "4": "244.1",
+          "5": "237.4",
+          "6": "227.9"
+        },
+        "nana": {
+          "1": "258.5",
+          "2": "256.0",
+          "3": "253.3",
+          "4": "244.1",
+          "5": "237.4",
+          "6": "227.9"
+        }
+      },
+      "adopted": {
+        "1": "258.5",
+        "2": "256.0",
+        "3": "253.3",
+        "4": "244.1",
+        "5": "237.4",
+        "6": "227.9"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "258.5",
+          "2": "256.0",
+          "3": "253.3",
+          "4": "244.1",
+          "5": "237.4",
+          "6": "227.9"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "一方通行CHANCE",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "2668.5",
+          "2": "2639.0",
+          "3": "2600.3",
+          "4": "2493.0",
+          "5": "2378.3",
+          "6": "2273.0"
+        },
+        "dmm": {
+          "1": "2668.5",
+          "2": "2639.0",
+          "3": "2600.3",
+          "4": "2493.0",
+          "5": "2378.3",
+          "6": "2273.0"
+        },
+        "nana": {
+          "1": "2668.5",
+          "2": "2639.0",
+          "3": "2600.3",
+          "4": "2493.0",
+          "5": "2378.3",
+          "6": "2273.0"
+        }
+      },
+      "adopted": {
+        "1": "2668.5",
+        "2": "2639.0",
+        "3": "2600.3",
+        "4": "2493.0",
+        "5": "2378.3",
+        "6": "2273.0"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "2668.5",
+          "2": "2639.0",
+          "3": "2600.3",
+          "4": "2493.0",
+          "5": "2378.3",
+          "6": "2273.0"
+        }
+      }
+    },
+    {
+      "kind": "role",
+      "name": "AT直撃確率",
+      "status": "confirmed",
+      "unit": "denominator",
+      "values": {
+        "chonborista": {
+          "1": "7926.8",
+          "2": "7074.9",
+          "3": "6354.9",
+          "4": "4453.0",
+          "5": "4012.8",
+          "6": "3736.2"
+        },
+        "dmm": {
+          "1": "7926.8",
+          "2": "7074.9",
+          "3": "6354.9",
+          "4": "4453.0",
+          "5": "4012.8",
+          "6": "3736.2"
+        },
+        "nana": {
+          "1": "7926.8",
+          "2": "7074.9",
+          "3": "6354.9",
+          "4": "4453.0",
+          "5": "4012.8",
+          "6": "3736.2"
+        }
+      },
+      "adopted": {
+        "1": "7926.8",
+        "2": "7074.9",
+        "3": "6354.9",
+        "4": "4453.0",
+        "5": "4012.8",
+        "6": "3736.2"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "7926.8",
+          "2": "7074.9",
+          "3": "6354.9",
+          "4": "4453.0",
+          "5": "4012.8",
+          "6": "3736.2"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "藤丸コイン（銅）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "藤丸コイン（銀）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "藤丸コイン（金）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "藤丸コイン（デンジャー柄）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "藤丸コイン（虹）",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 アリサ・シャットアウラ",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 初春・美琴",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 当麻ハーレム",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 当麻・インデックス",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 黒子・美琴",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 打ち止め・一方通行",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面 番外個体・一方通行",
+      "status": "confirmed",
+      "unit": "presence",
+      "values": {
+        "chonborista": true,
+        "dmm": true,
+        "nana": true
+      },
+      "adopted": true,
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": true
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 当麻・インデックス",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "45.8%",
+          "2": "32.1%",
+          "3": "43.6%",
+          "4": "26.7%",
+          "5": "37.1%",
+          "6": "23.8%"
+        },
+        "nana": {
+          "1": "45.8%",
+          "2": "32.1%",
+          "3": "43.6%",
+          "4": "26.7%",
+          "5": "37.1%",
+          "6": "23.8%"
+        }
+      },
+      "adopted": {
+        "1": "45.8%",
+        "2": "32.1%",
+        "3": "43.6%",
+        "4": "26.7%",
+        "5": "37.1%",
+        "6": "23.8%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "45.8%",
+          "2": "32.1%",
+          "3": "43.6%",
+          "4": "26.7%",
+          "5": "37.1%",
+          "6": "23.8%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 美琴・黒子",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "37.4%",
+          "2": "39.2%",
+          "3": "35.7%",
+          "4": "32.7%",
+          "5": "30.3%",
+          "6": "29.1%"
+        },
+        "nana": {
+          "1": "37.4%",
+          "2": "39.2%",
+          "3": "35.7%",
+          "4": "32.7%",
+          "5": "30.3%",
+          "6": "29.1%"
+        }
+      },
+      "adopted": {
+        "1": "37.4%",
+        "2": "39.2%",
+        "3": "35.7%",
+        "4": "32.7%",
+        "5": "30.3%",
+        "6": "29.1%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "37.4%",
+          "2": "39.2%",
+          "3": "35.7%",
+          "4": "32.7%",
+          "5": "30.3%",
+          "6": "29.1%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 一方通行・打ち止め",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "15.4%",
+          "2": "16.4%",
+          "3": "17.4%",
+          "4": "20.2%",
+          "5": "21.2%",
+          "6": "22.2%"
+        },
+        "nana": {
+          "1": "15.4%",
+          "2": "16.4%",
+          "3": "17.4%",
+          "4": "20.2%",
+          "5": "21.2%",
+          "6": "22.2%"
+        }
+      },
+      "adopted": {
+        "1": "15.4%",
+        "2": "16.4%",
+        "3": "17.4%",
+        "4": "20.2%",
+        "5": "21.2%",
+        "6": "22.2%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "15.4%",
+          "2": "16.4%",
+          "3": "17.4%",
+          "4": "20.2%",
+          "5": "21.2%",
+          "6": "22.2%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 一方通行・番外個体",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "1.3%",
+          "2": "2.3%",
+          "3": "3.4%",
+          "4": "8.0%",
+          "5": "9.0%",
+          "6": "10.0%"
+        },
+        "nana": {
+          "1": "1.3%",
+          "2": "2.3%",
+          "3": "3.4%",
+          "4": "8.0%",
+          "5": "9.0%",
+          "6": "10.0%"
+        }
+      },
+      "adopted": {
+        "1": "1.3%",
+        "2": "2.3%",
+        "3": "3.4%",
+        "4": "8.0%",
+        "5": "9.0%",
+        "6": "10.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "1.3%",
+          "2": "2.3%",
+          "3": "3.4%",
+          "4": "8.0%",
+          "5": "9.0%",
+          "6": "10.0%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け アリサ・シャットアウラ",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "10.0%",
+          "3": "0%",
+          "4": "10.0%",
+          "5": "0%",
+          "6": "10.0%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "10.0%",
+          "3": "0%",
+          "4": "10.0%",
+          "5": "0%",
+          "6": "10.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "10.0%",
+        "3": "0%",
+        "4": "10.0%",
+        "5": "0%",
+        "6": "10.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "10.0%",
+          "3": "0%",
+          "4": "10.0%",
+          "5": "0%",
+          "6": "10.0%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 初春・美琴",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2.4%",
+        "5": "2.4%",
+        "6": "2.4%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.4%",
+          "5": "2.4%",
+          "6": "2.4%"
+        }
+      }
+    },
+    {
+      "kind": "endScreen",
+      "name": "AT終了画面の振り分け 当麻ハーレム",
+      "status": "confirmed",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.4%"
+        },
+        "nana": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.4%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "2.4%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "2.4%"
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出「やったあ！」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出「すごい！すごい！」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出「とっても美味しい！」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出「すっごくうれしい！」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出「おめでとう！」",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 174枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "3", "4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 246枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["2", "4", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["2", "4", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 456枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 1456枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["4", "5", "6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["4", "5", "6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 220枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 666枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 777枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 1666枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "confirmationEvent",
+      "name": "獲得枚数表示 1777枚 OVER",
+      "status": "confirmed",
+      "unit": "settings",
+      "values": {
+        "chonborista": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "dmm": {
+          "confirmed": ["6"],
+          "excluded": []
+        },
+        "nana": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      },
+      "adopted": {
+        "confirmed": ["6"],
+        "excluded": []
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "confirmed": ["6"],
+          "excluded": []
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「頑張ったね」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "48.0%",
+          "2": "39.0%",
+          "3": "46.0%",
+          "4": "37.0%",
+          "5": "43.0%",
+          "6": "34.0%"
+        }
+      },
+      "adopted": {
+        "1": "48.0%",
+        "2": "39.0%",
+        "3": "46.0%",
+        "4": "37.0%",
+        "5": "43.0%",
+        "6": "34.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "48.0%",
+          "2": "39.0%",
+          "3": "46.0%",
+          "4": "37.0%",
+          "5": "43.0%",
+          "6": "34.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「調子良いね」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "40.0%",
+          "2": "47.0%",
+          "3": "37.0%",
+          "4": "45.0%",
+          "5": "35.0%",
+          "6": "42.0%"
+        }
+      },
+      "adopted": {
+        "1": "40.0%",
+        "2": "47.0%",
+        "3": "37.0%",
+        "4": "45.0%",
+        "5": "35.0%",
+        "6": "42.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "40.0%",
+          "2": "47.0%",
+          "3": "37.0%",
+          "4": "45.0%",
+          "5": "35.0%",
+          "6": "42.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「ワクワクしてきたかも」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "9.0%",
+          "2": "9.0%",
+          "3": "9.5%",
+          "4": "10.0%",
+          "5": "12.0%",
+          "6": "13.0%"
+        }
+      },
+      "adopted": {
+        "1": "9.0%",
+        "2": "9.0%",
+        "3": "9.5%",
+        "4": "10.0%",
+        "5": "12.0%",
+        "6": "13.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "9.0%",
+          "2": "9.0%",
+          "3": "9.5%",
+          "4": "10.0%",
+          "5": "12.0%",
+          "6": "13.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「いけるかも」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "3.0%",
+          "2": "3.0%",
+          "3": "3.5%",
+          "4": "4.0%",
+          "5": "5.0%",
+          "6": "6.0%"
+        }
+      },
+      "adopted": {
+        "1": "3.0%",
+        "2": "3.0%",
+        "3": "3.5%",
+        "4": "4.0%",
+        "5": "5.0%",
+        "6": "6.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "3.0%",
+          "2": "3.0%",
+          "3": "3.5%",
+          "4": "4.0%",
+          "5": "5.0%",
+          "6": "6.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「やったあ！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "2.0%",
+          "3": "2.0%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "2.0%",
+        "3": "2.0%",
+        "4": "1.0%",
+        "5": "1.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "2.0%",
+          "3": "2.0%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「すごい！すごい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "2.0%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "2.0%",
+        "4": "1.0%",
+        "5": "1.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "2.0%",
+          "4": "1.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「とっても美味しい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "2.0%",
+        "5": "1.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "2.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「すっごくうれしい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "2.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "2.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "2.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（弱レア役時）「おめでとう！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「頑張ったね」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "60.0%",
+          "2": "25.0%",
+          "3": "53.0%",
+          "4": "21.0%",
+          "5": "44.0%",
+          "6": "18.0%"
+        }
+      },
+      "adopted": {
+        "1": "60.0%",
+        "2": "25.0%",
+        "3": "53.0%",
+        "4": "21.0%",
+        "5": "44.0%",
+        "6": "18.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "60.0%",
+          "2": "25.0%",
+          "3": "53.0%",
+          "4": "21.0%",
+          "5": "44.0%",
+          "6": "18.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「調子良いね」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "26.0%",
+          "2": "57.0%",
+          "3": "23.0%",
+          "4": "48.0%",
+          "5": "19.0%",
+          "6": "42.0%"
+        }
+      },
+      "adopted": {
+        "1": "26.0%",
+        "2": "57.0%",
+        "3": "23.0%",
+        "4": "48.0%",
+        "5": "19.0%",
+        "6": "42.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "26.0%",
+          "2": "57.0%",
+          "3": "23.0%",
+          "4": "48.0%",
+          "5": "19.0%",
+          "6": "42.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「ワクワクしてきたかも」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "11.0%",
+          "4": "15.5%",
+          "5": "19.5%",
+          "6": "21.0%"
+        }
+      },
+      "adopted": {
+        "1": "10.0%",
+        "2": "10.0%",
+        "3": "11.0%",
+        "4": "15.5%",
+        "5": "19.5%",
+        "6": "21.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "10.0%",
+          "2": "10.0%",
+          "3": "11.0%",
+          "4": "15.5%",
+          "5": "19.5%",
+          "6": "21.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「いけるかも」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "4.0%",
+          "2": "4.0%",
+          "3": "5.0%",
+          "4": "6.5%",
+          "5": "8.5%",
+          "6": "9.0%"
+        }
+      },
+      "adopted": {
+        "1": "4.0%",
+        "2": "4.0%",
+        "3": "5.0%",
+        "4": "6.5%",
+        "5": "8.5%",
+        "6": "9.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "4.0%",
+          "2": "4.0%",
+          "3": "5.0%",
+          "4": "6.5%",
+          "5": "8.5%",
+          "6": "9.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「やったあ！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "4.0%",
+          "3": "4.0%",
+          "4": "2.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "4.0%",
+        "3": "4.0%",
+        "4": "2.0%",
+        "5": "1.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "4.0%",
+          "3": "4.0%",
+          "4": "2.0%",
+          "5": "1.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「すごい！すごい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "4.0%",
+          "4": "3.0%",
+          "5": "2.0%",
+          "6": "1.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "4.0%",
+        "4": "3.0%",
+        "5": "2.0%",
+        "6": "1.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "4.0%",
+          "4": "3.0%",
+          "5": "2.0%",
+          "6": "1.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「とっても美味しい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "4.0%",
+          "5": "3.0%",
+          "6": "2.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "4.0%",
+        "5": "3.0%",
+        "6": "2.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "4.0%",
+          "5": "3.0%",
+          "6": "2.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「すっごくうれしい！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "3.0%",
+          "6": "2.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "3.0%",
+        "6": "2.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "3.0%",
+          "6": "2.0%"
+        }
+      }
+    },
+    {
+      "kind": "trialSuccessRate",
+      "name": "ED中の打ち止めお知らせ演出の振り分け（強レア役時）「おめでとう！」",
+      "status": "provisional-chonborista",
+      "unit": "percent",
+      "values": {
+        "chonborista": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "4.0%"
+        }
+      },
+      "adopted": {
+        "1": "0%",
+        "2": "0%",
+        "3": "0%",
+        "4": "0%",
+        "5": "0%",
+        "6": "4.0%"
+      },
+      "reread": {
+        "by": "reread-toaru-index2",
+        "value": {
+          "1": "0%",
+          "2": "0%",
+          "3": "0%",
+          "4": "0%",
+          "5": "0%",
+          "6": "4.0%"
+        }
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "kind": "confirmationEvent",
+      "name": "ED中の打ち止めお知らせ演出 セリフの頭の色変化",
+      "unit": "settings",
+      "values": {
+        "dmm": {
+          "confirmed": ["2", "3", "4", "5", "6"],
+          "excluded": []
+        }
+      },
+      "reason": "ちょんぼりすた以外の1サイトのみ"
+    }
+  ],
+  "removed": [],
+  "retiredIds": []
+}

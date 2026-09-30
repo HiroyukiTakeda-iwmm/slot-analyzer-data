@@ -1,62 +1,39 @@
 # SlotAnalyzer 機種データ
 
-SlotAnalyzerアプリで使用するパチスロ機種データのコミュニティリポジトリです。
+SlotAnalyzerアプリが参照するパチスロ機種データです。
 
-**現在の登録台数: 149台** (v3.9.0, 2026-09-27更新)
+**現在の登録台数: 161台** (v3.10.0, 2026-09-30更新)
 
-| タイプ | 台数  |
-| ------ | ----- |
-| AT     | 112台 |
-| A-type | 14台  |
-| BT     | 12台  |
-| A+AT   | 4台   |
-| ART    | 4台   |
-| A+RT   | 2台   |
-| A+ART  | 1台   |
+| タイプ | 台数 |
+| --- | ---: |
+| A-type | 14台 |
+| AT | 121台 |
+| A+RT | 2台 |
+| A+AT | 4台 |
+| ART | 4台 |
+| A+ART | 2台 |
+| BT | 14台 |
 
 ### 品質指標
 
-`node scripts/quality-report.mjs` の実測値（2026-09-27 実行）。数値を手で書き換えず、
-このスクリプトの出力を転記すること。
+`node scripts/quality-report.mjs --json` の2026-09-30実測値。
 
-| 指標               | 達成率           |
-| ------------------ | ---------------- |
-| trialSuccessRates  | 100% (149/149台) |
-| description        | 100% (149/149台) |
-| source（項目の充足） | 100% (149/149台) ⚠️ 下記注記 |
-| confirmationEvents | 100% (149/149台) |
-| roles (非空)       | 98% (146/149台)  |
-| endScreens (非空)  | 87% (129/149台)  |
-| voiceCounts (非空) | 25% (37/149台)   |
-| provenance（出典記録） | 0% (0/149台)     |
+| 指標 | 件数 |
+| --- | ---: |
+| roles（非空） | 158/161 |
+| confirmationEvents（キー） | 161/161 |
+| endScreens（非空） | 140/161 |
+| trialSuccessRates（非空） | 154/161 |
+| description | 161/161 |
+| source | 161/161 |
+| voiceCounts（非空） | 37/161 |
+| provenance（出典記録） | 12/161 |
 
-品質分類（**構造上の自動分類**）: Complete 146台 / Provisional 3台 / Incomplete 0台
-（`npm run validate` エラー0・警告0）
+構造上の分類: Complete 158台 / Provisional 3台 / Incomplete 0台。
 
-> ⚠️ この分類は `scripts/validators/completeness-validator.mjs` が**フィールドの充填状況だけ**で
-> 判定する。内容の確度は見ていないため、文書上は暫定登録（Provisional）の機種でも
-> `roles` が非空なら Complete に数えられる。**146台の内容が完全であるという意味ではない。**
+この自動分類はフィールドの充填状況を測ります。値の確度や鮮度を保証するものではありません。今回追加・見直しした機種は `provenance/` に項目ごとのURL・取得日・採用根拠を保存しています。既存全機種の出典整備は別工程です。
 
-> 🔴 **`source` 100% は「全機種で出典を追試できる」という意味ではない**（2026-08-17 実測）。
->
-> | 指標 | 実測 |
-> |---|---|
-> | `source` が空 | 0 / 149 |
-> | **`source` に URL を含む** | **1 / 149**（`galfy` のみ） |
-> | JSON のどこかに URL がある | **5 / 149**（残り4台は `notes` に記載） |
-> | **`retrievedAt`（取得日）** | **0 / 149** |
->
-> 大半は「一撃、なな徹」のようなサイト名の列挙で、**どのページを見たかが特定できない**。
-> 取得日はどの機種にも無い。つまり**全149台について一貫して追試可能な状態ではない**。
->
-> スキーマ上も `source` は **required ではない**（required は name / type / roles / author /
-> version / lastUpdated の6つ）。恒久対策の案は `docs/data-provenance-proposal.md` を参照。
-> 2026-09-26 から、出典は `provenance/` に項目ごとに記録する（段階的に全機種へ広げる）。
-
-> ⚠️ **鮮度は上記とは別の軸**。品質指標は「項目が埋まっているか」であって「内容が最新か」ではない。
-> 鮮度は `node scripts/audit-freshness.mjs` で確認する（2026-08-16 時点で全149台が31日以上未更新、
-> うち147台が91日以上）。ただしこのスクリプトが測るのも `lastUpdated` からの**経過日数だけ**で、
-> 内容の最新性を直接保証するものではない。追加予定の機種は `machines/FUTURE_ADDITIONS.md` を参照。
+出典の採否規則は `docs/data-format.md`、全件見直しの設計は `docs/superpowers/specs/2026-09-26-data-expansion-design.md` を参照してください。
 
 ## 使い方
 
@@ -70,7 +47,7 @@ SlotAnalyzerアプリで使用するパチスロ機種データのコミュニ�
 ```
 slot-analyzer-data/
 ├── machines/
-│   ├── index.json              # 機種一覧インデックス (v3.9.0)
+│   ├── index.json              # 機種一覧インデックス
 │   ├── juggler/                # ジャグラー系
 │   ├── hokuto/                 # 北斗系
 │   ├── hanabi/                 # ハナビ系
